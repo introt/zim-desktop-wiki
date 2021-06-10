@@ -391,7 +391,7 @@ class HRef(object):
 		else:
 			link = self.names
 		if self.anchor:
-			link = f"{link}#{self.anchor}"
+			link += "#" + self.anchor
 		return link
 
 
