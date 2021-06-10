@@ -116,34 +116,34 @@ class ExportTemplateContext(dict):
 		'''Constructor
 
 		When exporting one notebook page per export page ("multi file"),
-		'C{content}' is a list of one page everytime. Even for exporting
-		special pages, they go into 'C{content}' one at a time.
-		The special pages are linked in 'C{links}' so the template can
+		'``content``' is a list of one page everytime. Even for exporting
+		special pages, they go into '``content``' one at a time.
+		The special pages are linked in '``links``' so the template can
 		refer to them.
 
 		When exporting multiple notebook pages to a single export page
-		("single file"), 'C{content}' is a list of all notebook pages a
-		nd 'C{special}' a list.
+		("single file"), '``content``' is a list of all notebook pages a
+		nd '``special``' a list.
 
-		@param notebook: L{Notebook} object
-		@param linker_factory: function producing L{ExportLinker} objects
-		@param dumper_factory: function producing L{DumperClass} objects
-		@param title: the export page title
-		@param content: list of notebook pages to be exported
-		@param special: list of special notebook pages to be exported if any
-		@param home: link to home page if any
-		@param up: link to parent export page if any
-		@param prevpage: link to previous export page if any
-		@param nextpage: link to next export page if any
-		@param links: list of links to special pages if any, links are
-		given as a 2-tuple of a key and a target (either a L{Path} or
-		a L{NotebookPathProxy})
-		@param index_generator: a generator function or that
-		provides L{Path} or L{Page} objects to be used for the
-		the C{index()} function. This method should take a single
-		argument for the root namespace to show.
-		See the definition of L{Index.walk()} or L{PageSelection.index()}.
-		@param index_page: the current page to show in the index if any
+		:param notebook: :class:`Notebook` object
+		:param linker_factory: function producing :class:`ExportLinker` objects
+		:param dumper_factory: function producing :class:`DumperClass` objects
+		:param title: the export page title
+		:param content: list of notebook pages to be exported
+		:param special: list of special notebook pages to be exported if any
+		:param home: link to home page if any
+		:param up: link to parent export page if any
+		:param prevpage: link to previous export page if any
+		:param nextpage: link to next export page if any
+		:param links: list of links to special pages if any, links are
+			given as a 2-tuple of a key and a target (either a :class:`Path` or
+			a :class:`NotebookPathProxy`)
+		:param index_generator: a generator function or that
+			provides :class:`Path` or :class:`Page` objects to be used for the
+			the ``index()`` function. This method should take a single
+			argument for the root namespace to show.
+			See the definition of :class:`Index.walk()` or :class:`PageSelection.index()`.
+		:param index_page: the current page to show in the index if any
 		'''
 		# TODO get rid of need of notebook here!
 		template_options = TemplateContextDict({}) # can be modified by template
@@ -209,7 +209,7 @@ class ExportTemplateContext(dict):
 
 
 	def get_dumper(self, page):
-		'''Returns a L{DumperClass} instance for source page C{page}
+		'''Returns a :class:`DumperClass` instance for source page ``page``
 
 		Only template options defined before this method is called are
 		included, so only construct the "dumper" when you are about to
@@ -261,11 +261,12 @@ class ExportTemplateContext(dict):
 	@ExpressionFunction
 	def index_function(self, namespace=None, collapse=True, ignore_empty=True):
 		'''Index function for export template
-		@param namespace: the namespace to include
-		@param collapse: if C{True} only the branch of the current page
-		is shown, if C{False} the whole index is shown
-		@param ignore_empty: if C{True} empty pages (placeholders) are
-		not shown in the index
+
+		:param namespace: the namespace to include
+		:param collapse: if ``True`` only the branch of the current page
+			is shown, if ``False`` the whole index is shown
+		:param ignore_empty: if ``True`` empty pages (placeholders) are
+			not shown in the index
 		'''
 		if not self._index_generator:
 			return ''

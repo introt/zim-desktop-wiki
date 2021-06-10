@@ -4,14 +4,14 @@
 '''Generic parser for wiki formats
 
 This parser for wiki text (and similar formats) consists of two classes:
-the L{Rule} class which defines objects which specify a single parser
-rule, and the L{Parser} class which takes a number of rules and
+the :class:`Rule` class which defines objects which specify a single parser
+rule, and the :class:`Parser` class which takes a number of rules and
 parses a piece of text accordingly. The parser just does a series of
 regex matches and calls a method on the specific rule objects to
 process the match. Recursion can be achieved by making the rules
-process with another L{Parser} object.
+process with another :class:`Parser` object.
 
-All rules have access to a L{Builder} object which is used to construct
+All rules have access to a :class:`Builder` object which is used to construct
 the resulting parse tree.
 
 There are several limitation to this parser. Most importantly it does
@@ -28,9 +28,9 @@ compiled into one big expression this can become an issue for more
 complex parser implementations. However for a typical wiki implementation
 this should be sufficient.
 
-Note that the regexes are compiles using the flags C{re.U}, C{re.M},
-and C{re.X}. This means any whitespace in the expression is ignored,
-and a literal space need to be written as "C{\ }". In general you need
+Note that the regexes are compiles using the flags ``re.U``, ``re.M``,
+and ``re.X``. This means any whitespace in the expression is ignored,
+and a literal space need to be written as "``\ ``". In general you need
 to use the "r" string prefix to ensure those backslashes make it
 through to the final expression.
 '''
@@ -49,8 +49,9 @@ from zim.errors import Error
 
 def fix_line_end(text):
 	'''Fixes missing line end
-	@param text: the input text
-	@returns: the fixed text
+
+	:param text: the input text
+	:returns: the fixed text
 	'''
 	# HACK this char is recognized as line end by splitlines()
 	# but not matched by \n in a regex. Hope there are no other
@@ -66,9 +67,10 @@ def fix_line_end(text):
 
 def convert_space_to_tab(text, tabstop=4):
 	'''Convert spaces to tabs
-	@param text: the input text
-	@param tabstop: the number of spaces to represent a tab
-	@returns: the fixed text
+
+	:param text: the input text
+	:param tabstop: the number of spaces to represent a tab
+	:returns: the fixed text
 	'''
 	# Fix tabs
 	spaces = ' ' * tabstop
@@ -93,24 +95,27 @@ class Builder(object):
 
 	def start(self, tag, attrib=None):
 		'''Start formatted region
-		@param tag: the tag name
-		@param attrib: optional dict with attributes
-		@implementation: must be implemented by sub-classes
+
+		:param tag: the tag name
+		:param attrib: optional dict with attributes
+		:implementation: must be implemented by sub-classes
 		'''
 		raise NotImplemented
 
 	def text(self, text):
 		'''Append text
-		@param text: text to be appended as string
-		@implementation: must be implemented by sub-classes
+
+		:param text: text to be appended as string
+		:implementation: must be implemented by sub-classes
 		'''
 		raise NotImplemented
 
 	def end(self, tag):
 		'''End formatted region
-		@param tag: the tag name
-		@raises XXX: when tag does not match current state
-		@implementation: must be implemented by sub-classes
+
+		:param tag: the tag name
+		:raises XXX: when tag does not match current state
+		:implementation: must be implemented by sub-classes
 		'''
 		raise NotImplemented
 
@@ -118,11 +123,12 @@ class Builder(object):
 		'''Convenience function to open a tag, append text and close
 		it immediatly. Only used for formatted text that has no
 		sub-processing done.
-		@param tag: the tag name
-		@param attrib: optional dict with attributes
-		@param text: formatted text
-		@implementation: optional for subclasses, default implementation
-		calls L{start()}, L{text()}, and L{end()}
+
+		:param tag: the tag name
+		:param attrib: optional dict with attributes
+		:param text: formatted text
+		:implementation: optional for subclasses, default implementation
+			calls :class:`start()`, :class:`text()`, and :class:`end()`
 		'''
 		self.start(tag, attrib)
 		if not text is None:
@@ -131,7 +137,7 @@ class Builder(object):
 
 
 class BuilderTextBuffer(Builder):
-	'''Wrapper that buffers text going to a L{Builder} object
+	'''Wrapper that buffers text going to a :class:`Builder` object
 	such that the last piece of text remains accessible for inspection
 	and can be modified.
 	'''
@@ -235,7 +241,7 @@ class SimpleTreeElement(list):
 
 
 class SimpleTreeBuilder(Builder):
-	'''Builder class that builds a tree of L{SimpleTreeElement}s'''
+	'''Builder class that builds a tree of :class:`SimpleTreeElement`s'''
 
 	def __init__(self, elementfactory=SimpleTreeElement):
 		self.elementfactory = elementfactory
@@ -295,27 +301,28 @@ class Rule(object):
 	and the processing to be done when this formatting is encountered
 	in the text.
 
-	@ivar tag: L{Builder} tag for result of this rule. Used by the
-	default process method.
-	@ivar pattern: the regular expression for this parser as string
-	@ivar process: function (or object) to process matched text, or C{None}
-	The function should take a L{Builder} object as first argument,
-	followed by one or more parameters for matched groups in the
-	regular expression. If the regex pattern has no capturing groups
-	this function is called with the whole match.
-	The default function will use the C{tag} and C{descent}
-	attributes
-	@ivar decent: optional function (or object) to recursively parse the
-	text matched by this rule. Called in the same way as C{process}.
+	:ivar tag: :class:`Builder` tag for result of this rule. Used by the
+		default process method.
+	:ivar pattern: the regular expression for this parser as string
+	:ivar process: function (or object) to process matched text, or ``None``
+		The function should take a :class:`Builder` object as first argument,
+		followed by one or more parameters for matched groups in the
+		regular expression. If the regex pattern has no capturing groups
+		this function is called with the whole match.
+		The default function will use the ``tag`` and ``descent``
+		attributes
+	:ivar decent: optional function (or object) to recursively parse the
+		text matched by this rule. Called in the same way as ``process``.
 	'''
 
 	def __init__(self, tag, pattern, process=None, descent=None):
 		'''Constructor
-		@param tag: L{Builder} tag for result of this rule. Used by the
-		default process method.
-		@param pattern: regex pattern as string
-		@param process: optional function to process matched text
-		@param descent: optional function to recursively parse matched text
+
+		:param tag: :class:`Builder` tag for result of this rule. Used by the
+			default process method.
+		:param pattern: regex pattern as string
+		:param process: optional function to process matched text
+		:param descent: optional function to recursively parse matched text
 		'''
 		assert tag is not None or process is not None, 'Need at least a tag or a process method'
 		self._re = None
@@ -351,21 +358,22 @@ class Parser(object):
 	compile the patterns of various rules into a single regex and
 	based on the match call the correct rules for processing.
 
-	@ivar rules: list with L{Rule} objects, can be modified until the
-	parser is used for the first time for parsing (the attribute
-	becomes a tuple afterwards)
-	@ivar process_unmatched: function (or object) to process un-matched
-	text, or C{None}.
-	The function should take a L{Builder} object as first argument,
-	followed by one or more parameters for matched groups in the
-	regular expression.
+	:ivar rules: list with :class:`Rule` objects, can be modified until the
+		parser is used for the first time for parsing (the attribute
+		becomes a tuple afterwards)
+	:ivar process_unmatched: function (or object) to process un-matched
+		text, or ``None``.
+		The function should take a :class:`Builder` object as first argument,
+		followed by one or more parameters for matched groups in the
+		regular expression.
 	'''
 
 	def __init__(self, *rules):
 		'''Constructor
-		@param rules: list of rules to match (each should derive from
-		L{SimpleReParser}, so be either a single rule, or a compound
-		rule.)
+
+		:param rules: list of rules to match (each should derive from
+			:class:`SimpleReParser`, so be either a single rule, or a compound
+			rule.)
 		'''
 		self.rules = [] #: sub rules
 		self.process_unmatched = self._process_unmatched
@@ -396,10 +404,10 @@ class Parser(object):
 		'''Each parser object is callable so it can be used as a
 		processing function in any other parser object. This method
 		parses the given text and calls the appropriate methods of the
-		L{Builder} object to construct the parse results.
+		:class:`Builder` object to construct the parse results.
 
-		@param builder: a L{Builder} object
-		@param text: to be parsed text as string
+		:param builder: a :class:`Builder` object
+		:param text: to be parsed text as string
 		'''
 
 		assert text, 'BUG: processing empty string'
@@ -479,10 +487,11 @@ class Parser(object):
 def get_line_count(text, offset):
 	'''Helper function used to report line numbers for exceptions
 	that happen during parsing.
-	@param text: the text being parsed
-	@param offset: character offset in this text
-	@returns: a 2-tuple of the line and column that corresponds to this
-	offset
+
+	:param text: the text being parsed
+	:param offset: character offset in this text
+	:returns: a 2-tuple of the line and column that corresponds to this
+		offset
 	'''
 	# line numbers start counting at 1, columns at 0
 	if offset == 0:

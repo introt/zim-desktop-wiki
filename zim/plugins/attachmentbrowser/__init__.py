@@ -123,7 +123,7 @@ class AttachmentBrowserWindowExtension(PageViewExtension):
 
 
 class AttachmentBrowserPluginWidget(Gtk.HBox, WindowSidePaneWidget):
-	'''Wrapper aroung the L{FileBrowserIconView} that adds the buttons
+	'''Wrapper aroung the :class:`FileBrowserIconView` that adds the buttons
 	for zoom / open folder / etc. ...
 	'''
 

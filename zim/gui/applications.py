@@ -5,11 +5,11 @@
 it is based on the Freedesktop.org (XDG) Desktop Entry specification
 with some additional logic based on status quo on Gnome / XFCE.
 
-The main class is the L{DesktopEntryFile} which maps the application
+The main class is the :class:`DesktopEntryFile` which maps the application
 definition in a specific desktop entry. Typically these are not
-constructed directly, but requested through the L{ApplicationManager}.
+constructed directly, but requested through the :class:`ApplicationManager`.
 
-Also there is the L{OpenWithMenu} which is the widget to render a menu
+Also there is the :class:`OpenWithMenu` which is the widget to render a menu
 with available applications for a specific file plus a dialog so the
 user can define a new command on the fly.
 '''
@@ -101,8 +101,9 @@ def _create_application(dir, basename, Name, Exec, NoDisplay=True, **param):
 def get_mimetype(obj):
 	'''Convenience method to get the mimetype for a file or url.
 	For URLs this method results in "x-scheme-handler" mimetypes.
-	@param obj: a L{File} object, or an URL
-	@returns: mimetype or C{None}
+
+	:param obj: a :class:`File` object, or an URL
+	:returns: mimetype or ``None``
 	'''
 
 	for method in ('get_mimetype', 'mimetype'): # zim.fs.File, newfs
@@ -257,10 +258,11 @@ class ApplicationManager(object):
 	def get_application(name):
 		'''Get an application by name. Will search installed ".desktop"
 		files of the same name
-		@param name: the application name (e.g. "firefox"). As a special
-		case "webbrowser" maps to a L{WebBrowser} application instance
-		and "startfile" to a L{StartFile} application instance
-		@returns: an L{Application} object or C{None}
+
+		:param name: the application name (e.g. "firefox"). As a special
+			case "webbrowser" maps to a :class:`WebBrowser` application instance
+			and "startfile" to a :class:`StartFile` application instance
+		:returns: an :class:`Application` object or ``None``
 		'''
 		if name.endswith('.desktop'):
 			key = name
@@ -280,9 +282,10 @@ class ApplicationManager(object):
 	@classmethod
 	def get_default_application(klass, mimetype):
 		'''Get the default application to open a file with a specific mimetype.
-		It searches C{applications/defaults.list} files to lookup the application.
-		@param mimetype: the mime-type of the file (e.g. "text/html")
-		@returns: an L{Application} object or C{None}
+		It searches ``applications/defaults.list`` files to lookup the application.
+
+		:param mimetype: the mime-type of the file (e.g. "text/html")
+		:returns: an :class:`Application` object or ``None``
 		'''
 		# TODO: also check timestamp of mimeapps for validity of the cache ?
 		if mimetype in klass._defaults_app_cache \
@@ -350,12 +353,13 @@ class ApplicationManager(object):
 	@classmethod
 	def set_default_application(klass, mimetype, application):
 		'''Set the default application to open a file with a specific
-		mimetype. Updates the C{applications/defaults.list} file.
-		As a special case when you set the default to C{None} it will
-		remove the entry from C{defauts.list} allowing system defaults
+		mimetype. Updates the ``applications/defaults.list`` file.
+		As a special case when you set the default to ``None`` it will
+		remove the entry from ``defauts.list`` allowing system defaults
 		to be used again.
-		@param mimetype: the mime-type of the file (e.g. "text/html")
-		@param application: an L{Application} object or C{None}
+
+		:param mimetype: the mime-type of the file (e.g. "text/html")
+		:param application: an :class:`Application` object or ``None``
 		'''
 		## Based on https://specifications.freedesktop.org/mime-apps-spec/latest/
 		## Version 1.0 dated 2 April 2014
@@ -378,18 +382,18 @@ class ApplicationManager(object):
 		custom command to handle a certain file type.
 
 		Note that the name under which this definition is stored is not
-		the same as C{Name}. Check the 'C{key}' attribute of the
+		the same as ``Name``. Check the '``key``' attribute of the
 		returned object if you want the name to retrieve this
 		application later.
 
-		@param mimetype: the file mime-type to handle with this command
-		@param Name: the name to show in e.g. the "Open With.." menu
-		@param Exec: the command to run as string (will be split on
-		whitespace, so quote arguments that may contain a space).
-		@param param: any additional keys for the desktop entry
+		:param mimetype: the file mime-type to handle with this command
+		:param Name: the name to show in e.g. the "Open With.." menu
+		:param Exec: the command to run as string (will be split on
+			whitespace, so quote arguments that may contain a space).
+		:param param: any additional keys for the desktop entry
 
-		@returns: the L{DesktopEntryFile} object with some
-		sensible defaults for a user created application entry.
+		:returns: the :class:`DesktopEntryFile` object with some
+			sensible defaults for a user created application entry.
 		'''
 		dir = XDG_DATA_HOME.subdir('applications')
 		param['MimeType'] = mimetype
@@ -448,11 +452,12 @@ class ApplicationManager(object):
 	def list_applications(klass, mimetype, nodisplay=False):
 		'''Get a list of applications that can handle a specific file
 		type.
-		@param mimetype: the mime-type of the file (e.g. "text/html")
-		@param nodisplay: if C{True} also entries that have the
-		C{NoDisplay} flag are included
-		@returns: a list of L{Application} objects that are known to
-		be able to handle this file type
+
+		:param mimetype: the mime-type of the file (e.g. "text/html")
+		:param nodisplay: if ``True`` also entries that have the
+			``NoDisplay`` flag are included
+		:returns: a list of :class:`Application` objects that are known to
+			be able to handle this file type
 		'''
 		## Supporting mimapps.list
 		## Based on https://specifications.freedesktop.org/mime-apps-spec/latest/
@@ -529,19 +534,19 @@ class NoApplicationFoundError(Error):
 def open_file(widget, file, mimetype=None, callback=None):
 	'''Open a file or folder
 
-	@param widget: parent for new dialogs, C{Gtk.Widget} or C{None}
-	@param file: a L{File} or L{Folder} object
-	@param mimetype: optionally specify the mimetype to force a
-	specific application to open this file
-	@param callback: callback function to be passed on to
-	L{Application.spawn()} (if the application supports a
-	callback, otherwise it is ignored silently)
+	:param widget: parent for new dialogs, ``Gtk.Widget`` or ``None``
+	:param file: a :class:`File` or :class:`Folder` object
+	:param mimetype: optionally specify the mimetype to force a
+		specific application to open this file
+	:param callback: callback function to be passed on to
+		:class:`Application.spawn()` (if the application supports a
+		callback, otherwise it is ignored silently)
 
-	@raises FileNotFoundError: if C{file} does not exist
-	@raises NoApplicationFoundError: if a specific mimetype was
-	given, but no default application is known for this mimetype
-	(will not use fallback in this case - fallback would
-	ignore the specified mimetype)
+	:raises FileNotFoundError: if ``file`` does not exist
+	:raises NoApplicationFoundError: if a specific mimetype was
+		given, but no default application is known for this mimetype
+		(will not use fallback in this case - fallback would
+		ignore the specified mimetype)
 	'''
 	logger.debug('open_file(%s, %s)', file, mimetype)
 	file = adapt_from_newfs(file)
@@ -575,8 +580,9 @@ def open_file(widget, file, mimetype=None, callback=None):
 
 def open_folder_prompt_create(widget, folder):
 	'''Open a folder and prompts to create it if it doesn't exist yet.
-	@param widget: parent for new dialogs, C{Gtk.Widget} or C{None}
-	@param folder: a L{Folder} object
+
+	:param widget: parent for new dialogs, ``Gtk.Widget`` or ``None``
+	:param folder: a :class:`Folder` object
 	'''
 	try:
 		open_folder(widget, folder)
@@ -593,11 +599,12 @@ def open_folder_prompt_create(widget, folder):
 
 def open_folder(widget, folder):
 	'''Open a folder.
-	@param widget: parent for new dialogs, C{Gtk.Widget} or C{None}
-	@param folder: a L{Folder} object
-	@raises FileNotFoundError: if C{folder} does not exist
-	see L{open_folder_prompt_create} for alternative behavior when folder
-	does not exist.
+
+	:param widget: parent for new dialogs, ``Gtk.Widget`` or ``None``
+	:param folder: a :class:`Folder` object
+	:raises FileNotFoundError: if ``folder`` does not exist
+		see :class:`open_folder_prompt_create` for alternative behavior when folder
+		does not exist.
 	'''
 	dir = adapt_from_newfs(folder)
 	open_file(widget, dir)
@@ -608,8 +615,9 @@ def open_url(widget, url):
 	program. The application is determined based on the URL / URI
 	scheme. Unkown schemes and "file://" URIs are opened with the
 	webbrowser.
-	@param widget: parent for new dialogs, C{Gtk.Widget} or C{None}
-	@param url: an URL or URI as string
+
+	:param widget: parent for new dialogs, ``Gtk.Widget`` or ``None``
+	:param url: an URL or URI as string
 	'''
 	logger.debug('open_url(%s)', url)
 	assert isinstance(url, str)
@@ -680,9 +688,10 @@ def _open_with_webbrowser(widget, url):
 
 def edit_config_file(widget, configfile):
 	'''Edit a config file in an external editor.
-	See L{edit_file()} for details.
-	@param widget: a C{gtk} widget to use as parent for dialogs or C{None}
-	@param configfile: a L{ConfigFile} object
+	See :class:`edit_file()` for details.
+
+	:param widget: a ``gtk`` widget to use as parent for dialogs or ``None``
+	:param configfile: a :class:`ConfigFile` object
 	'''
 	configfile.touch()
 	edit_file(widget, configfile.file, istextfile=True)
@@ -698,12 +707,12 @@ def edit_file(widget, file, istextfile=None):
 	"Done" button in the dialog because we can not know if the
 	application was really done or just forked to another process.
 
-	@param widget: a C{gtk} widget to use as parent for dialogs or C{None}
-	@param file: a L{File} object
-	@param istextfile: if C{True} the text editor is used, otherwise
-	we ask the file browser for the correct application. When
-	C{None} we check the mimetype of the file to determine if it
-	is text or not.
+	:param widget: a ``gtk`` widget to use as parent for dialogs or ``None``
+	:param file: a :class:`File` object
+	:param istextfile: if ``True`` the text editor is used, otherwise
+		we ask the file browser for the correct application. When
+		``None`` we check the mimetype of the file to determine if it
+		is text or not.
 	'''
 	## FIXME force using real text editor, even when file has not
 	## text mimetype. This now goes wrong when editing e.g. a html
@@ -789,31 +798,31 @@ class Boolean(BaseBoolean):
 
 
 class DesktopEntryDict(SectionedConfigDict, Application):
-	'''Base class for L{DesktopEntryFile}, defines most of the logic.
+	'''Base class for :class:`DesktopEntryFile`, defines most of the logic.
 
 	The following keys are supported:
-	  - C{%f}: a single file path
-	  - C{%F}: a list of file paths
-	  - C{%u}: a single URL
-	  - C{%U}: a list of URLs
-	  - C{%i}: the icon as defined in the desktop entry, if any,
-	    prefixed with C{--icon}
-	  - C{%c}: the name from the desktop entry
-	  - C{%k}: the file path for the desktop entry file
+	  - ``%f``: a single file path
+	  - ``%F``: a list of file paths
+	  - ``%u``: a single URL
+	  - ``%U``: a list of URLs
+	  - ``%i``: the icon as defined in the desktop entry, if any,
+	    prefixed with ``--icon``
+	  - ``%c``: the name from the desktop entry
+	  - ``%k``: the file path for the desktop entry file
 
-	See L{parse_exec()} for interpolating these keys. If the command
+	See :class:`parse_exec()` for interpolating these keys. If the command
 	does not contain any keys, the file paths or URLs to open are
 	just appended to the command.
 
-	@ivar key: the name of the ".desktop" file, this is the key needed
-	to lookup the application through the L{ApplicationManager}.
-	@ivar name: the 'Name' field from the desktop entry
-	@ivar comment: the 'Comment' field from the desktop entry
-	@ivar cmd: the command and arguments as a tuple, based on the
-	'Exec' key (still contains the keys for interpolation)
-	@ivar tryexeccmd: the command to check in L{tryexec()}, from the
-	'TryExe' key in the desktop entry, if C{None} fall back to first
-	item of C{cmd}
+	:ivar key: the name of the ".desktop" file, this is the key needed
+		to lookup the application through the :class:`ApplicationManager`.
+	:ivar name: the 'Name' field from the desktop entry
+	:ivar comment: the 'Comment' field from the desktop entry
+	:ivar cmd: the command and arguments as a tuple, based on the
+		'Exec' key (still contains the keys for interpolation)
+	:ivar tryexeccmd: the command to check in :class:`tryexec()`, from the
+		'TryExe' key in the desktop entry, if ``None`` fall back to first
+		item of ``cmd``
 	'''
 
 	__repr__ = Application.__repr__
@@ -847,7 +856,8 @@ class DesktopEntryDict(SectionedConfigDict, Application):
 		specification are set. Assumes we only use desktop files to
 		describe applications (and not links or dirs, which are also
 		covered by the spec).
-		@returns: C{True} if all required fields are set
+
+		:returns: ``True`` if all required fields are set
 		'''
 		entry = self['Desktop Entry']
 		if entry.get('Type') == 'Application' \
@@ -882,9 +892,10 @@ class DesktopEntryDict(SectionedConfigDict, Application):
 		return split_quoted_strings(self['Desktop Entry']['Exec'])
 
 	def get_pixbuf(self, size):
-		'''Get the application icon as a C{GdkPixbuf.Pixbuf}.
-		@param size: the icon size as gtk constant
-		@returns: a pixbuf object or C{None}
+		'''Get the application icon as a ``GdkPixbuf.Pixbuf``.
+
+		:param size: the icon size as gtk constant
+		:returns: a pixbuf object or ``None``
 		'''
 		icon = self['Desktop Entry'].get('Icon', None)
 		if not icon:
@@ -912,8 +923,9 @@ class DesktopEntryDict(SectionedConfigDict, Application):
 	def parse_exec(self, args=None):
 		'''Parse the 'Exec' string and interpolate the arguments
 		according to the keys of the desktop spec.
-		@param args: list of either URLs or L{File} objects
-		@returns: the full command to execute as a tuple
+
+		:param args: list of either URLs or :class:`File` objects
+		:returns: the full command to execute as a tuple
 		'''
 		assert args is None or isinstance(args, (list, tuple))
 
@@ -982,7 +994,7 @@ class DesktopEntryDict(SectionedConfigDict, Application):
 	_cmd = parse_exec # To hook into Application.spawn and Application.run
 
 	def update(self, E=(), **F):
-		'''Same as C{dict.update()}'''
+		'''Same as ``dict.update()``'''
 		self['Desktop Entry'].update(E, **F)
 
 
@@ -1001,9 +1013,9 @@ class DesktopEntryFile(DesktopEntryDict, INIConfigFile):
 
 
 class OpenWithMenu(Gtk.Menu):
-	'''Sub-class of C{Gtk.Menu} implementing an "Open With..." menu with
+	'''Sub-class of ``Gtk.Menu`` implementing an "Open With..." menu with
 	applications to open a specific file. Also has an item
-	"Customize...", which opens a L{CustomizeOpenWithDialog}
+	"Customize...", which opens a :class:`CustomizeOpenWithDialog`
 	and allows the user to add custom commands.
 	'''
 
@@ -1013,11 +1025,11 @@ class OpenWithMenu(Gtk.Menu):
 	def __init__(self, widget, file, mimetype=None):
 		'''Constructor
 
-		@param widget: parent widget, needed to pop dialogs correctly
-		@param file: a L{File} object or URL
-		@param mimetype: the mime-type of the application, if already
-		known. Providing this arguments prevents redundant lookups of
-		the type (which is slow).
+		:param widget: parent widget, needed to pop dialogs correctly
+		:param file: a :class:`File` object or URL
+		:param mimetype: the mime-type of the application, if already
+			known. Providing this arguments prevents redundant lookups of
+			the type (which is slow).
 		'''
 		GObject.GObject.__init__(self)
 		self._window = widget.get_toplevel()
@@ -1053,14 +1065,14 @@ class OpenWithMenu(Gtk.Menu):
 
 
 class DesktopEntryMenuItem(Gtk.MenuItem):
-	'''Single menu item for the L{OpenWithMenu}. Displays the application
+	'''Single menu item for the :class:`OpenWithMenu`. Displays the application
 	name and the icon.
 	'''
 
 	def __init__(self, entry):
 		'''Constructor
 
-		@param entry: the L{DesktopEntryFile}
+		:param entry: the :class:`DesktopEntryFile`
 		'''
 		GObject.GObject.__init__(self)
 		self.set_label(_('Open with "%s"') % entry.name)
@@ -1083,9 +1095,10 @@ class CustomizeOpenWithDialog(Dialog):
 
 	def __init__(self, parent, mimetype):
 		'''Constructor
-		@param parent: the parent window or C{None}
-		@param mimetype: mime-type for which we want to create a new
-		application
+
+		:param parent: the parent window or ``None``
+		:param mimetype: mime-type for which we want to create a new
+			application
 		'''
 		Dialog.__init__(self, parent, _('Configure Applications'),  # T: Dialog title
 			buttons=Gtk.ButtonsType.CLOSE, help='Help:Default Applications')
@@ -1147,7 +1160,7 @@ class CustomizeOpenWithDialog(Dialog):
 
 
 class SystemDefault(object):
-	'''Stub object that can be used in L{ApplicationComboBox}'''
+	'''Stub object that can be used in :class:`ApplicationComboBox`'''
 
 	name = _('System Default') # T: Label for default application handler
 
@@ -1200,14 +1213,15 @@ class ApplicationComboBox(Gtk.ComboBox):
 class AddApplicationDialog(Dialog):
 	'''Dialog to prompt the user for a new custom command.
 	Allows to input an application name and a command, and calls
-	L{ApplicationManager.create()}.
+	:class:`ApplicationManager.create()`.
 	'''
 
 	def __init__(self, parent, mimetype):
 		'''Constructor
-		@param parent: the parent window or C{None}
-		@param mimetype: mime-type for which we want to create a new
-		application
+
+		:param parent: the parent window or ``None``
+		:param mimetype: mime-type for which we want to create a new
+			application
 		'''
 		Dialog.__init__(self, parent, _('Add Application')) # T: Dialog title
 		self.mimetype = mimetype

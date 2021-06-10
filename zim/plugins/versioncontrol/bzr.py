@@ -129,7 +129,7 @@ class BZRApplicationBackend(VCSApplicationBase):
 
 	def is_modified(self):
 		"""Returns true if the repo is not up-to-date, or False
-		@returns: True if the repo is not up-to-date, or False
+		:returns: True if the repo is not up-to-date, or False
 		"""
 		# If status return an empty answer, this means the local repo is up-to-date
 		return ''.join(self.status()).strip() != ''

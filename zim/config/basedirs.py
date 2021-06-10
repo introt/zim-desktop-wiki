@@ -24,12 +24,12 @@ def _split_environ_dir_list(value, default=()):
 
 ## Initialize config paths
 
-ZIM_DATA_DIR = None #: 'data' dir relative to script file (when running from source), L{Dir} or C{None}
-XDG_DATA_HOME = None #: L{Dir} for XDG data home
-XDG_DATA_DIRS = None #: list of L{Dir} objects for XDG data dirs path
-XDG_CONFIG_HOME = None #: L{Dir} for XDG config home
-XDG_CONFIG_DIRS = None #: list of L{Dir} objects for XDG config dirs path
-XDG_CACHE_HOME = None #: L{Dir} for XDG cache home
+ZIM_DATA_DIR = None #: 'data' dir relative to script file (when running from source), :class:`Dir` or ``None``
+XDG_DATA_HOME = None #: :class:`Dir` for XDG data home
+XDG_DATA_DIRS = None #: list of :class:`Dir` objects for XDG data dirs path
+XDG_CONFIG_HOME = None #: :class:`Dir` for XDG config home
+XDG_CONFIG_DIRS = None #: list of :class:`Dir` objects for XDG config dirs path
+XDG_CACHE_HOME = None #: :class:`Dir` for XDG cache home
 
 def set_basedirs(_ignore_test=False):
 	'''This method sets the global configuration paths for according to the

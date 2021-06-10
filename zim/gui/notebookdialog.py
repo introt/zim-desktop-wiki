@@ -52,7 +52,8 @@ def prompt_notebook():
 	'''Prompts the NotebookDialog and returns the result or None.
 	As a special case for first time usage it immediately prompts for
 	the notebook location without showing the notebook list.
-	@returns: a L{NotebookInfo} object or C{None}
+
+	:returns: a :class:`NotebookInfo` object or ``None``
 	'''
 	list = get_notebook_list()
 	if len(list) == 0:
@@ -74,21 +75,23 @@ def prompt_notebook():
 class NotebookTreeModel(Gtk.ListStore):
 	'''TreeModel that wraps a notebook list
 
-	@column: C{OPEN_COL}: boolean, True if the notebook is opened already
-	@column: C{NAME_COL}: string, name of the notebook
-	@column: C{TEXT_COL}: string, formatted string containg the name and path
-	@column: C{PIXBUF_COL}: GdkPixbuf.Pixbuf, the icon of the notebook (if any)
-	@column: C{INFO_COL}: L{NotebookInfo} object
+	:column: ``OPEN_COL``: boolean, True if the notebook is opened already
+	:column: ``NAME_COL``: string, name of the notebook
+	:column: ``TEXT_COL``: string, formatted string containg the name and path
+	:column: ``PIXBUF_COL``: GdkPixbuf.Pixbuf, the icon of the notebook (if any)
+	:column: ``INFO_COL``: :class:`NotebookInfo` object
 
-	@note: To refer to the notebook in an unambiguous way, use the uri stored
-	in the L{NotebookInfo} object.
+	.. note::
+
+		To refer to the notebook in an unambiguous way, use the uri stored
+		in the :class:`NotebookInfo` object.
 	'''
 
 	def __init__(self, notebooklist=None):
 		'''Constructor. If "notebooklist" is None, the default list as
 		provided by zim.notebook.get_notebook_list() is used.
 
-		@param notebooklist: a list of L{NotebookInfo} objects
+		:param notebooklist: a list of :class:`NotebookInfo` objects
 		'''
 		Gtk.ListStore.__init__(self, bool, str, str, GdkPixbuf.Pixbuf, object)
 						# OPEN_COL, NAME_COL, TEXT_COL PIXBUF_COL INFO_COL
@@ -202,11 +205,11 @@ class NotebookComboBox(Gtk.ComboBox):
 	def __init__(self, model=None, current=None):
 		'''Constructor,
 
-		@param model: either a L{NotebookTreeModel} or C{None} to use
-		the default list.
-		@param current: uri, C{Dir}, C{NotebookInfo}, or C{Notebook}
-		object for the current notebook. If C{None} the default
-		notebook will be shown (if any).
+		:param model: either a :class:`NotebookTreeModel` or ``None`` to use
+			the default list.
+		:param current: uri, ``Dir``, ``NotebookInfo``, or ``Notebook``
+			object for the current notebook. If ``None`` the default
+			notebook will be shown (if any).
 		'''
 		if model is None:
 			model = NotebookTreeModel()
@@ -235,11 +238,11 @@ class NotebookComboBox(Gtk.ComboBox):
 	def set_notebook(self, uri, append=False):
 		'''Select a specific notebook in the combobox.
 
-		@param uri: uri, C{Dir}, C{NotebookInfo}, or C{Notebook}
-		object for a notebook (string or any object with an C{uri}
-		property)
-		@param append: if C{True} the notebook will appended to the list
-		if it was not listed yet.
+		:param uri: uri, ``Dir``, ``NotebookInfo``, or ``Notebook``
+			object for a notebook (string or any object with an ``uri``
+			property)
+		:param append: if ``True`` the notebook will appended to the list
+			if it was not listed yet.
 		'''
 		if isinstance(uri, str):
 			assert uri.startswith('file://')

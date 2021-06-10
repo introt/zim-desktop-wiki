@@ -51,17 +51,18 @@ def _get_xml_for_menu(name):
 
 class UIActions(object):
 	'''Container for all kind of actions that can be triggered from the
-	menubar, but do not directly link to a L{MainWindow} object.
+	menubar, but do not directly link to a :class:`MainWindow` object.
 	'''
 
 	def __init__(self, widget, notebook, page, navigation):
 		'''Constructor
-		@param widget: owning gtk widget or C{None}, only used to determine
-		parent window for dialogs
-		@param notebook: L{Notebook} object for actions to act on
-		@param page: L{Page} object that reflects the _default_ page for actions
-		to act on.
-		@param navigation: a L{NavigationModel}
+
+		:param widget: owning gtk widget or ``None``, only used to determine
+			parent window for dialogs
+		:param notebook: :class:`Notebook` object for actions to act on
+		:param page: :class:`Page` object that reflects the _default_ page for actions
+			to act on.
+		:param navigation: a :class:`NavigationModel`
 		'''
 		self.widget = widget
 		self.notebook = notebook
@@ -94,9 +95,9 @@ class UIActions(object):
 
 	@action(_('_New Page...'), '<Primary>N', menuhints='notebook:edit') # T: Menu item
 	def new_page(self):
-		'''Menu action to create a new page, shows the L{NewPageDialog},
+		'''Menu action to create a new page, shows the :class:`NewPageDialog`,
 
-		Difference with L{open_page()} is that the page is saved
+		Difference with :class:`open_page()` is that the page is saved
 		directly, so it exists and is stays visible if the user
 		navigates away without first adding content. Though subtle this
 		is expected behavior for users.
@@ -105,8 +106,8 @@ class UIActions(object):
 
 	@action(_('New S_ub Page...'), '<shift><Primary>N', menuhints='notebook:edit') # T: Menu item
 	def new_sub_page(self):
-		'''Menu action to create a new page, shows the L{NewPageDialog}.
-		Like L{new_page()} but forces a child page of the current
+		'''Menu action to create a new page, shows the :class:`NewPageDialog`.
+		Like :class:`new_page()` but forces a child page of the current
 		page.
 		'''
 		NewPageDialog(self.widget, self.navigation, self.notebook, path=self.page, subpage=True).run()
@@ -121,14 +122,15 @@ class UIActions(object):
 
 	@action(_('_Open Another Notebook...'), '<Primary>O') # T: Menu item
 	def show_open_notebook(self):
-		'''Show the L{NotebookDialog} dialog'''
+		'''Show the :class:`NotebookDialog` dialog'''
 		from zim.gui.notebookdialog import NotebookDialog
 		NotebookDialog.unique(self, self.widget, callback=self.open_notebook).present()
 
 	def open_notebook(self, location, pagename=None):
 		'''Open another notebook.
-		@param location: notebook location as uri or object with "uri" attribute
-		@param pagename: optional page name
+
+		:param location: notebook location as uri or object with "uri" attribute
+		:param pagename: optional page name
 		'''
 		assert isinstance(location, str) or hasattr(location, 'uri')
 		assert pagename is None or isinstance(pagename, str)
@@ -141,13 +143,14 @@ class UIActions(object):
 
 	@action(_('_Import Page...'), menuhints='notebook:edit') # T: Menu item
 	def import_page(self):
-		'''Menu action to show an L{ImportPageDialog}'''
+		'''Menu action to show an :class:`ImportPageDialog`'''
 		ImportPageDialog(self.widget, self.navigation, self.notebook, self.page).run()
 
 	@action(_('Open in New _Window')) # T: Menu item
 	def open_new_window(self, page=None, anchor=None):
-		'''Menu action to open a page in a L{PageWindow}
-		@param page: the page L{Path}, deafults to current selected
+		'''Menu action to open a page in a :class:`PageWindow`
+
+		:param page: the page :class:`Path`, deafults to current selected
 		'''
 		from zim.gui.mainwindow import PageWindow
 
@@ -160,12 +163,12 @@ class UIActions(object):
 
 	@action(_('Save A _Copy...')) # T: Menu item
 	def save_copy(self):
-		'''Menu action to show a L{SaveCopyDialog}'''
+		'''Menu action to show a :class:`SaveCopyDialog`'''
 		SaveCopyDialog(self.widget, self.notebook, self.page).run()
 
 	@action(_('E_xport...')) # T: Menu item
 	def show_export(self):
-		'''Menu action to show an L{ExportDialog}'''
+		'''Menu action to show an :class:`ExportDialog`'''
 		from zim.gui.exportdialog import ExportDialog
 		if self.ensure_index_uptodate():
 			ExportDialog(self.widget, self.notebook, self.page).run()
@@ -173,7 +176,7 @@ class UIActions(object):
 	@action(_('_Send To...')) # T: Menu item
 	def email_page(self, _callback=open_url):
 		'''Menu action to open an email containing the current page.
-		Encodes the current page as "mailto:" URI and calls L{open_url()}
+		Encodes the current page as "mailto:" URI and calls :class:`open_url()`
 		to start the preferred email client.
 		'''
 		text = ''.join(self.page.dump(format='plain'))
@@ -185,9 +188,10 @@ class UIActions(object):
 
 	@action(_('_Rename or move Page...'), accelerator='F2', menuhints='notebook:edit') # T: Menu item
 	def move_page(self, path=None):
-		'''Menu action to show the L{MovePageDialog}
-		@param path: a L{Path} object, or C{None} to move to current
-		selected page
+		'''Menu action to show the :class:`MovePageDialog`
+
+		:param path: a :class:`Path` object, or ``None`` to move to current
+			selected page
 		'''
 		if self.ensure_index_uptodate():
 			MovePageDialog(self.widget, self.notebook, path or self.page).run()
@@ -195,10 +199,10 @@ class UIActions(object):
 	@action(_('_Delete Page'), menuhints='notebook:edit') # T: Menu item
 	def delete_page(self, path=None):
 		'''Delete a page by either trashing it, or permanent deletion after
-		confirmation of a L{DeletePageDialog}. When trashing the update behavior
+		confirmation of a :class:`DeletePageDialog`. When trashing the update behavior
 		depends on the "remove_links_on_delete" preference.
 
-		@param path: a L{Path} object, or C{None} for the current selected page
+		:param path: a :class:`Path` object, or ``None`` for the current selected page
 		'''
 		# Difficulty here is that we want to avoid unnecessary prompts.
 		# So ideally we want to know whether trash is supported, but we only
@@ -238,7 +242,7 @@ class UIActions(object):
 
 	@action(_('Proper_ties')) # T: Menu item
 	def show_properties(self):
-		'''Menu action to show the L{PropertiesDialog}'''
+		'''Menu action to show the :class:`PropertiesDialog`'''
 		from zim.gui.propertiesdialog import PropertiesDialog
 		PropertiesDialog(self.widget, self.notebook).run()
 
@@ -249,7 +253,8 @@ class UIActions(object):
 	@action(_('_Quit'), '<Primary>Q') # T: Menu item
 	def quit(self):
 		'''Menu action for quit.
-		@emits: quit
+
+		:emits: quit
 		'''
 		if Gtk.main_level() > 0:
 			Gtk.main_quit()
@@ -264,13 +269,13 @@ class UIActions(object):
 
 	@action(_('_Templates')) # T: Menu item
 	def show_templateeditor(self):
-		'''Menu action to show the L{TemplateEditorDialog}'''
+		'''Menu action to show the :class:`TemplateEditorDialog`'''
 		from zim.gui.templateeditordialog import TemplateEditorDialog
 		TemplateEditorDialog(self.widget).run()
 
 	@action(_('Pr_eferences'), '<Primary>comma') # T: Menu item
 	def show_preferences(self):
-		'''Menu action to show the L{PreferencesDialog}'''
+		'''Menu action to show the :class:`PreferencesDialog`'''
 		from zim.gui.preferencesdialog import PreferencesDialog
 		PreferencesDialog(self.widget).run()
 
@@ -280,8 +285,9 @@ class UIActions(object):
 
 	@action(_('_Search...'), '<shift><Primary>F', verb_icon='edit-find-symbolic') # T: Menu item
 	def show_search(self, query=None, focus_results=False):
-		'''Menu action to show the L{SearchDialog}
-		@param query: the search query to show
+		'''Menu action to show the :class:`SearchDialog`
+
+		:param query: the search query to show
 		'''
 		from zim.gui.searchdialog import SearchDialog
 		if query is None and hasattr(self.widget, 'pageview'):
@@ -306,7 +312,7 @@ class UIActions(object):
 
 	@action(_('Search _Backlinks...')) # T: Menu item
 	def show_search_backlinks(self, page=None):
-		'''Menu action to show the L{SearchDialog} with a query for
+		'''Menu action to show the :class:`SearchDialog` with a query for
 		backlinks
 		'''
 		page = page or self.page
@@ -314,7 +320,7 @@ class UIActions(object):
 
 	@action(_('Recent Changes...')) # T: Menu item
 	def show_recent_changes(self):
-		'''Menu action to show the L{RecentChangesDialog}'''
+		'''Menu action to show the :class:`RecentChangesDialog`'''
 		from .recentchangesdialog import RecentChangesDialog
 		dialog = RecentChangesDialog.unique(self, self.widget, self.notebook, self.navigation)
 		dialog.present()
@@ -350,9 +356,9 @@ class UIActions(object):
 	@action(_('Edit _Source'), menuhints='tools:edit') # T: Menu item
 	def edit_page_source(self, page=None):
 		'''Menu action to edit the page source in an external editor.
-		See L{edit_file} for details.
+		See :class:`edit_file` for details.
 
-		@param page: the L{Page} object, or C{None} for te current page
+		:param page: the :class:`Page` object, or ``None`` for te current page
 		'''
 		# This could also be defined as a custom tool, but we want to determine
 		# the editor dynamically because we assume that the default app for a
@@ -366,7 +372,7 @@ class UIActions(object):
 	@action(_('Start _Web Server')) # T: Menu item
 	def show_server_gui(self):
 		'''Menu action to show the server interface from
-		L{zim.gui.server}. Spawns a new zim instance for the server.
+		:class:`zim.gui.server`. Spawns a new zim instance for the server.
 		'''
 		ZIM_APPLICATION.run('--server', '--gui', self.notebook.uri)
 
@@ -388,9 +394,10 @@ class UIActions(object):
 	def reload_index(self, update_only=False):
 		'''Check the notebook for changes and update the index.
 		Shows an progressbar while updateing.
-		@param update_only: if C{True} only updates are done, if C{False} also
-		check is done for all files
-		@returns: C{True} unless the user cancelled the update
+
+		:param update_only: if ``True`` only updates are done, if ``False`` also
+			check is done for all files
+		:returns: ``True`` unless the user cancelled the update
 		'''
 		from zim.notebook.index import IndexCheckAndUpdateOperation, IndexUpdateOperation
 		from zim.notebook.operations import ongoing_operation
@@ -419,7 +426,7 @@ class UIActions(object):
 
 	@action(_('Custom _Tools')) # T: Menu item
 	def manage_custom_tools(self):
-		'''Menu action to show the L{CustomToolManagerDialog}'''
+		'''Menu action to show the :class:`CustomToolManagerDialog`'''
 		from zim.gui.customtools import CustomToolManagerDialog
 		CustomToolManagerDialog(self.widget).run()
 
@@ -427,7 +434,8 @@ class UIActions(object):
 	def show_help(self, page=None):
 		'''Menu action to show the user manual. Will start a new zim
 		instance showing the notebook with the manual.
-		@param page: manual page to show (string)
+
+		:param page: manual page to show (string)
 		'''
 		if page:
 			ZIM_APPLICATION.run('--manual', page)
@@ -715,8 +723,9 @@ class DeletePageDialog(Dialog):
 	def _get_file_tree_as_text(self, dir):
 		'''Returns an overview of files and folders below this dir
 		as text. Used in tests.
-		@param dir: a L{Folder} object
-		@returns: file listing as string
+
+		:param dir: a :class:`Folder` object
+		:returns: file listing as string
 		'''
 		from zim.newfs import Folder
 		text = ''

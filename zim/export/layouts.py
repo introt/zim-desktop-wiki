@@ -23,25 +23,28 @@ class ExportLayout(object):
 
 	def page_file(self, page):
 		'''Returns the file for a page
-		@param page: a L{Page} or L{Path} object
-		@returns: a L{File} object
-		@raises PathLookupError: if page can not be mapped
-		@implementation: must be implemented by subclasses
+
+		:param page: a :class:`Page` or :class:`Path` object
+		:returns: a :class:`File` object
+		:raises PathLookupError: if page can not be mapped
+		:implementation: must be implemented by subclasses
 		'''
 		raise NotImplementedError
 
 	def attachments_dir(self, page):
 		'''Returns the attachments folder for a page
-		@param page: a L{Page} or L{Path} object
-		@returns: a L{Dir} object
-		@raises PathLookupError: if folder can not be mapped
-		@implementation: must be implemented by subclasses
+
+		:param page: a :class:`Page` or :class:`Path` object
+		:returns: a :class:`Dir` object
+		:raises PathLookupError: if folder can not be mapped
+		:implementation: must be implemented by subclasses
 		'''
 		raise NotImplementedError
 
 	def resources_dir(self):
 		'''Returns the folder for template resources
-		@returns: a L{Dir} object
+
+		:returns: a :class:`Dir` object
 		'''
 		raise NotImplementedError
 
@@ -86,10 +89,11 @@ class MultiFileLayout(DirLayoutBase):
 
 	def __init__(self, dir, ext, namespace=None):
 		'''Constructor
-		@param dir: a L{Dir} object
-		@param ext: the file extension to be used, e.g. 'html'
-		@param namespace: optional namespace prefix to strip from
-		page names
+
+		:param dir: a :class:`Dir` object
+		:param ext: the file extension to be used, e.g. 'html'
+		:param namespace: optional namespace prefix to strip from
+			page names
 		'''
 		if isinstance(dir, OldDir):
 			dir = LocalFolder(dir.path)
@@ -143,9 +147,10 @@ class FileLayout(DirLayoutBase):
 
 	def __init__(self, file, page, ext):
 		'''Constructor
-		@param file: a L{File} object
-		@param page: a L{Path} object for the top level page
-		@param ext: the file extension to be used for sub-pages, e.g. 'html'
+
+		:param file: a :class:`File` object
+		:param page: a :class:`Path` object for the top level page
+		:param ext: the file extension to be used for sub-pages, e.g. 'html'
 		'''
 		if isinstance(file, OldFile):
 			file = LocalFile(file.path)
@@ -191,8 +196,9 @@ class SingleFileLayout(DirLayoutBase):
 
 	def __init__(self, file, page=None):
 		'''Constructor
-		@param file: a L{File} object
-		@param page: an optional L{Path} object for the top level page
+
+		:param file: a :class:`File` object
+		:param page: an optional :class:`Path` object for the top level page
 		'''
 		if isinstance(file, OldFile):
 			file = LocalFile(file.path)

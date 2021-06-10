@@ -30,9 +30,9 @@ class FilesIndexer(SignalEmitter):
 	'''Class that will update the "files" table in the index based on
 	changes seen on the file system.
 
-	@signal: C{file-row-inserted (row, file)}: on new file found
-	@signal: C{file-row-changed (row, file)}: on file content changed
-	@signal: C{file-row-deleted (row)}: on file deleted
+	:signal: ``file-row-inserted (row, file)``: on new file found
+	:signal: ``file-row-changed (row, file)``: on file content changed
+	:signal: ``file-row-deleted (row)``: on file deleted
 
 	'''
 
@@ -334,8 +334,9 @@ class FilesIndexChecker(object):
 		'''Generator function that walks existing records and flags
 		records that are not longer valid. Yields in between checks
 		to allow embedding in a loop.
-		@returns: Yields C{True} when an out of
-		date record is found.
+
+		:returns: Yields ``True`` when an out of
+			date record is found.
 		'''
 		# Check for pending updates first
 		row = self.db.execute(

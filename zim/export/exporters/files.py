@@ -27,10 +27,11 @@ class FilesExporterBase(Exporter):
 
 	def __init__(self, layout, template, format, document_root_url=None):
 		'''Constructor
-		@param layout: a L{ExportLayout} to map pages to files
-		@param template: a L{Template} object
-		@param format: the format for the file content
-		@param document_root_url: optional URL for the document root
+
+		:param layout: a :class:`ExportLayout` to map pages to files
+		:param template: a :class:`Template` object
+		:param format: the format for the file content
+		:param document_root_url: optional URL for the document root
 		'''
 		self.layout = layout
 		self.template = template
@@ -79,11 +80,12 @@ class MultiFileExporter(FilesExporterBase):
 
 	def __init__(self, layout, template, format, index_page=None, document_root_url=None):
 		'''Constructor
-		@param layout: a L{ExportLayout} to map pages to files
-		@param template: a L{Template} object
-		@param format: the format for the file content
-		@param index_page: a page to output the index or C{None}
-		@param document_root_url: optional URL for the document root
+
+		:param layout: a :class:`ExportLayout` to map pages to files
+		:param template: a :class:`Template` object
+		:param format: the format for the file content
+		:param index_page: a page to output the index or ``None``
+		:param document_root_url: optional URL for the document root
 		'''
 		FilesExporterBase.__init__(self, layout, template, format, document_root_url)
 		if index_page:

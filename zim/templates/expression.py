@@ -21,8 +21,8 @@ the other hand can be accessed.
 We control execution by only executing functions that are specifically
 whitelisted as being an ExpressionFunction (can be used as decorator).
 The expression classes have builtin support for some builtin methods
-on strings, lists and dicts (see L{ExpressionString},
-L{ExpressionDict} and L{ExpressionList} respectively), other functions
+on strings, lists and dicts (see :class:`ExpressionString`,
+:class:`ExpressionDict` and :class:`ExpressionList` respectively), other functions
 can be supplied in the context dict or as object attributes.
 
 The biggest risks would be to put objects in the dict that allow
@@ -55,7 +55,8 @@ class Expression(object):
 
 	def __call__(self, dict):
 		'''Evaluate the expression
-		@param dict: the context with parameter values
+
+		:param dict: the context with parameter values
 		'''
 		raise NotImplementedError
 
@@ -77,7 +78,8 @@ class ExpressionLiteral(Expression):
 
 	def __init__(self, value):
 		'''Constructor
-		@param value: the expression value (string, int, float, ...)
+
+		:param value: the expression value (string, int, float, ...)
 		'''
 		self.value = value
 
@@ -98,7 +100,8 @@ class ExpressionParameter(Expression):
 
 	def __init__(self, name):
 		'''Constructor
-		@param name: the parameter name
+
+		:param name: the parameter name
 		'''
 		self.name = name
 		self.parts = name.split('.')
@@ -140,7 +143,7 @@ class ExpressionParameter(Expression):
 
 	@property
 	def parent(self):
-		'''Returns a C{ExpressionParameter} for the parent object.
+		'''Returns a ``ExpressionParameter`` for the parent object.
 		Used e.g. to find the parent scope for assignment.
 		'''
 		if len(self.parts) > 1:
@@ -161,7 +164,8 @@ class ExpressionList(Expression):
 
 	def __init__(self, items=None):
 		'''Constructor
-		@param items: iterable with L{Expression} objects
+
+		:param items: iterable with :class:`Expression` objects
 		'''
 		if items:
 			self.items = list(items)
@@ -192,9 +196,10 @@ class ExpressionOperator(Expression):
 
 	def __init__(self, operator, lexpr, rexpr):
 		'''Constructor
-		@param operator: an operator function
-		@param lexpr: left hand L{Expression} object
-		@param rexpr: right hand L{Expression} object
+
+		:param operator: an operator function
+		:param lexpr: left hand :class:`Expression` object
+		:param rexpr: right hand :class:`Expression` object
 		'''
 		assert isinstance(lexpr, Expression)
 		assert isinstance(rexpr, Expression)
@@ -223,8 +228,9 @@ class ExpressionUnaryOperator(Expression):
 
 	def __init__(self, operator, rexpr):
 		'''Constructor
-		@param operator: an operator function
-		@param rexpr: right hand L{Expression} object
+
+		:param operator: an operator function
+		:param rexpr: right hand :class:`Expression` object
 		'''
 		assert isinstance(rexpr, Expression)
 		self.operator = operator
@@ -250,8 +256,9 @@ class ExpressionFunctionCall(Expression):
 
 	def __init__(self, param, args):
 		'''Constuctor
-		@param param: an L{ExpressionParameter} that refers the function
-		@param args: an L{ExpressionList} with arguments
+
+		:param param: an :class:`ExpressionParameter` that refers the function
+		:param args: an :class:`ExpressionList` with arguments
 		'''
 		assert isinstance(param, ExpressionParameter)
 		assert isinstance(args, ExpressionList)
@@ -320,7 +327,8 @@ class ExpressionFunction(object):
 
 	def __init__(self, func):
 		'''Constructor
-		@param func: the actual function
+
+		:param func: the actual function
 		'''
 		self._func = func
 
@@ -348,7 +356,7 @@ class ExpressionFunction(object):
 
 
 class BoundExpressionFunction(ExpressionFunction):
-	'''Wrapper used by L{ExpressionFunction} when used as a decorator
+	'''Wrapper used by :class:`ExpressionFunction` when used as a decorator
 	for object methods.
 	'''
 
@@ -364,7 +372,7 @@ class ExpressionObjectBase(object):
 	'''Base method for wrapper objects that are used to determine the
 	safe functions to call on objects in the parameter dict.
 
-	The attribute C{_fmethods()} lists methods that can be called
+	The attribute ``_fmethods()`` lists methods that can be called
 	safely on the wrapped objects.
 	'''
 

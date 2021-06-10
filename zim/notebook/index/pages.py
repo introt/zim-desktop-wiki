@@ -42,12 +42,12 @@ def emptyParseTree():
 class PagesIndexer(IndexerBase):
 	'''Indexer for the "pages" table.
 
-	@signal: C{page-row-inserted (row)}: new row inserted
-	@signal: C{page-row-changed (row, oldrow)}: row changed
-	@signal: C{page-row-delete (row)}: row to be deleted
-	@signal: C{page-row-deleted (row)}: row that has been deleted
+	:signal: ``page-row-inserted (row)``: new row inserted
+	:signal: ``page-row-changed (row, oldrow)``: row changed
+	:signal: ``page-row-delete (row)``: row to be deleted
+	:signal: ``page-row-deleted (row)``: row that has been deleted
 
-	@signal: C{page-changed (row, content)}: page contents changed
+	:signal: ``page-changed (row, content)``: page contents changed
 	'''
 
 	__signals__ = {
@@ -304,17 +304,18 @@ class PagesIndexer(IndexerBase):
 
 
 class PageIndexRecord(Path):
-	'''Object representing a page L{Path} in the index, with data
-	for the corresponding row in the C{pages} table.
+	'''Object representing a page :class:`Path` in the index, with data
+	for the corresponding row in the ``pages`` table.
 	'''
 
 	__slots__ = ('_row')
 
 	def __init__(self, row):
 		'''Constructor
-		@param row: a C{sqlite3.Row} object for this page in the
-		"pages" table, specifies most other attributes for this object
-		The property C{hasdata} is C{True} when the row is set.
+
+		:param row: a ``sqlite3.Row`` object for this page in the
+			"pages" table, specifies most other attributes for this object
+			The property ``hasdata`` is ``True`` when the row is set.
 		'''
 		Path.__init__(self, row['name'])
 		self._row = row
@@ -339,8 +340,8 @@ class PageIndexRecord(Path):
 
 
 class PagesViewInternal(object):
-	'''This class defines private methods used by L{PagesView},
-	L{LinksView}, L{TagsView} and others.
+	'''This class defines private methods used by :class:`PagesView`,
+	:class:`LinksView`, :class:`TagsView` and others.
 	'''
 
 	def __init__(self, db):
@@ -530,10 +531,11 @@ class PagesView(IndexView):
 			return PageIndexRecord(r)
 
 	def list_pages(self, path=None):
-		'''Generator for child pages of C{path}
-		@param path: a L{Path} object
-		@returns: yields L{Path} objects for children of C{path}
-		@raises IndexNotFoundError: if C{path} is not found in the index
+		'''Generator for child pages of ``path``
+
+		:param path: a :class:`Path` object
+		:returns: yields :class:`Path` objects for children of ``path``
+		:raises IndexNotFoundError: if ``path`` is not found in the index
 		'''
 		if path is None:
 			page_id = ROOT_ID
@@ -556,12 +558,13 @@ class PagesView(IndexView):
 		return c
 
 	def match_pages(self, path, text, limit=10):
-		'''Generator for child pages of C{path} that match C{text} in their name
-		@param path: a L{Path} object
-		@param text: a string
-		@param limit: max number of results
-		@returns: yields L{Path} objects for children of C{path}
-		@raises IndexNotFoundError: if C{path} is not found in the index
+		'''Generator for child pages of ``path`` that match ``text`` in their name
+
+		:param path: a :class:`Path` object
+		:param text: a string
+		:param limit: max number of results
+		:returns: yields :class:`Path` objects for children of ``path``
+		:raises IndexNotFoundError: if ``path`` is not found in the index
 		'''
 		if path is None:
 			page_id = ROOT_ID
@@ -579,7 +582,7 @@ class PagesView(IndexView):
 			yield PageIndexRecord(row)
 
 	def match_all_pages(self, text, limit=10):
-		'''Like C{match_pages()} except not limited a specific namespace'''
+		'''Like ``match_pages()`` except not limited a specific namespace'''
 		for row in self.db.execute(
 			'SELECT * FROM pages WHERE lowerbasename LIKE ? ORDER BY length(name), sortkey, name LIMIT ?',
 			("%%%s%%" % text.lower(), limit)
@@ -590,11 +593,11 @@ class PagesView(IndexView):
 		'''Generator function to yield all pages in the index, depth
 		first
 
-		@param path: a L{Path} object for the starting point, can be
-		used to only iterate a sub-tree. When this is C{None} the
-		whole notebook is iterated over
-		@returns: an iterator that yields L{Path} objects
-		@raises IndexNotFoundError: if C{path} does not exist in the index
+		:param path: a :class:`Path` object for the starting point, can be
+			used to only iterate a sub-tree. When this is ``None`` the
+			whole notebook is iterated over
+		:returns: an iterator that yields :class:`Path` objects
+		:raises IndexNotFoundError: if ``path`` does not exist in the index
 		'''
 		# Need to do this recursive to preserve sorting
 		#              else we could just do "name LIKE parent%"
@@ -632,10 +635,11 @@ class PagesView(IndexView):
 
 	def get_previous(self, path):
 		'''Get the previous path in the index, in the same order that
-		L{walk()} will yield them
-		@param path: a L{Path} object
-		@returns: a L{Path} object or C{None} if {path} is the first page in
-		the index
+		:class:`walk()` will yield them
+
+		:param path: a :class:`Path` object
+		:returns: a :class:`Path` object or ``None`` if {path} is the first page in
+			the index
 		'''
 		# Find last (grand)child of previous item with same parent
 		# If no previous item, yield parent
@@ -674,10 +678,11 @@ class PagesView(IndexView):
 
 	def get_next(self, path):
 		'''Get the next path in the index, in the same order that
-		L{walk()} will yield them
-		@param path: a L{Path} object
-		@returns: a L{Path} object or C{None} if C{path} is the last page in
-		the index
+		:class:`walk()` will yield them
+
+		:param path: a :class:`Path` object
+		:returns: a :class:`Path` object or ``None`` if ``path`` is the last page in
+			the index
 		'''
 		# If item has children, yield first child
 		# Else find next item with same parent
@@ -722,14 +727,15 @@ class PagesView(IndexView):
 
 	def lookup_from_user_input(self, name, reference=None):
 		'''Lookup a pagename based on user input
-		@param name: the user input as string
-		@param reference: a L{Path} in case relative links are supported as
-		customer input
-		@returns: a L{Path} object for C{name}
-		@raises ValueError: when C{name} would reduce to empty string
-		after removing all invalid characters, or if C{name} is a
-		relative link while no C{reference} page is given.
-		@raises IndexNotFoundError: when C{reference} is not indexed
+
+		:param name: the user input as string
+		:param reference: a :class:`Path` in case relative links are supported as
+			customer input
+		:returns: a :class:`Path` object for ``name``
+		:raises ValueError: when ``name`` would reduce to empty string
+			after removing all invalid characters, or if ``name`` is a
+			relative link while no ``reference`` page is given.
+		:raises IndexNotFoundError: when ``reference`` is not indexed
 		'''
 		# This method re-uses most of resolve_link() but is defined
 		# separate because it has a distinct different purpose.
@@ -749,9 +755,10 @@ class PagesView(IndexView):
 		this method first determines the starting point of the link
 		path. Then it goes downward doing a case insensitive match
 		against the index.
-		@param source: a L{Path} for the starting point of the link
-		@param href: a L{HRef} object for the link
-		@returns: a L{Path} object for the target of the link.
+
+		:param source: a :class:`Path` for the starting point of the link
+		:param href: a :class:`HRef` object for the link
+		:returns: a :class:`Path` object for the target of the link.
 		'''
 		assert isinstance(source, Path)
 		assert isinstance(href, HRef)
@@ -760,9 +767,10 @@ class PagesView(IndexView):
 
 	def create_link(self, source, target):
 		'''Determine best way to represent a link between two pages
-		@param source: a L{Path} object
-		@param target: a L{Path} object
-		@returns: a L{HRef} object
+
+		:param source: a :class:`Path` object
+		:param target: a :class:`Path` object
+		:returns: a :class:`HRef` object
 		'''
 		if target == source: # weird edge case ..
 			return HRef(HREF_REL_FLOATING, target.basename)
@@ -964,9 +972,10 @@ class PagesTreeModelMixin(TreeModelMixinBase):
 		return self.cache.get(treepath, None)
 
 	def find(self, path):
-		'''Returns the C{Gtk.TreePath} for a notebook page L{Path}
-		If the L{Path} appears multiple times returns the first occurrence
-		@raises IndexNotFoundError: if path not found
+		'''Returns the ``Gtk.TreePath`` for a notebook page :class:`Path`
+		If the :class:`Path` appears multiple times returns the first occurrence
+
+		:raises IndexNotFoundError: if path not found
 		'''
 		if path.isroot:
 			raise ValueError
@@ -977,9 +986,10 @@ class PagesTreeModelMixin(TreeModelMixinBase):
 			raise IndexNotFoundError(path)
 
 	def find_all(self, path):
-		'''Returns a list of C{Gtk.TreePath} for a notebook page L{Path}
+		'''Returns a list of ``Gtk.TreePath`` for a notebook page :class:`Path`
 		Returns all occurrences in the treeview
-		@raises IndexNotFoundError: if path not found
+
+		:raises IndexNotFoundError: if path not found
 		'''
 		if path.isroot:
 			raise ValueError

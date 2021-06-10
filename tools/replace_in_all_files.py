@@ -27,8 +27,8 @@ def replace_in_file(file, old, new):
 		fh.write(content)
 		fh.close()
 	return i
-	
-	
+
+
 if __name__ == '__main__':
 	if len(sys.argv) == 4:
 		replace_in_dir(*sys.argv[1:])

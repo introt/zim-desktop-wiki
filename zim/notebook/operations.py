@@ -177,8 +177,8 @@ class NotebookOperation(SignalEmitter):
 
 	When using the progress dialog the values yielded by the inner
 	iterator will be passed on via the 'step' signal. This should be a
-	3-tuple of C{(i, total, msg)} where C{i} and C{total} are integers for the
-	current step and the total number of steps expected (or C{None} if the step
+	3-tuple of ``(i, total, msg)`` where ``i`` and ``total`` are integers for the
+	current step and the total number of steps expected (or ``None`` if the step
 	count is not known).
 
 	'''
@@ -192,10 +192,11 @@ class NotebookOperation(SignalEmitter):
 
 	def __init__(self, notebook, message, iterator):
 		'''Constructor
-		@param notebook: the L{Notebook} object
-		@param message: a message string for L{NotebookOperationOngoing}
-		errors and for the heading of progress dialogs
-		@param iterator: iterator that yields for chunks of work
+
+		:param notebook: the :class:`Notebook` object
+		:param message: a message string for :class:`NotebookOperationOngoing`
+			errors and for the heading of progress dialogs
+		:param iterator: iterator that yields for chunks of work
 		'''
 		self.notebook = notebook
 		self.message = message
@@ -211,7 +212,7 @@ class NotebookOperation(SignalEmitter):
 	def __call__(self):
 		'''This method is called when another operation tries to start
 		while we are running. When called either finish quickly or
-		raise L{NotebookOperationOngoing}.
+		raise :class:`NotebookOperationOngoing`.
 		'''
 		if self._block:
 			if self.message:
@@ -222,7 +223,7 @@ class NotebookOperation(SignalEmitter):
 	def run_on_idle(self):
 		'''Start the operation by setting up the main loop event handler.
 
-		May raise L{NotebookOperationOngoing} if another operation is
+		May raise :class:`NotebookOperationOngoing` if another operation is
 		already ongoing.
 		'''
 		assert GObject, "No mainloop available to run this operation"
@@ -296,12 +297,13 @@ class SimpleAsyncOperation(NotebookOperation):
 
 	def __init__(self, notebook, message, thread, post_handler=None):
 		'''Constructor
-		@param notebook: the L{Notebook} object
-		@param message: a message string for the heading of
-		progress dialogs
-		@param thread: a {threading.Thread} object
-		@param post_handler: optional function to call in main after
-		the thread has finished
+
+		:param notebook: the :class:`Notebook` object
+		:param message: a message string for the heading of
+			progress dialogs
+		:param thread: a {threading.Thread} object
+		:param post_handler: optional function to call in main after
+			the thread has finished
 		'''
 		self._thread = thread
 
@@ -338,7 +340,7 @@ class NotebookState(object):
 	find out earlier whether or not an error will happen you can use
 	this context explicitly.
 
-	Entering the context may raise L{NotebookOperationOngoing} if an
+	Entering the context may raise :class:`NotebookOperationOngoing` if an
 	operation is ongoing.
 
 	Intended usage:
@@ -363,7 +365,7 @@ class NotebookState(object):
 
 def notebook_state(method):
 	'''Decorator for notebook API methods that behaves
-	like the L{NotebookState} context.
+	like the :class:`NotebookState` context.
 
 	Intended only for methods that change the notebook.
 	'''

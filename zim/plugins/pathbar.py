@@ -88,12 +88,12 @@ class PathBarMainWindowExtension(MainWindowExtension):
 	def set_pathbar(self, type):
 		'''Set the pathbar type
 
-		@param type: the type of pathbar, one of:
-			- C{PATHBAR_NONE} to hide the pathbar
-			- C{PATHBAR_RECENT} to show recent pages
-			- C{PATHBAR_RECENT_CHANGED} to show recently changed pagesF
-			- C{PATHBAR_HISTORY} to show the history
-			- C{PATHBAR_PATH} to show the namespace path
+		:param type: the type of pathbar, one of:
+				- ``PATHBAR_NONE`` to hide the pathbar
+				- ``PATHBAR_RECENT`` to show recent pages
+				- ``PATHBAR_RECENT_CHANGED`` to show recently changed pagesF
+				- ``PATHBAR_HISTORY`` to show the history
+				- ``PATHBAR_PATH`` to show the namespace path
 		'''
 		if self.pathbar is not None:
 			try:

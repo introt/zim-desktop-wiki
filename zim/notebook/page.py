@@ -37,8 +37,9 @@ re.UNICODE)
 
 def shortest_unique_names(paths):
 	'''Returns the shortest unique name for each path in paths
-	@param paths: list of L{Path} objects
-	@returns: list of strings
+
+	:param paths: list of :class:`Path` objects
+	:returns: list of strings
 	'''
 	by_basename = {}
 	for path in paths:
@@ -81,12 +82,12 @@ class Path(object):
 	has a number of methods to compare page names and determining what
 	the parent pages are etc.
 
-	@ivar name: the full name of the path
-	@ivar parts: all the parts of the name (split on ":")
-	@ivar basename: the basename of the path (last part of the name)
-	@ivar namespace: the name for the parent page or empty string
-	@ivar isroot: C{True} when this Path represents the top level namespace
-	@ivar parent: the L{Path} object for the parent page
+	:ivar name: the full name of the path
+	:ivar parts: all the parts of the name (split on ":")
+	:ivar basename: the basename of the path (last part of the name)
+	:ivar namespace: the name for the parent page or empty string
+	:ivar isroot: ``True`` when this Path represents the top level namespace
+	:ivar parent: the :class:`Path` object for the parent page
 
 
 	Valid characters in page names
@@ -117,19 +118,20 @@ class Path(object):
 
 	Note that Zim version < 0.42 used different rules that are not
 	fully compatible, this is important when upgrading old notebooks.
-	See L{Notebook.cleanup_pathname_zim028()}
+	See :class:`Notebook.cleanup_pathname_zim028()`
 	'''
 
 	__slots__ = ('name',)
 
 	@staticmethod
 	def assertValidPageName(name):
-		'''Raises an C{AssertionError} if C{name} does not represent
+		'''Raises an ``AssertionError`` if ``name`` does not represent
 		a valid page name.
 		This is a strict check, most names that fail this test can still
-		be cleaned up by the L{makeValidPageName()}.
-		@param name: a string
-		@raises AssertionError: if the name is not valid
+		be cleaned up by the :class:`makeValidPageName()`.
+
+		:param name: a string
+		:raises AssertionError: if the name is not valid
 		'''
 		assert isinstance(name, str)
 		if not name.strip(':') \
@@ -143,9 +145,10 @@ class Path(object):
 		a valid page name. Only string that can not be turned in
 		somthing valid is a string that reduces to an empty string
 		after removing all invalid characters.
-		@param name: a string
-		@returns: a string
-		@raises ValueError: when the result would be an empty string
+
+		:param name: a string
+		:returns: a string
+		:raises ValueError: when the result would be an empty string
 		'''
 		newname = _pagename_reduce_colon_re.sub(':', name.strip(':'))
 		newname = _pagename_invalid_char_re.sub('', newname)
@@ -159,16 +162,18 @@ class Path(object):
 	def __init__(self, name):
 		'''Constructor.
 
-		@param name: the absolute page name in the right case as a
-		string or as a tuple strings
+		:param name: the absolute page name in the right case as a
+			string or as a tuple strings
 
 		The name ":" is used as a special case to construct a path for
 		the toplevel namespace in a notebook.
 
-		@note: This constructor does not do any checks for the sanity of
-		the path name. Never construct a path directly from user input,
-		but use either L{index.lookup_from_user_input()} or first check the
-		name with L{makeValidPageName()}
+		.. note::
+
+			This constructor does not do any checks for the sanity of
+			the path name. Never construct a path directly from user input,
+			but use either :class:`index.lookup_from_user_input()` or first check the
+			name with :class:`makeValidPageName()`
 		'''
 		if isinstance(name, (list, tuple)):
 			self.name = ':'.join(name)
@@ -212,7 +217,7 @@ class Path(object):
 		return not self.__eq__(other)
 
 	def __add__(self, name):
-		'''C{path + name} is an alias for C{path.child(name)}'''
+		'''``path + name`` is an alias for ``path.child(name)``'''
 		return self.child(name)
 
 	@property
@@ -239,17 +244,17 @@ class Path(object):
 
 	@property
 	def isroot(self):
-		'''C{True} when this Path represents the top level namespace'''
+		'''``True`` when this Path represents the top level namespace'''
 		return self.name == ''
 
 	def relname(self, path): # TODO make this use HRef !
 		'''Get a part of this path relative to a parent path
 
-		@param path: a parent L{Path}
+		:param path: a parent :class:`Path`
 
-		Raises an error if C{path} is not a parent
+		Raises an error if ``path`` is not a parent
 
-		@returns: the part of the path that is relative to C{path}
+		:returns: the part of the path that is relative to ``path``
 		'''
 		if path.name == '': # root path
 			return self.name
@@ -284,31 +289,33 @@ class Path(object):
 	def child(self, basename):
 		'''Get a child Path
 
-		@param basename: the relative name for the child
-		@returns: a new L{Path} object
+		:param basename: the relative name for the child
+		:returns: a new :class:`Path` object
 		'''
 		return Path(self.name + ':' + basename)
 
 	def ischild(self, parent):
 		'''Check whether this path is a child of a given path
-		@param parent: a L{Path} object
-		@returns: True when this path is a (grand-)child of C{parent}
+
+		:param parent: a :class:`Path` object
+		:returns: True when this path is a (grand-)child of ``parent``
 		'''
 		return parent.isroot or self.name.startswith(parent.name + ':')
 
 	def match_namespace(self, namespace):
 		'''Check whether this path is in a specific section of the notebook
-		@param namespace: a L{Path} object
-		@returns: True when this path is equal to C{namespace} or is a (grand-)child of C{namespace}
+
+		:param namespace: a :class:`Path` object
+		:returns: True when this path is equal to ``namespace`` or is a (grand-)child of ``namespace``
 		'''
 		return namespace.isroot or self.name == namespace.name or self.name.startswith(namespace.name + ':')
 
 	def commonparent(self, other):
 		'''Find a common parent for two Paths
 
-		@param other: another L{Path} object
+		:param other: another :class:`Path` object
 
-		@returns: a L{Path} object for the first common parent
+		:returns: a :class:`Path` object for the first common parent
 		'''
 		parent = []
 		parts = self.parts
@@ -335,15 +342,18 @@ class HRef(object):
 
 	@classmethod
 	def new_from_wiki_link(klass, href):
-		'''Constructor that constructs a L{HRef} object for a link as
+		'''Constructor that constructs a :class:`HRef` object for a link as
 		written in zim's wiki syntax.
-		@param href: a string for the link
-		@returns: a L{HRef} object
-		@raises ValueError: when the string could not be parsed
-		(see L{Path.makeValidPageName()})
 
-		@note: This method HRef class assumes the logic of our wiki links
-		for other formats, a separate constructor may be needed
+		:param href: a string for the link
+		:returns: a :class:`HRef` object
+		:raises ValueError: when the string could not be parsed
+			(see :class:`Path.makeValidPageName()`)
+
+		.. note::
+
+			This method HRef class assumes the logic of our wiki links
+			for other formats, a separate constructor may be needed
 		'''
 		if href.startswith(':'):
 			rel = HREF_REL_ABSOLUTE
@@ -400,9 +410,9 @@ class SourceFile(zim.fs.File):
 class Page(Path, SignalEmitter):
 	'''Class to represent a single page in the notebook.
 
-	Page objects inherit from L{Path} but have internal state reflecting
+	Page objects inherit from :class:`Path` but have internal state reflecting
 	content in the notebook. We try to keep Page objects unique
-	by hashing them in L{Notebook.get_page()}, Path object on the other
+	by hashing them in :class:`Notebook.get_page()`, Path object on the other
 	hand are cheap and can have multiple instances for the same logical path.
 	We ask for a path object instead of a name in the constructor to
 	encourage the use of Path objects over passing around page names as
@@ -411,17 +421,17 @@ class Page(Path, SignalEmitter):
 	You can use a Page object instead of a Path anywhere in the APIs where
 	a path is needed as argument etc.
 
-	@ivar name: full page name (inherited from L{Path})
-	@ivar hascontent: C{True} if the page has content
-	@ivar haschildren: C{True} if the page has sub-pages
-	@ivar modified: C{True} if the page was modified since the last
-	store. Will be reset by L{Notebook.store_page()}
-	@ivar readonly: C{True} when the page is read-only
+	:ivar name: full page name (inherited from :class:`Path`)
+	:ivar hascontent: ``True`` if the page has content
+	:ivar haschildren: ``True`` if the page has sub-pages
+	:ivar modified: ``True`` if the page was modified since the last
+		store. Will be reset by :class:`Notebook.store_page()`
+	:ivar readonly: ``True`` when the page is read-only
 
-	@signal: C{storage-changed (changed-on-disk)}: signal emitted on page
-	change. The argument "changed-on-disk" is C{True} when an external
-	edit was detected. For internal edits it is C{False}.
-	@signal: C{modified-changed ()}: emitted when the page is edited
+	:signal: ``storage-changed (changed-on-disk)``: signal emitted on page
+		change. The argument "changed-on-disk" is ``True`` when an external
+		edit was detected. For internal edits it is ``False``.
+	:signal: ``modified-changed ()``: emitted when the page is edited
 	'''
 
 	__signals__ = {
@@ -538,9 +548,9 @@ class Page(Path, SignalEmitter):
 	def check_source_changed(self):
 		'''Checks for changes in the source file and load it if needed
 
-		If the page has a C{textbuffer} and it contains unsaved changes, this
+		If the page has a ``textbuffer`` and it contains unsaved changes, this
 		method will not overwrite them and you'll get an error on next attempt
-		to save. To force overwrite see L{reload_textbuffer()}
+		to save. To force overwrite see :class:`reload_textbuffer()`
 		'''
 		if (
 			self._last_etag
@@ -563,7 +573,7 @@ class Page(Path, SignalEmitter):
 			return False
 
 	def exists(self):
-		'''C{True} when the page has either content or children'''
+		'''``True`` when the page has either content or children'''
 		return self.haschildren or self.hascontent
 
 	def isequal(self, other):
@@ -572,10 +582,11 @@ class Page(Path, SignalEmitter):
 		backends (e.g. case insensitive file system) where the method
 		is supposed to check equality of the resource.
 		Note that this may be the case even when the page objects differ
-		and can have a different name (so L{__cmp__} will not show
-		them to be equal). However default falls back to L{__cmp__}.
-		@returns: C{True} of both page objects point to the same resource
-		@implementation: can be implementated by subclasses
+		and can have a different name (so :class:`__cmp__` will not show
+		them to be equal). However default falls back to :class:`__cmp__`.
+
+		:returns: ``True`` of both page objects point to the same resource
+		:implementation: can be implementated by subclasses
 		'''
 		if self is other or self == other:
 			return True
@@ -587,7 +598,7 @@ class Page(Path, SignalEmitter):
 	def get_parsetree(self):
 		'''Returns the contents of the page
 
-		@returns: a L{zim.formats.ParseTree} object or C{None}
+		:returns: a :class:`zim.formats.ParseTree` object or ``None``
 		'''
 		if self._textbuffer:
 			if self._textbuffer.get_modified() or self._parsetree is None:
@@ -612,12 +623,14 @@ class Page(Path, SignalEmitter):
 	def set_parsetree(self, tree):
 		'''Set the parsetree with content for this page
 
-		@param tree: a L{zim.formats.ParseTree} object with content
-		or C{None} to remove all content from the page
+		:param tree: a :class:`zim.formats.ParseTree` object with content
+			or ``None`` to remove all content from the page
 
-		@note: after setting new content in the Page object it still
-		needs to be stored in the notebook to save this content
-		permanently. See L{Notebook.store_page()}.
+		.. note::
+
+			after setting new content in the Page object it still
+			needs to be stored in the notebook to save this content
+			permanently. See :class:`Notebook.store_page()`.
 		'''
 		if self.readonly:
 			raise PageReadOnlyError(self)
@@ -642,7 +655,7 @@ class Page(Path, SignalEmitter):
 	def append_parsetree(self, tree):
 		'''Append content
 
-		@param tree: a L{zim.formats.ParseTree} object with content
+		:param tree: a :class:`zim.formats.ParseTree` object with content
 		'''
 		if self._textbuffer:
 			self._textbuffer.append_parsetree(tree)
@@ -654,21 +667,21 @@ class Page(Path, SignalEmitter):
 				self.set_parsetree(tree)
 
 	def get_textbuffer(self, constructor=None):
-		'''Get a C{Gtk.TextBuffer} for the page
+		'''Get a ``Gtk.TextBuffer`` for the page
 
 		Will either return an existing buffer or construct a new one and return
-		it. A C{Gtk.TextBuffer} can be shared between multiple C{Gtk.TextView}s.
+		it. A ``Gtk.TextBuffer`` can be shared between multiple ``Gtk.TextView``s.
 		The page object owns the textbuffer to allow multiple views on the same
 		page.
 
-		Once a buffer is set, also methods like L{get_parsetree()} and
-		L{get_parsetree()} will interact with this buffer.
+		Once a buffer is set, also methods like :class:`get_parsetree()` and
+		:class:`get_parsetree()` will interact with this buffer.
 
-		@param constructor: if not buffer was set previously, this function
-		is called to construct the buffer.
+		:param constructor: if not buffer was set previously, this function
+			is called to construct the buffer.
 
-		@returns: a C{TextBuffer} object or C{None} if no buffer is set and
-		no constructor is provided.
+		:returns: a ``TextBuffer`` object or ``None`` if no buffer is set and
+			no constructor is provided.
 		'''
 		if self._textbuffer is None:
 			if constructor is None:
@@ -683,8 +696,8 @@ class Page(Path, SignalEmitter):
 	def reload_textbuffer(self):
 		'''Reload page content from source file and update the textbuffer if set
 
-			NOTE: this method overwrites any changes in the C{textbuffer} or
-			C{parsetree} that have not been saved to file !
+			NOTE: this method overwrites any changes in the ``textbuffer`` or
+			``parsetree`` that have not been saved to file !
 		'''
 		buffer = self._textbuffer
 		self._textbuffer = None
@@ -703,12 +716,12 @@ class Page(Path, SignalEmitter):
 		Convenience method that converts the current parse tree to a
 		particular format first.
 
-		@param format: either a format module or a string
-		that is understood by L{zim.formats.get_format()}.
+		:param format: either a format module or a string
+			that is understood by :class:`zim.formats.get_format()`.
 
-		@param linker: a linker object (see e.g. L{BaseLinker})
+		:param linker: a linker object (see e.g. :class:`BaseLinker`)
 
-		@returns: text as a list of lines or an empty list
+		:returns: text as a list of lines or an empty list
 		'''
 		if isinstance(format, str):
 			format = zim.formats.get_format(format)
@@ -728,11 +741,11 @@ class Page(Path, SignalEmitter):
 		Convenience method that parses text and sets the parse tree
 		accordingly.
 
-		@param format: either a format module or a string
-		that is understood by L{zim.formats.get_format()}.
-		@param text: text as a string or as a list of lines
-		@param append: if C{True} the text is appended instead of
-		replacing current content.
+		:param format: either a format module or a string
+			that is understood by :class:`zim.formats.get_format()`.
+		:param text: text as a string or as a list of lines
+		:param append: if ``True`` the text is appended instead of
+			replacing current content.
 		'''
 		if isinstance(format, str):
 			format = zim.formats.get_format(format)
@@ -746,14 +759,14 @@ class Page(Path, SignalEmitter):
 		'''Generator for links in the page content
 
 		This method gives the raw links from the content, if you want
-		nice L{Link} objects use
-		L{index.list_links()<zim.index.Index.list_links()>} instead.
+		nice :class:`Link` objects use
+		:class:`index.list_links()<zim.index.Index.list_links()>` instead.
 
-		@returns: yields a list of 3-tuples C{(type, href, attrib)}
-		where:
-		  - C{type} is the link type (e.g. "page" or "file")
-		  - C{href} is the link itself
-		  - C{attrib} is a dict with link properties
+		:returns: yields a list of 3-tuples ``(type, href, attrib)``
+			where:
+			  - ``type`` is the link type (e.g. "page" or "file")
+			  - ``href`` is the link itself
+			  - ``attrib`` is a dict with link properties
 		'''
 		# FIXME optimize with a ParseTree.get_links that does not
 		#       use Node
@@ -775,8 +788,8 @@ class Page(Path, SignalEmitter):
 	def get_tags(self):
 		'''Generator for tags in the page content
 
-		@returns: yields an unordered list of unique 2-tuples
-		C{(name, attrib)} for tags in the parsetree.
+		:returns: yields an unordered list of unique 2-tuples
+			``(name, attrib)`` for tags in the parsetree.
 		'''
 		# FIXME optimize with a ParseTree.get_links that does not
 		#       use Node
@@ -811,7 +824,8 @@ class Page(Path, SignalEmitter):
 		'''Returns whether the heading matches the page name.
 		Used to determine whether the page should have its heading
 		auto-changed on rename/move.
-		@returns: C{True} when the heading can be auto-changed.
+
+		:returns: ``True`` when the heading can be auto-changed.
 		'''
 		tree = self.get_parsetree()
 		if tree:

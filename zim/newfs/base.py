@@ -291,9 +291,9 @@ class FilePath(object):
 		return FilePath(self.pathnames + names)
 
 	def get_abspath(self, path):
-		'''Returns a C{FilePath} for C{path} where C{path} can be
+		'''Returns a ``FilePath`` for ``path`` where ``path`` can be
 		either an absolute path or a path relative to this path
-		(either upward or downward - use L{get_childpath()} to only
+		(either upward or downward - use :class:`get_childpath()` to only
 		get child paths).
 		'''
 		try:
@@ -340,9 +340,9 @@ _HOME = FilePath('~')
 
 class FSObjectMeta(type):
 	'''This meta class allows implementing wrappers for file and folder objects
-	with C{isinstance()} checking the wrapped class as well as the wrapper.
+	with ``isinstance()`` checking the wrapped class as well as the wrapper.
 	Main use case is filtered version of folder object where e.g.
-	C{isinstance(folder, LocalFolder)} is used to check whether the underlying
+	``isinstance(folder, LocalFolder)`` is used to check whether the underlying
 	resources exist external to the application.
 	'''
 
@@ -356,7 +356,7 @@ class FSObjectMeta(type):
 
 
 class FSObjectBase(FilePath, metaclass=FSObjectMeta):
-	'''Base class for L{File} and L{Folder}'''
+	'''Base class for :class:`File` and :class:`Folder`'''
 
 	def __init__(self, path, watcher=None):
 		FilePath.__init__(self, path)
@@ -370,8 +370,9 @@ class FSObjectBase(FilePath, metaclass=FSObjectMeta):
 		number etc.). Intended to detect when two files or dirs are the
 		same on case-insensitive filesystems. Does not explicitly check
 		the content is the same.
-		@param other: an other L{FilePath} object
-		@returns: C{True} when the two paths are one and the same file
+
+		:param other: an other :class:`FilePath` object
+		:returns: ``True`` when the two paths are one and the same file
 		'''
 		raise NotImplementedError
 
@@ -420,7 +421,7 @@ class FSObjectBase(FilePath, metaclass=FSObjectMeta):
 class Folder(FSObjectBase):
 	'''Base class for folder implementations. Cannot be intatiated
 	directly; use one of the subclasses instead. Main use outside of
-	this module is to check C{isinstance(object, Folder)}.
+	this module is to check ``isinstance(object, Folder)``.
 	'''
 
 	def __init__(self, path):
@@ -461,28 +462,28 @@ class Folder(FSObjectBase):
 		raise NotImplementedError
 
 	def new_file(self, path, check=None):
-		'''Get a L{File} object for a new file below this folder.
-		Like L{file()} but guarantees the file does not yet exist by
+		'''Get a :class:`File` object for a new file below this folder.
+		Like :class:`file()` but guarantees the file does not yet exist by
 		adding sequential numbers if needed. So the resulting file
 		may have a modified name.
 
-		@param path: the relative file path
-		@param check: a function that can check and reject the choice before it
-		is given back
-		@returns: a L{File} object
+		:param path: the relative file path
+		:param check: a function that can check and reject the choice before it
+			is given back
+		:returns: a :class:`File` object
 		'''
 		return self._new_child(path, self.file, check)
 
 	def new_folder(self, path, check=None):
-		'''Get a L{Folder} object for a new folder below this folder.
-		Like L{folder()} but guarantees the file does not yet exist by
+		'''Get a :class:`Folder` object for a new folder below this folder.
+		Like :class:`folder()` but guarantees the file does not yet exist by
 		adding sequential numbers if needed. So the resulting file
 		may have a modified name.
 
-		@param path: the relative file path
-		@param check: a function that can check and reject the choice before it
-		is given back
-		@returns: a L{Folder} object
+		:param path: the relative file path
+		:param check: a function that can check and reject the choice before it
+			is given back
+		:returns: a :class:`Folder` object
 		'''
 		return self._new_child(path, self.folder, check)
 
@@ -516,7 +517,7 @@ class Folder(FSObjectBase):
 	def remove_children(self):
 		'''Recursively remove everything below this folder .
 
-		B{WARNING:} This is quite powerful and can do a lot of damage
+		**WARNING:** This is quite powerful and can do a lot of damage
 		when executed for the wrong folder, so please make sure to double
 		check the dir is actually what you think it is before calling this.
 		'''
@@ -552,7 +553,7 @@ else:
 		logger.info("Can not import 'xdg.Mime' - falling back to 'mimetypes'")
 		import mimetypes
 
-#: Extensions to determine image mimetypes - used in L{File.isimage()}
+#: Extensions to determine image mimetypes - used in :class:`File.isimage()`
 IMAGE_EXTENSIONS = (
 	# Gleaned from Gdk.get_formats()
 	'bmp', # image/bmp
@@ -604,7 +605,7 @@ def _md5(content):
 class File(FSObjectBase):
 	'''Base class for folder implementations. Cannot be intatiated
 	directly; use one of the subclasses instead. Main use outside of
-	this module is to check C{isinstance(object, Folder)}.
+	this module is to check ``isinstance(object, Folder)``.
 	'''
 
 	def __init__(self, path, endofline=_EOL):
@@ -616,9 +617,10 @@ class File(FSObjectBase):
 	def isimage(self):
 		'''Check if this is an image file. Convenience method that
 		works even when no real mime-type suport is available.
-		If this method returns C{True} it is no guarantee
+		If this method returns ``True`` it is no guarantee
 		this image type is actually supported by Gtk.
-		@returns: C{True} when this is an image file
+
+		:returns: ``True`` when this is an image file
 		'''
 		# Quick shortcut to be able to load images in the gui even if
 		# we have no proper mimetype support
@@ -632,8 +634,9 @@ class File(FSObjectBase):
 	def mimetype(self):
 		'''Get the mime-type for this file.
 		Will use the XDG mimetype system if available, otherwise
-		fallsback to the standard library C{mimetypes}.
-		@returns: the mimetype as a string, e.g. "text/plain"
+		fallsback to the standard library ``mimetypes``.
+
+		:returns: the mimetype as a string, e.g. "text/plain"
 		'''
 		if self._mimetype is None:
 			if xdgmime:

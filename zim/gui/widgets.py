@@ -4,20 +4,20 @@
 '''This module contains a number of custom gtk widgets
 that are used in the zim gui modules.
 
-These include base clases for windows and dialogs like L{Window},
-L{Dialog}, L{FileDialog}, L{QuestionDialog}, L{ErrorDialog}, and
-L{Assistant}. Especially the Dialog class contains a number of
+These include base clases for windows and dialogs like :class:`Window`,
+:class:`Dialog`, :class:`FileDialog`, :class:`QuestionDialog`, :class:`ErrorDialog`, and
+:class:`Assistant`. Especially the Dialog class contains a number of
 convenience methods.
 
-An important class is te L{InputForm} which is used extensively in the
+An important class is te :class:`InputForm` which is used extensively in the
 zim gui to layout forms of input fields etc. And the related specialized
-input widgets like L{InputEntry}, L{FileEntry}, L{FolderEntry},
-L{LinkEntry}, L{PageEntry} and L{NamespaceEntry}. These widgets take
+input widgets like :class:`InputEntry`, :class:`FileEntry`, :class:`FolderEntry`,
+:class:`LinkEntry`, :class:`PageEntry` and :class:`NamespaceEntry`. These widgets take
 care of converting specific object types, proper utf-8 encoding etc.
 
 The remaining classes are various widgets used in the gui:
-L{Button}, L{IconButton}, L{IconChooserButton}, L{MenuButton},
-L{ImageView}, L{SingleClickTreeView} and L{BrowserTreeView}.
+:class:`Button`, :class:`IconButton`, :class:`IconChooserButton`, :class:`MenuButton`,
+:class:`ImageView`, :class:`SingleClickTreeView` and :class:`BrowserTreeView`.
 
 @newfield requires: Requires
 '''
@@ -96,17 +96,19 @@ def encode_markup_text(text):
 	without causing errors. Needed for all places where e.g. a label
 	depends on user input and is formatted with markup to show
 	it as bold text.
-	@param text: label text as string
-	@returns: encoded text
+
+	:param text: label text as string
+	:returns: encoded text
 	'''
 	return text.replace('&', '&amp;').replace('>', '&gt;').replace('<', '&lt;')
 
 
 def decode_markup_text(text):
-	'''Decode text that was encoded with L{encode_markup_text()}
+	'''Decode text that was encoded with :class:`encode_markup_text()`
 	and remove any markup tags.
-	@param text: markup text
-	@returns: normal text
+
+	:param text: markup text
+	:returns: normal text
 	'''
 	text = re.sub('<.*?>', '', text)
 	return text.replace('&gt;', '>').replace('&lt;', '<').replace('&amp;', '&')
@@ -174,8 +176,9 @@ def gtk_window_set_default_icon():
 
 def to_utf8_normalized_casefolded(text):
 	'''Convert text to utf8 normalized and casefolded form.
-	@param text: text string to convert
-	@returns: converted text
+
+	:param text: text string to convert
+	:returns: converted text
 	'''
 	result = GLib.utf8_normalize(text, -1, GLib.NormalizeMode.ALL)
 	result = GLib.utf8_casefold(result, -1)
@@ -184,13 +187,14 @@ def to_utf8_normalized_casefolded(text):
 
 
 def ScrolledWindow(widget, hpolicy=Gtk.PolicyType.AUTOMATIC, vpolicy=Gtk.PolicyType.AUTOMATIC, shadow=Gtk.ShadowType.IN):
-	'''Wrap C{widget} in a C{Gtk.ScrolledWindow} and return the resulting
+	'''Wrap ``widget`` in a ``Gtk.ScrolledWindow`` and return the resulting
 	widget
-	@param widget: any Gtk widget
-	@param hpolicy: the horizontal scrollbar policy
-	@param vpolicy: the vertical scrollbar policy
-	@param shadow: the shadow type
-	@returns: a C{Gtk.ScrolledWindow}
+
+	:param widget: any Gtk widget
+	:param hpolicy: the horizontal scrollbar policy
+	:param vpolicy: the vertical scrollbar policy
+	:param shadow: the shadow type
+	:returns: a ``Gtk.ScrolledWindow``
 	'''
 	window = Gtk.ScrolledWindow()
 	window.set_policy(hpolicy, vpolicy)
@@ -220,14 +224,14 @@ def ScrolledWindow(widget, hpolicy=Gtk.PolicyType.AUTOMATIC, vpolicy=Gtk.PolicyT
 
 
 def ScrolledTextView(text=None, monospace=False, **kwarg):
-	'''Initializes a C{Gtk.TextView} with sane defaults for displaying a
+	'''Initializes a ``Gtk.TextView`` with sane defaults for displaying a
 	piece of multiline text and wraps it in a scrolled window
 
-	@param text: initial text to show in the textview
-	@param monospace: when C{True} the font will be set to monospaced
-	and line wrapping disabled, use this to display log files etc.
-	@param kwarg: arguments passed on to L{ScrolledWindow}
-	@returns: a 2-tuple of the scrolled window and the textview
+	:param text: initial text to show in the textview
+	:param monospace: when ``True`` the font will be set to monospaced
+		and line wrapping disabled, use this to display log files etc.
+	:param kwarg: arguments passed on to :class:`ScrolledWindow`
+	:returns: a 2-tuple of the scrolled window and the textview
 	'''
 	textview = Gtk.TextView()
 	textview.set_editable(False)
@@ -248,10 +252,10 @@ def ScrolledSourceView(text=None, syntax=None):
 	'''If GTKSourceView was successfullly loaded, this generates a SourceView and
 	initializes it. Otherwise ScrolledTextView will be used as a fallback.
 
-	@param text: initial text to show in the view
-	@param syntax: this will try to enable syntax highlighting for the given
-	language. If None, no syntax highlighting will be enabled.
-	@returns: a 2-tuple of a window and a view.
+	:param text: initial text to show in the view
+	:param syntax: this will try to enable syntax highlighting for the given
+		language. If None, no syntax highlighting will be enabled.
+	:returns: a 2-tuple of a window and a view.
 	'''
 	if GtkSource:
 		gsvbuf = GtkSource.Buffer()
@@ -274,13 +278,14 @@ def ScrolledSourceView(text=None, syntax=None):
 		return ScrolledTextView(text=text, monospace=True)
 
 def populate_popup_add_separator(menu, prepend=False):
-	'''Convenience function that adds a C{Gtk.SeparatorMenuItem}
+	'''Convenience function that adds a ``Gtk.SeparatorMenuItem``
 	to a context menu. Checks if the menu already contains items,
 	if it is empty does nothing. Also if the menu already has a
 	seperator in the required place this function does nothing.
 	This helps with building menus more dynamically.
-	@param menu: the C{Gtk.Menu} object for the popup
-	@param prepend: if C{False} append, if C{True} prepend
+
+	:param menu: the ``Gtk.Menu`` object for the popup
+	:param prepend: if ``False`` append, if ``True`` prepend
 	'''
 	items = menu.get_children()
 	if not items:
@@ -296,10 +301,11 @@ def populate_popup_add_separator(menu, prepend=False):
 
 
 def gtk_combobox_set_active_text(combobox, text):
-	'''Opposite of C{Gtk.ComboBox.get_active_text()}. Sets the
+	'''Opposite of ``Gtk.ComboBox.get_active_text()``. Sets the
 	active item based on a string. Will match this string against the
 	list of options and select the correct index.
-	@raises ValueError: when the string is not found in the list.
+
+	:raises ValueError: when the string is not found in the list.
 	'''
 	model = combobox.get_model()
 	for i, value in enumerate(model):
@@ -310,7 +316,7 @@ def gtk_combobox_set_active_text(combobox, text):
 
 
 def gtk_notebook_get_active_page(nb):
-	'''Returns the active child widget or C{None}'''
+	'''Returns the active child widget or ``None``'''
 	num = nb.get_current_page()
 	if num >= 0:
 		return nb.get_nth_page(num)
@@ -341,7 +347,8 @@ def rotate_pixbuf(pixbuf):
 	'''Rotate the pixbuf to match orientation from EXIF info.
 	This is intended for e.g. photos that have EXIF information that
 	shows how the camera was held.
-	@returns: a new version of the pixbuf or the pixbuf itself.
+
+	:returns: a new version of the pixbuf or the pixbuf itself.
 	'''
 	# For newer gtk we could use GdkPixbuf.Pixbuf.apply_embedded_orientation
 
@@ -363,8 +370,9 @@ def rotate_pixbuf(pixbuf):
 def help_text_factory(text):
 	'''Create a label with an "info" icon in front of it. Intended for
 	informational text in dialogs.
-	@param text: the text to display
-	@returns: a C{Gtk.HBox}
+
+	:param text: the text to display
+	:returns: a ``Gtk.HBox``
 	'''
 	hbox = Gtk.HBox(spacing=12)
 
@@ -423,15 +431,15 @@ def input_table_factory(inputs, table=None):
 	'''Function to help with the layout of widgets in tables.
 
 	Only use this function directly if you want a completely custom
-	input form. For standard forms see the L{InputForm} class.
+	input form. For standard forms see the :class:`InputForm` class.
 
-	@param inputs: a list of inputs. These inputs should be either
-	a tuple of a string and one or more widgets, a single widget, a
-	string, or C{None}.
+	:param inputs: a list of inputs. These inputs should be either
+		a tuple of a string and one or more widgets, a single widget, a
+		string, or ``None``.
 
 	For a tuple the lable will be lined out in the first column followed
 	by all the widgets. If a tuple is given and the first item is
-	C{None}, the widget will be lined out in the 2nd column.
+	``None``, the widget will be lined out in the 2nd column.
 
 	A single widget will be lined out in line with the lables (this is
 	meant for e.g. checkboxes that have the label behind the checkbox
@@ -440,13 +448,13 @@ def input_table_factory(inputs, table=None):
 	A string will be put as a label on it's own row. Use of markup is
 	assumed.
 
-	An input that has a C{None} value will result in an empty row in the
+	An input that has a ``None`` value will result in an empty row in the
 	table, separating field above and below.
 
-	@param table: options C{Gtk.Table}, if given inputs will be appended
-	to this table
+	:param table: options ``Gtk.Table``, if given inputs will be appended
+		to this table
 
-	@returns: a C{Gtk.Table}
+	:returns: a ``Gtk.Table``
 	'''
 	if table is None:
 		table = Gtk.Table()
@@ -500,10 +508,10 @@ class IconButton(Gtk.Button):
 	def __init__(self, stock, relief=True, size=Gtk.IconSize.BUTTON):
 		'''Constructor
 
-		@param stock: constant for the stock item
-		@param relief: when C{False} the button has no visible raised
-		edge and will be flat against the background
-		@param size: the icon size
+		:param stock: constant for the stock item
+		:param relief: when ``False`` the button has no visible raised
+			edge and will be flat against the background
+		:param size: the icon size
 		'''
 		GObject.GObject.__init__(self)
 		icon = Gtk.Image.new_from_stock(stock, size)
@@ -523,8 +531,8 @@ class IconChooserButton(Gtk.Button):
 	def __init__(self, stock=Gtk.STOCK_MISSING_IMAGE, pixbuf=None):
 		'''Constructor
 
-		@param stock: initial stock icon (until an icon is selected)
-		@param pixbuf: initial image as pixbuf (until an icon is selected)
+		:param stock: initial stock icon (until an icon is selected)
+		:param pixbuf: initial image as pixbuf (until an icon is selected)
 		'''
 		GObject.GObject.__init__(self)
 		self.file = None
@@ -549,7 +557,8 @@ class IconChooserButton(Gtk.Button):
 
 	def set_file(self, file):
 		'''Set the file to display in the chooser button
-		@param file: a L{File} object
+
+		:param file: a :class:`File` object
 		'''
 		w, h = strip_boolean_result(Gtk.icon_size_lookup(Gtk.IconSize.DIALOG))
 		pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(file.path, w, h)
@@ -558,13 +567,14 @@ class IconChooserButton(Gtk.Button):
 
 	def get_file(self):
 		'''Get the selected icon file
-		@returns: a L{File} object
+
+		:returns: a :class:`File` object
 		'''
 		return self.file
 
 
 class SingleClickTreeView(Gtk.TreeView):
-	'''Sub-class of C{Gtk.TreeView} that implements single-click
+	'''Sub-class of ``Gtk.TreeView`` that implements single-click
 	navigation.
 	'''
 
@@ -632,10 +642,12 @@ class SingleClickTreeView(Gtk.TreeView):
 
 	def get_popup(self):
 		'''Get a popup menu (the context menu) for this widget
-		@returns: a C{Gtk.Menu} or C{None}
-		@emits: populate-popup
-		@implementation: do NOT overload this method, implement
-		L{do_initialize_popup} instead
+
+		:returns: a ``Gtk.Menu`` or ``None``
+
+			:emits: populate-popup
+			:implementation: do NOT overload this method, implement
+				:class:`do_initialize_popup` instead
 		'''
 		menu = Gtk.Menu()
 		self.do_initialize_popup(menu)
@@ -647,12 +659,13 @@ class SingleClickTreeView(Gtk.TreeView):
 
 	def do_initialize_popup(self, menu):
 		'''Initialize the context menu.
-		This method is called before the C{populate-popup} signal and
+		This method is called before the ``populate-popup`` signal and
 		can be used to put any standard items in the menu.
-		@param menu: the C{Gtk.Menu} object for the popup
-		@implementation: can be implemented by sub-classes. Default
-		implementation calls L{populate_popup_expand_collapse()}
-		if the model is a C{Gtk.TreeStore}. Otherwise it does nothing.
+
+		:param menu: the ``Gtk.Menu`` object for the popup
+		:implementation: can be implemented by sub-classes. Default
+			implementation calls :class:`populate_popup_expand_collapse()`
+			if the model is a ``Gtk.TreeStore``. Otherwise it does nothing.
 		'''
 		model = self.get_model()
 		if isinstance(model, Gtk.TreeStore):
@@ -661,9 +674,10 @@ class SingleClickTreeView(Gtk.TreeView):
 	def populate_popup_expand_collapse(self, menu, prepend=False):
 		'''Adds "Expand _all" and "Co_llapse all" items to a context
 		menu. Called automatically by the default implementation of
-		L{do_initialize_popup()}.
-		@param menu: the C{Gtk.Menu} object for the popup
-		@param prepend: if C{False} append, if C{True} prepend
+		:class:`do_initialize_popup()`.
+
+		:param menu: the ``Gtk.Menu`` object for the popup
+		:param prepend: if ``False`` append, if ``True`` prepend
 		'''
 		expand = Gtk.MenuItem.new_with_mnemonic(_("Expand _All")) # T: menu item in context menu
 		expand.connect_object('activate', self.__class__.expand_all, self)
@@ -681,10 +695,11 @@ class SingleClickTreeView(Gtk.TreeView):
 		menu.show_all()
 
 	def get_cell_renderer_number_of_items(self):
-		'''Get a C{Gtk.CellRendererText} that is set up for rendering
+		'''Get a ``Gtk.CellRendererText`` that is set up for rendering
 		the number of items below a tree item.
 		Used to enforce common style between tree views.
-		@returns: a C{Gtk.CellRendererText} object
+
+		:returns: a ``Gtk.CellRendererText`` object
 		'''
 		cr = Gtk.CellRendererText()
 		cr.set_property('xalign', 1.0)
@@ -694,20 +709,20 @@ class SingleClickTreeView(Gtk.TreeView):
 
 
 class BrowserTreeView(SingleClickTreeView):
-	'''Sub-class of C{Gtk.TreeView} that is intended for hierarchic
+	'''Sub-class of ``Gtk.TreeView`` that is intended for hierarchic
 	lists that can be navigated in "browser mode". It inherits the
-	single-click behavior of L{SingleClickTreeView} and adds the
+	single-click behavior of :class:`SingleClickTreeView` and adds the
 	following keybindings:
-		- C{<Left>}: Collapse sub-items
-		- C{<Right>}: Expand sub-items
-		- C{\}: Collapse whole tree
-		- C{*}: Expand whole tree
+		- ``<Left>``: Collapse sub-items
+		- ``<Right>``: Expand sub-items
+		- ``\``: Collapse whole tree
+		- ``*``: Expand whole tree
 	'''
 
 	# TODO some global option to restore to double click navigation ?
 
 	def __init__(self, model=None):
-		'''Constructor, all arguments are passed to C{Gtk.TreeView}'''
+		'''Constructor, all arguments are passed to ``Gtk.TreeView``'''
 		GObject.GObject.__init__(self)
 		self.get_selection().set_mode(Gtk.SelectionMode.BROWSE)
 		if model:
@@ -776,10 +791,10 @@ class MenuButton(Gtk.HBox):
 	def __init__(self, label, menu, status_bar_style=False):
 		'''Constructor
 
-		@param label: the label to show on the button (string or C{Gtk.Label})
-		@param menu: the menu to show on button click
-		@param status_bar_style: when C{True} all padding and border
-		is removed so the button fits in the status bar
+		:param label: the label to show on the button (string or ``Gtk.Label``)
+		:param menu: the menu to show on button click
+		:param status_bar_style: when ``True`` all padding and border
+			is removed so the button fits in the status bar
 		'''
 		GObject.GObject.__init__(self)
 		if isinstance(label, str):
@@ -817,10 +832,11 @@ class MenuButton(Gtk.HBox):
 
 	def popup_menu(self, event=None):
 		'''This method actually pops up the menu.
-		@param event: the gdk event that triggered this action
 
-		@implementation: can be overloaded, e.g. to populate the menu
-		dynamically.
+		:param event: the gdk event that triggered this action
+
+		:implementation: can be overloaded, e.g. to populate the menu
+			dynamically.
 		'''
 		if not self.get_property('sensitive'):
 			return
@@ -884,15 +900,15 @@ class InputForm(Gtk.Table):
 	transparent when getting and setting values from the form into
 	the config or preferences.
 
-	@ivar notebook: the L{Notebook} object, used e.g. for completion in
-	L{PageEntry} inputs
-	@ivar widgets: a dict with the input widgets by name. Use this
-	to access the widgets directly (e.g. to wire more signals).
+	:ivar notebook: the :class:`Notebook` object, used e.g. for completion in
+		:class:`PageEntry` inputs
+	:ivar widgets: a dict with the input widgets by name. Use this
+		to access the widgets directly (e.g. to wire more signals).
 
-	@signal: C{last-activated ()}: this signal is emitted when the last
-	widget in the form is activated, can be used to trigger a default
-	response in a dialog.
-	@signal: C{input-valid-changes ()}: valid state the form changed
+	:signal: ``last-activated ()``: this signal is emitted when the last
+		widget in the form is activated, can be used to trigger a default
+		response in a dialog.
+	:signal: ``input-valid-changes ()``: valid state the form changed
 	'''
 
 	# define signals we want to use - (closure type, return type and arg types)
@@ -916,13 +932,13 @@ class InputForm(Gtk.Table):
 	def __init__(self, inputs=None, values=None, depends=None, notebook=None):
 		'''Constructor.
 
-		@param inputs: list with input definitions, see L{add_inputs()}
-		for details
-		@param values: initial values for the inputs
-		@param depends: dict with dependencies between widgets, see
-		L{depends()} for details
-		@param notebook: a L{Notebook} object, e.g. for completion in
-		L{PageEntry} inputs
+		:param inputs: list with input definitions, see :class:`add_inputs()`
+			for details
+		:param values: initial values for the inputs
+		:param depends: dict with dependencies between widgets, see
+			:class:`depends()` for details
+		:param notebook: a :class:`Notebook` object, e.g. for completion in
+			:class:`PageEntry` inputs
 		'''
 		GObject.GObject.__init__(self)
 		self.set_border_width(5)
@@ -951,7 +967,8 @@ class InputForm(Gtk.Table):
 		'''Mark a widget as the default activation widget.
 		This will cause the "last-activated" signal to be triggered
 		for this widget even if it is not the last widget in the form.
-		@param name: the name or C{None}
+
+		:param name: the name or ``None``
 		'''
 		if name is None:
 			self._default_activate = None
@@ -970,28 +987,28 @@ class InputForm(Gtk.Table):
 			- optional extra argument
 
 		The following input types are supported:
-			- "C{bool}" - C{True} or C{False} (checkbox)
-			- "C{int}" - integer (spin button)
-			- "C{string}" - text entry (L{InputEntry})
-			- "C{password}" - text entry with chars hidden (L{InputEntry})
-			- "C{page}" - a page L{Path} (L{PageEntry})
-			- "C{namespace}" - a namespace L{Path} (L{NamespaceEntry})
-			- "C{link}" - a link as string (L{LinkEntry})
-			- "C{dir}" - a L{Dir} object (L{FolderEntry})
-			- "C{file}" - a L{File} object for an existing file (L{FileEntry})
-			- "C{image}" - like 'file' but specific for images
-			- "C{output-file}" - like 'file' but for new or existing file
-			- "C{option}" - single option in a group (radio checkboxes)
-			- "C{choice}" - list with choices (combo box)
-			- "C{color}" - color string
+			- "``bool``" - ``True`` or ``False`` (checkbox)
+			- "``int``" - integer (spin button)
+			- "``string``" - text entry (:class:`InputEntry`)
+			- "``password``" - text entry with chars hidden (:class:`InputEntry`)
+			- "``page``" - a page :class:`Path` (:class:`PageEntry`)
+			- "``namespace``" - a namespace :class:`Path` (:class:`NamespaceEntry`)
+			- "``link``" - a link as string (:class:`LinkEntry`)
+			- "``dir``" - a :class:`Dir` object (:class:`FolderEntry`)
+			- "``file``" - a :class:`File` object for an existing file (:class:`FileEntry`)
+			- "``image``" - like 'file' but specific for images
+			- "``output-file``" - like 'file' but for new or existing file
+			- "``option``" - single option in a group (radio checkboxes)
+			- "``choice``" - list with choices (combo box)
+			- "``color``" - color string
 
-		The "C{int}" and "C{choice}" options need an extra argument to specify
-		the allowed inputs. For "C{int}" this should be a 2-tuple with the
+		The "``int``" and "``choice``" options need an extra argument to specify
+		the allowed inputs. For "``int``" this should be a 2-tuple with the
 		minimum and maximum values. For 'choice' it should be a tuple
 		or list with the items to choose from. If the items in the list are
 		2-tuples they are considered pairs of a key and a user readable label.
 
-		The input type "C{option}"' can be used to have groups of checkboxes.
+		The input type "``option``"' can be used to have groups of checkboxes.
 		In this case the name should exist of two parts separated by a
 		':', first part is the group name and the second part the key for
 		this option. This way multiple options of the same group can be
@@ -1002,14 +1019,14 @@ class InputForm(Gtk.Table):
 		form will have a key "select" which has either a value "all" or
 		a value "page".
 
-		The "C{page}", "C{namespace}" and "C{link}" types support an optional
-		extra argument which gives the reference L{Path} for resolving
+		The "``page``", "``namespace``" and "``link``" types support an optional
+		extra argument which gives the reference :class:`Path` for resolving
 		relative paths. This also requires the notebook to be set.
 
 		A string in the input list will result in a label in the form,
 		using markup.
 
-		A C{None} or C{''} value in the input list will result in
+		A ``None`` or ``''`` value in the input list will result in
 		additional row spacing in the form.
 		'''
 
@@ -1159,8 +1176,8 @@ class InputForm(Gtk.Table):
 		text input that is only sensitive when a specific radio box
 		is selected.
 
-		@param subject: the name of the subject widget
-		@param object: the name of the object widget
+		:param subject: the name of the subject widget
+		:param object: the name of the object widget
 		'''
 		subject = self.widgets[subject]
 		object = self.widgets[object]
@@ -1168,7 +1185,8 @@ class InputForm(Gtk.Table):
 
 	def get_input_valid(self):
 		'''Get combined state of all sensitive widgets in the form
-		@returns: C{True} if all sensitive widgets have a valid input
+
+		:returns: ``True`` if all sensitive widgets have a valid input
 		'''
 		return self._input_valid
 
@@ -1339,10 +1357,11 @@ class InputForm(Gtk.Table):
 
 	def update(self, map):
 		'''Update the value for any existing widget to the value
-		given in C{map}. Unkown keys in C{map} are ignored and
-		widgets that do not have a value in C{map} keep their
+		given in ``map``. Unkown keys in ``map`` are ignored and
+		widgets that do not have a value in ``map`` keep their
 		original value.
-		@param map: a dict with new values for the widgets
+
+		:param map: a dict with new values for the widgets
 		'''
 		for key, value in list(map.items()):
 			if key in self._keys:
@@ -1350,7 +1369,8 @@ class InputForm(Gtk.Table):
 
 	def copy(self):
 		'''Copy the values of all widgets in the form into a normal dict
-		@returns: a dict with widget values
+
+		:returns: a dict with widget values
 		'''
 		values = {}
 		for key in self._keys:
@@ -1361,11 +1381,11 @@ class InputForm(Gtk.Table):
 
 
 class InputEntry(Gtk.Entry):
-	'''Sub-class of C{Gtk.Entry} with support for highlighting
+	'''Sub-class of ``Gtk.Entry`` with support for highlighting
 	mal-formatted inputs and handles UTF-8 decoding. This class must be
-	used as a generic replacement for C{Gtk.Entry} to avoid UTF-8
+	used as a generic replacement for ``Gtk.Entry`` to avoid UTF-8
 	issues. (This is enforced by the zim test suite which will throw an
-	error for any module using C{Gtk.Entry} directly.)
+	error for any module using ``Gtk.Entry`` directly.)
 
 	The widget has a "valid" state which determines if the content is
 	well formed or not. When the state is invalid the widget will have
@@ -1373,11 +1393,11 @@ class InputEntry(Gtk.Entry):
 	handlers to show the user what widget to modify.
 
 	The valid state can be either done manually by calling
-	L{set_input_valid()}, or it can be done automatically by providing
+	:class:`set_input_valid()`, or it can be done automatically by providing
 	a function to check what content is valid. Using a function is
 	recommended because it gives more immediate feedback to the user.
 
-	@signal: C{input-valid-changes ()}: valid state of the widget changed
+	:signal: ``input-valid-changes ()``: valid state of the widget changed
 	'''
 
 	# define signals we want to use - (closure type, return type and arg types)
@@ -1390,28 +1410,28 @@ class InputEntry(Gtk.Entry):
 	def __init__(self, check_func=None, allow_empty=True, show_empty_invalid=False, placeholder_text=None, allow_whitespace=False):
 		'''Constructor
 
-		@param check_func: a function to check input is valid.
-		This function will be called with the current text as argument
-		and should return C{True} if this text is a valid input.
+		:param check_func: a function to check input is valid.
+			This function will be called with the current text as argument
+			and should return ``True`` if this text is a valid input.
 
-		@param allow_empty: if C{False} an empty string is considered
-		invalid input
+		:param allow_empty: if ``False`` an empty string is considered
+			invalid input
 
-		@param show_empty_invalid: if C{True} a red background is also
-		shown when the entry is still empty, if C{False} the background
-		is kept normal even if the empty input is invalid. Without this
-		option a whole input form would start in red color, which looks
-		bad.
+		:param show_empty_invalid: if ``True`` a red background is also
+			shown when the entry is still empty, if ``False`` the background
+			is kept normal even if the empty input is invalid. Without this
+			option a whole input form would start in red color, which looks
+			bad.
 
-		@param placeholder_text: text to show in the widget when it is
-		empty and does not have focus, text will be shown in a
-		color different from normal text and disappear when the user
-		selects the widget. Used to set hints on the usage of the
-		widget.
+		:param placeholder_text: text to show in the widget when it is
+			empty and does not have focus, text will be shown in a
+			color different from normal text and disappear when the user
+			selects the widget. Used to set hints on the usage of the
+			widget.
 
-		@param allow_whitespace: if C{True} allow trailing whitespace
-		or even string containing only whitespace. If C{False} all
-		whitespace is stripped.
+		:param allow_whitespace: if ``True`` allow trailing whitespace
+			or even string containing only whitespace. If ``False`` all
+			whitespace is stripped.
 		'''
 		GObject.GObject.__init__(self)
 		self._normal_color = None
@@ -1435,7 +1455,8 @@ class InputEntry(Gtk.Entry):
 
 	def set_check_func(self, check_func):
 		'''Set a function to check whether input is valid or not
-		@param check_func: the function
+
+		:param check_func: the function
 		'''
 		self.check_func = check_func
 		self.emit('changed')
@@ -1443,15 +1464,17 @@ class InputEntry(Gtk.Entry):
 	def set_icon(self, icon, cb_func, tooltip=None):
 		'''Add an icon in the entry widget behind the text
 
-		@param icon: the icon as stock ID
-		@param cb_func: the callback when the icon is clicked; the
-		callback will be called without any arguments
-		@param tooltip: tooltip text for the icon
+		:param icon: the icon as stock ID
+		:param cb_func: the callback when the icon is clicked; the
+			callback will be called without any arguments
+		:param tooltip: tooltip text for the icon
 
-		@returns: C{True} if successfull, C{False} if not supported
-		by Gtk version
+		:returns: ``True`` if successfull, ``False`` if not supported
+			by Gtk version
 
-		@todo: add argument to set tooltip on the icon
+		.. todo::
+
+			add argument to set tooltip on the icon
 		'''
 		self.set_property('secondary-icon-stock', icon)
 		if tooltip:
@@ -1467,13 +1490,13 @@ class InputEntry(Gtk.Entry):
 	def set_icon_to_clear(self):
 		'''Adds a "clear" icon in the entry widget
 
-		This method calls L{set_icon()} with the right defaults for
+		This method calls :class:`set_icon()` with the right defaults for
 		a stock "Clear" icon. In addition it makes the icon insensitive
 		when there is no text in the entry. Clicking the icon will
 		clear the entry.
 
-		@returns: C{True} if successfull, C{False} if not supported
-		by Gtk version
+		:returns: ``True`` if successfull, ``False`` if not supported
+			by Gtk version
 		'''
 		self.set_icon(Gtk.STOCK_CLEAR, self.clear, _('Clear'))
 			# T: tooltip for the inline icon to clear a text entry widget
@@ -1488,9 +1511,10 @@ class InputEntry(Gtk.Entry):
 		return True
 
 	def get_text(self):
-		'''Get the text from the widget. Like C{Gtk.Entry.get_text()}
+		'''Get the text from the widget. Like ``Gtk.Entry.get_text()``
 		but with UTF-8 decoding and whitespace stripped.
-		@returns: string
+
+		:returns: string
 		'''
 		text = Gtk.Entry.get_text(self)
 		if not text:
@@ -1502,15 +1526,17 @@ class InputEntry(Gtk.Entry):
 
 	def get_input_valid(self):
 		'''Get the valid state.
-		@returns: C{True} if the input is valid
+
+		:returns: ``True`` if the input is valid
 		'''
 		return self._input_valid
 
 	def set_input_valid(self, valid, show_empty_invalid=None):
 		'''Set input valid or invalid state
-		@param valid: C{True} or C{False}
-		@param show_empty_invalid: if not C{None} change the
-		C{show_empty_invalid} attribute
+
+		:param valid: ``True`` or ``False``
+		:param show_empty_invalid: if not ``None`` change the
+			``show_empty_invalid`` attribute
 		'''
 		if show_empty_invalid is not None:
 			self.show_empty_invalid = show_empty_invalid
@@ -1545,20 +1571,22 @@ class InputEntry(Gtk.Entry):
 
 
 class FSPathEntry(InputEntry):
-	'''Base class for L{FileEntry} and L{FolderEntry}, handles input of
+	'''Base class for :class:`FileEntry` and :class:`FolderEntry`, handles input of
 	file system paths.
 
 	File paths can either be absolute paths or relative to the notebook.
 	When a notebook and optionally a page path are set,
-	L{Notebook.resolve_file()<zim.notebook.Notebook.resolve_file()>} is
+	:class:`Notebook.resolve_file()<zim.notebook.Notebook.resolve_file()>` is
 	used to make file paths relative.
 
 	This class should not be instantiated directly, use either
-	L{FileEntry} or L{FolderEntry}.
+	:class:`FileEntry` or :class:`FolderEntry`.
 
-	@todo: add completion for file paths - make sure both absolute
-	and relative paths are supported + re-use this completion in
-	L{LinkEntry}
+	.. todo::
+
+		add completion for file paths - make sure both absolute
+		and relative paths are supported + re-use this completion in
+		:class:`LinkEntry`
 	'''
 
 	def __init__(self):
@@ -1571,16 +1599,17 @@ class FSPathEntry(InputEntry):
 	def set_use_relative_paths(self, notebook, path=None):
 		'''Set the notebook and path to be used for relative paths.
 
-		@param notebook: the L{Notebook} object for resolving paths
-		or C{None} to disable relative paths.
-		@param path: a L{Path} object used for resolving relative links
+		:param notebook: the :class:`Notebook` object for resolving paths
+			or ``None`` to disable relative paths.
+		:param path: a :class:`Path` object used for resolving relative links
 		'''
 		self.notebook = notebook
 		self.notebookpath = path
 
 	def set_path(self, path):
 		'''Set the file path for this entry
-		@param path: a L{File} or L{Dir} object
+
+		:param path: a :class:`File` or :class:`Dir` object
 		'''
 		assert isinstance(path, (File, Dir))
 		if self.notebook:
@@ -1596,7 +1625,8 @@ class FSPathEntry(InputEntry):
 
 	def get_path(self):
 		'''Get the file path for this entry
-		@returns: a L{File} or L{Dir} object (depending on sub-class)
+
+		:returns: a :class:`File` or :class:`Dir` object (depending on sub-class)
 		'''
 		text = self.get_text()
 		if text:
@@ -1651,10 +1681,10 @@ class FileEntry(FSPathEntry):
 	def __init__(self, file=None, new=False):
 		'''Constructor.
 
-		@param file: a L{File} object
-		@param new: if C{True} the intention is a new file
-		(e.g. output file), or to overwrite an existing file.
-		If C{False} only existing files can be selected.
+		:param file: a :class:`File` object
+		:param new: if ``True`` the intention is a new file
+			(e.g. output file), or to overwrite an existing file.
+			If ``False`` only existing files can be selected.
 		'''
 		FSPathEntry.__init__(self)
 		self.file_type_hint = 'file'
@@ -1678,7 +1708,7 @@ class FolderEntry(FSPathEntry):
 	def __init__(self, folder=None):
 		'''Constructor
 
-		@param folder: a L{Dir} object
+		:param folder: a :class:`Dir` object
 		'''
 		FSPathEntry.__init__(self)
 		self.file_type_hint = 'dir'
@@ -1731,15 +1761,17 @@ class PageEntry(InputEntry):
 	def __init__(self, notebook, path=None, subpaths_only=False, existing_only=False):
 		'''Constructor
 
-		@param notebook: the L{Notebook} object for resolving paths and
-		completing existing pages, but allowed to be C{None} e.g. for testing
-		@param path: a L{Path} object used for resolving relative links
-		@param subpaths_only: if C{True} the input will always be
-		considered a child 'C{path}'
-		@param existing_only: if C{True} only allow to select existing pages
+		:param notebook: the :class:`Notebook` object for resolving paths and
+			completing existing pages, but allowed to be ``None`` e.g. for testing
+		:param path: a :class:`Path` object used for resolving relative links
+		:param subpaths_only: if ``True`` the input will always be
+			considered a child '``path``'
+		:param existing_only: if ``True`` only allow to select existing pages
 
-		@note: 'C{subpaths_only}' and 'C{existing_only}' can also be set
-		using the like named attributes
+		.. note::
+
+			'``subpaths_only``' and '``existing_only``' can also be set
+			using the like named attributes
 		'''
 		self.notebook = notebook
 		self.notebookpath = path
@@ -1764,18 +1796,18 @@ class PageEntry(InputEntry):
 	def set_use_relative_paths(self, notebook, path=None):
 		'''Set the notebook and path to be used for relative paths.
 
-		@param notebook: the L{Notebook} object for resolving paths and
-		completing existing pages, or C{None} to disable relative paths.
-		@param path: a L{Path} object used for resolving relative links
+		:param notebook: the :class:`Notebook` object for resolving paths and
+			completing existing pages, or ``None`` to disable relative paths.
+		:param path: a :class:`Path` object used for resolving relative links
 		'''
 		self.notebook = notebook
 		self.notebookpath = path
 
 	def set_path(self, path):
 		'''Set the path to be shown in the entry.
-		If you have the link as a string, use L{set_text()} instead
+		If you have the link as a string, use :class:`set_text()` instead
 
-		@param path: L{Path} object
+		:param path: :class:`Path` object
 		'''
 		if self.subpaths_only:
 			assert path.ischild(self.notebookpath)
@@ -1787,11 +1819,11 @@ class PageEntry(InputEntry):
 
 	def get_path(self):
 		'''Get the path shown in the widget.
-		If C{None} is returned the widget is flagged as invalid. So e.g. in a
+		If ``None`` is returned the widget is flagged as invalid. So e.g. in a
 		dialog you can get a path and refuse to close a dialog if the path
 		is None and the user will automatically be alerted to the missing input.
 
-		@returns: a L{Path} object or C{None} is no valid path was entered
+		:returns: a :class:`Path` object or ``None`` is no valid path was entered
 		'''
 		name = self.get_text().strip()
 		if not name or name == ':':
@@ -1965,7 +1997,7 @@ class PageEntry(InputEntry):
 class NamespaceEntry(PageEntry):
 	'''Widget to select a zim page path as a namespace
 
-	Use this instead of L{PageEntry} when you want to allow selecting a
+	Use this instead of :class:`PageEntry` when you want to allow selecting a
 	namespace. E.g. this will be allowed to select ":" or empty string
 	for the root namespace, which is not allowed in PageEntry.
 	'''
@@ -1983,9 +2015,9 @@ class LinkEntry(PageEntry, FileEntry):
 	def __init__(self, notebook, path=None):
 		'''Constructor
 
-		@param notebook: the L{Notebook} object for resolving paths and
-		completing existing pages, but allowed to be C{None} e.g. for testing
-		@param path: a L{Path} object used for resolving relative links
+		:param notebook: the :class:`Notebook` object for resolving paths and
+			completing existing pages, but allowed to be ``None`` e.g. for testing
+		:param path: a :class:`Path` object used for resolving relative links
 		'''
 		PageEntry.__init__(self, notebook, path)
 		self.action = Gtk.FileChooserAction.OPEN
@@ -2306,7 +2338,7 @@ class VMinimizedTabs(Gtk.VBox, MinimizedTabs):
 
 class WindowSidePaneWidget(ConnectorMixin):
 	'''Base class for widgets that want to integrate nicely in the
-	L{WindowSidePane}
+	:class:`WindowSidePane`
 	'''
 
 	def get_title_label(self):
@@ -2329,8 +2361,9 @@ class WindowSidePaneWidget(ConnectorMixin):
 
 	def set_embeded_closebutton(self, button):
 		'''Embed a button in the widget to close the side pane
-		@param button: a button widget or C{None} to unset
-		@returns: C{True} if supported and successfull
+
+		:param button: a button widget or ``None`` to unset
+		:returns: ``True`` if supported and successfull
 		'''
 		return False
 
@@ -2376,7 +2409,7 @@ class ConfigDefinitionPaneState(ConfigDefinitionByClass):
 
 
 class Window(Gtk.Window):
-	'''Sub-class of C{Gtk.Window} that will take care of hooking
+	'''Sub-class of ``Gtk.Window`` that will take care of hooking
 	the window into the application framework and adds entry points
 	so plugins can add side panes etc. It will divide the window
 	horizontally in 3 panes, and the center pane again vertically in 3.
@@ -2403,8 +2436,8 @@ class Window(Gtk.Window):
 
 	All windows in zim must inherit from this class.
 
-	@signal: C{pane-state-changed (pane, visible, active)}: emitted when
-	visibility or active tab changed for a specific pane
+	:signal: ``pane-state-changed (pane, visible, active)``: emitted when
+		visibility or active tab changed for a specific pane
 	'''
 
 	# define signals we want to use - (closure type, return type and arg types)
@@ -2496,15 +2529,17 @@ class Window(Gtk.Window):
 
 	def add(self, widget):
 		'''Add the main widget.
-		@param widget: gtk widget to add in the window
+
+		:param widget: gtk widget to add in the window
 		'''
 		self._zim_window_bottom_paned.pack1(widget, resize=True)
 
 	def add_bar(self, widget, position):
 		'''Add a bar to top or bottom of the window. Used e.g. to add
 		menu-, tool- & status-bars.
-		@param widget: gtk widget for the bar
-		@param position: position of the bar in the window C{TOP}, C{BOTTOM}, C{LEFT} or C{RIGHT}
+
+		:param widget: gtk widget for the bar
+		:param position: position of the bar in the window ``TOP``, ``BOTTOM``, ``LEFT`` or ``RIGHT``
 		'''
 		if position in (TOP, BOTTOM):
 			self._zim_window_main.pack_start(widget, False, True, 0)
@@ -2522,7 +2557,8 @@ class Window(Gtk.Window):
 	def add_center_bar(self, widget):
 		'''Add a widget in the central part of the window above the
 		page.
-		@param widget: the gtk widget to show in the tab
+
+		:param widget: the gtk widget to show in the tab
 		'''
 		self._zim_window_central_vbox.pack_start(widget, False, True, 0)
 		self._zim_window_central_vbox.reorder_child(widget, 0)
@@ -2537,10 +2573,11 @@ class Window(Gtk.Window):
 
 	def add_tab(self, key, widget, pane):
 		'''Add a tab in one of the panes.
-		@param key: string that is used to identify this tab in the window state
-		@param widget: the gtk widget to show in the tab
-		@param pane: can be one of: C{LEFT_PANE}, C{RIGHT_PANE},
-		C{TOP_PANE} or C{BOTTOM_PANE}.
+
+		:param key: string that is used to identify this tab in the window state
+		:param widget: the gtk widget to show in the tab
+		:param pane: can be one of: ``LEFT_PANE``, ``RIGHT_PANE``,
+			``TOP_PANE`` or ``BOTTOM_PANE``.
 		'''
 		pane_key = pane
 		paned, pane, mini = self._zim_window_sidepanes[pane_key]
@@ -2549,7 +2586,8 @@ class Window(Gtk.Window):
 
 	def remove(self, widget):
 		'''Remove widget from any pane
-		@param widget: the widget to remove
+
+		:param widget: the widget to remove
 		'''
 		if self._last_sidepane_focus == widget:
 			self._last_sidepane_focus = None
@@ -2605,10 +2643,11 @@ class Window(Gtk.Window):
 
 	def get_pane_state(self, pane):
 		'''Returns the state of a side pane.
-		@param pane: can be one of: C{LEFT_PANE}, C{RIGHT_PANE},
-		C{TOP_PANE} or C{BOTTOM_PANE}.
-		@returns: a 3-tuple of visibility (boolean),
-		pane size (integer), and active tab (string).
+
+		:param pane: can be one of: ``LEFT_PANE``, ``RIGHT_PANE``,
+			``TOP_PANE`` or ``BOTTOM_PANE``.
+		:returns: a 3-tuple of visibility (boolean),
+			pane size (integer), and active tab (string).
 		'''
 		# FIXME revert calculate size instead of position for left
 		# and bottom widget
@@ -2626,13 +2665,14 @@ class Window(Gtk.Window):
 
 	def set_pane_state(self, pane, visible, size=None, activetab=None, grab_focus=False):
 		'''Set the state of a side pane.
-		@param pane: can be one of: C{LEFT_PANE}, C{RIGHT_PANE},
-		C{TOP_PANE} or C{BOTTOM_PANE}.
-		@param visible: C{True} to show the pane, C{False} to hide
-		@param size: size of the side pane
-		@param activetab: key of the active tab in the notebook or None
-		(fails silently if tab is not found)
-		@param grab_focus: if C{True} active tab will grab focus
+
+		:param pane: can be one of: ``LEFT_PANE``, ``RIGHT_PANE``,
+			``TOP_PANE`` or ``BOTTOM_PANE``.
+		:param visible: ``True`` to show the pane, ``False`` to hide
+		:param size: size of the side pane
+		:param activetab: key of the active tab in the notebook or None
+			(fails silently if tab is not found)
+		:param grab_focus: if ``True`` active tab will grab focus
 		'''
 		# FIXME get parent widget size and subtract to get position
 		# for left and bottom notebook
@@ -2685,8 +2725,9 @@ class Window(Gtk.Window):
 		Will remember the panes that were shown last time
 		this method was called but defaults to showing
 		all panes.
-		@param show: if C{True} show panes, if C{False}
-		hide them, if C{None} toggle current state
+
+		:param show: if ``True`` show panes, if ``False``
+			hide them, if ``None`` toggle current state
 		'''
 		# Note that our uistate['toggle_panes'] does not
 		# reflect what panes are visible when e.g. restarting zim
@@ -2780,29 +2821,29 @@ class Window(Gtk.Window):
 
 
 class Dialog(Gtk.Dialog, ConnectorMixin):
-	'''Sub-class of C{Gtk.Dialog} with a number of convenience methods
+	'''Sub-class of ``Gtk.Dialog`` with a number of convenience methods
 	to create dialogs. Also takes care of registering dialogs with the
 	main interface object, so plugins can hook into them. Intended as
-	base class for all input dialogs in zim. (See L{ErrorDialog},
-	L{QuestionDialog}, L{MessageDialog} and L{FileDialog} for other
+	base class for all input dialogs in zim. (See :class:`ErrorDialog`,
+	:class:`QuestionDialog`, :class:`MessageDialog` and :class:`FileDialog` for other
 	dialog types).
 
 	A minimal sub-class should implement a constructor which calls
-	L{Dialog.__init__()} and L{Dialog.add_form()} to defined the dialog,
-	and implements C{do_response_ok()} to handle the result.
+	:class:`Dialog.__init__()` and :class:`Dialog.add_form()` to defined the dialog,
+	and implements ``do_response_ok()`` to handle the result.
 
-	The C{Dialog} class takes care of calling
-	L{ConnecterMixin.disconnect_all()} when it is destroyed. So
-	sub-classes can use the L{ConnectorMixin} methods and all callbacks
+	The ``Dialog`` class takes care of calling
+	:class:`ConnecterMixin.disconnect_all()` when it is destroyed. So
+	sub-classes can use the :class:`ConnectorMixin` methods and all callbacks
 	will be cleaned up after the dialog.
 
-	@ivar vbox: C{Gtk.VBox} for main widgets of the dialog
-	@ivar form: L{InputForm} added by C{add_form()}
-	@ivar uistate: L{ConfigDict} to store state of the dialog, persistent
-	per notebook. The size and position of the dialog are stored as
-	automatically in this dict already.
-	@ivar result: result to be returned by L{run()}
-	@ivar destroyed: when C{True} the dialog is already destroyed
+	:ivar vbox: ``Gtk.VBox`` for main widgets of the dialog
+	:ivar form: :class:`InputForm` added by ``add_form()``
+	:ivar uistate: :class:`ConfigDict` to store state of the dialog, persistent
+		per notebook. The size and position of the dialog are stored as
+		automatically in this dict already.
+	:ivar result: result to be returned by :class:`run()`
+	:ivar destroyed: when ``True`` the dialog is already destroyed
 	'''
 
 	@classmethod
@@ -2818,12 +2859,14 @@ class Dialog(Gtk.Dialog, ConnectorMixin):
 			dialog = MyDialog.unique(parent, somearg)
 			dialog.present()
 
-		@param handler: the object constructing the dialog
-		@param args: arguments to pass to the dialog constructor
-		@param opts: arguments to pass to the dialog constructor
+		:param handler: the object constructing the dialog
+		:param args: arguments to pass to the dialog constructor
+		:param opts: arguments to pass to the dialog constructor
 
-		@note: when a dialog already existed the arguments provided to
-		this constructor are not used
+		.. note::
+
+			when a dialog already existed the arguments provided to
+			this constructor are not used
 		'''
 		attr = '_unique_dialog_%s' % klass.__name__
 		dialog = None
@@ -2848,19 +2891,19 @@ class Dialog(Gtk.Dialog, ConnectorMixin):
 		):
 		'''Constructor.
 
-		@param parent: either a parent gtk widget or C{None}. Only used to
-		set the dialog on top of the right parent window
-		@param title: the dialog title
-		@param buttons: a constant controlling what kind of buttons the
-		dialog will have. One of:
-			- C{None} or C{Gtk.ButtonsType.NONE}: for dialogs taking care
-			  of constructing the buttons themselves
-			- C{Gtk.ButtonsType.OK_CANCEL}: Render Ok and Cancel
-			- C{Gtk.ButtonsType.CLOSE}: Only set a Close button
-		@param button: a label to use instead of the default 'Ok' button
-		@param help_text: set the help text, see L{add_help_text()}
-		@param help: pagename for a manual page, see L{set_help()}
-		@param defaultwindowsize: default window size in pixels
+		:param parent: either a parent gtk widget or ``None``. Only used to
+			set the dialog on top of the right parent window
+		:param title: the dialog title
+		:param buttons: a constant controlling what kind of buttons the
+			dialog will have. One of:
+				- ``None`` or ``Gtk.ButtonsType.NONE``: for dialogs taking care
+				  of constructing the buttons themselves
+				- ``Gtk.ButtonsType.OK_CANCEL``: Render Ok and Cancel
+				- ``Gtk.ButtonsType.CLOSE``: Only set a Close button
+		:param button: a label to use instead of the default 'Ok' button
+		:param help_text: set the help text, see :class:`add_help_text()`
+		:param help: pagename for a manual page, see :class:`set_help()`
+		:param defaultwindowsize: default window size in pixels
 		'''
 		window = get_window(parent)
 		GObject.GObject.__init__(self)
@@ -2934,9 +2977,10 @@ class Dialog(Gtk.Dialog, ConnectorMixin):
 		'''Add a button to the action area at the bottom of the dialog.
 		Packs the button in the list of primary buttons (by default
 		these are in the lower right of the dialog)
-		@param button: the C{Gtk.Button} (or other widget)
-		@param pack_start: if C{True} pack to the left (towards the
-		middle of the dialog), if C{False} pack to the right.
+
+		:param button: the ``Gtk.Button`` (or other widget)
+		:param pack_start: if ``True`` pack to the left (towards the
+			middle of the dialog), if ``False`` pack to the right.
 		'''
 		self.action_area.pack_start(button, False, True, 0)
 		if pack_start:
@@ -2945,7 +2989,8 @@ class Dialog(Gtk.Dialog, ConnectorMixin):
 	def set_help(self, pagename):
 		'''Set the name of the manual page with help for this dialog.
 		Setting this will add a "help" button to the dialog.
-		@param pagename: the manual page name
+
+		:param pagename: the manual page name
 		'''
 		self.help_page = pagename
 		button = Gtk.Button.new_with_mnemonic(_('_Help')) # T: Button label
@@ -2955,8 +3000,9 @@ class Dialog(Gtk.Dialog, ConnectorMixin):
 
 	def show_help(self, page=None):
 		'''Show a help page
-		@param page: the manual page, if C{None} the page as set with
-		L{set_help()} is used
+
+		:param page: the manual page, if ``None`` the page as set with
+			:class:`set_help()` is used
 		'''
 		from zim.main import ZIM_APPLICATION
 		ZIM_APPLICATION.run('--manual', page or self.help_page)
@@ -2964,15 +3010,17 @@ class Dialog(Gtk.Dialog, ConnectorMixin):
 	def add_help_text(self, text):
 		'''Adds a label with an info icon in front of it. Intended for
 		informational text in dialogs.
-		@param text: help text
+
+		:param text: help text
 		'''
 		hbox = help_text_factory(text)
 		self.vbox.pack_start(hbox, False, True, 0)
 
 	def add_text(self, text):
 		'''Adds a label to the dialog
-		Also see L{add_help_text()} for another style option.
-		@param text: dialog text
+		Also see :class:`add_help_text()` for another style option.
+
+		:param text: dialog text
 		'''
 		label = Gtk.Label(label=text)
 		label.set_use_markup(True)
@@ -2981,15 +3029,15 @@ class Dialog(Gtk.Dialog, ConnectorMixin):
 
 	def add_form(self, inputs, values=None, depends=None, trigger_response=True, notebook=None):
 		'''Convenience method to construct a form with input widgets and
-		add them to the dialog. See L{InputForm.add_inputs()} for
+		add them to the dialog. See :class:`InputForm.add_inputs()` for
 		details.
 
-		@param inputs: list with input definitions
-		@param values: initial values for the inputs
-		@param depends: dict with dependencies between inputs
-		@param trigger_response: if C{True} pressing C{<Enter>} in the
-		last entry widget will immediatly call L{response_ok()}. Set to
-		C{False} if more forms will follow in the same dialog.
+		:param inputs: list with input definitions
+		:param values: initial values for the inputs
+		:param depends: dict with dependencies between inputs
+		:param trigger_response: if ``True`` pressing ``<Enter>`` in the
+			last entry widget will immediatly call :class:`response_ok()`. Set to
+			``False`` if more forms will follow in the same dialog.
 		'''
 		if notebook is None and hasattr(self, 'notebook'):
 			notebook = self.notebook
@@ -3007,12 +3055,13 @@ class Dialog(Gtk.Dialog, ConnectorMixin):
 
 	def set_input(self, **fields):
 		'''Method used in test suite to set "interactive" inputs
-		@param fields: key value pairs of inputs to set
-		@raises KeyError: if a key is not recognized
-		@raises ValueError: if the value is of the wrong type and cannot be
-		converted by the widget
-		@raises AssertionError: if a key is recognized, but the input is
-		not enabled for interactive input - e.g. widget insensitive or hidden
+
+		:param fields: key value pairs of inputs to set
+		:raises KeyError: if a key is not recognized
+		:raises ValueError: if the value is of the wrong type and cannot be
+			converted by the widget
+		:raises AssertionError: if a key is recognized, but the input is
+			not enabled for interactive input - e.g. widget insensitive or hidden
 		'''
 		if hasattr(self, 'form'):
 			for key, value in list(fields.items()):
@@ -3039,8 +3088,9 @@ class Dialog(Gtk.Dialog, ConnectorMixin):
 			and not self.form.widgets[key].get_property('no-show-all')
 
 	def run(self):
-		'''Wrapper for C{Gtk.Dialog.run()}, also calls C{show_all()}
-		@returns: C{self.result}
+		'''Wrapper for ``Gtk.Dialog.run()``, also calls ``show_all()``
+
+		:returns: ``self.result``
 		'''
 		self.show_all()
 		if TEST_MODE:
@@ -3075,12 +3125,13 @@ class Dialog(Gtk.Dialog, ConnectorMixin):
 		self.response(Gtk.ResponseType.OK)
 
 	def assert_response_ok(self):
-		'''Like L{response_ok()}, but raise an error when
-		L{do_response_ok} returns C{False}.
-		Also it explicitly does not handle errors in L{do_response_ok}.
+		'''Like :class:`response_ok()`, but raise an error when
+		:class:`do_response_ok` returns ``False``.
+		Also it explicitly does not handle errors in :class:`do_response_ok`.
 		Intended for use by the test suite.
-		@returns: C{self.result}
-		@raises AssertionError: if L{do_response_ok} returns C{False}
+
+		:returns: ``self.result``
+		:raises AssertionError: if :class:`do_response_ok` returns ``False``
 		'''
 		if not (self._no_ok_action or self.do_response_ok() is True):
 			raise AssertionError('%s.do_response_ok() did not return True' % self.__class__.__name__)
@@ -3134,36 +3185,38 @@ class Dialog(Gtk.Dialog, ConnectorMixin):
 		'''Handler called when the user clicks the "OK" button (or
 		an equivalent button)
 
-		@returns: C{True} if successfull and the dialog can close. Returns
-		C{False} if e.g. input is not valid, this will keep the dialog open.
+		:returns: ``True`` if successfull and the dialog can close. Returns
+			``False`` if e.g. input is not valid, this will keep the dialog open.
 
-		@implementation: must be implemented by sub-classes that have
-		an "OK" button
+		:implementation: must be implemented by sub-classes that have
+			an "OK" button
 		'''
 		raise NotImplementedError
 
 	def do_response_cancel(self):
 		'''Handler called when the user clicks the "Cancel" button.
 
-		@note: this method is B{not} called when the dialog is closed
-		using e.g. the "[x]" button in the window decoration. It is only
-		used when the user explicitly clicks "Cancel".
+		.. note::
 
-		@returns: C{True} if the dialog can be destroyed close. Returning
-		C{False} will keep the dialog open.
+			this method is **not** called when the dialog is closed
+			using e.g. the "[x]" button in the window decoration. It is only
+			used when the user explicitly clicks "Cancel".
 
-		@implementation: can be implemented by sub-classes that have
-		an "Cancel" button
+		:returns: ``True`` if the dialog can be destroyed close. Returning
+			``False`` will keep the dialog open.
+
+		:implementation: can be implemented by sub-classes that have
+			an "Cancel" button
 		'''
 		return True
 
 	def save_uistate(self):
 		'''Method when the dialog is about to exit or hide and wants to
 		save the uistate. Sub-classes implementing this method should
-		use it to set additional state parameter in C{self.uistate}.
+		use it to set additional state parameter in ``self.uistate``.
 
-		@implementation: can be implemented by sub-classes that have
-		some additional uistate to save
+		:implementation: can be implemented by sub-classes that have
+			some additional uistate to save
 		'''
 		pass
 
@@ -3177,20 +3230,22 @@ class ErrorDialog(Gtk.MessageDialog):
 	exceptions in the user interface. The way the error is shown
 	depends on the class of the exception:
 
-	For exceptions that inherit from L{zim.errors.Error} or
-	C{EnvironmentError} (e.g. C{OSError} or C{IOError}) a normal error
+	For exceptions that inherit from :class:`zim.errors.Error` or
+	``EnvironmentError`` (e.g. ``OSError`` or ``IOError``) a normal error
 	dialog will be shown. This covers errors that can can occur in
 	normal usage. As a special case the "filename" attribute of
 	Environment errors is used and added to the error message.
 
 	On the other all exceptions that do not inherit from these
-	classes (so all standard in exceptions like C{AssertionError},
-	C{KeyError} etc.) are considered the result of bugs and the dialog
+	classes (so all standard in exceptions like ``AssertionError``,
+	``KeyError`` etc.) are considered the result of bugs and the dialog
 	will say: "Looks like you found a bug" and show a stack trace.
 
-	@note: in menu action handlers you typically do not need to catch
-	exceptions with an error dialog. The standard menu wrapper takes
-	care of that.
+	.. note::
+
+		in menu action handlers you typically do not need to catch
+		exceptions with an error dialog. The standard menu wrapper takes
+		care of that.
 	'''
 
 	def __init__(self, parent, error, exc_info=None, do_logging=True,
@@ -3198,29 +3253,29 @@ class ErrorDialog(Gtk.MessageDialog):
 	):
 		'''Constructor
 
-		@param parent: either a parent window or dialog or C{None}
+		:param parent: either a parent window or dialog or ``None``
 
-		@param error: the actual error, either an C{Exception} object
-		(including instances of L{zim.errors.Error}), a string with the
-		error description, or a 2-tuple of the short message and the
-		longer description as strings. Using a tuple here will give a
-		better looking dialog over using a simple string.
+		:param error: the actual error, either an ``Exception`` object
+			(including instances of :class:`zim.errors.Error`), a string with the
+			error description, or a 2-tuple of the short message and the
+			longer description as strings. Using a tuple here will give a
+			better looking dialog over using a simple string.
 
-		@param exc_info: this is an optional argument that takes the
-		result of C{sys.exc_info()}. This parameter is not necessary in
-		most cases where the dialog is run while the exception is still
-		in scope. One reason to pass it on explicitly is the handling
-		of errors from an async operation in the main tread.
+		:param exc_info: this is an optional argument that takes the
+			result of ``sys.exc_info()``. This parameter is not necessary in
+			most cases where the dialog is run while the exception is still
+			in scope. One reason to pass it on explicitly is the handling
+			of errors from an async operation in the main tread.
 
-		@param do_logging: if C{True} also log the error, if C{False}
-		assume someone else already did
+		:param do_logging: if ``True`` also log the error, if ``False``
+			assume someone else already did
 
-		@param buttons: a constant controlling what kind of buttons the
-		dialog will have. One of:
-			- C{None} or C{Gtk.ButtonsType.NONE}: for dialogs taking care
-			  of constructing the buttons themselves
-			- C{Gtk.ButtonsType.OK_CANCEL}: Render Ok and Cancel
-			- C{Gtk.ButtonsType.CLOSE}: Only set a Close button
+		:param buttons: a constant controlling what kind of buttons the
+			dialog will have. One of:
+				- ``None`` or ``Gtk.ButtonsType.NONE``: for dialogs taking care
+				  of constructing the buttons themselves
+				- ``Gtk.ButtonsType.OK_CANCEL``: Render Ok and Cancel
+				- ``Gtk.ButtonsType.CLOSE``: Only set a Close button
 		'''
 		if not isinstance(error, Exception):
 			if isinstance(error, tuple):
@@ -3276,9 +3331,9 @@ class ErrorDialog(Gtk.MessageDialog):
 		'''Get the text to show in the log of a "You found a bug" dialog.
 		Includes zim version info and traceback info.
 
-		@param exc_info: this is an optional argument that takes the
-		result of C{sys.exc_info()}
-		@returns: debug log as string
+		:param exc_info: this is an optional argument that takes the
+			result of ``sys.exc_info()``
+		:returns: debug log as string
 		'''
 		from gi.repository import GObject
 		import zim
@@ -3335,8 +3390,9 @@ class ErrorDialog(Gtk.MessageDialog):
 
 	def do_response_ok(self):
 		'''Response handler for the 'OK' button
-		@implementation: optional to be implemented by sub-classes that
-		want to run some action after presenting the error.
+
+		:implementation: optional to be implemented by sub-classes that
+			want to run some action after presenting the error.
 		'''
 		return True
 
@@ -3354,12 +3410,12 @@ class QuestionDialog(Gtk.MessageDialog):
 	def __init__(self, parent, question):
 		'''Constructor.
 
-		@param parent: either a parent window or dialog or C{None}
+		:param parent: either a parent window or dialog or ``None``
 
-		@param question: a question that can be answered by 'yes' or
-		'no', either as sring or a 2-tuple of the actual question and
-		a longer explanation as srtings. Using a tuple here will give a
-		better looking dialog.
+		:param question: a question that can be answered by 'yes' or
+			'no', either as sring or a 2-tuple of the actual question and
+			a longer explanation as srtings. Using a tuple here will give a
+			better looking dialog.
 		'''
 		if isinstance(question, tuple):
 			question, text = question
@@ -3391,7 +3447,8 @@ class QuestionDialog(Gtk.MessageDialog):
 
 	def run(self):
 		'''Runs the dialog and destroys it directly.
-		@returns: C{True} if the user clicked 'Yes', C{False} otherwise.
+
+		:returns: ``True`` if the user clicked 'Yes', ``False`` otherwise.
 		'''
 		logger.debug('Running QuestionDialog')
 		logger.debug('Q: %s', self.question)
@@ -3407,7 +3464,7 @@ class QuestionDialog(Gtk.MessageDialog):
 
 
 class MessageDialog(Gtk.MessageDialog):
-	'''Convenience wrapper for C{Gtk.MessageDialog}, should be used for
+	'''Convenience wrapper for ``Gtk.MessageDialog``, should be used for
 	informational popups without an action.
 
 	Note that message dialogs do not have a title.
@@ -3416,11 +3473,11 @@ class MessageDialog(Gtk.MessageDialog):
 	def __init__(self, parent, msg):
 		'''Constructor.
 
-		@param parent: either a parent window or dialog or C{None}
+		:param parent: either a parent window or dialog or ``None``
 
-		@param msg: the message either as sring or a 2-tuple of the
-		actual question and a longer explanation as strings. Using a
-		tuple here will give a better looking dialog.
+		:param msg: the message either as sring or a 2-tuple of the
+			actual question and a longer explanation as strings. Using a
+			tuple here will give a better looking dialog.
 		'''
 
 		if isinstance(msg, tuple):
@@ -3443,9 +3500,10 @@ class MessageDialog(Gtk.MessageDialog):
 		'''Add a button to the action area at the bottom of the dialog.
 		Packs the button in the list of primary buttons (by default
 		these are in the lower right of the dialog)
-		@param button: the C{Gtk.Button} (or other widget)
-		@param pack_start: if C{True} pack to the left (towards the
-		middle of the dialog), if C{False} pack to the right.
+
+		:param button: the ``Gtk.Button`` (or other widget)
+		:param pack_start: if ``True`` pack to the left (towards the
+			middle of the dialog), if ``False`` pack to the right.
 		'''
 		self.action_area.pack_start(button, False, True, 0)
 		if pack_start:
@@ -3468,12 +3526,12 @@ class MessageDialog(Gtk.MessageDialog):
 
 class FileDialog(Dialog):
 	'''File Chooser dialog, that allows to browser the file system and
-	select files or folders. Similar to C{Gtk.FileChooserDialog} but
-	inherits from L{Dialog} instead.
+	select files or folders. Similar to ``Gtk.FileChooserDialog`` but
+	inherits from :class:`Dialog` instead.
 
 	This dialog will automatically show previews for image files.
 
-	When using C{dialog.run()} it will return the selected file(s) or
+	When using ``dialog.run()`` it will return the selected file(s) or
 	dir(s) based on the arguments given during construction.
 	'''
 
@@ -3483,23 +3541,23 @@ class FileDialog(Dialog):
 		):
 		'''Constructor.
 
-		@param parent: either a parent window or dialog or C{None}
+		:param parent: either a parent window or dialog or ``None``
 
-		@param title: the dialog title
+		:param title: the dialog title
 
-		@param action: the file chooser action, one of::
-			Gtk.FileChooserAction.OPEN
-			Gtk.FileChooserAction.SAVE
-			Gtk.FileChooserAction.SELECT_FOLDER
-			Gtk.FileChooserAction.CREATE_FOLDER
+		:param action: the file chooser action, one of::
+				Gtk.FileChooserAction.OPEN
+				Gtk.FileChooserAction.SAVE
+				Gtk.FileChooserAction.SELECT_FOLDER
+				Gtk.FileChooserAction.CREATE_FOLDER
 
-		@param buttons: see L{Dialog.__init__()}
-		@param button: see L{Dialog.__init__()}
-		@param help_text: see L{Dialog.__init__()}
-		@param help: see L{Dialog.__init__()}
+		:param buttons: see :class:`Dialog.__init__()`
+		:param button: see :class:`Dialog.__init__()`
+		:param help_text: see :class:`Dialog.__init__()`
+		:param help: see :class:`Dialog.__init__()`
 
-		@param multiple: if C{True} the dialog will allow selecting
-		multiple files at once.
+		:param multiple: if ``True`` the dialog will allow selecting
+			multiple files at once.
 		'''
 		if button is None:
 			if action == Gtk.FileChooserAction.OPEN:
@@ -3544,8 +3602,9 @@ class FileDialog(Dialog):
 
 	def set_current_dir(self, dir):
 		'''Set the current folder for the dialog
-		(Only needed if not followed by L{set_file()})
-		@param dir: a L{Dir} object
+		(Only needed if not followed by :class:`set_file()`)
+
+		:param dir: a :class:`Dir` object
 		'''
 		ok = self.filechooser.set_current_folder_uri(dir.uri)
 		if not ok:
@@ -3584,7 +3643,8 @@ class FileDialog(Dialog):
 
 	def set_file(self, file):
 		'''Set the file or dir to pre select in the dialog
-		@param file: a L{File} or L{Dir} object
+
+		:param file: a :class:`File` or :class:`Dir` object
 		'''
 		ok = self.filechooser.set_uri(file.uri)
 		if not ok:
@@ -3596,7 +3656,8 @@ class FileDialog(Dialog):
 
 	def get_file(self):
 		'''Get the current selected file
-		@returns: a L{File} object or C{None}.
+
+		:returns: a :class:`File` object or ``None``.
 		'''
 		if self.filechooser.get_select_multiple():
 			raise AssertionError('Multiple files selected, use get_files() instead')
@@ -3611,8 +3672,9 @@ class FileDialog(Dialog):
 
 	def get_files(self):
 		'''Get list of selected file. Assumes the dialog was created
-		with C{multiple=True}.
-		@returns: a list of L{File} objects
+		with ``multiple=True``.
+
+		:returns: a list of :class:`File` objects
 		'''
 		files = [File(uri) for uri in self.filechooser.get_uris()]
 		if files:
@@ -3624,9 +3686,10 @@ class FileDialog(Dialog):
 
 	def get_dir(self):
 		'''Get the the current selected dir. Assumes the dialog was
-		created with action C{Gtk.FileChooserAction.SELECT_FOLDER} or
-		C{Gtk.FileChooserAction.CREATE_FOLDER}.
-		@returns: a L{Dir} object or C{None}
+		created with action ``Gtk.FileChooserAction.SELECT_FOLDER`` or
+		``Gtk.FileChooserAction.CREATE_FOLDER``.
+
+		:returns: a :class:`Dir` object or ``None``
 		'''
 		if self.filechooser.get_select_multiple():
 			raise AssertionError('Multiple files selected, use get_files() instead')
@@ -3643,9 +3706,10 @@ class FileDialog(Dialog):
 
 	def add_filter(self, name, glob):
 		'''Add a filter for files with specific extensions in the dialog
-		@param name: the label to display in the filter selection
-		@param glob: a file pattern (e.g. "*.txt")
-		@returns: the C{Gtk.FileFilter} object
+
+		:param name: the label to display in the filter selection
+		:param glob: a file pattern (e.g. "*.txt")
+		:returns: the ``Gtk.FileFilter`` object
 		'''
 		if len(self.filechooser.list_filters()) == 0:
 			self._add_filter_all()
@@ -3658,7 +3722,8 @@ class FileDialog(Dialog):
 
 	def add_filter_images(self):
 		'''Add a standard file filter for selecting image files.
-		@returns: the C{Gtk.FileFilter} object
+
+		:returns: the ``Gtk.FileFilter`` object
 		'''
 		if len(self.filechooser.list_filters()) == 0:
 			self._add_filter_all()
@@ -3701,11 +3766,12 @@ class ProgressDialog(Gtk.Dialog):
 
 	def __init__(self, parent, op):
 		'''Constructor
-		@param parent: either a parent gtk widget or C{None}. Only used to
-		set the dialog on top of the right parent window
-		@param op: operation that supports a "step" signal, a "finished" signal
-		and a "run_on_idle" method - see L{NotebookOperation} for the default
-		implementation
+
+		:param parent: either a parent gtk widget or ``None``. Only used to
+			set the dialog on top of the right parent window
+		:param op: operation that supports a "step" signal, a "finished" signal
+			and a "run_on_idle" method - see :class:`NotebookOperation` for the default
+			implementation
 		'''
 		self.op = op
 		self._total = None
@@ -3791,11 +3857,11 @@ class LogFileDialog(Dialog):
 
 class Assistant(Dialog):
 	'''Dialog with multi-page input, sometimes also revert to as a
-	"wizard". Similar to C{Gtk.Assistent} separate implementation to
+	"wizard". Similar to ``Gtk.Assistent`` separate implementation to
 	allow more flexibility in the dialog layout.
 
 	Each "page" in the assistant is a step in the work flow. Pages
-	should inherit from L{AssistantPage}. Pages share the 'uistate'
+	should inherit from :class:`AssistantPage`. Pages share the 'uistate'
 	dict with assistant object, and can also use this to
 	communicate state to another page. So each step can change its
 	look based on state set in the previous step. (This is sometimes
@@ -3803,15 +3869,15 @@ class Assistant(Dialog):
 	same "whiteboard" that is the uistate dict.)
 
 	Sub-classes of this dialog can freely manipulate the flow of pages
-	e.g. by overloading the L{previous_page()} and L{next_page()} methods.
+	e.g. by overloading the :class:`previous_page()` and :class:`next_page()` methods.
 	'''
 
 	def __init__(self, parent, title, **options):
 		'''Constructor
 
-		@param parent: either a parent window or dialog or C{None}
-		@param title: dialog title
-		@param options: other dialog options, see L{Dialog.__init__()}
+		:param parent: either a parent window or dialog or ``None``
+		:param title: dialog title
+		:param options: other dialog options, see :class:`Dialog.__init__()`
 		'''
 		Dialog.__init__(self, parent, title, buttons=None, **options)
 		self.set_border_width(5)
@@ -3837,7 +3903,8 @@ class Assistant(Dialog):
 
 	def append_page(self, page):
 		'''Append a page
-		@param page: an L{AssistantPage} object
+
+		:param page: an :class:`AssistantPage` object
 		'''
 		assert isinstance(page, AssistantPage)
 		page.connect('input-valid-changed', self._update_valid)
@@ -3850,13 +3917,15 @@ class Assistant(Dialog):
 
 	def get_pages(self):
 		'''Get all pages
-		@returns: a list of L{AssistantPage} objects
+
+		:returns: a list of :class:`AssistantPage` objects
 		'''
 		return self._pages
 
 	def get_page(self):
 		'''Get the current page
-		@returns: a L{AssistantPage} object
+
+		:returns: a :class:`AssistantPage` object
 		'''
 		if self._page > -1:
 			return self._pages[self._page]
@@ -3865,7 +3934,8 @@ class Assistant(Dialog):
 
 	def set_page(self, i):
 		'''Set the current page, based on sequence number
-		@param i: the index of the page to be shown
+
+		:param i: the index of the page to be shown
 		'''
 		if i < 0 or i >= len(self._pages):
 			return False
@@ -3967,22 +4037,22 @@ class Assistant(Dialog):
 
 
 class AssistantPage(Gtk.VBox):
-	'''Base class for pages in an L{Assistant} dialog.
+	'''Base class for pages in an :class:`Assistant` dialog.
 
 	Typically each page will contain a number of input widgets that
 	are logically grouped. After filling them in the user presses
 	"Forward" to go to the next page. In order for the "Forward" button
 	to becomes sensitive all widgets must have valid input.
 
-	@cvar title: title to show above this page
+	:cvar title: title to show above this page
 
-	@ivar uistate: dict shared between all pages in the same dialog,
-	use this to set values giving the interface state.
-	@ivar assistant: the dialog this page belongs to
-	@ivar form: an L{InputForm} when L{add_form()} was used
+	:ivar uistate: dict shared between all pages in the same dialog,
+		use this to set values giving the interface state.
+	:ivar assistant: the dialog this page belongs to
+	:ivar form: an :class:`InputForm` when :class:`add_form()` was used
 
-	@signal: C{input-valid-changed ()}: emitted when the valid state
-	of the page changed
+	:signal: ``input-valid-changed ()``: emitted when the valid state
+		of the page changed
 	'''
 
 	# define signals we want to use - (closure type, return type and arg types)
@@ -3994,7 +4064,8 @@ class AssistantPage(Gtk.VBox):
 
 	def __init__(self, assistant):
 		'''Constructor
-		@param assistant: the L{Assistant} dialog
+
+		:param assistant: the :class:`Assistant` dialog
 		'''
 		GObject.GObject.__init__(self)
 		self.set_border_width(5)
@@ -4010,7 +4081,7 @@ class AssistantPage(Gtk.VBox):
 		constructor was called - even when this is the first page, the
 		dialog has a "Back" button.
 
-		@implementation: must be implementated by all subclasseses
+		:implementation: must be implementated by all subclasseses
 		'''
 		pass
 
@@ -4018,19 +4089,19 @@ class AssistantPage(Gtk.VBox):
 		'''This method is called before leaving the page. It should
 		be used to update uitstate based on in put widgets.
 
-		@implementation: must be implementated by all subclasseses that
-		do not update uistate in real time
+		:implementation: must be implementated by all subclasseses that
+			do not update uistate in real time
 		'''
 		pass
 
 	def add_form(self, inputs, values=None, depends=None):
 		'''Convenience method to construct a form with input widgets and
-		add them to the dialog. See L{InputForm.add_inputs()} for
+		add them to the dialog. See :class:`InputForm.add_inputs()` for
 		details.
 
-		@param inputs: list with input definitions
-		@param values: initial values for the inputs
-		@param depends: dict with dependencies between inputs
+		:param inputs: list with input definitions
+		:param values: initial values for the inputs
+		:param depends: dict with dependencies between inputs
 		'''
 		self.form = InputForm(inputs, values, depends, notebook=self.assistant.notebook)
 		self.form.connect('input-valid-changed', lambda o: self.check_input_valid())
@@ -4040,7 +4111,8 @@ class AssistantPage(Gtk.VBox):
 
 	def get_input_valid(self):
 		'''Get valid state for the page
-		@returns: C{True} if all input is valid
+
+		:returns: ``True`` if all input is valid
 		'''
 		return self._input_valid
 
@@ -4049,10 +4121,10 @@ class AssistantPage(Gtk.VBox):
 		state if the form is changed. And should be called for any
 		other custom widgets in the page.
 
-		@implementation: should be implemented by sub-classes that
-		add widgets outside of the form
+		:implementation: should be implemented by sub-classes that
+			add widgets outside of the form
 
-		@emits: input-valid
+		:emits: input-valid
 		'''
 		if self.form:
 			valid = self.form.get_input_valid()
@@ -4074,7 +4146,8 @@ class ImageView(Gtk.Layout):
 
 	def __init__(self, bgcolor='#FFF'):
 		'''Constructor
-		@param bgcolor: background color as color hex code, (e.g. "#FFF")
+
+		:param bgcolor: background color as color hex code, (e.g. "#FFF")
 		'''
 		GObject.GObject.__init__(self)
 		self.set_can_focus(True)
@@ -4092,7 +4165,8 @@ class ImageView(Gtk.Layout):
 
 	def set_bgcolor(self, bgcolor):
 		'''Set background color
-		@param bgcolor: background color as color hex code, (e.g. "#FFF")
+
+		:param bgcolor: background color as color hex code, (e.g. "#FFF")
 		'''
 		assert bgcolor.startswith('#'), 'BUG: Should specify colors in hex'
 		color = Gdk.color_parse(bgcolor)
@@ -4101,10 +4175,11 @@ class ImageView(Gtk.Layout):
 
 	def set_scaling(self, scaling, factor=1):
 		'''Set the scaling
-		@param scaling: C{SCALE_FIT} to make the image scale down
-		to the size of the view, or C{SCALE_STATIC} to set scaling to
-		a fixed factor.
-		@param factor: static scaling factor (in combination with C{SCALE_STATIC})
+
+		:param scaling: ``SCALE_FIT`` to make the image scale down
+			to the size of the view, or ``SCALE_STATIC`` to set scaling to
+			a fixed factor.
+		:param factor: static scaling factor (in combination with ``SCALE_STATIC``)
 		'''
 		assert scaling in (SCALE_FIT, SCALE_STATIC)
 		self.scaling = scaling
@@ -4113,7 +4188,8 @@ class ImageView(Gtk.Layout):
 
 	def set_file(self, file):
 		'''Set the image to display from a file
-		@param file: a L{File} object
+
+		:param file: a :class:`File` object
 		'''
 		pixbuf = None
 
@@ -4129,8 +4205,9 @@ class ImageView(Gtk.Layout):
 
 	def set_pixbuf(self, pixbuf):
 		'''Set the image to display from a pixbuf
-		@param pixbuf: a C{GdkPixbuf.Pixbuf} or C{None} to display a
-		broken image icon.
+
+		:param pixbuf: a ``GdkPixbuf.Pixbuf`` or ``None`` to display a
+			broken image icon.
 		'''
 		if pixbuf is None:
 			pixbuf = self.render_icon(

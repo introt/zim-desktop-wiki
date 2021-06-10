@@ -3,8 +3,8 @@
 
 '''This module contains generic template functions.
 
-In addition to the functions defined here, L{zim.export.template}
-defines functions like C{resource()} and C{uri()} which require
+In addition to the functions defined here, :class:`zim.export.template`
+defines functions like ``resource()`` and ``uri()`` which require
 knowledge about the templates destination file structure.
 '''
 

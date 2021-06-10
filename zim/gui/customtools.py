@@ -63,7 +63,7 @@ class CustomToolManager(SignalEmitter):
 	"Tools" menu in zim (and optionally in the tool bar). They are
 	defined as desktop entry files in a special folder (typically
 	"~/.local/share/zim/customtools") and use several non standard keys.
-	See L{CustomTool} for details.
+	See :class:`CustomTool` for details.
 
 	This object is iterable and maintains a specific order for tools
 	to be shown in in the user interface.
@@ -111,9 +111,10 @@ class CustomToolManager(SignalEmitter):
 				yield tool
 
 	def get_tool(self, name):
-		'''Get a L{CustomTool} by name.
-		@param name: the tool name
-		@returns: a L{CustomTool} object or C{None}
+		'''Get a :class:`CustomTool` by name.
+
+		:param name: the tool name
+		:returns: a :class:`CustomTool` object or ``None``
 		'''
 		if not '-usercreated' in name:
 			name = cleanup_filename(name.lower()) + '-usercreated'
@@ -132,15 +133,15 @@ class CustomToolManager(SignalEmitter):
 	def create(self, Name, **properties):
 		'''Create a new custom tool
 
-		@param Name: the name to show in the Tools menu
-		@param properties: properties for the custom tool, e.g.:
-		  - Comment
-		  - Icon
-		  - X-Zim-ExecTool
-		  - X-Zim-ReadOnly
-		  - X-Zim-ShowInToolBar
+		:param Name: the name to show in the Tools menu
+		:param properties: properties for the custom tool, e.g.:
+			  - Comment
+			  - Icon
+			  - X-Zim-ExecTool
+			  - X-Zim-ReadOnly
+			  - X-Zim-ShowInToolBar
 
-		@returns: a new L{CustomTool} object.
+		:returns: a new :class:`CustomTool` object.
 		'''
 		dir = XDG_CONFIG_HOME.subdir('zim/customtools')
 		basename = cleanup_filename(Name.lower()) + '-usercreated.desktop'
@@ -160,7 +161,8 @@ class CustomToolManager(SignalEmitter):
 	def delete(self, tool):
 		'''Remove a custom tool from the list and delete the definition
 		file.
-		@param tool: a custom tool name or L{CustomTool} object
+
+		:param tool: a custom tool name or :class:`CustomTool` object
 		'''
 		if not isinstance(tool, CustomTool):
 			tool = self.get_tool(tool)
@@ -171,8 +173,9 @@ class CustomToolManager(SignalEmitter):
 
 	def index(self, tool):
 		'''Get the position of a specific tool in the list.
-		@param tool: a custom tool name or L{CustomTool} object
-		@returns: an integer for the position
+
+		:param tool: a custom tool name or :class:`CustomTool` object
+		:returns: an integer for the position
 		'''
 		if isinstance(tool, CustomTool):
 			tool = tool.key
@@ -180,8 +183,9 @@ class CustomToolManager(SignalEmitter):
 
 	def reorder(self, tool, i):
 		'''Change the position of a tool in the list.
-		@param tool: a custom tool name or L{CustomTool} object
-		@param i: the new position as integer
+
+		:param tool: a custom tool name or :class:`CustomTool` object
+		:param i: the new position as integer
 		'''
 		if not 0 <= i < len(self._names):
 			return
@@ -208,18 +212,18 @@ class CustomToolDict(DesktopEntryDict):
 	Exec spec with zim specific escapes for "X-Zim-ExecTool".
 
 	The following fields are expanded:
-		- C{%f} for source file as tmp file current page
-		- C{%d} for attachment directory
-		- C{%s} for real source file (if any)
-		- C{%n} for notebook location (file or directory)
-		- C{%D} for document root
-		- C{%t} for selected text or word under cursor
-		- C{%T} for the selected text including wiki formatting
+		- ``%f`` for source file as tmp file current page
+		- ``%d`` for attachment directory
+		- ``%s`` for real source file (if any)
+		- ``%n`` for notebook location (file or directory)
+		- ``%D`` for document root
+		- ``%t`` for selected text or word under cursor
+		- ``%T`` for the selected text including wiki formatting
 
 	Other additional keys are:
-		- C{X-Zim-ReadOnly} - boolean
-		- C{X-Zim-ShowInToolBar} - boolean
-		- C{X-Zim-ShowInContextMenu} - 'None', 'Text' or 'Page'
+		- ``X-Zim-ReadOnly`` - boolean
+		- ``X-Zim-ShowInToolBar`` - boolean
+		- ``X-Zim-ShowInContextMenu`` - 'None', 'Text' or 'Page'
 
 	These tools should always be executed with 3 arguments: notebook,
 	page & pageview.
@@ -235,7 +239,8 @@ class CustomToolDict(DesktopEntryDict):
 
 	def isvalid(self):
 		'''Check if all required fields are set.
-		@returns: C{True} if all required fields are set
+
+		:returns: ``True`` if all required fields are set
 		'''
 		entry = self['Desktop Entry']
 		if entry.get('Type') == 'X-Zim-CustomTool' \
@@ -380,7 +385,7 @@ class CustomToolDict(DesktopEntryDict):
 
 class CustomTool(CustomToolDict, INIConfigFile):
 	'''Class representing a file defining a custom tool, see
-	L{CustomToolDict} for the API documentation.
+	:class:`CustomToolDict` for the API documentation.
 	'''
 
 	def __init__(self, file):
@@ -415,8 +420,9 @@ class CustomToolManagerUI(object):
 
 	def __init__(self, uimanager, pageview):
 		'''Constructor
-		@param uimanager: a C{Gtk.UIManager}
-		@param pageview: either a L{PageView} or a L{StubPageView}
+
+		:param uimanager: a ``Gtk.UIManager``
+		:param pageview: either a :class:`PageView` or a :class:`StubPageView`
 		'''
 		# TODO check via abc base class ?
 		assert hasattr(pageview, 'notebook')

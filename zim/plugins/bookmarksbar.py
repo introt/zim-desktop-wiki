@@ -236,7 +236,7 @@ class BookmarkBar(Gtk.HBox, ConnectorMixin):
 	def add_new_page(self, page = None):
 		'''
 		Add new page as bookmark to the bar.
-		:param page: L{Page}, if None takes currently opened page,
+		:param page: :class:`Page`, if None takes currently opened page,
 		'''
 		if not page:
 			page = self._get_page()
@@ -513,7 +513,7 @@ class IconsButton(Gtk.Button):
 		'''
 		:param stock_enabled: the stock item for enabled state,
 		:param stock_disabled: the stock item for disabled state,
-		:param relief: when C{False} the button has no visible raised,
+		:param relief: when ``False`` the button has no visible raised,
 		edge and will be flat against the background,
 		:param size: the icons size
 		'''

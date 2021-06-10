@@ -11,21 +11,23 @@ from zim.notebook import PageNotFoundError
 class PageSelection(object):
 	'''Base class defining the public API'''
 
-	notebook = None #: The L{Notebook} object
-	prefix = None #: optional L{Path} object with common prefix of pages in the selection, or C{None}
+	notebook = None #: The :class:`Notebook` object
+	prefix = None #: optional :class:`Path` object with common prefix of pages in the selection, or ``None``
 	name = None #: name used in export template
 	title = None # name used in export template
 
 	def __iter__(self):
 		'''Iterate page objects
-		@implementation: must be implemented by subclases
+
+		:implementation: must be implemented by subclases
 		'''
 		raise NotImplemented
 
 	def index(self, namespace=None):
-		'''Iterate path objects for template C{index()} function, depth first
-		@param namespace: the sub namespace to iterate or None to iterate
-		toplevel
+		'''Iterate path objects for template ``index()`` function, depth first
+
+		:param namespace: the sub namespace to iterate or None to iterate
+			toplevel
 		'''
 		raise NotImplemented
 

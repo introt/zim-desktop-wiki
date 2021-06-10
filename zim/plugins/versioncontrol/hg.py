@@ -121,10 +121,11 @@ class HGApplicationBackend(VCSApplicationBase):
 	def ignore(self, file_to_ignore_regexp):
 		"""
 		Build a .hgignore file including the file_to_ignore_content
-		@param file_to_ignore_regexp: str representing the .hgignore file content.
-		       this must be a list of regexp defining the file / path to ignore,
-		       separated by a\n char
-		@returns: nothing
+
+		:param file_to_ignore_regexp: str representing the .hgignore file content.
+			       this must be a list of regexp defining the file / path to ignore,
+			       separated by a\n char
+		:returns: nothing
 		"""
 		#TODO: append the rule instead of overwrite the full content
 		self.root.file('.hgignore').write(file_to_ignore_regexp)
@@ -136,7 +137,8 @@ class HGApplicationBackend(VCSApplicationBase):
 		- running the VCS init command
 		- defining files to ignore
 		- adding all other existing files
-		@returns: nothing
+
+		:returns: nothing
 		"""
 		self.init()
 		self.ignore('\.zim*$\n')
@@ -145,7 +147,7 @@ class HGApplicationBackend(VCSApplicationBase):
 	def repo_exists(self):
 		"""Returns True if a repository is already setup, or False
 
-		@returns: a boolean True if a repo is already setup, or False
+		:returns: a boolean True if a repo is already setup, or False
 		"""
 		return self.root.folder('.hg').exists()
 
@@ -157,7 +159,7 @@ class HGApplicationBackend(VCSApplicationBase):
 
 	def is_modified(self):
 		"""Returns true if the repo is not up-to-date, or False
-		@returns: True if the repo is not up-to-date, or False
+		:returns: True if the repo is not up-to-date, or False
 		"""
 		# If status return an empty answer, this means the local repo is up-to-date
 		return ''.join(self.status()).strip() != ''

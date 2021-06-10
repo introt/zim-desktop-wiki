@@ -46,10 +46,10 @@ MAX_ICON_SIZE = 128 # never render icons larger than this - thumbs go up
 def delete_file(widget, file):
 	'''Delete a file
 
-	@param widget: parent for new dialogs, C{Gtk.Widget} or C{None}
-	@param file: a L{File} object
+	:param widget: parent for new dialogs, ``Gtk.Widget`` or ``None``
+	:param file: a :class:`File` object
 
-	@raises FileNotFoundError: if C{file} does not exist
+	:raises FileNotFoundError: if ``file`` does not exist
 	'''
 	logger.debug('delete_file(%s)', file)
 	file = localFileOrFolder(file)
@@ -66,10 +66,10 @@ def delete_file(widget, file):
 def rename_file(widget, file):
 	'''Rename a file
 
-	@param widget: parent for new dialogs, C{Gtk.Widget} or C{None}
-	@param file: a L{File} object
+	:param widget: parent for new dialogs, ``Gtk.Widget`` or ``None``
+	:param file: a :class:`File` object
 
-	@raises FileNotFoundError: if C{file} does not exist
+	:raises FileNotFoundError: if ``file`` does not exist
 	'''
 	logger.debug('rename_file(%s)', file)
 	file = localFileOrFolder(file)

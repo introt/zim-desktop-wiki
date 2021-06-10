@@ -50,12 +50,13 @@ year_path_re = re.compile(r'^(.*:)?\d{4}$')
 
 def daterange_from_path(path):
 	'''Determine the calendar dates mapped by a specific page
-	@param path: a L{Path} object
-	@returns: a 3-tuple of:
-	  - the page type (one of "C{day}", "C{week}", "C{month}", or "C{year}")
-	  - a C{datetime.date} object for the start date
-	  - a C{datetime.date} object for the end date
-	or C{None} when the page does not map a date
+
+	:param path: a :class:`Path` object
+	:returns: a 3-tuple of:
+		  - the page type (one of "``day``", "``week``", "``month``", or "``year``")
+		  - a ``datetime.date`` object for the start date
+		  - a ``datetime.date`` object for the end date
+		or ``None`` when the page does not map a date
 	'''
 	if date_path_re.match(path.name):
 		type = 'day'
@@ -145,7 +146,7 @@ Also adds a calendar widget to access these pages.
 		return properties['namespace'].child(date.strftime('%Y:%m'))
 
 	def date_from_path(self, path):
-		'''Returns the date for a specific path or C{None}'''
+		'''Returns the date for a specific path or ``None``'''
 		dates = daterange_from_path(path)
 		if dates:
 			return dates[1]

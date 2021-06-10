@@ -73,7 +73,7 @@ class SearchDialog(Dialog):
 		Because search can take a long time to execute it is best to
 		call this method after the dialog is shown.
 
-		@param query: the query as string
+		:param query: the query as string
 		'''
 		self.query_entry.set_text(query)
 		self._search()

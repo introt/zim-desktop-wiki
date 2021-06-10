@@ -112,7 +112,7 @@ class PageIndexNotebookViewExtension(NotebookViewExtension):
 		'''Stop the widget from listening to the index. Used e.g. to
 		unhook the model before reloading the index, thus avoiding
 		many signals to be processed by both the model and the view.
-		Typically should be followed by L{reload_model()} to get the
+		Typically should be followed by :class:`reload_model()` to get the
 		view in sync with the index again.
 		'''
 		self.treeview.disconnect_index()
@@ -137,28 +137,28 @@ class PageIndexWidget(Gtk.VBox, WindowSidePaneWidget):
 
 
 class PageTreeStoreBase(GenericTreeModel, Gtk.TreeDragSource, Gtk.TreeDragDest):
-	'''Custom gtk TreeModel that is integrated closely with the L{Index}
+	'''Custom gtk TreeModel that is integrated closely with the :class:`Index`
 	object of the notebook. This model is mostly an API layer translating
-	between the C{Gtk.TreeView} and the zim L{Index} interfaces. It
+	between the ``Gtk.TreeView`` and the zim :class:`Index` interfaces. It
 	fetches data on the fly when requested and only keeps a very
 	limited cache in memory. This allows scaling to very large notebooks.
 
-	This custom model is based on C{GenericTreeModel} which takes
+	This custom model is based on ``GenericTreeModel`` which takes
 	care of the C library wrapper. See the documentation there to
 	get the fine details of the API.
 
 	Be aware that in this interface there are two classes both
 	referred to as "paths". The first is the gtk TreePath (which is in
 	fact just a tuple of integers, without a propr class) and the second
-	is L{zim.notebook.Path}. When a gtk TreePath is intended the argument is
+	is :class:`zim.notebook.Path`. When a gtk TreePath is intended the argument is
 	explicitly called "treepath", while arguments called "path" refer to a
 	zim Path.
 
-	For all the methods with a name starting with C{on_} the "iter"
-	argument is a L{MyTreeIter}. The GenericTreeModel in turn
-	wraps these in C{Gtk.TreeIter} object. So e.g. the implementation
-	of C{get_iter()} calls C{on_get_iter()} and wraps the
-	L{MyTreeIter} object into a C{Gtk.TreeIter}.
+	For all the methods with a name starting with ``on_`` the "iter"
+	argument is a :class:`MyTreeIter`. The GenericTreeModel in turn
+	wraps these in ``Gtk.TreeIter`` object. So e.g. the implementation
+	of ``get_iter()`` calls ``on_get_iter()`` and wraps the
+	:class:`MyTreeIter` object into a ``Gtk.TreeIter``.
 	'''
 
 	# We inherit from Gtk.TreeDragSource and Gtk.TreeDragDest even though
@@ -219,7 +219,8 @@ class PageTreeStoreBase(GenericTreeModel, Gtk.TreeDragSource, Gtk.TreeDragDest):
 
 	def set_current_page(self, path):
 		'''Set the current open page to highlight it in the index.
-		@param path: the L{Path} that is currently open, or C{None} to unset
+
+		:param path: the :class:`Path` that is currently open, or ``None`` to unset
 		'''
 		oldpath = self.current_page
 		self.current_page = path
@@ -232,10 +233,10 @@ class PageTreeStoreBase(GenericTreeModel, Gtk.TreeDragSource, Gtk.TreeDragDest):
 			return None
 
 	def get_indexpath(self, treeiter):
-		'''Get an L{PageIndexRecord} for a C{Gtk.TreeIter}
+		'''Get an :class:`PageIndexRecord` for a ``Gtk.TreeIter``
 
-		@param treeiter: a C{Gtk.TreeIter}
-		@returns: an L{PageIndexRecord} object
+		:param treeiter: a ``Gtk.TreeIter``
+		:returns: an :class:`PageIndexRecord` object
 		'''
 		myiter = self.get_user_data(treeiter)
 		return PageIndexRecord(myiter.row)
@@ -329,7 +330,7 @@ class PageTreeStoreBase(GenericTreeModel, Gtk.TreeDragSource, Gtk.TreeDragDest):
 			return iter.n_children
 
 	def on_iter_nth_child(self, iter, n):
-		'''Returns the nth child or None. If iter is C{None} the
+		'''Returns the nth child or None. If iter is ``None`` the
 		nth item in the root namespace is returned.
 		'''
 		#~ print('>> on_iter_nth_child', iter, n)
@@ -359,15 +360,15 @@ class PageTreeStore(PagesTreeModelMixin, PageTreeStoreBase):
 class PageTreeView(BrowserTreeView):
 	'''TreeView widget to show a list of pages.
 
-	This view is intended to show a L{PageTreeStore} model, but it
+	This view is intended to show a :class:`PageTreeStore` model, but it
 	can also handle filtered models and subclasses that have the
 	same columns. (The "tags" plugin uses this same view with
 	alternative models.)
 
-	@signal: C{page-activated (path)}: emitted when a page is clicked
-	@signal: C{populate-popup (menu)}: hook to populate the context menu
-	@signal: C{copy ()}: copy the current selection to the clipboard
-	@signal: C{insert-link (path)}: called when the user pressed <Ctrl>L on page
+	:signal: ``page-activated (path)``: emitted when a page is clicked
+	:signal: ``populate-popup (menu)``: hook to populate the context menu
+	:signal: ``copy ()``: copy the current selection to the clipboard
+	:signal: ``insert-link (path)``: called when the user pressed <Ctrl>L on page
 	'''
 
 	# define signals we want to use - (closure type, return type and arg types)
@@ -422,7 +423,7 @@ class PageTreeView(BrowserTreeView):
 		unhook the model before reloading the index, thus avoiding
 		many signals to be processed by both the model and the view.
 		Doing this requires constructing and setting a new model with
-		L{set_model()} to get the view in sync with the index again.
+		:class:`set_model()` to get the view in sync with the index again.
 		'''
 		model = self.get_model()
 		if isinstance(model, Gtk.TreeModelFilter):
@@ -567,11 +568,11 @@ class PageTreeView(BrowserTreeView):
 	def set_current_page(self, path, vivificate=False):
 		'''Select a page in the treeview
 
-		@param path: a notebook L{Path} object for the page
-		@param vivificate: when C{True} the path is created
-		temporarily when it did not yet exist
+		:param path: a notebook :class:`Path` object for the page
+		:param vivificate: when ``True`` the path is created
+			temporarily when it did not yet exist
 
-		@returns: a gtk TreePath (tuple of intergers) or C{None}
+		:returns: a gtk TreePath (tuple of intergers) or ``None``
 		'''
 		#~ print('!! SELECT', path)
 		model = self.get_model()
@@ -584,7 +585,7 @@ class PageTreeView(BrowserTreeView):
 	def select_treepath(self, treepath):
 		'''Select a gtk TreePath in the view
 
-		@param treepath: a gtk TreePath (tuple of integers)
+		:param treepath: a gtk TreePath (tuple of integers)
 		'''
 		self.expand_to_path(treepath)
 		self.get_selection().select_path(treepath)
@@ -596,7 +597,7 @@ class PageTreeView(BrowserTreeView):
 	def get_selected_path(self):
 		'''Get the selected notebook path
 
-		@returns: a L{PageIndexRecord} or C{None} if there was no selection
+		:returns: a :class:`PageIndexRecord` or ``None`` if there was no selection
 		'''
 		model, iter = self.get_selection().get_selected()
 		if model is None or iter is None:
@@ -605,7 +606,7 @@ class PageTreeView(BrowserTreeView):
 			return model.get_indexpath(iter)
 
 	def get_expanded_path(self, path):
-		'''Return the lowest expanded path towards C{path}'''
+		'''Return the lowest expanded path towards ``path``'''
 		path = path.copy()
 		while path and not self.row_expanded(path):
 			if path.get_depth() == 1:
@@ -615,7 +616,7 @@ class PageTreeView(BrowserTreeView):
 		return path
 
 	def restore_expanded_path(self, path, expanded_path):
-		'''Collaps path between C{path} and C{expanded_path}'''
+		'''Collaps path between ``path`` and ``expanded_path``'''
 		path = path.copy()
 		if expanded_path is None:
 			while path:

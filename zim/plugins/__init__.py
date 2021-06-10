@@ -7,7 +7,7 @@ This file contains the base classes used to write plugins for zim. Each
 plugin is defined as a sub-module in the "zim.plugins" namespace.
 
 To be recognized as a plugin, a submodule of "zim.plugins" needs to
-define one (and only one) sub-class of L{PluginClass}. This class
+define one (and only one) sub-class of :class:`PluginClass`. This class
 will define the main plugin object and contains meta data about the
 plugin and e.g. plugin preferences.
 
@@ -24,7 +24,7 @@ that it belongs to. So it can access functions of the plugin object and
 it can use the plugin object to find other extension objects if it
 needs to cooperate.
 
-Also defined here is the L{PluginManager} class. This class is the
+Also defined here is the :class:`PluginManager` class. This class is the
 interface towards the rest of the application to load/unload plugins and
 to let plugins extend specific application objects.
 '''
@@ -59,11 +59,11 @@ logger = logging.getLogger('zim.plugins')
 
 # Extend path for importing and searching plugins
 #
-# Set C{__path__} for the C{zim.plugins} module. This determines what
+# Set ``__path__`` for the ``zim.plugins`` module. This determines what
 # directories are searched when importing plugin packages in the
-# C{zim.plugins} namespace.
+# ``zim.plugins`` namespace.
 #
-# Originally this added to the C{__path__} folders based on C{sys.path}
+# Originally this added to the ``__path__`` folders based on ``sys.path``
 # however this leads to conflicts when multiple zim versions are
 # installed. By switching to XDG_DATA_HOME this conflict is removed
 # by separating custom plugins and default plugins from other versions.
@@ -96,10 +96,11 @@ PluginManager = _bootstrappluginmanager
 
 def extendable(*extension_bases, register_after_init=True):
 	'''Class decorator to mark a class as "extendable"
-	@param extension_bases: base classes for extensions
-	@param register_after_init: if C{True} the class is registered with the L{PluginManager}
-	directly after it's C{__init__()} method has run. If C{False} the class
-	can call C{PluginManager.register_new_extendable(self)} explicitly whenever ready.
+
+	:param extension_bases: base classes for extensions
+	:param register_after_init: if ``True`` the class is registered with the :class:`PluginManager`
+		directly after it's ``__init__()`` method has run. If ``False`` the class
+		can call ``PluginManager.register_new_extendable(self)`` explicitly whenever ready.
 	'''
 	assert all(issubclass(ec, ExtensionBase) for ec in extension_bases)
 
@@ -130,14 +131,15 @@ def find_extension(obj, klass):
 	This function allows finding extension classes defined by any plugin.
 	So it can be used to find an defined by the same plugin, but also allows
 	cooperation by other plugins.
-	The lookup uses C{isinstance()}, so abstract classes can be used to define
+	The lookup uses ``isinstance()``, so abstract classes can be used to define
 	interfaces between plugins if you don't want to depent on the exact
 	implementation class.
-	@param obj: the extended object
-	@param klass: the class of the extention object
-	@returns: a single extension object, if multiple extensions match, the
-	first is returned
-	@raises ValueError: if no extension was found
+
+	:param obj: the extended object
+	:param klass: the class of the extention object
+	:returns: a single extension object, if multiple extensions match, the
+		first is returned
+	:raises ValueError: if no extension was found
 	'''
 	if hasattr(obj, '__zim_extension_objects__'):
 		for e in obj.__zim_extension_objects__:
@@ -149,14 +151,15 @@ def find_extension(obj, klass):
 
 def find_action(obj, actionname):
 	'''Lookup an action method
-	Returns an action method (defined with C{@action} or C{@toggle_action})
+	Returns an action method (defined with ``@action`` or ``@toggle_action``)
 	for either the object itself, or any of it's extensions.
 	This allows cooperation between plugins by calling actions defined by
 	an other plugin action.
-	@param obj: the extended object
-	@param actionname: the name of the action
-	@returns: an action method
-	@raises ValueError: if no action was found
+
+	:param obj: the extended object
+	:param actionname: the name of the action
+	:returns: an action method
+	:raises ValueError: if no action was found
 	'''
 	actionname = actionname.replace('-', '_')
 	if hasaction(obj, actionname):
@@ -171,7 +174,7 @@ def find_action(obj, actionname):
 
 def list_actions(obj):
 	'''List actions
-	Returns list of actions of C{obj} followed by all actions of
+	Returns list of actions of ``obj`` followed by all actions of
 	all of it's extensions. Each action is a 2-tuple of the action and it's name.
 	'''
 	actions = get_actions(obj)
@@ -183,16 +186,18 @@ def list_actions(obj):
 
 class ExtensionBase(SignalEmitter, ConnectorMixin):
 	'''Base class for all extensions classes
-	@ivar plugin: the plugin object to which this extension belongs
-	@ivar obj: the extendable object
+
+	:ivar plugin: the plugin object to which this extension belongs
+	:ivar obj: the extendable object
 	'''
 
 	__signals__ = {}
 
 	def __init__(self, plugin, obj):
 		'''Constructor
-		@param plugin: the plugin object to which this extension belongs
-		@param obj: the object being extended
+
+		:param plugin: the plugin object to which this extension belongs
+		:param obj: the object being extended
 		'''
 		self.plugin = plugin
 		self.obj = obj
@@ -200,7 +205,7 @@ class ExtensionBase(SignalEmitter, ConnectorMixin):
 
 	def destroy(self):
 		'''Called when the plugin is being destroyed
-		Calls L{teardown()} followed by the C{teardown()} methods of
+		Calls :class:`teardown()` followed by the ``teardown()`` methods of
 		parent base classes.
 		'''
 		def walk(klass):
@@ -230,17 +235,21 @@ class ExtensionBase(SignalEmitter, ConnectorMixin):
 			# Avoid waiting for garbage collection to take place
 
 	def teardown(self):
-		'''Remove changes made by B{this} class from the extended object
+		'''Remove changes made by **this** class from the extended object
 		To be overloaded by child classes
-		@note: do not call parent class C{teardown()} here, that is
-		already taken care of by C{destroy()}
+
+		.. note::
+
+			do not call parent class ``teardown()`` here, that is
+			already taken care of by ``destroy()``
 		'''
 		self.disconnect_all()
 
 
 class DialogExtensionBase(ExtensionBase):
-	'''Base class for extending Gtk dialogs based on C{Gtk.Dialog}
-	@ivar dialog: the C{Gtk.Dialog} object
+	'''Base class for extending Gtk dialogs based on ``Gtk.Dialog``
+
+	:ivar dialog: the ``Gtk.Dialog`` object
 	'''
 
 	def __init__(self, plugin, dialog):
@@ -256,7 +265,8 @@ class DialogExtensionBase(ExtensionBase):
 		'''Add a new button to the bottom area of the dialog
 		The button is placed left of the standard buttons like the
 		"OK" / "Cancel" or "Close" button of the dialog.
-		@param button: a C{Gtk.Button} or similar widget
+
+		:param button: a ``Gtk.Button`` or similar widget
 		'''
 		# This logic adds the button to the action area and places
 		# it left of the left most primary button by reshuffling all
@@ -290,9 +300,9 @@ class InsertedObjectTypeExtension(InsertedObjectType, ExtensionBase):
 
 @extendable(InsertedObjectTypeExtension)
 class InsertedObjectTypeMap(SignalEmitter):
-	'''Mapping of L{InsertedObjectTypeExtension} objects.
+	'''Mapping of :class:`InsertedObjectTypeExtension` objects.
 	This is a proxy for loading object types defined in plugins.
-	For convenience you can use C{PluginManager.insertedobjects} to access
+	For convenience you can use ``PluginManager.insertedobjects`` to access
 	an instance of this mapping.
 	'''
 
@@ -334,8 +344,9 @@ class InsertedObjectTypeMap(SignalEmitter):
 
 	def register_object(self, objecttype):
 		'''Register an object type
-		@param objecttype: an object derived from L{InsertedObjectType}
-		@raises AssertionError: if another object already uses the same name
+
+		:param objecttype: an object derived from :class:`InsertedObjectType`
+		:raises AssertionError: if another object already uses the same name
 		'''
 		key = objecttype.name.lower()
 		logger.debug('register_object: "%s"', key)
@@ -347,7 +358,8 @@ class InsertedObjectTypeMap(SignalEmitter):
 
 	def unregister_object(self, objecttype):
 		'''Unregister a specific object type.
-		@param objecttype: an object derived from L{InsertedObjectType}
+
+		:param objecttype: an object derived from :class:`InsertedObjectType`
 		'''
 		key = objecttype.name.lower()
 		logger.debug('unregister_object: "%s"', key)
@@ -379,9 +391,9 @@ class PluginManagerClass(ConnectorMixin, SignalEmitter, abc.Mapping, metaclass=_
 		based on the preferences in the config. Failures while loading
 		these plugins will be logged but not raise errors.
 
-		@param config: a L{ConfigManager} object that is passed along
-		to the plugins and is used to load plugin preferences.
-		Defaults to a L{VirtualConfigManager} for testing.
+		:param config: a :class:`ConfigManager` object that is passed along
+			to the plugins and is used to load plugin preferences.
+			Defaults to a :class:`VirtualConfigManager` for testing.
 		'''
 		self._reset()
 
@@ -396,7 +408,7 @@ class PluginManagerClass(ConnectorMixin, SignalEmitter, abc.Mapping, metaclass=_
 		self.insertedobjects = InsertedObjectTypeMap()
 
 	def load_plugins_from_preferences(self, names):
-		'''Calls L{load_plugin()} for each plugin in C{names} but does not
+		'''Calls :class:`load_plugin()` for each plugin in ``names`` but does not
 		raise an exception when loading fails.
 		'''
 		for name in names:
@@ -427,7 +439,8 @@ class PluginManagerClass(ConnectorMixin, SignalEmitter, abc.Mapping, metaclass=_
 	@classmethod
 	def list_installed_plugins(klass):
 		'''Lists plugin names for all installed plugins
-		@returns: a set of plugin names
+
+		:returns: a set of plugin names
 		'''
 		# List "zim.plugins" sub modules based on __path__ because this
 		# parameter determines what folders will considered when importing
@@ -452,8 +465,8 @@ class PluginManagerClass(ConnectorMixin, SignalEmitter, abc.Mapping, metaclass=_
 	def get_plugin_class(klass, name):
 		'''Get the plugin class for a given name
 
-		@param name: the plugin module name
-		@returns: the plugin class object
+		:param name: the plugin module name
+		:returns: the plugin class object
 		'''
 		modname = 'zim.plugins.' + name
 		mod = get_module(modname)
@@ -461,9 +474,9 @@ class PluginManagerClass(ConnectorMixin, SignalEmitter, abc.Mapping, metaclass=_
 
 	def register_new_extendable(self, obj):
 		'''Register an extendable object
-		This is called automatically by the L{extendable()} class decorator
-		unless the option c{register_after_init} was set to C{False}.
-		Relies on C{obj} already being setup correctly by the L{extendable} decorator.
+		This is called automatically by the :class:`extendable()` class decorator
+		unless the option c{register_after_init} was set to ``False``.
+		Relies on ``obj`` already being setup correctly by the :class:`extendable` decorator.
 		'''
 		logger.debug("New extendable: %s", obj)
 		assert not obj in self._extendables
@@ -499,9 +512,9 @@ class PluginManagerClass(ConnectorMixin, SignalEmitter, abc.Mapping, metaclass=_
 		will be returned. Thus for each plugin only one instance can be
 		active.
 
-		@param name: the plugin module name
-		@returns: the plugin object
-		@raises Exception: when loading the plugin failed
+		:param name: the plugin module name
+		:returns: the plugin object
+		:raises Exception: when loading the plugin failed
 		'''
 		assert isinstance(name, str)
 		if name in self._plugins:
@@ -529,7 +542,8 @@ class PluginManagerClass(ConnectorMixin, SignalEmitter, abc.Mapping, metaclass=_
 	def remove_plugin(self, name):
 		'''Remove a plugin and it's extensions
 		Fails silently if the plugin is not loaded.
-		@param name: the plugin module name
+
+		:param name: the plugin module name
 		'''
 		if name in self._preferences['plugins']:
 			# Do this first regardless of exceptions etc.
@@ -562,7 +576,7 @@ class PluginClass(ConnectorMixin):
 	'''Base class for plugins objects.
 
 	To be recognized as a plugin, a submodule of "zim.plugins" needs to
-	define one (and only one) sub-class of L{PluginClass}. This class
+	define one (and only one) sub-class of :class:`PluginClass`. This class
 	will define the main plugin object and contains meta data about the
 	plugin and e.g. plugin preferences.
 
@@ -574,57 +588,57 @@ class PluginClass(ConnectorMixin):
 	All extension classes defined in the same module
 	file as the plugin object are automatically linked to the plugin.
 
-	This class inherits from L{ConnectorMixin} and calls
-	L{ConnectorMixin.disconnect_all()} when the plugin is destroyed.
-	Therefore it is highly recommended to use the L{ConnectorMixin}
+	This class inherits from :class:`ConnectorMixin` and calls
+	:class:`ConnectorMixin.disconnect_all()` when the plugin is destroyed.
+	Therefore it is highly recommended to use the :class:`ConnectorMixin`
 	methods in sub-classes.
 
 	Plugin classes should at minimum define two class attributes:
-	C{plugin_info} and C{plugin_preferences}. When these are defined
+	``plugin_info`` and ``plugin_preferences``. When these are defined
 	no other code is needed to have a basic plugin up and running.
 
-	@cvar plugin_info: A dict with basic information about the plugin,
-	it should contain at least the following keys:
+	:cvar plugin_info: A dict with basic information about the plugin,
+		it should contain at least the following keys:
 
-		- C{name}: short name
-		- C{description}: one paragraph description
-		- C{author}: name of the author
-		- C{help}: page name in the manual (optional)
+		- ``name``: short name
+		- ``description``: one paragraph description
+		- ``author``: name of the author
+		- ``help``: page name in the manual (optional)
 
 	This info will be used e.g. in the plugin tab of the preferences
 	dialog.
 
-	@cvar plugin_preferences: A tuple or list defining the global
-	preferences for this plugin (if any). Each preference is defined
-	by a 4-tuple containing the following items:
+	:cvar plugin_preferences: A tuple or list defining the global
+		preferences for this plugin (if any). Each preference is defined
+		by a 4-tuple containing the following items:
 
 		1. the dict key of the option (used in the config file and in
 		   the preferences dict)
-		2. an option type (see L{InputForm.add_inputs(){} for more details)
+		2. an option type (see :class:`InputForm.add_inputs(){` for more details)
 		3. a (translatable) label to show in the preferences dialog for
 		   this option
 		4. a default value
 
 	These preferences will be initialized to their default value if not
 	configured by the user and the values can be found in the
-	L{preferences} dict of the plugin object. The type and label will be
+	:class:`preferences` dict of the plugin object. The type and label will be
 	used to render a default config dialog when triggered from the
 	preferences dialog.
 	Changes to these preferences will be stored in a config file so
 	they are persistent.
 
-	@ivar preferences: a L{ConfigDict} with plugin preferences
+	:ivar preferences: a :class:`ConfigDict` with plugin preferences
 
 	Preferences are the global configuration of the plugin, they are
 	stored in the X{preferences.conf} config file.
 
-	@ivar config: a L{ConfigManager} object that can be used to lookup
-	additional config files for the plugin
+	:ivar config: a :class:`ConfigManager` object that can be used to lookup
+		additional config files for the plugin
 
-	@ivar extension_classes: a list with extension classes found
-	in the plugin module
+	:ivar extension_classes: a list with extension classes found
+		in the plugin module
 
-	@ivar extensions: a set with extension objects loaded by this plugin.
+	:ivar extensions: a set with extension objects loaded by this plugin.
 	'''
 
 	# define signals we want to use - (closure type, return type and arg types)
@@ -644,8 +658,8 @@ class PluginClass(ConnectorMixin):
 	def check_dependencies_ok(klass):
 		'''Checks minimum dependencies are met
 
-		@returns: C{True} if this plugin can be loaded based on
-		L{check_dependencies()}
+		:returns: ``True`` if this plugin can be loaded based on
+			:class:`check_dependencies()`
 		'''
 		check, dependencies = klass.check_dependencies()
 		return check
@@ -655,16 +669,16 @@ class PluginClass(ConnectorMixin):
 		'''Checks what dependencies are met and gives details for
 		display in the preferences dialog
 
-		@returns: a boolean telling overall dependencies are met,
-		followed by a list with details.
+		:returns: a boolean telling overall dependencies are met,
+			followed by a list with details.
 
 		This list consists of 3-tuples consisting of a (short)
 		description of the dependency, a boolean for dependency being
 		met, and a boolean for this dependency being optional or not.
 
-		@implementation: must be implemented in sub-classes that have
-		one or more (external) dependencies. Default always returns
-		C{True} with an empty list.
+		:implementation: must be implemented in sub-classes that have
+			one or more (external) dependencies. Default always returns
+			``True`` with an empty list.
 		'''
 		return (True, [])
 
@@ -725,17 +739,18 @@ class PluginClass(ConnectorMixin):
 
 	@classmethod
 	def lookup_subclass(pluginklass, klass):
-		'''Returns first subclass of C{klass} found in the module of
-		this plugin. (Similar to L{zim.utils.lookup_subclass}).
-		@param pluginklass: plugin class
-		@param klass: base class of the wanted class
+		'''Returns first subclass of ``klass`` found in the module of
+		this plugin. (Similar to :class:`zim.utils.lookup_subclass`).
+
+		:param pluginklass: plugin class
+		:param klass: base class of the wanted class
 		'''
 		module = get_module(pluginklass.__module__)
 		return lookup_subclass(module, klass)
 
 	@classmethod
 	def discover_classes(pluginklass, baseclass):
-		'''Yields a list of classes derived from C{baseclass} and
+		'''Yields a list of classes derived from ``baseclass`` and
 		defined in the same module as the plugin
 		'''
 		module = get_module(pluginklass.__module__)
@@ -761,7 +776,7 @@ class PluginClass(ConnectorMixin):
 			logger.exception('Exception while disconnecting %s', self)
 
 	def teardown(self):
-		'''Cleanup method called by C{destroy()}.
+		'''Cleanup method called by ``destroy()``.
 		Can be implemented by sub-classes.
 		'''
 		pass

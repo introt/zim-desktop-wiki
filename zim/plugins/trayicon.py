@@ -156,7 +156,7 @@ class TrayIconBase(object):
 
 		This method is to be implemented in child classes.
 
-		@returns: a list of L{NotebookInfo} objects
+		:returns: a list of :class:`NotebookInfo` objects
 		'''
 		return [] # TODO
 		#~ for uri in self.server.list_notebooks():
@@ -167,11 +167,11 @@ class TrayIconBase(object):
 	def list_all_notebooks(self):
 		'''Returns a list of all notebooks known in the current context
 
-		This method mixes notebooks from L{list_open_notebooks()} with
-		input from L{get_notebook_list()}. Open notebooks will have
-		the C{active} attribute set.
+		This method mixes notebooks from :class:`list_open_notebooks()` with
+		input from :class:`get_notebook_list()`. Open notebooks will have
+		the ``active`` attribute set.
 
-		@returns: a list of L{NotebookInfo} objects
+		:returns: a list of :class:`NotebookInfo` objects
 		'''
 		uris = set()
 		notebooks = [info for info in get_notebook_list()]

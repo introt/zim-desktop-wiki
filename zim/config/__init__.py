@@ -14,14 +14,14 @@ from .manager import *
 '''This module defines all functions and objects related to the
 application config.
 
-The sub module L{zim.config.manager} contains that L{ConfigManager}
+The sub module :class:`zim.config.manager` contains that :class:`ConfigManager`
 object, which is the main object to access configuration files. In
-L{zim.config.dicts} a number of classes are defined that represent
+:class:`zim.config.dicts` a number of classes are defined that represent
 configuration files as dictionaries. And classes to define the config
 options that are used and how to validate those.
 
 The file system paths where to search for config files are defined
-in L{zim.config.basedirs}.
+in :class:`zim.config.basedirs`.
 '''
 
 
@@ -42,9 +42,10 @@ def data_dirs(path=None):
 	'''Generator listing paths that contain zim data files in the order
 	that they should be searched. These will be the equivalent of
 	e.g. "~/.local/share/zim", "/usr/share/zim", etc.
-	@param path: a file path relative to to the data dir, including this
-	will list sub-folders with this relative path.
-	@returns: yields L{Dir} objects for the data dirs
+
+	:param path: a file path relative to to the data dir, including this
+		will list sub-folders with this relative path.
+	:returns: yields :class:`Dir` objects for the data dirs
 	'''
 	zimpath = ['zim']
 	if path:
@@ -66,12 +67,13 @@ def data_dirs(path=None):
 
 
 def data_dir(path):
-	'''Get an data dir sub-folder.  Will look up C{path} relative
+	'''Get an data dir sub-folder.  Will look up ``path`` relative
 	to all data dirs and return the first one that exists. Use this
 	function to find any folders from the "data/" folder in the source
 	package.
-	@param path:  a file path relative to to the data dir
-	@returns: a L{Dir} object or C{None}
+
+	:param path:  a file path relative to to the data dir
+	:returns: a :class:`Dir` object or ``None``
 	'''
 	for dir in data_dirs(path):
 		if dir.exists():
@@ -81,11 +83,12 @@ def data_dir(path):
 
 
 def data_file(path):
-	'''Get a data file. Will look up C{path} relative to all data dirs
+	'''Get a data file. Will look up ``path`` relative to all data dirs
 	and return the first one that exists. Use this function to find
 	any files from the "data/" folder in the source package.
-	@param path:  a file path relative to to the data dir (e.g. "zim.png")
-	@returns: a L{File} object or C{None}
+
+	:param path:  a file path relative to to the data dir (e.g. "zim.png")
+	:returns: a :class:`File` object or ``None``
 	'''
 	for dir in data_dirs():
 		file = dir.file(path)
@@ -97,10 +100,11 @@ def data_file(path):
 
 def user_dirs():
 	'''Get the XDG user dirs.
-	@returns: a dict with directories for the XDG user dirs. These are
-	typically defined in "~/.config/user-dirs.dirs". Common user dirs
-	are: "XDG_DESKTOP_DIR", "XDG_DOWNLOAD_DIR", etc. If no definition
-	is found an empty dict will be returned.
+
+	:returns: a dict with directories for the XDG user dirs. These are
+		typically defined in "~/.config/user-dirs.dirs". Common user dirs
+		are: "XDG_DESKTOP_DIR", "XDG_DOWNLOAD_DIR", etc. If no definition
+		is found an empty dict will be returned.
 	'''
 	dirs = {}
 	file = XDG_CONFIG_HOME.file('user-dirs.dirs')

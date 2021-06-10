@@ -77,9 +77,10 @@ def list_template_categories():
 
 def list_templates(category):
 	'''Returns a list of template names
-	@param category: a category (sub folder) with tempaltes, e.g. "html"
-	@returns: a list of 2-tuples of the template names and the file
-	basename for the template file
+
+	:param category: a category (sub folder) with tempaltes, e.g. "html"
+	:returns: a list of 2-tuples of the template names and the file
+		basename for the template file
 	'''
 	category = category.lower()
 	templates = set()
@@ -95,9 +96,10 @@ def list_templates(category):
 
 def get_template(category, template):
 	'''Returns a Template object for a template name or file path
-	@param category: the template category (e.g. "html"). Use to resolve
-	the template if a template name is given
-	@param template: the template name or file path
+
+	:param category: the template category (e.g. "html"). Use to resolve
+		the template if a template name is given
+	:param template: the template name or file path
 	'''
 	assert isinstance(template, str)
 
@@ -135,7 +137,7 @@ class Template(SignalEmitter):
 	It takes care of parsing a template file and allows evaluating
 	the template with a given set of template parameters.
 
-	@signal: C{process (output, context)}: emitted by the "process" method
+	:signal: ``process (output, context)``: emitted by the "process" method
 	'''
 
 	# On purpose a very thin class, allow to test all steps of parsing
@@ -151,7 +153,8 @@ class Template(SignalEmitter):
 
 	def __init__(self, file):
 		'''Constructor
-		@param file: a L{File} object for the template file
+
+		:param file: a :class:`File` object for the template file
 		'''
 		file = adapt_from_newfs(file)
 		self.filename = file.path
@@ -172,12 +175,14 @@ class Template(SignalEmitter):
 
 	def process(self, output, context):
 		'''Evaluate the template
-		@param output: an object that has an C{append()} method (e.g. a C{list})
-		to receive the output text
-		@param context: a C{dict} with a set of template parameters.
-		This dict is copied to prevent changes to the original dict when
-		processing the template
-		@emits: process
+
+		:param output: an object that has an ``append()`` method (e.g. a ``list``)
+			to receive the output text
+		:param context: a ``dict`` with a set of template parameters.
+			This dict is copied to prevent changes to the original dict when
+			processing the template
+
+			:emits: process
 		'''
 		context = TemplateContextDict(dict(context)) # COPY to keep changes local
 		context.update(self.template_functions) # set builtins

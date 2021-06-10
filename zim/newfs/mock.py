@@ -24,10 +24,11 @@ __all__ = ('MockFolder', 'MockFile')
 
 
 def clone_mock_object(source, target):
-	'''Similar to C{copyto}, but used to copy to a mock object
+	'''Similar to ``copyto``, but used to copy to a mock object
 	that belongs to another mock filesystem hierarchy.
-	@param source: a L{MockFile} or L{MockFolder}
-	@param target: another L{MockFile} or L{MockFolder}
+
+	:param source: a :class:`MockFile` or :class:`MockFolder`
+	:param target: another :class:`MockFile` or :class:`MockFolder`
 	'''
 	assert source.__class__ is target.__class__
 	mynode = source._node()
@@ -39,9 +40,10 @@ def clone_mock_object(source, target):
 def os_native_path(unixpath):
 	'''Adapts unix style paths for windows if needed
 	Used for convenience to of writing cross-platform test cases
-	Called automatically when constructing a L{MockFile} or L{MockFolder} object
+	Called automatically when constructing a :class:`MockFile` or :class:`MockFolder` object
 	Does not modify URLs
-	@param unixpath: the (mock) unix path as a string
+
+	:param unixpath: the (mock) unix path as a string
 	'''
 	assert isinstance(unixpath, str)
 	if os.name == 'nt' and not is_url_re.match(unixpath):

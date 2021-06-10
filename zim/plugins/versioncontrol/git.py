@@ -149,7 +149,7 @@ class GITApplicationBackend(VCSApplicationBase):
 
 	def is_modified(self):
 		"""Returns true if the repo is not up-to-date, or False
-		@returns: True if the repo is not up-to-date, or False
+		:returns: True if the repo is not up-to-date, or False
 		"""
 		# If status return an empty answer, this means the local repo is up-to-date
 		status = ''.join(self.pipe(['status', '--porcelain']))
@@ -236,7 +236,8 @@ class GITApplicationBackend(VCSApplicationBase):
 	def status(self, porcelain=False):
 		"""
 		Runs: git status
-		@param porcelain: see --porcelain in git documentation, used for testing
+
+		:param porcelain: see --porcelain in git documentation, used for testing
 		"""
 		if porcelain:
 			return self.pipe(['status', '--porcelain'])

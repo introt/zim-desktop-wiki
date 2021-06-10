@@ -5,8 +5,8 @@
 
 Each module in zim.formats should contains exactly one subclass of
 DumperClass and exactly one subclass of ParserClass
-(optional for export formats). These can be loaded by L{get_parser()}
-and L{get_dumper()} respectively. The requirement to have exactly one
+(optional for export formats). These can be loaded by :class:`get_parser()`
+and :class:`get_dumper()` respectively. The requirement to have exactly one
 subclass per module means you can not import other classes that derive
 from these base classes directly into the module.
 
@@ -153,11 +153,12 @@ _letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
 def increase_list_iter(listiter):
 	'''Get the next item in a list for a numbered list
-	E.g if C{listiter} is C{"1"} this function returns C{"2"}, if it
-	is C{"a"} it returns C{"b"}.
-	@param listiter: the current item, either an integer number or
-	single letter
-	@returns: the next item, or C{None}
+	E.g if ``listiter`` is ``"1"`` this function returns ``"2"``, if it
+	is ``"a"`` it returns ``"b"``.
+
+	:param listiter: the current item, either an integer number or
+		single letter
+	:returns: the next item, or ``None``
 	'''
 	try:
 		i = int(listiter)
@@ -192,8 +193,9 @@ def convert_list_iter_letter_to_number(listiter):
 
 def encode_xml(text):
 	'''Encode text such that it can be used in xml
-	@param text: label text as string
-	@returns: encoded text
+
+	:param text: label text as string
+	:returns: encoded text
 	'''
 	return text.replace('&', '&amp;').replace('>', '&gt;').replace('<', '&lt;').replace('"', '&quot;').replace("'", '&apos;')
 
@@ -234,8 +236,8 @@ def get_format(name):
 def get_format_module(name):
 	'''Returns the module object for a specific format
 
-	@param name: the format name
-	@returns: a module object
+	:param name: the format name
+	:returns: a module object
 	'''
 	name = _aliases.get(name, name)
 	return zim.plugins.get_module('zim.formats.' + canonical_name(name))
@@ -244,11 +246,11 @@ def get_format_module(name):
 def get_parser(name, *arg, **kwarg):
 	'''Returns a parser object instance for a specific format
 
-	@param name: format name
-	@param arg: arguments to pass to the parser object
-	@param kwarg: keyword arguments to pass to the parser object
+	:param name: format name
+	:param arg: arguments to pass to the parser object
+	:param kwarg: keyword arguments to pass to the parser object
 
-	@returns: parser object instance (subclass of L{ParserClass})
+	:returns: parser object instance (subclass of :class:`ParserClass`)
 	'''
 	module = get_format_module(name)
 	klass = zim.plugins.lookup_subclass(module, ParserClass)
@@ -258,11 +260,11 @@ def get_parser(name, *arg, **kwarg):
 def get_dumper(name, *arg, **kwarg):
 	'''Returns a dumper object instance for a specific format
 
-	@param name: format name
-	@param arg: arguments to pass to the dumper object
-	@param kwarg: keyword arguments to pass to the dumper object
+	:param name: format name
+	:param arg: arguments to pass to the dumper object
+	:param kwarg: keyword arguments to pass to the dumper object
 
-	@returns: dumper object instance (subclass of L{DumperClass})
+	:returns: dumper object instance (subclass of :class:`DumperClass`)
 	'''
 	module = get_format_module(name)
 	klass = zim.plugins.lookup_subclass(module, DumperClass)
@@ -377,9 +379,10 @@ class ParseTree(object):
 
 	def iter_href(self, include_page_local_links=False, include_anchors=False):
 		'''Generator for links in the text
-		@param include_anchors: if C{False} remove the target location from the
-		link and only yield unique links to pages
-		@returns: yields a list of unique L{HRef} objects
+
+		:param include_anchors: if ``False`` remove the target location from the
+			link and only yield unique links to pages
+		:returns: yields a list of unique :class:`HRef` objects
 		'''
 		from zim.notebook.page import HRef # XXX
 
@@ -411,7 +414,8 @@ class ParseTree(object):
 
 	def iter_tag_names(self):
 		'''Generator for tags in the page content
-		@returns: yields an unordered list of tag names
+
+		:returns: yields an unordered list of tag names
 		'''
 		seen = set()
 		for elt in self._etree.iter(TAG):
@@ -475,7 +479,8 @@ class ParseTree(object):
 		'''If the tree starts with a heading, remove it and any trailing
 		whitespace.
 		Will modify the tree.
-		@returns: a 2-tuple of text and heading level or C{(None, None)}
+
+		:returns: a 2-tuple of text and heading level or ``(None, None)``
 		'''
 		root = self._etree.getroot()
 		roottext = root.text and not root.text.isspace()
@@ -525,7 +530,7 @@ class ParseTree(object):
 				element.attrib['_src_file'] = notebook.resolve_file(filepath, path)
 
 	def unresolve_images(self):
-		'''Undo effect of L{resolve_images()}, mainly intended for
+		'''Undo effect of :class:`resolve_images()`, mainly intended for
 		testing.
 		'''
 		for element in self._etree.iter('img'):
@@ -601,10 +606,12 @@ class ParseTree(object):
 	def visit(self, visitor):
 		'''Visit all nodes of this tree
 
-		@note: If the visitor modifies the attrib dict on nodes, this
-		will modify the tree.
+		.. note::
 
-		@param visitor: a L{Visitor} or L{Builder} object
+			If the visitor modifies the attrib dict on nodes, this
+			will modify the tree.
+
+		:param visitor: a :class:`Visitor` or :class:`Builder` object
 		'''
 		try:
 			self._visit(visitor, self._etree.getroot())
@@ -628,8 +635,9 @@ class ParseTree(object):
 			pass
 
 	def find(self, tag):
-		'''Find first occurence of C{tag} in the tree
-		@returns: a L{Node} object or C{None}
+		'''Find first occurence of ``tag`` in the tree
+
+		:returns: a :class:`Node` object or ``None``
 		'''
 		for elt in self.findall(tag):
 			return elt # return first
@@ -637,29 +645,30 @@ class ParseTree(object):
 			return None
 
 	def findall(self, tag):
-		'''Find all occurences of C{tag} in the tree
-		@param tag: tag name
-		@returns: yields L{Node} objects
+		'''Find all occurences of ``tag`` in the tree
+
+		:param tag: tag name
+		:returns: yields :class:`Node` objects
 		'''
 		for elt in self._etree.iter(tag):
 			yield Element.new_from_etree(elt)
 
 	def replace(self, tags, func):
-		'''Modify the tree by replacing all occurences of C{tag}
-		by the return value of C{func}.
+		'''Modify the tree by replacing all occurences of ``tag``
+		by the return value of ``func``.
 
-		@param tags: tag name, or list of tag names
-		@param func: function to generate replacement values.
-		Function will be called as::
+		:param tags: tag name, or list of tag names
+		:param func: function to generate replacement values.
+			Function will be called as::
 
 			func(node)
 
-		Where C{node} is a L{Node} object representing the subtree.
-		If the function returns another L{Node} object or modifies
-		C{node} and returns it, the subtree will be replaced by this
+		Where ``node`` is a :class:`Node` object representing the subtree.
+		If the function returns another :class:`Node` object or modifies
+		``node`` and returns it, the subtree will be replaced by this
 		new node.
-		If the function raises L{VisitorSkip} the replace is skipped.
-		If the function raises L{VisitorStop} the replacement of all
+		If the function raises :class:`VisitorSkip` the replace is skipped.
+		If the function raises :class:`VisitorStop` the replacement of all
 		nodes will stop.
 		'''
 		if not isinstance(tags, (tuple, list)):
@@ -758,7 +767,7 @@ class VisitorSkip(Exception):
 class Visitor(object):
 	'''Conceptual opposite of a builder, but with same API.
 	Used to walk nodes in a parsetree and call callbacks for each node.
-	See e.g. L{ParseTree.visit()}.
+	See e.g. :class:`ParseTree.visit()`.
 	'''
 
 	def start(self, tag, attrib=None):
@@ -767,35 +776,39 @@ class Visitor(object):
 		Visitor objects can raise two exceptions in this method
 		to influence the tree traversal:
 
-		  1. L{VisitorStop} will cancel the current parsing, but without
+		  1. :class:`VisitorStop` will cancel the current parsing, but without
 			 raising an error. So code implementing a visit method should
 			 catch this.
-		  2. L{VisitorSkip} can be raised when the visitor wants to skip
+		  2. :class:`VisitorSkip` can be raised when the visitor wants to skip
 			 a node, and should prevent the implementation from further
 			 decending into this node
 
-		@note: If the visitor modifies the attrib dict on nodes, this
-		will modify the tree. If this is not intended, the implementation
-		needs to take care to copy the attrib to break the reference.
+		.. note::
 
-		@param tag: the tag name
-		@param attrib: optional dict with attributes
-		@implementation: optional for subclasses
+			If the visitor modifies the attrib dict on nodes, this
+			will modify the tree. If this is not intended, the implementation
+			needs to take care to copy the attrib to break the reference.
+
+		:param tag: the tag name
+		:param attrib: optional dict with attributes
+		:implementation: optional for subclasses
 		'''
 		pass
 
 	def text(self, text):
 		'''Append text
-		@param text: text to be appended as string
-		@implementation: optional for subclasses
+
+		:param text: text to be appended as string
+		:implementation: optional for subclasses
 		'''
 		pass
 
 	def end(self, tag):
 		'''End formatted region
-		@param tag: the tag name
-		@raises AssertionError: when tag does not match current state
-		@implementation: optional for subclasses
+
+		:param tag: the tag name
+		:raises AssertionError: when tag does not match current state
+		:implementation: optional for subclasses
 		'''
 		pass
 
@@ -803,14 +816,14 @@ class Visitor(object):
 		'''Convenience function to open a tag, append text and close
 		it immediatly.
 
-		Can raise L{VisitorStop} or L{VisitorSkip}, see C{start()}
+		Can raise :class:`VisitorStop` or :class:`VisitorSkip`, see ``start()``
 		for the conditions.
 
-		@param tag: the tag name
-		@param attrib: optional dict with attributes
-		@param text: formatted text
-		@implementation: optional for subclasses, default implementation
-		calls L{start()}, L{text()}, and L{end()}
+		:param tag: the tag name
+		:param attrib: optional dict with attributes
+		:param text: formatted text
+		:implementation: optional for subclasses, default implementation
+			calls :class:`start()`, :class:`text()`, and :class:`end()`
 		'''
 		self.start(tag, attrib)
 		if text is not None:
@@ -819,7 +832,7 @@ class Visitor(object):
 
 
 class ParseTreeBuilder(Builder):
-	'''Builder object that builds a L{ParseTree}'''
+	'''Builder object that builds a :class:`ParseTree`'''
 
 	def __init__(self, partial=False, _parsetree_roundtrip=False):
 		self.partial = partial
@@ -829,7 +842,7 @@ class ParseTreeBuilder(Builder):
 		self._parsetree_roundtrip = _parsetree_roundtrip
 
 	def get_parsetree(self):
-		'''Returns the constructed L{ParseTree} object.
+		'''Returns the constructed :class:`ParseTree` object.
 		Can only be called once, after calling this method the object
 		can not be re-used.
 		'''
@@ -1148,14 +1161,14 @@ class DumperClass(Visitor):
 
 	To implement a dumper class, you need to define handlers for all
 	tags that can appear in a page. Tags that are represented by a simple
-	prefix and postfix string can be defined in the dictionary C{TAGS}.
+	prefix and postfix string can be defined in the dictionary ``TAGS``.
 	For example to define the italic tag in html output the dictionary
-	should contain a definition like: C{EMPHASIS: ('<i>', '</i>')}.
+	should contain a definition like: ``EMPHASIS: ('<i>', '</i>')``.
 
 	For tags that require more complex logic you can define a method to
 	format the tag. Typical usage is to format link attributes in such
-	a method. The method name should be C{dump_} + the name of the tag,
-	e.g. C{dump_link()} for links (see the constants with tag names for
+	a method. The method name should be ``dump_`` + the name of the tag,
+	e.g. ``dump_link()`` for links (see the constants with tag names for
 	the other tags). Such a sump method will get 3 arguments: the tag
 	name itself, a dictionary with the tag attributes and a list of
 	strings that form the tag content. The method should return a list
@@ -1163,19 +1176,19 @@ class DumperClass(Visitor):
 
 	This base class takes care of a stack of nested formatting tags and
 	when a tag is closed either picks the appropriate prefix and postfix
-	from C{TAGS} or calls the corresponding C{dump_} method. As a result
+	from ``TAGS`` or calls the corresponding ``dump_`` method. As a result
 	tags are serialized depth-first.
 
-	@ivar linker: the (optional) L{Linker} object, used to resolve links
-	@ivar template_options: a L{ConfigDict} with options that may be set
-	in a template (so inherently not safe !) to control the output style.
-	Formats using this need to define the supported keys in the dict
-	C{TEMPLATE_OPTIONS}.
-	@ivar context: the stack of open tags maintained by this class. Can
-	be used in C{dump_} methods to inspect the parent scope of the
-	format. Elements on this stack have "tag", "attrib" and "text"
-	attributes. Keep in mind that the parent scope is not yet complete
-	when a tag is serialized.
+	:ivar linker: the (optional) :class:`Linker` object, used to resolve links
+	:ivar template_options: a :class:`ConfigDict` with options that may be set
+		in a template (so inherently not safe !) to control the output style.
+		Formats using this need to define the supported keys in the dict
+		``TEMPLATE_OPTIONS``.
+	:ivar context: the stack of open tags maintained by this class. Can
+		be used in ``dump_`` methods to inspect the parent scope of the
+		format. Elements on this stack have "tag", "attrib" and "text"
+		attributes. Keep in mind that the parent scope is not yet complete
+		when a tag is serialized.
 	'''
 
 	TAGS = {} #: dict mapping formatting tags to 2-tuples of a prefix and a postfix string
@@ -1191,8 +1204,9 @@ class DumperClass(Visitor):
 
 	def dump(self, tree):
 		'''Format a parsetree to text
-		@param tree: a parse tree object that supports a C{visit()} method
-		@returns: a list of lines
+
+		:param tree: a parse tree object that supports a ``visit()`` method
+		:returns: a list of lines
 		'''
 		# FIXME - issue here is that we need to reset state - should be in __init__
 		self._text = []
@@ -1279,29 +1293,32 @@ class DumperClass(Visitor):
 	def encode_text(self, tag, text):
 		'''Optional method to encode text elements in the output
 
-		@note: Do not apply text encoding in the C{dump_} methods, the
-		list of strings given there may contain prefix and postfix
-		formatting of nested tags.
+		.. note::
 
-		@param tag: formatting tag
-		@param text: text to be encoded
-		@returns: encoded text
-		@implementation: optional, default just returns unmodified input
+			Do not apply text encoding in the ``dump_`` methods, the
+			list of strings given there may contain prefix and postfix
+			formatting of nested tags.
+
+		:param tag: formatting tag
+		:param text: text to be encoded
+		:returns: encoded text
+		:implementation: optional, default just returns unmodified input
 		'''
 		return text
 
 	def prefix_lines(self, prefix, strings):
 		'''Convenience method to wrap a number of lines with e.g. an
 		indenting sequence.
-		@param prefix: a string to prefix each line
-		@param strings: a list of pieces of text
-		@returns: a new list of lines, each starting with prefix
+
+		:param prefix: a string to prefix each line
+		:param strings: a list of pieces of text
+		:returns: a new list of lines, each starting with prefix
 		'''
 		lines = ''.join(strings).splitlines(1)
 		return [prefix + l for l in lines]
 
 	def dump_object(self, tag, attrib, strings=[]):
-		'''Dumps objects defined by L{InsertedObjectType}'''
+		'''Dumps objects defined by :class:`InsertedObjectType`'''
 		format = str(self.__class__.__module__).split('.')[-1]
 		try:
 			obj = PluginManager.insertedobjects[attrib['type']]
@@ -1327,15 +1344,17 @@ class DumperClass(Visitor):
 	def dump_object_fallback(self, tag, attrib, strings=None):
 		'''Method to serialize objects that do not have their own
 		handler for this format.
-		@implementation: must be implemented in sub-classes
+
+		:implementation: must be implemented in sub-classes
 		'''
 		raise NotImplementedError
 
 	def isrtl(self, text):
 		'''Check for Right To Left script
-		@param text: the text to check
-		@returns: C{True} if C{text} starts with characters in a
-		RTL script, or C{None} if direction is not determined.
+
+		:param text: the text to check
+		:returns: ``True`` if ``text`` starts with characters in a
+			RTL script, or ``None`` if direction is not determined.
 		'''
 		if Pango is None:
 			return None
@@ -1368,28 +1387,29 @@ class BaseLinker(object):
 		'''Returns an url for a link in a zim page
 		This method is used to translate links of any type.
 
-		@param link: link to be translated
-		@returns: url, uri, or relative path
-		context of this linker
-		@implementation: must be implemented by child classes
+		:param link: link to be translated
+		:returns: url, uri, or relative path
+			context of this linker
+		:implementation: must be implemented by child classes
 		'''
 		raise NotImplementedError
 
 	def img(self, src):
 		'''Returns an url for image file 'src'
-		@implementation: must be implemented by child classes
+
+		:implementation: must be implemented by child classes
 		'''
 		raise NotImplementedError
 
 	#~ def icon(self, name):
 		#~ '''Returns an url for an icon
-		#~ @implementation: must be implemented by child classes
+		#~ :implementation: must be implemented by child classes
 		#~ '''
 		#~ raise NotImplementedError
 
 	def resource(self, path):
 		'''Return an url for template resources
-		@implementation: must be implemented by child classes
+		:implementation: must be implemented by child classes
 		'''
 		raise NotImplementedError
 
@@ -1399,18 +1419,20 @@ class BaseLinker(object):
 		be inlined. Do not use this method to resolve links, the file
 		given here might be temporary and is not guaranteed to be
 		available after the export.
-		@returns: a L{File} object or C{None} if no file was found
-		@implementation: must be implemented by child classes
+
+		:returns: a :class:`File` object or ``None`` if no file was found
+		:implementation: must be implemented by child classes
 		'''
 		raise NotImplementedError
 
 	def page_object(self, path):
-		'''Turn a L{Path} object in a relative link or URI'''
+		'''Turn a :class:`Path` object in a relative link or URI'''
 		raise NotImplementedError
 
 	def file_object(self, file):
-		'''Turn a L{File} object in a relative link or URI
-		@implementation: must be implemented by child classes
+		'''Turn a :class:`File` object in a relative link or URI
+
+		:implementation: must be implemented by child classes
 		'''
 		raise NotImplementedError
 
@@ -1457,11 +1479,14 @@ class StubLinker(BaseLinker):
 
 class Node(list):
 	'''Base class for DOM-like access to the document structure.
-	@note: This class is not optimized for keeping large structures
-	in memory.
 
-	@ivar tag: tag name
-	@ivar attrib: dict with attributes
+	.. note::
+
+		This class is not optimized for keeping large structures
+		in memory.
+
+	:ivar tag: tag name
+	:ivar attrib: dict with attributes
 	'''
 
 	__slots__ = ('tag', 'attrib')
@@ -1505,8 +1530,12 @@ class Node(list):
 		'''Get text as string
 		Ignores any markup and attributes and simply returns textual
 		content.
-		@note: do _not_ use as replacement for exporting to plain text
-		@returns: string
+
+		.. note::
+
+			do _not_ use as replacement for exporting to plain text
+
+		:returns: string
 		'''
 		strings = self._gettext()
 		return ''.join(strings)
@@ -1733,7 +1762,7 @@ def parse_header_lines(text):
 		Wiki-Format: zim 0.4
 		Creation-Date: 2010-12-14T14:15:09.134955
 
-	@returns: the text minus the headers and a dict with the headers
+	:returns: the text minus the headers and a dict with the headers
 	'''
 	assert isinstance(text, str)
 	meta = DefinitionOrderedDict()

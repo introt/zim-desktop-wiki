@@ -4,14 +4,14 @@
 '''Action interface classes.
 
 Objects can have "actions", which are basically attributes of the
-class L{Action} or L{ToggleAction}. These objects are callable as bound
+class :class:`Action` or :class:`ToggleAction`. These objects are callable as bound
 methods. So actions are kind of special methods that define some
 interface parameters, like what icon and label to use in the menu.
 
-Use the L{action} and L{toggle_action} decorators to create actions.
+Use the :class:`action` and :class:`toggle_action` decorators to create actions.
 
-The classes defined here can cooperate with C{Gio.Action} to tie into the
-Gtk action framework. Also they can use Gtk widgets like C{Gtk.Button} as
+The classes defined here can cooperate with ``Gio.Action`` to tie into the
+Gtk action framework. Also they can use Gtk widgets like ``Gtk.Button`` as
 a "proxy" to trigger the action and reflect the state.
 
 ## Menuhints
@@ -74,7 +74,7 @@ PRIMARY_MODIFIER_MASK = _get_modifier_mask()
 
 
 def hasaction(obj, actionname):
-	'''Like C{hasattr} but for attributes that define an action'''
+	'''Like ``hasattr`` but for attributes that define an action'''
 	actionname = actionname.replace('-', '_')
 	return hasattr(obj.__class__, actionname) \
 		and isinstance(getattr(obj.__class__, actionname), ActionDescriptor)
@@ -94,18 +94,19 @@ class ActionDescriptor(object):
 
 
 def action(label, accelerator='', icon=None, verb_icon=None, menuhints='', alt_accelerator=None, tooltip=None):
-	'''Decorator to turn a method into an L{ActionMethod} object
+	'''Decorator to turn a method into an :class:`ActionMethod` object
 	Methods decorated with this decorator can have keyword arguments
 	but no positional arguments.
-	@param label: the label used e.g for the menu item (can use "_" for mnemonics)
-	@param accelerator: accelerator key description
-	@param icon: name of a "noun" icon - used together with the label. Only use
-	this for "things and places", not for actions or commands, and only if the
-	icon makes the item easier to recognize.
-	@param verb_icon: name of a "verb" icon - only used for compact menu views
-	@param menuhints: string with hints for menu placement and sensitivity
-	@param alt_accelerator: alternative accelerator key binding
-	@param tooltip: tooltip label, defaults to C{label}
+
+	:param label: the label used e.g for the menu item (can use "_" for mnemonics)
+	:param accelerator: accelerator key description
+	:param icon: name of a "noun" icon - used together with the label. Only use
+		this for "things and places", not for actions or commands, and only if the
+		icon makes the item easier to recognize.
+	:param verb_icon: name of a "verb" icon - only used for compact menu views
+	:param menuhints: string with hints for menu placement and sensitivity
+	:param alt_accelerator: alternative accelerator key binding
+	:param tooltip: tooltip label, defaults to ``label``
 	'''
 	def _action(function):
 		return ActionClassMethod(function.__name__, function, label, icon, verb_icon, accelerator, alt_accelerator, menuhints, tooltip)
@@ -249,25 +250,25 @@ class ActionClassMethod(ActionDescriptor):
 
 
 def toggle_action(label, accelerator='', icon=None, verb_icon=None, init=False, menuhints='', tooltip=None):
-	'''Decorator to turn a method into an L{ToggleActionMethod} object
+	'''Decorator to turn a method into an :class:`ToggleActionMethod` object
 
 	The decorated method should be defined as:
-	C{my_toggle_method(self, active)}. The 'C{active}' parameter is a
+	``my_toggle_method(self, active)``. The '``active``' parameter is a
 	boolean that reflects the new state of the toggle.
 
-	Users can also call the method without setting the C{active}
+	Users can also call the method without setting the ``active``
 	parameter. In this case the wrapper determines how to toggle the
 	state and calls the inner function with the new state.
 
-	@param label: the label used e.g for the menu item (can use "_" for mnemonics)
-	@param accelerator: accelerator key description
-	@param icon: name of a "noun" icon - used together with the label. Only use
-	this for "things and places", not for actions or commands, and only if the
-	icon makes the item easier to recognize.
-	@param verb_icon: name of a "verb" icon - only used for compact menu views
-	@param init: initial state of the toggle
-	@param menuhints: string with hints for menu placement and sensitivity
-	@param tooltip: tooltip label, defaults to C{label}
+	:param label: the label used e.g for the menu item (can use "_" for mnemonics)
+	:param accelerator: accelerator key description
+	:param icon: name of a "noun" icon - used together with the label. Only use
+		this for "things and places", not for actions or commands, and only if the
+		icon makes the item easier to recognize.
+	:param verb_icon: name of a "verb" icon - only used for compact menu views
+	:param init: initial state of the toggle
+	:param menuhints: string with hints for menu placement and sensitivity
+	:param tooltip: tooltip label, defaults to ``label``
 	'''
 	def _toggle_action(function):
 		return ToggleActionClassMethod(function.__name__, function, label, icon, verb_icon, accelerator, init, menuhints, tooltip)
@@ -303,7 +304,7 @@ class ToggleActionMethod(ActionMethod):
 		return ActionMethod.create_tool_button(self, fallback_icon, connect_button)
 
 	def connect_button(self, button):
-		'''Connect a C{Gtk.ToggleAction} or C{Gtk.ToggleButton} to this action'''
+		'''Connect a ``Gtk.ToggleAction`` or ``Gtk.ToggleButton`` to this action'''
 		button.set_active(self._state)
 		button.set_sensitive(self._sensitive)
 		button.connect('toggled', self._on_activate_proxy)
@@ -354,7 +355,7 @@ class ToggleActionMethod(ActionMethod):
 
 
 class ToggleActionClassMethod(ActionClassMethod):
-	'''Toggle action, used by the L{toggle_action} decorator'''
+	'''Toggle action, used by the :class:`toggle_action` decorator'''
 
 	_bound_class = ToggleActionMethod
 	_n_args = 2 # self, active
@@ -457,7 +458,7 @@ class RadioActionClassMethod(ActionDescriptor):
 def get_actions(obj):
 	'''Returns bound actions for object
 
-	NOTE: See also L{zim.plugins.list_actions()} if you want to include actions
+	NOTE: See also :class:`zim.plugins.list_actions()` if you want to include actions
 	of plugin extensions
 	'''
 	actions = []
@@ -467,10 +468,10 @@ def get_actions(obj):
 
 
 def get_gtk_actiongroup(obj):
-	'''Return a C{Gtk.ActionGroup} for an object using L{Action}
+	'''Return a ``Gtk.ActionGroup`` for an object using :class:`Action`
 	objects as attributes.
 
-	Defines the attribute C{obj.actiongroup} if it does not yet exist.
+	Defines the attribute ``obj.actiongroup`` if it does not yet exist.
 
 	This method can only be used when gtk is available
 	'''

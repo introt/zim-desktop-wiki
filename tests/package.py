@@ -240,15 +240,15 @@ class TestDocumentation(tests.TestCase):
 						(name, tuple(defined), tuple(documented))
 					)
 
-		# TODO can we also check whether doc should define @returns ??
+		# TODO can we also check whether doc should define :returns ??
 
-		# Check signature for @signal
+		# Check signature for :signal
 		if 'signal' in fields:
 			for spec in fields['signal']:
-				# e.g.  "C{signal-name (L{Page}, L{Path})}: Emitted when opening"
-				if not re.match('^C{[\w-]+ \(.*?\)\}:', spec):
+				# e.g.  "``signal-name (:class:`Page`, :class:`Path`)``: Emitted when opening"
+				if not re.match('^``[\w-]+ \(.*?\)\``:', spec):
 					self.fail('Signal description in %s does not follow templates\n'
-					'Is: %s\nShould be like "C{signal-name (arg1, arg2)}: description"'
+					'Is: %s\nShould be like "``signal-name (arg1, arg2)``: description"'
 					% (name, spec)
 					)
 

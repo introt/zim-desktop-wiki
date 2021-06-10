@@ -169,7 +169,7 @@ from zim.plugins import ExtensionBase, extendable
 class NotebookExtension(ExtensionBase):
 	'''Base class for extending the notebook
 
-	@ivar notebook: the L{Notebook} object
+	:ivar notebook: the :class:`Notebook` object
 	'''
 
 	def __init__(self, plugin, notebook):
@@ -181,38 +181,38 @@ class NotebookExtension(ExtensionBase):
 class Notebook(ConnectorMixin, SignalEmitter):
 	'''Main class to access a notebook
 
-	This class defines an API that proxies between backend L{zim.stores}
-	and L{Index} objects on the one hand and the user interface on the
-	other hand. (See L{module docs<zim.notebook>} for more explanation.)
+	This class defines an API that proxies between backend :class:`zim.stores`
+	and :class:`Index` objects on the one hand and the user interface on the
+	other hand. (See :class:`module docs<zim.notebook>` for more explanation.)
 
-	@signal: C{store-page (page)}: emitted before actually storing the page
-	@signal: C{stored-page (page)}: emitted after storing the page
-	@signal: C{move-page (oldpath, newpath)}: emitted before
-	actually moving a page
-	@signal: C{moved-page (oldpath, newpath)}: emitted after
-	moving the page
-	@signal: C{delete-page (path)}: emitted before deleting a page
-	@signal: C{deleted-page (path)}: emitted after deleting a page
-	means that the preferences need to be loaded again as well
-	@signal: C{suggest-link (path, text)}: hook that is called when trying
-	to resolve links
-	@signal: C{get-page-template (path)}: emitted before
-	when a template for a new page is requested, intended for plugins that
-	want to customize a namespace
-	@signal: C{init-page-template (path, template)}: emitted before
-	evaluating a template for a new page, intended for plugins that want
-	to extend page templates
+	:signal: ``store-page (page)``: emitted before actually storing the page
+	:signal: ``stored-page (page)``: emitted after storing the page
+	:signal: ``move-page (oldpath, newpath)``: emitted before
+		actually moving a page
+	:signal: ``moved-page (oldpath, newpath)``: emitted after
+		moving the page
+	:signal: ``delete-page (path)``: emitted before deleting a page
+	:signal: ``deleted-page (path)``: emitted after deleting a page
+		means that the preferences need to be loaded again as well
+	:signal: ``suggest-link (path, text)``: hook that is called when trying
+		to resolve links
+	:signal: ``get-page-template (path)``: emitted before
+		when a template for a new page is requested, intended for plugins that
+		want to customize a namespace
+	:signal: ``init-page-template (path, template)``: emitted before
+		evaluating a template for a new page, intended for plugins that want
+		to extend page templates
 
-	@ivar name: The name of the notebook (string)
-	@ivar icon: The path for the notebook icon (if any)
-	# FIXME should be L{File} object
-	@ivar document_root: The L{Dir} object for the X{document root} (if any)
-	@ivar dir: Optional L{Dir} object for the X{notebook folder}
-	@ivar file: Optional L{File} object for the X{notebook file}
-	@ivar cache_dir: A L{Dir} object for the folder used to cache notebook state
-	@ivar config: A L{SectionedConfigDict} for the notebook config
-	(the C{X{notebook.zim}} config file in the notebook folder)
-	@ivar index: The L{Index} object used by the notebook
+	:ivar name: The name of the notebook (string)
+	:ivar icon: The path for the notebook icon (if any)
+		# FIXME should be :class:`File` object
+	:ivar document_root: The :class:`Dir` object for the X{document root} (if any)
+	:ivar dir: Optional :class:`Dir` object for the X{notebook folder}
+	:ivar file: Optional :class:`File` object for the X{notebook file}
+	:ivar cache_dir: A :class:`Dir` object for the folder used to cache notebook state
+	:ivar config: A :class:`SectionedConfigDict` for the notebook config
+		(the ``X{notebook.zim``} config file in the notebook folder)
+	:ivar index: The :class:`Index` object used by the notebook
 	'''
 
 	# define signals we want to use - (closure type, return type and arg types)
@@ -239,8 +239,8 @@ class Notebook(ConnectorMixin, SignalEmitter):
 		will return unique objects per location and keep (weak)
 		references for re-use.
 
-		@param dir: a L{Dir} object
-		@returns: a L{Notebook} object
+		:param dir: a :class:`Dir` object
+		:returns: a :class:`Notebook` object
 		'''
 		assert isinstance(dir, Dir)
 
@@ -280,11 +280,12 @@ class Notebook(ConnectorMixin, SignalEmitter):
 
 	def __init__(self, cache_dir, config, folder, layout, index):
 		'''Constructor
-		@param cache_dir: a L{Folder} object used for caching the notebook state
-		@param config: a L{NotebookConfig} object
-		@param folder: a L{Folder} object for the notebook location
-		@param layout: a L{NotebookLayout} object
-		@param index: an L{Index} object
+
+		:param cache_dir: a :class:`Folder` object used for caching the notebook state
+		:param config: a :class:`NotebookConfig` object
+		:param folder: a :class:`Folder` object for the notebook location
+		:param layout: a :class:`NotebookLayout` object
+		:param index: an :class:`Index` object
 		'''
 		self.folder = folder
 		self.cache_dir = cache_dir
@@ -354,7 +355,7 @@ class Notebook(ConnectorMixin, SignalEmitter):
 
 	@property
 	def info(self):
-		'''The L{NotebookInfo} object for this notebook'''
+		'''The :class:`NotebookInfo` object for this notebook'''
 		try:
 			uri = self.uri
 		except AssertionError:
@@ -366,10 +367,10 @@ class Notebook(ConnectorMixin, SignalEmitter):
 	def save_properties(self, **properties):
 		'''Save a set of properties in the notebook config
 
-		This method does an C{update()} on the dict with properties but
+		This method does an ``update()`` on the dict with properties but
 		also updates the object attributes that map those properties.
 
-		@param properties: the properties to update
+		:param properties: the properties to update
 		'''
 		dir = Dir(self.layout.root.path) # XXX
 
@@ -418,28 +419,28 @@ class Notebook(ConnectorMixin, SignalEmitter):
 	def suggest_link(self, source, word):
 		'''Suggest a link Path for 'word' or return None if no suggestion is
 		found. By default we do not do any suggestion but plugins can
-		register handlers to add suggestions using the 'C{suggest-link}'
+		register handlers to add suggestions using the '``suggest-link``'
 		signal.
 		'''
 		return self.emit_return_first('suggest-link', source, word)
 
 	def get_page(self, path):
-		'''Get a L{Page} object for a given path
+		'''Get a :class:`Page` object for a given path
 
 		Typically a Page object will be returned even when the page
-		does not exist. In this case the C{hascontent} attribute of
-		the Page will be C{False} and C{get_parsetree()} will return
-		C{None}. This means that you do not have to create a page
+		does not exist. In this case the ``hascontent`` attribute of
+		the Page will be ``False`` and ``get_parsetree()`` will return
+		``None``. This means that you do not have to create a page
 		explicitly, just get the Page object and store it with new
 		content (if it is not read-only of course).
 
-		However in some cases this method will return C{None}. This
+		However in some cases this method will return ``None``. This
 		means that not only does the page not exist, but also that it
 		can not be created. This should only occur for certain special
 		pages and depends on the store implementation.
 
-		@param path: a L{Path} object
-		@returns: a L{Page} object or C{None}
+		:param path: a :class:`Path` object
+		:returns: a :class:`Page` object or ``None``
 		'''
 		# As a special case, using an invalid page as the argument should
 		# return a valid page object.
@@ -482,8 +483,8 @@ class Notebook(ConnectorMixin, SignalEmitter):
 		if the page already exists. Be aware that the resulting Page
 		object may not match the given Path object because of this.
 
-		@param path: a L{Path} object
-		@returns: a L{Page} object
+		:param path: a :class:`Path` object
+		:returns: a :class:`Page` object
 		'''
 		i = 0
 		base = path.name
@@ -500,16 +501,17 @@ class Notebook(ConnectorMixin, SignalEmitter):
 				path = Path(base + ' %i' % i)
 
 	def get_home_page(self):
-		'''Returns a L{Page} object for the home page'''
+		'''Returns a :class:`Page` object for the home page'''
 		return self.get_page(self.config['Notebook']['home'])
 
 	@notebook_state
 	def store_page(self, page):
 		'''Save the data from the page in the storage backend
 
-		@param page: a L{Page} object
-		@emits: store-page before storing the page
-		@emits: stored-page on success
+		:param page: a :class:`Page` object
+
+			:emits: store-page before storing the page
+			:emits: stored-page on success
 		'''
 		logger.debug('Store page: %s', page)
 		self.emit('store-page', page)
@@ -565,22 +567,22 @@ class Notebook(ConnectorMixin, SignalEmitter):
 	def move_page(self, path, newpath, update_links=True, update_heading=False):
 		'''Move and/or rename a page in the notebook
 
-		@param path: a L{Path} object for the old/current page name
-		@param newpath: a L{Path} object for the new page name
-		@param update_links: if C{True} all links B{from} and B{to} this
-		page and any of it's children will be updated to reflect the
-		new page name
-		@param update_heading: if C{True} the heading of the page will be
-		changed to the basename of the new path
+		:param path: a :class:`Path` object for the old/current page name
+		:param newpath: a :class:`Path` object for the new page name
+		:param update_links: if ``True`` all links **from** and **to** this
+			page and any of it's children will be updated to reflect the
+			new page name
+		:param update_heading: if ``True`` the heading of the page will be
+			changed to the basename of the new path
 
-		The original page C{path} does not have to exist, in this case
+		The original page ``path`` does not have to exist, in this case
 		only the link update will done. This is useful to update links
 		for a placeholder.
 
-		@raises PageExistsError: if C{newpath} already exists
+		:raises PageExistsError: if ``newpath`` already exists
 
-		@emits: move-page before the move
-		@emits: moved-page after successfull move
+		:emits: move-page before the move
+		:emits: moved-page after successfull move
 		'''
 		for p in self.move_page_iter(path, newpath, update_links, update_heading):
 			pass
@@ -588,8 +590,8 @@ class Notebook(ConnectorMixin, SignalEmitter):
 	@assert_index_uptodate
 	@notebook_state
 	def move_page_iter(self, path, newpath, update_links=True, update_heading=False):
-		'''Like L{move_page()} but yields pages that are being updated
-		if C{update_links} is C{True}
+		'''Like :class:`move_page()` but yields pages that are being updated
+		if ``update_links`` is ``True``
 		'''
 		logger.debug('Move page %s to %s', path, newpath)
 
@@ -847,17 +849,17 @@ class Notebook(ConnectorMixin, SignalEmitter):
 	def delete_page(self, path, update_links=True):
 		'''Delete a page from the notebook
 
-		@param path: a L{Path} object
-		@param update_links: if C{True} pages linking to the
-		deleted page will be updated and the link are removed.
+		:param path: a :class:`Path` object
+		:param update_links: if ``True`` pages linking to the
+			deleted page will be updated and the link are removed.
 
-		@returns: C{True} when the page existed and was deleted,
-		C{False} when the page did not exist in the first place.
+		:returns: ``True`` when the page existed and was deleted,
+			``False`` when the page did not exist in the first place.
 
 		Raises an error when delete failed.
 
-		@emits: delete-page before the actual delete
-		@emits: deleted-page after successfull deletion
+		:emits: delete-page before the actual delete
+		:emits: deleted-page after successfull deletion
 		'''
 		existed = self._delete_page(path)
 
@@ -869,7 +871,7 @@ class Notebook(ConnectorMixin, SignalEmitter):
 	@assert_index_uptodate
 	@notebook_state
 	def delete_page_iter(self, path, update_links=True):
-		'''Like L{delete_page()}'''
+		'''Like :class:`delete_page()`'''
 		self._delete_page(path)
 
 		for p in self._deleted_page(path, update_links):
@@ -902,26 +904,26 @@ class Notebook(ConnectorMixin, SignalEmitter):
 	def trash_page(self, path, update_links=True):
 		'''Move a page to Trash
 
-		Like L{delete_page()} but will use the system Trash (which may
+		Like :class:`delete_page()` but will use the system Trash (which may
 		depend on the OS we are running on). This is used in the
 		interface as a more user friendly version of delete as it is
 		undoable.
 
-		@param path: a L{Path} object
-		@param update_links: if C{True} pages linking to the
-		deleted page will be updated and the link are removed.
+		:param path: a :class:`Path` object
+		:param update_links: if ``True`` pages linking to the
+			deleted page will be updated and the link are removed.
 
-		@returns: C{True} when the page existed and was deleted,
-		C{False} when the page did not exist in the first place.
+		:returns: ``True`` when the page existed and was deleted,
+			``False`` when the page did not exist in the first place.
 
 		Raises an error when trashing failed.
 
-		@raises TrashNotSupportedError: if trashing is not supported by
-		the storage backend or when trashing is explicitly disabled
-		for this notebook.
+		:raises TrashNotSupportedError: if trashing is not supported by
+			the storage backend or when trashing is explicitly disabled
+			for this notebook.
 
-		@emits: delete-page before the actual delete
-		@emits: deleted-page after successfull deletion
+		:emits: delete-page before the actual delete
+		:emits: deleted-page after successfull deletion
 		'''
 		existed = self._trash_page(path)
 
@@ -933,7 +935,7 @@ class Notebook(ConnectorMixin, SignalEmitter):
 	@assert_index_uptodate
 	@notebook_state
 	def trash_page_iter(self, path, update_links=True):
-		'''Like L{trash_page()}'''
+		'''Like :class:`trash_page()`'''
 		self._trash_page(path)
 
 		for p in self._deleted_page(path, update_links):
@@ -1025,22 +1027,22 @@ class Notebook(ConnectorMixin, SignalEmitter):
 		'C:\\user' are recognized as absolute paths.
 
 		Paths that starts with a '/' are taken relative to the
-		to the I{document root} - this can e.g. be a parent directory
+		to the ``document root`` - this can e.g. be a parent directory
 		of the notebook. Defaults to the filesystem root when no document
 		root is set. (So can be relative or absolute depending on the
 		notebook settings.)
 
 		Paths starting with any other character are considered
-		attachments. If C{path} is given they are resolved relative to
-		the I{attachment folder} of that page, otherwise they are
-		resolved relative to the I{notebook folder} - if any.
+		attachments. If ``path`` is given they are resolved relative to
+		the ``attachment folder`` of that page, otherwise they are
+		resolved relative to the ``notebook folder`` - if any.
 
 		The file is resolved purely based on the path, it does not have
 		to exist at all.
 
-		@param filename: the (relative) file path or uri as string
-		@param path: a L{Path} object for the page
-		@returns: a L{File} object.
+		:param filename: the (relative) file path or uri as string
+		:param path: a :class:`Path` object for the page
+		:returns: a :class:`File` object.
 		'''
 		assert isinstance(filename, str)
 		filename = filename.replace('\\', '/')
@@ -1065,15 +1067,15 @@ class Notebook(ConnectorMixin, SignalEmitter):
 	def relative_filepath(self, file, path=None):
 		'''Get a file path relative to the notebook or page
 
-		Intended as the counter part of L{resolve_file()}. Typically
+		Intended as the counter part of :class:`resolve_file()`. Typically
 		this function is used to present the user with readable paths or to
 		shorten the paths inserted in the wiki code. It is advised to
 		use file URIs for links that can not be made relative with
 		this method.
 
 		The link can be relative:
-		  - to the I{document root} (link will start with "/")
-		  - the attachments dir (if a C{path} is given) or the notebook
+		  - to the ``document root`` (link will start with "/")
+		  - the attachments dir (if a ``path`` is given) or the notebook
 		    (links starting with "./" or "../")
 		  - or the users home dir (link like "~/user/")
 
@@ -1082,12 +1084,12 @@ class Notebook(ConnectorMixin, SignalEmitter):
 		path is absolute, but rather that it is relative to the
 		X{document root}.
 
-		@param file: L{File} object we want to link
-		@keyword path: L{Path} object for the page where we want to
-		link this file
+		:param file: :class:`File` object we want to link
+		:keyword path: :class:`Path` object for the page where we want to
+			link this file
 
-		@returns: relative file path as string, or C{None} when no
-		relative path was found
+		:returns: relative file path as string, or ``None`` when no
+			relative path was found
 		'''
 		from zim.newfs import LocalFile, LocalFolder
 		file = LocalFile(file.path) # XXX
@@ -1140,20 +1142,21 @@ class Notebook(ConnectorMixin, SignalEmitter):
 	def get_attachments_dir(self, path):
 		'''Get the X{attachment folder} for a specific page
 
-		@param path: a L{Path} object
-		@returns: a L{Dir} object or C{None}
+		:param path: a :class:`Path` object
+		:returns: a :class:`Dir` object or ``None``
 
 		Always returns a Dir object when the page can have an attachment
 		folder, even when the folder does not (yet) exist. However when
-		C{None} is returned the store implementation does not support
+		``None`` is returned the store implementation does not support
 		an attachments folder for this page.
 		'''
 		return self.layout.get_attachments_folder(path)
 
 	def get_template(self, path):
 		'''Get a template for the intial text on new pages
-		@param path: a L{Path} object
-		@returns: a L{ParseTree} object
+
+		:param path: a :class:`Path` object
+		:returns: a :class:`ParseTree` object
 		'''
 		# FIXME hardcoded that template must be wiki format
 
@@ -1164,7 +1167,7 @@ class Notebook(ConnectorMixin, SignalEmitter):
 
 	def get_page_template_name(self, path=None):
 		'''Returns the name of the template to use for a new page.
-		(To get the contents of the template directly, see L{get_template()})
+		(To get the contents of the template directly, see :class:`get_template()`)
 		'''
 		return self.emit_return_first('get-page-template', path or Path(':')) or 'Default'
 

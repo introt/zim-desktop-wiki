@@ -251,10 +251,10 @@ class VCS(object):
 	This class is the main entry for all Version Control System Stuff.
 	It is a factory, a dependencies checker, the enumeration of supported VCS.
 
-	@implementation: If you add a VCS backend, then you have to: \
-	- add a file named <your_backend>.py
-	- create there a class inheriting from VCSApplicationBase \
-	- add here the stuff to manage it
+	:implementation: If you add a VCS backend, then you have to: \
+		- add a file named <your_backend>.py
+		- create there a class inheriting from VCSApplicationBase \
+		- add here the stuff to manage it
 	"""
 
 	# Enumeration of all available backends
@@ -267,8 +267,9 @@ class VCS(object):
 	def detect_in_folder(klass, dir):
 		"""Detect if a version control system has already been setup in the folder.
 		It also create the instance by calling the VCS.create() method
-		@param dir: a L{Dir} instance representing the notebook root folder
-		@returns: a vcs backend object or C{None}
+
+		:param dir: a :class:`Dir` instance representing the notebook root folder
+		:returns: a vcs backend object or ``None``
 		"""
 		name, root = klass._detect_in_folder(dir)
 
@@ -319,8 +320,8 @@ class VCS(object):
 	@classmethod
 	def get_backend(klass, vcs):
 		"""Return the class of backend to instantiate according to vcs given as parameter.
-		@param vcs: the wanted vcs backend (VCS.BZR, VCS.GIT, VCS.HG, ...)
-		@returns: the related backend class. The returned class is a VCSApplicationBase child class
+		:param vcs: the wanted vcs backend (VCS.BZR, VCS.GIT, VCS.HG, ...)
+		:returns: the related backend class. The returned class is a VCSApplicationBase child class
 		"""
 		vcs_klass = None
 		if vcs == VCS.BZR:
@@ -345,11 +346,11 @@ class VCS(object):
 	def create(klass, vcs, vcs_dir, notebook_dir):
 		"""Build the required instance of a Version Control System
 
-		@param vcs: Version Control System to build (choose between VCS.BZR, VCS.HG, VCS.GIT, VCS.FOSSIL)
-		@param vcs_dir: a L{Dir} instance representing the VCS root folder
-		@param notebook_dir: a L{Dir} instance representing the notebook root folder
-		(must be equal to or below vcs_dir)
-		@returns: a vcs backend object
+		:param vcs: Version Control System to build (choose between VCS.BZR, VCS.HG, VCS.GIT, VCS.FOSSIL)
+		:param vcs_dir: a :class:`Dir` instance representing the VCS root folder
+		:param notebook_dir: a :class:`Dir` instance representing the notebook root folder
+			(must be equal to or below vcs_dir)
+		:returns: a vcs backend object
 		"""
 		if not (notebook_dir == vcs_dir or notebook_dir.ischild(vcs_dir)):
 			raise AssertionError('Notebook %s is not part of version control dir %s' % (notebook_dir, vcs_dir))
@@ -360,8 +361,8 @@ class VCS(object):
 	@classmethod
 	def check_dependencies(klass, vcs):
 		"""Check if the dependencies for the requested vcs are ok
-		@param vcs: the requested vcs: VCS.BZR, VCS.GIT, VCS.HG or VCS.FOSSIL
-		@returns: C{True} if dependencies are checked ok.
+		:param vcs: the requested vcs: VCS.BZR, VCS.GIT, VCS.HG or VCS.FOSSIL
+		:returns: ``True`` if dependencies are checked ok.
 		"""
 		return VCS.get_backend(vcs).tryexec()
 
@@ -373,9 +374,9 @@ class VCSApplicationBase(ConnectorMixin):
 
 	def __init__(self, vcs_dir, notebook_dir):
 		"""Constructor.
-		@param vcs_dir: a L{Dir} instance representing the VCS root folder
-		@param notebook_dir: a L{Dir} instance representing the notebook root folder
-		(must be equal to or below vcs_dir)
+		:param vcs_dir: a :class:`Dir` instance representing the VCS root folder
+		:param notebook_dir: a :class:`Dir` instance representing the notebook root folder
+			(must be equal to or below vcs_dir)
 		"""
 		assert isinstance(vcs_dir, LocalFolder)
 
@@ -396,17 +397,17 @@ class VCSApplicationBase(ConnectorMixin):
 
 	def on_created(self, fs, path):
 		"""Callback when a file has been created
-		@param fs: the watcher object
-		@param path: a L{File} or L{Folder} object
+		:param fs: the watcher object
+		:param path: a :class:`File` or :class:`Folder` object
 		"""
 		if path.ischild(self.root) and not self._ignored(path):
 			self.add(path)
 
 	def on_moved(self, fs, oldpath, newpath):
 		"""Callback when a file has been moved
-		@param fs: the watcher object
-		@param oldpath: a L{File} or L{Folder} object
-		@param newpath: a L{File} or L{Folder} object
+		:param fs: the watcher object
+		:param oldpath: a :class:`File` or :class:`Folder` object
+		:param newpath: a :class:`File` or :class:`Folder` object
 		"""
 		if newpath.ischild(self.root) and not self._ignored(newpath):
 			if oldpath.ischild(self.root):
@@ -419,24 +420,24 @@ class VCSApplicationBase(ConnectorMixin):
 
 	def on_removed(self, fs, path):
 		"""Callback when a file has been delted
-		@param fs: the watcher object
-		@param path: a L{File} or L{Folder} object
+		:param fs: the watcher object
+		:param path: a :class:`File` or :class:`Folder` object
 		"""
 		if path.ischild(self.root) and not self._ignored(path):
 			self.remove(path)
 
 	@classmethod
 	def build_bin_application_instance(cls):
-		"""Builds an L{Application} object for the backend command
-		@returns: an L{Application} object
-		@implementation: must be implemented in child classes.
+		"""Builds an :class:`Application` object for the backend command
+		:returns: an :class:`Application` object
+		:implementation: must be implemented in child classes.
 		"""
 		raise NotImplementedError
 
 	@classmethod
 	def tryexec(cls):
 		"""Check if the command associated with the backend is available.
-		@returns: C{True} if the command is available
+		:returns: ``True`` if the command is available
 		"""
 		return cls.build_bin_application_instance().tryexec()
 
@@ -444,27 +445,28 @@ class VCSApplicationBase(ConnectorMixin):
 		"""Execute a command with the associated binary with 'params' parameters.
 		Note: the working directory is the root associated to the repository
 
-		@param params: a list of parameters to be added to the command line
-		@returns: nothing
-		@implementation: should not be overriden by child classes
+		:param params: a list of parameters to be added to the command line
+		:returns: nothing
+		:implementation: should not be overriden by child classes
 		"""
 		self._app.run(params, self.root)
 
 	def pipe(self, params):
 		"""Execute a command with the associated binary with 'params' parameters
 		and return the command line output.
-		@param params: a list of parameters to be added to the command line
-		@returns: a list of str() representing each line of the output
-		@implementation: should not be overriden by child classes
+
+		:param params: a list of parameters to be added to the command line
+		:returns: a list of str() representing each line of the output
+		:implementation: should not be overriden by child classes
 		"""
 		return self._app.pipe(params, self.root)
 
 	def _ignored(self, file):
 		"""return True if the file should be ignored by the version control system
-		@param file: a L{File} representing the file that we want to know if it should be ignored
-		@returns: C{True} if the file should be ignored by the VCS.
-		@implementation: may be overridden if some files are to be ignored \
-		                 specifically for the backend
+		:param file: a :class:`File` representing the file that we want to know if it should be ignored
+		:returns: ``True`` if the file should be ignored by the VCS.
+		:implementation: may be overridden if some files are to be ignored \
+			                 specifically for the backend
 		"""
 		return '.zim' in file.pathnames
 
@@ -475,13 +477,14 @@ class VCSApplicationBase(ConnectorMixin):
 	def add(self, file=None):
 		"""Add a file to the repository. If None, then the add must be for the \
 		entire repository
-		@param file: a L{File} instance representing the file to add.
-		@returns: C{True} if the command was successfull
+
+		:param file: a :class:`File` instance representing the file to add.
+		:returns: ``True`` if the command was successfull
 
 		Exemple: for Mercurial, the implementation will run "hg add <file>" or
 		"hg add" if file=None (meaning the entire repository
 
-		@implementation: must be implemented in child classes
+		:implementation: must be implemented in child classes
 		"""
 		raise NotImplementedError
 
@@ -489,32 +492,32 @@ class VCSApplicationBase(ConnectorMixin):
 		"""return the annotated version of a file. This is commonly related
 		to the VCS command annotate
 
-		@param file: a L{File} instance representing the file
-		@param version: a  None/int/str representing the revision of the file
-		@returns: a list of lines representing the command result output
+		:param file: a :class:`File` instance representing the file
+		:param version: a  None/int/str representing the revision of the file
+		:returns: a list of lines representing the command result output
 
 		Eg. for mercurial, it will return something like:
 		  0: line1
 		  2: line1
 		  ...
 
-		@implementation: must be implemented in child classes
+		:implementation: must be implemented in child classes
 		"""
 		raise NotImplementedError
 
 	def cat(self, file, version):
 		"""Return the context of a file at a specific version
-		@param file: a L{File} object in this repository
-		@param version: a version id
-		@returns: a list of lines
+		:param file: a :class:`File` object in this repository
+		:param version: a version id
+		:returns: a list of lines
 		"""
 		raise NotImplementedError
 
 	def commit_version(self, msg):
 		"""Run a commit operation.
 
-		@param msg: commit message (str)
-		@returns: nothing
+		:param msg: commit message (str)
+		:returns: nothing
 		"""
 		if self.is_modified():
 			self.add()
@@ -524,9 +527,9 @@ class VCSApplicationBase(ConnectorMixin):
 
 	def commit(self, file, msg):
 		"""Execute a commit for the file or for the entire repository
-		@param file: a L{File} instance representing the file or None for the entire repository
-		@param msg: a str() representing the commit message
-		@returns: C{True} if the command was successfull
+		:param file: a :class:`File` instance representing the file or None for the entire repository
+		:param msg: a str() representing the commit message
+		:returns: ``True`` if the command was successfull
 
 		Example for Mercurial. It will run:
 		- hg commit -m <msg> <file>    (file not None and message not empty
@@ -534,16 +537,17 @@ class VCSApplicationBase(ConnectorMixin):
 		- hg commit <file>             (file not None and message empty)
 		- hg commit                    (file=None and message empty)
 
-		@implementation: must be implemented in child class
+		:implementation: must be implemented in child class
 		"""
 		raise NotImplementedError
 
 	def diff(self, versions=None, file=None):
 		"""Returns the result of a diff between two revisions as a list of str()
 		representing the diff operation output.
-		@param versions: int, str, couple or tuple representing the versions to compare
-		@param file: a L{File} instance representing the file, or None
-		@returns: a list of str() representing the output of the diff operation
+
+		:param versions: int, str, couple or tuple representing the versions to compare
+		:param file: a :class:`File` instance representing the file, or None
+		:returns: a list of str() representing the output of the diff operation
 
 		Example for Mercurial. It could run:
 		- hg diff --git <version1> <version2> <file>
@@ -551,25 +555,25 @@ class VCSApplicationBase(ConnectorMixin):
 		- ...
 
 		Note: the --git option allow to show the result a better way
-		@implementation: must be implemented in child class
+		:implementation: must be implemented in child class
 		"""
 		raise NotImplementedError
 
 	def ignore(self, file_to_ignore_regexp):
 		"""initialize the .XXignore file used by the VCS.
 
-		@param file_to_ignore_regexp: a str() representing the content of the \
-		                              .XXignore file. It's commonly a set of
-		                              regular expressions separated by a line end.
+		:param file_to_ignore_regexp: a str() representing the content of the \
+			                              .XXignore file. It's commonly a set of
+			                              regular expressions separated by a line end.
 
 		Note: the behavior is to overwrite the entire file content, so you must
 		first concatenate the regexp if you need several.
-		@returns: nothing
+		:returns: nothing
 
-		@implementation: must be implemented in child class. The ignore file may
-		                 be easyly created by running simply the following line
-		                 of code:
-		                 self.root.file('nameoftheignorefile').write(file_to_ignore_regexp)
+		:implementation: must be implemented in child class. The ignore file may
+			                 be easyly created by running simply the following line
+			                 of code:
+			                 self.root.file('nameoftheignorefile').write(file_to_ignore_regexp)
 
 		Example: for Mercurial, the content of the method is:
 		  self.root.file('.hgignore').write(file_to_ignore_regexp)
@@ -580,23 +584,24 @@ class VCSApplicationBase(ConnectorMixin):
 
 	def init_repo(self):
 		"""initialize a repository in the associated folder.
-		Runs L{init()}, adds existing files etc.
-		@returns: nothing.
-		@implementation: must be implemented in the child class.
+		Runs :class:`init()`, adds existing files etc.
+
+		:returns: nothing.
+		:implementation: must be implemented in the child class.
 		"""
 		raise NotImplementedError
 
 	def repo_exists(self):
 		"""Returns True if a repository is already setup
-		@returns: C{True} if a repository is already setup in the root directory
-		@implementation: must be implemented in child classes.
+		:returns: ``True`` if a repository is already setup in the root directory
+		:implementation: must be implemented in child classes.
 		"""
 		raise NotImplementedError
 
 	def init(self):
 		""" runs the VCS init command
-		@returns: C{True} if the command was successfull
-		@implementation: must be implemented in child class
+		:returns: ``True`` if the command was successfull
+		:implementation: must be implemented in child class
 
 		Example: for mercurial or bazaar it runs "hg init" (or "bzr init")
 		"""
@@ -604,16 +609,16 @@ class VCSApplicationBase(ConnectorMixin):
 
 	def is_modified(self):
 		"""Returns True if the repo is not up-to-date, or False
-		@returns: C{True} if the repo is not up-to-date, or False
-		@implementation: must be implemented in the child class.
+		:returns: ``True`` if the repo is not up-to-date, or False
+		:implementation: must be implemented in the child class.
 		"""
 		raise NotImplementedError
 
 	def list_versions(self, file=None):
 		"""Returns a list of all versions, for a file or for the entire repo
 
-		@param file: a L{File} object representing the path to the file, or None
-		@returns: a list of tuples (revision (int), date, user (str), msg (str))
+		:param file: a :class:`File` object representing the path to the file, or None
+		:returns: a list of tuples (revision (int), date, user (str), msg (str))
 		"""
 		# TODO see if we can get this directly from bzrlib as well
 		lines = self.log(file)
@@ -622,25 +627,26 @@ class VCSApplicationBase(ConnectorMixin):
 
 	def log(self, file=None):
 		"""Returns the history related to a file.
-		@param file: a L{File} instance representing the file or None (for the entire repository)
-		@returns: a list of str() representing the output of the command. (not parsed)
-		@implementation: must be implemented in child class. It must return the \
-		                 output for a file or for the entire repository, and the \
-		                 order must be from the oldest to the newest commits
+		:param file: a :class:`File` instance representing the file or None (for the entire repository)
+		:returns: a list of str() representing the output of the command. (not parsed)
+		:implementation: must be implemented in child class. It must return the \
+			                 output for a file or for the entire repository, and the \
+			                 order must be from the oldest to the newest commits
 		"""
 		raise NotImplementedError
 
 	def log_to_revision_list(self, log_op_output):
 		"""Converts the result of a log() call into a list of tuples representing \
 		the commits.
-		@param log_op_output: a list of str() representing the log operation output
-		                      before being parsed.
-		@returns: a list of tuple (revision-id, date, user, commit-message) \
-		          representing the entire life.
-		@implementation: must be implemented in the child class. \
-		                 Actually, this method is a "log" operation parser which
-		                 will convert str lines into list of 4-str tuples :
-		                 (revision-id, date, user, commit-message)
+
+		:param log_op_output: a list of str() representing the log operation output
+			                      before being parsed.
+		:returns: a list of tuple (revision-id, date, user, commit-message) \
+			          representing the entire life.
+		:implementation: must be implemented in the child class. \
+			                 Actually, this method is a "log" operation parser which
+			                 will convert str lines into list of 4-str tuples :
+			                 (revision-id, date, user, commit-message)
 		"""
 		raise NotImplementedError
 
@@ -650,13 +656,14 @@ class VCSApplicationBase(ConnectorMixin):
 
 		Note: this is only for files being move from somewhere in the repository
 		to somewhere in the repository
-		@param oldfile: a L{File} representing the old location of the file
-		@param newfile: a L{File} representing the new location of the file
-		@returns : C{True} if the VCS operation representing this move was successfull
-		@implementation: must be implemented in child class. \
-		                 CAUTION: this must not implement a move operation but \
-		                 a "a file has moved on the filesystem" operation, \
-		                 ordering the VCS to take into account the new state.
+
+		:param oldfile: a :class:`File` representing the old location of the file
+		:param newfile: a :class:`File` representing the new location of the file
+		:returns : ``True`` if the VCS operation representing this move was successfull
+		:implementation: must be implemented in child class. \
+			                 CAUTION: this must not implement a move operation but \
+			                 a "a file has moved on the filesystem" operation, \
+			                 ordering the VCS to take into account the new state.
 
 		                 Example: with mercurial, it is implemented by running:
 		                   hg mv --after <oldfile> <newfile>
@@ -666,23 +673,23 @@ class VCSApplicationBase(ConnectorMixin):
 
 	def remove(self, file):
 		"""Remove a file from the repository.
-		@param file: a L{File} instance representing the file that have been deleted
-		@returns: C{True} if the command was successfull
-		@implementation: must be implemented in child class. \
-		                 CAUTION: this must implement the VCS operation required \
-		                 after a versionned file has been deleted from the file system. \
-		                 \
-		                 Example: in mercurial it has been implemented with:
-		                   hg rm <file>
+		:param file: a :class:`File` instance representing the file that have been deleted
+		:returns: ``True`` if the command was successfull
+		:implementation: must be implemented in child class. \
+			                 CAUTION: this must implement the VCS operation required \
+			                 after a versionned file has been deleted from the file system. \
+			                 \
+			                 Example: in mercurial it has been implemented with:
+			                   hg rm <file>
 		"""
 		raise NotImplementedError
 
 	def revert(self, file=None, version=None):
 		"""Reverts a file to an older version
-		@param file: a L{File} instance representing the file or None for the entire repo
-		@param version: a str() or int() representing the expected version
-		@returns: C{True} if the command was successfull
-		@implementation: must be implemented in child class
+		:param file: a :class:`File` instance representing the file or None for the entire repo
+		:param version: a str() or int() representing the expected version
+		:returns: ``True`` if the command was successfull
+		:implementation: must be implemented in child class
 
 		Example: in mercurial it will run:
 		- hg revert --no-backup <file> <version>     if file is not None
@@ -693,15 +700,15 @@ class VCSApplicationBase(ConnectorMixin):
 	def stage(self):
 		"""Prepares the repo for a commit. Used, for example, by git to stage changes so that the status message in SaveVersionDialog shows what will be committed.
 
-		@implementation: optional to be implemented in child class
+		:implementation: optional to be implemented in child class
 		"""
 		pass
 
 	def status(self):
 		"""Returns the status of the repository
-		@returns: a list of str() representing the output of a "status" command
-		related to the repository
-		@implementation: must be implemented in child classes
+		:returns: a list of str() representing the output of a "status" command
+			related to the repository
+		:implementation: must be implemented in child classes
 		"""
 		raise NotImplementedError
 

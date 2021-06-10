@@ -3,7 +3,7 @@
 
 '''This module contains helper classes for running external applications.
 
-See L{zim.gui.applications} for classes with desktop integration for
+See :class:`zim.gui.applications` for classes with desktop integration for
 applications defined in desktop entry files.
 '''
 
@@ -78,10 +78,10 @@ class ApplicationError(zim.errors.Error):
 	def __init__(self, cmd, args, retcode, stderr):
 		'''Constructor
 
-		@param cmd: the application command as string
-		@param args: tuple of arguments given to the command
-		@param retcode: the return code of the command (non-zero!)
-		@param stderr: the error output of the command
+		:param cmd: the application command as string
+		:param args: tuple of arguments given to the command
+		:param retcode: the return code of the command (non-zero!)
+		:param stderr: the error output of the command
 		'''
 		self.msg = _('Failed to run application: %s') % cmd
 			# T: Error message when external application failed, %s is the command
@@ -98,11 +98,11 @@ class Application(object):
 	'''Base class for objects representing an external application or
 	command.
 
-	@ivar name: the name of the command (default to first item of C{cmd})
-	@ivar cmd: the command and arguments as a tuple or a string
-	(when given as a string it will be parsed for quoted arguments)
-	@ivar tryexeccmd: the command to check in L{tryexec()}, if C{None}
-	fall back to first item of C{cmd}
+	:ivar name: the name of the command (default to first item of ``cmd``)
+	:ivar cmd: the command and arguments as a tuple or a string
+		(when given as a string it will be parsed for quoted arguments)
+	:ivar tryexeccmd: the command to check in :class:`tryexec()`, if ``None``
+		fall back to first item of ``cmd``
 	'''
 
 	STATUS_OK = 0 #: return code when the command executed successfullly
@@ -110,11 +110,11 @@ class Application(object):
 	def __init__(self, cmd, tryexeccmd=None):
 		'''Constructor
 
-		@param cmd: the command for the external application, either a
-		string for the command, or a tuple or list with the command
-		and arguments
-		@param tryexeccmd: command to check in L{tryexec()} as string.
-		If C{None} will default to C{cmd} or the first item of C{cmd}.
+		:param cmd: the command for the external application, either a
+			string for the command, or a tuple or list with the command
+			and arguments
+		:param tryexeccmd: command to check in :class:`tryexec()` as string.
+			If ``None`` will default to ``cmd`` or the first item of ``cmd``.
 		'''
 		if isinstance(cmd, str):
 			cmd = split_quoted_strings(cmd)
@@ -185,9 +185,10 @@ class Application(object):
 	def tryexec(self):
 		'''Check if the executable exists without calling it. This
 		method is used e.g. to decide what applications to show in the
-		gui. Uses the C{tryexeccmd}, or the first item of C{cmd} as the
+		gui. Uses the ``tryexeccmd``, or the first item of ``cmd`` as the
 		executable name.
-		@returns: C{True} when the executable was found
+
+		:returns: ``True`` when the executable was found
 		'''
 		cmd = self.tryexeccmd or self.cmd[0]
 		return not self._lookup(cmd) is None
@@ -217,9 +218,10 @@ class Application(object):
 		'''Run the application in a sub-process and wait for it to finish.
 		Even when the application runs successfully, any message to stderr
 		is logged as a warning by zim.
-		@param args: additional arguments to give to the command as tuple or list
-		@param cwd: the folder to set as working directory for the command
-		@raises ApplicationError: if the sub-process returned an error.
+
+		:param args: additional arguments to give to the command as tuple or list
+		:param cwd: the folder to set as working directory for the command
+		:raises ApplicationError: if the sub-process returned an error.
 		'''
 		cwd, argv = self._checkargs(cwd, args)
 		logger.info('Running: %r (cwd: %r)', argv, cwd)
@@ -272,17 +274,19 @@ class Application(object):
 
 	def pipe(self, args=None, cwd=None, input=None):
 		'''Run the application in a sub-process and capture the output.
-		Like L{run()}, but connects to stdin and stdout for the sub-process.
+		Like :class:`run()`, but connects to stdin and stdout for the sub-process.
 
-		@note: The data read is buffered in memory, so do not use this
-		method if the data size is large or unlimited.
+		.. note::
 
-		@param args: additional arguments to give to the command as tuple or list
-		@param cwd: the folder to set as working directory for the command
-		@param input: input for the command as string
+			The data read is buffered in memory, so do not use this
+			method if the data size is large or unlimited.
 
-		@returns: output as a list of lines
-		@raises ApplicationError: if the sub-process returned an error.
+		:param args: additional arguments to give to the command as tuple or list
+		:param cwd: the folder to set as working directory for the command
+		:param input: input for the command as string
+
+		:returns: output as a list of lines
+		:raises ApplicationError: if the sub-process returned an error.
 		'''
 		cwd, argv = self._checkargs(cwd, args)
 		logger.info('Running: %r (cwd: %r)', argv, cwd)
@@ -319,18 +323,18 @@ class Application(object):
 		not expected to exit immediatly, so we do not want to wait for
 		it - e.g. a webbrowser to show an URL that was clicked.
 
-		@param args: additional arguments to give to the command as tuple or list
-		@param callback: optional callback can be used to trigger when
-		the application exits. The signature is::
+		:param args: additional arguments to give to the command as tuple or list
+		:param callback: optional callback can be used to trigger when
+			the application exits. The signature is::
 
 			callback(status, data)
 
-		where 'C{status}' is the exit status of the process. The
-		application object provides a constant 'C{STATUS_OK}' which can
+		where '``status``' is the exit status of the process. The
+		application object provides a constant '``STATUS_OK``' which can
 		be used to test if the application was successful or not.
-		@param data: additional data for the callback
-		@param cwd: the folder to set as working directory for the command
-		@returns: the PID for the new process
+		:param data: additional data for the callback
+		:param cwd: the folder to set as working directory for the command
+		:returns: the PID for the new process
 		'''
 		cwd, argv = self._checkargs(cwd, args)
 
@@ -376,7 +380,7 @@ class Application(object):
 
 
 class WebBrowser(Application):
-	'''Application wrapper for the C{webbrowser} module. Can be used as
+	'''Application wrapper for the ``webbrowser`` module. Can be used as
 	fallback if no webbrowser is configured.
 	'''
 
@@ -399,7 +403,8 @@ class WebBrowser(Application):
 
 	def run(self, args):
 		'''This method is not supported by this class
-		@raises NotImplementedError: always
+
+		:raises NotImplementedError: always
 		'''
 		raise NotImplementedError('WebBrowser can not run in foreground')
 
@@ -419,7 +424,7 @@ class WebBrowser(Application):
 
 
 class StartFile(Application):
-	'''Application wrapper for C{os.startfile()}. Can be used on
+	'''Application wrapper for ``os.startfile()``. Can be used on
 	windows to open files and URLs with the default application.
 	'''
 
@@ -437,7 +442,8 @@ class StartFile(Application):
 
 	def run(self, args):
 		'''This method is not supported by this class
-		@raises NotImplementedError: always
+
+		:raises NotImplementedError: always
 		'''
 		raise NotImplementedError('StartFile can not run in foreground')
 

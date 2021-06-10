@@ -636,7 +636,8 @@ class TaskListTreeView(BrowserTreeView):
 
 	def set_filter_actionable(self, filter):
 		'''Set filter state for non-actionable items
-		@param filter: if C{False} all items are shown, if C{True} only actionable items
+
+		:param filter: if ``False`` all items are shown, if ``True`` only actionable items
 		'''
 		self.filter_actionable = filter
 		self._eval_filter()
@@ -660,21 +661,24 @@ class TaskListTreeView(BrowserTreeView):
 
 	def get_labels(self):
 		'''Get all labels that are in use
-		@returns: a dict with labels as keys and the number of tasks
-		per label as value
+
+		:returns: a dict with labels as keys and the number of tasks
+			per label as value
 		'''
 		return self._labels
 
 	def get_tags(self):
 		'''Get all tags that are in use
-		@returns: a dict with tags as keys and the number of tasks
-		per tag as value
+
+		:returns: a dict with tags as keys and the number of tasks
+			per tag as value
 		'''
 		return self._tags
 
 	def get_n_tasks(self):
 		'''Get the number of tasks in the list
-		@returns: total number
+
+		:returns: total number
 		'''
 		counter = [0]
 		def count(model, path, iter):

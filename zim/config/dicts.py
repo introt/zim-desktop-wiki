@@ -3,21 +3,21 @@
 
 '''This module contains base classes to map config files to dicts
 
-The main classes are L{ConfigDict} and L{INIConfigFile}. The
-L{ConfigDict} defines a dictionary of config keys. To add a key in this
+The main classes are :class:`ConfigDict` and :class:`INIConfigFile`. The
+:class:`ConfigDict` defines a dictionary of config keys. To add a key in this
 dictionary it must first be defined using one of the sub-classes of
-L{ConfigDefinition}. This definition takes care of validating the
+:class:`ConfigDefinition`. This definition takes care of validating the
 value of the config keys and (de-)serializing the values from and to
-text representation used in the config files. The L{INIConfigFile} maps
+text representation used in the config files. The :class:`INIConfigFile` maps
 to a INI-style config file that defines multiple sections with config
 keys. It is represented as a dictionary where each key maps a to a
-L{ConfigDict}.
+:class:`ConfigDict`.
 
-Both derive from L{ControlledDict} which defines the C{changed} signal
+Both derive from :class:`ControlledDict` which defines the ``changed`` signal
 which can be used to track changes in the configuration.
 
 Typically these classes are not instantiated directly, but by the
-L{ConfigManager} defined in L{zim.config.manager}.
+:class:`ConfigManager` defined in :class:`zim.config.manager`.
 '''
 
 
@@ -49,13 +49,13 @@ logger = logging.getLogger('zim.config')
 
 
 class ControlledDict(DefinitionOrderedDict, SignalEmitter, ConnectorMixin):
-	'''Sub-class of C{DefinitionOrderedDict} that tracks modified state.
-	This modified state is recursive for nested C{ControlledDict}s.
+	'''Sub-class of ``DefinitionOrderedDict`` that tracks modified state.
+	This modified state is recursive for nested ``ControlledDict``s.
 
-	Used as base class for L{SectionedConfigDict} and L{ConfigDict}.
+	Used as base class for :class:`SectionedConfigDict` and :class:`ConfigDict`.
 
-	@signal: C{changed ()}: emitted when content of this dict changed,
-	or a nested C{ControlledDict} changed
+	:signal: ``changed ()``: emitted when content of this dict changed,
+		or a nested ``ControlledDict`` changed
 	'''
 
 	__signals__ = {
@@ -96,15 +96,16 @@ class ControlledDict(DefinitionOrderedDict, SignalEmitter, ConnectorMixin):
 
 	@property
 	def modified(self):
-		'''C{True} when the values were modified, used to e.g.
+		'''``True`` when the values were modified, used to e.g.
 		track when a config needs to be written back to file
 		'''
 		return self._modified
 
 	def set_modified(self, modified):
-		'''Set the modified state. Used to reset modified to C{False}
+		'''Set the modified state. Used to reset modified to ``False``
 		after the configuration has been saved to file.
-		@param modified: C{True} or C{False}
+
+		:param modified: ``True`` or ``False``
 		'''
 		if modified:
 			self._modified = True
@@ -116,7 +117,7 @@ class ControlledDict(DefinitionOrderedDict, SignalEmitter, ConnectorMixin):
 
 
 class ConfigDefinition(object):
-	'''Definition for a key in a L{ConfigDict}'''
+	'''Definition for a key in a :class:`ConfigDict`'''
 
 	__slots__ = ('default', 'allow_empty')
 
@@ -161,10 +162,11 @@ class ConfigDefinition(object):
 		return value
 
 	def check(self, value):
-		'''Check C{value} to be a valid value for this key
-		@raises ValueError: if value is invalid and can not
-		be converted
-		@returns: (converted) value if valid
+		'''Check ``value`` to be a valid value for this key
+
+		:raises ValueError: if value is invalid and can not
+			be converted
+		:returns: (converted) value if valid
 		'''
 		raise NotImplementedError
 
@@ -175,7 +177,7 @@ class ConfigDefinition(object):
 class ConfigDefinitionByClass(ConfigDefinition):
 	'''Definition that enforces the value has to have a certain class
 
-	Classes that have a C{new_from_zim_config()} method can convert
+	Classes that have a ``new_from_zim_config()`` method can convert
 	values to the desired class.
 	'''
 	# TODO fully get rid of this class and replace by specialized classes
@@ -269,7 +271,7 @@ class String(ConfigDefinition):
 
 
 class StringAllowEmpty(String):
-	'''Like C{String} but defaults to C{allow_empty=True}'''
+	'''Like ``String`` but defaults to ``allow_empty=True``'''
 
 	# XXX needed by TaskList - remove when prefs are ported to use defs directly
 
@@ -427,7 +429,7 @@ _definition_classes = {
 
 
 def build_config_definition(default=None, check=None, allow_empty=False):
-	'''Convenience method to construct a L{ConfigDefinition} object
+	'''Convenience method to construct a :class:`ConfigDefinition` object
 	based on a default value and/or a check.
 	'''
 	if default is None and check is None:
@@ -459,18 +461,18 @@ class ConfigDict(ControlledDict):
 	'''The class defines a dictionary of config keys.
 
 	To add a key in this dictionary it must first be defined using one
-	of the sub-classes of L{ConfigDefinition}. This definition takes
+	of the sub-classes of :class:`ConfigDefinition`. This definition takes
 	care of validating the value of the config keys and
 	(de-)serializing the values from and to text representation used
 	in the config files.
 
-	Both getting and setting a value will raise a C{KeyError} when the
-	key has not been defined first. An C{ValueError} is raised when the
+	Both getting and setting a value will raise a ``KeyError`` when the
+	key has not been defined first. An ``ValueError`` is raised when the
 	value does not conform to the definition.
 
-	THis class derives from L{ControlledDict} which in turn derives
-	from L{DefinitionOrderedDict} so changes to the config can be tracked by the
-	C{changed} signal, and values are kept in the same order so the order
+	THis class derives from :class:`ControlledDict` which in turn derives
+	from :class:`DefinitionOrderedDict` so changes to the config can be tracked by the
+	``changed`` signal, and values are kept in the same order so the order
 	in which items are written to the config file is predictable.
 	'''
 
@@ -484,7 +486,8 @@ class ConfigDict(ControlledDict):
 
 	def copy(self):
 		'''Shallow copy of the items
-		@returns: a new object of the same class with the same items
+
+		:returns: a new object of the same class with the same items
 		'''
 		new = self.__class__()
 		new.update(self)
@@ -492,11 +495,11 @@ class ConfigDict(ControlledDict):
 		return new
 
 	def update(self, E=None, **F):
-		'''Like C{dict.update()}, copying values from C{E} or C{F}.
-		However if C{E} is also a C{ConfigDict}, also the definitions
+		'''Like ``dict.update()``, copying values from ``E`` or ``F``.
+		However if ``E`` is also a ``ConfigDict``, also the definitions
 		are copied along.
-		Do use C{update()} when setting multiple values at once since it
-		results in emitting C{changed} only once.
+		Do use ``update()`` when setting multiple values at once since it
+		results in emitting ``changed`` only once.
 		'''
 		if E and isinstance(E, ConfigDict):
 			self.define(
@@ -537,7 +540,7 @@ class ConfigDict(ControlledDict):
 			del self._input[k]
 
 	def input(self, E=None, **F):
-		'''Like C{update()} but won't raise on failures.
+		'''Like ``update()`` but won't raise on failures.
 		Values for undefined keys are stored and validated once the
 		key is defined. Invalid values only cause a logged error
 		message but do not cause errors to be raised.
@@ -557,7 +560,7 @@ class ConfigDict(ControlledDict):
 
 	def define(self, E=None, **F):
 		'''Set one or more definitions for this config dict
-		Can cause error log when values prior given to C{input()} do
+		Can cause error log when values prior given to ``input()`` do
 		not match the definition.
 		'''
 		assert not (E and F)
@@ -599,10 +602,12 @@ class ConfigDict(ControlledDict):
 	def setdefault(self, key, default, check=None, allow_empty=False):
 		'''Set the default value for a configuration item.
 
-		@note: Usage of this method with keyword arguments is
-		depreciated, use L{define()} instead.
+		.. note::
 
-		Compatible with C{dict.setdefault()} but extended with
+			Usage of this method with keyword arguments is
+			depreciated, use :class:`define()` instead.
+
+		Compatible with ``dict.setdefault()`` but extended with
 		functionality to check the value that is in the dict, and use
 		the default if the value is mal-formed. This is used extensively
 		in zim to do a sanity check on values in the configuration
@@ -610,57 +615,57 @@ class ConfigDict(ControlledDict):
 		can assume them to be safe afterward and avoid a lot of checks
 		or bugs later in the code.
 
-		@param key: the dict key
-		@param default: the default value for this key
+		:param key: the dict key
+		:param default: the default value for this key
 
-		@param check: the check to do on the values, when the check
-		fails the value is considered mal-formed and the default is
-		used while a warning is logged.
+		:param check: the check to do on the values, when the check
+			fails the value is considered mal-formed and the default is
+			used while a warning is logged.
 
-		If C{check} is C{None} the default behavior will be to compare
+		If ``check`` is ``None`` the default behavior will be to compare
 		the classes of the set value and the default and enforce them to
 		be of the same type. Automatic conversion is done for values of
-		type C{list} with defaults of type C{tuple}. And for defaults of
-		type C{str} or C{unicode} the C{basestring} type is used as
-		check. As a special case when the default is C{None} the check
-		is not allowed to be C{None} as well.
+		type ``list`` with defaults of type ``tuple``. And for defaults of
+		type ``str`` or ``unicode`` the ``basestring`` type is used as
+		check. As a special case when the default is ``None`` the check
+		is not allowed to be ``None`` as well.
 
-		If C{check} is given and it is a class the existing value will be
+		If ``check`` is given and it is a class the existing value will be
 		checked to be of that class. Same special case for tuples
 		and strings applies here.
 
-		If C{check} is given and is a C{set}, C{list} or C{tuple} the
+		If ``check`` is given and is a ``set``, ``list`` or ``tuple`` the
 		value will be tested to be in this set or list.
 
-		If the default is an integer and C{check} is a tuple of two
+		If the default is an integer and ``check`` is a tuple of two
 		integers, the check will be that the value is in this range.
-		(For compatibility with L{InputForm} extra argument for integer
+		(For compatibility with :class:`InputForm` extra argument for integer
 		spin boxes.)
 
-		If C{check} is given and it is a function it will be used to
+		If ``check`` is given and it is a function it will be used to
 		check the value in the dictionary if it exists. The function
 		is called as::
 
 			check(value, default)
 
-		Where C{value} is the current value in the dict and C{default}
+		Where ``value`` is the current value in the dict and ``default``
 		is the default value that was provided. The function can not
 		only check the value, it can also do on the fly modifications,
 		e.g. to coerce it into a specific type. If the value is OK the
 		function should return the (modified) value, if not it should
-		raise an C{AssertionError}. When this error is raised the
+		raise an ``AssertionError``. When this error is raised the
 		default is used and the dict is considered being modified.
 
 		( Note that 'assert' statements in the code can be removed
-		by code optimization, so explicitly call "C{raise AssertionError}". )
+		by code optimization, so explicitly call "``raise AssertionError``". )
 
 		Examples of functions that can be used as a check are:
-		L{check_class_allow_empty} and L{value_is_coord}.
+		:class:`check_class_allow_empty` and :class:`value_is_coord`.
 
-		@param allow_empty: if C{True} the value is allowed to be empty
-		(either empty string or C{None}). In this case the default is
-		not set to overwrite an empty value, but only for a mal-formed
-		value or for a value that doesn't exist yet in the dict.
+		:param allow_empty: if ``True`` the value is allowed to be empty
+			(either empty string or ``None``). In this case the default is
+			not set to overwrite an empty value, but only for a mal-formed
+			value or for a value that doesn't exist yet in the dict.
 		'''
 		if key in self.definitions \
 		and check is None \
@@ -696,7 +701,7 @@ class INIConfigFile(SectionedConfigDict):
 	'''Dict to represent a configuration file in "ini-style". Since the
 	ini-file is divided in section this is represented as a dict of
 	dicts. This class represents the top-level with a key for each
-	section. The values are in turn L{ConfigDict}s which contain the
+	section. The values are in turn :class:`ConfigDict`s which contain the
 	key value pairs in that section.
 
 	A typical file might look like::
@@ -709,7 +714,7 @@ class INIConfigFile(SectionedConfigDict):
 	  enabled=True
 	  data={'foo': 1, 'bar': 2}
 
-	(The values are parsed by the L{ConfigDefinition} for each key)
+	(The values are parsed by the :class:`ConfigDefinition` for each key)
 
 	By default when parsing sections of the same name they will be
 	merged and values that appear under the same section name later in
@@ -729,11 +734,12 @@ class INIConfigFile(SectionedConfigDict):
 
 	def __init__(self, file, monitor=False):
 		'''Constructor
-		@param file: a L{File} or L{ConfigFile} object for reading and
-		writing the config.
-		@param monitor: if C{True} will listen to the C{changed} signal
-		of the file object and update the dict accordingly. Leave
-		C{False} for objects with a short life span.
+
+		:param file: a :class:`File` or :class:`ConfigFile` object for reading and
+			writing the config.
+		:param monitor: if ``True`` will listen to the ``changed`` signal
+			of the file object and update the dict accordingly. Leave
+			``False`` for objects with a short life span.
 		'''
 		SectionedConfigDict.__init__(self)
 		self.file = file
@@ -773,7 +779,8 @@ class INIConfigFile(SectionedConfigDict):
 		'''Parse an "ini-style" configuration. Fills the dictionary
 		with values from this text, wil merge with existing sections and
 		overwrite existing values.
-		@param text: a string or a list of lines
+
+		:param text: a string or a list of lines
 		'''
 		# Note that we explicitly do _not_ support comments on the end
 		# of a line. This is because "#" could be a valid character in
@@ -808,13 +815,14 @@ class INIConfigFile(SectionedConfigDict):
 				section.input(values)
 
 	def write(self):
-		'''Write data and set C{modified} to C{False}'''
+		'''Write data and set ``modified`` to ``False``'''
 		self.file.writelines(self.dump())
 		self.set_modified(False)
 
 	def dump(self):
 		'''Serialize the config to a "ini-style" config file.
-		@returns: a list of lines with text in "ini-style" formatting
+
+		:returns: a list of lines with text in "ini-style" formatting
 		'''
 		lines = []
 		def dump_section(name, section):
@@ -856,7 +864,7 @@ class HierarchicDict(object):
 	which has the top-level fallback properties.
 
 	This object only implements
-	C{__getitem__()}, but no C{__setitem__()}.
+	``__getitem__()``, but no ``__setitem__()``.
 	'''
 	# Note that all the magic is actually implemented by HierarchicDictFrame
 
@@ -865,7 +873,7 @@ class HierarchicDict(object):
 	def __init__(self, defaults=None):
 		'''Constructor
 
-		@param defaults: dict with the default properties
+		:param defaults: dict with the default properties
 		'''
 		self.dict = {}
 		self.dict['__defaults__'] = defaults or {}
@@ -877,16 +885,16 @@ class HierarchicDict(object):
 
 
 class HierarchicDictFrame(object):
-	'''Object acts as a member dict for L{HierarchicDict}'''
+	'''Object acts as a member dict for :class:`HierarchicDict`'''
 
 	__slots__ = ('dict', 'key')
 
 	def __init__(self, dict, key):
 		'''Constructor
 
-		@param dict: the dict used to store the properties per namespace
-		(internal in HierarchicDict)
-		@param key: the key for this member dict
+		:param dict: the dict used to store the properties per namespace
+			(internal in HierarchicDict)
+		:param key: the key for this member dict
 		'''
 		self.dict = dict
 		self.key = key

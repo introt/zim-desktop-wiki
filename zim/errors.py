@@ -15,10 +15,11 @@ logger = logging.getLogger('zim')
 use_gtk_errordialog = False
 
 def set_use_gtk(use_gtk):
-	'''Set whether or not L{show_error} and L{exception_handler}
-	shold use the L{ErrorDialog} or not.
-	@param use_gtk: set C{True} for interactive gui, C{False} for
-	terminal mode
+	'''Set whether or not :class:`show_error` and :class:`exception_handler`
+	shold use the :class:`ErrorDialog` or not.
+
+	:param use_gtk: set ``True`` for interactive gui, ``False`` for
+		terminal mode
 	'''
 	global use_gtk_errordialog
 	use_gtk_errordialog = use_gtk
@@ -26,9 +27,10 @@ def set_use_gtk(use_gtk):
 
 def get_error_msg(error):
 	'''Returns the message to show for an error
-	@param error: error object or string
-	@returns: 2-tuple of: message string and a boolean
-	whether a traceback should be shown or not
+
+	:param error: error object or string
+	:returns: 2-tuple of: message string and a boolean
+		whether a traceback should be shown or not
 	'''
 	if isinstance(error, Error):
 		# An "expected" error
@@ -49,8 +51,9 @@ def get_error_msg(error):
 
 def log_error(error, debug=None):
 	'''Log error and traceback
-	@param error: error as understood by L{get_error_msg()}
-	@param debug: optional debug message, defaults to the error itself
+
+	:param error: error as understood by :class:`get_error_msg()`
+	:param debug: optional debug message, defaults to the error itself
 	'''
 	msg, show_trace = get_error_msg(error)
 	if debug is None:
@@ -74,9 +77,10 @@ def _run_error_dialog(error):
 
 
 def show_error(error):
-	'''Show an error by calling L{log_error()} and when running
-	interactive also calling L{ErrorDialog}.
-	@param error: the error object
+	'''Show an error by calling :class:`log_error()` and when running
+	interactive also calling :class:`ErrorDialog`.
+
+	:param error: the error object
 	'''
 	log_error(error)
 	if use_gtk_errordialog:
@@ -84,10 +88,11 @@ def show_error(error):
 
 
 def exception_handler(debug):
-	'''Like C{show_error()} but with debug message instead of the actual
-	error. Intended to be used in C{except} blocks as a catch-all for
+	'''Like ``show_error()`` but with debug message instead of the actual
+	error. Intended to be used in ``except`` blocks as a catch-all for
 	both intended and unintended errors.
-	@param debug: debug message for logging
+
+	:param debug: debug message for logging
 	'''
 	# We use debug as log message, rather than the error itself
 	# the error itself shows up in the traceback anyway
@@ -105,7 +110,7 @@ class Error(Exception):
 
 	This class is intended for application and usage errors, these will
 	be caught in the user interface and presented as error dialogs.
-	In contrast and Exception that does I{not} derive from this base
+	In contrast and Exception that does ``not`` derive from this base
 	class will result in a "You found a bug" dialog. Do not use this
 	class e.g. to catch programming errors.
 

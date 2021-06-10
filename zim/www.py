@@ -8,8 +8,8 @@ It can be run either as a stand-alone web server or embedded in another
 server as a cgi-bin script or using  one of the python web frameworks
 using the "WSGI" API.
 
-The main classes here are L{WWWInterface} which implements the interface
-(and is callable as a "WSGI" application) and L{Server} which implements
+The main classes here are :class:`WWWInterface` which implements the interface
+(and is callable as a "WSGI" application) and :class:`Server` which implements
 the standalone server.
 '''
 
@@ -58,13 +58,14 @@ class WWWError(Error):
 
 	def __init__(self, msg, status='500', headers=None):
 		'''Constructor
-		@param msg: specific error message - will be appended after
-		the standard error string
-		@param status: error code, e.g. '500' for "Internal Server Error"
-		or '404' for "Not Found" - see http specifications for valid
-		error codes
-		@param headers: additional http headers for the error response,
-		list of 2-tuples with header name and value
+
+		:param msg: specific error message - will be appended after
+			the standard error string
+		:param status: error code, e.g. '500' for "Internal Server Error"
+			or '404' for "Not Found" - see http specifications for valid
+			error codes
+		:param headers: additional http headers for the error response,
+			list of 2-tuples with header name and value
 		'''
 		self.status = '%s %s' % (status, self.statusstring[status])
 		self.headers = headers
@@ -110,9 +111,10 @@ class WWWInterface(object):
 
 	def __init__(self, notebook, template='Default', auth_creds=None):
 		'''Constructor
-		@param notebook: a L{Notebook} object
-		@param template: html template for zim pages
-		@param auth_creds: credentials for HTTP-authentication
+
+		:param notebook: a :class:`Notebook` object
+		:param template: html template for zim pages
+		:param auth_creds: credentials for HTTP-authentication
 		'''
 		assert isinstance(notebook, Notebook)
 		self.notebook = notebook
@@ -140,16 +142,16 @@ class WWWInterface(object):
 		'''Main function for handling a single request. Follows the
 		WSGI API.
 
-		@param environ: dictionary with environment variables for the
-		request and some special variables. See the PEP for expected
-		variables.
+		:param environ: dictionary with environment variables for the
+			request and some special variables. See the PEP for expected
+			variables.
 
-		@param start_response: a function that can be called to set the
-		http response and headers. For example::
+		:param start_response: a function that can be called to set the
+			http response and headers. For example::
 
 			start_response(200, [('Content-Type', 'text/plain')])
 
-		@returns: the html page content as a list of lines
+		:returns: the html page content as a list of lines
 		'''
 		if self.auth_creds:
 			import base64
@@ -296,8 +298,9 @@ class WWWInterface(object):
 
 	def render_index(self, namespace=None):
 		'''Render an index page
-		@param namespace: the namespace L{Path}
-		@returns: html as a list of lines
+
+		:param namespace: the namespace :class:`Path`
+		:returns: html as a list of lines
 		'''
 		path = namespace or Path(':')
 		page = createIndexPage(self.notebook, path, namespace)
@@ -305,8 +308,9 @@ class WWWInterface(object):
 
 	def render_page(self, page):
 		'''Render a single page from the notebook
-		@param page: a L{Page} object
-		@returns: html as a list of lines
+
+		:param page: a :class:`Page` object
+		:returns: html as a list of lines
 		'''
 		lines = []
 
@@ -347,12 +351,12 @@ class WWWLinker(ExportLinker):
 		return None # not used by HTML anyway
 
 	def page_object(self, path):
-		'''Turn a L{Path} object in a relative link or URI'''
+		'''Turn a :class:`Path` object in a relative link or URI'''
 		return url_encode('/' + encode_filename(path.name) + '.html')
 			# TODO use script location as root for cgi-bin
 
 	def file_object(self, file):
-		'''Turn a L{File} object in a relative link or URI'''
+		'''Turn a :class:`File` object in a relative link or URI'''
 		if file.ischild(self.notebook.folder):
 			# attachment
 			relpath = file.relpath(self.notebook.folder)
@@ -377,13 +381,14 @@ def main(notebook, port=8080, public=True, **opts):
 
 def make_server(notebook, port=8080, public=True, auth_creds=None, **opts):
 	'''Create a simple http server
-	@param notebook: the notebook location
-	@param port: the http port to serve on
-	@param public: allow connections to the server from other
-	computers - if C{False} can only connect from localhost
-	@param auth_creds: credentials for HTTP-authentication
-	@param opts: options for L{WWWInterface.__init__()}
-	@returns: a C{WSGIServer} object
+
+	:param notebook: the notebook location
+	:param port: the http port to serve on
+	:param public: allow connections to the server from other
+		computers - if ``False`` can only connect from localhost
+	:param auth_creds: credentials for HTTP-authentication
+	:param opts: options for :class:`WWWInterface.__init__()`
+	:returns: a ``WSGIServer`` object
 	'''
 	import wsgiref.simple_server
 	app = WWWInterface(notebook, auth_creds=auth_creds, **opts) # FIXME make opts explicit
