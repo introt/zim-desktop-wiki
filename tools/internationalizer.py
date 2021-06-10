@@ -8,7 +8,7 @@ import re
 def match_ignore(string):
 	if string.startswith("'''"):
 		return True # ignore docstring etc.
-	
+
 	string = string.strip('\'"')
 	if not re.search(r'[a-zA-Z]', string):
 		return True # ignore without any letter
@@ -22,7 +22,7 @@ def match_ignore(string):
 		return True # assertion (?)
 	elif string.startswith('TODO'):
 		return True # assertion (?)
-	
+
 	return False
 
 ignore_functions = ('setdefault', 'connect', 'connect_after', 'connect_object', 'get_property', 'emit', 'info', 'debug', 'warn', 'exception', 'get_action') 

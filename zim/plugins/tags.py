@@ -205,10 +205,10 @@ class DuplicatePageTreeStore(PageTreeStoreBase):
 						self.emit('row-changed', treepath, treeiter)
 
 	def get_indexpath(self, treeiter):
-		'''Get an L{PageIndexRecord} for a C{Gtk.TreeIter}
+		'''Get an :class:`PageIndexRecord` for a ``Gtk.TreeIter``
 
-		@param treeiter: a C{Gtk.TreeIter}
-		@returns: an L{PageIndexRecord} object
+		:param treeiter: a ``Gtk.TreeIter``
+		:returns: an :class:`PageIndexRecord` object
 		'''
 		mytreeiter = self.get_user_data(treeiter)
 		if mytreeiter.hint == IS_PAGE:
@@ -282,11 +282,11 @@ class TagsPageTreeView(PageTreeView):
 	def set_current_page(self, path, vivificate=False):
 		'''Set the current page in the treeview
 
-		@param path: a notebook L{Path} object for the page
-		@keyword vivificate: when C{True} the path is created
-		temporarily when it did not yet exist
+		:param path: a notebook :class:`Path` object for the page
+		:keyword vivificate: when ``True`` the path is created
+			temporarily when it did not yet exist
 
-		@returns: a gtk TreePath (tuple of intergers) or C{None}
+		:returns: a gtk TreePath (tuple of intergers) or ``None``
 		'''
 		#~ print('!! SELECT', path)
 		model = self.get_model()
@@ -326,8 +326,8 @@ class TagCloudWidget(ConnectorMixin, Gtk.TextView):
 	'''Text-view based list of tags, where each tag is represented by a
 	button inserted as a child in the textview.
 
-	@signal: C{selection-changed ()}: emitted when tag selection changes
-	@signal: C{sorting-changed ()}: emitted when tag sorting changes
+	:signal: ``selection-changed ()``: emitted when tag selection changes
+	:signal: ``sorting-changed ()``: emitted when tag sorting changes
 	'''
 
 	# define signals we want to use - (closure type, return type and arg types)

@@ -187,7 +187,7 @@ def copy_imagegenerator_src_files(src_file, folder):
 
 class ImageGeneratorClass(object):
 	'''Base class for image generators.
-	A plugin defining an L{ImageGeneratorObjectType} should also define a
+	A plugin defining an :class:`ImageGeneratorObjectType` should also define a
 	sub-class of this class to do the actual work.
 
 	The generator does the actual work to generate an image from text. It does
@@ -219,15 +219,15 @@ class ImageGeneratorClass(object):
 		still return a log file, so the user can check the details of
 		why the creation failed.
 
-		@param text: the source text as string - raw user input
-		@returns: a 2-tuple of the image file and the log file as
-		L{File} objects. If no image file was created the first
-		element should be C{None}, if no log file is created second
-		element should be C{None}.
-		@raises Error: this method is allowed to raise errors like
-		L{ApplicationError} when running a command failed.
+		:param text: the source text as string - raw user input
+		:returns: a 2-tuple of the image file and the log file as
+			:class:`File` objects. If no image file was created the first
+			element should be ``None``, if no log file is created second
+			element should be ``None``.
+		:raises Error: this method is allowed to raise errors like
+			:class:`ApplicationError` when running a command failed.
 
-		@implementation: must be implemented by subclasses
+		:implementation: must be implemented by subclasses
 		'''
 		raise NotImplemented
 
@@ -238,20 +238,20 @@ class ImageGeneratorClass(object):
 		generating image and writing the user input into the script
 		file.
 
-		@param text: the source text as string - raw user input
-		@returns: string used for generate_image, also the string
-		written to script file.
+		:param text: the source text as string - raw user input
+		:returns: string used for generate_image, also the string
+			written to script file.
 
-		@implementation: Not mandatory to be implemented by a subclass.
-		It defaults to user input.
+		:implementation: Not mandatory to be implemented by a subclass.
+			It defaults to user input.
 		'''
 		return text
 
 	def get_default_text(self):
 		'''Provides a template or starting point for the user to begin editing.
 
-		@implementation: Not mandatory to be implemented by a subclass.
-		It defaults to the empty string.
+		:implementation: Not mandatory to be implemented by a subclass.
+			It defaults to the empty string.
 		'''
 		return ''
 
@@ -261,11 +261,11 @@ class ImageGeneratorClass(object):
 		This method is used to pre-process contents of script file
 		before displaying in textarea.
 
-		@param text: the contents of script file
-		@returns: string used to display for user input.
+		:param text: the contents of script file
+		:returns: string used to display for user input.
 
-		@implementation: Not mandatory to be implemented by a subclass.
-		It defaults to script file contents.
+		:implementation: Not mandatory to be implemented by a subclass.
+			It defaults to script file contents.
 		'''
 		return text
 
@@ -273,7 +273,7 @@ class ImageGeneratorClass(object):
 		'''Cleanup any temporary files that were created by this
 		generator. Including log files and image files.
 
-		@implementation: should be implemented by subclasses
+		:implementation: should be implemented by subclasses
 		'''
 		pass
 
@@ -301,7 +301,7 @@ class ImageGeneratorWidget(ImageFileWidget):
 
 class ImageGeneratorDialog(Dialog):
 	'''Dialog that provides text input and an image view
-	for showing previews for an L{ImageGeneratorClass} implementation.
+	for showing previews for an :class:`ImageGeneratorClass` implementation.
 	'''
 
 	@classmethod

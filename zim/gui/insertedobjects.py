@@ -24,17 +24,17 @@ POSITION_END = 2
 class InsertedObjectWidget(Gtk.EventBox):
 	'''Base class & contained for custom object widget
 
-	We derive from a C{Gtk.EventBox} because we want to re-set the
+	We derive from a ``Gtk.EventBox`` because we want to re-set the
 	default cursor for the area of the object widget. For this the
 	widget needs it's own window for drawing.
 
-	@signal: C{link-clicked (link)}: To be emitted when the user clicks a link
-	@signal: C{link-enter (link)}: To be emitted when the mouse pointer enters a link
-	@signal: C{link-leave (link)}: To be emitted when the mouse pointer leaves a link
-	@signal: C{grab-cursor (position)}: emitted when embedded widget
-	should grab focus, position can be either POSITION_BEGIN or POSITION_END
-	@signal:  C{release-cursor (position)}: emitted when the embedded
-	widget wants to give back focus to the embedding TextView
+	:signal: ``link-clicked (link)``: To be emitted when the user clicks a link
+	:signal: ``link-enter (link)``: To be emitted when the mouse pointer enters a link
+	:signal: ``link-leave (link)``: To be emitted when the mouse pointer leaves a link
+	:signal: ``grab-cursor (position)``: emitted when embedded widget
+		should grab focus, position can be either POSITION_BEGIN or POSITION_END
+	:signal:  ``release-cursor (position)``: emitted when the embedded
+		widget wants to give back focus to the embedding TextView
 	'''
 
 	# define signals we want to use - (closure type, return type and arg types)

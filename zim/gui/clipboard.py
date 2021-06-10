@@ -212,16 +212,16 @@ def parsetree_from_selectiondata(selectiondata, notebook, path=None, text_format
 		- For parsetree data containing inline images, the image files are
 	  	  copied to the attachment folder
 
-	@param selectiondata: a C{Gtk.SelectionData} object
-	@param notebook: a L{Notebook} object
-	@param path: a L{Path} object
-	@param text_format: format to parse pasted text, as a special case
+	:param selectiondata: a ``Gtk.SelectionData`` object
+	:param notebook: a :class:`Notebook` object
+	:param path: a :class:`Path` object
+	:param text_format: format to parse pasted text, as a special case
 
 		- "verbatim" will wrap content in VERBARIM_BLOCK or VERBATIM element based on the content
 		- "verbatim-pre" will wrap the content in a VERBATIM_BLOCK element and
 		- "verbatim-code" will wrap the content in a VERBATIM element
 
-	@returns: a L{ParseTree} or C{None}
+	:returns: a :class:`ParseTree` or ``None``
 	'''
 	targetname = selectiondata.get_target().name()
 	if targetname == PARSETREE_TARGET_NAME:
@@ -491,8 +491,8 @@ def _get_image_info(targetname):
 
 
 class MockSelectionData(object):
-	'''Adapter to allow usage of C{ClipboardData} as input for
-	C{parsetree_from_selectiondata()}
+	'''Adapter to allow usage of ``ClipboardData`` as input for
+	``parsetree_from_selectiondata()``
 	'''
 
 	def __init__(self, target, clipboard_data):
@@ -529,8 +529,9 @@ class ClipboardData(object):
 
 	def get_data_as(self, targetid):
 		'''Return data in the requested target format
-		@param targetid: the target id
-		@implementation: must be implemented by sub-classes
+
+		:param targetid: the target id
+		:implementation: must be implemented by sub-classes
 		'''
 		raise NotImplementedError
 
@@ -682,12 +683,13 @@ class PageLinkData(ClipboardData):
 
 
 class ClipboardManager(object):
-	'''Wrapper for C{Gtk.Clipboard}, supporting specific data formats'''
+	'''Wrapper for ``Gtk.Clipboard``, supporting specific data formats'''
 
 	def __init__(self, name):
 		'''Constructor
-		@param name: clipboard name, can be either "CLIPBOARD" or "PRIMARY",
-		see C{Gtk.Clipboard} for details.
+
+		:param name: clipboard name, can be either "CLIPBOARD" or "PRIMARY",
+			see ``Gtk.Clipboard`` for details.
 		'''
 		assert name in ('CLIPBOARD', 'PRIMARY')
 		atom = Gdk.SELECTION_CLIPBOARD if name == 'CLIPBOARD' else Gdk.SELECTION_PRIMARY
@@ -701,7 +703,8 @@ class ClipboardManager(object):
 
 	def set_clipboard_data(self, clipboard_data):
 		'''Set an item on the clipboard
-		@param clipboard_data: a L{ClipboardData} object
+
+		:param clipboard_data: a :class:`ClipboardData` object
 		'''
 		self.data = clipboard_data
 		#self.clipboard.set_with_data(self.data.targets, self._get, self._clear) \
@@ -733,17 +736,25 @@ class ClipboardManager(object):
 
 	def set_text(self, text):
 		'''Set text to the clipboard
-		@param text: text to set on the clipboard
-		@note: DO NOT USE THIS METHOD if you can use L{set_parsetree()}
-		instead
+
+		:param text: text to set on the clipboard
+
+			.. note::
+
+				DO NOT USE THIS METHOD if you can use :class:`set_parsetree()`
+				instead
 		'''
 		self.clipboard.set_text(text, -1)
 
 	def get_text(self):
 		'''Get text from the clipboard.
-		@returns: (unicode) text or C{None}
-		@note: DO NOT USE THIS METHOD if you can use L{get_parsetree()}
-		instead
+
+		:returns: (unicode) text or ``None``
+
+			.. note::
+
+				DO NOT USE THIS METHOD if you can use :class:`get_parsetree()`
+				instead
 		'''
 		return self.clipboard.wait_for_text()
 
@@ -752,10 +763,10 @@ class ClipboardManager(object):
 		the user either as formatted text within zim or as plain text outside
 		zim. The tree can be the full tree for 'page', but also a selection.
 
-		@param notebook: the L{Notebook} object
-		@param path: the L{Path} object - used to resolve links etc.
-		@param parsetree: the actual L{ParseTree} to be set on the clipboard
-		@keyword format: the format to use for pasting text, e.g. 'wiki' or 'plain'
+		:param notebook: the :class:`Notebook` object
+		:param path: the :class:`Path` object - used to resolve links etc.
+		:param parsetree: the actual :class:`ParseTree` to be set on the clipboard
+		:keyword format: the format to use for pasting text, e.g. 'wiki' or 'plain'
 		'''
 		self.set_clipboard_data(
 			ParseTreeData(notebook, path, parsetree, format) )
@@ -763,18 +774,18 @@ class ClipboardManager(object):
 	def get_parsetree(self, notebook=None, path=None, text_format='plain'):
 		'''Get a parsetree from the clipboard.
 
-		Can handle various data types and convert them to L{ParseTree}
+		Can handle various data types and convert them to :class:`ParseTree`
 		objects. So they can be pasted directly in a text buffer.
 
 		The 'notebook' and optional 'path' arguments are used to format
 		links relative to the page which is the target for the pasting or
 		drop operation. Otherwise absolute links will be used.
 
-		@param notebook: a L{Notebook} object
-		@param path: a L{Path} object
-		@param text_format: format to parse pasted text
+		:param notebook: a :class:`Notebook` object
+		:param path: a :class:`Path` object
+		:param text_format: format to parse pasted text
 
-		@returns: a L{ParseTree} or C{None}
+		:returns: a :class:`ParseTree` or ``None``
 		'''
 		(has_data, atoms) = self.clipboard.wait_for_targets()
 		logger.debug('Targets available for paste: %s, we want parsetree', atoms)
@@ -818,23 +829,26 @@ class ClipboardManager(object):
 	def set_pagelink(self, notebook, path, anchor=None, text=None):
 		'''Copy a page name to the clipboard. The page name can be pasted by the
 		user either as a link within zim or as text outside zim.
-		@param notebook: a L{Notebook} object
-		@param path: a L{Path} object
+
+		:param notebook: a :class:`Notebook` object
+		:param path: a :class:`Path` object
 		'''
 		logger.debug("set_pagelink %r %r anchor=%s text=%s", notebook, path, anchor, text)
 		self.set_clipboard_data(PageLinkData(notebook, path, anchor, text))
 
 	def set_interwikilink(self, href, url):
 		'''Copy an interwiki link to the clipboard
-		@param href: the link as shown in zim, e.g. "wp?foobar"
-		@param url: the expanded url for this interwiki link, e.g.
-		"http://en.wikipedia.org/wiki/foobar"
+
+		:param href: the link as shown in zim, e.g. "wp?foobar"
+		:param url: the expanded url for this interwiki link, e.g.
+			"http://en.wikipedia.org/wiki/foobar"
 		'''
 		self.set_clipboard_data(InterWikiLinkData(href, url))
 
 	def set_uri(self, *uris):
 		'''Copy an uri to the clipboard
-		@param uri: an uri as string, or an object with an attribute C{uri}
+
+		:param uri: an uri as string, or an object with an attribute ``uri``
 		'''
 		self.set_clipboard_data(UriData(*uris))
 

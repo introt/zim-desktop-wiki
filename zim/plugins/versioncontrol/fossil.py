@@ -115,10 +115,11 @@ class FOSSILApplicationBackend(VCSApplicationBase):
 	def ignore(self, file_to_ignore_regexp):
 		"""
 		Configure settings for files to ignore
-		@param file_to_ignore_regexp: str representing the ignore-glob content.
-		       this must be a list of regexp defining the file / path to ignore,
-		       separated by a comma.
-		@returns: nothing
+
+		:param file_to_ignore_regexp: str representing the ignore-glob content.
+			       this must be a list of regexp defining the file / path to ignore,
+			       separated by a comma.
+		:returns: nothing
 		"""
 		return self.run(['settings', 'ignore-glob', file_to_ignore_regexp])
 
@@ -129,7 +130,8 @@ class FOSSILApplicationBackend(VCSApplicationBase):
 		- running the VCS init command
 		- defining files to ignore
 		- adding all other existing files
-		@returns: nothing
+
+		:returns: nothing
 		"""
 		self.init()
 		self.ignore('\.zim*/*,notebook.fossil')
@@ -138,7 +140,7 @@ class FOSSILApplicationBackend(VCSApplicationBase):
 	def repo_exists(self):
 		"""Returns True if a repository is already setup, or False
 
-		@returns: a boolean True if a repo is already setup, or False
+		:returns: a boolean True if a repo is already setup, or False
 		"""
 		return self.root.file('.fslckout').exists() or self.root.file('_FOSSIL_').exists()
 
@@ -158,7 +160,7 @@ class FOSSILApplicationBackend(VCSApplicationBase):
 
 	def is_modified(self):
 		"""Returns true if the repo is not up-to-date, or False
-		@returns: True if the repo is not up-to-date, or False
+		:returns: True if the repo is not up-to-date, or False
 		"""
 		# If status return an empty answer, this means the local repo is up-to-date
 		return ''.join(self.status()).strip() != ''

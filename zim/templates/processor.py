@@ -2,10 +2,10 @@
 # Copyright 2008-2014 Jaap Karssenberg <jaap.karssenberg@gmail.com>
 
 '''This module contains the main object to "execute" a template and
-fill in the parameters, call functions etc. The L{TemplateProcessor}
+fill in the parameters, call functions etc. The :class:`TemplateProcessor`
 defined here takes care of the template control flow ('IF', 'FOR', etc.).
 
-Also see the L{expression} sub module that contains logic for executing
+Also see the :class:`expression` sub module that contains logic for executing
 expressions in the template.
 '''
 
@@ -45,7 +45,7 @@ class TemplateProcessor(object):
 	#
 	# In addition here we set also parameters in the context rather
 	# then just retrieving them. To make this safe we only allow
-	# modification of C{TemplateContextDict} dicts and do not allow
+	# modification of ``TemplateContextDict`` dicts and do not allow
 	# any assignment to other dicts or objects.
 
 	# Instructions supported here:
@@ -57,8 +57,9 @@ class TemplateProcessor(object):
 
 	def __init__(self, parts, parse_included_file_func=None):
 		'''Constructor
-		@param parts: A list of L{SimplerTreeElements} as produced by
-		L{TemplateParser.parse()}
+
+		:param parts: A list of :class:`SimplerTreeElements` as produced by
+			:class:`TemplateParser.parse()`
 		'''
 		self.main = None
 		self.blocks = {}
@@ -76,11 +77,12 @@ class TemplateProcessor(object):
 
 	def process(self, output, context):
 		'''Execute the template once
-		@param output: an object to receive the template output, can be
-		a C{list} and should support at least an C{append()} method to
-		receive string content
-		@param context: a L{TemplateContextDict} object with the
-		template parameters
+
+		:param output: an object to receive the template output, can be
+			a ``list`` and should support at least an ``append()`` method to
+			receive string content
+		:param context: a :class:`TemplateContextDict` object with the
+			template parameters
 		'''
 		assert isinstance(context, TemplateContextDict)
 		self.__call__(output, self.main, context)

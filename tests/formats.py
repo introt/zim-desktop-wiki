@@ -22,7 +22,7 @@ if not ElementTreeModule.__name__.endswith('cElementTree'):
 
 
 class TestFormatMixin(object):
-	'''Mixin for testing formats, uses data in C{tests/data/formats/}'''
+	'''Mixin for testing formats, uses data in ``tests/data/formats/``'''
 
 	reference_xml = File('tests/data/formats/parsetree.xml').read().rstrip('\n')
 
@@ -51,7 +51,7 @@ class TestFormatMixin(object):
 			self.assertTrue(hasattr(self.format, 'Dumper'))
 
 	def getReferenceData(self):
-		'''Returns reference data from C{tests/data/formats/} for the
+		'''Returns reference data from ``tests/data/formats/`` for the
 		format being tested.
 		'''
 		name = self.format.info['name']
@@ -69,7 +69,7 @@ class TestFormatMixin(object):
 
 	def testFormat(self):
 		'''Test if formats supports full syntax
-		Uses data in C{tests/data/formats} as reference data.
+		Uses data in ``tests/data/formats`` as reference data.
 		'''
 		# Dumper
 		wanted = self.getReferenceData()
@@ -110,7 +110,7 @@ class TestFormatMixin(object):
 	_nonalpha_re = re.compile('\W')
 
 	def assertNoTextMissing(self, text, tree):
-		'''Assert that no plain text from C{tree} is missing in C{text}
+		'''Assert that no plain text from ``tree`` is missing in ``text``
 		intended to make sure that even for lossy formats all information
 		is preserved.
 		'''

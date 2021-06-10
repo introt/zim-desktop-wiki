@@ -5,11 +5,11 @@
 Provides timezone info for the local time. Based on example code
 from standard library datetime documentation.
 
-Main usage of this module is the function L{now()}. It imports all
+Main usage of this module is the function :class:`now()`. It imports all
 from the standard datetime, so it can be used as a transparant
 replacement.
 
-Also adds a L{strfcal()} method and extends L{strftime()} to deal
+Also adds a :class:`strfcal()` method and extends :class:`strftime()` to deal
 with weeknumbers correctly.
 '''
 
@@ -24,7 +24,7 @@ logger = logging.getLogger('zim')
 
 
 def now():
-	'''Like C{datetime.now()} but with local timezone info'''
+	'''Like ``datetime.now()`` but with local timezone info'''
 	# Also setting microsecond to zero, to give isoformat() a nicer look
 	return datetime.now(LocalTimezone()).replace(microsecond=0)
 
@@ -109,14 +109,17 @@ def init_first_day_of_week():
 def dates_for_week(year, week):
 	'''Returns the first and last day of the week for a given
 	week number of a given year.
-	@param year: year as int (e.g. 2012)
-	@param week: week number as int (0 .. 53)
-	@returns: a 2-tuple of:
-	  - a C{datetime.date} object for the start date of the week
-	  - a C{datetime.date} object for the end dateof the week
 
-	@note: first day of the week can be either C{MONDAY} or C{SUNDAY},
-	this is configured in C{FIRST_DAY_OF_WEEK} based on the locale.
+	:param year: year as int (e.g. 2012)
+	:param week: week number as int (0 .. 53)
+	:returns: a 2-tuple of:
+		  - a ``datetime.date`` object for the start date of the week
+		  - a ``datetime.date`` object for the end dateof the week
+
+	.. note::
+
+		first day of the week can be either ``MONDAY`` or ``SUNDAY``,
+		this is configured in ``FIRST_DAY_OF_WEEK`` based on the locale.
 	'''
 	# Note that the weeknumber in the isocalendar does NOT depend on the
 	# first day being Sunday or Monday, but on the first Thursday in the
@@ -152,12 +155,13 @@ def dates_for_week(year, week):
 
 def weekcalendar(date):
 	'''Get the year, week number and week day for a specific date.
-	Like C{datetime.date.isocalendar()} but takes into account
-	C{FIRST_DAY_OF_WEEK} correctly.
-	@param date: a C{datetime.date} or C{datetime.datetime} object
-	@returns: a year, a week number and a weekday as integers
-	The weekday numbering depends on locale, 1 is always first day
-	of the week, either a Sunday or a Monday.
+	Like ``datetime.date.isocalendar()`` but takes into account
+	``FIRST_DAY_OF_WEEK`` correctly.
+
+	:param date: a ``datetime.date`` or ``datetime.datetime`` object
+	:returns: a year, a week number and a weekday as integers
+		The weekday numbering depends on locale, 1 is always first day
+		of the week, either a Sunday or a Monday.
 	'''
 	# Both strftime %W and %U are not correct, they use differnt
 	# week number count than the isocalendar. See datetime
@@ -195,12 +199,12 @@ def strfcal(format, date):
 
 	Codes supported by this method:
 
-	  - C{%w} is replaced by the weekday as a decimal number [1,7], with 1 representing
+	  - ``%w`` is replaced by the weekday as a decimal number [1,7], with 1 representing
 	    either Monday or Sunday depending on the locale
-	  - C{%W} is replaced by the weeknumber depending on the locale
-	  - C{%Y} is replaced by the year with century as a decimal number, the year depends
+	  - ``%W`` is replaced by the weeknumber depending on the locale
+	  - ``%Y`` is replaced by the year with century as a decimal number, the year depends
 	    on the weeknumber depending on the locale
-	  - C{%%} is replaced by %
+	  - ``%%`` is replaced by %
 
 	Difference between this method and strftime is that:
 

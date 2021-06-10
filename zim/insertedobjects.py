@@ -18,8 +18,8 @@ class InsertedObjectType(object):
 	widget for the user interface.
 
 	Note: if you are looking for how to define a new object type from a plugin,
-	please see L{InsertedObjectTypeExtension} in L{zim.plugins}. Base classes
-	for widgets can be found in L{zim.gui.insertedobjects}.
+	please see :class:`InsertedObjectTypeExtension` in :class:`zim.plugins`. Base classes
+	for widgets can be found in :class:`zim.gui.insertedobjects`.
 	'''
 
 	# TODO: API to communicate whether this is an inline object or a block
@@ -52,7 +52,8 @@ class InsertedObjectType(object):
 	def parse_attrib(self, attrib):
 		'''Convenience method to enforce the supported attributes and their
 		types.
-		@returns: a L{ConfigDict} using the C{object_attr} dict as definition
+
+		:returns: a :class:`ConfigDict` using the ``object_attr`` dict as definition
 		'''
 		if not isinstance(attrib, ConfigDict):
 			attrib = ConfigDict(attrib)
@@ -61,7 +62,8 @@ class InsertedObjectType(object):
 
 	def new_object(self):
 		'''Create a new empty object
-		@returns: a 2-tuple C{(attrib, data)}
+
+		:returns: a 2-tuple ``(attrib, data)``
 		'''
 		attrib = self.parse_attrib({})
 		return attrib, ''
@@ -69,13 +71,13 @@ class InsertedObjectType(object):
 	def new_model_interactive(self, parent, notebook, page):
 		'''Create a new object model interactively
 		Interactive means that we can use e.g. a dialog to prompt for input.
-		The default behavior is to use L{new_object()}.
+		The default behavior is to use :class:`new_object()`.
 
-		@param parent: Gtk widget to use as parent widget for dialogs
-		@param notebook: a L{Notebook} object
-		@param page: a L{Page} object for the page where this object occurs
-		@returns: a model object (see L{model_from_data()})
-		@raises: ValueError: if user cancelled the action
+		:param parent: Gtk widget to use as parent widget for dialogs
+		:param notebook: a :class:`Notebook` object
+		:param page: a :class:`Page` object for the page where this object occurs
+		:returns: a model object (see :class:`model_from_data()`)
+		:raises: ValueError: if user cancelled the action
 		'''
 		attrib, data = self.new_object()
 		return self.model_from_data(notebook, page, attrib, data)
@@ -88,11 +90,11 @@ class InsertedObjectType(object):
 		'''Returns a model for the object
 
 		The main purpose for the model is that it is shared between widgets that
-		show the same object. See e.g. C{Gtk.TextBuffer} or C{Gtk.TreeModel}
+		show the same object. See e.g. ``Gtk.TextBuffer`` or ``Gtk.TreeModel``
 		for examples.
 
 		No API is expected of the model object other than that it can be used as
-		argument for L{create_widget()} and L{data_from_model()} and a
+		argument for :class:`create_widget()` and :class:`data_from_model()` and a
 		"changed" signal that should be emitted when the content has changed, so
 		the pageview knows that the page has changed and should be saved before
 		closing.
@@ -102,14 +104,14 @@ class InsertedObjectType(object):
 		copying the object to a different page.
 
 		This method should always be robust for missing attributes and body
-		contents. The C{attrib} will automatically be checked by L{parse_attrib}
+		contents. The ``attrib`` will automatically be checked by :class:`parse_attrib`
 		before being given to this method.
 
-		@param notebook: a L{Notebook} object
-		@param page: a L{Page} object for the page where this object occurs
-		@param attrib: dict with object attributes
-		@param data: string with object content
-		@returns: a model object
+		:param notebook: a :class:`Notebook` object
+		:param page: a :class:`Page` object for the page where this object occurs
+		:param attrib: dict with object attributes
+		:param data: string with object content
+		:returns: a model object
 		'''
 		raise NotImplementedError
 
@@ -121,15 +123,17 @@ class InsertedObjectType(object):
 		'''Returns the object data for a model object
 		This method is used to serialize the model object back into a form that
 		can be handled when parsing wiki content.
-		@param model: an object created with L{model_from_data()}
-		@returns: a 2-tuple C{(attrib, data)}
+
+		:param model: an object created with :class:`model_from_data()`
+		:returns: a 2-tuple ``(attrib, data)``
 		'''
 		raise NotImplementedError
 
 	def create_widget(self, model):
 		'''Return a Gtk widget for the given model
-		@param model: an object created with L{model_from_data()}
-		@returns: a Gtk widget object derived from L{InsertedObjectWidget}
+
+		:param model: an object created with :class:`model_from_data()`
+		:returns: a Gtk widget object derived from :class:`InsertedObjectWidget`
 		'''
 		raise NotImplementedError
 
@@ -142,19 +146,19 @@ class InsertedObjectType(object):
 		Intended to improve rendering of the object on exporting.
 
 		This method should always be robust for missing attributes and body
-		contents. The C{attrib} will automatically be checked by L{parse_attrib}
+		contents. The ``attrib`` will automatically be checked by :class:`parse_attrib`
 		before being given to this method.
 
 		Implementing this method is optional, default checks for a specific
-		method per format (e.g. C{format_html()} for the "html" format) and
-		raises C{ValueError} if no such method is defined.
+		method per format (e.g. ``format_html()`` for the "html" format) and
+		raises ``ValueError`` if no such method is defined.
 
-		@param format: name of the output format
-		@param dumper: L{Dumper} object
-		@param attrib: dict with object attributes
-		@param data: string with object content
-		@returns: a list of strings
-		@raises ValueError: if no specific formatting for "format" is available
+		:param format: name of the output format
+		:param dumper: :class:`Dumper` object
+		:param attrib: dict with object attributes
+		:param data: string with object content
+		:returns: a list of strings
+		:raises ValueError: if no specific formatting for "format" is available
 		'''
 		try:
 			method = getattr(self, 'format_' + format)

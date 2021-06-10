@@ -67,7 +67,7 @@ def _parse_page_list(input):
 
 
 class TasksIndexer(IndexerBase):
-	'''Indexer that gets added to the L{Index} to keep track of tasks
+	'''Indexer that gets added to the :class:`Index` to keep track of tasks
 	in the database
 	'''
 
@@ -205,9 +205,10 @@ class TasksView(IndexView):
 
 	def list_open_tasks(self, parent=None):
 		'''List tasks
-		@param parent: the parent task (as returned by this method) or C{None} to list
-		all top level tasks
-		@returns: a list of tasks at this level as sqlite Row objects
+
+		:param parent: the parent task (as returned by this method) or ``None`` to list
+			all top level tasks
+		:returns: a list of tasks at this level as sqlite Row objects
 		'''
 		if parent:
 			parentid = parent['id']
@@ -237,7 +238,8 @@ class TasksView(IndexView):
 
 	def list_open_tasks_flatlist(self):
 		'''List tasks
-		@returns: a list of tasks as sqlite Row objects
+
+		:returns: a list of tasks as sqlite Row objects
 		'''
 		# Sort:
 		#  started tasks by prio, due date, page + id to keep order in page
@@ -268,9 +270,10 @@ class TasksView(IndexView):
 		return row
 
 	def get_path(self, task):
-		'''Get the L{Path} for the source of a task
-		@param task: the task (as returned by L{list_tasks()}
-		@returns: an L{IndexPath} object
+		'''Get the :class:`Path` for the source of a task
+
+		:param task: the task (as returned by :class:`list_tasks()`
+		:returns: an :class:`IndexPath` object
 		'''
 		return self._pages.get_pagename(task['source'])
 

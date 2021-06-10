@@ -26,7 +26,7 @@ class ConfigManagerClass(object):
 	search paths and ensures that there is only a single instance used
 	for each config file.
 
-	Typically config files are instantiated as a L{ConfigDict} file and changes
+	Typically config files are instantiated as a :class:`ConfigDict` file and changes
 	are communicated to all users of the config by means of the "changed" signal.
 	'''
 
@@ -62,7 +62,7 @@ class ConfigManagerClass(object):
 		return file, defaults
 
 	def get_config_file(self, filename):
-		'''Returns a C{ConfigFile} object for C{filename}'''
+		'''Returns a ``ConfigFile`` object for ``filename``'''
 		if filename.startswith('<profile>/'):
 			logger.warning('Use of "<profile>/" in config file is deprecated')
 			filename = filename.replace('<profile>/', '')
@@ -75,7 +75,7 @@ class ConfigManagerClass(object):
 		return self._config_files[filename]
 
 	def get_config_dict(self, filename):
-		'''Returns a C{SectionedConfigDict} object for C{filename}'''
+		'''Returns a ``SectionedConfigDict`` object for ``filename``'''
 		if filename.startswith('<profile>/'):
 			logger.warning('Use of "<profile>/" in config file is deprecated')
 			filename = filename.replace('<profile>/', '')
@@ -112,8 +112,8 @@ def resetConfigManager():
 
 class DefaultFileIter(object):
 	'''Generator for iterating default files
-	Will yield first the files in C{extra} followed by files that
-	are based on C{path} and C{dirs}. Yields only existing files.
+	Will yield first the files in ``extra`` followed by files that
+	are based on ``path`` and ``dirs``. Yields only existing files.
 	'''
 
 	def __init__(self, dirs, path, extra=None):
@@ -147,7 +147,7 @@ class XDGConfigDirsIter(object):
 
 
 class XDGConfigFileIter(DefaultFileIter):
-	'''Like C{DefaultFileIter}, but uses XDG config dirs'''
+	'''Like ``DefaultFileIter``, but uses XDG config dirs'''
 
 	def __init__(self, path, extra=None):
 		self.path = path
@@ -156,7 +156,7 @@ class XDGConfigFileIter(DefaultFileIter):
 
 
 class ConfigManagerINIConfigFile(INIConfigFile):
-	'''Like L{INIConfigFile} but with autosave when the dict changes'''
+	'''Like :class:`INIConfigFile` but with autosave when the dict changes'''
 
 	def __init__(self, file):
 		INIConfigFile.__init__(self, file, monitor=True)
@@ -181,17 +181,19 @@ class ConfigFile(ConnectorMixin, SignalEmitter):
 	Maps to a "base" file in the home folder, used to write new values,
 	and an optional default file, which is used for reading only.
 
-	@ivar file: the underlying file object for the base config file
-	in the home folder
-	@ivar defaults: a generator that yields default files
+	:ivar file: the underlying file object for the base config file
+		in the home folder
+	:ivar defaults: a generator that yields default files
 
-	@note: this class implement similar API to the L{File} class but
-	is explicitly not a sub-class of L{File} because config files should
-	typically not be moved, renamed, etc. It just implements the reading
-	and writing methods.
+	.. note::
 
-	@signal: C{changed ()}: emitted when the
-	underlying file changed (based on C{gio} monitoring support).
+		this class implement similar API to the :class:`File` class but
+		is explicitly not a sub-class of :class:`File` because config files should
+		typically not be moved, renamed, etc. It just implements the reading
+		and writing methods.
+
+	:signal: ``changed ()``: emitted when the
+		underlying file changed (based on ``gio`` monitoring support).
 	'''
 
 	__signals__ = {
@@ -235,10 +237,11 @@ class ConfigFile(ConnectorMixin, SignalEmitter):
 
 	def read(self, fail=False):
 		'''Read the base file or first default file
-		@param fail: if C{True} a L{FileNotFoundError} error is raised
-		when neither the base file or a default file are found. If
-		C{False} it will return C{''} for a non-existing file.
-		@returns: file content as a string
+
+		:param fail: if ``True`` a :class:`FileNotFoundError` error is raised
+			when neither the base file or a default file are found. If
+			``False`` it will return ``''`` for a non-existing file.
+		:returns: file content as a string
 		'''
 		try:
 			return self.file.read()
@@ -253,10 +256,11 @@ class ConfigFile(ConnectorMixin, SignalEmitter):
 
 	def readlines(self, fail=False):
 		'''Read the base file or first default file
-		@param fail: if C{True} a L{FileNotFoundError} error is raised
-		when neither the base file or a default file are found. If
-		C{False} it will return C{[]} for a non-existing file.
-		@returns: file content as a list of lines
+
+		:param fail: if ``True`` a :class:`FileNotFoundError` error is raised
+			when neither the base file or a default file are found. If
+			``False`` it will return ``[]`` for a non-existing file.
+		:returns: file content as a list of lines
 		'''
 		try:
 			return self.file.readlines()
@@ -270,12 +274,12 @@ class ConfigFile(ConnectorMixin, SignalEmitter):
 					return []
 
 	def write(self, text):
-		'''Write base file, see L{File.write()}'''
+		'''Write base file, see :class:`File.write()`'''
 		self.file.write(text)
 		self.emit('changed')
 
 	def writelines(self, lines):
-		'''Write base file, see L{File.writelines()}'''
+		'''Write base file, see :class:`File.writelines()`'''
 		self.file.writelines(lines)
 		self.emit('changed')
 

@@ -18,7 +18,8 @@ class Exporter(object):
 
 	def export(self, pages):
 		'''Export pages
-		@param pages: a L{PageSelection} object
+
+		:param pages: a :class:`PageSelection` object
 		'''
 		for p in self.export_iter(pages):
 			logger.info('Exporting %s', p)
@@ -30,8 +31,8 @@ class Exporter(object):
 		Also note that implementations must be robust to ignore errors
 		when exporting pages.
 
-		@param pages: a L{PageSelection} object
-		@implementation: must be implemented by subclasses
+		:param pages: a :class:`PageSelection` object
+		:implementation: must be implemented by subclasses
 		'''
 		raise NotImplementedError
 

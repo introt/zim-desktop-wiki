@@ -26,9 +26,10 @@ from zim.errors import Error
 
 
 def _os_lrmdir(path):
-	'''Wrapper for C{os.rmdir} that also knows how to unlink symlinks.
+	'''Wrapper for ``os.rmdir`` that also knows how to unlink symlinks.
 	Fails when the folder is not a link and is not empty.
-	@param path: a file system path as string
+
+	:param path: a file system path as string
 	'''
 	try:
 		os.rmdir(path)
@@ -450,8 +451,9 @@ def get_tmpdir():
 	'''Get a folder in the system temp dir for usage by zim.
 	This zim specific temp folder has permission set to be readable
 	only by the current users, and is touched if it didn't exist yet.
-	Used as base folder by L{TmpFile}.
-	@returns: a L{Dir} object for the zim specific tmp folder
+	Used as base folder by :class:`TmpFile`.
+
+	:returns: a :class:`Dir` object for the zim specific tmp folder
 	'''
 	global _tmpdir
 
@@ -468,11 +470,12 @@ class TmpFile(LocalFile):
 
 	def __init__(self, basename, unique=True, persistent=False):
 		'''Constructor
-		@param basename: gives the name for this tmp file.
-		@param unique: if C{True} the L{Dir.new_file()} method is used
-		to make sure we have a new file.
-		@param persistent: if C{False} the file will be removed when the
-		object is destructed, if C{True} we leave it alone
+
+		:param basename: gives the name for this tmp file.
+		:param unique: if ``True`` the :class:`Dir.new_file()` method is used
+			to make sure we have a new file.
+		:param persistent: if ``False`` the file will be removed when the
+			object is destructed, if ``True`` we leave it alone
 		'''
 		dir = get_tmpdir()
 		if unique:

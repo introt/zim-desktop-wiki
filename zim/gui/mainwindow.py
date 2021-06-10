@@ -73,8 +73,8 @@ def schedule_on_idle(function, args=()):
 	'''Helper function to schedule stuff that can be done later, it will
 	be triggered on the gtk "idle" signal.
 
-	@param function: function to call
-	@param args: positional arguments
+	:param function: function to call
+	:param args: positional arguments
 	'''
 	def callback():
 		function(*args)
@@ -83,34 +83,35 @@ def schedule_on_idle(function, args=()):
 
 
 class MainWindowExtension(ActionExtensionBase):
-	'''Base class for extending the L{MainWindow}
+	'''Base class for extending the :class:`MainWindow`
 
 	Menu actions can be defined by defining an action method
 	and specifying where in the menu this should be placed.
 
 	An action method is any object method of the extension method that
-	is decorated by the L{action()} or L{toggle_action()} decorators
-	(see L{zim.actions}). Such a method is called when the user clicks
+	is decorated by the :class:`action()` or :class:`toggle_action()` decorators
+	(see :class:`zim.actions`). Such a method is called when the user clicks
 	to correcponding menu item or presses the corresponding key binding.
 	The decorator is used to define the text to display in the menu
 	and the key binding.
 
-	@ivar window: the L{MainWindow}
+	:ivar window: the :class:`MainWindow`
 
-	@ivar uistate: a L{ConfigDict} to store the extensions ui state or
+	:ivar uistate: a :class:`ConfigDict` to store the extensions ui state or
 
 	The "uistate" is the per notebook state of the interface, it is
 	intended for stuff like the last folder opened by the user or the
 	size of a dialog after resizing. It is stored in the X{state.conf}
 	file in the notebook cache folder. It differs from the preferences,
 	which are stored globally and dictate the behavior of the application.
-	(To access the preference use C{plugin.preferences}.)
+	(To access the preference use ``plugin.preferences``.)
 	'''
 
 	def __init__(self, plugin, window):
 		'''Constructor
-		@param plugin: the plugin object to which this extension belongs
-		@param window: the C{Gtk.Window} being extended
+
+		:param plugin: the plugin object to which this extension belongs
+		:param window: the ``Gtk.Window`` being extended
 		'''
 		ExtensionBase.__init__(self, plugin, window)
 		self.window = window
@@ -189,7 +190,8 @@ class WindowBaseMixin(object):
 	@toggle_action(_('Notebook _Editable'), icon='document-edit-symbolic', init=True, tooltip=_('Toggle editable')) # T: menu item
 	def toggle_editable(self, editable):
 		'''Menu action to toggle the read-only state of the application
-		@emits: readonly-changed
+
+		:emits: readonly-changed
 		'''
 		readonly = not editable
 		if readonly and self.page and self.page.modified:
@@ -233,12 +235,13 @@ class MainWindow(WindowBaseMixin, Window):
 
 	def __init__(self, notebook, page=None, fullscreen=False, geometry=None):
 		'''Constructor
-		@param notebook: the L{Notebook} to show in this window
-		@param page: a C{Path} object to open
-		@param fullscreen: if C{True} the window is shown fullscreen,
-		if C{None} the previous state is restored
-		@param geometry: the window geometry as string in format
-		"C{WxH+X+Y}", if C{None} the previous state is restored
+
+		:param notebook: the :class:`Notebook` to show in this window
+		:param page: a ``Path`` object to open
+		:param fullscreen: if ``True`` the window is shown fullscreen,
+			if ``None`` the previous state is restored
+		:param geometry: the window geometry as string in format
+			"``WxH+X+Y``", if ``None`` the previous state is restored
 		'''
 		Window.__init__(self)
 		self.notebook = notebook
@@ -415,7 +418,7 @@ class MainWindow(WindowBaseMixin, Window):
 
 	@action(_('_Close'), '<Primary>W') # T: Menu item
 	def close(self):
-		'''Menu action for close. Will hide when L{hideonclose} is set,
+		'''Menu action for close. Will hide when :class:`hideonclose` is set,
 		otherwise destroys window, which could result in the application
 		closing if there are no other toplevel windows.
 		'''
@@ -487,8 +490,9 @@ class MainWindow(WindowBaseMixin, Window):
 	@toggle_action(_('Menubar'), init=True) # T: label for View->Menubar menu item
 	def toggle_menubar(self, show):
 		'''Menu action to toggle the visibility of the menu bar
-		@param show: when C{True} or C{False} force the visibility,
-		when C{None} toggle based on current state
+
+		:param show: when ``True`` or ``False`` force the visibility,
+			when ``None`` toggle based on current state
 		'''
 		if show:
 			self.menubar.set_no_show_all(False)
@@ -510,8 +514,9 @@ class MainWindow(WindowBaseMixin, Window):
 	@toggle_action(_('_Side Panes'), 'F9', icon='gtk-index', init=True) # T: Menu item
 	def toggle_panes(self, show):
 		'''Menu action to toggle the visibility of the all panes
-		@param show: when C{True} or C{False} force the visibility,
-		when C{None} toggle based on current state
+
+		:param show: when ``True`` or ``False`` force the visibility,
+			when ``None`` toggle based on current state
 		'''
 		self._block_toggle_panes = True
 		Window.toggle_panes(self, show)
@@ -646,11 +651,12 @@ class MainWindow(WindowBaseMixin, Window):
 		result of pressing "cancel" in the error dialog shown when saving
 		fails). Check return value for success if you want to be sure.
 
-		@param path: a L{path} for the page to open.
-		@param anchor: name of an anchor (optional)
-		@raises PageNotFound: if C{path} can not be opened
-		@emits: page-changed
-		@returns: C{True} for success
+		:param path: a :class:`path` for the page to open.
+		:param anchor: name of an anchor (optional)
+		:raises PageNotFound: if ``path`` can not be opened
+
+			:emits: page-changed
+			:returns: ``True`` for success
 		'''
 		assert isinstance(path, Path)
 		try:
@@ -758,7 +764,8 @@ class MainWindow(WindowBaseMixin, Window):
 	)
 	def open_page_back(self):
 		'''Menu action to open the previous page from the history
-		@returns: C{True} if successfull
+
+		:returns: ``True`` if successfull
 		'''
 		record = self.history.get_previous()
 		if not record is None:
@@ -771,7 +778,8 @@ class MainWindow(WindowBaseMixin, Window):
 	)
 	def open_page_forward(self):
 		'''Menu action to open the next page from the history
-		@returns: C{True} if successfull
+
+		:returns: ``True`` if successfull
 		'''
 		record = self.history.get_next()
 		if not record is None:
@@ -780,7 +788,8 @@ class MainWindow(WindowBaseMixin, Window):
 	@action(_('_Parent'), '<alt>Up') # T: Menu item
 	def open_page_parent(self):
 		'''Menu action to open the parent page
-		@returns: C{True} if successful
+
+		:returns: ``True`` if successful
 		'''
 		namespace = self.page.namespace
 		if namespace:
@@ -790,7 +799,8 @@ class MainWindow(WindowBaseMixin, Window):
 	def open_page_child(self):
 		'''Menu action to open a child page. Either takes the last child
 		from the history, or the first child.
-		@returns: C{True} if successfull
+
+		:returns: ``True`` if successfull
 		'''
 		path = self.notebook.pages.lookup_by_pagename(self.page)
 			# Force refresh "haschildren" ...
@@ -805,7 +815,8 @@ class MainWindow(WindowBaseMixin, Window):
 	@action(_('_Previous in index'), accelerator='<alt>Page_Up') # T: Menu item
 	def open_page_previous(self):
 		'''Menu action to open the previous page from the index
-		@returns: C{True} if successfull
+
+		:returns: ``True`` if successfull
 		'''
 		path = self.notebook.pages.get_previous(self.page)
 		if not path is None:
@@ -814,7 +825,8 @@ class MainWindow(WindowBaseMixin, Window):
 	@action(_('_Next in index'), accelerator='<alt>Page_Down') # T: Menu item
 	def open_page_next(self):
 		'''Menu action to open the next page from the index
-		@returns: C{True} if successfull
+
+		:returns: ``True`` if successfull
 		'''
 		path = self.notebook.pages.get_next(self.page)
 		if not path is None:

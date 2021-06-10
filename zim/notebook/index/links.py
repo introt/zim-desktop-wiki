@@ -46,8 +46,8 @@ LINK_DIR_BOTH = 3 #: Constant for links in any direction
 class IndexLink(object):
 	'''Class used to represent links between two pages
 
-	@ivar source: L{Path} object for the source of the link
-	@ivar target: L{Path} object for the target of the link
+	:ivar source: :class:`Path` object for the source of the link
+	:ivar target: :class:`Path` object for the target of the link
 	'''
 
 	__slots__ = ('source', 'target')
@@ -214,14 +214,14 @@ class LinksView(IndexView):
 	def list_links(self, pagename, direction=LINK_DIR_FORWARD):
 		'''Generator listing links between pages
 
-		@param pagename: the L{Path} for which to list links
-		@param direction: the link direction to be listed. This can be
-		one of:
-			- C{LINK_DIR_FORWARD}: for links from path
-			- C{LINK_DIR_BACKWARD}: for links to path
-			- C{LINK_DIR_BOTH}: for links from and to path
-		@returns: yields L{IndexLink} objects
-		@raises IndexNotFoundError: if C{path} is not found in the index
+		:param pagename: the :class:`Path` for which to list links
+		:param direction: the link direction to be listed. This can be
+			one of:
+				- ``LINK_DIR_FORWARD``: for links from path
+				- ``LINK_DIR_BACKWARD``: for links to path
+				- ``LINK_DIR_BOTH``: for links from and to path
+		:returns: yields :class:`IndexLink` objects
+		:raises IndexNotFoundError: if ``path`` is not found in the index
 		'''
 		page_id = self._pages.get_page_id(pagename) # can raise IndexNotFoundError
 		return self._list_links(page_id, pagename, direction)

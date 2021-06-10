@@ -24,8 +24,8 @@ class SignalHandler(object):
 	'''Wrapper for a signal handler method that allows blocking the
 	handler for incoming signals. To be used as function decorator.
 
-	The method will be replaced by a L{BoundSignalHandler} object that
-	supports a C{blocked()} method which returns a context manager
+	The method will be replaced by a :class:`BoundSignalHandler` object that
+	supports a ``blocked()`` method which returns a context manager
 	to temporarily block a callback.
 
 	Intended to be used as::
@@ -113,14 +113,14 @@ class ConnectorMixin(object):
 
 			self.connectto(button, 'clicked', self.on_button_clicked)
 
-		@param obj: the object to connect to
-		@param signal: the signal name
-		@param handler: the callback function, or C{None} to map to
-		a method prefixed with "on_".
-		@param order: if order is C{SIGNAL_NORMAL} then C{GObject.connect()}
-		is used, if order is C{SIGNAL_AFTER} then C{GObject.connect_after()}
-		is used.
-		@returns: the handler id
+		:param obj: the object to connect to
+		:param signal: the signal name
+		:param handler: the callback function, or ``None`` to map to
+			a method prefixed with "on_".
+		:param order: if order is ``SIGNAL_NORMAL`` then ``GObject.connect()``
+			is used, if order is ``SIGNAL_AFTER`` then ``GObject.connect_after()``
+			is used.
+		:returns: the handler id
 		'''
 		if handler is None:
 			name = "on_" + signal.replace('-', '_')
@@ -147,12 +147,12 @@ class ConnectorMixin(object):
 
 	def connectto_all(self, obj, signals, handler=None, order=SIGNAL_NORMAL):
 		'''Convenience method to combine multiple calls to
-		L{connectto()}.
+		:class:`connectto()`.
 
-		@param obj: the object to connect to
-		@param signals: a list of signals. Elements can either be signal
-		names or tuples where the sub-elements are the parameters
-		for L{connectto()}. For example::
+		:param obj: the object to connect to
+		:param signals: a list of signals. Elements can either be signal
+			names or tuples where the sub-elements are the parameters
+			for :class:`connectto()`. For example::
 
 			self.connectto_all(some_object (
 				'changed' # defaults to "on_changed()
@@ -162,8 +162,8 @@ class ConnectorMixin(object):
 		The optional parameters are used as default values when these
 		parameters are not specified explicitly per signal.
 
-		@param handler: optional parameter
-		@param order: optional parameter
+		:param handler: optional parameter
+		:param order: optional parameter
 		'''
 		default = (None, handler, order)
 		for signal in signals:
@@ -176,7 +176,7 @@ class ConnectorMixin(object):
 
 	def disconnect_from(self, obj):
 		'''Disc all signals that have been connected with
-		L{connectto} and friends to a specific object.
+		:class:`connectto` and friends to a specific object.
 		'''
 		key = id(obj)
 		if hasattr(self, '_connected_signals') \
@@ -185,7 +185,7 @@ class ConnectorMixin(object):
 
 	def disconnect_all(self):
 		'''Disconnect all signals that have been connected with
-		L{connectto} and friends. Typically called when you want to
+		:class:`connectto` and friends. Typically called when you want to
 		destroy this object.
 		'''
 		if hasattr(self, '_connected_signals'):
@@ -245,34 +245,34 @@ def init_signals_for_new_object(obj):
 
 
 class SignalEmitter(object, metaclass=SignalEmitterMeta):
-	'''Replacement for C{GObject} to make objects emit signals.
+	'''Replacement for ``GObject`` to make objects emit signals.
 	API should be (mostly) compatible with API offered by GObject.
 
-	Supported signals need to be defined in the dict C{__signals__}. For
+	Supported signals need to be defined in the dict ``__signals__``. For
 	each signal a 3-tuple is provided where the first argument is either
-	C{SIGNAL_RUN_FIRST} or C{SIGNAL_RUN_LAST}, the second is the return
-	argument (or C{None} for most signals) and the third is the argument
+	``SIGNAL_RUN_FIRST`` or ``SIGNAL_RUN_LAST``, the second is the return
+	argument (or ``None`` for most signals) and the third is the argument
 	spec for the signal.
 
 	When a signal is emitted all handlers are called one by one and exceptions
 	in a handler are intercepted. If the class defines a method
-	C{do_signalname()} (where "signalname" is the name of the signal with "-"
+	``do_signalname()`` (where "signalname" is the name of the signal with "-"
 	replaced by "_") this is considered a default handler that is automatically
-	connected. The C{SIGNAL_RUN_FIRST} and C{SIGNAL_RUN_LAST} flags in the
+	connected. The ``SIGNAL_RUN_FIRST`` and ``SIGNAL_RUN_LAST`` flags in the
 	signal spec control where in the  emission sequence this default handler
 	is called: it either runs as the first or as the last handler.
 	Typically the default handler is used to implement the change signalled by
 	the signal. So if your signal name suggests something happened already
-	(e.g. "changed"), probably you want to use C{SIGNAL_RUN_FIRST}. However if
+	(e.g. "changed"), probably you want to use ``SIGNAL_RUN_FIRST``. However if
 	the action is phrased as still happening (e.g. "change") and the handlers
-	can influence this, you probably want C{SIGNAL_RUN_LAST}.
+	can influence this, you probably want ``SIGNAL_RUN_LAST``.
 
-	Signals connected with L{connect_after()} always run after all the normal
-	handlers (which are connected with L{connect()}) and after the default handler
-	(even if the default handler is setup with C{SIGNAL_RUN_LAST}).
+	Signals connected with :class:`connect_after()` always run after all the normal
+	handlers (which are connected with :class:`connect()`) and after the default handler
+	(even if the default handler is setup with ``SIGNAL_RUN_LAST``).
 
 	If a signal defines a return type, emission should use either
-	L{emit_return_first()} or L{emit_return_iter()} to handle return values.
+	:class:`emit_return_first()` or :class:`emit_return_iter()` to handle return values.
 
 	(Also see the Glib documentation to understand the full system of which
 	we implement a sub-set here.)
@@ -296,16 +296,16 @@ class SignalEmitter(object, metaclass=SignalEmitterMeta):
 		object the method belongs to to be destroyed until the
 		signal is disconnected.
 
-		@param signal: the signal name
-		@param handler: callback to be called upon the signal,
-		first object to the callback will be the emitting object,
-		other params are signal specific.
-		@returns: an id for the registered handler
+		:param signal: the signal name
+		:param handler: callback to be called upon the signal,
+			first object to the callback will be the emitting object,
+			other params are signal specific.
+		:returns: an id for the registered handler
 		'''
 		return self._connect(SIGNAL_BEFORE, signal, handler)
 
 	def connect_after(self, signal, handler):
-		'''Like L{connect()} but handler will be called after default handler'''
+		'''Like :class:`connect()` but handler will be called after default handler'''
 		return self._connect(SIGNAL_AFTER, signal, handler)
 
 	def _connect(self, category, signal, callback):
@@ -400,7 +400,7 @@ class SignalEmitter(object, metaclass=SignalEmitterMeta):
 
 
 class GSignalEmitterMixin(object):
-	'''Implements a subset of L{SignalEmitter} to extend C{GObject.GObject}
+	'''Implements a subset of :class:`SignalEmitter` to extend ``GObject.GObject``
 	classes with methods to use signals as callbacks.
 	'''
 
@@ -485,11 +485,15 @@ class DelayedCallback(object):
 	Note that when a repeated callback is canceled, only the arguments
 	of the last call are passed on.
 
-	@todo: allow an option to check arguments and pass on all unique
-	combinations ?
+	.. todo::
 
-	@todo: add support for async callbacks, in this case block
-	the callback until the async process is finished
+		allow an option to check arguments and pass on all unique
+		combinations ?
+
+	.. todo::
+
+		add support for async callbacks, in this case block
+		the callback until the async process is finished
 	'''
 
 	__slots__ = ('timeout', 'cb_func', 'timer_id')
@@ -497,8 +501,8 @@ class DelayedCallback(object):
 	def __init__(self, timeout, cb_func):
 		'''Constructor
 
-		@param timeout: timeout in milliseconds (e.g. 500)
-		@param cb_func: the callback to call
+		:param timeout: timeout in milliseconds (e.g. 500)
+		:param cb_func: the callback to call
 		'''
 		self.cb_func = cb_func
 		self.timeout = timeout

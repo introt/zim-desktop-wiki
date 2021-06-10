@@ -52,7 +52,7 @@ number_bullet_re = re.compile('^(\d+|[a-zA-Z])\.$')
 
 def check_number_bullet(bullet):
 	'''If bullet is a numbered bullet this returns the number or letter,
-	C{None} otherwise
+	``None`` otherwise
 	'''
 	m = number_bullet_re.match(bullet)
 	if m:
@@ -115,9 +115,10 @@ url_trailing_punctuation = ('?', '!', '.', ',', ':', '*', '_', '~')
 
 def is_url(text):
 	'''Matches url_re and number of closing brackets matches
-	See L{https://github.github.com/gfm/#autolinks-extension-}
-	@param text: text to match as url
-	@returns: C{True} if C{text} is a valid url according to GFM rules
+	See :class:`https://github.github.com/gfm/#autolinks-extension-`
+
+	:param text: text to match as url
+	:returns: ``True`` if ``text`` is a valid url according to GFM rules
 	'''
 	url = match_url(text)
 	return url == text # No trailing puntuation or ")" excluded
@@ -125,9 +126,10 @@ def is_url(text):
 
 def match_url(text):
 	'''Match regex and count number of closing brackets
-	See L{https://github.github.com/gfm/#autolinks-extension-}
-	@param text: text to match as url
-	@returns: the url or None
+	See :class:`https://github.github.com/gfm/#autolinks-extension-`
+
+	:param text: text to match as url
+	:returns: the url or None
 	'''
 	m = url_re.match(text)
 	if m:

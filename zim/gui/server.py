@@ -36,11 +36,12 @@ class ServerWindow(Gtk.Window):
 
 	def __init__(self, notebookinfo=None, port=8080, public=True, **opts):
 		'''Constructor
-		@param notebookinfo: the notebook location
-		@param port: the http port to serve on
-		@param public: allow connections to the server from other
-		computers - if C{False} can only connect from localhost
-		@param opts: options for L{WWWInterface.__init__()}
+
+		:param notebookinfo: the notebook location
+		:param port: the http port to serve on
+		:param public: allow connections to the server from other
+			computers - if ``False`` can only connect from localhost
+		:param opts: options for :class:`WWWInterface.__init__()`
 		'''
 		GObject.GObject.__init__(self)
 		self.set_title('Zim - ' + _('Web Server')) # T: Window title

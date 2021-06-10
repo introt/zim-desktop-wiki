@@ -5,11 +5,13 @@ It includes all classes needed to display and edit a single page as well
 as related dialogs like the dialogs to insert images, links etc.
 
 The main widget accessed by the rest of the application is the
-L{PageView} class. This wraps a L{TextView} widget which actually
-shows the page. The L{TextBuffer} class is the data model used by the
-L{TextView}.
+:class:`PageView` class. This wraps a :class:`TextView` widget which actually
+shows the page. The :class:`TextBuffer` class is the data model used by the
+:class:`TextView`.
 
-@todo: for documentation group functions in more logical order
+.. todo::
+
+	for documentation group functions in more logical order
 '''
 
 
@@ -298,9 +300,10 @@ def camelcase(word):
 
 
 def increase_list_bullet(bullet):
-	'''Like L{increase_list_iter()}, but handles bullet string directly
-	@param bullet: a numbered list bullet, e.g. C{"1."}
-	@returns: the next bullet, e.g. C{"2."} or C{None}
+	'''Like :class:`increase_list_iter()`, but handles bullet string directly
+
+	:param bullet: a numbered list bullet, e.g. ``"1."``
+	:returns: the next bullet, e.g. ``"2."`` or ``None``
 	'''
 	next = increase_list_iter(bullet.rstrip('.'))
 	if next:
@@ -357,7 +360,7 @@ class ConfigDefinitionConstant(String):
 class UserActionContext(object):
 	'''Context manager to wrap actions in proper user-action signals
 
-	This class used for the L{TextBuffer.user_action} attribute
+	This class used for the :class:`TextBuffer.user_action` attribute
 
 	This allows syntax like::
 
@@ -371,7 +374,7 @@ class UserActionContext(object):
 		buffer.end_user_action()
 
 	By wrapping actions in this "user-action" block the
-	L{UndoStackManager} will see it as a single action and make it
+	:class:`UndoStackManager` will see it as a single action and make it
 	undo-able in a single step.
 	'''
 
@@ -389,7 +392,7 @@ GRAVITY_RIGHT = 'right'
 GRAVITY_LEFT = 'left'
 
 class SaveCursorContext(object):
-	'''Context manager used by L{TextBuffer.tmp_cursor()}
+	'''Context manager used by :class:`TextBuffer.tmp_cursor()`
 
 	This allows syntax like::
 
@@ -425,8 +428,9 @@ class SaveCursorContext(object):
 def image_file_get_dimensions(file_path):
 	"""
 	Replacement for GdkPixbuf.Pixbuf.get_file_info
-	@return (width, height) in pixels
-		or None if file does not exist or failed to load
+
+	:return (width, height) in pixels
+			or None if file does not exist or failed to load
 	"""
 
 	# Let GTK try reading the file
@@ -512,28 +516,28 @@ def image_file_load_pixels(file, width_override=-1, height_override=-1):
 class TextBuffer(Gtk.TextBuffer):
 	'''Data model for the editor widget
 
-	This sub-class of C{Gtk.TextBuffer} manages the contents of
-	the L{TextView} widget. It has an internal data model that allows
+	This sub-class of ``Gtk.TextBuffer`` manages the contents of
+	the :class:`TextView` widget. It has an internal data model that allows
 	to manipulate the formatted text by cursor positions. It manages
-	images, links, bullet lists etc. The methods L{set_parsetree()}
-	and L{get_parsetree()} can exchange the formatted text as a
-	L{ParseTree} object which can be parsed by the L{zim.formats}
+	images, links, bullet lists etc. The methods :class:`set_parsetree()`
+	and :class:`get_parsetree()` can exchange the formatted text as a
+	:class:`ParseTree` object which can be parsed by the :class:`zim.formats`
 	modules.
 
 	Styles
 	======
 
 	Formatting styles like bold, italic etc. as well as functional
-	text objects like links and tags are represented by C{Gtk.TextTags}.
+	text objects like links and tags are represented by ``Gtk.TextTags``.
 	For static styles these TextTags have the same name as the style.
 	For links and tag anonymous TextTags are used. Be aware though that
 	not all TextTags in the model are managed by us, e.g. gtkspell
 	uses it's own tags. TextTags that are managed by us have an
-	additional attribute C{zim_type} which gives the format type
+	additional attribute ``zim_type`` which gives the format type
 	for this tag. All TextTags without this attribute are not ours.
-	All TextTags that have a C{zim_type} attribute also have an
-	C{zim_attrib} attribute, which can be either C{None} or contain
-	some properties, like the C{href} property for a link. See the
+	All TextTags that have a ``zim_type`` attribute also have an
+	``zim_attrib`` attribute, which can be either ``None`` or contain
+	some properties, like the ``href`` property for a link. See the
 	parsetree documentation for what properties to expect.
 
 	The buffer keeps an internal state for what tags should be applied
@@ -551,9 +555,9 @@ class TextBuffer(Gtk.TextBuffer):
 	Images
 	======
 
-	Embedded images and icons are handled by C{GdkPixbuf.Pixbuf} object.
-	Again the ones that are handled by us have the extry C{zim_type} and
-	C{zim_attrib} attributes.
+	Embedded images and icons are handled by ``GdkPixbuf.Pixbuf`` object.
+	Again the ones that are handled by us have the extry ``zim_type`` and
+	``zim_attrib`` attributes.
 
 	Lists
 	=====
@@ -563,37 +567,41 @@ class TextBuffer(Gtk.TextBuffer):
 	with small images or icons, but are also considered bullets).
 	There is some logic to keep list formatting nicely but it only
 	applies to one line at a time. For functionality affecting a list
-	as a whole see the L{TextBufferList} class.
+	as a whole see the :class:`TextBufferList` class.
 
-	@todo: The buffer needs a reference to the notebook and page objects
-	for the text that is being shown to make sure that e.g. serializing
-	links works correctly. Check if we can get rid of page and notebook
-	here and just put provide them as arguments when needed.
+	.. todo::
 
-	@cvar tag_styles: This dict defines the formatting styles supported
-	by the editor. The style properties are overruled by the values
-	from the X{style.conf} config file.
+		The buffer needs a reference to the notebook and page objects
+		for the text that is being shown to make sure that e.g. serializing
+		links works correctly. Check if we can get rid of page and notebook
+		here and just put provide them as arguments when needed.
 
-	@ivar notebook: The L{Notebook} object
-	@ivar page: The L{Page} object
-	@ivar user_action: A L{UserActionContext} context manager
-	@ivar finder: A L{TextFinder} for this buffer
+	:cvar tag_styles: This dict defines the formatting styles supported
+		by the editor. The style properties are overruled by the values
+		from the X{style.conf} config file.
 
-	@signal: C{begin-insert-tree (interactive)}:
-	Emitted at the begin of a complex insert, c{interactive} is boolean flag
-	@signal: C{end-insert-tree ()}:
-	Emitted at the end of a complex insert
-	@signal: C{textstyle-changed (style)}:
-	Emitted when textstyle at the cursor changes, gets the list of text styles or None.
-	@signal: C{link-clicked ()}:
-	Emitted when a link is clicked; for example within a table cell
-	@signal: C{undo-save-cursor (iter)}:
-	emitted in some specific case where the undo stack should
-	lock the current cursor position
-	@signal: C{insert-objectanchor (achor)}: emitted when an object
-	is inserted, should trigger L{TextView} to attach a widget
+	:ivar notebook: The :class:`Notebook` object
+	:ivar page: The :class:`Page` object
+	:ivar user_action: A :class:`UserActionContext` context manager
+	:ivar finder: A :class:`TextFinder` for this buffer
 
-	@todo: document tag styles that are supported
+	:signal: ``begin-insert-tree (interactive)``:
+		Emitted at the begin of a complex insert, c{interactive} is boolean flag
+	:signal: ``end-insert-tree ()``:
+		Emitted at the end of a complex insert
+	:signal: ``textstyle-changed (style)``:
+		Emitted when textstyle at the cursor changes, gets the list of text styles or None.
+	:signal: ``link-clicked ()``:
+		Emitted when a link is clicked; for example within a table cell
+	:signal: ``undo-save-cursor (iter)``:
+		emitted in some specific case where the undo stack should
+		lock the current cursor position
+	:signal: ``insert-objectanchor (achor)``: emitted when an object
+		is inserted, should trigger :class:`TextView` to attach a widget
+
+	.. todo::
+
+		document tag styles that are supported
 	'''
 
 	# We rely on the priority of gtk TextTags to sort links before styles,
@@ -686,10 +694,10 @@ class TextBuffer(Gtk.TextBuffer):
 	def __init__(self, notebook, page, parsetree=None):
 		'''Constructor
 
-		@param notebook: a L{Notebook} object
-		@param page: a L{Page} object
-		@param parsetree: optional L{ParseTree} object, if given this will
-		initialize the buffer content *before* initializing the undostack
+		:param notebook: a :class:`Notebook` object
+		:param page: a :class:`Page` object
+		:param parsetree: optional :class:`ParseTree` object, if given this will
+			initialize the buffer content *before* initializing the undostack
 		'''
 		GObject.GObject.__init__(self)
 		self.notebook = notebook
@@ -767,29 +775,29 @@ class TextBuffer(Gtk.TextBuffer):
 		self._editmode_tags = []
 
 	def get_insert_iter(self):
-		'''Get a C{Gtk.TextIter} for the current cursor position'''
+		'''Get a ``Gtk.TextIter`` for the current cursor position'''
 		return self.get_iter_at_mark(self.get_insert())
 
 	def tmp_cursor(self, iter=None, gravity=GRAVITY_LEFT):
-		'''Get a L{SaveCursorContext} object
+		'''Get a :class:`SaveCursorContext` object
 
-		@param iter: a C{Gtk.TextIter} for the new (temporary) cursor
-		position
-		@param gravity: give mark left or right "gravity" compared to new
-		inserted text, default is "left" which means new text goes after the
-		cursor position
+		:param iter: a ``Gtk.TextIter`` for the new (temporary) cursor
+			position
+		:param gravity: give mark left or right "gravity" compared to new
+			inserted text, default is "left" which means new text goes after the
+			cursor position
 		'''
 		return SaveCursorContext(self, iter, gravity)
 
 	def set_parsetree(self, tree, showing_template=False):
-		'''Load a new L{ParseTree} in the buffer
+		'''Load a new :class:`ParseTree` in the buffer
 
 		This method replaces any content in the buffer with the new
 		parser tree.
 
-		@param tree: a L{ParseTree} object
-		@param showing_template: if C{True} the C{tree} represents a template
-		and not actual page content (yet)
+		:param tree: a :class:`ParseTree` object
+		:param showing_template: if ``True`` the ``tree`` represents a template
+			and not actual page content (yet)
 		'''
 		with self.user_action:
 			self.clear()
@@ -798,40 +806,40 @@ class TextBuffer(Gtk.TextBuffer):
 		self.showing_template = showing_template # Set after modifying!
 
 	def insert_parsetree(self, iter, tree, interactive=False):
-		'''Insert a L{ParseTree} in the buffer
+		'''Insert a :class:`ParseTree` in the buffer
 
 		This method inserts a parsetree at a specific place in the
 		buffer.
 
-		@param iter: a C{Gtk.TextIter} for the insert position
-		@param tree: a L{ParseTree} object
-		@param interactive: Boolean which determines how current state
-		in the buffer is handled. If not interactive we break any
-		existing tags and insert the tree, otherwise we insert using the
-		formatting tags that that are present at iter.
+		:param iter: a ``Gtk.TextIter`` for the insert position
+		:param tree: a :class:`ParseTree` object
+		:param interactive: Boolean which determines how current state
+			in the buffer is handled. If not interactive we break any
+			existing tags and insert the tree, otherwise we insert using the
+			formatting tags that that are present at iter.
 
 		For example when a parsetree is inserted because the user pastes
-		content from the clipboard C{interactive} should be C{True}.
+		content from the clipboard ``interactive`` should be ``True``.
 		'''
 		with self.tmp_cursor(iter):
 			self.insert_parsetree_at_cursor(tree, interactive)
 
 	def append_parsetree(self, tree, interactive=False):
-		'''Append a L{ParseTree} to the buffer
+		'''Append a :class:`ParseTree` to the buffer
 
-		Like L{insert_parsetree()} but inserts at the end of the current buffer.
+		Like :class:`insert_parsetree()` but inserts at the end of the current buffer.
 		'''
 		self.insert_parsetree(self.get_end_iter(), tree, interactive)
 
 	def insert_parsetree_at_cursor(self, tree, interactive=False):
-		'''Insert a L{ParseTree} in the buffer
+		'''Insert a :class:`ParseTree` in the buffer
 
-		Like L{insert_parsetree()} but inserts at the current cursor
+		Like :class:`insert_parsetree()` but inserts at the current cursor
 		position.
 
-		@param tree: a L{ParseTree} object
-		@param interactive: Boolean which determines how current state
-		in the buffer is handled.
+		:param tree: a :class:`ParseTree` object
+		:param interactive: Boolean which determines how current state
+			in the buffer is handled.
 		'''
 		#print('INSERT AT CURSOR', tree.tostring())
 		tree.resolve_images(self.notebook, self.page)
@@ -1094,10 +1102,10 @@ class TextBuffer(Gtk.TextBuffer):
 	def insert_link(self, iter, text, href, **attrib):
 		'''Insert a link into the buffer
 
-		@param iter: a C{Gtk.TextIter} for the insert position
-		@param text: the text for the link as string
-		@param href: the target (URL, pagename) of the link as string
-		@param attrib: any other link attributes
+		:param iter: a ``Gtk.TextIter`` for the insert position
+		:param text: the text for the link as string
+		:param href: the target (URL, pagename) of the link as string
+		:param attrib: any other link attributes
 		'''
 		with self.tmp_cursor(iter):
 			self.insert_link_at_cursor(text, href, **attrib)
@@ -1107,9 +1115,9 @@ class TextBuffer(Gtk.TextBuffer):
 
 		Like insert_link() but inserts at the current cursor position
 
-		@param text: the text for the link as string
-		@param href: the target (URL, pagename) of the link as string
-		@param attrib: any other link attributes
+		:param text: the text for the link as string
+		:param href: the target (URL, pagename) of the link as string
+		:param attrib: any other link attributes
 		'''
 		if self._deleted_editmode_mark is not None:
 			self.delete_mark(self._deleted_editmode_mark)
@@ -1143,11 +1151,11 @@ class TextBuffer(Gtk.TextBuffer):
 		return tag
 
 	def get_link_tag(self, iter):
-		'''Get the C{Gtk.TextTag} for a link at a specific position, if any
+		'''Get the ``Gtk.TextTag`` for a link at a specific position, if any
 
-		@param iter: a C{Gtk.TextIter}
-		@returns: a C{Gtk.TextTag} if there is a link at C{iter},
-		C{None} otherwise
+		:param iter: a ``Gtk.TextIter``
+		:returns: a ``Gtk.TextTag`` if there is a link at ``iter``,
+			``None`` otherwise
 		'''
 		# Explicitly left gravity, otherwise position behind the link
 		# would also be considered part of the link. Position before the
@@ -1165,9 +1173,9 @@ class TextBuffer(Gtk.TextBuffer):
 	def get_link_data(self, iter, raw=False):
 		'''Get the link attributes for a link at a specific position, if any
 
-		@param iter: a C{Gtk.TextIter}
-		@returns: a dict with link properties if there is a link
-		at C{iter}, C{None} otherwise
+		:param iter: a ``Gtk.TextIter``
+		:returns: a dict with link properties if there is a link
+			at ``iter``, ``None`` otherwise
 		'''
 		tag = self.get_link_tag(iter)
 
@@ -1189,12 +1197,12 @@ class TextBuffer(Gtk.TextBuffer):
 	#region TextTags
 
 	def get_tag(self, iter, type):
-		'''Get the C{Gtk.TextTag} for a zim type at a specific position, if any
+		'''Get the ``Gtk.TextTag`` for a zim type at a specific position, if any
 
-		@param iter: a C{Gtk.TextIter}
-		@param type: the zim type to look for ('style', 'link', 'tag', 'indent', 'anchor')
-		@returns: a C{Gtk.TextTag} if there is a tag at C{iter},
-		C{None} otherwise
+		:param iter: a ``Gtk.TextIter``
+		:param type: the zim type to look for ('style', 'link', 'tag', 'indent', 'anchor')
+		:returns: a ``Gtk.TextTag`` if there is a tag at ``iter``,
+			``None`` otherwise
 		'''
 		for tag in iter.get_tags():
 			if hasattr(tag, 'zim_type') and tag.zim_type == type:
@@ -1225,9 +1233,9 @@ class TextBuffer(Gtk.TextBuffer):
 		Insert a tag in the buffer (not a TextTag, but a tag
 		like "@foo")
 
-		@param iter: a C{Gtk.TextIter} object
-		@param text: The text for the tag
-		@param attrib: any other tag attributes
+		:param iter: a ``Gtk.TextIter`` object
+		:param text: The text for the tag
+		:param attrib: any other tag attributes
 		'''
 		with self.tmp_cursor(iter):
 			self.insert_tag_at_cursor(text, **attrib)
@@ -1235,10 +1243,10 @@ class TextBuffer(Gtk.TextBuffer):
 	def insert_tag_at_cursor(self, text, **attrib):
 		'''Insert a tag into the buffer
 
-		Like C{insert_tag()} but inserts at the current cursor position
+		Like ``insert_tag()`` but inserts at the current cursor position
 
-		@param text: The text for the tag
-		@param attrib: any other tag attributes
+		:param text: The text for the tag
+		:param attrib: any other tag attributes
 		'''
 		if self._deleted_editmode_mark is not None:
 			self.delete_mark(self._deleted_editmode_mark)
@@ -1266,11 +1274,11 @@ class TextBuffer(Gtk.TextBuffer):
 		return tag
 
 	def get_tag_tag(self, iter):
-		'''Get the C{Gtk.TextTag} for a tag at a specific position, if any
+		'''Get the ``Gtk.TextTag`` for a tag at a specific position, if any
 
-		@param iter: a C{Gtk.TextIter}
-		@returns: a C{Gtk.TextTag} if there is a tag at C{iter},
-		C{None} otherwise
+		:param iter: a ``Gtk.TextIter``
+		:returns: a ``Gtk.TextTag`` if there is a tag at ``iter``,
+			``None`` otherwise
 		'''
 		# Explicitly left gravity, otherwise position behind the tag
 		# would also be considered part of the tag. Position before the
@@ -1284,9 +1292,9 @@ class TextBuffer(Gtk.TextBuffer):
 	def get_tag_data(self, iter):
 		'''Get the attributes for a tag at a specific position, if any
 
-		@param iter: a C{Gtk.TextIter}
-		@returns: a dict with tag properties if there is a link
-		at C{iter}, C{None} otherwise
+		:param iter: a ``Gtk.TextIter``
+		:returns: a dict with tag properties if there is a link
+			at ``iter``, ``None`` otherwise
 		'''
 		tag = self.get_tag_tag(iter)
 
@@ -1309,7 +1317,7 @@ class TextBuffer(Gtk.TextBuffer):
 	#region Anchors
 
 	def insert_anchor(self, iter, name, **attrib):
-		'''Insert a "link anchor" with id C{name} at C{iter}'''
+		'''Insert a "link anchor" with id ``name`` at ``iter``'''
 		widget = Gtk.HBox() # Need *some* widget here...
 		pixbuf = widget.render_icon('zim-pilcrow', self.bullet_icon_size)
 		pixbuf.zim_type = 'anchor'
@@ -1318,7 +1326,7 @@ class TextBuffer(Gtk.TextBuffer):
 		self.insert_pixbuf(iter, pixbuf)
 
 	def insert_anchor_at_cursor(self, name):
-		'''Insert a "link anchor" with id C{name}'''
+		'''Insert a "link anchor" with id ``name``'''
 		iter = self.get_iter_at_mark(self.get_insert())
 		self.insert_anchor(iter, name)
 
@@ -1356,12 +1364,13 @@ class TextBuffer(Gtk.TextBuffer):
 			match = mend.forward_search(PIXBUF_CHR, 0, limit=end)
 
 	def get_anchor_for_location(self, iter):
-		'''Returns an anchor name that refers to C{iter} or the same line
-		Uses C{iter} to return id of explicit anchor on the same line closest
-		to C{iter}. If no explicit anchor is found and C{iter} is within a heading
+		'''Returns an anchor name that refers to ``iter`` or the same line
+		Uses ``iter`` to return id of explicit anchor on the same line closest
+		to ``iter``. If no explicit anchor is found and ``iter`` is within a heading
 		line, the implicit anchor for the heading is returned.
-		@param iter: the location to refer to
-		@returns: an anchor name if any anchor object or heading is found, else C{None}
+
+		:param iter: the location to refer to
+		:returns: an anchor name if any anchor object or heading is found, else ``None``
 		'''
 		return self.get_anchor_or_object_id(iter) \
 			or self._get_close_anchor_or_object_id(iter) \
@@ -1403,15 +1412,15 @@ class TextBuffer(Gtk.TextBuffer):
 	def insert_image(self, iter, file, src, **attrib):
 		'''Insert an image in the buffer
 
-		@param iter: a C{Gtk.TextIter} for the insert position
-		@param file: a L{File} object or a file path or URI
-		@param src: the file path the show to the user
+		:param iter: a ``Gtk.TextIter`` for the insert position
+		:param file: a :class:`File` object or a file path or URI
+		:param src: the file path the show to the user
 
 		If the image is e.g. specified in the page source as a relative
-		link, C{file} should give the absolute path the link resolves
-		to, while C{src} gives the relative path.
+		link, ``file`` should give the absolute path the link resolves
+		to, while ``src`` gives the relative path.
 
-		@param attrib: any other image properties
+		:param attrib: any other image properties
 		'''
 		#~ If there is a property 'alt' in attrib we try to set a tooltip.
 		#~ '''
@@ -1435,12 +1444,12 @@ class TextBuffer(Gtk.TextBuffer):
 	def insert_image_at_cursor(self, file, src, **attrib):
 		'''Insert an image in the buffer
 
-		Like L{insert_image()} but inserts at the current cursor
+		Like :class:`insert_image()` but inserts at the current cursor
 		position
 
-		@param file: a L{File} object or a file path or URI
-		@param src: the file path the show to the user
-		@param attrib: any other image properties
+		:param file: a :class:`File` object or a file path or URI
+		:param src: the file path the show to the user
+		:param attrib: any other image properties
 		'''
 		iter = self.get_iter_at_mark(self.get_insert())
 		self.insert_image(iter, file, src, **attrib)
@@ -1448,8 +1457,8 @@ class TextBuffer(Gtk.TextBuffer):
 	def get_image_data(self, iter):
 		'''Get the attributes for an image at a specific position, if any
 
-		@param iter: a C{Gtk.TextIter} object
-		@returns: a dict with image properties or C{None}
+		:param iter: a ``Gtk.TextIter`` object
+		:returns: a dict with image properties or ``None``
 		'''
 		pixbuf = iter.get_pixbuf()
 		if pixbuf and hasattr(pixbuf, 'zim_type') and pixbuf.zim_type == 'image':
@@ -1463,8 +1472,9 @@ class TextBuffer(Gtk.TextBuffer):
 
 	def insert_object_at_cursor(self, attrib, data):
 		'''Inserts a custom object in the page
-		@param attrib: dict with object attributes
-		@param data: string data of object
+
+		:param attrib: dict with object attributes
+		:param data: string data of object
 		'''
 		try:
 			objecttype = PluginManager.insertedobjects[attrib['type']]
@@ -1542,21 +1552,21 @@ class TextBuffer(Gtk.TextBuffer):
 		'''Sets the bullet type for a line
 
 		Replaces any bullet that may already be present on the line.
-		Set bullet C{None} to remove any bullet at this line.
+		Set bullet ``None`` to remove any bullet at this line.
 
-		@param line: the line number
-		@param bullet: the bullet type, one of::
-			BULLET
-			UNCHECKED_BOX
-			CHECKED_BOX
-			XCHECKED_BOX
-			MIGRATED_BOX
-			TRANSMIGRATED_BOX
-			NUMBER_BULLET
-			None
-		or a numbered bullet, like C{"1."}
-		@param indent: optional indent to set after inserting the bullet,
-		but before renumbering
+		:param line: the line number
+		:param bullet: the bullet type, one of::
+				BULLET
+				UNCHECKED_BOX
+				CHECKED_BOX
+				XCHECKED_BOX
+				MIGRATED_BOX
+				TRANSMIGRATED_BOX
+				NUMBER_BULLET
+				None
+			or a numbered bullet, like ``"1."``
+		:param indent: optional indent to set after inserting the bullet,
+			but before renumbering
 		'''
 		if bullet == NUMBER_BULLET:
 			indent = self.get_indent(line)
@@ -1674,7 +1684,7 @@ class TextBuffer(Gtk.TextBuffer):
 		- Stop renumbering at the end of the list, or when a non-numeric bullet
 		  is encountered on the same list level
 
-		@param line: line number to start updating
+		:param line: line number to start updating
 		'''
 		indent = self.get_indent(line)
 		bullet = self.get_bullet(line)
@@ -1690,7 +1700,7 @@ class TextBuffer(Gtk.TextBuffer):
 		self._renumber_list(line, indent, newbullet)
 
 	def renumber_list_after_indent(self, line, old_indent):
-		'''Like L{renumber_list()}, but more complex rules because indent
+		'''Like :class:`renumber_list()`, but more complex rules because indent
 		change has different heuristics.
 
 		It implements the following rules:
@@ -1798,10 +1808,10 @@ class TextBuffer(Gtk.TextBuffer):
 	def set_textstyles(self, names):
 		'''Sets the current text format style.
 
-		@param names: the name of the format style
+		:param names: the name of the format style
 
 		This style will be applied to text inserted at the cursor.
-		Use C{set_textstyles(None)} to reset to normal text.
+		Use ``set_textstyles(None)`` to reset to normal text.
 		'''
 		if self._deleted_editmode_mark is not None:
 			self.delete_mark(self._deleted_editmode_mark)
@@ -1861,10 +1871,10 @@ class TextBuffer(Gtk.TextBuffer):
 			self.emit('textstyle-changed', [tag.get_property('name')[6:] for tag in tags if tag.zim_type == 'style'])
 
 	def iter_get_zim_tags(self, iter):
-		'''Replacement for C{Gtk.TextIter.get_tags()} which returns
+		'''Replacement for ``Gtk.TextIter.get_tags()`` which returns
 		zim specific tags
 
-		In contrast to C{Gtk.TextIter.get_tags()} this method assumes
+		In contrast to ``Gtk.TextIter.get_tags()`` this method assumes
 		"left gravity" for TextTags. This means that it returns TextTags
 		ending to the left of the iter position but not TextTags starting
 		to the right.
@@ -1875,12 +1885,12 @@ class TextBuffer(Gtk.TextBuffer):
 		the right and not inadvertently copy formatting from the
 		previous line which ends on the left.
 
-		This method is for example used by L{update_editmode()} to
+		This method is for example used by :class:`update_editmode()` to
 		determine which TextTags should be applied to newly inserted
 		text at at a specific location.
 
-		@param iter: a C{Gtk.TextIter}
-		@returns: a list of C{Gtk.TextTag}s (sorted by priority)
+		:param iter: a ``Gtk.TextIter``
+		:returns: a list of ``Gtk.TextTag``s (sorted by priority)
 		'''
 		# Current logic works without additional indent set in
 		# do_end_of_line due to the fact that the "\n" also caries
@@ -1938,7 +1948,7 @@ class TextBuffer(Gtk.TextBuffer):
 		behavior of the format buttons consistent if a single tag
 		applies to any range.
 
-		@param name: the format style name
+		:param name: the format style name
 		'''
 		if not self.get_has_selection():
 			styles = self.get_textstyles()
@@ -2010,9 +2020,9 @@ class TextBuffer(Gtk.TextBuffer):
 		'''Check if a certain TextTag is applied to the whole range or
 		not
 
-		@param tag: a C{Gtk.TextTag}
-		@param start: a C{Gtk.TextIter}
-		@param end: a C{Gtk.TextIter}
+		:param tag: a ``Gtk.TextTag``
+		:param start: a ``Gtk.TextIter``
+		:param end: a ``Gtk.TextIter``
 		'''
 		if tag in start.get_tags() \
 				and tag in self.iter_get_zim_tags(end):
@@ -2027,9 +2037,9 @@ class TextBuffer(Gtk.TextBuffer):
 	def range_has_tag(self, tag, start, end):
 		'''Check if a certain TextTag appears anywhere in a range
 
-		@param tag: a C{Gtk.TextTag}
-		@param start: a C{Gtk.TextIter}
-		@param end: a C{Gtk.TextIter}
+		:param tag: a ``Gtk.TextTag``
+		:param start: a ``Gtk.TextIter``
+		:param end: a ``Gtk.TextIter``
 		'''
 		# test right gravity for start iter, but left gravity for end iter
 		if tag in start.get_tags() \
@@ -2043,16 +2053,16 @@ class TextBuffer(Gtk.TextBuffer):
 				return False
 
 	def range_has_tags(self, func, start, end):
-		'''Like L{range_has_tag()} but uses a function to check for
+		'''Like :class:`range_has_tag()` but uses a function to check for
 		multiple tags. The function gets called for each TextTag in the
 		range and the method returns as soon as the function returns
-		C{True} for any tag. There are a number of lambda functions
+		``True`` for any tag. There are a number of lambda functions
 		defined in the module to test categories of TextTags.
 
-		@param func: a function that is called as: C{func(tag)} for each
-		TextTag in the range
-		@param start: a C{Gtk.TextIter}
-		@param end: a C{Gtk.TextIter}
+		:param func: a function that is called as: ``func(tag)`` for each
+			TextTag in the range
+		:param start: a ``Gtk.TextIter``
+		:param end: a ``Gtk.TextIter``
 		'''
 		# test right gravity for start iter, but left gravity for end iter
 		if any(filter(func, start.get_tags())) \
@@ -2073,8 +2083,8 @@ class TextBuffer(Gtk.TextBuffer):
 	def remove_textstyle_tags(self, start, end):
 		'''Removes all format style TexTags from a range
 
-		@param start: a C{Gtk.TextIter}
-		@param end: a C{Gtk.TextIter}
+		:param start: a ``Gtk.TextIter``
+		:param end: a ``Gtk.TextIter``
 		'''
 		# Also remove links until we support links nested in tags
 		self.smart_remove_tags(_is_style_tag, start, end)
@@ -2085,12 +2095,12 @@ class TextBuffer(Gtk.TextBuffer):
 	def smart_remove_tags(self, func, start, end):
 		'''This method removes tags over a range based on a function
 
-		So L{range_has_tags()} for a details on such a test function.
+		So :class:`range_has_tags()` for a details on such a test function.
 
-		Please use this method instead of C{remove_tag()} when you
+		Please use this method instead of ``remove_tag()`` when you
 		are not sure if specific tags are present in the first place.
-		Calling C{remove_tag()} will emit signals which make the
-		L{UndoStackManager} assume the tag was there. If this was not
+		Calling ``remove_tag()`` will emit signals which make the
+		:class:`UndoStackManager` assume the tag was there. If this was not
 		the case the undo stack gets messed up.
 		'''
 		with self.user_action:
@@ -2110,7 +2120,7 @@ class TextBuffer(Gtk.TextBuffer):
 	def get_indent_at_cursor(self):
 		'''Get the indent level at the cursor
 
-		@returns: a number for the indenting level
+		:returns: a number for the indenting level
 		'''
 		iter = self.get_iter_at_mark(self.get_insert())
 		return self.get_indent(iter.get_line())
@@ -2118,8 +2128,8 @@ class TextBuffer(Gtk.TextBuffer):
 	def get_indent(self, line):
 		'''Get the indent level for a specific line
 
-		@param line: the line number
-		@returns: a number for the indenting level
+		:param line: the line number
+		:returns: a number for the indenting level
 		'''
 		iter = self.get_iter_at_line(line)
 		tags = list(filter(_is_indent_tag, iter.get_tags()))
@@ -2214,19 +2224,19 @@ class TextBuffer(Gtk.TextBuffer):
 
 		May also trigger renumbering for numbered lists.
 
-		@param line: the line number
-		@param level: the indenting level as a number, C{0} for no
-		indenting, C{1} for the equivalent of 1 tab, etc.
-		@param interactive: hint if indenting is result of user
-		interaction, or automatic action
+		:param line: the line number
+		:param level: the indenting level as a number, ``0`` for no
+			indenting, ``1`` for the equivalent of 1 tab, etc.
+		:param interactive: hint if indenting is result of user
+			interaction, or automatic action
 
 		If interactive, the line will be forced to end with a newline.
 		Reason is that if the last line of the buffer is empty and
 		does not end with a newline, the indenting will not be visible,
 		giving the impression that it failed.
 
-		@returns: C{True} for success (e.g. indenting a heading is not
-		allowed, if you try it will fail and return C{False} here)
+		:returns: ``True`` for success (e.g. indenting a heading is not
+			allowed, if you try it will fail and return ``False`` here)
 		'''
 		level = level or 0
 
@@ -2260,8 +2270,8 @@ class TextBuffer(Gtk.TextBuffer):
 		but it makes sure the correct TextTag is applied. Typically
 		called e.g. after inserting or deleting a bullet.
 
-		@param line: the line number
-		@param bullet: the bullet type for this line, or C{None}
+		:param line: the line number
+		:param bullet: the bullet type for this line, or ``None``
 		'''
 		level = self.get_indent(line)
 		self._set_indent(line, level, bullet)
@@ -2292,13 +2302,13 @@ class TextBuffer(Gtk.TextBuffer):
 	def indent(self, line, interactive=False):
 		'''Increase the indent for a given line
 
-		Can be used as function for L{foreach_line_in_selection()}.
+		Can be used as function for :class:`foreach_line_in_selection()`.
 
-		@param line: the line number
-		@param interactive: hint if indenting is result of user
-		interaction, or automatic action
+		:param line: the line number
+		:param interactive: hint if indenting is result of user
+			interaction, or automatic action
 
-		@returns: C{True} if successful
+		:returns: ``True`` if successful
 		'''
 		level = self.get_indent(line)
 		return self.set_indent(line, level + 1, interactive)
@@ -2306,13 +2316,13 @@ class TextBuffer(Gtk.TextBuffer):
 	def unindent(self, line, interactive=False):
 		'''Decrease the indent level for a given line
 
-		Can be used as function for L{foreach_line_in_selection()}.
+		Can be used as function for :class:`foreach_line_in_selection()`.
 
-		@param line: the line number
-		@param interactive: hint if indenting is result of user
-		interaction, or automatic action
+		:param line: the line number
+		:param interactive: hint if indenting is result of user
+			interaction, or automatic action
 
-		@returns: C{True} if successful
+		:returns: ``True`` if successful
 		'''
 		level = self.get_indent(line)
 		return self.set_indent(line, level - 1, interactive)
@@ -2321,15 +2331,15 @@ class TextBuffer(Gtk.TextBuffer):
 		'''Convenience function to call a function for each line that
 		is currently selected
 
-		@param func: function which will be called as::
+		:param func: function which will be called as::
 
 			func(line, *args, **kwargs)
 
-		where C{line} is the line number
-		@param args: additional argument for C{func}
-		@param kwarg: additional keyword argument for C{func}
+		where ``line`` is the line number
+		:param args: additional argument for ``func``
+		:param kwarg: additional keyword argument for ``func``
 
-		@returns: C{False} if there is no selection, C{True} otherwise
+		:returns: ``False`` if there is no selection, ``True`` otherwise
 		'''
 		bounds = self.get_selection_bounds()
 		if bounds:
@@ -2560,15 +2570,15 @@ class TextBuffer(Gtk.TextBuffer):
 	def get_bullet(self, line):
 		'''Get the bullet type on a specific line, if any
 
-		@param line: the line number
-		@returns: the bullet type, if any, or C{None}.
-		The bullet type can be any of::
-				BULLET
-				UNCHECKED_BOX
-				CHECKED_BOX
-				XCHECKED_BOX
-				MIGRATED_BOX
-		or a numbered list bullet (test with L{is_numbered_bullet_re})
+		:param line: the line number
+		:returns: the bullet type, if any, or ``None``.
+			The bullet type can be any of::
+					BULLET
+					UNCHECKED_BOX
+					CHECKED_BOX
+					XCHECKED_BOX
+					MIGRATED_BOX
+			or a numbered list bullet (test with :class:`is_numbered_bullet_re`)
 		'''
 		iter = self.get_iter_at_line(line)
 		return self._get_bullet_at_iter(iter)
@@ -2576,10 +2586,10 @@ class TextBuffer(Gtk.TextBuffer):
 	def get_bullet_at_iter(self, iter):
 		'''Return the bullet type in a specific location
 
-		Like L{get_bullet()}
+		Like :class:`get_bullet()`
 
-		@param iter: a C{Gtk.TextIter}
-		@returns: a bullet type, or C{None}
+		:param iter: a ``Gtk.TextIter``
+		:returns: a bullet type, or ``None``
 		'''
 		if not iter.starts_line():
 			return None
@@ -2614,8 +2624,8 @@ class TextBuffer(Gtk.TextBuffer):
 		text on a line with a bullet after the bullet. This method can
 		help to find that position.
 
-		@param iter: a C{Gtk.TextIter}. The position of this iter will
-		be modified by this method.
+		:param iter: a ``Gtk.TextIter``. The position of this iter will
+			be modified by this method.
 		'''
 		bullet = self.get_bullet_at_iter(iter)
 		if bullet:
@@ -2643,26 +2653,26 @@ class TextBuffer(Gtk.TextBuffer):
 					break
 
 	def get_parsetree(self, bounds=None, raw=False):
-		'''Get a L{ParseTree} representing the buffer contents
+		'''Get a :class:`ParseTree` representing the buffer contents
 
-		@param bounds: a 2-tuple with two C{Gtk.TextIter} specifying a
-		range in the buffer (e.g. current selection). If C{None} the
-		whole buffer is returned.
+		:param bounds: a 2-tuple with two ``Gtk.TextIter`` specifying a
+			range in the buffer (e.g. current selection). If ``None`` the
+			whole buffer is returned.
 
-		@param raw: if C{True} you get a tree that is B{not} nicely
-		cleaned up. This raw tree should result in the exact same
-		contents in the buffer when reloaded. However such a 'raw'
-		tree may cause problems when passed to one of the format
-		modules. So it is intended only for internal use between the
-		buffer and e.g. the L{UndoStackManager}.
+		:param raw: if ``True`` you get a tree that is **not** nicely
+			cleaned up. This raw tree should result in the exact same
+			contents in the buffer when reloaded. However such a 'raw'
+			tree may cause problems when passed to one of the format
+			modules. So it is intended only for internal use between the
+			buffer and e.g. the :class:`UndoStackManager`.
 
 		Raw parsetrees have an attribute to flag them as a raw tree, so
 		on insert we can make sure they are inserted in the same way.
 
-		When C{raw} is C{False} reloading the same tree may have subtle
+		When ``raw`` is ``False`` reloading the same tree may have subtle
 		differences.
 
-		@returns: a L{ParseTree} object
+		:returns: a :class:`ParseTree` object
 		'''
 		if self.showing_template and not raw:
 			return None
@@ -2964,8 +2974,9 @@ class TextBuffer(Gtk.TextBuffer):
 
 	def select_line(self, line=None):
 		'''Selects a line
-		@param line: line number; if C{None} current line will be selected
-		@returns: C{True} when successful
+
+		:param line: line number; if ``None`` current line will be selected
+		:returns: ``True`` when successful
 		'''
 		# Differs from get_line_bounds because we exclude the trailing
 		# line break while get_line_bounds selects these
@@ -2976,9 +2987,10 @@ class TextBuffer(Gtk.TextBuffer):
 
 	def select_lines(self, first, last):
 		'''Select multiple lines
-		@param first: line number first line
-		@param last: line number last line
-		@returns: C{True} when successful
+
+		:param first: line number first line
+		:param last: line number last line
+		:returns: ``True`` when successful
 		'''
 		start = self.get_iter_at_line(first)
 		end = self.get_iter_at_line(last)
@@ -2995,7 +3007,7 @@ class TextBuffer(Gtk.TextBuffer):
 	def select_word(self):
 		'''Selects the current word, if any
 
-		@returns: C{True} when succcessful
+		:returns: ``True`` when succcessful
 		'''
 		insert = self.get_iter_at_mark(self.get_insert())
 		if not insert.inside_word():
@@ -3013,7 +3025,8 @@ class TextBuffer(Gtk.TextBuffer):
 	def strip_selection(self):
 		'''Shrinks the selection to exclude any whitespace on start and end.
 		If only white space was selected this function will not change the selection.
-		@returns: C{True} when this function changed the selection.
+
+		:returns: ``True`` when this function changed the selection.
 		'''
 		bounds = self.get_selection_bounds()
 		if not bounds:
@@ -3048,7 +3061,8 @@ class TextBuffer(Gtk.TextBuffer):
 
 	def select_link(self):
 		'''Selects the current link, if any
-		@returns: link attributes when succcessful, C{None} otherwise
+
+		:returns: link attributes when succcessful, ``None`` otherwise
 		'''
 		insert = self.get_iter_at_mark(self.get_insert())
 		tag = self.get_link_tag(insert)
@@ -3060,7 +3074,8 @@ class TextBuffer(Gtk.TextBuffer):
 
 	def get_has_link_selection(self):
 		'''Check whether a link is selected or not
-		@returns: link attributes when succcessful, C{None} otherwise
+
+		:returns: link attributes when succcessful, ``None`` otherwise
 		'''
 		bounds = self.get_selection_bounds()
 		if not bounds:
@@ -3079,8 +3094,8 @@ class TextBuffer(Gtk.TextBuffer):
 	def remove_link(self, start, end):
 		'''Removes any links between in a range
 
-		@param start: a C{Gtk.TextIter}
-		@param end: a C{Gtk.TextIter}
+		:param start: a ``Gtk.TextIter``
+		:param end: a ``Gtk.TextIter``
 		'''
 		self.smart_remove_tags(_is_link_tag, start, end)
 		self.update_editmode()
@@ -3088,8 +3103,9 @@ class TextBuffer(Gtk.TextBuffer):
 	def find_implicit_anchor(self, name):
 		"""Search the current page for a heading who's derived (implicit) anchor name is
 		matching the provided parameter.
-		@param name: the name of the anchor
-		@returns: a C{Gtk.TextIter} pointing to the start of the heading or C{None}.
+
+		:param name: the name of the anchor
+		:returns: a ``Gtk.TextIter`` pointing to the start of the heading or ``None``.
 		"""
 		iter = self.get_start_iter()
 		while True:
@@ -3111,8 +3127,8 @@ class TextBuffer(Gtk.TextBuffer):
 		Explicit anchors are being searched with precedence over implicit
 		anchors derived from heading elements.
 
-		@param name: the name of the anchor to look for
-		@returns: a C{Gtk.TextIter} pointing to the start of the heading or C{None}.
+		:param name: the name of the anchor to look for
+		:returns: a ``Gtk.TextIter`` pointing to the start of the heading or ``None``.
 		"""
 		# look for explicit anchors tags including image or object tags
 		start, end = self.get_bounds()
@@ -3126,18 +3142,18 @@ class TextBuffer(Gtk.TextBuffer):
 	def toggle_checkbox(self, line, checkbox_type=None, recursive=False):
 		'''Toggles the state of the checkbox at a specific line, if any
 
-		@param line: the line number
-		@param checkbox_type: the checkbox type that we want to toggle:
-		one of C{CHECKED_BOX}, C{XCHECKED_BOX}, C{MIGRATED_BOX}.
-		If C{checkbox_type} is given, it toggles between this type and
-		unchecked. Otherwise it rotates through unchecked, checked
-		and xchecked.
-		As a special case when the C{checkbox_type} ir C{UNCHECKED_BOX}
-		the box is always unchecked.
-		@param recursive: When C{True} any child items in the list will
-		also be upadted accordingly (see L{TextBufferList.set_bullet()}
+		:param line: the line number
+		:param checkbox_type: the checkbox type that we want to toggle:
+			one of ``CHECKED_BOX``, ``XCHECKED_BOX``, ``MIGRATED_BOX``.
+			If ``checkbox_type`` is given, it toggles between this type and
+			unchecked. Otherwise it rotates through unchecked, checked
+			and xchecked.
+			As a special case when the ``checkbox_type`` ir ``UNCHECKED_BOX``
+			the box is always unchecked.
+		:param recursive: When ``True`` any child items in the list will
+			also be upadted accordingly (see :class:`TextBufferList.set_bullet()`
 
-		@returns: C{True} for success, C{False} if no checkbox was found.
+		:returns: ``True`` for success, ``False`` if no checkbox was found.
 		'''
 		# For mouse click no checkbox type is given, so we cycle
 		# For <F12> and <Shift><F12> checkbox_type is given so we toggle
@@ -3165,12 +3181,12 @@ class TextBuffer(Gtk.TextBuffer):
 		return True
 
 	def toggle_checkbox_for_cursor_or_selection(self, checkbox_type=None, recursive=False):
-		'''Like L{toggle_checkbox()} but applies to current line or
+		'''Like :class:`toggle_checkbox()` but applies to current line or
 		current selection. Intended for interactive use.
 
-		@param checkbox_type: the checkbox type that we want to toggle
-		@param recursive: When C{True} any child items in the list will
-		also be upadted accordingly (see L{TextBufferList.set_bullet()}
+		:param checkbox_type: the checkbox type that we want to toggle
+		:param recursive: When ``True`` any child items in the list will
+			also be upadted accordingly (see :class:`TextBufferList.set_bullet()`
 		'''
 		if self.get_has_selection():
 			self.foreach_line_in_selection(self.toggle_checkbox, checkbox_type, recursive)
@@ -3179,14 +3195,14 @@ class TextBuffer(Gtk.TextBuffer):
 			return self.toggle_checkbox(line, checkbox_type, recursive)
 
 	def iter_backward_word_start(self, iter):
-		'''Like C{Gtk.TextIter.backward_word_start()} but less intelligent.
+		'''Like ``Gtk.TextIter.backward_word_start()`` but less intelligent.
 		This method does not take into account the language or
 		punctuation and just skips to either the last whitespace or
 		the beginning of line.
 
-		@param iter: a C{Gtk.TextIter}, the position of this iter will
-		be modified
-		@returns: C{True} when successful
+		:param iter: a ``Gtk.TextIter``, the position of this iter will
+			be modified
+		:returns: ``True`` when successful
 		'''
 		if iter.starts_line():
 			return False
@@ -3207,14 +3223,14 @@ class TextBuffer(Gtk.TextBuffer):
 		return iter.compare(orig) != 0
 
 	def iter_forward_word_end(self, iter):
-		'''Like C{Gtk.TextIter.forward_word_end()} but less intelligent.
+		'''Like ``Gtk.TextIter.forward_word_end()`` but less intelligent.
 		This method does not take into account the language or
 		punctuation and just skips to either the next whitespace or the
 		end of the line.
 
-		@param iter: a C{Gtk.TextIter}, the position of this iter will
-		be modified
-		@returns: C{True} when successful
+		:param iter: a ``Gtk.TextIter``, the position of this iter will
+			be modified
+		:returns: ``True`` when successful
 		'''
 		if iter.ends_line():
 			return False
@@ -3235,11 +3251,12 @@ class TextBuffer(Gtk.TextBuffer):
 		return iter.compare(orig) != 0
 
 	def get_iter_at_line(self, line):
-		'''Like C{Gtk.TextBuffer.get_iter_at_line()} but with additional
+		'''Like ``Gtk.TextBuffer.get_iter_at_line()`` but with additional
 		safety check
-		@param line: an integer line number counting from 0
-		@returns: a Gtk.TextIter
-		@raises ValueError: when line is not within the buffer
+
+		:param line: an integer line number counting from 0
+		:returns: a Gtk.TextIter
+		:raises ValueError: when line is not within the buffer
 		'''
 		# Gtk TextBuffer returns iter of last line for lines past the
 		# end of the buffer
@@ -3254,9 +3271,9 @@ class TextBuffer(Gtk.TextBuffer):
 	def get_line_bounds(self, line):
 		'''Get the TextIters at start and end of line
 
-		@param line: the line number
-		@returns: a 2-tuple of C{Gtk.TextIter} for start and end of the
-		line
+		:param line: the line number
+		:returns: a 2-tuple of ``Gtk.TextIter`` for start and end of the
+			line
 		'''
 		start = self.get_iter_at_line(line)
 		end = start.copy()
@@ -3266,8 +3283,8 @@ class TextBuffer(Gtk.TextBuffer):
 	def get_line_is_empty(self, line):
 		'''Check for empty lines
 
-		@param line: the line number
-		@returns: C{True} if the line only contains whitespace
+		:param line: the line number
+		:returns: ``True`` if the line only contains whitespace
 		'''
 		start, end = self.get_line_bounds(line)
 		return start.equal(end) or start.get_slice(end).isspace()
@@ -3275,19 +3292,19 @@ class TextBuffer(Gtk.TextBuffer):
 	def get_has_selection(self):
 		'''Check if there is a selection
 
-		Method available in C{Gtk.TextBuffer} for gtk version >= 2.10
+		Method available in ``Gtk.TextBuffer`` for gtk version >= 2.10
 		reproduced here for backward compatibility.
 
-		@returns: C{True} when there is a selection
+		:returns: ``True`` when there is a selection
 		'''
 		return bool(self.get_selection_bounds())
 
 	def iter_in_selection(self, iter):
 		'''Check if a specific TextIter is within the selection
 
-		@param iter: a C{Gtk.TextIter}
-		@returns: C{True} if there is a selection and C{iter} is within
-		the range of the selection
+		:param iter: a ``Gtk.TextIter``
+		:returns: ``True`` if there is a selection and ``iter`` is within
+			the range of the selection
 		'''
 		bounds = self.get_selection_bounds()
 		return bounds \
@@ -3303,8 +3320,8 @@ class TextBuffer(Gtk.TextBuffer):
 	def copy_clipboard(self, clipboard, format='plain'):
 		'''Copy current selection to a clipboard
 
-		@param clipboard: a L{Clipboard} object
-		@param format: a format name
+		:param clipboard: a :class:`Clipboard` object
+		:param format: a format name
 		'''
 		bounds = self.get_selection_bounds()
 		if bounds:
@@ -3318,8 +3335,8 @@ class TextBuffer(Gtk.TextBuffer):
 		First copies the selection to the clipboard and then deletes
 		the selection in the buffer.
 
-		@param clipboard: a L{Clipboard} object
-		@param default_editable: default state of the L{TextView}
+		:param clipboard: a :class:`Clipboard` object
+		:param default_editable: default state of the :class:`TextView`
 		'''
 		if self.get_has_selection():
 			self.copy_clipboard(clipboard)
@@ -3328,9 +3345,9 @@ class TextBuffer(Gtk.TextBuffer):
 	def paste_clipboard(self, clipboard, iter, default_editable, text_format=None):
 		'''Paste data from a clipboard into the buffer
 
-		@param clipboard: a L{Clipboard} object
-		@param iter: a C{Gtk.TextIter} for the insert location
-		@param default_editable: default state of the L{TextView}
+		:param clipboard: a :class:`Clipboard` object
+		:param iter: a ``Gtk.TextIter`` for the insert location
+		:param default_editable: default state of the :class:`TextView`
 		'''
 		if not default_editable:
 			return
@@ -3381,10 +3398,10 @@ class TextBuffer(Gtk.TextBuffer):
 
 
 class TextBufferList(list):
-	'''This class represents a bullet or checkbox list in a L{TextBuffer}.
+	'''This class represents a bullet or checkbox list in a :class:`TextBuffer`.
 	It is used to perform recursive actions on the list.
 
-	While the L{TextBuffer} just treats list items as lines that start
+	While the :class:`TextBuffer` just treats list items as lines that start
 	with a bullet, the TextBufferList maps to a number of lines that
 	together form a list. It uses "row ids" to refer to specific
 	items within this range.
@@ -3406,16 +3423,16 @@ class TextBufferList(list):
 		'''Constructor for a new TextBufferList mapping the list at a
 		specific line in the buffer
 
-		@param textbuffer: a L{TextBuffer} object
-		@param line: a line number
+		:param textbuffer: a :class:`TextBuffer` object
+		:param line: a line number
 
 		This line should be part of a list, the TextBufferList object
 		that is returned maps the full list, so it possibly extends
-		above and below C{line}.
+		above and below ``line``.
 
-		@returns: a 2-tuple of a row id and a the new TextBufferList
-		object, or C{(None, None)} if C{line} is not part of a list.
-		The row id points to C{line} in the list.
+		:returns: a 2-tuple of a row id and a the new TextBufferList
+			object, or ``(None, None)`` if ``line`` is not part of a list.
+			The row id points to ``line`` in the list.
 		'''
 		if textbuffer.get_bullet(line) is None:
 			return None, None
@@ -3446,9 +3463,9 @@ class TextBufferList(list):
 	def __init__(self, textbuffer, firstline, lastline):
 		'''Constructor
 
-		@param textbuffer: a L{TextBuffer} object
-		@param firstline: the line number for the first line of the list
-		@param lastline: the line number for the last line of the list
+		:param textbuffer: a :class:`TextBuffer` object
+		:param firstline: the line number for the first line of the list
+		:param lastline: the line number for the last line of the list
 		'''
 		self.buffer = textbuffer
 		self.firstline = firstline
@@ -3462,9 +3479,9 @@ class TextBufferList(list):
 	def get_row_at_line(self, line):
 		'''Get the row in the list for a specific line
 
-		@param line: the line number for a line in the L{TextBuffer}
-		@returns: the row id for a row in the list or C{None} when
-		the line was outside of the list
+		:param line: the line number for a line in the :class:`TextBuffer`
+		:returns: the row id for a row in the list or ``None`` when
+			the line was outside of the list
 		'''
 		for i in range(len(self)):
 			if self[i][self.LINE_COL] == line:
@@ -3493,8 +3510,8 @@ class TextBufferList(list):
 		now "item b" can not be indented further because it is already
 		one level below "item a".
 
-		@param row: the row id
-		@returns: C{True} when indenting is possible
+		:param row: the row id
+		:returns: ``True`` when indenting is possible
 		'''
 		if row == 0:
 			return True
@@ -3509,8 +3526,8 @@ class TextBufferList(list):
 		'''Check if a specific item in the list has indenting which
 		can be reduced
 
-		@param row: the row id
-		@returns: C{True} when the item has indenting
+		:param row: the row id
+		:returns: ``True`` when the item has indenting
 		'''
 		return self[row][self.INDENT_COL] > 0
 
@@ -3529,8 +3546,8 @@ class TextBufferList(list):
 		      * item b
 		          * item C
 
-		@param row: the row id
-		@returns: C{True} if successfulll
+		:param row: the row id
+		:returns: ``True`` if successfulll
 		'''
 		if not self.can_indent(row):
 			return False
@@ -3541,8 +3558,8 @@ class TextBufferList(list):
 	def unindent(self, row):
 		'''Un-indent a list item and it's children
 
-		@param row: the row id
-		@returns: C{True} if successfulll
+		:param row: the row id
+		:returns: ``True`` if successfulll
 		'''
 		if not self.can_unindent(row):
 			return False
@@ -3595,13 +3612,13 @@ class TextBufferList(list):
 		well. When a box is un-checked, also the parent checkbox is
 		un-checked. Both updating of children and parents is recursive.
 
-		@param row: the row id
-		@param bullet: the bullet type, which can be one of::
-			BULLET
-			CHECKED_BOX
-			UNCHECKED_BOX
-			XCHECKED_BOX
-			MIGRATED_BOX
+		:param row: the row id
+		:param bullet: the bullet type, which can be one of::
+				BULLET
+				CHECKED_BOX
+				UNCHECKED_BOX
+				XCHECKED_BOX
+				MIGRATED_BOX
 		'''
 		assert bullet in BULLETS
 		with self.buffer.user_action:
@@ -3685,16 +3702,16 @@ FIND_WHOLE_WORD = 2 #: Constant to find whole words only
 FIND_REGEX = 4 #: Constant to find based on regexes
 
 class TextFinder(object):
-	'''This class handles finding text in the L{TextBuffer}
+	'''This class handles finding text in the :class:`TextBuffer`
 
 	Typically you should get an instance of this class from the
-	L{TextBuffer.finder} attribute.
+	:class:`TextBuffer.finder` attribute.
 	'''
 
 	def __init__(self, textbuffer):
 		'''constructor
 
-		@param textbuffer: a L{TextBuffer} object
+		:param textbuffer: a :class:`TextBuffer` object
 		'''
 		self.buffer = textbuffer
 		self._signals = ()
@@ -3710,10 +3727,10 @@ class TextFinder(object):
 
 	def get_state(self):
 		'''Get the query and any options. Used to copy the current state
-		of find, can be restored later using L{set_state()}.
+		of find, can be restored later using :class:`set_state()`.
 
-		@returns: a 3-tuple of the search string, the option flags, and
-		the highlight state
+		:returns: a 3-tuple of the search string, the option flags, and
+			the highlight state
 		'''
 		return self.string, self.flags, self.highlight
 
@@ -3721,10 +3738,10 @@ class TextFinder(object):
 		'''Set the query and any options. Can be used to restore the
 		state of a find action without triggering a find immediatly.
 
-		@param string: the text (or regex) to find
-		@param flags: a combination of C{FIND_CASE_SENSITIVE},
-		C{FIND_WHOLE_WORD} & C{FIND_REGEX}
-		@param highlight: highlight state C{True} or C{False}
+		:param string: the text (or regex) to find
+		:param flags: a combination of ``FIND_CASE_SENSITIVE``,
+			``FIND_WHOLE_WORD`` & ``FIND_REGEX``
+		:param highlight: highlight state ``True`` or ``False``
 		'''
 		if not string is None:
 			self._parse_query(string, flags)
@@ -3733,12 +3750,12 @@ class TextFinder(object):
 	def find(self, string, flags=0):
 		'''Find and select the next occurrence of a given string
 
-		@param string: the text (or regex) to find
-		@param flags: options, a combination of:
-			- C{FIND_CASE_SENSITIVE}: check case of matches
-			- C{FIND_WHOLE_WORD}: only match whole words
-			- C{FIND_REGEX}: input is a regular expression
-		@returns: C{True} if a match was found
+		:param string: the text (or regex) to find
+		:param flags: options, a combination of:
+				- ``FIND_CASE_SENSITIVE``: check case of matches
+				- ``FIND_WHOLE_WORD``: only match whole words
+				- ``FIND_REGEX``: input is a regular expression
+		:returns: ``True`` if a match was found
 		'''
 		self._parse_query(string, flags)
 		#~ print('!! FIND "%s" (%s, %s)' % (self.regex.pattern, string, flags))
@@ -3768,7 +3785,7 @@ class TextFinder(object):
 	def find_next(self):
 		'''Skip to the next match and select it
 
-		@returns: C{True} if a match was found
+		:returns: ``True`` if a match was found
 		'''
 		iter = self.buffer.get_insert_iter()
 		iter.forward_char() # Skip current position
@@ -3800,7 +3817,7 @@ class TextFinder(object):
 	def find_previous(self):
 		'''Go back to the previous match and select it
 
-		@returns: C{True} if a match was found
+		:returns: ``True`` if a match was found
 		'''
 		if self.regex is None:
 			self.unset_match()
@@ -3854,10 +3871,10 @@ class TextFinder(object):
 			self.buffer.select_range(*bounds)
 
 	def set_highlight(self, highlight):
-		'''Toggle highlighting of matches in the L{TextBuffer}
+		'''Toggle highlighting of matches in the :class:`TextBuffer`
 
-		@param highlight: C{True} to enable highlighting, C{False} to
-		disable
+		:param highlight: ``True`` to enable highlighting, ``False`` to
+			disable
 		'''
 		self.highlight = highlight
 		self._update_highlight()
@@ -3905,12 +3922,12 @@ class TextFinder(object):
 	def replace(self, string):
 		'''Replace current match
 
-		@param string: the replacement string
+		:param string: the replacement string
 
 		In case of a regex find and replace the string will be expanded
 		with terms from the regex.
 
-		@returns: C{True} is successful
+		:returns: ``True`` is successful
 		'''
 		iter = self.buffer.get_insert_iter()
 		if not self._find_next(iter):
@@ -3943,10 +3960,10 @@ class TextFinder(object):
 	def replace_all(self, string):
 		'''Replace all matched
 
-		Like L{replace()} but replaces all matches in the buffer
+		Like :class:`replace()` but replaces all matches in the buffer
 
-		@param string: the replacement string
-		@returns: C{True} is successful
+		:param string: the replacement string
+		:returns: ``True`` is successful
 		'''
 		# Avoid looping when replace value matches query
 
@@ -3980,31 +3997,31 @@ CURSOR_WIDGET = Gdk.Cursor.new_from_name(Gdk.Display.get_default(), 'default')
 
 
 class TextView(Gtk.TextView):
-	'''Widget to display a L{TextBuffer} with page content. Implements
+	'''Widget to display a :class:`TextBuffer` with page content. Implements
 	zim specific behavior like additional key bindings, on-mouse-over
 	signals for links, and the custom popup menu.
 
-	@ivar preferences: dict with preferences
+	:ivar preferences: dict with preferences
 
-	@signal: C{link-clicked (link)}: Emitted when the user clicks a link
-	@signal: C{link-enter (link)}: Emitted when the mouse pointer enters a link
-	@signal: C{link-leave (link)}: Emitted when the mouse pointer leaves a link
-	@signal: C{end-of-word (start, end, word, char, editmode)}:
-	Emitted when the user typed a character like space that ends a word
+	:signal: ``link-clicked (link)``: Emitted when the user clicks a link
+	:signal: ``link-enter (link)``: Emitted when the mouse pointer enters a link
+	:signal: ``link-leave (link)``: Emitted when the mouse pointer leaves a link
+	:signal: ``end-of-word (start, end, word, char, editmode)``:
+		Emitted when the user typed a character like space that ends a word
 
-	  - C{start}: a C{Gtk.TextIter} for the start of the word
-	  - C{end}: a C{Gtk.TextIter} for the end of the word
-	  - C{word}: the word as string
-	  - C{char}: the character that caused the signal (a space, tab, etc.)
-	  - C{editmode}: a list of constants for the formatting being in effect,
-	    e.g. C{VERBATIM}
+	  - ``start``: a ``Gtk.TextIter`` for the start of the word
+	  - ``end``: a ``Gtk.TextIter`` for the end of the word
+	  - ``word``: the word as string
+	  - ``char``: the character that caused the signal (a space, tab, etc.)
+	  - ``editmode``: a list of constants for the formatting being in effect,
+	    e.g. ``VERBATIM``
 
 	Plugins that want to add auto-formatting logic can connect to this
 	signal. If the handler matches the word it should stop the signal
-	with C{stop_emission()} to prevent other hooks from formatting the
+	with ``stop_emission()`` to prevent other hooks from formatting the
 	same word.
 
-	@signal: C{end-of-line (end)}: Emitted when the user typed a newline
+	:signal: ``end-of-line (end)``: Emitted when the user typed a newline
 	'''
 
 	# define signals we want to use - (closure type, return type and arg types)
@@ -4020,10 +4037,12 @@ class TextView(Gtk.TextView):
 	def __init__(self, preferences):
 		'''Constructor
 
-		@param preferences: dict with preferences
+		:param preferences: dict with preferences
 
-		@todo: make sure code sets proper defaults for preferences
-		& document preferences used
+		.. todo::
+
+			make sure code sets proper defaults for preferences
+			& document preferences used
 		'''
 		GObject.GObject.__init__(self)
 		self.set_buffer(TextBuffer(None, None))
@@ -4536,8 +4555,8 @@ class TextView(Gtk.TextView):
 	def _get_pointer_location(self):
 		'''Get an iter and coordinates for the mouse pointer
 
-		@returns: a 2-tuple of a C{Gtk.TextIter} and a C{(x, y)}
-		tupple with coordinates for the mouse pointer.
+		:returns: a 2-tuple of a ``Gtk.TextIter`` and a ``(x, y)``
+			tupple with coordinates for the mouse pointer.
 		'''
 		x, y = self.get_pointer()
 		x, y = self.window_to_buffer_coords(Gtk.TextWindowType.WIDGET, x, y)
@@ -4545,9 +4564,9 @@ class TextView(Gtk.TextView):
 		return iter, (x, y)
 
 	def _get_pixbuf_at_pointer(self, iter, coords):
-		'''Returns the pixbuf that is under the mouse or C{None}. The
+		'''Returns the pixbuf that is under the mouse or ``None``. The
 		parameters should be the TextIter and the (x, y) coordinates
-		from L{_get_pointer_location()}. This method handles the special
+		from :class:`_get_pointer_location()`. This method handles the special
 		case where the pointer it on an iter next to the image but the
 		mouse is visible above the image.
 		'''
@@ -4575,12 +4594,12 @@ class TextView(Gtk.TextView):
 
 		E.g. set a "hand" cursor when hovering over a link.
 
-		@param coords: a tuple with C{(x, y)} position in buffer coords.
-		Only give this argument if coords are known from an event,
-		otherwise the current cursor position is used.
+		:param coords: a tuple with ``(x, y)`` position in buffer coords.
+			Only give this argument if coords are known from an event,
+			otherwise the current cursor position is used.
 
-		@emits: link-enter
-		@emits: link-leave
+		:emits: link-enter
+		:emits: link-leave
 		'''
 		if coords is None:
 			iter, coords = self._get_pointer_location()
@@ -4630,8 +4649,9 @@ class TextView(Gtk.TextView):
 	def click_link(self):
 		'''Activate the link under the mouse pointer, if any
 
-		@emits: link-clicked
-		@returns: C{True} when there was indeed a link
+		:emits: link-clicked
+
+		:returns: ``True`` when there was indeed a link
 		'''
 		iter, coords = self._get_pointer_location()
 		if iter is None:
@@ -4645,14 +4665,15 @@ class TextView(Gtk.TextView):
 			return self.click_link_at_iter(iter)
 
 	def click_link_at_iter(self, iter):
-		'''Activate the link at C{iter}, if any
+		'''Activate the link at ``iter``, if any
 
-		Like L{click_link()} but activates a link at a specific text
+		Like :class:`click_link()` but activates a link at a specific text
 		iter location
 
-		@emits: link-clicked
-		@param iter: a C{Gtk.TextIter}
-		@returns: C{True} when there was indeed a link
+		:emits: link-clicked
+
+		:param iter: a ``Gtk.TextIter``
+		:returns: ``True`` when there was indeed a link
 		'''
 		link = self.get_buffer().get_link_data(iter)
 		if link:
@@ -4664,9 +4685,9 @@ class TextView(Gtk.TextView):
 	def click_checkbox(self, checkbox_type=None):
 		'''Toggle the checkbox under the mouse pointer, if any
 
-		@param checkbox_type: the checkbox type to toggle between, see
-		L{TextBuffer.toggle_checkbox()} for details.
-		@returns: C{True} for success, C{False} if no checkbox was found.
+		:param checkbox_type: the checkbox type to toggle between, see
+			:class:`TextBuffer.toggle_checkbox()` for details.
+		:returns: ``True`` for success, ``False`` if no checkbox was found.
 		'''
 		iter, coords = self._get_pointer_location()
 		if iter and iter.get_line_offset() < 2:
@@ -4689,8 +4710,8 @@ class TextView(Gtk.TextView):
 	def get_visual_home_positions(self, iter):
 		'''Get the TextIters for the visuale start of the line
 
-		@param iter: a C{Gtk.TextIter}
-		@returns: a 2-tuple with two C{Gtk.TextIter}
+		:param iter: a ``Gtk.TextIter``
+		:returns: a 2-tuple with two ``Gtk.TextIter``
 
 		The first iter is the start of the visual line - which can be
 		the start of the line as the buffer sees it (which is also called
@@ -4946,12 +4967,12 @@ class TextView(Gtk.TextView):
 class UndoActionGroup(list):
 	'''Group of actions that should un-done or re-done in a single step
 
-	Inherits from C{list}, so can be treates as a list of actions.
-	See L{UndoStackManager} for more details on undo actions.
+	Inherits from ``list``, so can be treates as a list of actions.
+	See :class:`UndoStackManager` for more details on undo actions.
 
-	@ivar can_merge: C{True} when this group can be merged with another
-	group
-	@ivar cursor: the position to restore the cursor afre un-/re-doning
+	:ivar can_merge: ``True`` when this group can be merged with another
+		group
+	:ivar cursor: the position to restore the cursor afre un-/re-doning
 	'''
 
 	__slots__ = ('can_merge', 'cursor')
@@ -4974,7 +4995,7 @@ class UndoActionGroup(list):
 
 
 class UndoStackManager:
-	'''Undo stack implementation for L{TextBuffer}. It records any
+	'''Undo stack implementation for :class:`TextBuffer`. It records any
 	changes to the buffer and allows undoing and redoing edits.
 
 	The stack undostack will be folded when you undo a few steps and
@@ -5001,15 +5022,15 @@ class UndoStackManager:
 	============
 
 	Each action is recorded as a 4-tuple of:
-	  - C{action_type}: one of C{ACTION_INSERT}, C{ACTION_DELETE},
-	    C{ACTION_APPLY_TAG}, C{ACTION_REMOVE_TAG}
-	  - C{start_iter}: a C{Gtk.TextIter}
-	  - C{end_iter}: a C{Gtk.TextIter}
-	  - C{data}: either a (raw) L{ParseTree} or a C{Gtk.TextTag}
+	  - ``action_type``: one of ``ACTION_INSERT``, ``ACTION_DELETE``,
+	    ``ACTION_APPLY_TAG``, ``ACTION_REMOVE_TAG``
+	  - ``start_iter``: a ``Gtk.TextIter``
+	  - ``end_iter``: a ``Gtk.TextIter``
+	  - ``data``: either a (raw) :class:`ParseTree` or a ``Gtk.TextTag``
 
 	These actions are low level operations, so they are
 
-	Actions are collected as L{UndoActionGroup}s. When the user selects
+	Actions are collected as :class:`UndoActionGroup`s. When the user selects
 	Undo or Redo we actually undo or redo a whole UndoActionGroup as a
 	single step. E.g. inserting a link will consist of inserting the
 	text and than applying the TextTag with the link data. These are
@@ -5019,7 +5040,7 @@ class UndoStackManager:
 
 	Typically when recording modifications the action groups are
 	delimited by the begin-user-action and end-user-action signals of
-	the L{TextBuffer}. (This is why we use the L{TextBuffer.user_action}
+	the :class:`TextBuffer`. (This is why we use the :class:`TextBuffer.user_action`
 	attribute context manager in the TextBuffer code.)
 
 	Also we try to group single-character inserts and deletes into words.
@@ -5039,13 +5060,13 @@ class UndoStackManager:
 	# Constants for action types - negating an action gives it opposite.
 	ACTION_INSERT = 1 #: action type for inserting text
 	ACTION_DELETE = -1 #: action type for deleting text
-	ACTION_APPLY_TAG = 2 #: action type for applying a C{Gtk.TextTag}
-	ACTION_REMOVE_TAG = -2 #: action type for removing a C{Gtk.TextTag}
+	ACTION_APPLY_TAG = 2 #: action type for applying a ``Gtk.TextTag``
+	ACTION_REMOVE_TAG = -2 #: action type for removing a ``Gtk.TextTag``
 
 	def __init__(self, textbuffer):
 		'''Constructor
 
-		@param textbuffer: a C{Gtk.TextBuffer}
+		:param textbuffer: a ``Gtk.TextBuffer``
 		'''
 		self.buffer = textbuffer
 		self.stack = [] # stack of actions & action groups
@@ -5094,12 +5115,12 @@ class UndoStackManager:
 			#~ self.__class__._flush_if_typing, self)
 
 	def block(self):
-		'''Stop listening to events from the L{TextBuffer} until
-		the next call to L{unblock()}. Any change in between will not
+		'''Stop listening to events from the :class:`TextBuffer` until
+		the next call to :class:`unblock()`. Any change in between will not
 		be undo-able (and mess up the undo stack) unless it is recorded
 		explicitly.
 
-		The number of calls C{block()} and C{unblock()} is counted, so
+		The number of calls ``block()`` and ``unblock()`` is counted, so
 		they can be called recursively.
 		'''
 		if self.block_count == 0:
@@ -5108,7 +5129,7 @@ class UndoStackManager:
 		self.block_count += 1
 
 	def unblock(self):
-		'''Start listening to events from the L{TextBuffer} again'''
+		'''Start listening to events from the :class:`TextBuffer` again'''
 		if self.block_count > 1:
 			self.block_count -= 1
 		else:
@@ -5381,7 +5402,8 @@ class SavePageHandler(object):
 		Will not do anything once an autosave is already queued.
 		Autosave will keep running until page is no longer modified and
 		then stop.
-		@param timeout: timeout in seconds
+
+		:param timeout: timeout in seconds
 		'''
 		if not self._autosave_timer:
 			self._autosave_timer = GObject.timeout_add(
@@ -5404,11 +5426,11 @@ class SavePageHandler(object):
 	def save_page_now(self, dialog_timeout=False):
 		'''Save the page in the foregound
 
-		Can result in a L{SavePageErrorDialog} when there is an error
+		Can result in a :class:`SavePageErrorDialog` when there is an error
 		while saving a page. If that dialog is cancelled by the user,
 		the page may not be saved after all.
 
-		@param dialog_timeout: passed on to L{SavePageErrorDialog}
+		:param dialog_timeout: passed on to :class:`SavePageErrorDialog`
 		'''
 		self.cancel_autosave()
 
@@ -5572,22 +5594,22 @@ class PageViewExtensionBase(ActionExtensionBase):
 	'''Base class for extensions that want to interact with the "page view",
 	which is the primary editor view of the application.
 
-	This extension class will collect actions defined with the C{@action},
-	C{@toggle_action} or C{@radio_action} decorators and add them to the window.
+	This extension class will collect actions defined with the ``@action``,
+	``@toggle_action`` or ``@radio_action`` decorators and add them to the window.
 
 	This extension class also supports showing side panes that are visible as
 	part of the "decoration" of the editor view.
 
-	@ivar pageview: the L{PageView} object
-	@ivar navigation: a L{NavigationModel} model
-	@ivar uistate: a L{ConfigDict} to store the extensions ui state or
+	:ivar pageview: the :class:`PageView` object
+	:ivar navigation: a :class:`NavigationModel` model
+	:ivar uistate: a :class:`ConfigDict` to store the extensions ui state or
 
 	The "uistate" is the per notebook state of the interface, it is
 	intended for stuff like the last folder opened by the user or the
 	size of a dialog after resizing. It is stored in the X{state.conf}
 	file in the notebook cache folder. It differs from the preferences,
 	which are stored globally and dictate the behavior of the application.
-	(To access the preference use C{plugin.preferences}.)
+	(To access the preference use ``plugin.preferences``.)
 	'''
 
 	def __init__(self, plugin, pageview):
@@ -5644,14 +5666,14 @@ class PageViewExtensionBase(ActionExtensionBase):
 
 
 class PageViewExtension(PageViewExtensionBase):
-	'''Base class for extensions of the L{PageView},
-	see L{PageViewExtensionBase} for API documentation.
+	'''Base class for extensions of the :class:`PageView`,
+	see :class:`PageViewExtensionBase` for API documentation.
 	'''
 	pass
 
 
 class InsertedObjectPageviewManager(object):
-	'''"Glue" object to manage "insert object" actions for the L{PageView}
+	'''"Glue" object to manage "insert object" actions for the :class:`PageView`
 	Creates an action object for each object type and inserts UI elements
 	for the action in the pageview.
 	'''
@@ -5773,30 +5795,38 @@ from zim.signals import GSignalEmitterMixin
 @_install_format_actions
 @extendable(PageViewExtension, register_after_init=False)
 class PageView(GSignalEmitterMixin, Gtk.VBox):
-	'''Widget to display a single page, consists of a L{TextView} and
-	a L{FindBar}. Also adds menu items and in general integrates
+	'''Widget to display a single page, consists of a :class:`TextView` and
+	a :class:`FindBar`. Also adds menu items and in general integrates
 	the TextView with the rest of the application.
 
-	@ivar text_style: a L{ConfigSectionsDict} with style properties. Although this
-	is a class attribute loading the data from the config file is
-	delayed till the first object is constructed
+	:ivar text_style: a :class:`ConfigSectionsDict` with style properties. Although this
+		is a class attribute loading the data from the config file is
+		delayed till the first object is constructed
 
-	@ivar page: L{Page} object for the current page displayed in the widget
-	@ivar readonly: C{True} when the widget is read-only, see
-	L{set_readonly()} for details
-	@ivar view: the L{TextView} child object
-	@ivar find_bar: the L{FindBar} child widget
-	@ivar preferences: a L{ConfigDict} with preferences
+	:ivar page: :class:`Page` object for the current page displayed in the widget
+	:ivar readonly: ``True`` when the widget is read-only, see
+		:class:`set_readonly()` for details
+	:ivar view: the :class:`TextView` child object
+	:ivar find_bar: the :class:`FindBar` child widget
+	:ivar preferences: a :class:`ConfigDict` with preferences
 
-	@signal: C{modified-changed ()}: emitted when the page is edited
-	@signal: C{textstyle-changed (style)}:
-	Emitted when textstyle at the cursor changes, gets the list of text styles or None.
-	@signal: C{activate-link (link, hints)}: emitted when a link is opened,
-	stops emission after the first handler returns C{True}
+	:signal: ``modified-changed ()``: emitted when the page is edited
+	:signal: ``textstyle-changed (style)``:
+		Emitted when textstyle at the cursor changes, gets the list of text styles or None.
+	:signal: ``activate-link (link, hints)``: emitted when a link is opened,
+		stops emission after the first handler returns ``True``
 
-	@todo: document preferences supported by PageView
-	@todo: document extra keybindings implemented in this widget
-	@todo: document style properties supported by this widget
+	.. todo::
+
+		document preferences supported by PageView
+
+	.. todo::
+
+		document extra keybindings implemented in this widget
+
+	.. todo::
+
+		document style properties supported by this widget
 	'''
 
 	# define signals we want to use - (closure type, return type and arg types)
@@ -5815,8 +5845,9 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 
 	def __init__(self, notebook, navigation):
 		'''Constructor
-		@param notebook: the L{Notebook} object
-		@param navigation: L{NavigationModel} object
+
+		:param notebook: the :class:`Notebook` object
+		:param navigation: :class:`NavigationModel` object
 		'''
 		GObject.GObject.__init__(self)
 		GSignalEmitterMixin.__init__(self)
@@ -6101,19 +6132,19 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 
 		When the page does not yet exist a template is loaded for a
 		new page which is obtained from
-		L{Notebook.get_template()<zim.notebook.Notebook.get_template>}.
+		:class:`Notebook.get_template()<zim.notebook.Notebook.get_template>`.
 
 		Exceptions while loading the page are handled gracefully with
 		an error dialog and will result in the widget to be read-only
 		and insensitive until the next page is loaded.
 
-		@param page: a L{Page} object
-		@keyword cursor: optional cursor position (integer)
+		:param page: a :class:`Page` object
+		:keyword cursor: optional cursor position (integer)
 
-		When the cursor is set to C{-1} the cursor will be placed at
+		When the cursor is set to ``-1`` the cursor will be placed at
 		the end of the buffer.
 
-		If cursor is C{None} the cursor is set at the start of the page
+		If cursor is ``None`` the cursor is set at the start of the page
 		for existing pages or to the end of the template when the page
 		does not yet exist.
 		'''
@@ -6203,9 +6234,9 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 		'''Save contents of the widget back to the page object and
 		synchronize it with the notebook.
 
-		@param write_if_not_modified: If C{True} page will be written
-		even if it is not changed. (This allows e.g. to force saving template
-		content to disk without editing.)
+		:param write_if_not_modified: If ``True`` page will be written
+			even if it is not changed. (This allows e.g. to force saving template
+			content to disk without editing.)
 		'''
 		if write_if_not_modified or self.page.modified:
 			self._save_page_handler.save_page_now()
@@ -6248,12 +6279,12 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 		Sets the read-only state but also update menu items etc. to
 		reflect the new state.
 
-		@param readonly: C{True} or C{False} to set the read-only state
+		:param readonly: ``True`` or ``False`` to set the read-only state
 
-		Effective read-only state seen in the C{self.readonly} attribute
-		is in fact C{True} (so read-only) when either the widget itself
+		Effective read-only state seen in the ``self.readonly`` attribute
+		is in fact ``True`` (so read-only) when either the widget itself
 		OR the current page is read-only. So setting read-only to
-		C{False} here may not immediately change C{self.readonly} if
+		``False`` here may not immediately change ``self.readonly`` if
 		a read-only page is loaded.
 		'''
 		self._readonly_set = readonly
@@ -6298,10 +6329,10 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 		'''Set the cursor position in the buffer and scroll the TextView
 		to show it
 
-		@param pos: the cursor position as an integer offset from the
-		start of the buffer
+		:param pos: the cursor position as an integer offset from the
+			start of the buffer
 
-		As a special case when the cursor position is C{-1} the cursor
+		As a special case when the cursor position is ``-1`` the cursor
 		is set at the end of the buffer.
 		'''
 		buffer = self.textview.get_buffer()
@@ -6317,8 +6348,8 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 	def get_cursor_pos(self):
 		'''Get the cursor position in the buffer
 
-		@returns: the cursor position as an integer offset from the
-		start of the buffer
+		:returns: the cursor position as an integer offset from the
+			start of the buffer
 		'''
 		buffer = self.textview.get_buffer()
 		iter = buffer.get_iter_at_mark(buffer.get_insert())
@@ -6337,11 +6368,11 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 	def get_selection(self, format=None):
 		'''Convenience method to get the text of the current selection.
 
-		@param format: format to use for the formatting of the returned
-		text (e.g. 'wiki' or 'html'). If the format is C{None} only the
-		text will be returned without any formatting.
+		:param format: format to use for the formatting of the returned
+			text (e.g. 'wiki' or 'html'). If the format is ``None`` only the
+			text will be returned without any formatting.
 
-		@returns: text selection or C{None}
+		:returns: text selection or ``None``
 		'''
 		buffer = self.textview.get_buffer()
 		bounds = buffer.get_selection_bounds()
@@ -6359,11 +6390,11 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 	def get_word(self, format=None):
 		'''Convenience method to get the word that is under the cursor
 
-		@param format: format to use for the formatting of the returned
-		text (e.g. 'wiki' or 'html'). If the format is C{None} only the
-		text will be returned without any formatting.
+		:param format: format to use for the formatting of the returned
+			text (e.g. 'wiki' or 'html'). If the format is ``None`` only the
+			text will be returned without any formatting.
 
-		@returns: current word or C{None}
+		:returns: current word or ``None``
 		'''
 		buffer = self.textview.get_buffer()
 		buffer.select_word()
@@ -6389,8 +6420,8 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 
 	def do_mark_set(self, buffer, iter, mark):
 		'''
-		@emits link-caret-enter
-		@emits link-caret-leave
+		:emits link-caret-enter
+		:emits link-caret-leave
 		'''
 
 		# Update menu items relative to cursor position
@@ -6502,8 +6533,8 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 
 	def navigate_to_anchor(self, name, select_line=False):
 		"""Navigate to an anchor on the current page.
-		@param name: The name of the anchor to navigate to
-		@param select_line: Select the whole line after
+		:param name: The name of the anchor to navigate to
+		:param select_line: Select the whole line after
 		"""
 		logger.debug("navigating to anchor '%s'", name)
 		textview = self.textview
@@ -6762,7 +6793,7 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 	def save_page(self):
 		'''Menu action to save the current page.
 
-		Can result in a L{SavePageErrorDialog} when there is an error
+		Can result in a :class:`SavePageErrorDialog` when there is an error
 		while saving a page. If that dialog is cancelled by the user,
 		the page may not be saved after all.
 		'''
@@ -6849,10 +6880,10 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 		'''Menu action to trigger proper edit dialog for the current
 		object at the cursor
 
-		Can show e.g. L{InsertLinkDialog} for a link, C{EditImageDialog}
+		Can show e.g. :class:`InsertLinkDialog` for a link, ``EditImageDialog``
 		for the a image, or a plugin dialog for e.g. an equation.
 
-		@param iter: C{TextIter} for an alternative cursor position
+		:param iter: ``TextIter`` for an alternative cursor position
 		'''
 		buffer = self.textview.get_buffer()
 		if iter:
@@ -6886,7 +6917,7 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 	def remove_link(self, iter=None):
 		'''Menu action to remove link object at the current cursor position
 
-		@param iter: C{TextIter} for an alternative cursor position
+		:param iter: ``TextIter`` for an alternative cursor position
 		'''
 		buffer = self.textview.get_buffer()
 
@@ -6918,7 +6949,7 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 
 	@action(_('Date and Time...'), accelerator='<Primary>D', menuhints='insert') # T: Menu item
 	def insert_date(self):
-		'''Menu action to insert a date, shows the L{InsertDateDialog}'''
+		'''Menu action to insert a date, shows the :class:`InsertDateDialog`'''
 		InsertDateDialog(self, self.textview.get_buffer(), self.notebook, self.page).run()
 
 	def insert_object(self, attrib, data):
@@ -6945,22 +6976,25 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 
 	@action(_('_Image...'), menuhints='insert') # T: Menu item
 	def show_insert_image(self, file=None):
-		'''Menu action to insert an image, shows the L{InsertImageDialog}
-		@param file: optional file to suggest in the dialog
+		'''Menu action to insert an image, shows the :class:`InsertImageDialog`
+
+		:param file: optional file to suggest in the dialog
 		'''
 		InsertImageDialog(self, self.textview.get_buffer(), self.notebook, self.page, file).run()
 
 	@action(_('_Attachment...'), verb_icon='zim-attachment', menuhints='insert') # T: Menu item
 	def attach_file(self, file=None):
-		'''Menu action to show the L{AttachFileDialog}
-		@param file: optional file to suggest in the dialog
+		'''Menu action to show the :class:`AttachFileDialog`
+
+		:param file: optional file to suggest in the dialog
 		'''
 		AttachFileDialog(self, self.textview.get_buffer(), self.notebook, self.page, file).run()
 
 	def insert_image(self, file):
 		'''Insert a image
-		@param file: the image file to insert. If C{file} does not exist or
-		isn't an image, a "broken image" icon will be shown
+
+		:param file: the image file to insert. If ``file`` does not exist or
+			isn't an image, a "broken image" icon will be shown
 		'''
 		file = adapt_from_newfs(file)
 		assert isinstance(file, File)
@@ -7039,7 +7073,7 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 
 	@action(_('Text From _File...'), menuhints='insert') # T: Menu item
 	def insert_text_from_file(self):
-		'''Menu action to show a L{InsertTextFromFileDialog}'''
+		'''Menu action to show a :class:`InsertTextFromFileDialog`'''
 		InsertTextFromFileDialog(self, self.textview.get_buffer(), self.notebook, self.page).run()
 
 	def insert_links(self, links):
@@ -7049,8 +7083,8 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 		drag-and-drop or copy-paste actions of e.g. files from a
 		file browser.
 
-		@param links: list of links, either as string, L{Path} objects,
-		or L{File} objects
+		:param links: list of links, either as string, :class:`Path` objects,
+			or :class:`File` objects
 		'''
 		links = list(links)
 		for i in range(len(links)):
@@ -7083,7 +7117,7 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 
 	@action(_('_Link...'), '<Primary>L', verb_icon='zim-link', menuhints='insert') # T: Menu item
 	def insert_link(self):
-		'''Menu item to show the L{InsertLinkDialog}'''
+		'''Menu item to show the :class:`InsertLinkDialog`'''
 		InsertLinkDialog(self, self).run()
 
 	def _update_new_file_submenu(self, action):
@@ -7247,7 +7281,7 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 
 		This is the handler for all the format actions.
 
-		@param format: the format style name (e.g. "h1", "strong" etc.)
+		:param format: the format style name (e.g. "h1", "strong" etc.)
 		'''
 		buffer = self.textview.get_buffer()
 		selected = False
@@ -7278,9 +7312,9 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 		Does not do anything if a selection is present already or when
 		the preference for auto-select is set to False.
 
-		@param selectline: if C{True} auto-select a whole line,
-		only auto-select a single word otherwise
-		@returns: C{True} when this function changed the selection.
+		:param selectline: if ``True`` auto-select a whole line,
+			only auto-select a single word otherwise
+		:returns: ``True`` when this function changed the selection.
 		'''
 		if not self.preferences['autoselect']:
 			return False
@@ -7300,8 +7334,8 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 	def find(self, string, flags=0):
 		'''Find some string in the text, scroll there and select it
 
-		@param string: the text to find
-		@param flags: options for find behavior, see L{TextFinder.find()}
+		:param string: the text to find
+		:param flags: options for find behavior, see :class:`TextFinder.find()`
 		'''
 		self.hide_find() # remove previous highlighting etc.
 		buffer = self.textview.get_buffer()
@@ -7310,11 +7344,11 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 
 	@action(_('_Find...'), '<Primary>F', alt_accelerator='<Primary>F3') # T: Menu item
 	def show_find(self, string=None, flags=0, highlight=False):
-		'''Show the L{FindBar} widget
+		'''Show the :class:`FindBar` widget
 
-		@param string: the text to find
-		@param flags: options for find behavior, see L{TextFinder.find()}
-		@param highlight: if C{True} highlight the results
+		:param string: the text to find
+		:param flags: options for find behavior, see :class:`TextFinder.find()`
+		:param highlight: if ``True`` highlight the results
 		'''
 		self.find_bar.show()
 		if string:
@@ -7325,7 +7359,7 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 			self.find_bar.grab_focus()
 
 	def hide_find(self):
-		'''Hide the L{FindBar} widget'''
+		'''Hide the :class:`FindBar` widget'''
 		self.find_bar.hide()
 		self.textview.grab_focus()
 
@@ -7343,14 +7377,14 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 
 	@action(_('_Replace...'), '<Primary>H', menuhints='edit') # T: Menu item
 	def show_find_and_replace(self):
-		'''Menu action to show the L{FindAndReplaceDialog}'''
+		'''Menu action to show the :class:`FindAndReplaceDialog`'''
 		dialog = FindAndReplaceDialog.unique(self, self, self.textview)
 		dialog.set_from_buffer()
 		dialog.present()
 
 	@action(_('Word Count...')) # T: Menu item
 	def show_word_count(self):
-		'''Menu action to show the L{WordCountDialog}'''
+		'''Menu action to show the :class:`WordCountDialog`'''
 		WordCountDialog(self).run()
 
 	@action(_('_Zoom In'), '<Primary>plus', alt_accelerator='<Primary>equal') # T: Menu item
@@ -7728,7 +7762,7 @@ class PromptExistingFileDialog(Dialog):
 	directory. This Dialog allows to suggest a new name or overwrite
 	the existing one.
 
-	For this dialog C{run()} will return either the original file
+	For this dialog ``run()`` will return either the original file
 	(for overwrite), a new file, or None when the dialog was canceled.
 	'''
 
@@ -8069,7 +8103,7 @@ class InsertLinkDialog(Dialog):
 
 
 class FindWidget(object):
-	'''Base class for L{FindBar} and L{FindAndReplaceDialog}'''
+	'''Base class for :class:`FindBar` and :class:`FindAndReplaceDialog`'''
 
 	def __init__(self, textview):
 		self.textview = textview

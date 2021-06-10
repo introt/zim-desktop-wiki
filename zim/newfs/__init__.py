@@ -104,7 +104,7 @@ from .helpers import *
 
 
 def localFileOrFolder(path):
-	'''Convenience method that resolves a local C{File} or C{Folder} object'''
+	'''Convenience method that resolves a local ``File`` or ``Folder`` object'''
 	path = FilePath(path)
 	try:
 		return LocalFolder(path.dirname).child(path.basename)
@@ -115,12 +115,13 @@ def localFileOrFolder(path):
 def cleanup_filename(name):
 	'''Removes all characters in 'name' that are not allowed as part
 	of a file name. This function is intended for e.g. config files etc.
-	B{not} for page files in a store.
+	**not** for page files in a store.
 	For file system filenames we can not use:
 	'\\', '/', ':', '*', '?', '"', '<', '>', '|'
 	And we also exclude "\\t" and "\\n".
-	@param name: the filename as string
-	@returns: the name with invalid characters removed
+
+	:param name: the filename as string
+	:returns: the name with invalid characters removed
 	'''
 	for char in ("/", "\\", ":", "*", "?", '"', "<", ">", "|", "\t", "\n"):
 		name = name.replace(char, '')
@@ -129,9 +130,10 @@ def cleanup_filename(name):
 
 def format_file_size(bytes):
 	'''Returns a human readable label  for a file size
-	E.g. C{1230} becomes C{"1.23kb"}, idem for "Mb" and "Gb"
-	@param bytes: file size in bytes as integer
-	@returns: size as string
+	E.g. ``1230`` becomes ``"1.23kb"``, idem for "Mb" and "Gb"
+
+	:param bytes: file size in bytes as integer
+	:returns: size as string
 	'''
 	for unit, label in (
 		(1000000000, 'Gb'),

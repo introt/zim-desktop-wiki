@@ -9,7 +9,7 @@ import collections
 
 
 class classproperty(object):
-	'''Like C{property()} but for klass properties
+	'''Like ``property()`` but for klass properties
 	Typically used as decorator
 	'''
 
@@ -28,9 +28,9 @@ import inspect
 def get_module(name):
 	'''Import a module
 
-	@param name: the module name
-	@returns: module object
-	@raises ImportError: if the given name does not exist
+	:param name: the module name
+	:returns: module object
+	:raises ImportError: if the given name does not exist
 	'''
 	# __import__ has some quirks, see the reference manual
 	mod = __import__(name)
@@ -43,15 +43,17 @@ def lookup_subclass(module, klass):
 	'''Look for a subclass of klass in the module
 
 	This function is used in several places in zim to get extension
-	classes. Typically L{get_module()} is used first to get the module
+	classes. Typically :class:`get_module()` is used first to get the module
 	object, then this lookup function is used to locate a class that
 	derives of a base class (e.g. PluginClass).
 
-	@param module: module object
-	@param klass: base class
+	:param module: module object
+	:param klass: base class
 
-	@note: don't actually use this method to get plugin classes, see
-	L{PluginManager.get_plugin_class()} instead.
+	.. note::
+
+		don't actually use this method to get plugin classes, see
+		:class:`PluginManager.get_plugin_class()` instead.
 	'''
 	subclasses = lookup_subclasses(module, klass)
 	if len(subclasses) > 1:
@@ -65,8 +67,8 @@ def lookup_subclass(module, klass):
 def lookup_subclasses(module, klass):
 	'''Look for all subclasses of klass in the module
 
-	@param module: module object
-	@param klass: base class
+	:param module: module object
+	:param klass: base class
 	'''
 	subclasses = []
 	for name, obj in inspect.getmembers(module, inspect.isclass):
@@ -88,9 +90,10 @@ _num_re = re.compile(r'\d+')
 
 def natural_sort(list, key=None):
 	'''Natural sort a list in place.
-	See L{natural_sort_key} for details.
-	@param list: list of strings to be sorted
-	@param key: function producing strings for list items
+	See :class:`natural_sort_key` for details.
+
+	:param list: list of strings to be sorted
+	:param key: function producing strings for list items
 	'''
 	if key:
 		def func(s):
@@ -103,10 +106,11 @@ def natural_sort(list, key=None):
 
 def natural_sorted(iter, key=None):
 	'''Natural sort a list.
-	See L{natural_sort_key} for details.
-	@param iter: list or iterable of strings to be sorted
-	@param key: function producing strings for list items
-	@returns: sorted copy of the list
+	See :class:`natural_sort_key` for details.
+
+	:param iter: list or iterable of strings to be sorted
+	:param key: function producing strings for list items
+	:returns: sorted copy of the list
 	'''
 	l = list(iter) # cast to list and implicit copy
 	natural_sort(l, key=key)
@@ -116,17 +120,19 @@ def natural_sorted(iter, key=None):
 def natural_sort_key(string, numeric_padding=5):
 	'''Format string such that it gives 'natural' sorting on string
 	compare. Will pad any numbers in the string with "0" such that "10"
-	sorts after "9". Also includes C{locale.strxfrm()}.
+	sorts after "9". Also includes ``locale.strxfrm()``.
 
-	@note: sorting not 100% stable for case, so order between "foo" and
-	"Foo" is not defined. For this reason when sort needs to be absolutely
-	stable it is advised to sort based on tuples of
-	C{(sort_key, original_string)}. Or use either L{natural_sort()} or
-	L{natural_sorted()} instead.
+	.. note::
 
-	@param string: the string to format
-	@param numeric_padding: number of digits to use for padding
-	@returns: string transformed to sorting key
+		sorting not 100% stable for case, so order between "foo" and
+		"Foo" is not defined. For this reason when sort needs to be absolutely
+		stable it is advised to sort based on tuples of
+		``(sort_key, original_string)``. Or use either :class:`natural_sort()` or
+		:class:`natural_sorted()` instead.
+
+	:param string: the string to format
+	:param numeric_padding: number of digits to use for padding
+	:returns: string transformed to sorting key
 	'''
 	templ = '%0' + str(numeric_padding) + 'i'
 	string.strip()
@@ -162,14 +168,14 @@ class DefinitionOrderedDict(collections.OrderedDict):
 class MovingWindowIter(object):
 	'''Iterator yields a 3-tuple of the previous item, the current item
 	and the next item while iterating a give iterator.
-	Previous or next item will be C{None} if not available.
+	Previous or next item will be ``None`` if not available.
 	Use as:
 
 		for prev, current, next in MovingWindowIter(mylist):
 			....
 
-	@ivar items: current 3-tuple
-	@ivar last: C{True} if we are at the last item
+	:ivar items: current 3-tuple
+	:ivar last: ``True`` if we are at the last item
 	'''
 
 	def __init__(self, iterable):

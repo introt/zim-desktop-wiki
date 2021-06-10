@@ -42,10 +42,11 @@ def _is_heading_or_line(iter, include_hr):
 
 
 def find_heading(buffer, n, include_hr):
-	'''Find the C{n}th heading in the buffer
-	@param buffer: the C{Gtk.TextBuffer}
-	@param n: an integer
-	@returns: a C{Gtk.TextIter} for the line start of the heading or C{None}
+	'''Find the ``n``th heading in the buffer
+
+	:param buffer: the ``Gtk.TextBuffer``
+	:param n: an integer
+	:returns: a ``Gtk.TextIter`` for the line start of the heading or ``None``
 	'''
 	iter = buffer.get_start_iter()
 	i = 1 if _is_heading_or_line(iter, include_hr) else 0
@@ -59,7 +60,7 @@ def find_heading(buffer, n, include_hr):
 
 
 def select_heading(buffer, n, include_hr):
-	'''Select the C{n}th heading in the buffer'''
+	'''Select the ``n``th heading in the buffer'''
 	iter = find_heading(buffer, n, include_hr)
 	if iter:
 		buffer.place_cursor(iter)
@@ -332,8 +333,8 @@ class ToCWidget(ConnectorMixin, Gtk.ScrolledWindow):
 		self.select_heading(path)
 
 	def select_heading(self, path):
-		'''Returns a C{Gtk.TextIter} for a C{Gtk.TreePath} pointing to a heading
-		or C{None}.
+		'''Returns a ``Gtk.TextIter`` for a ``Gtk.TreePath`` pointing to a heading
+		or ``None``.
 		'''
 		model = self.treeview.get_model()
 		n = model.get_nth_heading(path)
@@ -348,8 +349,9 @@ class ToCWidget(ConnectorMixin, Gtk.ScrolledWindow):
 
 	def select_section(self, buffer, path):
 		'''Select all text between two headings
-		@param buffer: the C{Gtk.TextBuffer} to select in
-		@param path: the C{Gtk.TreePath} for the heading of the section
+
+		:param buffer: the ``Gtk.TextBuffer`` to select in
+		:param path: the ``Gtk.TreePath`` for the heading of the section
 		'''
 		model = self.treeview.get_model()
 		n = model.get_nth_heading(path)

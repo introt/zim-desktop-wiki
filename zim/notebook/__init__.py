@@ -4,30 +4,34 @@
 '''
 This module contains the main Notebook class and related classes.
 
-The C{Notebook} interface is the generic API for accessing and storing
-pages and other data in the notebook. The interface uses L{Path} objects
-to indicate a specific page. See L{Notebook.pages.lookup_from_user_input()}
-to obtain a L{Path} from a page name as string. Pages in the notebook
-are represented by the L{Page} object, which allows to access the page
+The ``Notebook`` interface is the generic API for accessing and storing
+pages and other data in the notebook. The interface uses :class:`Path` objects
+to indicate a specific page. See :class:`Notebook.pages.lookup_from_user_input()`
+to obtain a :class:`Path` from a page name as string. Pages in the notebook
+are represented by the :class:`Page` object, which allows to access the page
 contents.
 
-The notebook keeps track of all pages using an C{Index} which is stored
-in a C{sqlite} database. Methods that need a list of pages in the
+The notebook keeps track of all pages using an ``Index`` which is stored
+in a ``sqlite`` database. Methods that need a list of pages in the
 notebook always use the index rather than a direct lookup. See
-L{zim.notebook.index} for more details.
+:class:`zim.notebook.index` for more details.
 
-The C{NotebookInfoList} is defined to help access known notebooks and
-a C{NotebookInfo} object can be used to access the notebook properties
-without instantiating a full L{Notebook} object. Use the convience
-methods L{get_notebook_list()} and L{resolve_notebook()} to obtain these
+The ``NotebookInfoList`` is defined to help access known notebooks and
+a ``NotebookInfo`` object can be used to access the notebook properties
+without instantiating a full :class:`Notebook` object. Use the convience
+methods :class:`get_notebook_list()` and :class:`resolve_notebook()` to obtain these
 objects.
 
-@note: To open a notebook based on e.g. a commandline option it is
-almost always better to use L{build_notebook()} rather than istantiating
-the notebook directly.
+.. note::
 
-@note: for more information about threading and concurency,
-see L{zim.notebook.operations}
+	To open a notebook based on e.g. a commandline option it is
+	almost always better to use :class:`build_notebook()` rather than istantiating
+	the notebook directly.
+
+.. note::
+
+	for more information about threading and concurency,
+	see :class:`zim.notebook.operations`
 
 '''
 
@@ -61,11 +65,12 @@ from .index import IndexNotFoundError, \
 
 
 def build_notebook(location):
-	'''Create a L{Notebook} object for a file location
+	'''Create a :class:`Notebook` object for a file location
 	Tries to automount file locations first if needed
-	@param location: a L{FilePath} or a L{NotebookInfo}
-	@returns: a L{Notebook} object and a L{Path} object or C{None}
-	@raises FileNotFoundError: if file location does not exist and could not be mounted
+
+	:param location: a :class:`FilePath` or a :class:`NotebookInfo`
+	:returns: a :class:`Notebook` object and a :class:`Path` object or ``None``
+	:raises FileNotFoundError: if file location does not exist and could not be mounted
 	'''
 	uri = location.uri
 	page = None

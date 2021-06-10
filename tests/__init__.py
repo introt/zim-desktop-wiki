@@ -187,7 +187,7 @@ def slowTest(obj):
 	'''Decorator for slow tests
 
 	Tests wrapped with this decorator are ignored when you run
-	C{test.py --fast}. You can either wrap whole test classes::
+	``test.py --fast``. You can either wrap whole test classes::
 
 		@tests.slowTest
 		class MyTest(tests.TestCase):
@@ -250,15 +250,16 @@ class TestCase(unittest.TestCase):
 
 	def setUpFolder(self, name=None, mock=MOCK_DEFAULT_MOCK):
 		'''Convenience method to create a temporary folder for testing
-		@param name: name postfix for the folder
-		@param mock: mock level for this test, one of C{MOCK_ALWAYS_MOCK},
-		C{MOCK_DEFAULT_MOCK}, C{MOCK_DEFAULT_REAL} or C{MOCK_ALWAYS_REAL}.
-		The C{MOCK_ALWAYS_*} arguments force the use of a real folder or a
-		mock object. The C{MOCK_DEFAULT_*} arguments give a preference but
-		for these the behavior is overruled by "--fast" and "--full" in the
-		test script.
-		@returns: a L{Folder} object (either L{LocalFolder} or L{MockFolder})
-		that is guarenteed non-existing
+
+		:param name: name postfix for the folder
+		:param mock: mock level for this test, one of ``MOCK_ALWAYS_MOCK``,
+			``MOCK_DEFAULT_MOCK``, ``MOCK_DEFAULT_REAL`` or ``MOCK_ALWAYS_REAL``.
+			The ``MOCK_ALWAYS_*`` arguments force the use of a real folder or a
+			mock object. The ``MOCK_DEFAULT_*`` arguments give a preference but
+			for these the behavior is overruled by "--fast" and "--full" in the
+			test script.
+		:returns: a :class:`Folder` object (either :class:`LocalFolder` or :class:`MockFolder`)
+			that is guarenteed non-existing
 		'''
 		path = self._get_tmp_name(name)
 
@@ -290,14 +291,14 @@ class TestCase(unittest.TestCase):
 
 	def setUpNotebook(self, name='testnotebook', mock=MOCK_ALWAYS_MOCK, content={}, folder=None):
 		'''
-		@param name: name postfix for the folder, see L{setUpFolder}, and name for the notebook
-		@param mock: see L{setUpFolder}, default is C{MOCK_ALWAYS_MOCK}
-		@param content: dictionary where the keys are page names and the
-		values the page content. If a tuple or list is given, pages are created
-		with default text. L{Path} objects are allowed instead of page names
-		@param folder: determine the folder to be used, only needed in special
-		cases where the folder must be outside of the project folder, like
-		when testing version control logic
+		:param name: name postfix for the folder, see :class:`setUpFolder`, and name for the notebook
+		:param mock: see :class:`setUpFolder`, default is ``MOCK_ALWAYS_MOCK``
+		:param content: dictionary where the keys are page names and the
+			values the page content. If a tuple or list is given, pages are created
+			with default text. :class:`Path` objects are allowed instead of page names
+		:param folder: determine the folder to be used, only needed in special
+			cases where the folder must be outside of the project folder, like
+			when testing version control logic
 		'''
 		import datetime
 		from zim.newfs.mock import MockFolder
@@ -371,7 +372,7 @@ class LoggingFilter(logging.Filter):
 	test suite. Acts as a context manager and can be used with the
 	'with' keyword.
 
-	Alternatively you can call L{wrap_test()} from test C{setUp}.
+	Alternatively you can call :class:`wrap_test()` from test ``setUp``.
 	This will start the filter and make sure it is cleaned up again.
 	'''
 
@@ -383,10 +384,11 @@ class LoggingFilter(logging.Filter):
 
 	def __init__(self, logger, message=None):
 		'''Constructor
-		@param logger: the logging channel name
-		@param message: can be a string, or a sequence of strings.
-		Any messages that start with this string or any of these
-		strings are surpressed.
+
+		:param logger: the logging channel name
+		:param message: can be a string, or a sequence of strings.
+			Any messages that start with this string or any of these
+			strings are surpressed.
 		'''
 		self.logger = logger
 		self.message = message
@@ -435,18 +437,19 @@ class DialogContext(object):
 		):
 			gui.show_dialogs()
 
-	In this example the first dialog that is run by C{gui.show_dialogs()}
-	is checked by the function C{myCustomTest()} while the second dialog
-	just needs to be of class C{SomeOtherDialogClass} and will then
-	be closed with C{assert_response_ok()} by the context manager.
+	In this example the first dialog that is run by ``gui.show_dialogs()``
+	is checked by the function ``myCustomTest()`` while the second dialog
+	just needs to be of class ``SomeOtherDialogClass`` and will then
+	be closed with ``assert_response_ok()`` by the context manager.
 
 	This context only works for dialogs derived from zim's Dialog class
-	as it uses a special hook in L{zim.gui.widgets}.
+	as it uses a special hook in :class:`zim.gui.widgets`.
 	'''
 
 	def __init__(self, *definitions):
 		'''Constructor
-		@param definitions: list of either classes or methods
+
+		:param definitions: list of either classes or methods
 		'''
 		self.stack = list(definitions)
 		self.old_test_mode = None
@@ -606,7 +609,7 @@ _cache = {}
 
 def new_parsetree():
 	'''Returns a new ParseTree object for testing
-	Uses data from C{tests/data/formats/wiki.txt}
+	Uses data from ``tests/data/formats/wiki.txt``
 	'''
 	if 'new_parsetree' not in _cache:
 		root = os.environ['ZIM_TEST_ROOT']
@@ -665,7 +668,8 @@ class Counter(object):
 
 	def __init__(self, value=None):
 		'''Constructor
-		@param value: the value to return when called as a function
+
+		:param value: the value to return when called as a function
 		'''
 		self.value = value
 		self.count = 0
@@ -678,9 +682,9 @@ class Counter(object):
 class MockObjectBase(object):
 	'''Base class for mock objects.
 
-	Mock methods can be installed with L{mock_method()}. All method
+	Mock methods can be installed with :class:`mock_method()`. All method
 	calls to mock methods are logged, so they can be inspected.
-	The attribute C{mock_calls} has a list of tuples with mock methods
+	The attribute ``mock_calls`` has a list of tuples with mock methods
 	and arguments in order they have been called.
 	'''
 
@@ -703,8 +707,8 @@ class MockObjectBase(object):
 
 
 class MockObject(MockObjectBase):
-	'''Simple subclass of L{MockObjectBase} that automatically mocks a
-	method which returns C{None} for any non-existing attribute.
+	'''Simple subclass of :class:`MockObjectBase` that automatically mocks a
+	method which returns ``None`` for any non-existing attribute.
 	Attributes that are not methods need to be initialized explicitly.
 	'''
 
@@ -829,10 +833,11 @@ def gtk_process_events(*a):
 
 
 def gtk_get_menu_item(menu, id):
-	'''Get a menu item from a C{Gtk.Menu}
-	@param menu: a C{Gtk.Menu}
-	@param id: either the menu item label or the stock id
-	@returns: a C{Gtk.MenuItem} or C{None}
+	'''Get a menu item from a ``Gtk.Menu``
+
+	:param menu: a ``Gtk.Menu``
+	:param id: either the menu item label or the stock id
+	:returns: a ``Gtk.MenuItem`` or ``None``
 	'''
 	items = menu.get_children()
 	ids = [i.get_property('label') for i in items]
@@ -849,8 +854,9 @@ def gtk_get_menu_item(menu, id):
 
 def gtk_activate_menu_item(menu, id):
 	'''Trigger the 'click' action an a menu item
-	@param menu: a C{Gtk.Menu}
-	@param id: either the menu item label or the stock id
+
+	:param menu: a ``Gtk.Menu``
+	:param id: either the menu item label or the stock id
 	'''
 	item = gtk_get_menu_item(menu, id)
 	item.activate()
@@ -859,8 +865,9 @@ def gtk_activate_menu_item(menu, id):
 def find_widgets(type):
 	'''Iterate through all top level windows and recursively walk through their
 	children, returning all childs which are of given type.
-	@param type: any class inherited from C{Gtk.Widget}
-	@returns: list of widgets of given type
+
+	:param type: any class inherited from ``Gtk.Widget``
+	:returns: list of widgets of given type
 	'''
 	widgets = []
 	def walk_containers(root_container):

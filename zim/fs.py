@@ -8,10 +8,10 @@ interaction. It takes care of proper encoding file paths
 (system dependent) and file contents (UTF-8) and implements a number
 of sanity checks.
 
-The main classes are L{File} and L{Dir} which implement file and
+The main classes are :class:`File` and :class:`Dir` which implement file and
 folder objects. There is also a singleton object to represent the whole
 filesystem, whichprovides signals when a file or folder is created,
-moved or deleted. This is stored in L{zim.fs.FS}.
+moved or deleted. This is stored in :class:`zim.fs.FS`.
 '''
 
 import os
@@ -68,7 +68,7 @@ else:
 		import mimetypes
 
 
-#: Extensions to determine image mimetypes - used in L{File.isimage()}
+#: Extensions to determine image mimetypes - used in :class:`File.isimage()`
 IMAGE_EXTENSIONS = (
 	# Gleaned from Gdk.get_formats()
 	'bmp', # image/bmp
@@ -108,9 +108,10 @@ IMAGE_EXTENSIONS = (
 
 
 def isabs(path):
-	'''Wrapper for C{os.path.isabs}.
-	@param path: a file system path as string
-	@returns: C{True} when the path is absolute instead of a relative path
+	'''Wrapper for ``os.path.isabs``.
+
+	:param path: a file system path as string
+	:returns: ``True`` when the path is absolute instead of a relative path
 	'''
 	return path.startswith('file:/') \
 	or path.startswith('~') \
@@ -122,8 +123,9 @@ def get_tmpdir():
 	'''Get a folder in the system temp dir for usage by zim.
 	This zim specific temp folder has permission set to be readable
 	only by the current users, and is touched if it didn't exist yet.
-	Used as base folder by L{TmpFile}.
-	@returns: a L{Dir} object for the zim specific tmp folder
+	Used as base folder by :class:`TmpFile`.
+
+	:returns: a :class:`Dir` object for the zim specific tmp folder
 	'''
 	global _tmpdir
 
@@ -136,10 +138,11 @@ def get_tmpdir():
 
 def normalize_file_uris(path):
 	'''Function to deal with invalid or non-local file URIs.
-	Translates C{file:/} to the proper C{file:///} form and replaces
-	URIs of the form C{file://host/share} to C{smb://host/share}.
-	@param path: a filesystem path or URL
-	@returns: the proper URI or the original input path
+	Translates ``file:/`` to the proper ``file:///`` form and replaces
+	URIs of the form ``file://host/share`` to ``smb://host/share``.
+
+	:param path: a filesystem path or URL
+	:returns: the proper URI or the original input path
 	'''
 	if path.startswith('file:///') \
 	or path.startswith('file://localhost/'):
@@ -154,12 +157,13 @@ def normalize_file_uris(path):
 
 def normalize_win32_share(path):
 	'''Translates paths for windows shares in the platform specific
-	form. So on windows it translates C{smb://} URLs to C{\\host\share}
+	form. So on windows it translates ``smb://`` URLs to ``\\host\share``
 	form, and vice versa on all other platforms.
 	Just returns the original path if it was already in the right form,
 	or when it is not a path for a share drive.
-	@param path: a filesystem path or URL
-	@returns: the platform specific path or the original input path
+
+	:param path: a filesystem path or URL
+	:returns: the platform specific path or the original input path
 	'''
 	if os.name == 'nt':
 		if path.startswith('smb://'):
@@ -175,9 +179,10 @@ def normalize_win32_share(path):
 
 
 def lrmdir(path):
-	'''Wrapper for C{os.rmdir} that also knows how to unlink symlinks.
+	'''Wrapper for ``os.rmdir`` that also knows how to unlink symlinks.
 	Fails when the folder is not a link and is not empty.
-	@param path: a file system path as string
+
+	:param path: a file system path as string
 	'''
 	try:
 		os.rmdir(path)
@@ -191,12 +196,13 @@ def lrmdir(path):
 def cleanup_filename(name):
 	'''Removes all characters in 'name' that are not allowed as part
 	of a file name. This function is intended for e.g. config files etc.
-	B{not} for page files in a store.
+	**not** for page files in a store.
 	For file system filenames we can not use:
 	'\\', '/', ':', '*', '?', '"', '<', '>', '|'
 	And we also exclude "\\t" and "\\n".
-	@param name: the filename as string
-	@returns: the name with invalid characters removed
+
+	:param name: the filename as string
+	:returns: the name with invalid characters removed
 	'''
 	for char in ("/", "\\", ":", "*", "?", '"', "<", ">", "|", "\t", "\n"):
 		name = name.replace(char, '')
@@ -205,9 +211,10 @@ def cleanup_filename(name):
 
 def format_file_size(bytes):
 	'''Returns a human readable label  for a file size
-	E.g. C{1230} becomes C{"1.23kb"}, idem for "Mb" and "Gb"
-	@param bytes: file size in bytes as integer
-	@returns: size as string
+	E.g. ``1230`` becomes ``"1.23kb"``, idem for "Mb" and "Gb"
+
+	:param bytes: file size in bytes as integer
+	:returns: size as string
 	'''
 	for unit, label in (
 		(1000000000, 'Gb'),
@@ -256,7 +263,9 @@ class FileNotFoundError(PathLookupError):
 	'''Error raised when a file does not exist that is expected to
 	exist.
 
-	@todo: reconcile this class with the NoSuchFileError in zim.gui
+	.. todo::
+
+		reconcile this class with the NoSuchFileError in zim.gui
 	'''
 
 	def __init__(self, file):
@@ -286,14 +295,16 @@ class FileUnicodeError(Error):
 class FSSingletonClass(SignalEmitter):
 	'''Class used for the singleton 'zim.fs.FS' instance
 
-	@signal: C{path-created (L{FilePath})}: Emitted when a new file or
-	folder has been created
-	@signal: C{path-moved (L{FilePath}, L{FilePath})}: Emitted when
-	a file or folder has been moved
-	@signal: C{path-deleted (L{FilePath})}: Emitted when a file or
-	folder has been deleted
+	:signal: ``path-created (:class:`FilePath`)``: Emitted when a new file or
+		folder has been created
+	:signal: ``path-moved (:class:`FilePath`, :class:`FilePath`)``: Emitted when
+		a file or folder has been moved
+	:signal: ``path-deleted (:class:`FilePath`)``: Emitted when a file or
+		folder has been deleted
 
-	@todo: fix the FS signals for folders as well
+	.. todo::
+
+		fix the FS signals for folders as well
 	'''
 
 	# define signals we want to use - (closure type, return type and arg types)
@@ -304,34 +315,34 @@ class FSSingletonClass(SignalEmitter):
 	}
 
 
-#: Singleton object for the system filesystem - see L{FSSingletonClass}
+#: Singleton object for the system filesystem - see :class:`FSSingletonClass`
 FS = FSSingletonClass()
 
 
 class UnixPath(object):
 	'''Base class for Dir and File objects, represents a file path
 
-	@ivar path: the absolute file path as string
-	file system encoding (should only be used by low-level functions)
-	@ivar user_path: the absolute file path relative to the user's
-	C{HOME} folder or C{None}
-	@ivar uri: the C{file://} URI for this path
-	@ivar basename: the basename of the path
-	@ivar dirname: the dirname of the path
-	@ivar dir: L{Dir} object for the parent folder
+	:ivar path: the absolute file path as string
+		file system encoding (should only be used by low-level functions)
+	:ivar user_path: the absolute file path relative to the user's
+		``HOME`` folder or ``None``
+	:ivar uri: the ``file://`` URI for this path
+	:ivar basename: the basename of the path
+	:ivar dirname: the dirname of the path
+	:ivar dir: :class:`Dir` object for the parent folder
 
-	@signal: C{changed (file, other_file, event_type)}: emitted when file
-	changed - availability based on C{gio} support for file monitors on
-	this platform
+	:signal: ``changed (file, other_file, event_type)``: emitted when file
+		changed - availability based on ``gio`` support for file monitors on
+		this platform
 	'''
 
 	def __init__(self, path):
 		'''Constructor
 
-		@param path: an absolute file path, file URL, L{FilePath} object
-		or a list of path elements. When a list is given, the first
-		element is allowed to be an absolute path, URL or L{FilePath}
-		object as well.
+		:param path: an absolute file path, file URL, :class:`FilePath` object
+			or a list of path elements. When a list is given, the first
+			element is allowed to be an absolute path, URL or :class:`FilePath`
+			object as well.
 		'''
 		self._serialized = None
 
@@ -410,7 +421,7 @@ class UnixPath(object):
 
 	def __add__(self, other):
 		'''Concatenates paths, only creates objects of the same class. See
-		L{Dir.file()} and L{Dir.subdir()} instead to create other objects.
+		:class:`Dir.file()` and :class:`Dir.subdir()` instead to create other objects.
 		'''
 		return self.__class__((self, other))
 
@@ -446,26 +457,28 @@ class UnixPath(object):
 
 	@property
 	def dir(self):
-		'''Returns a L{Dir} object for the parent dir'''
+		'''Returns a :class:`Dir` object for the parent dir'''
 		path = os.path.dirname(self.path) # encoding safe
 		return Dir(path)
 
 	def monitor(self):
-		'''Creates a L{FSObjectMonitor} for this path'''
+		'''Creates a :class:`FSObjectMonitor` for this path'''
 		return FSObjectMonitor(self)
 
 	def exists(self):
 		'''Check if a file or folder exists.
-		@returns: C{True} if the file or folder exists
-		@implementation: must be implemented by sub classes in order
-		that they enforce the type of the resource as well
+
+		:returns: ``True`` if the file or folder exists
+		:implementation: must be implemented by sub classes in order
+			that they enforce the type of the resource as well
 		'''
 		return os.path.exists(self.path)
 
 	def iswritable(self):
 		'''Check if a file or folder is writable. Uses permissions of
 		parent folder if the file or folder does not (yet) exist.
-		@returns: C{True} if the file or folder is writable
+
+		:returns: ``True`` if the file or folder is writable
 		'''
 		if self.exists():
 			return os.access(self.path, os.W_OK)
@@ -474,20 +487,23 @@ class UnixPath(object):
 
 	def mtime(self):
 		'''Get the modification time of the file path.
-		@returns: the mtime timestamp
+
+		:returns: the mtime timestamp
 		'''
 		return os.stat(self.path).st_mtime
 
 	def ctime(self):
 		'''Get the creation time of the file path.
-		@returns: the mtime timestamp
+
+		:returns: the mtime timestamp
 		'''
 		return os.stat(self.path).st_ctime
 
 	def size(self):
 		'''Get file size in bytes
-		See L{format_file_size()} to get a human readable label
-		@returns: file size in bytes
+		See :class:`format_file_size()` to get a human readable label
+
+		:returns: file size in bytes
 		'''
 		return os.stat(self.path).st_size
 
@@ -497,9 +513,10 @@ class UnixPath(object):
 		same on case-insensitive filesystems. Does not explicitly check
 		the content is the same.
 		If you just want to know if two files have the same content,
-		see L{File.compare()}
-		@param other: an other L{FilePath} object
-		@returns: C{True} when the two paths are one and the same file
+		see :class:`File.compare()`
+
+		:param other: an other :class:`FilePath` object
+		:returns: ``True`` when the two paths are one and the same file
 		'''
 		# Do NOT assume paths are the same - could be hard link
 		# or it could be a case-insensitive filesystem
@@ -516,7 +533,8 @@ class UnixPath(object):
 		If the OS uses the concept of a drive the first part will
 		include the drive. (So using split() to count the number of
 		path elements will not be robust for the path "/".)
-		@returns: a list of path elements
+
+		:returns: a list of path elements
 		'''
 		drive, path = os.path.splitdrive(self.path)
 		parts = path.replace('\\', '/').strip('/').split('/')
@@ -527,13 +545,14 @@ class UnixPath(object):
 		'''Get a relative path for this file path with respect to
 		another path. This method always returns paths using "/" as
 		separator, even on windows.
-		@param reference: a reference L{FilePath}
-		@param allowupward: if C{True} the relative path is allowed to
-		start with 'C{../}', if C{False} the reference should be a
-		parent folder of this path.
-		@returns: a relative file path
-		@raises AssertionError: when C{allowupward} is C{False} and
-		C{reference} is not a parent folder
+
+		:param reference: a reference :class:`FilePath`
+		:param allowupward: if ``True`` the relative path is allowed to
+			start with '``../``', if ``False`` the reference should be a
+			parent folder of this path.
+		:returns: a relative file path
+		:raises AssertionError: when ``allowupward`` is ``False`` and
+			``reference`` is not a parent folder
 		'''
 		sep = SEP # '/' or '\'
 		refdir = reference.path + sep
@@ -557,9 +576,10 @@ class UnixPath(object):
 
 	def commonparent(self, other):
 		'''Find a comon parent folder between two file paths.
-		@param other: another L{FilePath}
-		@returns: a L{Dir} object for the common parent folder, or
-		C{None} when there is no common parent
+
+		:param other: another :class:`FilePath`
+		:returns: a :class:`Dir` object for the common parent folder, or
+			``None`` when there is no common parent
 		'''
 		path = os.path.commonprefix((self.path, other.path)) # encoding safe
 		path = path.replace(os.path.sep, SEP) # msys can have '/' as seperator
@@ -572,24 +592,28 @@ class UnixPath(object):
 
 	def ischild(self, parent):
 		'''Check if this path is a child path of a folder
-		@returns: C{True} if this path is a child path of C{parent}
+
+		:returns: ``True`` if this path is a child path of ``parent``
 		'''
 		return self.path.startswith(parent.path + SEP)
 
 	def isdir(self):
 		'''Check if this path is a folder or not. Used to detect if
-		e.g. a L{File} object should have really been a L{Dir} object.
-		@returns: C{True} when this path is a folder
+		e.g. a :class:`File` object should have really been a :class:`Dir` object.
+
+		:returns: ``True`` when this path is a folder
 		'''
 		return os.path.isdir(self.path)
 
 	def rename(self, newpath):
 		'''Rename (move) the content this file or folder to another
-		location. This will B{not} change the current file path, so the
+		location. This will **not** change the current file path, so the
 		object keeps pointing to the old location.
-		@param newpath: the destination C{FilePath} which can either be a
-		file or a folder.
-		@emits: path-moved
+
+		:param newpath: the destination ``FilePath`` which can either be a
+			file or a folder.
+
+			:emits: path-moved
 		'''
 		# Using shutil.move instead of os.rename because move can cross
 		# file system boundaries, while rename can not
@@ -666,18 +690,18 @@ class Dir(FilePath):
 	def list(self, glob=None, includehidden=False, includetmp=False, raw=False):
 		'''List the file contents
 
-		@param glob: a file name glob to filter the listed files, e.g C{"*.png"}
-		@param includehidden: if C{True} include hidden files
-		(e.g. names starting with "."), ignore otherwise
-		@param includetmp: if C{True} include temporary files
-		(e.g. names ending in "~"), ignore otherwise
-		@param raw: for filtered folders (C{FilteredDir} instances)
-		setting C{raw} to C{True} will disable filtering
+		:param glob: a file name glob to filter the listed files, e.g ``"*.png"``
+		:param includehidden: if ``True`` include hidden files
+			(e.g. names starting with "."), ignore otherwise
+		:param includetmp: if ``True`` include temporary files
+			(e.g. names ending in "~"), ignore otherwise
+		:param raw: for filtered folders (``FilteredDir`` instances)
+			setting ``raw`` to ``True`` will disable filtering
 
-		@returns: a sorted list of names for files and subdirectories.
-		Will not return names that could not be decoded properly and
-		will throw warnings if those are encountered.
-		Hidden files are silently ignored.
+		:returns: a sorted list of names for files and subdirectories.
+			Will not return names that could not be decoded properly and
+			will throw warnings if those are encountered.
+			Hidden files are silently ignored.
 		'''
 		files = self._list(includehidden, includetmp)
 
@@ -705,8 +729,9 @@ class Dir(FilePath):
 	def walk(self, raw=True):
 		'''Generator that yields all files and folders below this dir
 		as objects.
-		@param raw: see L{list()}
-		@returns: yields L{File} and L{Dir} objects, depth first
+
+		:param raw: see :class:`list()`
+		:returns: yields :class:`File` and :class:`Dir` objects, depth first
 		'''
 		for name in self.list(raw=raw):
 			path = self.path + SEP + name
@@ -721,8 +746,9 @@ class Dir(FilePath):
 	def get_file_tree_as_text(self, raw=True):
 		'''Returns an overview of files and folders below this dir
 		as text. Used in tests.
-		@param raw: see L{list()}
-		@returns: file listing as string
+
+		:param raw: see :class:`list()`
+		:returns: file listing as string
 		'''
 		text = ''
 		for child in self.walk(raw=raw):
@@ -735,7 +761,8 @@ class Dir(FilePath):
 	def touch(self, mode=None):
 		'''Create this folder and any parent folders that do not yet
 		exist.
-		@param mode: creation mode (e.g. 0700)
+
+		:param mode: creation mode (e.g. 0700)
 		'''
 		if self.exists():
 			# Additional check needed because makedirs can not handle
@@ -761,7 +788,8 @@ class Dir(FilePath):
 		'''Remove this foldder and any empty parent folders. If the
 		folder does not exist, still check for empty parent folders.
 		Fails silently if the folder is not empty.
-		@returns: C{True} when successfull (so C{False} means it still exists).
+
+		:returns: ``True`` when successfull (so ``False`` means it still exists).
 		'''
 		if not self.exists():
 			return True
@@ -776,7 +804,7 @@ class Dir(FilePath):
 	def remove_children(self):
 		'''Recursively remove everything below this folder .
 
-		B{WARNING:} This is quite powerful and can do a lot of damage
+		**WARNING:** This is quite powerful and can do a lot of damage
 		when executed for the wrong folder, so pleae make sure to double
 		check the dir is actually what you think it is before calling this.
 		'''
@@ -796,7 +824,8 @@ class Dir(FilePath):
 		When the destination folder already exists the contents will be
 		merged, so you need to check existence of the destination first
 		if you want a clean new copy.
-		@param dest: a L{Dir} object
+
+		:param dest: a :class:`Dir` object
 		'''
 		# We do not use shutil.copytree() because it requires that
 		# the target dir does not exist
@@ -818,15 +847,15 @@ class Dir(FilePath):
 		# TODO - not hooked with FS signals
 
 	def file(self, path):
-		'''Get a L{File} object for a path below this folder
+		'''Get a :class:`File` object for a path below this folder
 
-		@param path: a (relative) file path as string, tuple or
-		L{FilePath} object. When C{path} is a L{File} object already
-		this method still enforces it is below this folder.
-		So this method can be used as check as well.
+		:param path: a (relative) file path as string, tuple or
+			:class:`FilePath` object. When ``path`` is a :class:`File` object already
+			this method still enforces it is below this folder.
+			So this method can be used as check as well.
 
-		@returns: a L{File} object
-		@raises PathLookupError: if the path is not below this folder
+		:returns: a :class:`File` object
+		:raises PathLookupError: if the path is not below this folder
 		'''
 		file = self.resolve_file(path)
 		if not file.path.startswith(self.path):
@@ -834,14 +863,14 @@ class Dir(FilePath):
 		return file
 
 	def resolve_file(self, path):
-		'''Get a L{File} object for a path relative to this folder
+		'''Get a :class:`File` object for a path relative to this folder
 
-		Like L{file()} but allows the path to start with "../" as
+		Like :class:`file()` but allows the path to start with "../" as
 		well, so can handle any relative path.
 
-		@param path: a (relative) file path as string, tuple or
-		L{FilePath} object.
-		@returns: a L{File} object
+		:param path: a (relative) file path as string, tuple or
+			:class:`FilePath` object.
+		:returns: a :class:`File` object
 		'''
 		assert isinstance(path, (FilePath, str, list, tuple))
 		if isinstance(path, str):
@@ -854,16 +883,16 @@ class Dir(FilePath):
 			return File(path.path)
 
 	def new_file(self, path):
-		'''Get a L{File} object for a new file below this folder.
-		Like L{file()} but guarantees the file does not yet exist by
+		'''Get a :class:`File` object for a new file below this folder.
+		Like :class:`file()` but guarantees the file does not yet exist by
 		adding sequential numbers if needed. So the resulting file
 		may have a modified name.
 
-		@param path: a (relative) file path as string, tuple or
-		L{FilePath} object.
+		:param path: a (relative) file path as string, tuple or
+			:class:`FilePath` object.
 
-		@returns: a L{File} object
-		@raises PathLookupError: if the path is not below this folder
+		:returns: a :class:`File` object
+		:raises PathLookupError: if the path is not below this folder
 		'''
 		file = self.file(path)
 		basename = file.basename
@@ -883,15 +912,15 @@ class Dir(FilePath):
 		return file
 
 	def subdir(self, path):
-		'''Get a L{Dir} object for a path below this folder
+		'''Get a :class:`Dir` object for a path below this folder
 
-		@param path: a (relative) file path as string, tuple or
-		L{FilePath} object. When C{path} is a L{Dir} object already
-		this method still enforces it is below this folder.
-		So this method can be used as check as well.
+		:param path: a (relative) file path as string, tuple or
+			:class:`FilePath` object. When ``path`` is a :class:`Dir` object already
+			this method still enforces it is below this folder.
+			So this method can be used as check as well.
 
-		@returns: a L{Dir} object
-		@raises PathLookupError: if the path is not below this folder
+		:returns: a :class:`Dir` object
+		:raises PathLookupError: if the path is not below this folder
 
 		'''
 
@@ -901,14 +930,14 @@ class Dir(FilePath):
 		return dir
 
 	def resolve_dir(self, path):
-		'''Get a L{Dir} object for a path relative to this folder
+		'''Get a :class:`Dir` object for a path relative to this folder
 
-		Like L{subdir()} but allows the path to start with "../" as
+		Like :class:`subdir()` but allows the path to start with "../" as
 		well, so can handle any relative path.
 
-		@param path: a (relative) file path as string, tuple or
-		L{FilePath} object.
-		@returns: a L{Dir} object
+		:param path: a (relative) file path as string, tuple or
+			:class:`FilePath` object.
+		:returns: a :class:`Dir` object
 		'''
 		assert isinstance(path, (FilePath, str, list, tuple))
 		if isinstance(path, str):
@@ -921,16 +950,16 @@ class Dir(FilePath):
 			return Dir(path.path)
 
 	def new_subdir(self, path):
-		'''Get a L{Dir} object for a new sub-folder below this folder.
-		Like L{subdir()} but guarantees the folder does not yet exist by
+		'''Get a :class:`Dir` object for a new sub-folder below this folder.
+		Like :class:`subdir()` but guarantees the folder does not yet exist by
 		adding sequential numbers if needed. So the resulting folder
 		may have a modified name.
 
-		@param path: a (relative) file path as string, tuple or
-		L{FilePath} object.
+		:param path: a (relative) file path as string, tuple or
+			:class:`FilePath` object.
 
-		@returns: a L{Dir} object
-		@raises PathLookupError: if the path is not below this folder
+		:returns: a :class:`Dir` object
+		:raises PathLookupError: if the path is not below this folder
 		'''
 		subdir = self.subdir(path)
 		basename = subdir.basename
@@ -959,17 +988,18 @@ class FilteredDir(Dir):
 	def __init__(self, path):
 		'''Constructor
 
-		@param path: an absolute file path, file URL, L{FilePath} object
-		or a list of path elements. When a list is given, the first
-		element is allowed to be an absolute path, URL or L{FilePath}
-		object as well.
+		:param path: an absolute file path, file URL, :class:`FilePath` object
+			or a list of path elements. When a list is given, the first
+			element is allowed to be an absolute path, URL or :class:`FilePath`
+			object as well.
 		'''
 		Dir.__init__(self, path)
 		self._ignore = []
 
 	def ignore(self, glob):
 		'''Add a file pattern to ignore
-		@param glob: a file path pattern (e.g. "*.txt")
+
+		:param glob: a file path pattern (e.g. "*.txt")
 		'''
 		regex = _glob_to_regex(glob)
 		self._ignore.append(regex)
@@ -1025,18 +1055,18 @@ class File(FilePath):
 	def __init__(self, path, checkoverwrite=False, endofline=None):
 		'''Constructor
 
-		@param path: an absolute file path, file URL, L{FilePath} object
-		or a list of path elements. When a list is given, the first
-		element is allowed to be an absolute path, URL or L{FilePath}
-		object as well.
+		:param path: an absolute file path, file URL, :class:`FilePath` object
+			or a list of path elements. When a list is given, the first
+			element is allowed to be an absolute path, URL or :class:`FilePath`
+			object as well.
 
-		@param checkoverwrite: when C{True} this object checks the
-		modification time before writing to prevent overwriting a file
-		that was changed on disk in between read and write operations.
+		:param checkoverwrite: when ``True`` this object checks the
+			modification time before writing to prevent overwriting a file
+			that was changed on disk in between read and write operations.
 
-		@param endofline: the line end style used when writing, can be
-		one of "unix" ('\\n') or "dos" ('\\r\\n'). Whan C{None} the local
-		default is used.
+		:param endofline: the line end style used when writing, can be
+			one of "unix" ('\\n') or "dos" ('\\r\\n'). Whan ``None`` the local
+			default is used.
 		'''
 		FilePath.__init__(self, path)
 		self.checkoverwrite = checkoverwrite
@@ -1056,9 +1086,10 @@ class File(FilePath):
 	def isimage(self):
 		'''Check if this is an image file. Convenience method that
 		works even when no real mime-type suport is available.
-		If this method returns C{True} it is no guarantee
+		If this method returns ``True`` it is no guarantee
 		this image type is actually supported by Gtk.
-		@returns: C{True} when this is an image file
+
+		:returns: ``True`` when this is an image file
 		'''
 
 		# Quick shortcut to be able to load images in the gui even if
@@ -1073,8 +1104,9 @@ class File(FilePath):
 	def get_mimetype(self):
 		'''Get the mime-type for this file.
 		Will use the XDG mimetype system if available, otherwise
-		fallsback to the standard library C{mimetypes}.
-		@returns: the mimetype as a string, e.g. "text/plain"
+		fallsback to the standard library ``mimetypes``.
+
+		:returns: the mimetype as a string, e.g. "text/plain"
 		'''
 		if xdgmime:
 			mimetype = xdgmime.get_type(self.path, name_pri=80)
@@ -1092,7 +1124,8 @@ class File(FilePath):
 
 	def get_endofline(self):
 		'''Get the end-of-line character(s) used for writing this file.
-		@returns: the end-of-line character(s)
+
+		:returns: the end-of-line character(s)
 		'''
 		if self.endofline is None:
 			if isinstance(self, WindowsPath):
@@ -1111,7 +1144,8 @@ class File(FilePath):
 		etc. Used to read binary data, e.g. when serving files over www.
 		Note that this function also does not integrates with checking
 		mtime, so intended for read only usage.
-		@returns: file content as string
+
+		:returns: file content as string
 		'''
 		try:
 			fh = open(self.path, mode='rb')
@@ -1124,8 +1158,9 @@ class File(FilePath):
 	def read(self):
 		'''Get the file contents as a string. Takes case of decoding
 		UTF-8 and fixes line endings.
-		@returns: the content as (unicode) string.
-		@raises FileNotFoundError: when the file does not exist.
+
+		:returns: the content as (unicode) string.
+		:raises FileNotFoundError: when the file does not exist.
 		'''
 		try:
 			content = self._read()
@@ -1148,8 +1183,8 @@ class File(FilePath):
 		'''Get the file contents as a list of lines. Takes case of
 		decoding UTF-8 and fixes line endings.
 
-		@returns: the content as a list of lines.
-		@raises FileNotFoundError: when the file does not exist.
+		:returns: the content as a list of lines.
+		:raises FileNotFoundError: when the file does not exist.
 		'''
 		try:
 			file = open(self.path, encoding='UTF-8')
@@ -1179,8 +1214,10 @@ class File(FilePath):
 		If writing fails the file will either have the new content or the
 		old content, but it should not be possible to have the content
 		truncated.
-		@param text: new content as (unicode) string
-		@emits: path-created if the file did not yet exist
+
+		:param text: new content as (unicode) string
+
+			:emits: path-created if the file did not yet exist
 		'''
 		self._assertoverwrite()
 		isnew = not os.path.isfile(self.path)
@@ -1195,9 +1232,11 @@ class File(FilePath):
 
 	def writelines(self, lines):
 		'''Write file contents from a list of lines.
-		Like L{write()} but input is a list instead of a string.
-		@param lines: new content as list of lines
-		@emits: path-created if the file did not yet exist
+		Like :class:`write()` but input is a list instead of a string.
+
+		:param lines: new content as list of lines
+
+			:emits: path-created if the file did not yet exist
 		'''
 		self._assertoverwrite()
 		isnew = not os.path.isfile(self.path)
@@ -1244,7 +1283,7 @@ class File(FilePath):
 					# Why are we using MD5 here ?? could just compare content...
 
 	def check_has_changed_on_disk(self):
-		'''Returns C{True} when this file has changed on disk'''
+		'''Returns ``True`` when this file has changed on disk'''
 		if not (self._mtime and self._md5):
 			if os.path.isfile(self.path):
 				return True # may well been just created
@@ -1288,17 +1327,18 @@ class File(FilePath):
 
 	def cleanup(self):
 		'''Remove this file and cleanup any empty parent folder.
-		Convenience method calling L{File.remove()} and L{Dir.cleanup()}.
+		Convenience method calling :class:`File.remove()` and :class:`Dir.cleanup()`.
 		'''
 		self.remove()
 		self.dir.cleanup()
 
 	def copyto(self, dest):
 		'''Copy this file to another location. Preserves all file
-		attributes (by using C{shutil.copy2()})
-		@param dest: a L{File} or L{Dir} object for the destination. If the
-		destination is a folder, we will copy to a file below that
-		folder of the same name
+		attributes (by using ``shutil.copy2()``)
+
+		:param dest: a :class:`File` or :class:`Dir` object for the destination. If the
+			destination is a folder, we will copy to a file below that
+			folder of the same name
 		'''
 		dest = adapt_from_newfs(dest)
 		assert isinstance(dest, (File, Dir))
@@ -1316,9 +1356,10 @@ class File(FilePath):
 
 	def compare(self, other):
 		'''Check if file contents are the same. This differs from
-		L{isequal()} because files can be different physical locations.
-		@param other: another L{File} object
-		@returns: C{True} when the files have the same content
+		:class:`isequal()` because files can be different physical locations.
+
+		:param other: another :class:`File` object
+		:returns: ``True`` when the files have the same content
 		'''
 		# TODO: can be more efficient, e.g. by checking stat size first
 		# also wonder if MD5 is needed here ... could just compare text
@@ -1333,11 +1374,11 @@ class TmpFile(File):
 	def __init__(self, basename, unique=True, persistent=False):
 		'''Constructor
 
-		@param basename: gives the name for this tmp file.
-		@param unique: if C{True} the L{Dir.new_file()} method is used
-		to make sure we have a new file.
-		@param persistent: if C{False} the file will be removed when the
-		object is destructed, if C{True} we leave it alone
+		:param basename: gives the name for this tmp file.
+		:param unique: if ``True`` the :class:`Dir.new_file()` method is used
+			to make sure we have a new file.
+		:param persistent: if ``False`` the file will be removed when the
+			object is destructed, if ``True`` we leave it alone
 		'''
 		dir = get_tmpdir()
 		if unique:

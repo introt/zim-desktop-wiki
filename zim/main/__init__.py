@@ -1,7 +1,7 @@
 
 # Copyright 2013-2016 Jaap Karssenberg <jaap.karssenberg@gmail.com>
 
-'''This module defines the L{main()} function for executing the zim
+'''This module defines the :class:`main()` function for executing the zim
 application. It also defines a number of command classes that implement
 specific commandline commands and an singleton application object that
 takes core of the process life cycle.
@@ -41,7 +41,7 @@ from .ipc import start_listening as _ipc_start_listening
 
 
 class HelpCommand(Command):
-	'''Class implementing the C{--help} command'''
+	'''Class implementing the ``--help`` command'''
 
 	usagehelp = '''\
 usage: zim [OPTIONS] [NOTEBOOK [PAGE]]
@@ -105,7 +105,7 @@ Try 'zim --manual' for more help.
 
 
 class VersionCommand(Command):
-	'''Class implementing the C{--version} command'''
+	'''Class implementing the ``--version`` command'''
 
 	def run(self):
 		print('zim %s\n' % zim.__version__)
@@ -137,11 +137,12 @@ class NotebookCommand(Command):
 
 	def get_notebook_argument(self):
 		'''Get the notebook and page arguments for this command
-		@returns: a 2-tuple of an L{NotebookInfo} object and an
-		optional L{Path} or C{(None, None)} if the notebook
-		argument is optional and not given
-		@raises NotebookLookupError: if the notebook is mandatory and
-		not given, or if it is given but could not be resolved
+
+		:returns: a 2-tuple of an :class:`NotebookInfo` object and an
+			optional :class:`Path` or ``(None, None)`` if the notebook
+			argument is optional and not given
+		:raises NotebookLookupError: if the notebook is mandatory and
+			not given, or if it is given but could not be resolved
 		'''
 		assert self.arguments[0] in ('NOTEBOOK', '[NOTEBOOK]')
 		args = self.get_arguments()
@@ -168,16 +169,17 @@ class NotebookCommand(Command):
 			return notebookinfo, None
 
 	def build_notebook(self, ensure_uptodate=True):
-		'''Get the L{Notebook} object for this command
+		'''Get the :class:`Notebook` object for this command
 		Tries to automount the file location if needed.
-		@param ensure_uptodate: if C{True} index is updated when needed.
-		Only set to C{False} when index update is handled explicitly
-		(e.g. in the main gui).
-		@returns: a L{Notebook} object and a L{Path} object or C{None}
-		@raises NotebookLookupError: if the notebook could not be
-		resolved or is not given
-		@raises FileNotFoundError: if the notebook location does not
-		exist and could not be mounted.
+
+		:param ensure_uptodate: if ``True`` index is updated when needed.
+			Only set to ``False`` when index update is handled explicitly
+			(e.g. in the main gui).
+		:returns: a :class:`Notebook` object and a :class:`Path` object or ``None``
+		:raises NotebookLookupError: if the notebook could not be
+			resolved or is not given
+		:raises FileNotFoundError: if the notebook location does not
+			exist and could not be mounted.
 		'''
 		# Explicit page argument has priority over implicit from uri
 		# mounting is attempted by zim.notebook.build_notebook()
@@ -195,7 +197,7 @@ class NotebookCommand(Command):
 
 
 class GuiCommand(NotebookCommand, GtkCommand):
-	'''Class implementing the C{--gui} command and run the gtk interface'''
+	'''Class implementing the ``--gui`` command and run the gtk interface'''
 
 	arguments = ('[NOTEBOOK]', '[PAGE]')
 	options = (
@@ -340,7 +342,7 @@ class GuiCommand(NotebookCommand, GtkCommand):
 
 
 class ManualCommand(GuiCommand):
-	'''Like L{GuiCommand} but always opens the manual'''
+	'''Like :class:`GuiCommand` but always opens the manual'''
 
 	arguments = ('[PAGE]',)
 	options = tuple(t for t in GuiCommand.options if t[0] != 'list')
@@ -354,7 +356,7 @@ class ManualCommand(GuiCommand):
 
 
 class ServerCommand(NotebookCommand):
-	'''Class implementing the C{--server} command and running the web
+	'''Class implementing the ``--server`` command and running the web
 	server.
 	'''
 
@@ -380,8 +382,8 @@ class ServerCommand(NotebookCommand):
 
 
 class ServerGuiCommand(NotebookCommand, GtkCommand):
-	'''Like L{ServerCommand} but uses the graphical interface for the
-	server defined in L{zim.gui.server}.
+	'''Like :class:`ServerCommand` but uses the graphical interface for the
+	server defined in :class:`zim.gui.server`.
 	'''
 
 	arguments = ('[NOTEBOOK]',)
@@ -409,7 +411,7 @@ class ServerGuiCommand(NotebookCommand, GtkCommand):
 
 
 class ExportCommand(NotebookCommand):
-	'''Class implementing the C{--export} command'''
+	'''Class implementing the ``--export`` command'''
 
 	arguments = ('NOTEBOOK', '[PAGE]')
 	options = (
@@ -510,7 +512,7 @@ class ExportCommand(NotebookCommand):
 
 
 class SearchCommand(NotebookCommand):
-	'''Class implementing the C{--search} command'''
+	'''Class implementing the ``--search`` command'''
 
 	arguments = ('NOTEBOOK', 'QUERY')
 
@@ -533,7 +535,7 @@ class SearchCommand(NotebookCommand):
 
 
 class IndexCommand(NotebookCommand):
-	'''Class implementing the C{--index} command'''
+	'''Class implementing the ``--index`` command'''
 
 	arguments = ('NOTEBOOK',)
 
@@ -560,8 +562,9 @@ commands = {
 
 def build_command(args, pwd=None):
 	'''Parse all commandline options
-	@returns: a L{Command} object
-	@raises UsageError: if args is not correct
+
+	:returns: a :class:`Command` object
+	:raises UsageError: if args is not correct
 	'''
 	args = list(args)
 
@@ -633,7 +636,7 @@ class ZimApplication(object):
 		)
 
 	def get_mainwindow(self, notebook, _class=None):
-		'''Returns an existing L{MainWindow} for C{notebook} or C{None}'''
+		'''Returns an existing :class:`MainWindow` for ``notebook`` or ``None``'''
 		from zim.gui.mainwindow import MainWindow
 		_class = _class or MainWindow # test seam
 		for w in self.toplevels:
@@ -677,8 +680,9 @@ class ZimApplication(object):
 	def run(self, *args, **kwargs):
 		'''Run a commandline command, either in this process, an
 		existing process, or a new process.
-		@param args: commandline arguments
-		@param kwargs: optional arguments for L{build_command}
+
+		:param args: commandline arguments
+		:param kwargs: optional arguments for :class:`build_command`
 		'''
 		PluginManager().load_plugins_from_preferences(
 			ConfigManager.preferences['General']['plugins']
@@ -897,7 +901,8 @@ ZIM_APPLICATION = ZimApplication() # Singleton per process
 
 def main(*argv):
 	'''Run full zim application
-	@returns: exit code (if error handled, else just raises)
+
+	:returns: exit code (if error handled, else just raises)
 	'''
 
 	import zim.config

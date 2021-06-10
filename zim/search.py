@@ -13,15 +13,15 @@ Order of precedence: AND, OR, NOT
 so "foo AND NOT bar OR baz" means AND(foo, OR(NOT(bar), baz))
 
 Supported keywords:
-	- C{Content}
-	- C{Name}
-	- C{Section}: alias for "Name XXX or Name: XXX:*"
-	- C{Namespace}: alias for "Name XXX or Name: XXX:*" -- backward compatible
-	- C{Links}: forward - alias for linksfrom
-	- C{LinksFrom}: forward
-	- C{LinksTo}: backward
-	- C{ContentOrName}: the default, like Name: *X* or Content: X
-	- C{Tag}: look for a single tag
+	- ``Content``
+	- ``Name``
+	- ``Section``: alias for "Name XXX or Name: XXX:*"
+	- ``Namespace``: alias for "Name XXX or Name: XXX:*" -- backward compatible
+	- ``Links``: forward - alias for linksfrom
+	- ``LinksFrom``: forward
+	- ``LinksTo``: backward
+	- ``ContentOrName``: the default, like Name: *X* or Content: X
+	- ``Tag``: look for a single tag
 
 For the Content field we need to request the actual page contents,
 all other fields we get from the index and are more efficient to
@@ -249,18 +249,18 @@ class SearchSelection(PageSelection):
 		'''Populate this SearchSelection with results for a query.
 		This method flushes any previous results in this set.
 
-		@param query: a L{Query} object
-		@param selection: a prior selection to search within, will result in a sub-set
-		@param callback: a function to call in between steps in the search.
-		It is called as::
+		:param query: a :class:`Query` object
+		:param selection: a prior selection to search within, will result in a sub-set
+		:param callback: a function to call in between steps in the search.
+			It is called as::
 
 			callback(selection, path)
 
 		Where:
-		  - C{selection} is a L{SearchSelection} with partial results (if any)
-		  - C{path} is the C{Path} for the last searched path or C{None}
+		  - ``selection`` is a :class:`SearchSelection` with partial results (if any)
+		  - ``path`` is the ``Path`` for the last searched path or ``None``
 
-		If the callback returns C{False} the search is cancelled.
+		If the callback returns ``False`` the search is cancelled.
 		'''
 		# Clear state
 		self.cancelled = False

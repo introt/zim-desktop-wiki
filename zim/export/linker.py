@@ -30,19 +30,22 @@ class ExportLinker(BaseLinker):
 	in the same way as in HTML. Both URLs and relative URLs are
 	already URL encoded
 
-	@todo: info on formats to know how to set "usebase"
+	.. todo::
+
+		info on formats to know how to set "usebase"
 	'''
 
 	def __init__(self, notebook, layout, source=None, output=None,
 						usebase=False, document_root_url=None
 	):
 		'''Contructor
-		@param notebook: the source L{Notebook} for resolving links
-		@param layout: the L{ExportLayout} for resolving target files
-		@param source: is the L{Path} of the source page being exported
-		@param output: is a L{File} object for the destination file
-		@param usebase: if C{True} the format allows returning relative paths
-		@param document_root_url: optional URL for the document root
+
+		:param notebook: the source :class:`Notebook` for resolving links
+		:param layout: the :class:`ExportLayout` for resolving target files
+		:param source: is the :class:`Path` of the source page being exported
+		:param output: is a :class:`File` object for the destination file
+		:param usebase: if ``True`` the format allows returning relative paths
+		:param document_root_url: optional URL for the document root
 		'''
 		self.notebook = notebook
 		self.layout = layout
@@ -67,9 +70,9 @@ class ExportLinker(BaseLinker):
 		'''Returns an url for a link in a zim page
 		This method is used to translate links of any type.
 
-		@param link: link to be translated
-		@returns: url, uri, or relative path
-		context of this linker
+		:param link: link to be translated
+		:returns: url, uri, or relative path
+			context of this linker
 		'''
 		# Determines the link type and dispatches any of the "link_*" methods
 		assert isinstance(link, str)
@@ -105,18 +108,20 @@ class ExportLinker(BaseLinker):
 		be inlined. Do not use this method to resolve links, the file
 		given here might be temporary and is not guaranteed to be
 		available after the export.
-		@returns: a L{File} object or C{None} if no file was found
+
+		:returns: a :class:`File` object or ``None`` if no file was found
 		'''
 		return self.notebook.resolve_file(link, self.source)
 
 	def resolve_dest_file(self, link):
 		'''Find the destination file for an attachment
-		@returns: a L{File} object
+
+		:returns: a :class:`File` object
 		'''
 		return self._resolve_file(link)
 
 	def page_object(self, path):
-		'''Turn a L{Path} object in a relative link or URI'''
+		'''Turn a :class:`Path` object in a relative link or URI'''
 		try:
 			file = self.layout.page_file(path)
 		except PathLookupError:
@@ -128,7 +133,7 @@ class ExportLinker(BaseLinker):
 				return self.file_object(file)
 
 	def file_object(self, file):
-		'''Turn a L{File} object in a relative link or URI'''
+		'''Turn a :class:`File` object in a relative link or URI'''
 		if self.base and self.usebase \
 		and file.ischild(self.layout.relative_root):
 			relpath = file.relpath(self.base, allowupward=True)
@@ -223,8 +228,8 @@ class ExportLinker(BaseLinker):
 
 
 class StubLayout(ExportLayout):
-	'''Stub implementation of L{ExportLayout} that is used by
-	L{StaticExportLinker}
+	'''Stub implementation of :class:`ExportLayout` that is used by
+	:class:`StaticExportLinker`
 	'''
 
 	def __init__(self, notebook, resources_dir):

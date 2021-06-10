@@ -2,7 +2,7 @@
 # Copyright 2008-2014 Jaap Karssenberg <jaap.karssenberg@gmail.com>
 
 '''This module contains the parser to parse expressions in templates
-and returns an L{Expression} object.
+and returns an :class:`Expression` object.
 '''
 
 
@@ -71,8 +71,9 @@ class ExpressionParser(object):
 
 	def parse(self, string):
 		'''Parse an expression
-		@param string: the expression text
-		@returns: an L{Expression} object
+
+		:param string: the expression text
+		:returns: an :class:`Expression` object
 		'''
 		tokens = self._tokenize(string)
 		expr = self._parse(tokens)

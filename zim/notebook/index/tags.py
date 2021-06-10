@@ -14,13 +14,13 @@ from .pages import PagesViewInternal, ROOT_PATH, \
 
 
 class IndexTag(object):
-	'''Object to represent a page tag in the L{Index} API
+	'''Object to represent a page tag in the :class:`Index` API
 
 	These are tags that appear in pages with an "@", like "@foo". They
-	are indexed by the L{Index} and represented with this class.
+	are indexed by the :class:`Index` and represented with this class.
 
-	@ivar name: the name of the tag, e.g. "foo" for an "@foo" in the page
-	@ivar id: the id of this tag in the table (primary key)
+	:ivar name: the name of the tag, e.g. "foo" for an "@foo" in the page
+	:ivar id: the id of this tag in the table (primary key)
 	'''
 
 	__slots__ = ('name', 'id')
@@ -183,7 +183,7 @@ class TagsView(IndexView):
 		return IndexTag(*row)
 
 	def list_all_tags(self):
-		'''Returns all tags in the index as L{IndexTag} objects'''
+		'''Returns all tags in the index as :class:`IndexTag` objects'''
 		for row in self.db.execute(
 			'SELECT tags.name, tags.id '
 			'FROM tags '
@@ -192,7 +192,7 @@ class TagsView(IndexView):
 			yield IndexTag(*row)
 
 	def list_all_tags_by_n_pages(self):
-		'''Returns all tags in the index as L{IndexTag} objects'''
+		'''Returns all tags in the index as :class:`IndexTag` objects'''
 		for row in self.db.execute(
 			'SELECT tags.name, tags.id '
 			'FROM tags '
@@ -215,11 +215,11 @@ class TagsView(IndexView):
 		Generator function that lists all tags that occur on pages
 		that match the given tag set. This is used to narrow down
 		possible tag sets that are not empty. (This method is used e.g.
-		in the L{zim.plugins.tags.TagCloudWidget} widget to decide which
+		in the :class:`zim.plugins.tags.TagCloudWidget` widget to decide which
 		tags to show once some tags are selected.)
 
-		@param tags: an iterable of L{IndexTag} objects
-		@returns: yields L{IndexTag} objects
+		:param tags: an iterable of :class:`IndexTag` objects
+		:returns: yields :class:`IndexTag` objects
 		'''
 		tag_ids = '(' + ','.join(str(t.id) for t in tags) + ')'
 		for row in self.db.execute(
@@ -242,9 +242,10 @@ class TagsView(IndexView):
 
 	def list_tags(self, path):
 		'''Returns all tags for a given page
-		@param path: a L{Path} object for the page
-		@returns: yields L{IndexTag} objects
-		@raises IndexNotFoundError: if C{path} is not found in the index
+
+		:param path: a :class:`Path` object for the page
+		:returns: yields :class:`IndexTag` objects
+		:raises IndexNotFoundError: if ``path`` is not found in the index
 		'''
 		page_id = self._pages.get_page_id(path) # can raise
 		return self._list_tags(page_id)
@@ -273,8 +274,9 @@ class TagsView(IndexView):
 
 	def list_pages(self, tag):
 		'''List all pages tagged with a given tag.
-		@param tag: a tag name as string or an C{IndexTag} object
-		@returns: yields L{PageIndexRecord} objects
+
+		:param tag: a tag name as string or an ``IndexTag`` object
+		:returns: yields :class:`PageIndexRecord` objects
 		'''
 		tag = self.lookup_by_tagname(tag)
 		return self._list_pages(tag)

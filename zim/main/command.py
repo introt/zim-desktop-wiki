@@ -3,7 +3,7 @@
 
 '''
 This module is responsible for commandline parsing. It provides a base
-class for the commandline commands defined in L{zim.main}
+class for the commandline commands defined in :class:`zim.main`
 '''
 
 import os
@@ -27,12 +27,12 @@ class UsageError(Error):
 
 class Command(object):
 	'''Base class for commandline commands, used by zim to abstract
-	part of the C{main()} functionality and allow better testability
+	part of the ``main()`` functionality and allow better testability
 	of commandline arguments.
 
 	Sub-classes can define the options and arguments that they require.
-	Then only the C{run()} method needs to be defined to implement the
-	actual command. In the C{run()} method C{self.opts} and C{self.args}
+	Then only the ``run()`` method needs to be defined to implement the
+	actual command. In the ``run()`` method ``self.opts`` and ``self.args``
 	can be accessed to get the commandline options (dict) and the
 	commandline arguments (list) respectively.
 	'''
@@ -51,8 +51,9 @@ class Command(object):
 
 	def __init__(self, command, pwd=None):
 		'''Constructor
-		@param command: the command switch (first commandline argument)
-		@param pwd: optional working directory path
+
+		:param command: the command switch (first commandline argument)
+		:param pwd: optional working directory path
 		'''
 		self.command = command
 		self.args = []
@@ -63,8 +64,9 @@ class Command(object):
 		'''Parse commandline options for this command
 		Sets the attributes 'args' and 'opts' to a list of arguments
 		and a dictionary of options respectively
-		@param args: all remaining options to be parsed
-		@raises GetOptError: when options are not correct
+
+		:param args: all remaining options to be parsed
+		:raises GetOptError: when options are not correct
 		'''
 		options = ''
 		long_options = []
@@ -93,14 +95,16 @@ class Command(object):
 
 	def get_options(self, *names):
 		'''Retrieve a dict with a sub-set of the command options
-		@param names: that options in the subset
+
+		:param names: that options in the subset
 		'''
 		return dict((k, self.opts.get(k)) for k in names)
 
 	def get_arguments(self):
-		'''Get the arguments, to be used by the implementation of C{run()}
-		@raises UsageError: when arguments are not correct
-		@returns: tuple of arguments, padded with None to correct length
+		'''Get the arguments, to be used by the implementation of ``run()``
+
+		:raises UsageError: when arguments are not correct
+		:returns: tuple of arguments, padded with None to correct length
 		'''
 		minimum = len([a for a in self.arguments if not a.startswith('[')])
 		if len(self.args) < minimum:
@@ -118,8 +122,9 @@ class Command(object):
 
 	def run(self):
 		'''Run the command
-		@raises UsageError: when arguments are not correct
-		@implementation: must be implemented by subclasses
+
+		:raises UsageError: when arguments are not correct
+		:implementation: must be implemented by subclasses
 		'''
 		raise NotImplementedError
 
@@ -129,14 +134,14 @@ class GtkCommand(Command):
 	user interface being presented to the user or want to interact with the
 	Gtk user interface.
 
-	If the C{run()} method returns a window, it will be added to the
-	application top level windows. And a C{Gtk.main} loop will run until
+	If the ``run()`` method returns a window, it will be added to the
+	application top level windows. And a ``Gtk.main`` loop will run until
 	all windows are destroyed.
 
 	Commands derived from this class can be dispatched to the main application
-	process. This is controlled by the C{standalone_process} property.
+	process. This is controlled by the ``standalone_process`` property.
 
-	NOTE: Do _not_ call C{Gtk.main} from the command, this will be
+	NOTE: Do _not_ call ``Gtk.main`` from the command, this will be
 	done by the application object.
 	'''
 
@@ -150,8 +155,8 @@ class GtkCommand(Command):
 
 	def run_local(self):
 		'''Method called in local process before we (try to) dispatch the
-		command to the primary process. If it returns C{True} we assume the
-		command is done and C{run()} is not called.
+		command to the primary process. If it returns ``True`` we assume the
+		command is done and ``run()`` is not called.
 		If the command is called from the primary process directly, this method
 		gets never called.
 		'''

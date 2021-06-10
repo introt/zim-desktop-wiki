@@ -34,7 +34,7 @@ class IndexView(object):
 
 class IndexerBase(SignalEmitter, ConnectorMixin):
 	'''Base class for "content indexer" objects.
-	It defines the callback functions that are calls from L{PagesIndexer}
+	It defines the callback functions that are calls from :class:`PagesIndexer`
 	'''
 
 	__signals__ = {}
@@ -64,11 +64,11 @@ class MyTreeIter(object):
 
 
 class TreeModelMixinBase(ConnectorMixin):
-	'''This class can be used as mixin class for C{Gtk.TreeModel}
+	'''This class can be used as mixin class for ``Gtk.TreeModel``
 	implementations that use data from the index.
 
-	Treepaths are simply tuples with integers. This Mixin assumes L{MyTreeIter}
-	objects for iters. (Which should not be confused with C{Gtk.TreeIter} as
+	Treepaths are simply tuples with integers. This Mixin assumes :class:`MyTreeIter`
+	objects for iters. (Which should not be confused with ``Gtk.TreeIter`` as
 	used by the interface!)
 	'''
 
@@ -80,7 +80,7 @@ class TreeModelMixinBase(ConnectorMixin):
 		self.connectto(index, 'new-update-iter', self.connect_to_updateiter)
 
 	def connect_to_updateiter(self, update_iter):
-		'''Connect to a new L{IndexUpdateIter}
+		'''Connect to a new :class:`IndexUpdateIter`
 
 		The following signals must be implemented:
 
@@ -90,9 +90,9 @@ class TreeModelMixinBase(ConnectorMixin):
 		  - row-deleted (treepath)
 
 		Typically each signal should also flush the cache using
-		C{self.cache.clear()}.
+		``self.cache.clear()``.
 
-		@implementation: must be implemented by a subclass
+		:implementation: must be implemented by a subclass
 		'''
 		raise NotImplementedError
 
@@ -105,21 +105,24 @@ class TreeModelMixinBase(ConnectorMixin):
 		raise NotImplementedError
 
 	def get_mytreeiter(self, treepath):
-		'''Returns a C{treeiter} object for C{treepath} or C{None}
-		@implementation: must be implemented by a subclass
+		'''Returns a ``treeiter`` object for ``treepath`` or ``None``
+
+		:implementation: must be implemented by a subclass
 		'''
 		raise NotImplementedError
 
 	def find(self, obj):
-		'''Return the treepath for a index object like a L{Path} or L{IndexTag}
-		@raises IndexNotFoundError: if C{indexpath} is not found
-		@implementation: must be implemented by a subclass
+		'''Return the treepath for a index object like a :class:`Path` or :class:`IndexTag`
+
+		:raises IndexNotFoundError: if ``indexpath`` is not found
+		:implementation: must be implemented by a subclass
 		'''
 		raise NotImplementedError
 
 	def find_all(self, obj):
-		'''Like L{find()} but can return multiple results
-		@implementation: must be implemented by subclasses that have mutiple
-		entries for the same object. Default falls back to result of L{find()}.
+		'''Like :class:`find()` but can return multiple results
+
+		:implementation: must be implemented by subclasses that have mutiple
+			entries for the same object. Default falls back to result of :class:`find()`.
 		'''
 		return [self.find(obj)]

@@ -24,15 +24,15 @@ def encode_filename(pagename):
 	not be able to use all valid page names directly as file names.
 	Therefore characters that are not allowed for the filesystem are
 	replaced with url encoding. The result is still unicode, which can
-	be used to construct a L{File} object. (The File object
+	be used to construct a :class:`File` object. (The File object
 	implementation takes care of actually encoding the string when
 	needed.)
 
 	Namespaces are mapped to directories by replacing ":" with "/".
 
-	@param pagename: the pagename as string or unicode object
-	@returns: the filename as unicode object but with characters
-	incompatble with the filesystem encoding replaced
+	:param pagename: the pagename as string or unicode object
+	:returns: the filename as unicode object but with characters
+		incompatble with the filesystem encoding replaced
 	'''
 	assert not '%' in pagename # just to be sure
 	pagename = pagename.encode(_fs_encoding, 'urlencode')
@@ -49,10 +49,10 @@ def _url_decode(match):
 def decode_filename(filename):
 	'''Decodes a filename to a pagename
 
-	Reverse operation of L{encode_filename()}.
+	Reverse operation of :class:`encode_filename()`.
 
-	@param filename: the filename as string or unicode object
-	@returns: the pagename as unicode object
+	:param filename: the filename as string or unicode object
+	:returns: the pagename as unicode object
 	'''
 	filename = _url_decode_re.sub(_url_decode, filename)
 	return filename.replace('\\', ':').replace('/', ':').replace('_', ' ')
@@ -72,8 +72,9 @@ class FilesLayout(NotebookLayout):
 
 	def __init__(self, folder, endofline=_EOL, default_format='wiki', default_extension='.txt'):
 		'''Constructor
-		@param folder: a L{Folder} object
-		@param endofline: either "dos" or "unix", default per OS
+
+		:param folder: a :class:`Folder` object
+		:param endofline: either "dos" or "unix", default per OS
 		'''
 		assert isinstance(folder, Folder)
 		self.root = folder
@@ -100,9 +101,10 @@ class FilesLayout(NotebookLayout):
 
 	def map_page(self, pagename):
 		'''Map a pagename to a (default) file
-		@param pagename: a L{Path}
-		@returns: a 2-tuple of a L{File} for the source and a L{Folder}
-		for the attachments. Neither of these needs to exist.
+
+		:param pagename: a :class:`Path`
+		:returns: a 2-tuple of a :class:`File` for the source and a :class:`Folder`
+			for the attachments. Neither of these needs to exist.
 		'''
 		path = encode_filename(pagename.name)
 		file = self.root.file(path + self.default_extension)
@@ -116,9 +118,10 @@ class FilesLayout(NotebookLayout):
 
 	def map_file(self, file):
 		'''Map a filepath to a pagename
-		@param file: a L{File} or L{FilePath} object
-		@returns: a L{Path} and a file type (C{FILE_TYPE_PAGE_SOURCE},
-		F{FILE_TYPE_ATTACHMENT})
+
+		:param file: a :class:`File` or :class:`FilePath` object
+		:returns: a :class:`Path` and a file type (``FILE_TYPE_PAGE_SOURCE``,
+			F{FILE_TYPE_ATTACHMENT})
 		'''
 		type = FILE_TYPE_PAGE_SOURCE if self.is_source_file(file) else FILE_TYPE_ATTACHMENT
 
@@ -140,15 +143,16 @@ class FilesLayout(NotebookLayout):
 			return Path(name), type
 
 	def map_filepath(self, path):
-		'''Like L{map_file} but takes a string with relative path'''
+		'''Like :class:`map_file` but takes a string with relative path'''
 		return self.map_file(self.root.file(path))
 
 	def resolve_conflict(self, *filepaths):
 		'''Decide which is the real page file when multiple files
 		map to the same page.
-		@param filepaths: 2 or more L{FilePath} objects
-		@returns: L{FilePath} that should take precedent as te page
-		source
+
+		:param filepaths: 2 or more :class:`FilePath` objects
+		:returns: :class:`FilePath` that should take precedent as te page
+			source
 		'''
 		filespaths.sort(key=lambda p: (p.ctime(), p.basename))
 		return filepaths[0]

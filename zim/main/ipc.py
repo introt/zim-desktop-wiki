@@ -42,7 +42,7 @@ _IN_MAIN_PROCESS = False
 
 
 def get_in_main_process():
-	'''Returns C{True} if we are already in the main process'''
+	'''Returns ``True`` if we are already in the main process'''
 	return _IN_MAIN_PROCESS
 
 
@@ -117,8 +117,9 @@ else:
 
 def dispatch(*args):
 	'''If there is an existing zim process pass along the arguments
-	@param args: commandline arguments
-	@raises AssertionError: when no existing zim process or connection failed
+
+	:param args: commandline arguments
+	:raises AssertionError: when no existing zim process or connection failed
 	'''
 	assert not get_in_main_process()
 	try:
@@ -142,7 +143,8 @@ def dispatch(*args):
 def start_listening(handler):
 	'''Start listening to socket or named pipe for new commandline
 	calls. Also sets current process to be the main process.
-	@param handler: the method to call when new commands are recieveds
+
+	:param handler: the method to call when new commands are recieveds
 	'''
 	set_in_main_process(True)
 

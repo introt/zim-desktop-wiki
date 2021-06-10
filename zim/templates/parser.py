@@ -3,7 +3,7 @@
 
 '''This module defines the main parser for template text.
 
-See also the L{expressionparser} sub-module for the parser for
+See also the :class:`expressionparser` sub-module for the parser for
 expressions in the template.
 '''
 
@@ -16,7 +16,7 @@ from zim.templates.expressionparser import ExpressionParser, ExpressionParameter
 
 
 class TemplateBuilderTextBuffer(BuilderTextBuffer):
-	'''Sub class of L{BuilderTextBuffer} that is used to strip text
+	'''Sub class of :class:`BuilderTextBuffer` that is used to strip text
 	around template instructions.
 	'''
 
@@ -67,7 +67,7 @@ class TemplateBuilderTextBuffer(BuilderTextBuffer):
 
 
 class TemplateTreeBuilder(SimpleTreeBuilder):
-	'''Sub-class of L{SimpleTreeBuilder}.
+	'''Sub-class of :class:`SimpleTreeBuilder`.
 	This class implements a special case for the "BLOCK" element and
 	always places it in the top level of the parse tree
 	'''
@@ -148,9 +148,10 @@ class TemplateParser(object):
 
 	def parse(self, text):
 		'''Parse template text
-		@param text: the template text
-		@returns: a list of L{SimpleTreeElements} for the main template
-		structure and any blocks defined in the template
+
+		:param text: the template text
+		:returns: a list of :class:`SimpleTreeElements` for the main template
+			structure and any blocks defined in the template
 		'''
 		builder = TemplateTreeBuilder()
 		self.__call__(builder, text)

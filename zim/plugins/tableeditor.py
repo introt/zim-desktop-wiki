@@ -242,7 +242,7 @@ class TableViewObjectType(InsertedObjectTypeExtension):
 
 
 class TableModel(ConnectorMixin, SignalEmitter):
-	'''Thin object that contains a C{Gtk.ListStore}
+	'''Thin object that contains a ``Gtk.ListStore``
 	Key purpose of this wrapper is to allow replacing the store
 	'''
 
@@ -288,7 +288,7 @@ class TableModel(ConnectorMixin, SignalEmitter):
 		self._attrib['wraps'] = ','.join(map(str, data))
 
 	def change_model(self, newdefinition):
-		'''Creates a new C{Gtk.ListStore} based on C{newdefinition}
+		'''Creates a new ``Gtk.ListStore`` based on ``newdefinition``
 		and notifies all widgets to replace the current one by the
 		"model-changed" signal
 		'''
@@ -854,7 +854,7 @@ class EditTableDialog(Dialog):
 		'''
 		Constructor, which intializes the dialog window
 		:param parent:
-		:param definition: tuple of C{(ids, headers, wraps, aligns)}
+		:param definition: tuple of ``(ids, headers, wraps, aligns)``
 		:return:
 		'''
 		title = _('Insert Table') if definition is None else _('Edit Table')  # T: Dialog title
@@ -888,7 +888,7 @@ class EditTableDialog(Dialog):
 	def _prepare_liststore(self, definition):
 		'''
 		Preparation of liststore to show a treeview, that displays the columns of the table
-		:param definition: tuple of C{(ids, headers, wraps, aligns)}
+		:param definition: tuple of ``(ids, headers, wraps, aligns)``
 		:return:liststore
 		'''
 		liststore = Gtk.ListStore(int, str, int, str, str, str)

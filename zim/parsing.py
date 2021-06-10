@@ -20,12 +20,12 @@ def split_quoted_strings(string, unescape=True, strict=True):
 	Also a comma "," is handled specially and is always considered a
 	word on it's own.
 
-	@param string: string to split in words
-	@param unescape: if C{True} quotes are removed, else they are
-	left in place
-	@param strict: if C{True} unmatched quotes will cause a C{ValueError}
-	to be raised, if C{False} unmatched quotes are ignored.
-	@returns: list of strings
+	:param string: string to split in words
+	:param unescape: if ``True`` quotes are removed, else they are
+		left in place
+	:param strict: if ``True`` unmatched quotes will cause a ``ValueError``
+		to be raised, if ``False`` unmatched quotes are ignored.
+	:returns: list of strings
 	'''
 	word_re = Re(r'''
 		(	'(\\'|[^'])*' |  # single quoted word
@@ -52,7 +52,8 @@ def split_quoted_strings(string, unescape=True, strict=True):
 
 def unescape_quoted_string(string):
 	'''Removes quotes from a string and unescapes embedded quotes
-	@returns: string
+
+	:returns: string
 	'''
 	escape_re = re.compile(r'(\\(\\)|\\([\'\"]))')
 	def replace(m):
@@ -75,7 +76,7 @@ def _escape(match):
 
 def escape_string(string, chars=''):
 	'''Escape special characters with a backslash
-	Escapes newline, tab, backslash itself and any characters in C{chars}
+	Escapes newline, tab, backslash itself and any characters in ``chars``
 	'''
 	return re.sub('[\n\t\\\\%s]' % chars, _escape, string)
 
@@ -92,14 +93,14 @@ def _unescape(match):
 
 def unescape_string(string):
 	'''Unescape backslash escapes in string
-	Recognizes C{\\n} and C{\\t} for newline and tab respectively,
+	Recognizes ``\\n`` and ``\\t`` for newline and tab respectively,
 	otherwise keeps the literal character
 	'''
 	return re.sub('\\\\.', _unescape, string)
 
 
 def split_escaped_string(string, char):
-	'''Split string on C{char} while respecting backslash escapes'''
+	'''Split string on ``char`` while respecting backslash escapes'''
 	parts = []
 	trailing_backslash = False
 	for piece in string.split(char):
@@ -195,9 +196,9 @@ def url_encode(url, mode=URL_ENCODE_PATH):
 	'''Replaces non-standard characters in urls with hex codes.
 
 	Mode can be:
-		- C{URL_ENCODE_DATA}: encode all un-safe chars
-		- C{URL_ENCODE_PATH}: encode all un-safe chars except '/'
-		- C{URL_ENCODE_READABLE}: encode whitespace and all unicode characters
+		- ``URL_ENCODE_DATA``: encode all un-safe chars
+		- ``URL_ENCODE_PATH``: encode all un-safe chars except '/'
+		- ``URL_ENCODE_READABLE``: encode whitespace and all unicode characters
 
 	The mode URL_ENCODE_READABLE can be applied to urls that are already
 	encoded because it does not touch the "%" character. The modes
@@ -236,14 +237,14 @@ def url_decode(url, mode=URL_ENCODE_PATH):
 	'''Replace url-encoding hex sequences with their proper characters.
 
 	Mode can be:
-		- C{URL_ENCODE_DATA}: decode all chars
-		- C{URL_ENCODE_PATH}: same as URL_ENCODE_DATA
-		- C{URL_ENCODE_READABLE}: decode only whitespace and unicode characters
+		- ``URL_ENCODE_DATA``: decode all chars
+		- ``URL_ENCODE_PATH``: same as URL_ENCODE_DATA
+		- ``URL_ENCODE_READABLE``: decode only whitespace and unicode characters
 
-	The mode C{URL_ENCODE_READABLE} will not decode any other characters,
+	The mode ``URL_ENCODE_READABLE`` will not decode any other characters,
 	so urls decoded with these modes can still contain escape sequences.
 	They are safe to use within zim, but should be re-encoded with
-	C{URL_ENCODE_READABLE} before handing them to an external program.
+	``URL_ENCODE_READABLE`` before handing them to an external program.
 
 	This method will only decode non-ascii byte codes when the _whole_ byte
 	equivalent of the URL is in valid UTF-8 decoding. Else it is assumed the
@@ -273,10 +274,10 @@ def parse_date(string):
 	'''Returns a tuple of (year, month, day) for a date string or None
 	if failed to parse the string. Current supported formats:
 
-		- C{dd?-mm?}
-		- C{dd?-mm?-yy}
-		- C{dd?-mm?-yyyy}
-		- C{yyyy-mm?-dd?}
+		- ``dd?-mm?``
+		- ``dd?-mm?-yy``
+		- ``dd?-mm?-yyyy``
+		- ``yyyy-mm?-dd?``
 
 	Where '-' can be replaced by any separator. Any preceding or
 	trailing text will be ignored (so we can parse journal page names

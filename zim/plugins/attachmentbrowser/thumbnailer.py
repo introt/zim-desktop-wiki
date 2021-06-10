@@ -87,7 +87,7 @@ class ThumbnailCreatorFailure(ValueError):
 from zim.newfs.local import _replace_file as _atomic_rename
 
 def pixbufThumbnailCreator(file, thumbfile, thumbsize):
-	'''Thumbnailer implementation that uses the C{GdkPixbuf.Pixbuf}
+	'''Thumbnailer implementation that uses the ``GdkPixbuf.Pixbuf``
 	functions to create the thumbnail.
 	'''
 	if not (isinstance(file, LocalFile) and isinstance(thumbfile, LocalFile)):
@@ -116,7 +116,7 @@ def pixbufThumbnailCreator(file, thumbfile, thumbsize):
 
 class ThumbnailQueue(object):
 
-	'''Wrapper for L{ThumbnailManager} that does that actual thumbnailing
+	'''Wrapper for :class:`ThumbnailManager` that does that actual thumbnailing
 	in a separate thread and manages the requests and the results with
 	queues.
 	'''
@@ -131,7 +131,7 @@ class ThumbnailQueue(object):
 		self._running = threading.Event()
 
 	def queue_empty(self):
-		'''Returns C{True} when both input and output queue are empty'''
+		'''Returns ``True`` when both input and output queue are empty'''
 		# Guard total count of items in process
 		# input + output + in between in main function
 		# use lock to protect queue
@@ -139,10 +139,11 @@ class ThumbnailQueue(object):
 
 	def queue_thumbnail_request(self, file, size, mtime=None):
 		'''Add a new request to the queue
-		@param file: a L{File} object
-		@param size: the size of the thumbnail in pixels
-		@param mtime: the mtime of a previous loaded thumbnail, if this
-		matches the current file, the request will be dropped
+
+		:param file: a :class:`File` object
+		:param size: the size of the thumbnail in pixels
+		:param mtime: the mtime of a previous loaded thumbnail, if this
+			matches the current file, the request will be dropped
 		'''
 		with self._count_lock:
 			self._count += 1
@@ -187,8 +188,9 @@ class ThumbnailQueue(object):
 
 	def get_ready_thumbnail(self, block=False):
 		'''Check output queue for a thumbnail that is ready
-		@returns: a 5-tuple C{(file, size, thumbfile, pixbuf, mtime)} or 5 times
-		C{None} when nothing is ready and C{block} is C{False}.
+
+		:returns: a 5-tuple ``(file, size, thumbfile, pixbuf, mtime)`` or 5 times
+			``None`` when nothing is ready and ``block`` is ``False``.
 		'''
 		with self._count_lock:
 			try:
@@ -224,20 +226,21 @@ class ThumbnailQueue(object):
 
 class ThumbnailManager(object):
 	'''This class implements thumbnails management (mostly) following
-	the C{freedesktop.org} spec.
+	the ``freedesktop.org`` spec.
 	'''
 
 	def __init__(self, thumbnailcreator=pixbufThumbnailCreator):
 		self._thumbnailcreator = thumbnailcreator
 
 	def get_thumbnail_file(self, file, size):
-		'''Get L{File} object for thumbnail
+		'''Get :class:`File` object for thumbnail
 		Does not guarantee that the thumbnail actually exists.
-		Do not use this method to lookup the thumbnail, use L{get_thumbnail()}
+		Do not use this method to lookup the thumbnail, use :class:`get_thumbnail()`
 		instead.
-		@param file: the original file to be thumbnailed
-		@param size: thumbnail size in pixels (C{THUMB_SIZE_NORMAL}, C{THUMB_SIZE_LARGE}, or integer)
-		@returns: a L{File} object
+
+		:param file: the original file to be thumbnailed
+		:param size: thumbnail size in pixels (``THUMB_SIZE_NORMAL``, ``THUMB_SIZE_LARGE``, or integer)
+		:returns: a :class:`File` object
 		'''
 		basename = hashlib.md5(file.uri.encode('ascii')).hexdigest() + '.png'
 			# file.uri should already be URL encoded for unicode characters - use 'ascii' to check
@@ -249,12 +252,13 @@ class ThumbnailManager(object):
 	def get_thumbnail(self, file, size, create=True):
 		'''Looksup thumbnail and return it if a valid thumbnail is
 		availabel.
-		@param file: the file to be thumbnailed as L{File} object
-		@param size: pixel size for thumbnail image as integer
-		@param create: if C{True} we try to create the thumbnail if
-		it doesn't exist
-		@returns: a 2-tuple of the thumbnail file and a pixbuf object
-		or 2 times C{None}
+
+		:param file: the file to be thumbnailed as :class:`File` object
+		:param size: pixel size for thumbnail image as integer
+		:param create: if ``True`` we try to create the thumbnail if
+			it doesn't exist
+		:returns: a 2-tuple of the thumbnail file and a pixbuf object
+			or 2 times ``None``
 		'''
 		if not isinstance(file, LocalFile):
 			return None, None
@@ -280,10 +284,11 @@ class ThumbnailManager(object):
 	def create_thumbnail(self, file, size):
 		'''(Re-)create a thumbnail without any checking whether the
 		old one is still valid.
-		@param file: the file to be thumbnailed as L{File} object
-		@param size: pixel size for thumbnail file as integer
-		@returns: a 2-tuple of the thumbnail file and a pixbuf object
-		@raises ThumbnailCreatorFailure: if creation fails unexpectedly
+
+		:param file: the file to be thumbnailed as :class:`File` object
+		:param size: pixel size for thumbnail file as integer
+		:returns: a 2-tuple of the thumbnail file and a pixbuf object
+		:raises ThumbnailCreatorFailure: if creation fails unexpectedly
 		'''
 		if not isinstance(file, LocalFile):
 			raise ThumbnailCreatorFailure()
@@ -308,7 +313,8 @@ class ThumbnailManager(object):
 		'''Remove thumbnails for at all sizes
 		To be used when thumbnails are outdated, e.g. when the original
 		file is removed or updated.
-		@param file: the original file
+
+		:param file: the original file
 		'''
 		for size in (THUMB_SIZE_NORMAL, THUMB_SIZE_LARGE):
 			thumbfile = self.get_thumbnail_file(file, size)

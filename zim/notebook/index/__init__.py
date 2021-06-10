@@ -38,17 +38,17 @@ class Index(SignalEmitter):
 	index in the side pane, showing "what links here" and faster search
 	for page attributes.
 
-	The C{Index} object is an opaque object that only exposes an API
+	The ``Index`` object is an opaque object that only exposes an API
 	to trigger index updates and notifications when changes are found.
 	It does not expose the data it keeps directly. To query the index,
 	you need to construct an "index view" first, see e.g. the
-	L{PagesIndexView}, L{LinksIndexView} and L{TagsIndexView} classes.
-	For convenience the L{Notebook} class also exposes these three
-	views with the respective attributes C{pages}, C{links} and C{tags}.
+	:class:`PagesIndexView`, :class:`LinksIndexView` and :class:`TagsIndexView` classes.
+	For convenience the :class:`Notebook` class also exposes these three
+	views with the respective attributes ``pages``, ``links`` and ``tags``.
 
-	@signal: C{new-update-iter (update_iter)}: signal used for plugins wanting
-	to extend the indexer
-	@signal: C{changed ()}: emitted after changes have been committed
+	:signal: ``new-update-iter (update_iter)``: signal used for plugins wanting
+		to extend the indexer
+	:signal: ``changed ()``: emitted after changes have been committed
 	'''
 
 	__signals__ = {
@@ -58,8 +58,9 @@ class Index(SignalEmitter):
 
 	def __init__(self, dbpath, layout):
 		'''Constructor
-		@param dbpath: a file path for the sqlite db, or C{":memory:"}
-		@param layout: a L{NotebookLayout} instance to index
+
+		:param dbpath: a file path for the sqlite db, or ``":memory:"``
+		:param layout: a :class:`NotebookLayout` instance to index
 		'''
 		self.dbpath = dbpath
 		self.layout = layout
@@ -188,7 +189,7 @@ class Index(SignalEmitter):
 		'''This methods flags all pages with content to be re-indexed.
 		Main reason to use this would be when loading a new plugin that
 		wants to index all pages.
-		Differs from L{flush()} because it does not drop all data
+		Differs from :class:`flush()` because it does not drop all data
 		'''
 		from .files import STATUS_NEED_UPDATE
 		self._db.execute(
@@ -263,7 +264,7 @@ class Index(SignalEmitter):
 		self.update_file(newfile)
 
 	def touch_current_page_placeholder(self, path):
-		'''Create a placeholder for C{path} if the page does not
+		'''Create a placeholder for ``path`` if the page does not
 		exist. Cleans up old placeholders.
 		'''
 		# This method uses a hack by linking the page from the ROOT_ID
@@ -358,7 +359,7 @@ class IndexUpdateIter(SignalEmitter):
 		self.emit('commit')
 
 	def partial_update_iter(self):
-		'''Like L{update_iter()} but omits checking new files'''
+		'''Like :class:`update_iter()` but omits checking new files'''
 		for indexer in self._indexers[1:]:
 			for i in indexer.update_iter():
 				yield

@@ -25,7 +25,7 @@ from .local import LocalFSObjectBase
 
 class FileTreeWatcher(SignalEmitter):
 	'''Helper object that adds signals for file changes. It can be
-	used for the C{watcher} attribute for file system objects.
+	used for the ``watcher`` attribute for file system objects.
 
 	When use the object itself will call the "watcher" on changes
 	and if the object is a folder it will pass on the "watcher" to
@@ -59,13 +59,14 @@ class TrashHelper(object):
 
 	def trash(self, file):
 		'''Trash a file or folder by moving it to the system trashcan
-		if supported. Depends on the C{gio} library.
-		@param file: a C{LocalFile} object
-		@returns: C{True} when successful
-		@raises TrashNotSupportedError: if trashing is not supported
-		or failed.
-		@raises TrashCancelledError: if trashing was cancelled by the
-		user
+		if supported. Depends on the ``gio`` library.
+
+		:param file: a ``LocalFile`` object
+		:returns: ``True`` when successful
+		:raises TrashNotSupportedError: if trashing is not supported
+			or failed.
+		:raises TrashCancelledError: if trashing was cancelled by the
+			user
 		'''
 		if not Gio:
 			raise TrashNotSupportedError('Gio not imported')
@@ -161,9 +162,10 @@ class FSObjectMonitor(SignalEmitter):
 
 def format_file_size(bytes):
 	'''Returns a human readable label  for a file size
-	E.g. C{1230} becomes C{"1.23kb"}, idem for "Mb" and "Gb"
-	@param bytes: file size in bytes as integer
-	@returns: size as string
+	E.g. ``1230`` becomes ``"1.23kb"``, idem for "Mb" and "Gb"
+
+	:param bytes: file size in bytes as integer
+	:returns: size as string
 	'''
 	for unit, label in (
 		(1000000000, 'Gb'),

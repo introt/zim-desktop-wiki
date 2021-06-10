@@ -20,7 +20,7 @@ from .notebook import NotebookConfig, _resolve_relative_config
 
 
 def get_notebook_list():
-	'''Returns a list of known notebooks as a L{NotebookInfoList}
+	'''Returns a list of known notebooks as a :class:`NotebookInfoList`
 
 	This will load the list from the default X{notebooks.list} file
 	'''
@@ -32,11 +32,12 @@ def resolve_notebook(string, pwd=None):
 	'''Takes either a notebook name or a file or dir path. For a name
 	it resolves the path by looking for a notebook of that name in the
 	notebook list.
-	Note that the L{NotebookInfo} for an file path is not using any
+	Note that the :class:`NotebookInfo` for an file path is not using any
 	actual info from the notebook, it just passes on the uri. Use
-	L{build_notebook()} to split the URI in a notebook location and
+	:class:`build_notebook()` to split the URI in a notebook location and
 	an optional page path.
-	@returns: a L{NotebookInfo} or C{None}
+
+	:returns: a :class:`NotebookInfo` or ``None``
 	'''
 	assert isinstance(string, str)
 	from zim.fs import isabs
@@ -70,9 +71,10 @@ def _get_path_object(path):
 def get_notebook_info(path):
 	'''Look up the notebook info for either a uri,
 	or a File or a Dir object.
-	@param path: path as string, L{File} or L{Dir} object
-	@returns: L{NotebookInfo} object, or C{None} if no notebook config
-	was found
+
+	:param path: path as string, :class:`File` or :class:`Dir` object
+	:returns: :class:`NotebookInfo` object, or ``None`` if no notebook config
+		was found
 	'''
 	path = _get_path_object(path)
 	info = NotebookInfo(path.uri)
@@ -133,36 +135,36 @@ def interwiki_link(link):
 class NotebookInfo(object):
 	'''This class keeps the info for a notebook
 
-	@ivar uri: The location of the notebook
-	@ivar user_path: The location of the notebook relative to the
-	home folder (starts with '~/') or C{None}
-	@ivar name: The notebook name (or the basename of the uri)
-	@ivar icon: The file uri for the notebook icon
-	@ivar icon_path: The location of the icon as configured (either
-	relative to the notebook location, relative to home folder or
-	absolute path)
-	@ivar mtime: The mtime of the config file this info was read from (if any)
-	@ivar active: The attribute is used to signal whether the notebook
-	is already open or not, used in the daemon context, C{None} if this
-	is not used, C{True} or C{False} otherwise
-	@ivar interwiki: The interwiki keyword (if any)
+	:ivar uri: The location of the notebook
+	:ivar user_path: The location of the notebook relative to the
+		home folder (starts with '~/') or ``None``
+	:ivar name: The notebook name (or the basename of the uri)
+	:ivar icon: The file uri for the notebook icon
+	:ivar icon_path: The location of the icon as configured (either
+		relative to the notebook location, relative to home folder or
+		absolute path)
+	:ivar mtime: The mtime of the config file this info was read from (if any)
+	:ivar active: The attribute is used to signal whether the notebook
+		is already open or not, used in the daemon context, ``None`` if this
+		is not used, ``True`` or ``False`` otherwise
+	:ivar interwiki: The interwiki keyword (if any)
 	'''
 
 	def __init__(self, uri, name=None, icon=None, mtime=None, interwiki=None, **a):
 		'''Constructor
 
-		Known values for C{name}, C{icon} etc. can be specified.
-		Alternatively L{update()} can be called to read there from the
-		notebook configuration (if any). If C{mtime} is given the
-		object acts as a cache and L{update()} will only read the config
-		if it is newer than C{mtime}
+		Known values for ``name``, ``icon`` etc. can be specified.
+		Alternatively :class:`update()` can be called to read there from the
+		notebook configuration (if any). If ``mtime`` is given the
+		object acts as a cache and :class:`update()` will only read the config
+		if it is newer than ``mtime``
 
-		@param uri: location uri or file path for the notebook (esp. C{user_path})
-		@param name: notebook name
-		@param icon: the notebook icon path
-		@param mtime: the mtime when config was last read
-		@param interwiki: the interwiki keyword for this notebook
-		@param a: any additional arguments will be discarded
+		:param uri: location uri or file path for the notebook (esp. ``user_path``)
+		:param name: notebook name
+		:param icon: the notebook icon path
+		:param mtime: the mtime when config was last read
+		:param interwiki: the interwiki keyword for this notebook
+		:param a: any additional arguments will be discarded
 		'''
 		# **a is added to be future proof of unknown values in the cache
 		if isinstance(uri, str) \
@@ -197,10 +199,10 @@ class NotebookInfo(object):
 		'''Check if info is still up to date and update this object
 
 		This method will check the X{notebook.zim} file for notebook
-		folders and read it if it changed. It uses the C{mtime}
+		folders and read it if it changed. It uses the ``mtime``
 		attribute to keep track of changes.
 
-		@returns: C{True} when data was updated, C{False} otherwise
+		:returns: ``True`` when data was updated, ``False`` otherwise
 		'''
 		# TODO support for paths that turn out to be files
 		dir = Dir(self.uri)
@@ -242,18 +244,19 @@ class VirtualFile(object):
 
 
 class NotebookInfoList(list):
-	'''This class keeps a list of L{NotebookInfo} objects
+	'''This class keeps a list of :class:`NotebookInfo` objects
 
 	It maps to a X{notebooks.list} config file that keeps a list of
 	notebook locations and cached attributes from the various
 	X{notebook.zim} config files
 
-	@ivar default: L{NotebookInfo} object for the default
+	:ivar default: :class:`NotebookInfo` object for the default
 	'''
 
 	def __init__(self, file):
 		'''Constructor
-		@param file: a L{File} or L{ConfigFile} object for X{notebooks.list}
+
+		:param file: a :class:`File` or :class:`ConfigFile` object for X{notebooks.list}
 		'''
 		self.file = file
 		self.default = None # default notebook
@@ -288,7 +291,7 @@ class NotebookInfoList(list):
 
 		Then followed by more "[Notebook]" sections that are cache data
 
-		@param text: a string or a list of lines
+		:param text: a string or a list of lines
 		'''
 		# Format <= 0.60 was:
 		#
@@ -359,7 +362,7 @@ class NotebookInfoList(list):
 		section headers and a whitespace separator between notebook
 		name and uri.
 
-		@param text: a string or a list of lines
+		:param text: a string or a list of lines
 		'''
 		# Old format is name, value pair, separated by whitespace
 		# with all other whitespace escaped by a \
@@ -431,7 +434,7 @@ class NotebookInfoList(list):
 		self.file.writelines(lines)
 
 	def update(self):
-		'''Update L{NotebookInfo} objects and write cache'''
+		'''Update :class:`NotebookInfo` objects and write cache'''
 		changed = False
 		for info in self:
 			changed = info.update() or changed
@@ -440,7 +443,8 @@ class NotebookInfoList(list):
 
 	def set_default(self, uri):
 		'''Set the default notebook
-		@param uri: the file uri or file path for the default notebook
+
+		:param uri: the file uri or file path for the default notebook
 		'''
 		uri = File(uri).uri # e.g. "~/foo" to file:// uri
 		for info in self:
@@ -453,12 +457,12 @@ class NotebookInfoList(list):
 			self.default = info
 
 	def get_by_name(self, name):
-		'''Get the L{NotebookInfo} object for a notebook by name
+		'''Get the :class:`NotebookInfo` object for a notebook by name
 
 		Names are checked case sensitive first, then case-insensitive
 
-		@param name: notebook name as string
-		@returns: a L{NotebookInfo} object or C{None}
+		:param name: notebook name as string
+		:returns: a :class:`NotebookInfo` object or ``None``
 		'''
 		for info in self:
 			if info.name == name:
@@ -472,13 +476,13 @@ class NotebookInfoList(list):
 		return None
 
 	def get_interwiki(self, key):
-		'''Get the L{NotebookInfo} object for a notebook by interwiki key
+		'''Get the :class:`NotebookInfo` object for a notebook by interwiki key
 
 		First checks the interwiki key for all notebooks (case insensitive)
-		than falls back to L{get_by_name()}.
+		than falls back to :class:`get_by_name()`.
 
-		@param key: notebook name or interwiki key as string
-		@returns: a L{NotebookInfo} object or C{None}
+		:param key: notebook name or interwiki key as string
+		:returns: a :class:`NotebookInfo` object or ``None``
 		'''
 		if not is_interwiki_keyword_re.match(key):
 			raise ValueError('Not a valid interwiki key: %s' % key)
