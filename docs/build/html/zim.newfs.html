@@ -1,0 +1,1129 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zim.newfs package &#8212; Zim Desktop Wiki 0.74 develop documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="zim-newfs-package">
+<h1>zim.newfs package<a class="headerlink" href="#zim-newfs-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-zim.newfs.base">
+<span id="zim-newfs-base-module"></span><h2>zim.newfs.base module<a class="headerlink" href="#module-zim.newfs.base" title="Permalink to this headline">¶</a></h2>
+<p>Base classes for filesystem and storage implementation</p>
+<dl class="py class">
+<dt id="zim.newfs.base.FSObjectBase">
+<em class="property">class </em><code class="sig-prename descclassname">zim.newfs.base.</code><code class="sig-name descname">FSObjectBase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">watcher</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FSObjectBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.newfs.base.FilePath" title="zim.newfs.base.FilePath"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.newfs.base.FilePath</span></code></a></p>
+<p>Base class for <a class="reference internal" href="#zim.newfs.base.File" title="zim.newfs.base.File"><code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code></a> and <a class="reference internal" href="#zim.newfs.base.Folder" title="zim.newfs.base.Folder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Folder</span></code></a></p>
+<dl class="py method">
+<dt id="zim.newfs.base.FSObjectBase.copyto">
+<code class="sig-name descname">copyto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FSObjectBase.copyto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.FSObjectBase.ctime">
+<code class="sig-name descname">ctime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FSObjectBase.ctime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.FSObjectBase.exists">
+<code class="sig-name descname">exists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FSObjectBase.exists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.FSObjectBase.isequal">
+<code class="sig-name descname">isequal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FSObjectBase.isequal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check file paths are equal based on stat results (inode
+number etc.). Intended to detect when two files or dirs are the
+same on case-insensitive filesystems. Does not explicitly check
+the content is the same.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> – an other <a class="reference internal" href="#zim.newfs.base.FilePath" title="zim.newfs.base.FilePath"><code class="xref py py-class docutils literal notranslate"><span class="pre">FilePath</span></code></a> object</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> when the two paths are one and the same file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.base.FSObjectBase.islocal">
+<code class="sig-name descname">islocal</code><a class="headerlink" href="#zim.newfs.base.FSObjectBase.islocal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.FSObjectBase.iswritable">
+<code class="sig-name descname">iswritable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FSObjectBase.iswritable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.FSObjectBase.moveto">
+<code class="sig-name descname">moveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FSObjectBase.moveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.FSObjectBase.mtime">
+<code class="sig-name descname">mtime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FSObjectBase.mtime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.FSObjectBase.parent">
+<code class="sig-name descname">parent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FSObjectBase.parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.base.FSObjectBase.path">
+<code class="sig-name descname">path</code><a class="headerlink" href="#zim.newfs.base.FSObjectBase.path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.base.FSObjectBase.pathnames">
+<code class="sig-name descname">pathnames</code><a class="headerlink" href="#zim.newfs.base.FSObjectBase.pathnames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.FSObjectBase.remove">
+<code class="sig-name descname">remove</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cleanup</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FSObjectBase.remove" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.FSObjectBase.touch">
+<code class="sig-name descname">touch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FSObjectBase.touch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.newfs.base.FSObjectMeta">
+<em class="property">class </em><code class="sig-prename descclassname">zim.newfs.base.</code><code class="sig-name descname">FSObjectMeta</code><a class="headerlink" href="#zim.newfs.base.FSObjectMeta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></p>
+<p>This meta class allows implementing wrappers for file and folder objects
+with <code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> checking the wrapped class as well as the wrapper.
+Main use case is filtered version of folder object where e.g.
+<code class="docutils literal notranslate"><span class="pre">isinstance(folder,</span> <span class="pre">LocalFolder)</span></code> is used to check whether the underlying
+resources exist external to the application.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.newfs.base.File">
+<em class="property">class </em><code class="sig-prename descclassname">zim.newfs.base.</code><code class="sig-name descname">File</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">endofline</span><span class="o">=</span><span class="default_value">'unix'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.File" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.newfs.base.FSObjectBase" title="zim.newfs.base.FSObjectBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.newfs.base.FSObjectBase</span></code></a></p>
+<p>Base class for folder implementations. Cannot be intatiated
+directly; use one of the subclasses instead. Main use outside of
+this module is to check <code class="docutils literal notranslate"><span class="pre">isinstance(object,</span> <span class="pre">Folder)</span></code>.</p>
+<dl class="py method">
+<dt id="zim.newfs.base.File.isimage">
+<code class="sig-name descname">isimage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.File.isimage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is an image file. Convenience method that
+works even when no real mime-type suport is available.
+If this method returns <code class="docutils literal notranslate"><span class="pre">True</span></code> it is no guarantee
+this image type is actually supported by Gtk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> when this is an image file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.base.File.islocal">
+<code class="sig-name descname">islocal</code><a class="headerlink" href="#zim.newfs.base.File.islocal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.File.mimetype">
+<code class="sig-name descname">mimetype</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.File.mimetype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the mime-type for this file.
+Will use the XDG mimetype system if available, otherwise
+fallsback to the standard library <code class="docutils literal notranslate"><span class="pre">mimetypes</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the mimetype as a string, e.g. “text/plain”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.base.File.path">
+<code class="sig-name descname">path</code><a class="headerlink" href="#zim.newfs.base.File.path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.base.File.pathnames">
+<code class="sig-name descname">pathnames</code><a class="headerlink" href="#zim.newfs.base.File.pathnames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.File.read">
+<code class="sig-name descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.File.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.File.read_binary">
+<code class="sig-name descname">read_binary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.File.read_binary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.File.read_with_etag">
+<code class="sig-name descname">read_with_etag</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.File.read_with_etag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.File.readline">
+<code class="sig-name descname">readline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.File.readline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.File.readlines">
+<code class="sig-name descname">readlines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.File.readlines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.File.readlines_with_etag">
+<code class="sig-name descname">readlines_with_etag</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.File.readlines_with_etag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.File.size">
+<code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.File.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.File.touch">
+<code class="sig-name descname">touch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.File.touch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.File.verify_etag">
+<code class="sig-name descname">verify_etag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">etag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.File.verify_etag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.File.write">
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.File.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.File.write_binary">
+<code class="sig-name descname">write_binary</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.File.write_binary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.File.write_with_etag">
+<code class="sig-name descname">write_with_etag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">etag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.File.write_with_etag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.File.writelines">
+<code class="sig-name descname">writelines</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.File.writelines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.File.writelines_with_etag">
+<code class="sig-name descname">writelines_with_etag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">etag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.File.writelines_with_etag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="zim.newfs.base.FileChangedError">
+<em class="property">exception </em><code class="sig-prename descclassname">zim.newfs.base.</code><code class="sig-name descname">FileChangedError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FileChangedError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.errors.Error" title="zim.errors.Error"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.errors.Error</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="zim.newfs.base.FileExistsError">
+<em class="property">exception </em><code class="sig-prename descclassname">zim.newfs.base.</code><code class="sig-name descname">FileExistsError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FileExistsError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.errors.Error" title="zim.errors.Error"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.errors.Error</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="zim.newfs.base.FileNotFoundError">
+<em class="property">exception </em><code class="sig-prename descclassname">zim.newfs.base.</code><code class="sig-name descname">FileNotFoundError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FileNotFoundError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.errors.Error" title="zim.errors.Error"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.errors.Error</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="zim.newfs.base.FileNotWritableError">
+<em class="property">exception </em><code class="sig-prename descclassname">zim.newfs.base.</code><code class="sig-name descname">FileNotWritableError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FileNotWritableError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.errors.Error" title="zim.errors.Error"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.errors.Error</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.newfs.base.FilePath">
+<em class="property">class </em><code class="sig-prename descclassname">zim.newfs.base.</code><code class="sig-name descname">FilePath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FilePath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to represent filesystem paths and the base class for all
+file and folder objects. Contains methods for file path manipulation.</p>
+<p>File paths should always be absolute paths and can e.g. not start
+with “../” or “./”. On windows they should always start with either
+a drive letter or a share drive. On unix they should start at the
+root of the filesystem.</p>
+<p>Paths can be handled either as strings representing a local file
+path (“/” or “” separated), strings representing a file uri
+(“<a class="reference external" href="file:///">file:///</a>” or “<a class="reference external" href="smb://">smb://</a>”) or list of path names.</p>
+<dl class="py method">
+<dt id="zim.newfs.base.FilePath.basename">
+<em class="property">property </em><code class="sig-name descname">basename</code><a class="headerlink" href="#zim.newfs.base.FilePath.basename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.FilePath.commonparent">
+<code class="sig-name descname">commonparent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FilePath.commonparent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.FilePath.dirname">
+<em class="property">property </em><code class="sig-name descname">dirname</code><a class="headerlink" href="#zim.newfs.base.FilePath.dirname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.FilePath.get_abspath">
+<code class="sig-name descname">get_abspath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FilePath.get_abspath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a <code class="docutils literal notranslate"><span class="pre">FilePath</span></code> for <code class="docutils literal notranslate"><span class="pre">path</span></code> where <code class="docutils literal notranslate"><span class="pre">path</span></code> can be
+either an absolute path or a path relative to this path
+(either upward or downward - use <a class="reference internal" href="#zim.newfs.base.FilePath.get_childpath" title="zim.newfs.base.FilePath.get_childpath"><code class="xref py py-class docutils literal notranslate"><span class="pre">get_childpath()</span></code></a> to only
+get child paths).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.FilePath.get_childpath">
+<code class="sig-name descname">get_childpath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FilePath.get_childpath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.FilePath.ischild">
+<code class="sig-name descname">ischild</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FilePath.ischild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.base.FilePath.islocal">
+<code class="sig-name descname">islocal</code><a class="headerlink" href="#zim.newfs.base.FilePath.islocal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.FilePath.new_from_zim_config">
+<em class="property">classmethod </em><code class="sig-name descname">new_from_zim_config</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FilePath.new_from_zim_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a new object based on the string representation for
+that path</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.base.FilePath.path">
+<code class="sig-name descname">path</code><a class="headerlink" href="#zim.newfs.base.FilePath.path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.base.FilePath.pathnames">
+<code class="sig-name descname">pathnames</code><a class="headerlink" href="#zim.newfs.base.FilePath.pathnames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.FilePath.relpath">
+<code class="sig-name descname">relpath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">allowupward</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FilePath.relpath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.FilePath.serialize_zim_config">
+<code class="sig-name descname">serialize_zim_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FilePath.serialize_zim_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the file path as string for serializing the object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.FilePath.uri">
+<em class="property">property </em><code class="sig-name descname">uri</code><a class="headerlink" href="#zim.newfs.base.FilePath.uri" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.FilePath.userpath">
+<em class="property">property </em><code class="sig-name descname">userpath</code><a class="headerlink" href="#zim.newfs.base.FilePath.userpath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="zim.newfs.base.FileUnicodeError">
+<em class="property">exception </em><code class="sig-prename descclassname">zim.newfs.base.</code><code class="sig-name descname">FileUnicodeError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">error</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FileUnicodeError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.errors.Error" title="zim.errors.Error"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.errors.Error</span></code></a></p>
+<p>Error raised when there is an issue decoding the file contents.
+Typically due to different encoding where UTF-8 is expected.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.newfs.base.Folder">
+<em class="property">class </em><code class="sig-prename descclassname">zim.newfs.base.</code><code class="sig-name descname">Folder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.Folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.newfs.base.FSObjectBase" title="zim.newfs.base.FSObjectBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.newfs.base.FSObjectBase</span></code></a></p>
+<p>Base class for folder implementations. Cannot be intatiated
+directly; use one of the subclasses instead. Main use outside of
+this module is to check <code class="docutils literal notranslate"><span class="pre">isinstance(object,</span> <span class="pre">Folder)</span></code>.</p>
+<dl class="py method">
+<dt id="zim.newfs.base.Folder.child">
+<code class="sig-name descname">child</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.Folder.child" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.Folder.file">
+<code class="sig-name descname">file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.Folder.file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.Folder.folder">
+<code class="sig-name descname">folder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.Folder.folder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.base.Folder.islocal">
+<code class="sig-name descname">islocal</code><a class="headerlink" href="#zim.newfs.base.Folder.islocal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.Folder.list_files">
+<code class="sig-name descname">list_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.Folder.list_files" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.Folder.list_folders">
+<code class="sig-name descname">list_folders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.Folder.list_folders" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.Folder.list_names">
+<code class="sig-name descname">list_names</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">include_hidden</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.Folder.list_names" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.Folder.new_file">
+<code class="sig-name descname">new_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">check</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.Folder.new_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a <a class="reference internal" href="#zim.newfs.base.File" title="zim.newfs.base.File"><code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code></a> object for a new file below this folder.
+Like <a class="reference internal" href="#zim.newfs.base.Folder.file" title="zim.newfs.base.Folder.file"><code class="xref py py-class docutils literal notranslate"><span class="pre">file()</span></code></a> but guarantees the file does not yet exist by
+adding sequential numbers if needed. So the resulting file
+may have a modified name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – the relative file path</p></li>
+<li><p><strong>check</strong> – a function that can check and reject the choice before it
+is given back</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a <a class="reference internal" href="#zim.newfs.base.File" title="zim.newfs.base.File"><code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code></a> object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.Folder.new_folder">
+<code class="sig-name descname">new_folder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">check</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.Folder.new_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a <a class="reference internal" href="#zim.newfs.base.Folder" title="zim.newfs.base.Folder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Folder</span></code></a> object for a new folder below this folder.
+Like <a class="reference internal" href="#zim.newfs.base.Folder.folder" title="zim.newfs.base.Folder.folder"><code class="xref py py-class docutils literal notranslate"><span class="pre">folder()</span></code></a> but guarantees the file does not yet exist by
+adding sequential numbers if needed. So the resulting file
+may have a modified name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – the relative file path</p></li>
+<li><p><strong>check</strong> – a function that can check and reject the choice before it
+is given back</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a <a class="reference internal" href="#zim.newfs.base.Folder" title="zim.newfs.base.Folder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Folder</span></code></a> object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.base.Folder.path">
+<code class="sig-name descname">path</code><a class="headerlink" href="#zim.newfs.base.Folder.path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.base.Folder.pathnames">
+<code class="sig-name descname">pathnames</code><a class="headerlink" href="#zim.newfs.base.Folder.pathnames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.Folder.remove_children">
+<code class="sig-name descname">remove_children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.Folder.remove_children" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recursively remove everything below this folder .</p>
+<p><strong>WARNING:</strong> This is quite powerful and can do a lot of damage
+when executed for the wrong folder, so please make sure to double
+check the dir is actually what you think it is before calling this.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.base.Folder.walk">
+<code class="sig-name descname">walk</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.Folder.walk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="zim.newfs.base.FolderNotEmptyError">
+<em class="property">exception </em><code class="sig-prename descclassname">zim.newfs.base.</code><code class="sig-name descname">FolderNotEmptyError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.base.FolderNotEmptyError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.errors.Error" title="zim.errors.Error"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.errors.Error</span></code></a></p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="zim.newfs.base.IMAGE_EXTENSIONS">
+<code class="sig-prename descclassname">zim.newfs.base.</code><code class="sig-name descname">IMAGE_EXTENSIONS</code><em class="property"> = ('bmp', 'gif', 'icns', 'ico', 'cur', 'jp2', 'jpc', 'jpx', 'j2k', 'jpf', 'jpeg', 'jpe', 'jpg', 'pcx', 'png', 'pnm', 'pbm', 'pgm', 'ppm', 'ras', 'tga', 'targa', 'tiff', 'tif', 'wbmp', 'xbm', 'xpm', 'wmf', 'apm', 'svg', 'svgz', 'svg.gz')</em><a class="headerlink" href="#zim.newfs.base.IMAGE_EXTENSIONS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extensions to determine image mimetypes - used in <a class="reference internal" href="#zim.newfs.base.File.isimage" title="zim.newfs.base.File.isimage"><code class="xref py py-class docutils literal notranslate"><span class="pre">File.isimage()</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.newfs.helpers">
+<span id="zim-newfs-helpers-module"></span><h2>zim.newfs.helpers module<a class="headerlink" href="#module-zim.newfs.helpers" title="Permalink to this headline">¶</a></h2>
+<p>Helper classes for file system related functions</p>
+<dl class="py class">
+<dt id="zim.newfs.helpers.FSObjectMonitor">
+<em class="property">class </em><code class="sig-prename descclassname">zim.newfs.helpers.</code><code class="sig-name descname">FSObjectMonitor</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.helpers.FSObjectMonitor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.signals.SignalEmitter" title="zim.signals.SignalEmitter"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.signals.SignalEmitter</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.newfs.helpers.FileTreeWatcher">
+<em class="property">class </em><code class="sig-prename descclassname">zim.newfs.helpers.</code><code class="sig-name descname">FileTreeWatcher</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.helpers.FileTreeWatcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.signals.SignalEmitter" title="zim.signals.SignalEmitter"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.signals.SignalEmitter</span></code></a></p>
+<p>Helper object that adds signals for file changes. It can be
+used for the <code class="docutils literal notranslate"><span class="pre">watcher</span></code> attribute for file system objects.</p>
+<p>When use the object itself will call the “watcher” on changes
+and if the object is a folder it will pass on the “watcher” to
+child objects. So you can effectively watch a whole tree.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="zim.newfs.helpers.TrashCancelledError">
+<em class="property">exception </em><code class="sig-prename descclassname">zim.newfs.helpers.</code><code class="sig-name descname">TrashCancelledError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">msg</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.helpers.TrashCancelledError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.errors.Error" title="zim.errors.Error"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.errors.Error</span></code></a></p>
+<p>Error raised when a trashing operation is cancelled. (E.g. on
+windows the system will prompt the user with a confirmation
+dialog which has a Cancel button.)</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.newfs.helpers.TrashHelper">
+<em class="property">class </em><code class="sig-prename descclassname">zim.newfs.helpers.</code><code class="sig-name descname">TrashHelper</code><a class="headerlink" href="#zim.newfs.helpers.TrashHelper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="zim.newfs.helpers.TrashHelper.trash">
+<code class="sig-name descname">trash</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.helpers.TrashHelper.trash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trash a file or folder by moving it to the system trashcan
+if supported. Depends on the <code class="docutils literal notranslate"><span class="pre">gio</span></code> library.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file</strong> – a <code class="docutils literal notranslate"><span class="pre">LocalFile</span></code> object</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> when successful</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#zim.newfs.helpers.TrashNotSupportedError" title="zim.newfs.helpers.TrashNotSupportedError"><strong>TrashNotSupportedError</strong></a> – if trashing is not supported
+or failed.</p></li>
+<li><p><a class="reference internal" href="#zim.newfs.helpers.TrashCancelledError" title="zim.newfs.helpers.TrashCancelledError"><strong>TrashCancelledError</strong></a> – if trashing was cancelled by the
+user</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="zim.newfs.helpers.TrashNotSupportedError">
+<em class="property">exception </em><code class="sig-prename descclassname">zim.newfs.helpers.</code><code class="sig-name descname">TrashNotSupportedError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">msg</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.helpers.TrashNotSupportedError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.errors.Error" title="zim.errors.Error"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.errors.Error</span></code></a></p>
+<p>Error raised when trashing is not supported and delete should
+be used instead</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.newfs.helpers.format_file_size">
+<code class="sig-prename descclassname">zim.newfs.helpers.</code><code class="sig-name descname">format_file_size</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bytes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.helpers.format_file_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a human readable label  for a file size
+E.g. <code class="docutils literal notranslate"><span class="pre">1230</span></code> becomes <code class="docutils literal notranslate"><span class="pre">&quot;1.23kb&quot;</span></code>, idem for “Mb” and “Gb”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bytes</strong> – file size in bytes as integer</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>size as string</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.newfs.local">
+<span id="zim-newfs-local-module"></span><h2>zim.newfs.local module<a class="headerlink" href="#module-zim.newfs.local" title="Permalink to this headline">¶</a></h2>
+<p>Local file system object</p>
+<dl class="py class">
+<dt id="zim.newfs.local.AtomicWriteContext">
+<em class="property">class </em><code class="sig-prename descclassname">zim.newfs.local.</code><code class="sig-name descname">AtomicWriteContext</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.AtomicWriteContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="zim.newfs.local.FileNameLenghtError">
+<em class="property">exception </em><code class="sig-prename descclassname">zim.newfs.local.</code><code class="sig-name descname">FileNameLenghtError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">basename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.FileNameLenghtError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.errors.Error" title="zim.errors.Error"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.errors.Error</span></code></a></p>
+<dl class="py attribute">
+<dt id="zim.newfs.local.FileNameLenghtError.description">
+<code class="sig-name descname">description</code><em class="property"> = 'Cannot write this file. Probably this is due to the lenght\nof the file name, please try using a name with less\nthan 255 characters'</em><a class="headerlink" href="#zim.newfs.local.FileNameLenghtError.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.newfs.local.LocalFSObjectBase">
+<em class="property">class </em><code class="sig-prename descclassname">zim.newfs.local.</code><code class="sig-name descname">LocalFSObjectBase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">watcher</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFSObjectBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.newfs.base.FSObjectBase" title="zim.newfs.base.FSObjectBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.newfs.base.FSObjectBase</span></code></a></p>
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFSObjectBase.ctime">
+<code class="sig-name descname">ctime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFSObjectBase.ctime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFSObjectBase.isequal">
+<code class="sig-name descname">isequal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFSObjectBase.isequal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check file paths are equal based on stat results (inode
+number etc.). Intended to detect when two files or dirs are the
+same on case-insensitive filesystems. Does not explicitly check
+the content is the same.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> – an other <code class="xref py py-class docutils literal notranslate"><span class="pre">FilePath</span></code> object</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> when the two paths are one and the same file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.local.LocalFSObjectBase.islocal">
+<code class="sig-name descname">islocal</code><a class="headerlink" href="#zim.newfs.local.LocalFSObjectBase.islocal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFSObjectBase.iswritable">
+<code class="sig-name descname">iswritable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFSObjectBase.iswritable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFSObjectBase.moveto">
+<code class="sig-name descname">moveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFSObjectBase.moveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFSObjectBase.mtime">
+<code class="sig-name descname">mtime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFSObjectBase.mtime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFSObjectBase.parent">
+<code class="sig-name descname">parent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFSObjectBase.parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.local.LocalFSObjectBase.path">
+<code class="sig-name descname">path</code><a class="headerlink" href="#zim.newfs.local.LocalFSObjectBase.path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.local.LocalFSObjectBase.pathnames">
+<code class="sig-name descname">pathnames</code><a class="headerlink" href="#zim.newfs.local.LocalFSObjectBase.pathnames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.newfs.local.LocalFile">
+<em class="property">class </em><code class="sig-prename descclassname">zim.newfs.local.</code><code class="sig-name descname">LocalFile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">endofline</span><span class="o">=</span><span class="default_value">'unix'</span></em>, <em class="sig-param"><span class="n">watcher</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.newfs.local.LocalFSObjectBase" title="zim.newfs.local.LocalFSObjectBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.newfs.local.LocalFSObjectBase</span></code></a>, <a class="reference internal" href="#zim.newfs.base.File" title="zim.newfs.base.File"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.newfs.base.File</span></code></a></p>
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFile.copyto">
+<code class="sig-name descname">copyto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFile.copyto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFile.exists">
+<code class="sig-name descname">exists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFile.exists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.local.LocalFile.islocal">
+<code class="sig-name descname">islocal</code><a class="headerlink" href="#zim.newfs.local.LocalFile.islocal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.local.LocalFile.path">
+<code class="sig-name descname">path</code><a class="headerlink" href="#zim.newfs.local.LocalFile.path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.local.LocalFile.pathnames">
+<code class="sig-name descname">pathnames</code><a class="headerlink" href="#zim.newfs.local.LocalFile.pathnames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFile.read">
+<code class="sig-name descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFile.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFile.read_binary">
+<code class="sig-name descname">read_binary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFile.read_binary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFile.readline">
+<code class="sig-name descname">readline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFile.readline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFile.readlines">
+<code class="sig-name descname">readlines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFile.readlines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFile.remove">
+<code class="sig-name descname">remove</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cleanup</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFile.remove" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFile.size">
+<code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFile.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFile.touch">
+<code class="sig-name descname">touch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFile.touch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFile.write">
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFile.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFile.write_binary">
+<code class="sig-name descname">write_binary</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFile.write_binary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFile.writelines">
+<code class="sig-name descname">writelines</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFile.writelines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.newfs.local.LocalFolder">
+<em class="property">class </em><code class="sig-prename descclassname">zim.newfs.local.</code><code class="sig-name descname">LocalFolder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">watcher</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFolder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.newfs.local.LocalFSObjectBase" title="zim.newfs.local.LocalFSObjectBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.newfs.local.LocalFSObjectBase</span></code></a>, <a class="reference internal" href="#zim.newfs.base.Folder" title="zim.newfs.base.Folder"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.newfs.base.Folder</span></code></a></p>
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFolder.child">
+<code class="sig-name descname">child</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFolder.child" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFolder.copyto">
+<code class="sig-name descname">copyto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFolder.copyto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFolder.exists">
+<code class="sig-name descname">exists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFolder.exists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFolder.file">
+<code class="sig-name descname">file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFolder.file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFolder.folder">
+<code class="sig-name descname">folder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFolder.folder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.local.LocalFolder.islocal">
+<code class="sig-name descname">islocal</code><a class="headerlink" href="#zim.newfs.local.LocalFolder.islocal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFolder.list_names">
+<code class="sig-name descname">list_names</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">include_hidden</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFolder.list_names" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.local.LocalFolder.path">
+<code class="sig-name descname">path</code><a class="headerlink" href="#zim.newfs.local.LocalFolder.path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.local.LocalFolder.pathnames">
+<code class="sig-name descname">pathnames</code><a class="headerlink" href="#zim.newfs.local.LocalFolder.pathnames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFolder.remove">
+<code class="sig-name descname">remove</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cleanup</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFolder.remove" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalFolder.touch">
+<code class="sig-name descname">touch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalFolder.touch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.newfs.local.LocalTmpFolder">
+<em class="property">class </em><code class="sig-prename descclassname">zim.newfs.local.</code><code class="sig-name descname">LocalTmpFolder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">watcher</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalTmpFolder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.newfs.local.LocalFolder" title="zim.newfs.local.LocalFolder"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.newfs.local.LocalFolder</span></code></a></p>
+<dl class="py attribute">
+<dt id="zim.newfs.local.LocalTmpFolder.islocal">
+<code class="sig-name descname">islocal</code><a class="headerlink" href="#zim.newfs.local.LocalTmpFolder.islocal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.local.LocalTmpFolder.path">
+<code class="sig-name descname">path</code><a class="headerlink" href="#zim.newfs.local.LocalTmpFolder.path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.local.LocalTmpFolder.pathnames">
+<code class="sig-name descname">pathnames</code><a class="headerlink" href="#zim.newfs.local.LocalTmpFolder.pathnames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.local.LocalTmpFolder.remove">
+<code class="sig-name descname">remove</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.LocalTmpFolder.remove" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="zim.newfs.local.PathLenghtError">
+<em class="property">exception </em><code class="sig-prename descclassname">zim.newfs.local.</code><code class="sig-name descname">PathLenghtError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.PathLenghtError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.errors.Error" title="zim.errors.Error"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.errors.Error</span></code></a></p>
+<dl class="py attribute">
+<dt id="zim.newfs.local.PathLenghtError.description">
+<code class="sig-name descname">description</code><em class="property"> = 'Cannot write this file. Probably this is due to the lenght\nof the file path, please try using a folder structure resulting in less\nthan 4096 characters'</em><a class="headerlink" href="#zim.newfs.local.PathLenghtError.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.newfs.local.TmpFile">
+<em class="property">class </em><code class="sig-prename descclassname">zim.newfs.local.</code><code class="sig-name descname">TmpFile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">basename</span></em>, <em class="sig-param"><span class="n">unique</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">persistent</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.TmpFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.newfs.local.LocalFile" title="zim.newfs.local.LocalFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.newfs.local.LocalFile</span></code></a></p>
+<p>Class for temporary files. These are stored in the temp directory
+and by default they are deleted again when the object is destructed.</p>
+<dl class="py attribute">
+<dt id="zim.newfs.local.TmpFile.islocal">
+<code class="sig-name descname">islocal</code><a class="headerlink" href="#zim.newfs.local.TmpFile.islocal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.local.TmpFile.path">
+<code class="sig-name descname">path</code><a class="headerlink" href="#zim.newfs.local.TmpFile.path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.local.TmpFile.pathnames">
+<code class="sig-name descname">pathnames</code><a class="headerlink" href="#zim.newfs.local.TmpFile.pathnames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.newfs.local.get_tmpdir">
+<code class="sig-prename descclassname">zim.newfs.local.</code><code class="sig-name descname">get_tmpdir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.local.get_tmpdir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a folder in the system temp dir for usage by zim.
+This zim specific temp folder has permission set to be readable
+only by the current users, and is touched if it didn’t exist yet.
+Used as base folder by <a class="reference internal" href="#zim.newfs.local.TmpFile" title="zim.newfs.local.TmpFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">TmpFile</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a <code class="xref py py-class docutils literal notranslate"><span class="pre">Dir</span></code> object for the zim specific tmp folder</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.newfs.mock">
+<span id="zim-newfs-mock-module"></span><h2>zim.newfs.mock module<a class="headerlink" href="#module-zim.newfs.mock" title="Permalink to this headline">¶</a></h2>
+<p>Mock objects for file system classes</p>
+<p>Since the file system is an external resource that assumes an
+underlying reality, it is a hard thing to mock in test cases.
+However it is also relatively slow, so having a good mock makes
+good test cases much more usable.
+Therefore we go to great lenght here to have a full set of mock
+classes for all file system related objects.</p>
+<dl class="py class">
+<dt id="zim.newfs.mock.MockFile">
+<em class="property">class </em><code class="sig-prename descclassname">zim.newfs.mock.</code><code class="sig-name descname">MockFile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">endofline</span><span class="o">=</span><span class="default_value">'unix'</span></em>, <em class="sig-param"><span class="n">watcher</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">_fs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.mock.MockFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">zim.newfs.mock.MockFSObjectBase</span></code>, <a class="reference internal" href="#zim.newfs.base.File" title="zim.newfs.base.File"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.newfs.base.File</span></code></a></p>
+<dl class="py attribute">
+<dt id="zim.newfs.mock.MockFile.islocal">
+<code class="sig-name descname">islocal</code><a class="headerlink" href="#zim.newfs.mock.MockFile.islocal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.mock.MockFile.path">
+<code class="sig-name descname">path</code><a class="headerlink" href="#zim.newfs.mock.MockFile.path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.mock.MockFile.pathnames">
+<code class="sig-name descname">pathnames</code><a class="headerlink" href="#zim.newfs.mock.MockFile.pathnames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.mock.MockFile.read">
+<code class="sig-name descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.mock.MockFile.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.mock.MockFile.read_binary">
+<code class="sig-name descname">read_binary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.mock.MockFile.read_binary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.mock.MockFile.readline">
+<code class="sig-name descname">readline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.mock.MockFile.readline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.mock.MockFile.readlines">
+<code class="sig-name descname">readlines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.mock.MockFile.readlines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.mock.MockFile.size">
+<code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.mock.MockFile.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.mock.MockFile.write">
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.mock.MockFile.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.mock.MockFile.write_binary">
+<code class="sig-name descname">write_binary</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.mock.MockFile.write_binary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.mock.MockFile.writelines">
+<code class="sig-name descname">writelines</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.mock.MockFile.writelines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.newfs.mock.MockFolder">
+<em class="property">class </em><code class="sig-prename descclassname">zim.newfs.mock.</code><code class="sig-name descname">MockFolder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">watcher</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">_fs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.mock.MockFolder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">zim.newfs.mock.MockFSObjectBase</span></code>, <a class="reference internal" href="#zim.newfs.base.Folder" title="zim.newfs.base.Folder"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.newfs.base.Folder</span></code></a></p>
+<dl class="py method">
+<dt id="zim.newfs.mock.MockFolder.child">
+<code class="sig-name descname">child</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.mock.MockFolder.child" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.mock.MockFolder.exists">
+<code class="sig-name descname">exists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.mock.MockFolder.exists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.mock.MockFolder.file">
+<code class="sig-name descname">file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.mock.MockFolder.file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.mock.MockFolder.folder">
+<code class="sig-name descname">folder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.mock.MockFolder.folder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.mock.MockFolder.islocal">
+<code class="sig-name descname">islocal</code><a class="headerlink" href="#zim.newfs.mock.MockFolder.islocal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.mock.MockFolder.list_names">
+<code class="sig-name descname">list_names</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">include_hidden</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.mock.MockFolder.list_names" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.mock.MockFolder.path">
+<code class="sig-name descname">path</code><a class="headerlink" href="#zim.newfs.mock.MockFolder.path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.newfs.mock.MockFolder.pathnames">
+<code class="sig-name descname">pathnames</code><a class="headerlink" href="#zim.newfs.mock.MockFolder.pathnames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.newfs.mock.MockFolder.touch">
+<code class="sig-name descname">touch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.mock.MockFolder.touch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.newfs">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-zim.newfs" title="Permalink to this headline">¶</a></h2>
+<p>Module which contains all classes to deal with the filesystem</p>
+<dl class="py data">
+<dt id="zim.newfs.FS_CASE_SENSITIVE">
+<code class="sig-prename descclassname">zim.newfs.</code><code class="sig-name descname">FS_CASE_SENSITIVE</code><em class="property"> = True</em><a class="headerlink" href="#zim.newfs.FS_CASE_SENSITIVE" title="Permalink to this definition">¶</a></dt>
+<dd><p>file system case-sensitive yes or no</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="zim.newfs.FS_SUPPORT_NON_LOCAL_FILE_SHARES">
+<code class="sig-prename descclassname">zim.newfs.</code><code class="sig-name descname">FS_SUPPORT_NON_LOCAL_FILE_SHARES</code><em class="property"> = False</em><a class="headerlink" href="#zim.newfs.FS_SUPPORT_NON_LOCAL_FILE_SHARES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Support \hostshare paths yes or no</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.newfs.cleanup_filename">
+<code class="sig-prename descclassname">zim.newfs.</code><code class="sig-name descname">cleanup_filename</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.cleanup_filename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes all characters in ‘name’ that are not allowed as part
+of a file name. This function is intended for e.g. config files etc.
+<strong>not</strong> for page files in a store.
+For file system filenames we can not use:
+‘', ‘/’, ‘:’, ‘*’, ‘?’, ‘”’, ‘&lt;’, ‘&gt;’, ‘|’
+And we also exclude “t” and “n”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> – the filename as string</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the name with invalid characters removed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.newfs.format_file_size">
+<code class="sig-prename descclassname">zim.newfs.</code><code class="sig-name descname">format_file_size</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bytes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.format_file_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a human readable label  for a file size
+E.g. <code class="docutils literal notranslate"><span class="pre">1230</span></code> becomes <code class="docutils literal notranslate"><span class="pre">&quot;1.23kb&quot;</span></code>, idem for “Mb” and “Gb”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bytes</strong> – file size in bytes as integer</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>size as string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.newfs.localFileOrFolder">
+<code class="sig-prename descclassname">zim.newfs.</code><code class="sig-name descname">localFileOrFolder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.newfs.localFileOrFolder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience method that resolves a local <code class="docutils literal notranslate"><span class="pre">File</span></code> or <code class="docutils literal notranslate"><span class="pre">Folder</span></code> object</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Zim Desktop Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Jaap Karssenberg and contributors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/zim.newfs.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

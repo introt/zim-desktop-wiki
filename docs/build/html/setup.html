@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setup module &#8212; Zim Desktop Wiki 0.74 develop documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-setup">
+<span id="setup-module"></span><h1>setup module<a class="headerlink" href="#module-setup" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="setup.collect_data_files">
+<code class="sig-prename descclassname">setup.</code><code class="sig-name descname">collect_data_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#setup.collect_data_files" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="setup.collect_packages">
+<code class="sig-prename descclassname">setup.</code><code class="sig-name descname">collect_packages</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#setup.collect_packages" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="setup.fix_dist">
+<code class="sig-prename descclassname">setup.</code><code class="sig-name descname">fix_dist</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#setup.fix_dist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="setup.get_mopath">
+<code class="sig-prename descclassname">setup.</code><code class="sig-name descname">get_mopath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pofile</span></em><span class="sig-paren">)</span><a class="headerlink" href="#setup.get_mopath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="setup.include_file">
+<code class="sig-prename descclassname">setup.</code><code class="sig-name descname">include_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#setup.include_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="setup.zim_build_class">
+<em class="property">class </em><code class="sig-prename descclassname">setup.</code><code class="sig-name descname">zim_build_class</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dist</span></em><span class="sig-paren">)</span><a class="headerlink" href="#setup.zim_build_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">distutils.command.build.build</span></code></p>
+<dl class="py method">
+<dt id="setup.zim_build_class.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#setup.zim_build_class.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>A command’s raison d’etre: carry out the action it exists to
+perform, controlled by the options initialized in
+‘initialize_options()’, customized by other commands, the setup
+script, the command-line, and config files, and finalized in
+‘finalize_options()’.  All terminal output and filesystem
+interaction should be done by ‘run()’.</p>
+<p>This method must be implemented by all command classes.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="setup.zim_build_class.sub_commands">
+<code class="sig-name descname">sub_commands</code><em class="property"> = [('build_py', &lt;function build.has_pure_modules&gt;), ('build_clib', &lt;function build.has_c_libraries&gt;), ('build_ext', &lt;function build.has_ext_modules&gt;), ('build_scripts', &lt;function build.has_scripts&gt;), ('build_trans', None)]</em><a class="headerlink" href="#setup.zim_build_class.sub_commands" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="setup.zim_build_scripts_class">
+<em class="property">class </em><code class="sig-prename descclassname">setup.</code><code class="sig-name descname">zim_build_scripts_class</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dist</span></em><span class="sig-paren">)</span><a class="headerlink" href="#setup.zim_build_scripts_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">distutils.command.build_scripts.build_scripts</span></code></p>
+<dl class="py method">
+<dt id="setup.zim_build_scripts_class.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#setup.zim_build_scripts_class.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>A command’s raison d’etre: carry out the action it exists to
+perform, controlled by the options initialized in
+‘initialize_options()’, customized by other commands, the setup
+script, the command-line, and config files, and finalized in
+‘finalize_options()’.  All terminal output and filesystem
+interaction should be done by ‘run()’.</p>
+<p>This method must be implemented by all command classes.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="setup.zim_build_trans_class">
+<em class="property">class </em><code class="sig-prename descclassname">setup.</code><code class="sig-name descname">zim_build_trans_class</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dist</span></em><span class="sig-paren">)</span><a class="headerlink" href="#setup.zim_build_trans_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">distutils.cmd.Command</span></code></p>
+<dl class="py attribute">
+<dt id="setup.zim_build_trans_class.description">
+<code class="sig-name descname">description</code><em class="property"> = 'Build translation files'</em><a class="headerlink" href="#setup.zim_build_trans_class.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="setup.zim_build_trans_class.finalize_options">
+<code class="sig-name descname">finalize_options</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#setup.zim_build_trans_class.finalize_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set final values for all the options that this command supports.
+This is always called as late as possible, ie.  after any option
+assignments from the command-line or from other commands have been
+done.  Thus, this is the place to code option dependencies: if
+‘foo’ depends on ‘bar’, then it is safe to set ‘foo’ from ‘bar’ as
+long as ‘foo’ still has the same value it was assigned in
+‘initialize_options()’.</p>
+<p>This method must be implemented by all command classes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="setup.zim_build_trans_class.initialize_options">
+<code class="sig-name descname">initialize_options</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#setup.zim_build_trans_class.initialize_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set default values for all the options that this command
+supports.  Note that these defaults may be overridden by other
+commands, by the setup script, by config files, or by the
+command-line.  Thus, this is not the place to code dependencies
+between options; generally, ‘initialize_options()’ implementations
+are just a bunch of “self.foo = None” assignments.</p>
+<p>This method must be implemented by all command classes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="setup.zim_build_trans_class.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#setup.zim_build_trans_class.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>A command’s raison d’etre: carry out the action it exists to
+perform, controlled by the options initialized in
+‘initialize_options()’, customized by other commands, the setup
+script, the command-line, and config files, and finalized in
+‘finalize_options()’.  All terminal output and filesystem
+interaction should be done by ‘run()’.</p>
+<p>This method must be implemented by all command classes.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="setup.zim_build_trans_class.user_options">
+<code class="sig-name descname">user_options</code><em class="property"> = []</em><a class="headerlink" href="#setup.zim_build_trans_class.user_options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="setup.zim_install_class">
+<em class="property">class </em><code class="sig-prename descclassname">setup.</code><code class="sig-name descname">zim_install_class</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dist</span></em><span class="sig-paren">)</span><a class="headerlink" href="#setup.zim_install_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">distutils.command.install.install</span></code></p>
+<dl class="py method">
+<dt id="setup.zim_install_class.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#setup.zim_install_class.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the command.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="setup.zim_sdist_class">
+<em class="property">class </em><code class="sig-prename descclassname">setup.</code><code class="sig-name descname">zim_sdist_class</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dist</span></em><span class="sig-paren">)</span><a class="headerlink" href="#setup.zim_sdist_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">distutils.command.sdist.sdist</span></code></p>
+<dl class="py method">
+<dt id="setup.zim_sdist_class.initialize_options">
+<code class="sig-name descname">initialize_options</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#setup.zim_sdist_class.initialize_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set default values for all the options that this command
+supports.  Note that these defaults may be overridden by other
+commands, by the setup script, by config files, or by the
+command-line.  Thus, this is not the place to code dependencies
+between options; generally, ‘initialize_options()’ implementations
+are just a bunch of “self.foo = None” assignments.</p>
+<p>This method must be implemented by all command classes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="setup.zim_sdist_class.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#setup.zim_sdist_class.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>A command’s raison d’etre: carry out the action it exists to
+perform, controlled by the options initialized in
+‘initialize_options()’, customized by other commands, the setup
+script, the command-line, and config files, and finalized in
+‘finalize_options()’.  All terminal output and filesystem
+interaction should be done by ‘run()’.</p>
+<p>This method must be implemented by all command classes.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Zim Desktop Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Jaap Karssenberg and contributors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/setup.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

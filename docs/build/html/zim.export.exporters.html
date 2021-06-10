@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zim.export.exporters package &#8212; Zim Desktop Wiki 0.74 develop documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="zim-export-exporters-package">
+<h1>zim.export.exporters package<a class="headerlink" href="#zim-export-exporters-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-zim.export.exporters.files">
+<span id="zim-export-exporters-files-module"></span><h2>zim.export.exporters.files module<a class="headerlink" href="#module-zim.export.exporters.files" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="zim.export.exporters.files.FilesExporterBase">
+<em class="property">class </em><code class="sig-prename descclassname">zim.export.exporters.files.</code><code class="sig-name descname">FilesExporterBase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layout</span></em>, <em class="sig-param"><span class="n">template</span></em>, <em class="sig-param"><span class="n">format</span></em>, <em class="sig-param"><span class="n">document_root_url</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.export.exporters.files.FilesExporterBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.export.exporters.Exporter" title="zim.export.exporters.Exporter"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.export.exporters.Exporter</span></code></a></p>
+<p>Base class for exporters that export to files</p>
+<dl class="py method">
+<dt id="zim.export.exporters.files.FilesExporterBase.export_attachments_iter">
+<code class="sig-name descname">export_attachments_iter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">notebook</span></em>, <em class="sig-param"><span class="n">page</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.export.exporters.files.FilesExporterBase.export_attachments_iter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.export.exporters.files.FilesExporterBase.export_resources">
+<code class="sig-name descname">export_resources</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.export.exporters.files.FilesExporterBase.export_resources" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.export.exporters.files.MultiFileExporter">
+<em class="property">class </em><code class="sig-prename descclassname">zim.export.exporters.files.</code><code class="sig-name descname">MultiFileExporter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layout</span></em>, <em class="sig-param"><span class="n">template</span></em>, <em class="sig-param"><span class="n">format</span></em>, <em class="sig-param"><span class="n">index_page</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">document_root_url</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.export.exporters.files.MultiFileExporter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.export.exporters.files.FilesExporterBase" title="zim.export.exporters.files.FilesExporterBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.export.exporters.files.FilesExporterBase</span></code></a></p>
+<p>Exporter that exports each page to a single file</p>
+<dl class="py method">
+<dt id="zim.export.exporters.files.MultiFileExporter.export_index">
+<code class="sig-name descname">export_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index_page</span></em>, <em class="sig-param"><span class="n">pages</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.export.exporters.files.MultiFileExporter.export_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.export.exporters.files.MultiFileExporter.export_iter">
+<code class="sig-name descname">export_iter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pages</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.export.exporters.files.MultiFileExporter.export_iter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export pages while yielding page objects that are exported
+for progress monitoring</p>
+<p>Also note that implementations must be robust to ignore errors
+when exporting pages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pages</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">PageSelection</span></code> object</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.export.exporters.files.MultiFileExporter.export_page">
+<code class="sig-name descname">export_page</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">notebook</span></em>, <em class="sig-param"><span class="n">page</span></em>, <em class="sig-param"><span class="n">pages</span></em>, <em class="sig-param"><span class="n">prevpage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nextpage</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.export.exporters.files.MultiFileExporter.export_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.export.exporters.files.SingleFileExporter">
+<em class="property">class </em><code class="sig-prename descclassname">zim.export.exporters.files.</code><code class="sig-name descname">SingleFileExporter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layout</span></em>, <em class="sig-param"><span class="n">template</span></em>, <em class="sig-param"><span class="n">format</span></em>, <em class="sig-param"><span class="n">document_root_url</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.export.exporters.files.SingleFileExporter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.export.exporters.files.FilesExporterBase" title="zim.export.exporters.files.FilesExporterBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.export.exporters.files.FilesExporterBase</span></code></a></p>
+<p>Exporter that exports all page to the same file</p>
+<dl class="py method">
+<dt id="zim.export.exporters.files.SingleFileExporter.export_iter">
+<code class="sig-name descname">export_iter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pages</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.export.exporters.files.SingleFileExporter.export_iter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export pages while yielding page objects that are exported
+for progress monitoring</p>
+<p>Also note that implementations must be robust to ignore errors
+when exporting pages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pages</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">PageSelection</span></code> object</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.export.exporters.mhtml">
+<span id="zim-export-exporters-mhtml-module"></span><h2>zim.export.exporters.mhtml module<a class="headerlink" href="#module-zim.export.exporters.mhtml" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="zim.export.exporters.mhtml.MHTMLEncoder">
+<em class="property">class </em><code class="sig-prename descclassname">zim.export.exporters.mhtml.</code><code class="sig-name descname">MHTMLEncoder</code><a class="headerlink" href="#zim.export.exporters.mhtml.MHTMLEncoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="zim.export.exporters.mhtml.MHTMLEncoder.encode_data_file">
+<code class="sig-name descname">encode_data_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">mimetype</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.export.exporters.mhtml.MHTMLEncoder.encode_data_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.export.exporters.mhtml.MHTMLEncoder.encode_text_file">
+<code class="sig-name descname">encode_text_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">mimetype</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.export.exporters.mhtml.MHTMLEncoder.encode_text_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.export.exporters.mhtml.MHTMLExporter">
+<em class="property">class </em><code class="sig-prename descclassname">zim.export.exporters.mhtml.</code><code class="sig-name descname">MHTMLExporter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">template</span></em>, <em class="sig-param"><span class="n">document_root_url</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.export.exporters.mhtml.MHTMLExporter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.export.exporters.Exporter" title="zim.export.exporters.Exporter"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.export.exporters.Exporter</span></code></a></p>
+<p>Exporter that exports pages and attachments to a single MHTML
+file.</p>
+<dl class="py method">
+<dt id="zim.export.exporters.mhtml.MHTMLExporter.export_iter">
+<code class="sig-name descname">export_iter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pages</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.export.exporters.mhtml.MHTMLExporter.export_iter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export pages while yielding page objects that are exported
+for progress monitoring</p>
+<p>Also note that implementations must be robust to ignore errors
+when exporting pages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pages</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">PageSelection</span></code> object</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.export.exporters">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-zim.export.exporters" title="Permalink to this headline">¶</a></h2>
+<p>The exporters are the main public objects for exporting, they
+control the execution of the whole process. Each exporter implements a
+different export style.</p>
+<dl class="py class">
+<dt id="zim.export.exporters.Exporter">
+<em class="property">class </em><code class="sig-prename descclassname">zim.export.exporters.</code><code class="sig-name descname">Exporter</code><a class="headerlink" href="#zim.export.exporters.Exporter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class that defines the public API for exporter objects</p>
+<dl class="py method">
+<dt id="zim.export.exporters.Exporter.export">
+<code class="sig-name descname">export</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pages</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.export.exporters.Exporter.export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export pages</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pages</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">PageSelection</span></code> object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.export.exporters.Exporter.export_iter">
+<code class="sig-name descname">export_iter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pages</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.export.exporters.Exporter.export_iter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export pages while yielding page objects that are exported
+for progress monitoring</p>
+<p>Also note that implementations must be robust to ignore errors
+when exporting pages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pages</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">PageSelection</span></code> object</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.export.exporters.createIndexPage">
+<code class="sig-prename descclassname">zim.export.exporters.</code><code class="sig-name descname">createIndexPage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">notebook</span></em>, <em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">section</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.export.exporters.createIndexPage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Zim Desktop Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Jaap Karssenberg and contributors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/zim.export.exporters.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

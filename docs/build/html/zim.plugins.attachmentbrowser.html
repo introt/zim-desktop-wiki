@@ -1,0 +1,506 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zim.plugins.attachmentbrowser package &#8212; Zim Desktop Wiki 0.74 develop documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="zim-plugins-attachmentbrowser-package">
+<h1>zim.plugins.attachmentbrowser package<a class="headerlink" href="#zim-plugins-attachmentbrowser-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-zim.plugins.attachmentbrowser.filebrowser">
+<span id="zim-plugins-attachmentbrowser-filebrowser-module"></span><h2>zim.plugins.attachmentbrowser.filebrowser module<a class="headerlink" href="#module-zim.plugins.attachmentbrowser.filebrowser" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.attachmentbrowser.filebrowser.</code><code class="sig-name descname">FileBrowserIconView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">opener</span></em>, <em class="sig-param"><span class="n">icon_size</span><span class="o">=</span><span class="default_value">128</span></em>, <em class="sig-param"><span class="n">use_thumbnails</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">thumbnail_svg</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.overrides.Gtk.IconView</span></code></p>
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.do_populate_popup">
+<code class="sig-name descname">do_populate_popup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">menu</span></em>, <em class="sig-param"><span class="n">pathinfo</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.do_populate_popup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.on_button_press_event">
+<code class="sig-name descname">on_button_press_event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iconview</span></em>, <em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.on_button_press_event" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.on_drag_data_get">
+<code class="sig-name descname">on_drag_data_get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iconview</span></em>, <em class="sig-param"><span class="n">dragcontext</span></em>, <em class="sig-param"><span class="n">selectiondata</span></em>, <em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.on_drag_data_get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.on_drag_data_received">
+<code class="sig-name descname">on_drag_data_received</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iconview</span></em>, <em class="sig-param"><span class="n">dragcontext</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">selectiondata</span></em>, <em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.on_drag_data_received" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.on_item_activated">
+<code class="sig-name descname">on_item_activated</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iconview</span></em>, <em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.on_item_activated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.refresh">
+<code class="sig-name descname">refresh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">settings_changed</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.refresh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.set_folder">
+<code class="sig-name descname">set_folder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">folder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.set_folder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.set_icon_size">
+<code class="sig-name descname">set_icon_size</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">icon_size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.set_icon_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.set_thumbnail_svg">
+<code class="sig-name descname">set_thumbnail_svg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">thumbnail_svg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.set_thumbnail_svg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.set_use_thumbnails">
+<code class="sig-name descname">set_use_thumbnails</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">use_thumbnails</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.set_use_thumbnails" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.teardown_folder">
+<code class="sig-name descname">teardown_folder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.filebrowser.FileBrowserIconView.teardown_folder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.plugins.attachmentbrowser.filebrowser.delete_file">
+<code class="sig-prename descclassname">zim.plugins.attachmentbrowser.filebrowser.</code><code class="sig-name descname">delete_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">widget</span></em>, <em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.filebrowser.delete_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>widget</strong> – parent for new dialogs, <code class="docutils literal notranslate"><span class="pre">Gtk.Widget</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><strong>file</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code> object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="zim.html#zim.fs.FileNotFoundError" title="zim.fs.FileNotFoundError"><strong>FileNotFoundError</strong></a> – if <code class="docutils literal notranslate"><span class="pre">file</span></code> does not exist</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.plugins.attachmentbrowser.filebrowser.rename_file">
+<code class="sig-prename descclassname">zim.plugins.attachmentbrowser.filebrowser.</code><code class="sig-name descname">rename_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">widget</span></em>, <em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.filebrowser.rename_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rename a file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>widget</strong> – parent for new dialogs, <code class="docutils literal notranslate"><span class="pre">Gtk.Widget</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><strong>file</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code> object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="zim.html#zim.fs.FileNotFoundError" title="zim.fs.FileNotFoundError"><strong>FileNotFoundError</strong></a> – if <code class="docutils literal notranslate"><span class="pre">file</span></code> does not exist</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.plugins.attachmentbrowser.filebrowser.render_file_icon">
+<code class="sig-prename descclassname">zim.plugins.attachmentbrowser.filebrowser.</code><code class="sig-name descname">render_file_icon</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">widget</span></em>, <em class="sig-param"><span class="n">size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.filebrowser.render_file_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-zim.plugins.attachmentbrowser.filerenamedialog">
+<span id="zim-plugins-attachmentbrowser-filerenamedialog-module"></span><h2>zim.plugins.attachmentbrowser.filerenamedialog module<a class="headerlink" href="#module-zim.plugins.attachmentbrowser.filerenamedialog" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.attachmentbrowser.filerenamedialog.</code><code class="sig-name descname">FileRenameDialog</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent</span></em>, <em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.gui.html#zim.gui.widgets.Dialog" title="zim.gui.widgets.Dialog"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.gui.widgets.Dialog</span></code></a></p>
+<p>A dialog for renaming a file.</p>
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog.do_response_ok">
+<code class="sig-name descname">do_response_ok</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog.do_response_ok" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handler called when the user clicks the “OK” button (or
+an equivalent button)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if successfull and the dialog can close. Returns
+<code class="docutils literal notranslate"><span class="pre">False</span></code> if e.g. input is not valid, this will keep the dialog open.</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by sub-classes that have
+an “OK” button</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog.do_validate">
+<code class="sig-name descname">do_validate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">widget</span></em>, <em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog.do_validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validating new file name, show error when validation fails and enable/disable ok button.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.plugins.attachmentbrowser.thumbnailer">
+<span id="zim-plugins-attachmentbrowser-thumbnailer-module"></span><h2>zim.plugins.attachmentbrowser.thumbnailer module<a class="headerlink" href="#module-zim.plugins.attachmentbrowser.thumbnailer" title="Permalink to this headline">¶</a></h2>
+<dl class="py exception">
+<dt id="zim.plugins.attachmentbrowser.thumbnailer.ThumbnailCreatorFailure">
+<em class="property">exception </em><code class="sig-prename descclassname">zim.plugins.attachmentbrowser.thumbnailer.</code><code class="sig-name descname">ThumbnailCreatorFailure</code><a class="headerlink" href="#zim.plugins.attachmentbrowser.thumbnailer.ThumbnailCreatorFailure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.attachmentbrowser.thumbnailer.ThumbnailManager">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.attachmentbrowser.thumbnailer.</code><code class="sig-name descname">ThumbnailManager</code><span class="sig-paren">(</span><em class="sig-param">thumbnailcreator=&lt;function pixbufThumbnailCreator&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.thumbnailer.ThumbnailManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class implements thumbnails management (mostly) following
+the <code class="docutils literal notranslate"><span class="pre">freedesktop.org</span></code> spec.</p>
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.thumbnailer.ThumbnailManager.create_thumbnail">
+<code class="sig-name descname">create_thumbnail</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.thumbnailer.ThumbnailManager.create_thumbnail" title="Permalink to this definition">¶</a></dt>
+<dd><p>(Re-)create a thumbnail without any checking whether the
+old one is still valid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file</strong> – the file to be thumbnailed as <code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code> object</p></li>
+<li><p><strong>size</strong> – pixel size for thumbnail file as integer</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a 2-tuple of the thumbnail file and a pixbuf object</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.plugins.attachmentbrowser.thumbnailer.ThumbnailCreatorFailure" title="zim.plugins.attachmentbrowser.thumbnailer.ThumbnailCreatorFailure"><strong>ThumbnailCreatorFailure</strong></a> – if creation fails unexpectedly</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.thumbnailer.ThumbnailManager.get_thumbnail">
+<code class="sig-name descname">get_thumbnail</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">size</span></em>, <em class="sig-param"><span class="n">create</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.thumbnailer.ThumbnailManager.get_thumbnail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Looksup thumbnail and return it if a valid thumbnail is
+availabel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file</strong> – the file to be thumbnailed as <code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code> object</p></li>
+<li><p><strong>size</strong> – pixel size for thumbnail image as integer</p></li>
+<li><p><strong>create</strong> – if <code class="docutils literal notranslate"><span class="pre">True</span></code> we try to create the thumbnail if
+it doesn’t exist</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a 2-tuple of the thumbnail file and a pixbuf object
+or 2 times <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.thumbnailer.ThumbnailManager.get_thumbnail_file">
+<code class="sig-name descname">get_thumbnail_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.thumbnailer.ThumbnailManager.get_thumbnail_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get <code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code> object for thumbnail
+Does not guarantee that the thumbnail actually exists.
+Do not use this method to lookup the thumbnail, use <a class="reference internal" href="#zim.plugins.attachmentbrowser.thumbnailer.ThumbnailManager.get_thumbnail" title="zim.plugins.attachmentbrowser.thumbnailer.ThumbnailManager.get_thumbnail"><code class="xref py py-class docutils literal notranslate"><span class="pre">get_thumbnail()</span></code></a>
+instead.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file</strong> – the original file to be thumbnailed</p></li>
+<li><p><strong>size</strong> – thumbnail size in pixels (<code class="docutils literal notranslate"><span class="pre">THUMB_SIZE_NORMAL</span></code>, <code class="docutils literal notranslate"><span class="pre">THUMB_SIZE_LARGE</span></code>, or integer)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a <code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code> object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.thumbnailer.ThumbnailManager.remove_thumbnails">
+<code class="sig-name descname">remove_thumbnails</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.thumbnailer.ThumbnailManager.remove_thumbnails" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove thumbnails for at all sizes
+To be used when thumbnails are outdated, e.g. when the original
+file is removed or updated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file</strong> – the original file</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.attachmentbrowser.thumbnailer.ThumbnailQueue">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.attachmentbrowser.thumbnailer.</code><code class="sig-name descname">ThumbnailQueue</code><span class="sig-paren">(</span><em class="sig-param">thumbnailcreator=&lt;function pixbufThumbnailCreator&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.thumbnailer.ThumbnailQueue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Wrapper for <a class="reference internal" href="#zim.plugins.attachmentbrowser.thumbnailer.ThumbnailManager" title="zim.plugins.attachmentbrowser.thumbnailer.ThumbnailManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">ThumbnailManager</span></code></a> that does that actual thumbnailing
+in a separate thread and manages the requests and the results with
+queues.</p>
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.thumbnailer.ThumbnailQueue.clear_queue">
+<code class="sig-name descname">clear_queue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.thumbnailer.ThumbnailQueue.clear_queue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.thumbnailer.ThumbnailQueue.get_ready_thumbnail">
+<code class="sig-name descname">get_ready_thumbnail</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">block</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.thumbnailer.ThumbnailQueue.get_ready_thumbnail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check output queue for a thumbnail that is ready</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a 5-tuple <code class="docutils literal notranslate"><span class="pre">(file,</span> <span class="pre">size,</span> <span class="pre">thumbfile,</span> <span class="pre">pixbuf,</span> <span class="pre">mtime)</span></code> or 5 times
+<code class="docutils literal notranslate"><span class="pre">None</span></code> when nothing is ready and <code class="docutils literal notranslate"><span class="pre">block</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.thumbnailer.ThumbnailQueue.queue_empty">
+<code class="sig-name descname">queue_empty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.thumbnailer.ThumbnailQueue.queue_empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> when both input and output queue are empty</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.thumbnailer.ThumbnailQueue.queue_thumbnail_request">
+<code class="sig-name descname">queue_thumbnail_request</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">size</span></em>, <em class="sig-param"><span class="n">mtime</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.thumbnailer.ThumbnailQueue.queue_thumbnail_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a new request to the queue</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code> object</p></li>
+<li><p><strong>size</strong> – the size of the thumbnail in pixels</p></li>
+<li><p><strong>mtime</strong> – the mtime of a previous loaded thumbnail, if this
+matches the current file, the request will be dropped</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.thumbnailer.ThumbnailQueue.start">
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.thumbnailer.ThumbnailQueue.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.plugins.attachmentbrowser.thumbnailer.pixbufThumbnailCreator">
+<code class="sig-prename descclassname">zim.plugins.attachmentbrowser.thumbnailer.</code><code class="sig-name descname">pixbufThumbnailCreator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">thumbfile</span></em>, <em class="sig-param"><span class="n">thumbsize</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.thumbnailer.pixbufThumbnailCreator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Thumbnailer implementation that uses the <code class="docutils literal notranslate"><span class="pre">GdkPixbuf.Pixbuf</span></code>
+functions to create the thumbnail.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.plugins.attachmentbrowser">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-zim.plugins.attachmentbrowser" title="Permalink to this headline">¶</a></h2>
+<p>Zim plugin to display files in attachments folder.</p>
+<dl class="py class">
+<dt id="zim.plugins.attachmentbrowser.AttachmentBrowserPlugin">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.attachmentbrowser.</code><code class="sig-name descname">AttachmentBrowserPlugin</code><a class="headerlink" href="#zim.plugins.attachmentbrowser.AttachmentBrowserPlugin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.plugins.html#zim.plugins.PluginClass" title="zim.plugins.PluginClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.plugins.PluginClass</span></code></a></p>
+<dl class="py attribute">
+<dt id="zim.plugins.attachmentbrowser.AttachmentBrowserPlugin.plugin_info">
+<code class="sig-name descname">plugin_info</code><em class="property"> = {'author': 'Thorsten Hackbarth &lt;thorsten.hackbarth&#64;gmx.de&gt;\nJaap Karssenberg &lt;jaap.karssenberg&#64;gmail.com&gt;\nThomas Engel &lt;realdatenwurm&#64;gmail.com&gt;', 'description': 'This plugin shows the attachments folder of the current page as an\nicon view at bottom pane.\n', 'help': 'Plugins:Attachment Browser', 'name': 'Attachment Browser'}</em><a class="headerlink" href="#zim.plugins.attachmentbrowser.AttachmentBrowserPlugin.plugin_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.attachmentbrowser.AttachmentBrowserPlugin.plugin_preferences">
+<code class="sig-name descname">plugin_preferences</code><em class="property"> = (('pane', 'choice', 'Position in the window', 'bottom_pane', (('left_pane', 'Left Side Pane'), ('right_pane', 'Right Side Pane'), ('bottom_pane', 'Bottom Pane'), ('top_pane', 'Top Pane'))), ('use_thumbnails', 'bool', 'Use thumbnails', True), ('thumbnail_svg', 'bool', 'Support thumbnails for SVG', False))</em><a class="headerlink" href="#zim.plugins.attachmentbrowser.AttachmentBrowserPlugin.plugin_preferences" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.attachmentbrowser.</code><code class="sig-name descname">AttachmentBrowserPluginWidget</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">extension</span></em>, <em class="sig-param"><span class="n">opener</span></em>, <em class="sig-param"><span class="n">preferences</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.repository.Gtk.HBox</span></code>, <a class="reference internal" href="zim.gui.html#zim.gui.widgets.WindowSidePaneWidget" title="zim.gui.widgets.WindowSidePaneWidget"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.gui.widgets.WindowSidePaneWidget</span></code></a></p>
+<p>Wrapper aroung the <code class="xref py py-class docutils literal notranslate"><span class="pre">FileBrowserIconView</span></code> that adds the buttons
+for zoom / open folder / etc. …</p>
+<dl class="py attribute">
+<dt id="zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.icon_size">
+<code class="sig-name descname">icon_size</code><em class="property"> = None</em><a class="headerlink" href="#zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.icon_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.on_open_folder">
+<code class="sig-name descname">on_open_folder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.on_open_folder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.on_preferences_changed">
+<code class="sig-name descname">on_preferences_changed</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">a</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.on_preferences_changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.on_refresh_button">
+<code class="sig-name descname">on_refresh_button</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.on_refresh_button" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.on_zoom_in">
+<code class="sig-name descname">on_zoom_in</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.on_zoom_in" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.on_zoom_out">
+<code class="sig-name descname">on_zoom_out</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.on_zoom_out" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.set_embeded_closebutton">
+<code class="sig-name descname">set_embeded_closebutton</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">button</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.set_embeded_closebutton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Embed a button in the widget to close the side pane</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>button</strong> – a button widget or <code class="docutils literal notranslate"><span class="pre">None</span></code> to unset</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if supported and successfull</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.set_folder">
+<code class="sig-name descname">set_folder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">folder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.set_folder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.set_icon_size">
+<code class="sig-name descname">set_icon_size</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">icon_size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.set_icon_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.title">
+<code class="sig-name descname">title</code><em class="property"> = 'Attachments'</em><a class="headerlink" href="#zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.title" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.update_title">
+<code class="sig-name descname">update_title</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.update_title" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.attachmentbrowser.AttachmentBrowserWindowExtension">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.attachmentbrowser.</code><code class="sig-name descname">AttachmentBrowserWindowExtension</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.AttachmentBrowserWindowExtension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.gui.pageview.html#zim.gui.pageview.PageViewExtension" title="zim.gui.pageview.PageViewExtension"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.gui.pageview.PageViewExtension</span></code></a></p>
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.AttachmentBrowserWindowExtension.on_page_changed">
+<code class="sig-name descname">on_page_changed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pageview</span></em>, <em class="sig-param"><span class="n">page</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.AttachmentBrowserWindowExtension.on_page_changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.attachmentbrowser.AttachmentBrowserWindowExtension.teardown">
+<code class="sig-name descname">teardown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.attachmentbrowser.AttachmentBrowserWindowExtension.teardown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove changes made by <strong>this</strong> class from the extended object
+To be overloaded by child classes</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>do not call parent class <code class="docutils literal notranslate"><span class="pre">teardown()</span></code> here, that is
+already taken care of by <code class="docutils literal notranslate"><span class="pre">destroy()</span></code></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Zim Desktop Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Jaap Karssenberg and contributors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/zim.plugins.attachmentbrowser.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

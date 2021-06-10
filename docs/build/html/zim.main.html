@@ -1,0 +1,748 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zim.main package &#8212; Zim Desktop Wiki 0.74 develop documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="zim-main-package">
+<h1>zim.main package<a class="headerlink" href="#zim-main-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-zim.main.command">
+<span id="zim-main-command-module"></span><h2>zim.main.command module<a class="headerlink" href="#module-zim.main.command" title="Permalink to this headline">¶</a></h2>
+<p>This module is responsible for commandline parsing. It provides a base
+class for the commandline commands defined in <a class="reference internal" href="#module-zim.main" title="zim.main"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.main</span></code></a></p>
+<dl class="py class">
+<dt id="zim.main.command.Command">
+<em class="property">class </em><code class="sig-prename descclassname">zim.main.command.</code><code class="sig-name descname">Command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">pwd</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.command.Command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for commandline commands, used by zim to abstract
+part of the <code class="docutils literal notranslate"><span class="pre">main()</span></code> functionality and allow better testability
+of commandline arguments.</p>
+<p>Sub-classes can define the options and arguments that they require.
+Then only the <code class="docutils literal notranslate"><span class="pre">run()</span></code> method needs to be defined to implement the
+actual command. In the <code class="docutils literal notranslate"><span class="pre">run()</span></code> method <code class="docutils literal notranslate"><span class="pre">self.opts</span></code> and <code class="docutils literal notranslate"><span class="pre">self.args</span></code>
+can be accessed to get the commandline options (dict) and the
+commandline arguments (list) respectively.</p>
+<dl class="py attribute">
+<dt id="zim.main.command.Command.arguments">
+<code class="sig-name descname">arguments</code><em class="property"> = ()</em><a class="headerlink" href="#zim.main.command.Command.arguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define arguments, e.g (‘NOTEBOOK’, ‘[PAGE]’)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.main.command.Command.default_options">
+<code class="sig-name descname">default_options</code><em class="property"> = (('verbose', 'V', 'Verbose output'), ('debug', 'D', 'Debug output'))</em><a class="headerlink" href="#zim.main.command.Command.default_options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.command.Command.get_arguments">
+<code class="sig-name descname">get_arguments</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.command.Command.get_arguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the arguments, to be used by the implementation of <code class="docutils literal notranslate"><span class="pre">run()</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.main.command.UsageError" title="zim.main.command.UsageError"><strong>UsageError</strong></a> – when arguments are not correct</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>tuple of arguments, padded with None to correct length</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.command.Command.get_options">
+<code class="sig-name descname">get_options</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">names</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.command.Command.get_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a dict with a sub-set of the command options</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>names</strong> – that options in the subset</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.command.Command.ignore_options">
+<code class="sig-name descname">ignore_options</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.command.Command.ignore_options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.main.command.Command.options">
+<code class="sig-name descname">options</code><em class="property"> = ()</em><a class="headerlink" href="#zim.main.command.Command.options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define options by 3-tuple of long, short &amp; description.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.command.Command.parse_options">
+<code class="sig-name descname">parse_options</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.command.Command.parse_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse commandline options for this command
+Sets the attributes ‘args’ and ‘opts’ to a list of arguments
+and a dictionary of options respectively</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> – all remaining options to be parsed</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>GetOptError</strong> – when options are not correct</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.command.Command.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.command.Command.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.main.command.UsageError" title="zim.main.command.UsageError"><strong>UsageError</strong></a> – when arguments are not correct</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.main.command.GtkCommand">
+<em class="property">class </em><code class="sig-prename descclassname">zim.main.command.</code><code class="sig-name descname">GtkCommand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">pwd</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.command.GtkCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.main.command.Command" title="zim.main.command.Command"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.main.command.Command</span></code></a></p>
+<p>Base class for commandline commands that result in a Gtk
+user interface being presented to the user or want to interact with the
+Gtk user interface.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">run()</span></code> method returns a window, it will be added to the
+application top level windows. And a <code class="docutils literal notranslate"><span class="pre">Gtk.main</span></code> loop will run until
+all windows are destroyed.</p>
+<p>Commands derived from this class can be dispatched to the main application
+process. This is controlled by the <code class="docutils literal notranslate"><span class="pre">standalone_process</span></code> property.</p>
+<p>NOTE: Do _not_ call <code class="docutils literal notranslate"><span class="pre">Gtk.main</span></code> from the command, this will be
+done by the application object.</p>
+<dl class="py attribute">
+<dt id="zim.main.command.GtkCommand.default_options">
+<code class="sig-name descname">default_options</code><em class="property"> = (('verbose', 'V', 'Verbose output'), ('debug', 'D', 'Debug output'), ('standalone', '', 'start a single instance, no background process'))</em><a class="headerlink" href="#zim.main.command.GtkCommand.default_options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.command.GtkCommand.run_local">
+<code class="sig-name descname">run_local</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.command.GtkCommand.run_local" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method called in local process before we (try to) dispatch the
+command to the primary process. If it returns <code class="docutils literal notranslate"><span class="pre">True</span></code> we assume the
+command is done and <code class="docutils literal notranslate"><span class="pre">run()</span></code> is not called.
+If the command is called from the primary process directly, this method
+gets never called.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.command.GtkCommand.standalone_process">
+<em class="property">property </em><code class="sig-name descname">standalone_process</code><a class="headerlink" href="#zim.main.command.GtkCommand.standalone_process" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="zim.main.command.UsageError">
+<em class="property">exception </em><code class="sig-prename descclassname">zim.main.command.</code><code class="sig-name descname">UsageError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">msg</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.command.UsageError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.errors.Error" title="zim.errors.Error"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.errors.Error</span></code></a></p>
+<p>Error raised when commands do not have correct
+number or type of arguments</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.main.ipc">
+<span id="zim-main-ipc-module"></span><h2>zim.main.ipc module<a class="headerlink" href="#module-zim.main.ipc" title="Permalink to this headline">¶</a></h2>
+<p>This module is responsible for the inter-process communication (ipc)
+between zim instances.</p>
+<p>It provides low level functions to:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Dispatching a list of commandline arguments to a socket</p></li>
+<li><dl class="simple">
+<dt>Listening to a socket for commandline arguments. If recieved,</dt><dd><p>a callback is invoked to handle those arguments.</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+<dl class="py function">
+<dt id="zim.main.ipc.dispatch">
+<code class="sig-prename descclassname">zim.main.ipc.</code><code class="sig-name descname">dispatch</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.ipc.dispatch" title="Permalink to this definition">¶</a></dt>
+<dd><p>If there is an existing zim process pass along the arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> – commandline arguments</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – when no existing zim process or connection failed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.main.ipc.get_in_main_process">
+<code class="sig-prename descclassname">zim.main.ipc.</code><code class="sig-name descname">get_in_main_process</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.ipc.get_in_main_process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if we are already in the main process</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.main.ipc.set_in_main_process">
+<code class="sig-prename descclassname">zim.main.ipc.</code><code class="sig-name descname">set_in_main_process</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_main_process</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.ipc.set_in_main_process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set whether we are in the main process or not</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.main.ipc.start_listening">
+<code class="sig-prename descclassname">zim.main.ipc.</code><code class="sig-name descname">start_listening</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handler</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.ipc.start_listening" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start listening to socket or named pipe for new commandline
+calls. Also sets current process to be the main process.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>handler</strong> – the method to call when new commands are recieveds</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.main">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-zim.main" title="Permalink to this headline">¶</a></h2>
+<p>This module defines the <a class="reference internal" href="#zim.main.main" title="zim.main.main"><code class="xref py py-class docutils literal notranslate"><span class="pre">main()</span></code></a> function for executing the zim
+application. It also defines a number of command classes that implement
+specific commandline commands and an singleton application object that
+takes core of the process life cycle.</p>
+<dl class="py class">
+<dt id="zim.main.ExportCommand">
+<em class="property">class </em><code class="sig-prename descclassname">zim.main.</code><code class="sig-name descname">ExportCommand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">pwd</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.ExportCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.main.NotebookCommand" title="zim.main.NotebookCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.main.NotebookCommand</span></code></a></p>
+<p>Class implementing the <code class="docutils literal notranslate"><span class="pre">--export</span></code> command</p>
+<dl class="py attribute">
+<dt id="zim.main.ExportCommand.arguments">
+<code class="sig-name descname">arguments</code><em class="property"> = ('NOTEBOOK', '[PAGE]')</em><a class="headerlink" href="#zim.main.ExportCommand.arguments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.ExportCommand.get_exporter">
+<code class="sig-name descname">get_exporter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">page</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.ExportCommand.get_exporter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.main.ExportCommand.options">
+<code class="sig-name descname">options</code><em class="property"> = (('format=', '', &quot;format to use (defaults to 'html')&quot;), ('template=', '', 'name or path of the template to use'), ('output=', 'o', 'output folder, or output file name'), ('root-url=', '', 'url to use for the document root'), ('index-page=', '', 'index page name'), ('recursive', 'r', 'when exporting a page, also export sub-pages'), ('singlefile', 's', 'export all pages to a single output file'), ('overwrite', 'O', 'overwrite existing file(s)'))</em><a class="headerlink" href="#zim.main.ExportCommand.options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.ExportCommand.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.ExportCommand.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.main.command.UsageError" title="zim.main.command.UsageError"><strong>UsageError</strong></a> – when arguments are not correct</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.main.GuiCommand">
+<em class="property">class </em><code class="sig-prename descclassname">zim.main.</code><code class="sig-name descname">GuiCommand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">pwd</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.GuiCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.main.NotebookCommand" title="zim.main.NotebookCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.main.NotebookCommand</span></code></a>, <a class="reference internal" href="#zim.main.command.GtkCommand" title="zim.main.command.GtkCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.main.command.GtkCommand</span></code></a></p>
+<p>Class implementing the <code class="docutils literal notranslate"><span class="pre">--gui</span></code> command and run the gtk interface</p>
+<dl class="py attribute">
+<dt id="zim.main.GuiCommand.arguments">
+<code class="sig-name descname">arguments</code><em class="property"> = ('[NOTEBOOK]', '[PAGE]')</em><a class="headerlink" href="#zim.main.GuiCommand.arguments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.GuiCommand.build_notebook">
+<code class="sig-name descname">build_notebook</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ensure_uptodate</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.GuiCommand.build_notebook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the <code class="xref py py-class docutils literal notranslate"><span class="pre">Notebook</span></code> object for this command
+Tries to automount the file location if needed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ensure_uptodate</strong> – if <code class="docutils literal notranslate"><span class="pre">True</span></code> index is updated when needed.
+Only set to <code class="docutils literal notranslate"><span class="pre">False</span></code> when index update is handled explicitly
+(e.g. in the main gui).</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a <code class="xref py py-class docutils literal notranslate"><span class="pre">Notebook</span></code> object and a <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#zim.main.NotebookLookupError" title="zim.main.NotebookLookupError"><strong>NotebookLookupError</strong></a> – if the notebook could not be
+resolved or is not given</p></li>
+<li><p><a class="reference internal" href="zim.html#zim.fs.FileNotFoundError" title="zim.fs.FileNotFoundError"><strong>FileNotFoundError</strong></a> – if the notebook location does not
+exist and could not be mounted.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.main.GuiCommand.options">
+<code class="sig-name descname">options</code><em class="property"> = (('list', '', 'show the list with notebooks instead of\nopening the default notebook'), ('geometry=', '', 'window size and position as WxH+X+Y'), ('fullscreen', '', 'start in fullscreen mode'), ('standalone', '', 'start a single instance, no background process'))</em><a class="headerlink" href="#zim.main.GuiCommand.options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.GuiCommand.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.GuiCommand.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.main.command.UsageError" title="zim.main.command.UsageError"><strong>UsageError</strong></a> – when arguments are not correct</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.main.HelpCommand">
+<em class="property">class </em><code class="sig-prename descclassname">zim.main.</code><code class="sig-name descname">HelpCommand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">pwd</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.HelpCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.main.command.Command" title="zim.main.command.Command"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.main.command.Command</span></code></a></p>
+<p>Class implementing the <code class="docutils literal notranslate"><span class="pre">--help</span></code> command</p>
+<dl class="py attribute">
+<dt id="zim.main.HelpCommand.optionhelp">
+<code class="sig-name descname">optionhelp</code><em class="property"> = &quot;General Options:\n  --gui            run the editor (this is the default)\n  --server         run the web server\n  --export         export to a different format\n  --search         run a search query on a notebook\n  --index          build an index for a notebook\n  --plugin         call a specific plugin function\n  --manual         open the user manual\n  -V, --verbose    print information to terminal\n  -D, --debug      print debug messages\n  -v, --version    print version and exit\n  -h, --help       print this text\n\nGUI Options:\n  --list           show the list with notebooks instead of\n                   opening the default notebook\n  --geometry       window size and position as WxH+X+Y\n  --fullscreen     start in fullscreen mode\n  --standalone     start a single instance, no background process\n\nServer Options:\n  --port           port to use (defaults to 8080)\n  --template       name of the template to use\n  --private        serve only to localhost\n  --gui            run the gui wrapper for the server\n\nExport Options:\n  -o, --output     output directory (mandatory option)\n  --format         format to use (defaults to 'html')\n  --template       name of the template to use\n  --root-url       url to use for the document root\n  --index-page     index page name\n  -r, --recursive  when exporting a page, also export sub-pages\n  -s, --singlefile export all pages to a single output file\n  -O, --overwrite  force overwriting existing file(s)\n\nSearch Options:\n  None\n\nIndex Options:\n  None\n\nTry 'zim --manual' for more help.\n&quot;</em><a class="headerlink" href="#zim.main.HelpCommand.optionhelp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.HelpCommand.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.HelpCommand.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.main.command.UsageError" title="zim.main.command.UsageError"><strong>UsageError</strong></a> – when arguments are not correct</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.main.HelpCommand.usagehelp">
+<code class="sig-name descname">usagehelp</code><em class="property"> = 'usage: zim [OPTIONS] [NOTEBOOK [PAGE]]\n   or: zim --server [OPTIONS] [NOTEBOOK]\n   or: zim --export [OPTIONS] NOTEBOOK [PAGE]\n   or: zim --search NOTEBOOK QUERY\n   or: zim --index  NOTEBOOK\n   or: zim --plugin PLUGIN [ARGUMENTS]\n   or: zim --manual [OPTIONS] [PAGE]\n   or: zim --help\n'</em><a class="headerlink" href="#zim.main.HelpCommand.usagehelp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.main.IndexCommand">
+<em class="property">class </em><code class="sig-prename descclassname">zim.main.</code><code class="sig-name descname">IndexCommand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">pwd</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.IndexCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.main.NotebookCommand" title="zim.main.NotebookCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.main.NotebookCommand</span></code></a></p>
+<p>Class implementing the <code class="docutils literal notranslate"><span class="pre">--index</span></code> command</p>
+<dl class="py attribute">
+<dt id="zim.main.IndexCommand.arguments">
+<code class="sig-name descname">arguments</code><em class="property"> = ('NOTEBOOK',)</em><a class="headerlink" href="#zim.main.IndexCommand.arguments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.IndexCommand.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.IndexCommand.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.main.command.UsageError" title="zim.main.command.UsageError"><strong>UsageError</strong></a> – when arguments are not correct</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.main.ManualCommand">
+<em class="property">class </em><code class="sig-prename descclassname">zim.main.</code><code class="sig-name descname">ManualCommand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">pwd</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.ManualCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.main.GuiCommand" title="zim.main.GuiCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.main.GuiCommand</span></code></a></p>
+<p>Like <a class="reference internal" href="#zim.main.GuiCommand" title="zim.main.GuiCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">GuiCommand</span></code></a> but always opens the manual</p>
+<dl class="py attribute">
+<dt id="zim.main.ManualCommand.arguments">
+<code class="sig-name descname">arguments</code><em class="property"> = ('[PAGE]',)</em><a class="headerlink" href="#zim.main.ManualCommand.arguments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.main.ManualCommand.options">
+<code class="sig-name descname">options</code><em class="property"> = (('geometry=', '', 'window size and position as WxH+X+Y'), ('fullscreen', '', 'start in fullscreen mode'), ('standalone', '', 'start a single instance, no background process'))</em><a class="headerlink" href="#zim.main.ManualCommand.options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.ManualCommand.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.ManualCommand.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.main.command.UsageError" title="zim.main.command.UsageError"><strong>UsageError</strong></a> – when arguments are not correct</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.main.NotebookCommand">
+<em class="property">class </em><code class="sig-prename descclassname">zim.main.</code><code class="sig-name descname">NotebookCommand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">pwd</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.NotebookCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.main.command.Command" title="zim.main.command.Command"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.main.command.Command</span></code></a></p>
+<p>Base class for commands that act on a notebook</p>
+<dl class="py method">
+<dt id="zim.main.NotebookCommand.build_notebook">
+<code class="sig-name descname">build_notebook</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ensure_uptodate</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.NotebookCommand.build_notebook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the <code class="xref py py-class docutils literal notranslate"><span class="pre">Notebook</span></code> object for this command
+Tries to automount the file location if needed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ensure_uptodate</strong> – if <code class="docutils literal notranslate"><span class="pre">True</span></code> index is updated when needed.
+Only set to <code class="docutils literal notranslate"><span class="pre">False</span></code> when index update is handled explicitly
+(e.g. in the main gui).</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a <code class="xref py py-class docutils literal notranslate"><span class="pre">Notebook</span></code> object and a <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#zim.main.NotebookLookupError" title="zim.main.NotebookLookupError"><strong>NotebookLookupError</strong></a> – if the notebook could not be
+resolved or is not given</p></li>
+<li><p><a class="reference internal" href="zim.html#zim.fs.FileNotFoundError" title="zim.fs.FileNotFoundError"><strong>FileNotFoundError</strong></a> – if the notebook location does not
+exist and could not be mounted.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.NotebookCommand.get_default_or_only_notebook">
+<code class="sig-name descname">get_default_or_only_notebook</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.NotebookCommand.get_default_or_only_notebook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper to get a default notebook</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.NotebookCommand.get_notebook_argument">
+<code class="sig-name descname">get_notebook_argument</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.NotebookCommand.get_notebook_argument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the notebook and page arguments for this command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a 2-tuple of an <code class="xref py py-class docutils literal notranslate"><span class="pre">NotebookInfo</span></code> object and an
+optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> or <code class="docutils literal notranslate"><span class="pre">(None,</span> <span class="pre">None)</span></code> if the notebook
+argument is optional and not given</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="#zim.main.NotebookLookupError" title="zim.main.NotebookLookupError"><strong>NotebookLookupError</strong></a> – if the notebook is mandatory and
+not given, or if it is given but could not be resolved</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="zim.main.NotebookLookupError">
+<em class="property">exception </em><code class="sig-prename descclassname">zim.main.</code><code class="sig-name descname">NotebookLookupError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">msg</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.NotebookLookupError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.errors.Error" title="zim.errors.Error"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.errors.Error</span></code></a></p>
+<p>Error when failing to locate a notebook</p>
+<dl class="py attribute">
+<dt id="zim.main.NotebookLookupError.description">
+<code class="sig-name descname">description</code><em class="property"> = 'Could not find the file or folder for this notebook'</em><a class="headerlink" href="#zim.main.NotebookLookupError.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.main.SearchCommand">
+<em class="property">class </em><code class="sig-prename descclassname">zim.main.</code><code class="sig-name descname">SearchCommand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">pwd</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.SearchCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.main.NotebookCommand" title="zim.main.NotebookCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.main.NotebookCommand</span></code></a></p>
+<p>Class implementing the <code class="docutils literal notranslate"><span class="pre">--search</span></code> command</p>
+<dl class="py attribute">
+<dt id="zim.main.SearchCommand.arguments">
+<code class="sig-name descname">arguments</code><em class="property"> = ('NOTEBOOK', 'QUERY')</em><a class="headerlink" href="#zim.main.SearchCommand.arguments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.SearchCommand.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.SearchCommand.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.main.command.UsageError" title="zim.main.command.UsageError"><strong>UsageError</strong></a> – when arguments are not correct</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.main.ServerCommand">
+<em class="property">class </em><code class="sig-prename descclassname">zim.main.</code><code class="sig-name descname">ServerCommand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">pwd</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.ServerCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.main.NotebookCommand" title="zim.main.NotebookCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.main.NotebookCommand</span></code></a></p>
+<p>Class implementing the <code class="docutils literal notranslate"><span class="pre">--server</span></code> command and running the web
+server.</p>
+<dl class="py attribute">
+<dt id="zim.main.ServerCommand.arguments">
+<code class="sig-name descname">arguments</code><em class="property"> = ('NOTEBOOK',)</em><a class="headerlink" href="#zim.main.ServerCommand.arguments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.main.ServerCommand.options">
+<code class="sig-name descname">options</code><em class="property"> = (('port=', 'p', 'port number to use (defaults to 8080)'), ('template=', 't', 'name or path of the template to use'), ('standalone', '', 'start a single instance, no background process'), ('private', '', 'serve only to localhost'))</em><a class="headerlink" href="#zim.main.ServerCommand.options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.ServerCommand.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.ServerCommand.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.main.command.UsageError" title="zim.main.command.UsageError"><strong>UsageError</strong></a> – when arguments are not correct</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.main.ServerGuiCommand">
+<em class="property">class </em><code class="sig-prename descclassname">zim.main.</code><code class="sig-name descname">ServerGuiCommand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">pwd</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.ServerGuiCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.main.NotebookCommand" title="zim.main.NotebookCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.main.NotebookCommand</span></code></a>, <a class="reference internal" href="#zim.main.command.GtkCommand" title="zim.main.command.GtkCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.main.command.GtkCommand</span></code></a></p>
+<p>Like <a class="reference internal" href="#zim.main.ServerCommand" title="zim.main.ServerCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">ServerCommand</span></code></a> but uses the graphical interface for the
+server defined in <a class="reference internal" href="zim.gui.html#module-zim.gui.server" title="zim.gui.server"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.gui.server</span></code></a>.</p>
+<dl class="py attribute">
+<dt id="zim.main.ServerGuiCommand.arguments">
+<code class="sig-name descname">arguments</code><em class="property"> = ('[NOTEBOOK]',)</em><a class="headerlink" href="#zim.main.ServerGuiCommand.arguments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.main.ServerGuiCommand.options">
+<code class="sig-name descname">options</code><em class="property"> = (('port=', 'p', 'port number to use (defaults to 8080)'), ('template=', 't', 'name or path of the template to use'), ('standalone', '', 'start a single instance, no background process'))</em><a class="headerlink" href="#zim.main.ServerGuiCommand.options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.ServerGuiCommand.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.ServerGuiCommand.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.main.command.UsageError" title="zim.main.command.UsageError"><strong>UsageError</strong></a> – when arguments are not correct</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.main.VersionCommand">
+<em class="property">class </em><code class="sig-prename descclassname">zim.main.</code><code class="sig-name descname">VersionCommand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">pwd</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.VersionCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.main.command.Command" title="zim.main.command.Command"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.main.command.Command</span></code></a></p>
+<p>Class implementing the <code class="docutils literal notranslate"><span class="pre">--version</span></code> command</p>
+<dl class="py method">
+<dt id="zim.main.VersionCommand.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.VersionCommand.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.main.command.UsageError" title="zim.main.command.UsageError"><strong>UsageError</strong></a> – when arguments are not correct</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.main.ZimApplication">
+<em class="property">class </em><code class="sig-prename descclassname">zim.main.</code><code class="sig-name descname">ZimApplication</code><a class="headerlink" href="#zim.main.ZimApplication" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This object is repsonsible for managing the life cycle of the
+application process.</p>
+<p>To do so, it decides whether to dispatch a command to an already
+running zim process or to handle it in the current process.
+For gtk based commands it keeps track of the toplevel objects
+for re-use and to be able to end the process when no toplevel
+objects are left.</p>
+<dl class="py method">
+<dt id="zim.main.ZimApplication.add_window">
+<code class="sig-name descname">add_window</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">window</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.ZimApplication.add_window" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.ZimApplication.get_mainwindow">
+<code class="sig-name descname">get_mainwindow</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">notebook</span></em>, <em class="sig-param"><span class="n">_class</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.ZimApplication.get_mainwindow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an existing <code class="xref py py-class docutils literal notranslate"><span class="pre">MainWindow</span></code> for <code class="docutils literal notranslate"><span class="pre">notebook</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.ZimApplication.notebooks">
+<em class="property">property </em><code class="sig-name descname">notebooks</code><a class="headerlink" href="#zim.main.ZimApplication.notebooks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.ZimApplication.present">
+<code class="sig-name descname">present</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">notebook</span></em>, <em class="sig-param"><span class="n">page</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.ZimApplication.present" title="Permalink to this definition">¶</a></dt>
+<dd><p>Present notebook and page in a mainwindow, may not return for
+standalone processes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.ZimApplication.remove_window">
+<code class="sig-name descname">remove_window</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">window</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.ZimApplication.remove_window" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.ZimApplication.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.ZimApplication.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run a commandline command, either in this process, an
+existing process, or a new process.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – commandline arguments</p></li>
+<li><p><strong>kwargs</strong> – optional arguments for <a class="reference internal" href="#zim.main.build_command" title="zim.main.build_command"><code class="xref py py-class docutils literal notranslate"><span class="pre">build_command</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.main.ZimApplication.toplevels">
+<em class="property">property </em><code class="sig-name descname">toplevels</code><a class="headerlink" href="#zim.main.ZimApplication.toplevels" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.main.build_command">
+<code class="sig-prename descclassname">zim.main.</code><code class="sig-name descname">build_command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">args</span></em>, <em class="sig-param"><span class="n">pwd</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.build_command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse all commandline options</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a <code class="xref py py-class docutils literal notranslate"><span class="pre">Command</span></code> object</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="#zim.main.command.UsageError" title="zim.main.command.UsageError"><strong>UsageError</strong></a> – if args is not correct</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.main.main">
+<code class="sig-prename descclassname">zim.main.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">argv</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.main.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run full zim application</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>exit code (if error handled, else just raises)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Zim Desktop Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Jaap Karssenberg and contributors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/zim.main.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

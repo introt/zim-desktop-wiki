@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zim.plugins.base package &#8212; Zim Desktop Wiki 0.74 develop documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="zim-plugins-base-package">
+<h1>zim.plugins.base package<a class="headerlink" href="#zim-plugins-base-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-zim.plugins.base.imagegenerator">
+<span id="zim-plugins-base-imagegenerator-module"></span><h2>zim.plugins.base.imagegenerator module<a class="headerlink" href="#module-zim.plugins.base.imagegenerator" title="Permalink to this headline">¶</a></h2>
+<p>This module contains the base classes used by all plugins that
+create an image from text based input. Like the equation editor, the
+diagram editor etc.</p>
+<dl class="py class">
+<dt id="zim.plugins.base.imagegenerator.BackwardImageGeneratorModel">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.base.imagegenerator.</code><code class="sig-name descname">BackwardImageGeneratorModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.BackwardImageGeneratorModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.plugins.base.imagegenerator.ImageGeneratorModel" title="zim.plugins.base.imagegenerator.ImageGeneratorModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.plugins.base.imagegenerator.ImageGeneratorModel</span></code></a></p>
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.BackwardImageGeneratorModel.get_text">
+<code class="sig-name descname">get_text</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.BackwardImageGeneratorModel.get_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.BackwardImageGeneratorModel.set_from_generator">
+<code class="sig-name descname">set_from_generator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">image_file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.BackwardImageGeneratorModel.set_from_generator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.base.imagegenerator.</code><code class="sig-name descname">BackwardImageGeneratorObjectType</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.plugins.base.imagegenerator.ImageGeneratorObjectType" title="zim.plugins.base.imagegenerator.ImageGeneratorObjectType"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.plugins.base.imagegenerator.ImageGeneratorObjectType</span></code></a></p>
+<p>Base class for backward compatible image generator objects.</p>
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType.format">
+<code class="sig-name descname">format</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">format</span></em>, <em class="sig-param"><span class="n">dumper</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType.format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format the object using a specific output format
+Intended to improve rendering of the object on exporting.</p>
+<p>This method should always be robust for missing attributes and body
+contents. The <code class="docutils literal notranslate"><span class="pre">attrib</span></code> will automatically be checked by <code class="xref py py-class docutils literal notranslate"><span class="pre">parse_attrib</span></code>
+before being given to this method.</p>
+<p>Implementing this method is optional, default checks for a specific
+method per format (e.g. <code class="docutils literal notranslate"><span class="pre">format_html()</span></code> for the “html” format) and
+raises <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> if no such method is defined.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>format</strong> – name of the output format</p></li>
+<li><p><strong>dumper</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">Dumper</span></code> object</p></li>
+<li><p><strong>attrib</strong> – dict with object attributes</p></li>
+<li><p><strong>data</strong> – string with object content</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of strings</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – if no specific formatting for “format” is available</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType.imagefile_extension">
+<code class="sig-name descname">imagefile_extension</code><em class="property"> = None</em><a class="headerlink" href="#zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType.imagefile_extension" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType.model_from_data">
+<code class="sig-name descname">model_from_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">notebook</span></em>, <em class="sig-param"><span class="n">page</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType.model_from_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a model for the object</p>
+<p>The main purpose for the model is that it is shared between widgets that
+show the same object. See e.g. <code class="docutils literal notranslate"><span class="pre">Gtk.TextBuffer</span></code> or <code class="docutils literal notranslate"><span class="pre">Gtk.TreeModel</span></code>
+for examples.</p>
+<p>No API is expected of the model object other than that it can be used as
+argument for <code class="xref py py-class docutils literal notranslate"><span class="pre">create_widget()</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">data_from_model()</span></code> and a
+“changed” signal that should be emitted when the content has changed, so
+the pageview knows that the page has changed and should be saved before
+closing.</p>
+<p>Since the model is specific for the page where the object occurs, any
+user of the object type should serialize back to data before e.g.
+copying the object to a different page.</p>
+<p>This method should always be robust for missing attributes and body
+contents. The <code class="docutils literal notranslate"><span class="pre">attrib</span></code> will automatically be checked by <code class="xref py py-class docutils literal notranslate"><span class="pre">parse_attrib</span></code>
+before being given to this method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>notebook</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">Notebook</span></code> object</p></li>
+<li><p><strong>page</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">Page</span></code> object for the page where this object occurs</p></li>
+<li><p><strong>attrib</strong> – dict with object attributes</p></li>
+<li><p><strong>data</strong> – string with object content</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a model object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType.object_attr">
+<code class="sig-name descname">object_attr</code><em class="property"> = {'src': &lt;zim.config.dicts.String object&gt;}</em><a class="headerlink" href="#zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType.object_attr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType.scriptname">
+<code class="sig-name descname">scriptname</code><em class="property"> = None</em><a class="headerlink" href="#zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType.scriptname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorClass">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.base.imagegenerator.</code><code class="sig-name descname">ImageGeneratorClass</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">plugin</span></em>, <em class="sig-param"><span class="n">notebook</span></em>, <em class="sig-param"><span class="n">page</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for image generators.
+A plugin defining an <a class="reference internal" href="#zim.plugins.base.imagegenerator.ImageGeneratorObjectType" title="zim.plugins.base.imagegenerator.ImageGeneratorObjectType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageGeneratorObjectType</span></code></a> should also define a
+sub-class of this class to do the actual work.</p>
+<p>The generator does the actual work to generate an image from text. It does
+this in a temporary folder and must not try to directly modify the page or
+store anything in the attachements folder. The reason is that the user can
+still press “cancel” after the generator has run. The model takes care of
+storing the image and the text in the right place.</p>
+<p>Since the content of the image can depent on the notebook location, a
+generator object is specific for a notebook page.</p>
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorClass.check_user_input">
+<code class="sig-name descname">check_user_input</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorClass.check_user_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check user input before generating image</p>
+<p>This method is used to post-process user input before
+generating image and writing the user input into the script
+file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – the source text as string - raw user input</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>string used for generate_image, also the string
+written to script file.</p>
+</dd>
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>Not mandatory to be implemented by a subclass.
+It defaults to user input.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorClass.cleanup">
+<code class="sig-name descname">cleanup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorClass.cleanup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cleanup any temporary files that were created by this
+generator. Including log files and image files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>should be implemented by subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorClass.filter_source">
+<code class="sig-name descname">filter_source</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorClass.filter_source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter contents of script file before displaying in textarea</p>
+<p>This method is used to pre-process contents of script file
+before displaying in textarea.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – the contents of script file</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>string used to display for user input.</p>
+</dd>
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>Not mandatory to be implemented by a subclass.
+It defaults to script file contents.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorClass.generate_image">
+<code class="sig-name descname">generate_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorClass.generate_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate an image for a user input</p>
+<p>This is the method that does the actual work to generate an
+image out of input text. Typically it will write the text to
+a temporary file using a template and then call an external
+program (e.g. latex) to create an image out of that source
+file. The result should be an image file and optionally a
+log file.</p>
+<p>When the external program failed preferably this method should
+still return a log file, so the user can check the details of
+why the creation failed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – the source text as string - raw user input</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a 2-tuple of the image file and the log file as
+<code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code> objects. If no image file was created the first
+element should be <code class="docutils literal notranslate"><span class="pre">None</span></code>, if no log file is created second
+element should be <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="zim.html#zim.errors.Error" title="zim.errors.Error"><strong>Error</strong></a> – this method is allowed to raise errors like
+<code class="xref py py-class docutils literal notranslate"><span class="pre">ApplicationError</span></code> when running a command failed.</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorClass.get_default_text">
+<code class="sig-name descname">get_default_text</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorClass.get_default_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides a template or starting point for the user to begin editing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>Not mandatory to be implemented by a subclass.
+It defaults to the empty string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorDialog">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.base.imagegenerator.</code><code class="sig-name descname">ImageGeneratorDialog</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">widget</span></em>, <em class="sig-param"><span class="n">label</span></em>, <em class="sig-param"><span class="n">generator</span></em>, <em class="sig-param"><span class="n">image_file</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">syntax</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorDialog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.gui.html#zim.gui.widgets.Dialog" title="zim.gui.widgets.Dialog"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.gui.widgets.Dialog</span></code></a></p>
+<p>Dialog that provides text input and an image view
+for showing previews for an <a class="reference internal" href="#zim.plugins.base.imagegenerator.ImageGeneratorClass" title="zim.plugins.base.imagegenerator.ImageGeneratorClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageGeneratorClass</span></code></a> implementation.</p>
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorDialog.do_response_ok">
+<code class="sig-name descname">do_response_ok</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorDialog.do_response_ok" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handler called when the user clicks the “OK” button (or
+an equivalent button)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if successfull and the dialog can close. Returns
+<code class="docutils literal notranslate"><span class="pre">False</span></code> if e.g. input is not valid, this will keep the dialog open.</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by sub-classes that have
+an “OK” button</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorDialog.get_text">
+<code class="sig-name descname">get_text</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorDialog.get_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorDialog.run_dialog_for_model">
+<em class="property">classmethod </em><code class="sig-name descname">run_dialog_for_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">widget</span></em>, <em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">label</span></em>, <em class="sig-param"><span class="n">syntax</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorDialog.run_dialog_for_model" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorDialog.set_text">
+<code class="sig-name descname">set_text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorDialog.set_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorDialog.show_log">
+<code class="sig-name descname">show_log</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorDialog.show_log" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorDialog.update_image">
+<code class="sig-name descname">update_image</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorDialog.update_image" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorModel">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.base.imagegenerator.</code><code class="sig-name descname">ImageGeneratorModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.signals.SignalEmitter" title="zim.signals.SignalEmitter"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.signals.SignalEmitter</span></code></a></p>
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorModel.get_text">
+<code class="sig-name descname">get_text</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorModel.get_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorModel.set_from_generator">
+<code class="sig-name descname">set_from_generator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">image_file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorModel.set_from_generator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorObjectType">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.base.imagegenerator.</code><code class="sig-name descname">ImageGeneratorObjectType</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorObjectType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.plugins.html#zim.plugins.InsertedObjectTypeExtension" title="zim.plugins.InsertedObjectTypeExtension"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.plugins.InsertedObjectTypeExtension</span></code></a></p>
+<p>Base class for object types that produce an image based on text input
+from the user.
+Plugins should contain a sub-class of of this class to define the object
+type name, label etc. It then will automatically load a sub-class from
+ImageGeneratorClass defined in the same plugin to do the work.</p>
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.create_widget">
+<code class="sig-name descname">create_widget</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorObjectType.create_widget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a Gtk widget for the given model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model</strong> – an object created with <a class="reference internal" href="#zim.plugins.base.imagegenerator.ImageGeneratorObjectType.model_from_data" title="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.model_from_data"><code class="xref py py-class docutils literal notranslate"><span class="pre">model_from_data()</span></code></a></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a Gtk widget object derived from <code class="xref py py-class docutils literal notranslate"><span class="pre">InsertedObjectWidget</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.data_from_model">
+<code class="sig-name descname">data_from_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorObjectType.data_from_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the object data for a model object
+This method is used to serialize the model object back into a form that
+can be handled when parsing wiki content.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model</strong> – an object created with <a class="reference internal" href="#zim.plugins.base.imagegenerator.ImageGeneratorObjectType.model_from_data" title="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.model_from_data"><code class="xref py py-class docutils literal notranslate"><span class="pre">model_from_data()</span></code></a></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a 2-tuple <code class="docutils literal notranslate"><span class="pre">(attrib,</span> <span class="pre">data)</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.model_from_data">
+<code class="sig-name descname">model_from_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">notebook</span></em>, <em class="sig-param"><span class="n">page</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorObjectType.model_from_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a model for the object</p>
+<p>The main purpose for the model is that it is shared between widgets that
+show the same object. See e.g. <code class="docutils literal notranslate"><span class="pre">Gtk.TextBuffer</span></code> or <code class="docutils literal notranslate"><span class="pre">Gtk.TreeModel</span></code>
+for examples.</p>
+<p>No API is expected of the model object other than that it can be used as
+argument for <a class="reference internal" href="#zim.plugins.base.imagegenerator.ImageGeneratorObjectType.create_widget" title="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.create_widget"><code class="xref py py-class docutils literal notranslate"><span class="pre">create_widget()</span></code></a> and <a class="reference internal" href="#zim.plugins.base.imagegenerator.ImageGeneratorObjectType.data_from_model" title="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.data_from_model"><code class="xref py py-class docutils literal notranslate"><span class="pre">data_from_model()</span></code></a> and a
+“changed” signal that should be emitted when the content has changed, so
+the pageview knows that the page has changed and should be saved before
+closing.</p>
+<p>Since the model is specific for the page where the object occurs, any
+user of the object type should serialize back to data before e.g.
+copying the object to a different page.</p>
+<p>This method should always be robust for missing attributes and body
+contents. The <code class="docutils literal notranslate"><span class="pre">attrib</span></code> will automatically be checked by <code class="xref py py-class docutils literal notranslate"><span class="pre">parse_attrib</span></code>
+before being given to this method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>notebook</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">Notebook</span></code> object</p></li>
+<li><p><strong>page</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">Page</span></code> object for the page where this object occurs</p></li>
+<li><p><strong>attrib</strong> – dict with object attributes</p></li>
+<li><p><strong>data</strong> – string with object content</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a model object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.new_model_interactive">
+<code class="sig-name descname">new_model_interactive</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent</span></em>, <em class="sig-param"><span class="n">notebook</span></em>, <em class="sig-param"><span class="n">page</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorObjectType.new_model_interactive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new object model interactively
+Interactive means that we can use e.g. a dialog to prompt for input.
+The default behavior is to use <code class="xref py py-class docutils literal notranslate"><span class="pre">new_object()</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parent</strong> – Gtk widget to use as parent widget for dialogs</p></li>
+<li><p><strong>notebook</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">Notebook</span></code> object</p></li>
+<li><p><strong>page</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">Page</span></code> object for the page where this object occurs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a model object (see <a class="reference internal" href="#zim.plugins.base.imagegenerator.ImageGeneratorObjectType.model_from_data" title="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.model_from_data"><code class="xref py py-class docutils literal notranslate"><span class="pre">model_from_data()</span></code></a>)</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p>ValueError: if user cancelled the action</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.syntax">
+<code class="sig-name descname">syntax</code><em class="property"> = None</em><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorObjectType.syntax" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorWidget">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.base.imagegenerator.</code><code class="sig-name descname">ImageGeneratorWidget</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">label</span></em>, <em class="sig-param"><span class="n">syntax</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorWidget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.gui.html#zim.gui.insertedobjects.ImageFileWidget" title="zim.gui.insertedobjects.ImageFileWidget"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.gui.insertedobjects.ImageFileWidget</span></code></a></p>
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorWidget.edit_object">
+<code class="sig-name descname">edit_object</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorWidget.edit_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorWidget.on_model_changed">
+<code class="sig-name descname">on_model_changed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorWidget.on_model_changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.base.imagegenerator.ImageGeneratorWidget.populate_popup">
+<code class="sig-name descname">populate_popup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">menu</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.ImageGeneratorWidget.populate_popup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.plugins.base.imagegenerator.copy_imagegenerator_src_files">
+<code class="sig-prename descclassname">zim.plugins.base.imagegenerator.</code><code class="sig-name descname">copy_imagegenerator_src_files</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">src_file</span></em>, <em class="sig-param"><span class="n">folder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.base.imagegenerator.copy_imagegenerator_src_files" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-zim.plugins.base">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-zim.plugins.base" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Zim Desktop Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Jaap Karssenberg and contributors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/zim.plugins.base.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

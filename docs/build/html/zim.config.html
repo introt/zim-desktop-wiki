@@ -1,0 +1,1124 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zim.config package &#8212; Zim Desktop Wiki 0.74 develop documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="zim-config-package">
+<h1>zim.config package<a class="headerlink" href="#zim-config-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-zim.config.basedirs">
+<span id="zim-config-basedirs-module"></span><h2>zim.config.basedirs module<a class="headerlink" href="#module-zim.config.basedirs" title="Permalink to this headline">¶</a></h2>
+<p>This module defines the search path for zim config files following
+the freedesktop.org (XDG) Base Dir specification.</p>
+<dl class="py data">
+<dt id="zim.config.basedirs.XDG_CACHE_HOME">
+<code class="sig-prename descclassname">zim.config.basedirs.</code><code class="sig-name descname">XDG_CACHE_HOME</code><em class="property"> = &lt;Dir: /home/user/.cache&gt;</em><a class="headerlink" href="#zim.config.basedirs.XDG_CACHE_HOME" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dir</span></code> for XDG cache home</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="zim.config.basedirs.XDG_CONFIG_DIRS">
+<code class="sig-prename descclassname">zim.config.basedirs.</code><code class="sig-name descname">XDG_CONFIG_DIRS</code><em class="property"> = [&lt;Dir: /etc/xdg/xdg-debian&gt;, &lt;Dir: /etc/xdg&gt;, &lt;Dir: /etc/xdg&gt;]</em><a class="headerlink" href="#zim.config.basedirs.XDG_CONFIG_DIRS" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of <code class="xref py py-class docutils literal notranslate"><span class="pre">Dir</span></code> objects for XDG config dirs path</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="zim.config.basedirs.XDG_CONFIG_HOME">
+<code class="sig-prename descclassname">zim.config.basedirs.</code><code class="sig-name descname">XDG_CONFIG_HOME</code><em class="property"> = &lt;Dir: /home/user/.config&gt;</em><a class="headerlink" href="#zim.config.basedirs.XDG_CONFIG_HOME" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dir</span></code> for XDG config home</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="zim.config.basedirs.XDG_DATA_DIRS">
+<code class="sig-prename descclassname">zim.config.basedirs.</code><code class="sig-name descname">XDG_DATA_DIRS</code><em class="property"> = [&lt;Dir: /usr/share/debian&gt;, &lt;Dir: /usr/share/xfce4&gt;, &lt;Dir: /usr/local/share&gt;, &lt;Dir: /usr/share&gt;, &lt;Dir: /usr/share&gt;]</em><a class="headerlink" href="#zim.config.basedirs.XDG_DATA_DIRS" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of <code class="xref py py-class docutils literal notranslate"><span class="pre">Dir</span></code> objects for XDG data dirs path</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="zim.config.basedirs.XDG_DATA_HOME">
+<code class="sig-prename descclassname">zim.config.basedirs.</code><code class="sig-name descname">XDG_DATA_HOME</code><em class="property"> = &lt;Dir: /home/user/.local/share&gt;</em><a class="headerlink" href="#zim.config.basedirs.XDG_DATA_HOME" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dir</span></code> for XDG data home</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="zim.config.basedirs.ZIM_DATA_DIR">
+<code class="sig-prename descclassname">zim.config.basedirs.</code><code class="sig-name descname">ZIM_DATA_DIR</code><em class="property"> = None</em><a class="headerlink" href="#zim.config.basedirs.ZIM_DATA_DIR" title="Permalink to this definition">¶</a></dt>
+<dd><p>‘data’ dir relative to script file (when running from source), <code class="xref py py-class docutils literal notranslate"><span class="pre">Dir</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.config.basedirs.log_basedirs">
+<code class="sig-prename descclassname">zim.config.basedirs.</code><code class="sig-name descname">log_basedirs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.basedirs.log_basedirs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the search paths used to the logger, used to generate
+debug output</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.config.basedirs.set_basedirs">
+<code class="sig-prename descclassname">zim.config.basedirs.</code><code class="sig-name descname">set_basedirs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_ignore_test</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.basedirs.set_basedirs" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method sets the global configuration paths for according to the
+freedesktop basedir specification.
+Called automatically when module is first loaded, should be
+called explicitly only when environment has changed.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.config.dicts">
+<span id="zim-config-dicts-module"></span><h2>zim.config.dicts module<a class="headerlink" href="#module-zim.config.dicts" title="Permalink to this headline">¶</a></h2>
+<p>This module contains base classes to map config files to dicts</p>
+<p>The main classes are <a class="reference internal" href="#zim.config.dicts.ConfigDict" title="zim.config.dicts.ConfigDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConfigDict</span></code></a> and <a class="reference internal" href="#zim.config.dicts.INIConfigFile" title="zim.config.dicts.INIConfigFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">INIConfigFile</span></code></a>. The
+<a class="reference internal" href="#zim.config.dicts.ConfigDict" title="zim.config.dicts.ConfigDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConfigDict</span></code></a> defines a dictionary of config keys. To add a key in this
+dictionary it must first be defined using one of the sub-classes of
+<a class="reference internal" href="#zim.config.dicts.ConfigDefinition" title="zim.config.dicts.ConfigDefinition"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConfigDefinition</span></code></a>. This definition takes care of validating the
+value of the config keys and (de-)serializing the values from and to
+text representation used in the config files. The <a class="reference internal" href="#zim.config.dicts.INIConfigFile" title="zim.config.dicts.INIConfigFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">INIConfigFile</span></code></a> maps
+to a INI-style config file that defines multiple sections with config
+keys. It is represented as a dictionary where each key maps a to a
+<a class="reference internal" href="#zim.config.dicts.ConfigDict" title="zim.config.dicts.ConfigDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConfigDict</span></code></a>.</p>
+<p>Both derive from <a class="reference internal" href="#zim.config.dicts.ControlledDict" title="zim.config.dicts.ControlledDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">ControlledDict</span></code></a> which defines the <code class="docutils literal notranslate"><span class="pre">changed</span></code> signal
+which can be used to track changes in the configuration.</p>
+<p>Typically these classes are not instantiated directly, but by the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">ConfigManager</span></code> defined in <a class="reference internal" href="#module-zim.config.manager" title="zim.config.manager"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.config.manager</span></code></a>.</p>
+<dl class="py class">
+<dt id="zim.config.dicts.Boolean">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.dicts.</code><code class="sig-name descname">Boolean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">default</span></em>, <em class="sig-param"><span class="n">allow_empty</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.Boolean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.config.dicts.ConfigDefinition" title="zim.config.dicts.ConfigDefinition"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.config.dicts.ConfigDefinition</span></code></a></p>
+<p>This class defines a config key that maps to a boolean</p>
+<dl class="py attribute">
+<dt id="zim.config.dicts.Boolean.allow_empty">
+<code class="sig-name descname">allow_empty</code><a class="headerlink" href="#zim.config.dicts.Boolean.allow_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.Boolean.check">
+<code class="sig-name descname">check</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.Boolean.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check <code class="docutils literal notranslate"><span class="pre">value</span></code> to be a valid value for this key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – if value is invalid and can not
+be converted</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(converted) value if valid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.config.dicts.Boolean.default">
+<code class="sig-name descname">default</code><a class="headerlink" href="#zim.config.dicts.Boolean.default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.config.dicts.Choice">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.dicts.</code><code class="sig-name descname">Choice</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">default</span></em>, <em class="sig-param"><span class="n">choices</span></em>, <em class="sig-param"><span class="n">allow_empty</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.Choice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.config.dicts.ConfigDefinition" title="zim.config.dicts.ConfigDefinition"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.config.dicts.ConfigDefinition</span></code></a></p>
+<p>Definition that allows selecting a value from a given set
+Will be presented in the gui as a dropdown with a list of choices</p>
+<dl class="py method">
+<dt id="zim.config.dicts.Choice.check">
+<code class="sig-name descname">check</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.Choice.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check <code class="docutils literal notranslate"><span class="pre">value</span></code> to be a valid value for this key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – if value is invalid and can not
+be converted</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(converted) value if valid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.config.dicts.Choice.choices">
+<code class="sig-name descname">choices</code><a class="headerlink" href="#zim.config.dicts.Choice.choices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.config.dicts.ConfigDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.dicts.</code><code class="sig-name descname">ConfigDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">default</span></em>, <em class="sig-param"><span class="n">allow_empty</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.ConfigDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Definition for a key in a <a class="reference internal" href="#zim.config.dicts.ConfigDict" title="zim.config.dicts.ConfigDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConfigDict</span></code></a></p>
+<dl class="py attribute">
+<dt id="zim.config.dicts.ConfigDefinition.allow_empty">
+<code class="sig-name descname">allow_empty</code><a class="headerlink" href="#zim.config.dicts.ConfigDefinition.allow_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.ConfigDefinition.check">
+<code class="sig-name descname">check</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.ConfigDefinition.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check <code class="docutils literal notranslate"><span class="pre">value</span></code> to be a valid value for this key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – if value is invalid and can not
+be converted</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(converted) value if valid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.config.dicts.ConfigDefinition.default">
+<code class="sig-name descname">default</code><a class="headerlink" href="#zim.config.dicts.ConfigDefinition.default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.ConfigDefinition.tostring">
+<code class="sig-name descname">tostring</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.ConfigDefinition.tostring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.config.dicts.ConfigDefinitionByClass">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.dicts.</code><code class="sig-name descname">ConfigDefinitionByClass</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">default</span></em>, <em class="sig-param"><span class="n">klass</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">allow_empty</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.ConfigDefinitionByClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.config.dicts.ConfigDefinition" title="zim.config.dicts.ConfigDefinition"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.config.dicts.ConfigDefinition</span></code></a></p>
+<p>Definition that enforces the value has to have a certain class</p>
+<p>Classes that have a <code class="docutils literal notranslate"><span class="pre">new_from_zim_config()</span></code> method can convert
+values to the desired class.</p>
+<dl class="py method">
+<dt id="zim.config.dicts.ConfigDefinitionByClass.check">
+<code class="sig-name descname">check</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.ConfigDefinitionByClass.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check <code class="docutils literal notranslate"><span class="pre">value</span></code> to be a valid value for this key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – if value is invalid and can not
+be converted</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(converted) value if valid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.config.dicts.ConfigDefinitionByClass.klass">
+<code class="sig-name descname">klass</code><a class="headerlink" href="#zim.config.dicts.ConfigDefinitionByClass.klass" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.ConfigDefinitionByClass.tostring">
+<code class="sig-name descname">tostring</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.ConfigDefinitionByClass.tostring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.config.dicts.ConfigDict">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.dicts.</code><code class="sig-name descname">ConfigDict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">E</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">F</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.ConfigDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.config.dicts.ControlledDict" title="zim.config.dicts.ControlledDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.config.dicts.ControlledDict</span></code></a></p>
+<p>The class defines a dictionary of config keys.</p>
+<p>To add a key in this dictionary it must first be defined using one
+of the sub-classes of <a class="reference internal" href="#zim.config.dicts.ConfigDefinition" title="zim.config.dicts.ConfigDefinition"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConfigDefinition</span></code></a>. This definition takes
+care of validating the value of the config keys and
+(de-)serializing the values from and to text representation used
+in the config files.</p>
+<p>Both getting and setting a value will raise a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> when the
+key has not been defined first. An <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> is raised when the
+value does not conform to the definition.</p>
+<p>THis class derives from <a class="reference internal" href="#zim.config.dicts.ControlledDict" title="zim.config.dicts.ControlledDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">ControlledDict</span></code></a> which in turn derives
+from <code class="xref py py-class docutils literal notranslate"><span class="pre">DefinitionOrderedDict</span></code> so changes to the config can be tracked by the
+<code class="docutils literal notranslate"><span class="pre">changed</span></code> signal, and values are kept in the same order so the order
+in which items are written to the config file is predictable.</p>
+<dl class="py method">
+<dt id="zim.config.dicts.ConfigDict.all_items">
+<code class="sig-name descname">all_items</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.ConfigDict.all_items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.ConfigDict.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.ConfigDict.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shallow copy of the items</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a new object of the same class with the same items</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.ConfigDict.define">
+<code class="sig-name descname">define</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">E</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">F</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.ConfigDict.define" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set one or more definitions for this config dict
+Can cause error log when values prior given to <code class="docutils literal notranslate"><span class="pre">input()</span></code> do
+not match the definition.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.ConfigDict.dump">
+<code class="sig-name descname">dump</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.ConfigDict.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dict that combines the defined keys with any
+undefined input keys. Used e.g. when you only define part of the
+keys in the dict, but want to preserve all of them when
+writing back to a file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.ConfigDict.input">
+<code class="sig-name descname">input</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">E</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">F</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.ConfigDict.input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like <code class="docutils literal notranslate"><span class="pre">update()</span></code> but won’t raise on failures.
+Values for undefined keys are stored and validated once the
+key is defined. Invalid values only cause a logged error
+message but do not cause errors to be raised.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.ConfigDict.setdefault">
+<code class="sig-name descname">setdefault</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">default</span></em>, <em class="sig-param"><span class="n">check</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">allow_empty</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.ConfigDict.setdefault" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the default value for a configuration item.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Usage of this method with keyword arguments is
+depreciated, use <a class="reference internal" href="#zim.config.dicts.ConfigDict.define" title="zim.config.dicts.ConfigDict.define"><code class="xref py py-class docutils literal notranslate"><span class="pre">define()</span></code></a> instead.</p>
+</div>
+<p>Compatible with <code class="docutils literal notranslate"><span class="pre">dict.setdefault()</span></code> but extended with
+functionality to check the value that is in the dict, and use
+the default if the value is mal-formed. This is used extensively
+in zim to do a sanity check on values in the configuration
+files. If you initialize the config items with this method you
+can assume them to be safe afterward and avoid a lot of checks
+or bugs later in the code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> – the dict key</p></li>
+<li><p><strong>default</strong> – the default value for this key</p></li>
+<li><p><strong>check</strong> – the check to do on the values, when the check
+fails the value is considered mal-formed and the default is
+used while a warning is logged.</p></li>
+</ul>
+</dd>
+</dl>
+<p>If <code class="docutils literal notranslate"><span class="pre">check</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code> the default behavior will be to compare
+the classes of the set value and the default and enforce them to
+be of the same type. Automatic conversion is done for values of
+type <code class="docutils literal notranslate"><span class="pre">list</span></code> with defaults of type <code class="docutils literal notranslate"><span class="pre">tuple</span></code>. And for defaults of
+type <code class="docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">unicode</span></code> the <code class="docutils literal notranslate"><span class="pre">basestring</span></code> type is used as
+check. As a special case when the default is <code class="docutils literal notranslate"><span class="pre">None</span></code> the check
+is not allowed to be <code class="docutils literal notranslate"><span class="pre">None</span></code> as well.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">check</span></code> is given and it is a class the existing value will be
+checked to be of that class. Same special case for tuples
+and strings applies here.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">check</span></code> is given and is a <code class="docutils literal notranslate"><span class="pre">set</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">tuple</span></code> the
+value will be tested to be in this set or list.</p>
+<p>If the default is an integer and <code class="docutils literal notranslate"><span class="pre">check</span></code> is a tuple of two
+integers, the check will be that the value is in this range.
+(For compatibility with <code class="xref py py-class docutils literal notranslate"><span class="pre">InputForm</span></code> extra argument for integer
+spin boxes.)</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">check</span></code> is given and it is a function it will be used to
+check the value in the dictionary if it exists. The function
+is called as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">check</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">value</span></code> is the current value in the dict and <code class="docutils literal notranslate"><span class="pre">default</span></code>
+is the default value that was provided. The function can not
+only check the value, it can also do on the fly modifications,
+e.g. to coerce it into a specific type. If the value is OK the
+function should return the (modified) value, if not it should
+raise an <code class="docutils literal notranslate"><span class="pre">AssertionError</span></code>. When this error is raised the
+default is used and the dict is considered being modified.</p>
+<p>( Note that ‘assert’ statements in the code can be removed
+by code optimization, so explicitly call “<code class="docutils literal notranslate"><span class="pre">raise</span> <span class="pre">AssertionError</span></code>”. )</p>
+<p>Examples of functions that can be used as a check are:
+<code class="xref py py-class docutils literal notranslate"><span class="pre">check_class_allow_empty</span></code> and <a class="reference internal" href="#zim.config.dicts.value_is_coord" title="zim.config.dicts.value_is_coord"><code class="xref py py-class docutils literal notranslate"><span class="pre">value_is_coord</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>allow_empty</strong> – if <code class="docutils literal notranslate"><span class="pre">True</span></code> the value is allowed to be empty
+(either empty string or <code class="docutils literal notranslate"><span class="pre">None</span></code>). In this case the default is
+not set to overwrite an empty value, but only for a mal-formed
+value or for a value that doesn’t exist yet in the dict.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.ConfigDict.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">E</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">F</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.ConfigDict.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like <code class="docutils literal notranslate"><span class="pre">dict.update()</span></code>, copying values from <code class="docutils literal notranslate"><span class="pre">E</span></code> or <code class="docutils literal notranslate"><span class="pre">F</span></code>.
+However if <code class="docutils literal notranslate"><span class="pre">E</span></code> is also a <code class="docutils literal notranslate"><span class="pre">ConfigDict</span></code>, also the definitions
+are copied along.
+Do use <code class="docutils literal notranslate"><span class="pre">update()</span></code> when setting multiple values at once since it
+results in emitting <code class="docutils literal notranslate"><span class="pre">changed</span></code> only once.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.config.dicts.ControlledDict">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.dicts.</code><code class="sig-name descname">ControlledDict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">E</span><span class="o">=</span><span class="default_value">()</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">F</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.ControlledDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.utils.DefinitionOrderedDict" title="zim.utils.DefinitionOrderedDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.utils.DefinitionOrderedDict</span></code></a>, <a class="reference internal" href="zim.html#zim.signals.SignalEmitter" title="zim.signals.SignalEmitter"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.signals.SignalEmitter</span></code></a>, <a class="reference internal" href="zim.html#zim.signals.ConnectorMixin" title="zim.signals.ConnectorMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.signals.ConnectorMixin</span></code></a></p>
+<p>Sub-class of <code class="docutils literal notranslate"><span class="pre">DefinitionOrderedDict</span></code> that tracks modified state.
+This modified state is recursive for nested <a href="#id1"><span class="problematic" id="id2">``</span></a>ControlledDict``s.</p>
+<p>Used as base class for <a class="reference internal" href="#zim.config.dicts.SectionedConfigDict" title="zim.config.dicts.SectionedConfigDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">SectionedConfigDict</span></code></a> and <a class="reference internal" href="#zim.config.dicts.ConfigDict" title="zim.config.dicts.ConfigDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConfigDict</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Signal</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">changed</span> <span class="pre">()</span></code>: emitted when content of this dict changed,
+or a nested <code class="docutils literal notranslate"><span class="pre">ControlledDict</span></code> changed</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="zim.config.dicts.ControlledDict.changed">
+<code class="sig-name descname">changed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.ControlledDict.changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.ControlledDict.do_changed">
+<code class="sig-name descname">do_changed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.ControlledDict.do_changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.ControlledDict.modified">
+<em class="property">property </em><code class="sig-name descname">modified</code><a class="headerlink" href="#zim.config.dicts.ControlledDict.modified" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">True</span></code> when the values were modified, used to e.g.
+track when a config needs to be written back to file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.ControlledDict.on_child_changed">
+<code class="sig-name descname">on_child_changed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.ControlledDict.on_child_changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.ControlledDict.set_modified">
+<code class="sig-name descname">set_modified</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">modified</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.ControlledDict.set_modified" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the modified state. Used to reset modified to <code class="docutils literal notranslate"><span class="pre">False</span></code>
+after the configuration has been saved to file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>modified</strong> – <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.ControlledDict.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">E</em>, <span class="optional">]</span><em class="sig-param">**F</em><span class="sig-paren">)</span> &#x2192; None.  Update D from dict/iterable E and F.<a class="headerlink" href="#zim.config.dicts.ControlledDict.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k]
+If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v
+In either case, this is followed by: for k in F:  D[k] = F[k]</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.config.dicts.Coordinate">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.dicts.</code><code class="sig-name descname">Coordinate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">default</span></em>, <em class="sig-param"><span class="n">allow_empty</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.Coordinate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.config.dicts.ConfigDefinition" title="zim.config.dicts.ConfigDefinition"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.config.dicts.ConfigDefinition</span></code></a></p>
+<p>Class defining a config value that is a coordinate
+(i.e. a tuple of two integers). This is e.g. used to store for
+window coordinates. If the value is a list of two integers,
+it will automatically be converted to a tuple.</p>
+<dl class="py attribute">
+<dt id="zim.config.dicts.Coordinate.allow_empty">
+<code class="sig-name descname">allow_empty</code><a class="headerlink" href="#zim.config.dicts.Coordinate.allow_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.Coordinate.check">
+<code class="sig-name descname">check</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.Coordinate.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check <code class="docutils literal notranslate"><span class="pre">value</span></code> to be a valid value for this key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – if value is invalid and can not
+be converted</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(converted) value if valid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.config.dicts.Coordinate.default">
+<code class="sig-name descname">default</code><a class="headerlink" href="#zim.config.dicts.Coordinate.default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.config.dicts.Float">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.dicts.</code><code class="sig-name descname">Float</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">default</span></em>, <em class="sig-param"><span class="n">allow_empty</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.Float" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.config.dicts.ConfigDefinition" title="zim.config.dicts.ConfigDefinition"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.config.dicts.ConfigDefinition</span></code></a></p>
+<p>This class defines a config key that maps to a float</p>
+<dl class="py attribute">
+<dt id="zim.config.dicts.Float.allow_empty">
+<code class="sig-name descname">allow_empty</code><a class="headerlink" href="#zim.config.dicts.Float.allow_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.Float.check">
+<code class="sig-name descname">check</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.Float.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check <code class="docutils literal notranslate"><span class="pre">value</span></code> to be a valid value for this key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – if value is invalid and can not
+be converted</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(converted) value if valid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.config.dicts.Float.default">
+<code class="sig-name descname">default</code><a class="headerlink" href="#zim.config.dicts.Float.default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.config.dicts.HierarchicDict">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.dicts.</code><code class="sig-name descname">HierarchicDict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">defaults</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.HierarchicDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class implements a data store that behaves as a hierarchic
+dict of dicts. Each key in this object is considered a hierarchic
+path (the path separator is ‘:’ for obvious reasons). The dict for
+each key will “inherit” all values from parent paths. However
+setting a new value will set it specifically for that key, without
+changing the value in the “parents”. This is specifically used to store
+namespace properties for zim notebooks. So each child namespace will
+inherit the properties of it’s parents unless it was explicitly
+set for that child namespace.</p>
+<p>There is a special member dict stored under the key “__defaults__”
+which has the top-level fallback properties.</p>
+<p>This object only implements
+<code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code>, but no <code class="docutils literal notranslate"><span class="pre">__setitem__()</span></code>.</p>
+<dl class="py attribute">
+<dt id="zim.config.dicts.HierarchicDict.dict">
+<code class="sig-name descname">dict</code><a class="headerlink" href="#zim.config.dicts.HierarchicDict.dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.config.dicts.HierarchicDictFrame">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.dicts.</code><code class="sig-name descname">HierarchicDictFrame</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dict</span></em>, <em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.HierarchicDictFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Object acts as a member dict for <a class="reference internal" href="#zim.config.dicts.HierarchicDict" title="zim.config.dicts.HierarchicDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">HierarchicDict</span></code></a></p>
+<dl class="py attribute">
+<dt id="zim.config.dicts.HierarchicDictFrame.dict">
+<code class="sig-name descname">dict</code><a class="headerlink" href="#zim.config.dicts.HierarchicDictFrame.dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.HierarchicDictFrame.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">default</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.HierarchicDictFrame.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.config.dicts.HierarchicDictFrame.key">
+<code class="sig-name descname">key</code><a class="headerlink" href="#zim.config.dicts.HierarchicDictFrame.key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.HierarchicDictFrame.remove">
+<code class="sig-name descname">remove</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.HierarchicDictFrame.remove" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.config.dicts.INIConfigFile">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.dicts.</code><code class="sig-name descname">INIConfigFile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">monitor</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.INIConfigFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.config.dicts.SectionedConfigDict" title="zim.config.dicts.SectionedConfigDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.config.dicts.SectionedConfigDict</span></code></a></p>
+<p>Dict to represent a configuration file in “ini-style”. Since the
+ini-file is divided in section this is represented as a dict of
+dicts. This class represents the top-level with a key for each
+section. The values are in turn :class:<a href="#id3"><span class="problematic" id="id4">`</span></a>ConfigDict`s which contain the
+key value pairs in that section.</p>
+<p>A typical file might look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Section1</span><span class="p">]</span>
+<span class="n">param1</span><span class="o">=</span><span class="n">foo</span>
+<span class="n">param2</span><span class="o">=</span><span class="n">bar</span>
+
+<span class="p">[</span><span class="n">Section2</span><span class="p">]</span>
+<span class="n">enabled</span><span class="o">=</span><span class="kc">True</span>
+<span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>(The values are parsed by the <a class="reference internal" href="#zim.config.dicts.ConfigDefinition" title="zim.config.dicts.ConfigDefinition"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConfigDefinition</span></code></a> for each key)</p>
+<p>By default when parsing sections of the same name they will be
+merged and values that appear under the same section name later in
+the file will overwrite values that appeared earlier. As a special
+case we can support sections that repeat under the same section name.
+To do this assign the section name a list before parsing.</p>
+<p>Sections and parameters whose name start with ‘_’ are considered as
+private and are not stored when the config is written to file. This
+can be used for caching values that should not be persistent across
+instances.</p>
+<dl class="py method">
+<dt id="zim.config.dicts.INIConfigFile.dump">
+<code class="sig-name descname">dump</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.INIConfigFile.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize the config to a “ini-style” config file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a list of lines with text in “ini-style” formatting</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.INIConfigFile.on_file_changed">
+<code class="sig-name descname">on_file_changed</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">a</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.INIConfigFile.on_file_changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.INIConfigFile.parse">
+<code class="sig-name descname">parse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.INIConfigFile.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse an “ini-style” configuration. Fills the dictionary
+with values from this text, wil merge with existing sections and
+overwrite existing values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – a string or a list of lines</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.INIConfigFile.read">
+<code class="sig-name descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.INIConfigFile.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read data from file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.INIConfigFile.write">
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.INIConfigFile.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write data and set <code class="docutils literal notranslate"><span class="pre">modified</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.config.dicts.Integer">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.dicts.</code><code class="sig-name descname">Integer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">default</span></em>, <em class="sig-param"><span class="n">allow_empty</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.Integer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.config.dicts.ConfigDefinition" title="zim.config.dicts.ConfigDefinition"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.config.dicts.ConfigDefinition</span></code></a></p>
+<p>This class defines a config key that maps to an integer value</p>
+<dl class="py attribute">
+<dt id="zim.config.dicts.Integer.allow_empty">
+<code class="sig-name descname">allow_empty</code><a class="headerlink" href="#zim.config.dicts.Integer.allow_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.Integer.check">
+<code class="sig-name descname">check</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.Integer.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check <code class="docutils literal notranslate"><span class="pre">value</span></code> to be a valid value for this key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – if value is invalid and can not
+be converted</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(converted) value if valid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.config.dicts.Integer.default">
+<code class="sig-name descname">default</code><a class="headerlink" href="#zim.config.dicts.Integer.default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.config.dicts.Range">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.dicts.</code><code class="sig-name descname">Range</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">default</span></em>, <em class="sig-param"><span class="n">min</span></em>, <em class="sig-param"><span class="n">max</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.Range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.config.dicts.Integer" title="zim.config.dicts.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.config.dicts.Integer</span></code></a></p>
+<p>Definition that defines an integer value in a certain range</p>
+<dl class="py method">
+<dt id="zim.config.dicts.Range.check">
+<code class="sig-name descname">check</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.Range.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check <code class="docutils literal notranslate"><span class="pre">value</span></code> to be a valid value for this key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – if value is invalid and can not
+be converted</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(converted) value if valid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.config.dicts.Range.max">
+<code class="sig-name descname">max</code><a class="headerlink" href="#zim.config.dicts.Range.max" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.config.dicts.Range.min">
+<code class="sig-name descname">min</code><a class="headerlink" href="#zim.config.dicts.Range.min" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.config.dicts.SectionedConfigDict">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.dicts.</code><code class="sig-name descname">SectionedConfigDict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">E</span><span class="o">=</span><span class="default_value">()</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">F</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.SectionedConfigDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.config.dicts.ControlledDict" title="zim.config.dicts.ControlledDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.config.dicts.ControlledDict</span></code></a></p>
+<p>Dict with multiple sections of config values
+Sections are handled automatically when a non-existing item is retrieved.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.config.dicts.String">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.dicts.</code><code class="sig-name descname">String</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">default</span></em>, <em class="sig-param"><span class="n">allow_empty</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.String" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.config.dicts.ConfigDefinition" title="zim.config.dicts.ConfigDefinition"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.config.dicts.ConfigDefinition</span></code></a></p>
+<p>This class defines a config key that maps to a string</p>
+<dl class="py attribute">
+<dt id="zim.config.dicts.String.allow_empty">
+<code class="sig-name descname">allow_empty</code><a class="headerlink" href="#zim.config.dicts.String.allow_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.String.check">
+<code class="sig-name descname">check</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.String.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check <code class="docutils literal notranslate"><span class="pre">value</span></code> to be a valid value for this key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – if value is invalid and can not
+be converted</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(converted) value if valid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.config.dicts.String.default">
+<code class="sig-name descname">default</code><a class="headerlink" href="#zim.config.dicts.String.default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.dicts.String.tostring">
+<code class="sig-name descname">tostring</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.String.tostring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.config.dicts.StringAllowEmpty">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.dicts.</code><code class="sig-name descname">StringAllowEmpty</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">default</span></em>, <em class="sig-param"><span class="n">allow_empty</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.StringAllowEmpty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.config.dicts.String" title="zim.config.dicts.String"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.config.dicts.String</span></code></a></p>
+<p>Like <code class="docutils literal notranslate"><span class="pre">String</span></code> but defaults to <code class="docutils literal notranslate"><span class="pre">allow_empty=True</span></code></p>
+<dl class="py attribute">
+<dt id="zim.config.dicts.StringAllowEmpty.allow_empty">
+<code class="sig-name descname">allow_empty</code><a class="headerlink" href="#zim.config.dicts.StringAllowEmpty.allow_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.config.dicts.StringAllowEmpty.default">
+<code class="sig-name descname">default</code><a class="headerlink" href="#zim.config.dicts.StringAllowEmpty.default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.config.dicts.build_config_definition">
+<code class="sig-prename descclassname">zim.config.dicts.</code><code class="sig-name descname">build_config_definition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">default</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">check</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">allow_empty</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.dicts.build_config_definition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience method to construct a <a class="reference internal" href="#zim.config.dicts.ConfigDefinition" title="zim.config.dicts.ConfigDefinition"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConfigDefinition</span></code></a> object
+based on a default value and/or a check.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.config.dicts.value_is_coord">
+<code class="sig-prename descclassname">zim.config.dicts.</code><code class="sig-name descname">value_is_coord</code><a class="headerlink" href="#zim.config.dicts.value_is_coord" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#zim.config.dicts.Coordinate" title="zim.config.dicts.Coordinate"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.config.dicts.Coordinate</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.config.manager">
+<span id="zim-config-manager-module"></span><h2>zim.config.manager module<a class="headerlink" href="#module-zim.config.manager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="zim.config.manager.ConfigFile">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.manager.</code><code class="sig-name descname">ConfigFile</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.manager.ConfigFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.signals.ConnectorMixin" title="zim.signals.ConnectorMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.signals.ConnectorMixin</span></code></a>, <a class="reference internal" href="zim.html#zim.signals.SignalEmitter" title="zim.signals.SignalEmitter"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.signals.SignalEmitter</span></code></a></p>
+<p>Container object for a config file</p>
+<p>Maps to a “base” file in the home folder, used to write new values,
+and an optional default file, which is used for reading only.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="zim.html#zim.fs.Dir.file" title="zim.fs.Dir.file"><strong>file</strong></a> – the underlying file object for the base config file
+in the home folder</p></li>
+<li><p><strong>defaults</strong> – a generator that yields default files</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>this class implement similar API to the <code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code> class but
+is explicitly not a sub-class of <code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code> because config files should
+typically not be moved, renamed, etc. It just implements the reading
+and writing methods.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Signal</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">changed</span> <span class="pre">()</span></code>: emitted when the
+underlying file changed (based on <code class="docutils literal notranslate"><span class="pre">gio</span></code> monitoring support).</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="zim.config.manager.ConfigFile.basename">
+<em class="property">property </em><code class="sig-name descname">basename</code><a class="headerlink" href="#zim.config.manager.ConfigFile.basename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.manager.ConfigFile.check_has_changed_on_disk">
+<code class="sig-name descname">check_has_changed_on_disk</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.manager.ConfigFile.check_has_changed_on_disk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.manager.ConfigFile.exists">
+<code class="sig-name descname">exists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.manager.ConfigFile.exists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.manager.ConfigFile.read">
+<code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fail</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.manager.ConfigFile.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the base file or first default file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fail</strong> – if <code class="docutils literal notranslate"><span class="pre">True</span></code> a <code class="xref py py-class docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> error is raised
+when neither the base file or a default file are found. If
+<code class="docutils literal notranslate"><span class="pre">False</span></code> it will return <code class="docutils literal notranslate"><span class="pre">''</span></code> for a non-existing file.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>file content as a string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.manager.ConfigFile.readlines">
+<code class="sig-name descname">readlines</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fail</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.manager.ConfigFile.readlines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the base file or first default file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fail</strong> – if <code class="docutils literal notranslate"><span class="pre">True</span></code> a <code class="xref py py-class docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> error is raised
+when neither the base file or a default file are found. If
+<code class="docutils literal notranslate"><span class="pre">False</span></code> it will return <code class="docutils literal notranslate"><span class="pre">[]</span></code> for a non-existing file.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>file content as a list of lines</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.manager.ConfigFile.remove">
+<code class="sig-name descname">remove</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.manager.ConfigFile.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove user file, leaves default files in place</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.manager.ConfigFile.touch">
+<code class="sig-name descname">touch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.manager.ConfigFile.touch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ensure the custom file in the home folder exists. Either by
+copying a default config file, or touching an empty file.
+Intended to be called before trying to edit the file with an
+external editor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.manager.ConfigFile.write">
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.manager.ConfigFile.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write base file, see <code class="xref py py-class docutils literal notranslate"><span class="pre">File.write()</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.manager.ConfigFile.writelines">
+<code class="sig-name descname">writelines</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.manager.ConfigFile.writelines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write base file, see <code class="xref py py-class docutils literal notranslate"><span class="pre">File.writelines()</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.config.manager.ConfigManagerClass">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.manager.</code><code class="sig-name descname">ConfigManagerClass</code><a class="headerlink" href="#zim.config.manager.ConfigManagerClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class defines an object that manages a set of config files.</p>
+<p>The config manager abstracts the lookup of files using the XDG
+search paths and ensures that there is only a single instance used
+for each config file.</p>
+<p>Typically config files are instantiated as a <code class="xref py py-class docutils literal notranslate"><span class="pre">ConfigDict</span></code> file and changes
+are communicated to all users of the config by means of the “changed” signal.</p>
+<dl class="py method">
+<dt id="zim.config.manager.ConfigManagerClass.get_config_dict">
+<code class="sig-name descname">get_config_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.manager.ConfigManagerClass.get_config_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a <code class="docutils literal notranslate"><span class="pre">SectionedConfigDict</span></code> object for <code class="docutils literal notranslate"><span class="pre">filename</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.manager.ConfigManagerClass.get_config_file">
+<code class="sig-name descname">get_config_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.manager.ConfigManagerClass.get_config_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a <code class="docutils literal notranslate"><span class="pre">ConfigFile</span></code> object for <code class="docutils literal notranslate"><span class="pre">filename</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.config.manager.ConfigManagerClass.preferences">
+<em class="property">property </em><code class="sig-name descname">preferences</code><a class="headerlink" href="#zim.config.manager.ConfigManagerClass.preferences" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.config.manager.ConfigManagerINIConfigFile">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.manager.</code><code class="sig-name descname">ConfigManagerINIConfigFile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.manager.ConfigManagerINIConfigFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.config.dicts.INIConfigFile" title="zim.config.dicts.INIConfigFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.config.dicts.INIConfigFile</span></code></a></p>
+<p>Like <code class="xref py py-class docutils literal notranslate"><span class="pre">INIConfigFile</span></code> but with autosave when the dict changes</p>
+<dl class="py attribute">
+<dt id="zim.config.manager.ConfigManagerINIConfigFile.on_changed">
+<code class="sig-name descname">on_changed</code><a class="headerlink" href="#zim.config.manager.ConfigManagerINIConfigFile.on_changed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for a signal handler method that allows blocking the
+handler for incoming signals. To be used as function decorator.</p>
+<p>The method will be replaced by a <code class="xref py py-class docutils literal notranslate"><span class="pre">BoundSignalHandler</span></code> object that
+supports a <code class="docutils literal notranslate"><span class="pre">blocked()</span></code> method which returns a context manager
+to temporarily block a callback.</p>
+<p>Intended to be used as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">():</span>
+
+        <span class="nd">@SignalHandler</span>
+        <span class="k">def</span> <span class="nf">on_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="o">...</span>
+
+        <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_changed</span><span class="o">.</span><span class="n">blocked</span><span class="p">():</span>
+                        <span class="o">...</span> <span class="c1"># do something that results in a &quot;changed&quot; signal</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.config.manager.ConfigManagerINIConfigFile.on_file_changed">
+<code class="sig-name descname">on_file_changed</code><a class="headerlink" href="#zim.config.manager.ConfigManagerINIConfigFile.on_file_changed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for a signal handler method that allows blocking the
+handler for incoming signals. To be used as function decorator.</p>
+<p>The method will be replaced by a <code class="xref py py-class docutils literal notranslate"><span class="pre">BoundSignalHandler</span></code> object that
+supports a <code class="docutils literal notranslate"><span class="pre">blocked()</span></code> method which returns a context manager
+to temporarily block a callback.</p>
+<p>Intended to be used as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">():</span>
+
+        <span class="nd">@SignalHandler</span>
+        <span class="k">def</span> <span class="nf">on_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="o">...</span>
+
+        <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_changed</span><span class="o">.</span><span class="n">blocked</span><span class="p">():</span>
+                        <span class="o">...</span> <span class="c1"># do something that results in a &quot;changed&quot; signal</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.config.manager.DefaultFileIter">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.manager.</code><code class="sig-name descname">DefaultFileIter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dirs</span></em>, <em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">extra</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.manager.DefaultFileIter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Generator for iterating default files
+Will yield first the files in <code class="docutils literal notranslate"><span class="pre">extra</span></code> followed by files that
+are based on <code class="docutils literal notranslate"><span class="pre">path</span></code> and <code class="docutils literal notranslate"><span class="pre">dirs</span></code>. Yields only existing files.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.config.manager.XDGConfigDirsIter">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.manager.</code><code class="sig-name descname">XDGConfigDirsIter</code><a class="headerlink" href="#zim.config.manager.XDGConfigDirsIter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Generator for iterating XDG config dirs
+Yields the “zim” subdir of each XDG config file.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.config.manager.XDGConfigFileIter">
+<em class="property">class </em><code class="sig-prename descclassname">zim.config.manager.</code><code class="sig-name descname">XDGConfigFileIter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">extra</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.manager.XDGConfigFileIter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.config.manager.DefaultFileIter" title="zim.config.manager.DefaultFileIter"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.config.manager.DefaultFileIter</span></code></a></p>
+<p>Like <code class="docutils literal notranslate"><span class="pre">DefaultFileIter</span></code>, but uses XDG config dirs</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.config.manager.makeConfigManagerVirtual">
+<code class="sig-prename descclassname">zim.config.manager.</code><code class="sig-name descname">makeConfigManagerVirtual</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.manager.makeConfigManagerVirtual" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="zim.config.manager.resetConfigManager">
+<code class="sig-prename descclassname">zim.config.manager.</code><code class="sig-name descname">resetConfigManager</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.manager.resetConfigManager" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-zim.config">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-zim.config" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="zim.config.data_dir">
+<code class="sig-prename descclassname">zim.config.</code><code class="sig-name descname">data_dir</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.data_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an data dir sub-folder.  Will look up <code class="docutils literal notranslate"><span class="pre">path</span></code> relative
+to all data dirs and return the first one that exists. Use this
+function to find any folders from the “data/” folder in the source
+package.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> – a file path relative to to the data dir</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a <code class="xref py py-class docutils literal notranslate"><span class="pre">Dir</span></code> object or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.config.data_dirs">
+<code class="sig-prename descclassname">zim.config.</code><code class="sig-name descname">data_dirs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.data_dirs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generator listing paths that contain zim data files in the order
+that they should be searched. These will be the equivalent of
+e.g. “~/.local/share/zim”, “/usr/share/zim”, etc.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> – a file path relative to to the data dir, including this
+will list sub-folders with this relative path.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>yields <code class="xref py py-class docutils literal notranslate"><span class="pre">Dir</span></code> objects for the data dirs</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.config.data_file">
+<code class="sig-prename descclassname">zim.config.</code><code class="sig-name descname">data_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.data_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a data file. Will look up <code class="docutils literal notranslate"><span class="pre">path</span></code> relative to all data dirs
+and return the first one that exists. Use this function to find
+any files from the “data/” folder in the source package.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> – a file path relative to to the data dir (e.g. “zim.png”)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a <code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code> object or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.config.user_dirs">
+<code class="sig-prename descclassname">zim.config.</code><code class="sig-name descname">user_dirs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.config.user_dirs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the XDG user dirs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a dict with directories for the XDG user dirs. These are
+typically defined in “~/.config/user-dirs.dirs”. Common user dirs
+are: “XDG_DESKTOP_DIR”, “XDG_DOWNLOAD_DIR”, etc. If no definition
+is found an empty dict will be returned.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Zim Desktop Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Jaap Karssenberg and contributors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/zim.config.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

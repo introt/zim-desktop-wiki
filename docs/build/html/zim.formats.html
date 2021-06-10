@@ -1,0 +1,2408 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zim.formats package &#8212; Zim Desktop Wiki 0.74 develop documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="zim-formats-package">
+<h1>zim.formats package<a class="headerlink" href="#zim-formats-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-zim.formats.html">
+<span id="zim-formats-html-module"></span><h2>zim.formats.html module<a class="headerlink" href="#module-zim.formats.html" title="Permalink to this headline">¶</a></h2>
+<p>This module supports dumping to HTML</p>
+<dl class="py class">
+<dt id="zim.formats.html.Dumper">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.html.</code><code class="sig-name descname">Dumper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">linker</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">template_options</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.formats.DumperClass" title="zim.formats.DumperClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.formats.DumperClass</span></code></a></p>
+<dl class="py attribute">
+<dt id="zim.formats.html.Dumper.TAGS">
+<code class="sig-name descname">TAGS</code><em class="property"> = {'code': ('&lt;tt&gt;', '&lt;/tt&gt;'), 'emphasis': ('&lt;i&gt;', '&lt;/i&gt;'), 'mark': ('&lt;u&gt;', '&lt;/u&gt;'), 'strike': ('&lt;s&gt;', '&lt;/s&gt;'), 'strong': ('&lt;b&gt;', '&lt;/b&gt;'), 'sub': ('&lt;sub&gt;', '&lt;/sub&gt;'), 'sup': ('&lt;sup&gt;', '&lt;/sup&gt;'), 'tag': ('&lt;span class=&quot;zim-tag&quot;&gt;', '&lt;/span&gt;')}</em><a class="headerlink" href="#zim.formats.html.Dumper.TAGS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.formats.html.Dumper.TEMPLATE_OPTIONS">
+<code class="sig-name descname">TEMPLATE_OPTIONS</code><em class="property"> = {'empty_lines': &lt;zim.config.dicts.Choice object&gt;, 'line_breaks': &lt;zim.config.dicts.Choice object&gt;}</em><a class="headerlink" href="#zim.formats.html.Dumper.TEMPLATE_OPTIONS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.dump">
+<code class="sig-name descname">dump</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tree</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format a parsetree to text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tree</strong> – a parse tree object that supports a <code class="docutils literal notranslate"><span class="pre">visit()</span></code> method</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of lines</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.dump_anchor">
+<code class="sig-name descname">dump_anchor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.dump_anchor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.dump_block">
+<code class="sig-name descname">dump_block</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em>, <em class="sig-param"><span class="n">_extra</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.dump_block" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.dump_div">
+<code class="sig-name descname">dump_div</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em>, <em class="sig-param"><span class="n">_extra</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.dump_div" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.dump_h">
+<code class="sig-name descname">dump_h</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.dump_h" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.dump_img">
+<code class="sig-name descname">dump_img</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.dump_img" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.dump_li">
+<code class="sig-name descname">dump_li</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.dump_li" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.dump_line">
+<code class="sig-name descname">dump_line</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.dump_line" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.dump_link">
+<code class="sig-name descname">dump_link</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.dump_link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.dump_object">
+<code class="sig-name descname">dump_object</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">[]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.dump_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dumps objects defined by <code class="xref py py-class docutils literal notranslate"><span class="pre">InsertedObjectType</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.dump_object_fallback">
+<code class="sig-name descname">dump_object_fallback</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.dump_object_fallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to serialize objects that do not have their own
+handler for this format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented in sub-classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.dump_ol">
+<code class="sig-name descname">dump_ol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.dump_ol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.dump_p">
+<code class="sig-name descname">dump_p</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em>, <em class="sig-param"><span class="n">_extra</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.dump_p" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.dump_pre">
+<code class="sig-name descname">dump_pre</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em>, <em class="sig-param"><span class="n">_extra</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.dump_pre" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.dump_table">
+<code class="sig-name descname">dump_table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.dump_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.dump_td">
+<code class="sig-name descname">dump_td</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.dump_td" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.dump_th">
+<code class="sig-name descname">dump_th</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.dump_th" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.dump_thead">
+<code class="sig-name descname">dump_thead</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.dump_thead" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.dump_trow">
+<code class="sig-name descname">dump_trow</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.dump_trow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.dump_ul">
+<code class="sig-name descname">dump_ul</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em>, <em class="sig-param"><span class="n">_extra</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.dump_ul" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.encode_text">
+<code class="sig-name descname">encode_text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.encode_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional method to encode text elements in the output</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do not apply text encoding in the <code class="docutils literal notranslate"><span class="pre">dump_</span></code> methods, the
+list of strings given there may contain prefix and postfix
+formatting of nested tags.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag</strong> – formatting tag</p></li>
+<li><p><strong>text</strong> – text to be encoded</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>encoded text</p>
+</dd>
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>optional, default just returns unmodified input</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.html.Dumper.text">
+<code class="sig-name descname">text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.Dumper.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – text to be appended as string</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>optional for subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.formats.html.html_encode">
+<code class="sig-prename descclassname">zim.formats.html.</code><code class="sig-name descname">html_encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.html.html_encode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-zim.formats.latex">
+<span id="zim-formats-latex-module"></span><h2>zim.formats.latex module<a class="headerlink" href="#module-zim.formats.latex" title="Permalink to this headline">¶</a></h2>
+<p>This modules handles export of LaTeX Code</p>
+<dl class="py class">
+<dt id="zim.formats.latex.Dumper">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.latex.</code><code class="sig-name descname">Dumper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">linker</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">template_options</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.latex.Dumper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.formats.plain.Dumper" title="zim.formats.plain.Dumper"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.formats.plain.Dumper</span></code></a></p>
+<dl class="py attribute">
+<dt id="zim.formats.latex.Dumper.BULLETS">
+<code class="sig-name descname">BULLETS</code><em class="property"> = {'*': '\\item', 'checked-box': '\\item[\\CheckedBox]', 'migrated-box': '\\item[\\RIGHTarrow]', 'transmigrated-box': '\\item[\\LEFTarrow]', 'unchecked-box': '\\item[\\Square]', 'xchecked-box': '\\item[\\XBox]'}</em><a class="headerlink" href="#zim.formats.latex.Dumper.BULLETS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.formats.latex.Dumper.SECTIONING">
+<code class="sig-name descname">SECTIONING</code><em class="property"> = {'article': {1: '\\section{%s}', 2: '\\subsection{%s}', 3: '\\subsubsection{%s}', 4: '\\paragraph{%s}', 5: '\\subparagraph{%s}'}, 'book': {1: '\\part{%s}', 2: '\\chapter{%s}', 3: '\\section{%s}', 4: '\\subsection{%s}', 5: '\\subsubsection{%s}'}, 'report': {1: '\\chapter{%s}', 2: '\\section{%s}', 3: '\\subsection{%s}', 4: '\\subsubsection{%s}', 5: '\\paragraph{%s}'}}</em><a class="headerlink" href="#zim.formats.latex.Dumper.SECTIONING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.formats.latex.Dumper.TAGS">
+<code class="sig-name descname">TAGS</code><em class="property"> = {'emphasis': ('\\emph{', '}'), 'mark': ('\\uline{', '}'), 'strike': ('\\sout{', '}'), 'strong': ('\\textbf{', '}'), 'sub': ('$_{', '}$'), 'sup': ('$^{', '}$'), 'tag': ('', '')}</em><a class="headerlink" href="#zim.formats.latex.Dumper.TAGS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.formats.latex.Dumper.TEMPLATE_OPTIONS">
+<code class="sig-name descname">TEMPLATE_OPTIONS</code><em class="property"> = {'document_type': &lt;zim.config.dicts.Choice object&gt;}</em><a class="headerlink" href="#zim.formats.latex.Dumper.TEMPLATE_OPTIONS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.latex.Dumper.dump">
+<code class="sig-name descname">dump</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tree</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.latex.Dumper.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format a parsetree to text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tree</strong> – a parse tree object that supports a <code class="docutils literal notranslate"><span class="pre">visit()</span></code> method</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of lines</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.latex.Dumper.dump_anchor">
+<code class="sig-name descname">dump_anchor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.latex.Dumper.dump_anchor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.latex.Dumper.dump_code">
+<code class="sig-name descname">dump_code</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.latex.Dumper.dump_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.latex.Dumper.dump_h">
+<code class="sig-name descname">dump_h</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.latex.Dumper.dump_h" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.latex.Dumper.dump_img">
+<code class="sig-name descname">dump_img</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.latex.Dumper.dump_img" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.latex.Dumper.dump_li">
+<code class="sig-name descname">dump_li</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.latex.Dumper.dump_li" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.latex.Dumper.dump_line">
+<code class="sig-name descname">dump_line</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.latex.Dumper.dump_line" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.latex.Dumper.dump_link">
+<code class="sig-name descname">dump_link</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.latex.Dumper.dump_link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.latex.Dumper.dump_object_fallback">
+<code class="sig-name descname">dump_object_fallback</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.latex.Dumper.dump_object_fallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to serialize objects that do not have their own
+handler for this format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented in sub-classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.latex.Dumper.dump_ol">
+<code class="sig-name descname">dump_ol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.latex.Dumper.dump_ol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.latex.Dumper.dump_pre">
+<code class="sig-name descname">dump_pre</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.latex.Dumper.dump_pre" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.latex.Dumper.dump_table">
+<code class="sig-name descname">dump_table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.latex.Dumper.dump_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.latex.Dumper.dump_ul">
+<code class="sig-name descname">dump_ul</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.latex.Dumper.dump_ul" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.latex.Dumper.encode_text">
+<em class="property">static </em><code class="sig-name descname">encode_text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.latex.Dumper.encode_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional method to encode text elements in the output</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do not apply text encoding in the <code class="docutils literal notranslate"><span class="pre">dump_</span></code> methods, the
+list of strings given there may contain prefix and postfix
+formatting of nested tags.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag</strong> – formatting tag</p></li>
+<li><p><strong>text</strong> – text to be encoded</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>encoded text</p>
+</dd>
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>optional, default just returns unmodified input</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.latex.Dumper.is_supported_image">
+<code class="sig-name descname">is_supported_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.latex.Dumper.is_supported_image" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.formats.markdown">
+<span id="zim-formats-markdown-module"></span><h2>zim.formats.markdown module<a class="headerlink" href="#module-zim.formats.markdown" title="Permalink to this headline">¶</a></h2>
+<p>This module handles dumping markdown text with pandoc extensions</p>
+<dl class="py class">
+<dt id="zim.formats.markdown.Dumper">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.markdown.</code><code class="sig-name descname">Dumper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">linker</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">template_options</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.markdown.Dumper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.formats.plain.Dumper" title="zim.formats.plain.Dumper"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.formats.plain.Dumper</span></code></a></p>
+<dl class="py attribute">
+<dt id="zim.formats.markdown.Dumper.BULLETS">
+<code class="sig-name descname">BULLETS</code><em class="property"> = {'*': '*', 'checked-box': '* ☑', 'migrated-box': '* ▷', 'unchecked-box': '* ☐', 'xchecked-box': '* ☒'}</em><a class="headerlink" href="#zim.formats.markdown.Dumper.BULLETS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.formats.markdown.Dumper.TAGS">
+<code class="sig-name descname">TAGS</code><em class="property"> = {'code': ('``', '``'), 'emphasis': ('*', '*'), 'mark': ('__', '__'), 'strike': ('~~', '~~'), 'strong': ('**', '**'), 'sub': ('~', '~'), 'sup': ('^', '^'), 'tag': ('', '')}</em><a class="headerlink" href="#zim.formats.markdown.Dumper.TAGS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.markdown.Dumper.dump">
+<code class="sig-name descname">dump</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tree</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.markdown.Dumper.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format a parsetree to text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tree</strong> – a parse tree object that supports a <code class="docutils literal notranslate"><span class="pre">visit()</span></code> method</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of lines</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.markdown.Dumper.dump_div">
+<code class="sig-name descname">dump_div</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.markdown.Dumper.dump_div" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.markdown.Dumper.dump_img">
+<code class="sig-name descname">dump_img</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.markdown.Dumper.dump_img" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.markdown.Dumper.dump_indent">
+<code class="sig-name descname">dump_indent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.markdown.Dumper.dump_indent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.markdown.Dumper.dump_li">
+<code class="sig-name descname">dump_li</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.markdown.Dumper.dump_li" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.markdown.Dumper.dump_line">
+<code class="sig-name descname">dump_line</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.markdown.Dumper.dump_line" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.markdown.Dumper.dump_link">
+<code class="sig-name descname">dump_link</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.markdown.Dumper.dump_link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.markdown.Dumper.dump_list">
+<code class="sig-name descname">dump_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.markdown.Dumper.dump_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.markdown.Dumper.dump_object_fallback">
+<code class="sig-name descname">dump_object_fallback</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.markdown.Dumper.dump_object_fallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to serialize objects that do not have their own
+handler for this format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented in sub-classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.markdown.Dumper.dump_ol">
+<code class="sig-name descname">dump_ol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.markdown.Dumper.dump_ol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.markdown.Dumper.dump_p">
+<code class="sig-name descname">dump_p</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.markdown.Dumper.dump_p" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.markdown.Dumper.dump_pre">
+<code class="sig-name descname">dump_pre</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.markdown.Dumper.dump_pre" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.markdown.Dumper.dump_table">
+<code class="sig-name descname">dump_table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.markdown.Dumper.dump_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.markdown.Dumper.dump_td">
+<code class="sig-name descname">dump_td</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.markdown.Dumper.dump_td" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.markdown.Dumper.dump_th">
+<code class="sig-name descname">dump_th</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.markdown.Dumper.dump_th" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.markdown.Dumper.dump_ul">
+<code class="sig-name descname">dump_ul</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.markdown.Dumper.dump_ul" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.formats.plain">
+<span id="zim-formats-plain-module"></span><h2>zim.formats.plain module<a class="headerlink" href="#module-zim.formats.plain" title="Permalink to this headline">¶</a></h2>
+<p>This module handles parsing and dumping input in plain text</p>
+<dl class="py class">
+<dt id="zim.formats.plain.Dumper">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.plain.</code><code class="sig-name descname">Dumper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">linker</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">template_options</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Dumper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.formats.DumperClass" title="zim.formats.DumperClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.formats.DumperClass</span></code></a></p>
+<dl class="py attribute">
+<dt id="zim.formats.plain.Dumper.BULLETS">
+<code class="sig-name descname">BULLETS</code><em class="property"> = {'*': '*', 'checked-box': '[*]', 'migrated-box': '[&gt;]', 'transmigrated-box': '[&lt;]', 'unchecked-box': '[ ]', 'xchecked-box': '[x]'}</em><a class="headerlink" href="#zim.formats.plain.Dumper.BULLETS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.formats.plain.Dumper.TAGS">
+<code class="sig-name descname">TAGS</code><em class="property"> = {'code': ('', ''), 'emphasis': ('', ''), 'h': ('', ''), 'mark': ('', ''), 'strike': ('', ''), 'strong': ('', ''), 'sub': ('', ''), 'sup': ('', ''), 'tag': ('', '')}</em><a class="headerlink" href="#zim.formats.plain.Dumper.TAGS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.plain.Dumper.dump_anchor">
+<code class="sig-name descname">dump_anchor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Dumper.dump_anchor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.plain.Dumper.dump_div">
+<code class="sig-name descname">dump_div</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Dumper.dump_div" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.plain.Dumper.dump_h">
+<code class="sig-name descname">dump_h</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Dumper.dump_h" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.plain.Dumper.dump_img">
+<code class="sig-name descname">dump_img</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Dumper.dump_img" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.plain.Dumper.dump_indent">
+<code class="sig-name descname">dump_indent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Dumper.dump_indent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.plain.Dumper.dump_li">
+<code class="sig-name descname">dump_li</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Dumper.dump_li" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.plain.Dumper.dump_line">
+<code class="sig-name descname">dump_line</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Dumper.dump_line" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.plain.Dumper.dump_link">
+<code class="sig-name descname">dump_link</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Dumper.dump_link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.plain.Dumper.dump_list">
+<code class="sig-name descname">dump_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Dumper.dump_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.plain.Dumper.dump_object_fallback">
+<code class="sig-name descname">dump_object_fallback</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Dumper.dump_object_fallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to serialize objects that do not have their own
+handler for this format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented in sub-classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.plain.Dumper.dump_ol">
+<code class="sig-name descname">dump_ol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Dumper.dump_ol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.plain.Dumper.dump_p">
+<code class="sig-name descname">dump_p</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Dumper.dump_p" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.plain.Dumper.dump_pre">
+<code class="sig-name descname">dump_pre</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Dumper.dump_pre" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.plain.Dumper.dump_table">
+<code class="sig-name descname">dump_table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Dumper.dump_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.plain.Dumper.dump_td">
+<code class="sig-name descname">dump_td</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Dumper.dump_td" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.plain.Dumper.dump_th">
+<code class="sig-name descname">dump_th</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Dumper.dump_th" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.plain.Dumper.dump_thead">
+<code class="sig-name descname">dump_thead</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Dumper.dump_thead" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.plain.Dumper.dump_trow">
+<code class="sig-name descname">dump_trow</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Dumper.dump_trow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.plain.Dumper.dump_ul">
+<code class="sig-name descname">dump_ul</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Dumper.dump_ul" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.formats.plain.Parser">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.plain.</code><code class="sig-name descname">Parser</code><a class="headerlink" href="#zim.formats.plain.Parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.formats.ParserClass" title="zim.formats.ParserClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.formats.ParserClass</span></code></a></p>
+<dl class="py method">
+<dt id="zim.formats.plain.Parser.parse">
+<code class="sig-name descname">parse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input</span></em>, <em class="sig-param"><span class="n">partial</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Parser.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>ABSTRACT METHOD: needs to be overloaded by sub-classes.</p>
+<p>This method takes a text or an iterable with lines and returns
+a ParseTree object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.plain.Parser.parse_url">
+<em class="property">static </em><code class="sig-name descname">parse_url</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em>, <em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.plain.Parser.parse_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.formats.rst">
+<span id="zim-formats-rst-module"></span><h2>zim.formats.rst module<a class="headerlink" href="#module-zim.formats.rst" title="Permalink to this headline">¶</a></h2>
+<p>This module handles dumping reStructuredText with sphinx extensions</p>
+<dl class="py class">
+<dt id="zim.formats.rst.Dumper">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.rst.</code><code class="sig-name descname">Dumper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">linker</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">template_options</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.rst.Dumper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.formats.plain.Dumper" title="zim.formats.plain.Dumper"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.formats.plain.Dumper</span></code></a></p>
+<dl class="py attribute">
+<dt id="zim.formats.rst.Dumper.BULLETS">
+<code class="sig-name descname">BULLETS</code><em class="property"> = {'*': '-', 'checked-box': '- ☑', 'migrated-box': '- ▷', 'unchecked-box': '- ☐', 'xchecked-box': '- ☒'}</em><a class="headerlink" href="#zim.formats.rst.Dumper.BULLETS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.formats.rst.Dumper.HEADING_UNDERLINE">
+<code class="sig-name descname">HEADING_UNDERLINE</code><em class="property"> = ['=', '-', '^', '&quot;']</em><a class="headerlink" href="#zim.formats.rst.Dumper.HEADING_UNDERLINE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.formats.rst.Dumper.TAGS">
+<code class="sig-name descname">TAGS</code><em class="property"> = {'code': ('``', '``'), 'emphasis': ('*', '*'), 'mark': ('', ''), 'strike': ('', ''), 'strong': ('**', '**'), 'sub': ('\\ :sub:`', '`\\ '), 'sup': ('\\ :sup:`', '`\\ '), 'tag': ('', '')}</em><a class="headerlink" href="#zim.formats.rst.Dumper.TAGS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.rst.Dumper.dump">
+<code class="sig-name descname">dump</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tree</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.rst.Dumper.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format a parsetree to text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tree</strong> – a parse tree object that supports a <code class="docutils literal notranslate"><span class="pre">visit()</span></code> method</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of lines</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.rst.Dumper.dump_h">
+<code class="sig-name descname">dump_h</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.rst.Dumper.dump_h" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.rst.Dumper.dump_img">
+<code class="sig-name descname">dump_img</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.rst.Dumper.dump_img" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.rst.Dumper.dump_line">
+<code class="sig-name descname">dump_line</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.rst.Dumper.dump_line" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.rst.Dumper.dump_link">
+<code class="sig-name descname">dump_link</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.rst.Dumper.dump_link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.rst.Dumper.dump_object_fallback">
+<code class="sig-name descname">dump_object_fallback</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.rst.Dumper.dump_object_fallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to serialize objects that do not have their own
+handler for this format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented in sub-classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.rst.Dumper.dump_pre">
+<code class="sig-name descname">dump_pre</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.rst.Dumper.dump_pre" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.rst.Dumper.dump_table">
+<code class="sig-name descname">dump_table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.rst.Dumper.dump_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.formats.wiki">
+<span id="zim-formats-wiki-module"></span><h2>zim.formats.wiki module<a class="headerlink" href="#module-zim.formats.wiki" title="Permalink to this headline">¶</a></h2>
+<p>This module handles parsing and dumping wiki text</p>
+<dl class="py class">
+<dt id="zim.formats.wiki.Dumper">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.wiki.</code><code class="sig-name descname">Dumper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">linker</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">template_options</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.Dumper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.formats.plain.Dumper" title="zim.formats.plain.Dumper"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.formats.plain.Dumper</span></code></a></p>
+<dl class="py attribute">
+<dt id="zim.formats.wiki.Dumper.BULLETS">
+<code class="sig-name descname">BULLETS</code><em class="property"> = {'*': '*', 'checked-box': '[*]', 'migrated-box': '[&gt;]', 'transmigrated-box': '[&lt;]', 'unchecked-box': '[ ]', 'xchecked-box': '[x]'}</em><a class="headerlink" href="#zim.formats.wiki.Dumper.BULLETS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.formats.wiki.Dumper.TAGS">
+<code class="sig-name descname">TAGS</code><em class="property"> = {'code': (&quot;''&quot;, &quot;''&quot;), 'emphasis': ('//', '//'), 'mark': ('__', '__'), 'strike': ('~~', '~~'), 'strong': ('**', '**'), 'sub': ('_{', '}'), 'sup': ('^{', '}'), 'tag': ('', '')}</em><a class="headerlink" href="#zim.formats.wiki.Dumper.TAGS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.Dumper.dump">
+<code class="sig-name descname">dump</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tree</span></em>, <em class="sig-param"><span class="n">file_output</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.Dumper.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format a parsetree to text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tree</strong> – a parse tree object that supports a <code class="docutils literal notranslate"><span class="pre">visit()</span></code> method</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of lines</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.Dumper.dump_anchor">
+<code class="sig-name descname">dump_anchor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.Dumper.dump_anchor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.Dumper.dump_h">
+<code class="sig-name descname">dump_h</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.Dumper.dump_h" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.Dumper.dump_img">
+<code class="sig-name descname">dump_img</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.Dumper.dump_img" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.Dumper.dump_link">
+<code class="sig-name descname">dump_link</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.Dumper.dump_link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.Dumper.dump_object_fallback">
+<code class="sig-name descname">dump_object_fallback</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.Dumper.dump_object_fallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to serialize objects that do not have their own
+handler for this format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented in sub-classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.Dumper.dump_pre">
+<code class="sig-name descname">dump_pre</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.Dumper.dump_pre" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.Dumper.dump_table">
+<code class="sig-name descname">dump_table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.Dumper.dump_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.Dumper.dump_td">
+<code class="sig-name descname">dump_td</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.Dumper.dump_td" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.Dumper.dump_th">
+<code class="sig-name descname">dump_th</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.Dumper.dump_th" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.formats.wiki.Parser">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.wiki.</code><code class="sig-name descname">Parser</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">version</span><span class="o">=</span><span class="default_value">'zim 0.6'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.Parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.formats.ParserClass" title="zim.formats.ParserClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.formats.ParserClass</span></code></a></p>
+<dl class="py method">
+<dt id="zim.formats.wiki.Parser.parse">
+<code class="sig-name descname">parse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input</span></em>, <em class="sig-param"><span class="n">partial</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">file_input</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.Parser.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>ABSTRACT METHOD: needs to be overloaded by sub-classes.</p>
+<p>This method takes a text or an iterable with lines and returns
+a ParseTree object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.formats.wiki.WikiParser">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.wiki.</code><code class="sig-name descname">WikiParser</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">backward_indented_blocks</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">backward_url_parsing</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.WikiParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="zim.formats.wiki.WikiParser.BULLETS">
+<code class="sig-name descname">BULLETS</code><em class="property"> = {'*': '*', '[ ]': 'unchecked-box', '[*]': 'checked-box', '[&lt;]': 'transmigrated-box', '[&gt;]': 'migrated-box', '[x]': 'xchecked-box'}</em><a class="headerlink" href="#zim.formats.wiki.WikiParser.BULLETS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.WikiParser.check_multi_attribute">
+<code class="sig-name descname">check_multi_attribute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">default</span></em>, <em class="sig-param"><span class="n">list_length</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.WikiParser.check_multi_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Correct multi-attributes, so they do fit with column length of table
+:param attrib: key-value store
+:param key: key to select of attribute
+:param default: default value for one list entry
+:param list_length: required length of selected attribute
+:return: attribute-value as list of different options</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.WikiParser.parse_anchor">
+<em class="property">static </em><code class="sig-name descname">parse_anchor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">a</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.WikiParser.parse_anchor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.WikiParser.parse_heading">
+<code class="sig-name descname">parse_heading</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em>, <em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.WikiParser.parse_heading" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse heading and determine it’s level</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.WikiParser.parse_image">
+<em class="property">static </em><code class="sig-name descname">parse_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em>, <em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.WikiParser.parse_image" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.WikiParser.parse_indent">
+<code class="sig-name descname">parse_indent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em>, <em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">indent</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.WikiParser.parse_indent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse indented blocks and turn them into ‘div’ elements</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.WikiParser.parse_line">
+<em class="property">static </em><code class="sig-name descname">parse_line</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em>, <em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.WikiParser.parse_line" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.WikiParser.parse_link">
+<code class="sig-name descname">parse_link</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em>, <em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.WikiParser.parse_link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.WikiParser.parse_list">
+<code class="sig-name descname">parse_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em>, <em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.WikiParser.parse_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse lists into items and recurse to get inline formatting
+per list item</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.WikiParser.parse_list_lines">
+<code class="sig-name descname">parse_list_lines</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em>, <em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">level</span></em>, <em class="sig-param"><span class="n">attrib</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.WikiParser.parse_list_lines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.WikiParser.parse_object">
+<code class="sig-name descname">parse_object</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em>, <em class="sig-param"><span class="n">indent</span></em>, <em class="sig-param"><span class="n">header</span></em>, <em class="sig-param"><span class="n">body</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.WikiParser.parse_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Custom object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.WikiParser.parse_para">
+<code class="sig-name descname">parse_para</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em>, <em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.WikiParser.parse_para" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split a text into paragraphs and empty lines</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.WikiParser.parse_pre">
+<em class="property">static </em><code class="sig-name descname">parse_pre</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em>, <em class="sig-param"><span class="n">indent</span></em>, <em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.WikiParser.parse_pre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verbatim block with indenting</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.WikiParser.parse_table">
+<code class="sig-name descname">parse_table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em>, <em class="sig-param"><span class="n">headerline</span></em>, <em class="sig-param"><span class="n">alignstyle</span></em>, <em class="sig-param"><span class="n">body</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.WikiParser.parse_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.WikiParser.parse_tag">
+<em class="property">static </em><code class="sig-name descname">parse_tag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em>, <em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.WikiParser.parse_tag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.wiki.WikiParser.parse_url">
+<code class="sig-name descname">parse_url</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">a</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.WikiParser.parse_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.formats.wiki.check_number_bullet">
+<code class="sig-prename descclassname">zim.formats.wiki.</code><code class="sig-name descname">check_number_bullet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bullet</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.check_number_bullet" title="Permalink to this definition">¶</a></dt>
+<dd><p>If bullet is a numbered bullet this returns the number or letter,
+<code class="docutils literal notranslate"><span class="pre">None</span></code> otherwise</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.formats.wiki.is_url">
+<code class="sig-prename descclassname">zim.formats.wiki.</code><code class="sig-name descname">is_url</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.is_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Matches url_re and number of closing brackets matches
+See <code class="xref py py-class docutils literal notranslate"><span class="pre">https://github.github.com/gfm/#autolinks-extension-</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – text to match as url</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">text</span></code> is a valid url according to GFM rules</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.formats.wiki.match_url">
+<code class="sig-prename descclassname">zim.formats.wiki.</code><code class="sig-name descname">match_url</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.wiki.match_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Match regex and count number of closing brackets
+See <code class="xref py py-class docutils literal notranslate"><span class="pre">https://github.github.com/gfm/#autolinks-extension-</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – text to match as url</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the url or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt id="zim.formats.wiki.wikiparser">
+<code class="sig-prename descclassname">zim.formats.wiki.</code><code class="sig-name descname">wikiparser</code><em class="property"> = &lt;zim.formats.wiki.WikiParser object&gt;</em><a class="headerlink" href="#zim.formats.wiki.wikiparser" title="Permalink to this definition">¶</a></dt>
+<dd><p>singleton instance</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.formats">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-zim.formats" title="Permalink to this headline">¶</a></h2>
+<p>Package with source formats for pages.</p>
+<p>Each module in zim.formats should contains exactly one subclass of
+DumperClass and exactly one subclass of ParserClass
+(optional for export formats). These can be loaded by <a class="reference internal" href="#zim.formats.get_parser" title="zim.formats.get_parser"><code class="xref py py-class docutils literal notranslate"><span class="pre">get_parser()</span></code></a>
+and <a class="reference internal" href="#zim.formats.get_dumper" title="zim.formats.get_dumper"><code class="xref py py-class docutils literal notranslate"><span class="pre">get_dumper()</span></code></a> respectively. The requirement to have exactly one
+subclass per module means you can not import other classes that derive
+from these base classes directly into the module.</p>
+<p>For format modules it is safe to import ‘*’ from this module.</p>
+<div class="section" id="parse-tree-structure">
+<h3>Parse tree structure<a class="headerlink" href="#parse-tree-structure" title="Permalink to this headline">¶</a></h3>
+<p>Parse trees are build using the (c)ElementTree module (included in
+python 2.5 as xml.etree.ElementTree). It is basically a xml structure
+supporting a subset of “html like” tags.</p>
+<p>Supported tags:</p>
+<blockquote>
+<div><ul>
+<li><p>page root element for grouping paragraphs</p></li>
+<li><p>p for paragraphs</p></li>
+<li><p>h for heading, level attribute can be 1..6</p></li>
+<li><p>pre for verbatim paragraphs (no further parsing in these blocks)</p></li>
+<li><p>em for emphasis, rendered italic by default</p></li>
+<li><p>strong for strong emphasis, rendered bold by default</p></li>
+<li><p>mark for highlighted text, rendered with background color or underlined</p></li>
+<li><p>strike for text that is removed, usually rendered as strike through</p></li>
+<li><p>code for inline verbatim text</p></li>
+<li><p>ul for bullet and checkbox lists</p></li>
+<li><p>ol for numbered lists</p></li>
+<li><p>li for list items</p></li>
+<li><p>link for links, attribute href gives the target</p></li>
+<li><dl class="simple">
+<dt>img for images, attributes src, width, height an optionally href and alt</dt><dd><ul class="simple">
+<li><p>type can be used to control plugin functionality, e.g. type=equation</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>table for tables, attributes</dt><dd><blockquote>
+<div><ul class="simple">
+<li><p>aligns - comma separated values: right,left,center</p></li>
+<li><p>wraps - 0 for not wrapped, 1 for auto-wrapped line display</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>thead for table header row</dt><dd><ul>
+<li><p>th for table header cell</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>trow for table row</dt><dd><ul>
+<li><p>td for table data cell</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>Nesting rules:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>paragraphs, list items, table cells &amp; headings can contain all inline elements</p></li>
+<li><p>inline formats can contain other inline formats as well as links and tags</p></li>
+<li><p>code and pre cannot contain any other elements</p></li>
+</ul>
+</div></blockquote>
+<p>Unlike html we respect line breaks and other whitespace as is.
+When rendering as html use the “white-space: pre” CSS definition to
+get the same effect.</p>
+<p>If a page starts with a h1 this heading is considered the page title,
+else we can fall back to the page name as title.</p>
+<p>NOTE: To avoid confusion: “headers” refers to meta data, usually in
+the form of rfc822 headers at the top of a page. But “heading” refers
+to a title or subtitle in the document.</p>
+<dl class="py class">
+<dt id="zim.formats.BaseLinker">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">BaseLinker</code><a class="headerlink" href="#zim.formats.BaseLinker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for linker objects
+Linker object translate links in zim pages to (relative) URLs.
+This is used when exporting data to resolve links.
+Relative URLs start with “./” or “../” and should be interpreted
+in the same way as in HTML. Both URLs and relative URLs are
+already URL encoded.</p>
+<dl class="py method">
+<dt id="zim.formats.BaseLinker.file_object">
+<code class="sig-name descname">file_object</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.BaseLinker.file_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn a <code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code> object in a relative link or URI</p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented by child classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.BaseLinker.img">
+<code class="sig-name descname">img</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">src</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.BaseLinker.img" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an url for image file ‘src’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented by child classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.BaseLinker.link">
+<code class="sig-name descname">link</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">link</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.BaseLinker.link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an url for a link in a zim page
+This method is used to translate links of any type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>link</strong> – link to be translated</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>url, uri, or relative path
+context of this linker</p>
+</dd>
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented by child classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.BaseLinker.page_object">
+<code class="sig-name descname">page_object</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.BaseLinker.page_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn a <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object in a relative link or URI</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.BaseLinker.resolve_source_file">
+<code class="sig-name descname">resolve_source_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">link</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.BaseLinker.resolve_source_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the source file for an attachment
+Used e.g. by the latex format to find files for equations to
+be inlined. Do not use this method to resolve links, the file
+given here might be temporary and is not guaranteed to be
+available after the export.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a <code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code> object or <code class="docutils literal notranslate"><span class="pre">None</span></code> if no file was found</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by child classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.BaseLinker.resource">
+<code class="sig-name descname">resource</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.BaseLinker.resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an url for template resources
+:implementation: must be implemented by child classes</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.formats.DocumentFragment">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">DocumentFragment</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">content</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.DocumentFragment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.formats.Node" title="zim.formats.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.formats.Node</span></code></a></p>
+<p>Document fragment class for DOM-like access</p>
+<dl class="py attribute">
+<dt id="zim.formats.DocumentFragment.attrib">
+<code class="sig-name descname">attrib</code><a class="headerlink" href="#zim.formats.DocumentFragment.attrib" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.formats.DocumentFragment.tag">
+<code class="sig-name descname">tag</code><a class="headerlink" href="#zim.formats.DocumentFragment.tag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.formats.DumperClass">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">DumperClass</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">linker</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">template_options</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.DumperClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.formats.Visitor" title="zim.formats.Visitor"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.formats.Visitor</span></code></a></p>
+<p>Base class for dumper classes. Dumper classes serialize the content
+of a parse tree back to a text representation of the page content.
+Therefore this class implements the visitor API, so it can be
+used with any parse tree implementation or parser object that supports
+this API.</p>
+<p>To implement a dumper class, you need to define handlers for all
+tags that can appear in a page. Tags that are represented by a simple
+prefix and postfix string can be defined in the dictionary <code class="docutils literal notranslate"><span class="pre">TAGS</span></code>.
+For example to define the italic tag in html output the dictionary
+should contain a definition like: <code class="docutils literal notranslate"><span class="pre">EMPHASIS:</span> <span class="pre">('&lt;i&gt;',</span> <span class="pre">'&lt;/i&gt;')</span></code>.</p>
+<p>For tags that require more complex logic you can define a method to
+format the tag. Typical usage is to format link attributes in such
+a method. The method name should be <code class="docutils literal notranslate"><span class="pre">dump_</span></code> + the name of the tag,
+e.g. <code class="docutils literal notranslate"><span class="pre">dump_link()</span></code> for links (see the constants with tag names for
+the other tags). Such a sump method will get 3 arguments: the tag
+name itself, a dictionary with the tag attributes and a list of
+strings that form the tag content. The method should return a list
+of strings that represents the formatted text.</p>
+<p>This base class takes care of a stack of nested formatting tags and
+when a tag is closed either picks the appropriate prefix and postfix
+from <code class="docutils literal notranslate"><span class="pre">TAGS</span></code> or calls the corresponding <code class="docutils literal notranslate"><span class="pre">dump_</span></code> method. As a result
+tags are serialized depth-first.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="zim.export.html#module-zim.export.linker" title="zim.export.linker"><strong>linker</strong></a> – the (optional) <code class="xref py py-class docutils literal notranslate"><span class="pre">Linker</span></code> object, used to resolve links</p></li>
+<li><p><strong>template_options</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">ConfigDict</span></code> with options that may be set
+in a template (so inherently not safe !) to control the output style.
+Formats using this need to define the supported keys in the dict
+<code class="docutils literal notranslate"><span class="pre">TEMPLATE_OPTIONS</span></code>.</p></li>
+<li><p><strong>context</strong> – the stack of open tags maintained by this class. Can
+be used in <code class="docutils literal notranslate"><span class="pre">dump_</span></code> methods to inspect the parent scope of the
+format. Elements on this stack have “tag”, “attrib” and “text”
+attributes. Keep in mind that the parent scope is not yet complete
+when a tag is serialized.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="zim.formats.DumperClass.TAGS">
+<code class="sig-name descname">TAGS</code><em class="property"> = {}</em><a class="headerlink" href="#zim.formats.DumperClass.TAGS" title="Permalink to this definition">¶</a></dt>
+<dd><p>dict mapping formatting tags to 2-tuples of a prefix and a postfix string</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.formats.DumperClass.TEMPLATE_OPTIONS">
+<code class="sig-name descname">TEMPLATE_OPTIONS</code><em class="property"> = {}</em><a class="headerlink" href="#zim.formats.DumperClass.TEMPLATE_OPTIONS" title="Permalink to this definition">¶</a></dt>
+<dd><p>dict mapping ConfigDefinitions for template options</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.DumperClass.append">
+<code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.DumperClass.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience function to open a tag, append text and close
+it immediatly.</p>
+<p>Can raise <a class="reference internal" href="#zim.formats.VisitorStop" title="zim.formats.VisitorStop"><code class="xref py py-class docutils literal notranslate"><span class="pre">VisitorStop</span></code></a> or <a class="reference internal" href="#zim.formats.VisitorSkip" title="zim.formats.VisitorSkip"><code class="xref py py-class docutils literal notranslate"><span class="pre">VisitorSkip</span></code></a>, see <code class="docutils literal notranslate"><span class="pre">start()</span></code>
+for the conditions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag</strong> – the tag name</p></li>
+<li><p><strong>attrib</strong> – optional dict with attributes</p></li>
+<li><p><strong>text</strong> – formatted text</p></li>
+</ul>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>optional for subclasses, default implementation
+calls <a class="reference internal" href="#zim.formats.DumperClass.start" title="zim.formats.DumperClass.start"><code class="xref py py-class docutils literal notranslate"><span class="pre">start()</span></code></a>, <a class="reference internal" href="#zim.formats.DumperClass.text" title="zim.formats.DumperClass.text"><code class="xref py py-class docutils literal notranslate"><span class="pre">text()</span></code></a>, and <a class="reference internal" href="#zim.formats.DumperClass.end" title="zim.formats.DumperClass.end"><code class="xref py py-class docutils literal notranslate"><span class="pre">end()</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.DumperClass.dump">
+<code class="sig-name descname">dump</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tree</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.DumperClass.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format a parsetree to text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tree</strong> – a parse tree object that supports a <code class="docutils literal notranslate"><span class="pre">visit()</span></code> method</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of lines</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.DumperClass.dump_object">
+<code class="sig-name descname">dump_object</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">[]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.DumperClass.dump_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dumps objects defined by <code class="xref py py-class docutils literal notranslate"><span class="pre">InsertedObjectType</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.DumperClass.dump_object_fallback">
+<code class="sig-name descname">dump_object_fallback</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">strings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.DumperClass.dump_object_fallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to serialize objects that do not have their own
+handler for this format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented in sub-classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.DumperClass.encode_text">
+<code class="sig-name descname">encode_text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.DumperClass.encode_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional method to encode text elements in the output</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do not apply text encoding in the <code class="docutils literal notranslate"><span class="pre">dump_</span></code> methods, the
+list of strings given there may contain prefix and postfix
+formatting of nested tags.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag</strong> – formatting tag</p></li>
+<li><p><strong>text</strong> – text to be encoded</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>encoded text</p>
+</dd>
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>optional, default just returns unmodified input</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.DumperClass.end">
+<code class="sig-name descname">end</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.DumperClass.end" title="Permalink to this definition">¶</a></dt>
+<dd><p>End formatted region</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tag</strong> – the tag name</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – when tag does not match current state</p>
+</dd>
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>optional for subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.DumperClass.get_lines">
+<code class="sig-name descname">get_lines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.DumperClass.get_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the dumped content as a list of lines
+Should only be called after closing the top level element</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.DumperClass.isrtl">
+<code class="sig-name descname">isrtl</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.DumperClass.isrtl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check for Right To Left script</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – the text to check</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">text</span></code> starts with characters in a
+RTL script, or <code class="docutils literal notranslate"><span class="pre">None</span></code> if direction is not determined.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.DumperClass.prefix_lines">
+<code class="sig-name descname">prefix_lines</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">strings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.DumperClass.prefix_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience method to wrap a number of lines with e.g. an
+indenting sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prefix</strong> – a string to prefix each line</p></li>
+<li><p><strong>strings</strong> – a list of pieces of text</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a new list of lines, each starting with prefix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.DumperClass.start">
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.DumperClass.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start formatted region</p>
+<p>Visitor objects can raise two exceptions in this method
+to influence the tree traversal:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt><a class="reference internal" href="#zim.formats.VisitorStop" title="zim.formats.VisitorStop"><code class="xref py py-class docutils literal notranslate"><span class="pre">VisitorStop</span></code></a> will cancel the current parsing, but without</dt><dd><p>raising an error. So code implementing a visit method should
+catch this.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference internal" href="#zim.formats.VisitorSkip" title="zim.formats.VisitorSkip"><code class="xref py py-class docutils literal notranslate"><span class="pre">VisitorSkip</span></code></a> can be raised when the visitor wants to skip</dt><dd><p>a node, and should prevent the implementation from further
+decending into this node</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the visitor modifies the attrib dict on nodes, this
+will modify the tree. If this is not intended, the implementation
+needs to take care to copy the attrib to break the reference.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag</strong> – the tag name</p></li>
+<li><p><strong>attrib</strong> – optional dict with attributes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>optional for subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.DumperClass.text">
+<code class="sig-name descname">text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.DumperClass.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – text to be appended as string</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>optional for subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.formats.DumperContextElement">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">DumperContextElement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.DumperContextElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="py attribute">
+<dt id="zim.formats.DumperContextElement.attrib">
+<code class="sig-name descname">attrib</code><a class="headerlink" href="#zim.formats.DumperContextElement.attrib" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.formats.DumperContextElement.tag">
+<code class="sig-name descname">tag</code><a class="headerlink" href="#zim.formats.DumperContextElement.tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.formats.DumperContextElement.text">
+<code class="sig-name descname">text</code><a class="headerlink" href="#zim.formats.DumperContextElement.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.formats.Element">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">Element</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">content</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.Element" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.formats.Node" title="zim.formats.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.formats.Node</span></code></a></p>
+<p>Element class for DOM-like access</p>
+<dl class="py attribute">
+<dt id="zim.formats.Element.attrib">
+<code class="sig-name descname">attrib</code><a class="headerlink" href="#zim.formats.Element.attrib" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.formats.Element.tag">
+<code class="sig-name descname">tag</code><a class="headerlink" href="#zim.formats.Element.tag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.formats.Node">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">Node</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">content</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.Node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></p>
+<p>Base class for DOM-like access to the document structure.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This class is not optimized for keeping large structures
+in memory.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#zim.formats.Node.tag" title="zim.formats.Node.tag"><strong>tag</strong></a> – tag name</p></li>
+<li><p><a class="reference internal" href="#zim.formats.Node.attrib" title="zim.formats.Node.attrib"><strong>attrib</strong></a> – dict with attributes</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="zim.formats.Node.append">
+<code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.Node.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append object to the end of the list.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.formats.Node.attrib">
+<code class="sig-name descname">attrib</code><a class="headerlink" href="#zim.formats.Node.attrib" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.Node.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">default</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.Node.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.Node.gettext">
+<code class="sig-name descname">gettext</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.Node.gettext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get text as string
+Ignores any markup and attributes and simply returns textual
+content.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>do _not_ use as replacement for exporting to plain text</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.Node.new_from_etree">
+<em class="property">classmethod </em><code class="sig-name descname">new_from_etree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">elt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.Node.new_from_etree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.Node.set">
+<code class="sig-name descname">set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.Node.set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.formats.Node.tag">
+<code class="sig-name descname">tag</code><a class="headerlink" href="#zim.formats.Node.tag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.Node.toxml">
+<code class="sig-name descname">toxml</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.Node.toxml" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.Node.visit">
+<code class="sig-name descname">visit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">visitor</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.Node.visit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.formats.OldParseTreeBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">OldParseTreeBuilder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">remove_newlines_after_li</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.OldParseTreeBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class supplies an alternative for xml.etree.ElementTree.TreeBuilder
+which cleans up the tree on the fly while building it. The main use
+is to normalize the tree that is produced by the editor widget, but it can
+also be used on other “dirty” interfaces.</p>
+<dl class="simple">
+<dt>This builder takes care of the following issues:</dt><dd><ul class="simple">
+<li><p>~~Inline tags (‘emphasis’, ‘strong’, ‘h’, etc.) can not span multiple lines~~
+(refactored out to <cite>TextBuffer.get_parsetree()</cite>)</p></li>
+<li><p>Tags can not contain only whitespace</p></li>
+<li><p>Tags can not be empty (with the exception of the ‘img’ tag)</p></li>
+<li><p>There should be an empty line before each ‘h’, ‘p’ or ‘pre’
+(with the exception of the first tag in the tree)</p></li>
+<li><p>The ‘p’ and ‘pre’ elements should always end with a newline (‘n’)</p></li>
+<li><p>Each ‘p’, ‘pre’ and ‘h’ should be postfixed with a newline (‘n’)
+(as a results ‘p’ and ‘pre’ are followed by an empty line, the
+‘h’ does not end in a newline itself, so it is different)</p></li>
+<li><p>Newlines (‘n’) after a &lt;li&gt; alement are removed (optional)</p></li>
+<li><p>The element ‘_ignore_’ is silently ignored</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="zim.formats.OldParseTreeBuilder.append">
+<code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.OldParseTreeBuilder.append" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.OldParseTreeBuilder.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.OldParseTreeBuilder.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.OldParseTreeBuilder.data">
+<code class="sig-name descname">data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.OldParseTreeBuilder.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.OldParseTreeBuilder.end">
+<code class="sig-name descname">end</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.OldParseTreeBuilder.end" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.OldParseTreeBuilder.start">
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.OldParseTreeBuilder.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.formats.ParseTree">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">ParseTree</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Wrapper for zim parse trees.</p>
+<dl class="py method">
+<dt id="zim.formats.ParseTree.cleanup_headings">
+<code class="sig-name descname">cleanup_headings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">offset</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">max</span><span class="o">=</span><span class="default_value">6</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.cleanup_headings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the heading levels throughout the tree. This makes sure that
+al headings are nested directly under their parent (no gaps in the
+levels of the headings). Also you can set an offset for the top level
+and a max depth.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.count">
+<code class="sig-name descname">count</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of occurences of ‘text’ in this tree.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.countre">
+<code class="sig-name descname">countre</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">regex</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.countre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of matches for a regular expression
+in this tree.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.decode_urls">
+<code class="sig-name descname">decode_urls</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.decode_urls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls decode_url() on all links that contain urls.
+See zim.parsing for details. Modifies the parse tree.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.encode_urls">
+<code class="sig-name descname">encode_urls</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.encode_urls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls encode_url() on all links that contain urls.
+See zim.parsing for details. Modifies the parse tree.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.extend">
+<code class="sig-name descname">extend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tree</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.extend" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.find">
+<code class="sig-name descname">find</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find first occurence of <code class="docutils literal notranslate"><span class="pre">tag</span></code> in the tree</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a <a class="reference internal" href="#zim.formats.Node" title="zim.formats.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a> object or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.findall">
+<code class="sig-name descname">findall</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.findall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find all occurences of <code class="docutils literal notranslate"><span class="pre">tag</span></code> in the tree</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tag</strong> – tag name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>yields <a class="reference internal" href="#zim.formats.Node" title="zim.formats.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a> objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.fromstring">
+<code class="sig-name descname">fromstring</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.fromstring" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the contents of this tree from XML representation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.get_ends_with_newline">
+<code class="sig-name descname">get_ends_with_newline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.get_ends_with_newline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether this tree ends in a newline or not</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.get_heading_level">
+<code class="sig-name descname">get_heading_level</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.get_heading_level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.get_heading_text">
+<code class="sig-name descname">get_heading_text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">level</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.get_heading_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.hascontent">
+<em class="property">property </em><code class="sig-name descname">hascontent</code><a class="headerlink" href="#zim.formats.ParseTree.hascontent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the tree contains any content at all.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.ispartial">
+<em class="property">property </em><code class="sig-name descname">ispartial</code><a class="headerlink" href="#zim.formats.ParseTree.ispartial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True when this tree is a segment of a page
+(like a copy-paste buffer).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.israw">
+<em class="property">property </em><code class="sig-name descname">israw</code><a class="headerlink" href="#zim.formats.ParseTree.israw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True when this is a raw tree (which is representation
+of TextBuffer, but not really valid).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.iter_href">
+<code class="sig-name descname">iter_href</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">include_page_local_links</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">include_anchors</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.iter_href" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generator for links in the text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>include_anchors</strong> – if <code class="docutils literal notranslate"><span class="pre">False</span></code> remove the target location from the
+link and only yield unique links to pages</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>yields a list of unique <code class="xref py py-class docutils literal notranslate"><span class="pre">HRef</span></code> objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.iter_tag_names">
+<code class="sig-name descname">iter_tag_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.iter_tag_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generator for tags in the page content</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>yields an unordered list of tag names</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.iter_tokens">
+<code class="sig-name descname">iter_tokens</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.iter_tokens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.remove_heading">
+<code class="sig-name descname">remove_heading</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">level</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.remove_heading" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the tree starts with a heading, remove it and any trailing
+whitespace.
+Will modify the tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a 2-tuple of text and heading level or <code class="docutils literal notranslate"><span class="pre">(None,</span> <span class="pre">None)</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.replace">
+<code class="sig-name descname">replace</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tags</span></em>, <em class="sig-param"><span class="n">func</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.replace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify the tree by replacing all occurences of <code class="docutils literal notranslate"><span class="pre">tag</span></code>
+by the return value of <code class="docutils literal notranslate"><span class="pre">func</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tags</strong> – tag name, or list of tag names</p></li>
+<li><p><strong>func</strong> – <p>function to generate replacement values.
+Function will be called as:</p>
+<p>func(node)</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+<p>Where <code class="docutils literal notranslate"><span class="pre">node</span></code> is a <a class="reference internal" href="#zim.formats.Node" title="zim.formats.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a> object representing the subtree.
+If the function returns another <a class="reference internal" href="#zim.formats.Node" title="zim.formats.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a> object or modifies
+<code class="docutils literal notranslate"><span class="pre">node</span></code> and returns it, the subtree will be replaced by this
+new node.
+If the function raises <a class="reference internal" href="#zim.formats.VisitorSkip" title="zim.formats.VisitorSkip"><code class="xref py py-class docutils literal notranslate"><span class="pre">VisitorSkip</span></code></a> the replace is skipped.
+If the function raises <a class="reference internal" href="#zim.formats.VisitorStop" title="zim.formats.VisitorStop"><code class="xref py py-class docutils literal notranslate"><span class="pre">VisitorStop</span></code></a> the replacement of all
+nodes will stop.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.resolve_images">
+<code class="sig-name descname">resolve_images</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">notebook</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.resolve_images" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resolves the source files for all images relative to a page path        and
+adds a ‘_src_file’ attribute to the elements with the full file path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.set_heading_text">
+<code class="sig-name descname">set_heading_text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">level</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.set_heading_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the first heading of the parse tree to ‘text’. If the tree
+already has a heading of the specified level or higher it will be
+replaced. Otherwise the new heading will be prepended.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.tostring">
+<code class="sig-name descname">tostring</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.tostring" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize the tree to a XML representation</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.unresolve_images">
+<code class="sig-name descname">unresolve_images</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.unresolve_images" title="Permalink to this definition">¶</a></dt>
+<dd><p>Undo effect of <a class="reference internal" href="#zim.formats.ParseTree.resolve_images" title="zim.formats.ParseTree.resolve_images"><code class="xref py py-class docutils literal notranslate"><span class="pre">resolve_images()</span></code></a>, mainly intended for
+testing.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTree.visit">
+<code class="sig-name descname">visit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">visitor</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTree.visit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Visit all nodes of this tree</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the visitor modifies the attrib dict on nodes, this
+will modify the tree.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>visitor</strong> – a <a class="reference internal" href="#zim.formats.Visitor" title="zim.formats.Visitor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Visitor</span></code></a> or <code class="xref py py-class docutils literal notranslate"><span class="pre">Builder</span></code> object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.formats.ParseTreeBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">ParseTreeBuilder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">partial</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">_parsetree_roundtrip</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTreeBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.parser.Builder" title="zim.parser.Builder"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.parser.Builder</span></code></a></p>
+<p>Builder object that builds a <a class="reference internal" href="#zim.formats.ParseTree" title="zim.formats.ParseTree"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParseTree</span></code></a></p>
+<dl class="py method">
+<dt id="zim.formats.ParseTreeBuilder.append">
+<code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTreeBuilder.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience function to open a tag, append text and close
+it immediatly. Only used for formatted text that has no
+sub-processing done.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag</strong> – the tag name</p></li>
+<li><p><strong>attrib</strong> – optional dict with attributes</p></li>
+<li><p><strong>text</strong> – formatted text</p></li>
+</ul>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>optional for subclasses, default implementation
+calls <a class="reference internal" href="#zim.formats.ParseTreeBuilder.start" title="zim.formats.ParseTreeBuilder.start"><code class="xref py py-class docutils literal notranslate"><span class="pre">start()</span></code></a>, <a class="reference internal" href="#zim.formats.ParseTreeBuilder.text" title="zim.formats.ParseTreeBuilder.text"><code class="xref py py-class docutils literal notranslate"><span class="pre">text()</span></code></a>, and <a class="reference internal" href="#zim.formats.ParseTreeBuilder.end" title="zim.formats.ParseTreeBuilder.end"><code class="xref py py-class docutils literal notranslate"><span class="pre">end()</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTreeBuilder.end">
+<code class="sig-name descname">end</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTreeBuilder.end" title="Permalink to this definition">¶</a></dt>
+<dd><p>End formatted region</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tag</strong> – the tag name</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>XXX</strong> – when tag does not match current state</p>
+</dd>
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented by sub-classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTreeBuilder.get_parsetree">
+<code class="sig-name descname">get_parsetree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTreeBuilder.get_parsetree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the constructed <a class="reference internal" href="#zim.formats.ParseTree" title="zim.formats.ParseTree"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParseTree</span></code></a> object.
+Can only be called once, after calling this method the object
+can not be re-used.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.formats.ParseTreeBuilder.stack">
+<code class="sig-name descname">stack</code><a class="headerlink" href="#zim.formats.ParseTreeBuilder.stack" title="Permalink to this definition">¶</a></dt>
+<dd><p>keeps track of current open elements</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTreeBuilder.start">
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTreeBuilder.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start formatted region</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag</strong> – the tag name</p></li>
+<li><p><strong>attrib</strong> – optional dict with attributes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by sub-classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParseTreeBuilder.text">
+<code class="sig-name descname">text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParseTreeBuilder.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – text to be appended as string</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by sub-classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.formats.ParserClass">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">ParserClass</code><a class="headerlink" href="#zim.formats.ParserClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for parsers</p>
+<p>Each format that can be used natively should define a class
+‘Parser’ which inherits from this base class.</p>
+<dl class="py method">
+<dt id="zim.formats.ParserClass.parse">
+<code class="sig-name descname">parse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParserClass.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>ABSTRACT METHOD: needs to be overloaded by sub-classes.</p>
+<p>This method takes a text or an iterable with lines and returns
+a ParseTree object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.ParserClass.parse_image_url">
+<em class="property">classmethod </em><code class="sig-name descname">parse_image_url</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.ParserClass.parse_image_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse urls style options for images like “foo.png?width=500” and
+returns a dict with the options. The base url will be in the dict
+as ‘src’.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.formats.StubLinker">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">StubLinker</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source_dir</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.StubLinker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.formats.BaseLinker" title="zim.formats.BaseLinker"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.formats.BaseLinker</span></code></a></p>
+<p>Linker used for testing - just gives back the link as it was
+parsed. DO NOT USE outside of testing.</p>
+<dl class="py method">
+<dt id="zim.formats.StubLinker.file_object">
+<code class="sig-name descname">file_object</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.StubLinker.file_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn a <code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code> object in a relative link or URI</p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented by child classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.StubLinker.img">
+<code class="sig-name descname">img</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">src</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.StubLinker.img" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an url for image file ‘src’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented by child classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.StubLinker.link">
+<code class="sig-name descname">link</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">link</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.StubLinker.link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an url for a link in a zim page
+This method is used to translate links of any type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>link</strong> – link to be translated</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>url, uri, or relative path
+context of this linker</p>
+</dd>
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented by child classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.StubLinker.page_object">
+<code class="sig-name descname">page_object</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.StubLinker.page_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn a <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object in a relative link or URI</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.StubLinker.resolve_source_file">
+<code class="sig-name descname">resolve_source_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">link</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.StubLinker.resolve_source_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the source file for an attachment
+Used e.g. by the latex format to find files for equations to
+be inlined. Do not use this method to resolve links, the file
+given here might be temporary and is not guaranteed to be
+available after the export.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a <code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code> object or <code class="docutils literal notranslate"><span class="pre">None</span></code> if no file was found</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by child classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.StubLinker.resource">
+<code class="sig-name descname">resource</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.StubLinker.resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an url for template resources
+:implementation: must be implemented by child classes</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.formats.TableParser">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">TableParser</code><a class="headerlink" href="#zim.formats.TableParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Common functions for converting a table from its’ xml structure to another format</p>
+<dl class="py method">
+<dt id="zim.formats.TableParser.alignrow">
+<em class="property">static </em><code class="sig-name descname">alignrow</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">maxwidths</span></em>, <em class="sig-param"><span class="n">aligns</span></em>, <em class="sig-param"><span class="n">y</span><span class="o">=</span><span class="default_value">' '</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.TableParser.alignrow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Formats a row with the right alignments
+:param row: tuple of cells
+:param maxwidths: list of column length
+:param aligns:  list of alignments
+:param y: space-separator
+:return: a textline</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.TableParser.convert_to_multiline_cells">
+<em class="property">static </em><code class="sig-name descname">convert_to_multiline_cells</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rows</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.TableParser.convert_to_multiline_cells" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Each cell in a list of rows is split by “</p>
+</div></blockquote>
+<dl>
+<dt>” and a 3-dimensional list is returned,</dt><dd><blockquote>
+<div><p>whereas each tuple represents a line and multiple lines represents a row and multiple rows represents the table
+c11a = Cell in Row 1 in Column 1 in first = a line
+:param strings: format like ((‘c11a</p>
+</div></blockquote>
+<p>c11b’, ‘c12a 
+c12b’), (‘c21’, ‘c22a 
+22b’))</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">return</dt>
+<dd class="field-odd"><p>format like (((c11a, c12a), (c11b, c12b)), ((c21, c22a), (‘’, c22b)))</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.TableParser.get_options">
+<em class="property">static </em><code class="sig-name descname">get_options</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attrib</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.TableParser.get_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists the attributes as tuple
+:param attrib:
+:return: tuple of attributes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.TableParser.headline">
+<em class="property">static </em><code class="sig-name descname">headline</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">maxwidths</span></em>, <em class="sig-param"><span class="n">aligns</span></em>, <em class="sig-param"><span class="n">wraps</span></em>, <em class="sig-param"><span class="n">x</span><span class="o">=</span><span class="default_value">'|'</span></em>, <em class="sig-param"><span class="n">y</span><span class="o">=</span><span class="default_value">' '</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.TableParser.headline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays a headerline line in text format
+:param row: tuple of cells
+:param maxwidths: list of column length
+:param aligns:  list of alignments
+:param x:  point-separator
+:param y: space-separator
+:return: a textline</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.TableParser.headsep">
+<em class="property">static </em><code class="sig-name descname">headsep</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">maxwidths</span></em>, <em class="sig-param"><span class="n">aligns</span></em>, <em class="sig-param"><span class="n">x</span><span class="o">=</span><span class="default_value">'|'</span></em>, <em class="sig-param"><span class="n">y</span><span class="o">=</span><span class="default_value">'-'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.TableParser.headsep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays a header separation with alignment infos
+example: rowsep((3,0), ‘-‘, ‘+’) -&gt; +—–+–+
+:param maxwidths: list of column lengths
+:param aligns:  list of alignments
+:param x: point-separator
+:param y: line-separator
+:return: a text line</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.TableParser.rowline">
+<em class="property">static </em><code class="sig-name descname">rowline</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">maxwidths</span></em>, <em class="sig-param"><span class="n">aligns</span></em>, <em class="sig-param"><span class="n">x</span><span class="o">=</span><span class="default_value">'|'</span></em>, <em class="sig-param"><span class="n">y</span><span class="o">=</span><span class="default_value">' '</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.TableParser.rowline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays a normal column line in text format
+example: rowline((3,0), (left, left), ‘+’,’-‘) -&gt; +-aa–+–+
+:param row: tuple of cells
+:param maxwidths: list of column length
+:param aligns:  list of alignments
+:param x:  point-separator
+:param y: space-separator
+:return: a textline</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.TableParser.rowsep">
+<em class="property">static </em><code class="sig-name descname">rowsep</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">maxwidths</span></em>, <em class="sig-param"><span class="n">x</span><span class="o">=</span><span class="default_value">'+'</span></em>, <em class="sig-param"><span class="n">y</span><span class="o">=</span><span class="default_value">'-'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.TableParser.rowsep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays a row separator
+example: rowsep((3,0), ‘-‘, ‘+’) -&gt; +—–+–+
+:param maxwidths: list of column lengths
+:param x: point-separator
+:param y: line-separator
+:return: a textline</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.TableParser.width2dim">
+<em class="property">static </em><code class="sig-name descname">width2dim</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.TableParser.width2dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the characters on each column and return list of widths
+:param lines: 2-dim multiline rows
+:return: the number of characters of the longest cell-value by column</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.TableParser.width3dim">
+<em class="property">static </em><code class="sig-name descname">width3dim</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.TableParser.width3dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the characters on each column and return list of widths
+:param lines: 3-dim multiline rows
+:return: the number of characters of the longest cell-value by column</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.formats.Visitor">
+<em class="property">class </em><code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">Visitor</code><a class="headerlink" href="#zim.formats.Visitor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Conceptual opposite of a builder, but with same API.
+Used to walk nodes in a parsetree and call callbacks for each node.
+See e.g. <a class="reference internal" href="#zim.formats.ParseTree.visit" title="zim.formats.ParseTree.visit"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParseTree.visit()</span></code></a>.</p>
+<dl class="py method">
+<dt id="zim.formats.Visitor.append">
+<code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.Visitor.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience function to open a tag, append text and close
+it immediatly.</p>
+<p>Can raise <a class="reference internal" href="#zim.formats.VisitorStop" title="zim.formats.VisitorStop"><code class="xref py py-class docutils literal notranslate"><span class="pre">VisitorStop</span></code></a> or <a class="reference internal" href="#zim.formats.VisitorSkip" title="zim.formats.VisitorSkip"><code class="xref py py-class docutils literal notranslate"><span class="pre">VisitorSkip</span></code></a>, see <code class="docutils literal notranslate"><span class="pre">start()</span></code>
+for the conditions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag</strong> – the tag name</p></li>
+<li><p><strong>attrib</strong> – optional dict with attributes</p></li>
+<li><p><strong>text</strong> – formatted text</p></li>
+</ul>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>optional for subclasses, default implementation
+calls <a class="reference internal" href="#zim.formats.Visitor.start" title="zim.formats.Visitor.start"><code class="xref py py-class docutils literal notranslate"><span class="pre">start()</span></code></a>, <a class="reference internal" href="#zim.formats.Visitor.text" title="zim.formats.Visitor.text"><code class="xref py py-class docutils literal notranslate"><span class="pre">text()</span></code></a>, and <a class="reference internal" href="#zim.formats.Visitor.end" title="zim.formats.Visitor.end"><code class="xref py py-class docutils literal notranslate"><span class="pre">end()</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.Visitor.end">
+<code class="sig-name descname">end</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.Visitor.end" title="Permalink to this definition">¶</a></dt>
+<dd><p>End formatted region</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tag</strong> – the tag name</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – when tag does not match current state</p>
+</dd>
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>optional for subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.Visitor.start">
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.Visitor.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start formatted region</p>
+<p>Visitor objects can raise two exceptions in this method
+to influence the tree traversal:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt><a class="reference internal" href="#zim.formats.VisitorStop" title="zim.formats.VisitorStop"><code class="xref py py-class docutils literal notranslate"><span class="pre">VisitorStop</span></code></a> will cancel the current parsing, but without</dt><dd><p>raising an error. So code implementing a visit method should
+catch this.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference internal" href="#zim.formats.VisitorSkip" title="zim.formats.VisitorSkip"><code class="xref py py-class docutils literal notranslate"><span class="pre">VisitorSkip</span></code></a> can be raised when the visitor wants to skip</dt><dd><p>a node, and should prevent the implementation from further
+decending into this node</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the visitor modifies the attrib dict on nodes, this
+will modify the tree. If this is not intended, the implementation
+needs to take care to copy the attrib to break the reference.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag</strong> – the tag name</p></li>
+<li><p><strong>attrib</strong> – optional dict with attributes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>optional for subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.formats.Visitor.text">
+<code class="sig-name descname">text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.Visitor.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – text to be appended as string</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>optional for subclasses</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="zim.formats.VisitorSkip">
+<em class="property">exception </em><code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">VisitorSkip</code><a class="headerlink" href="#zim.formats.VisitorSkip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Exception to be raised when the visitor should skip a leaf node
+and not decent into it.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="zim.formats.VisitorStop">
+<em class="property">exception </em><code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">VisitorStop</code><a class="headerlink" href="#zim.formats.VisitorStop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Exception to be raised to cancel a visitor action</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.formats.canonical_name">
+<code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">canonical_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.canonical_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="zim.formats.convert_list_iter_letter_to_number">
+<code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">convert_list_iter_letter_to_number</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">listiter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.convert_list_iter_letter_to_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a “letter” numbered list to a digit numbered list
+Usefull for export to formats that do not support letter lists.
+Both “A.” and “a.” convert to “1.” assumption is that this function
+is used for start iter only, not whole list</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.formats.dump_header_lines">
+<code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">dump_header_lines</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">headers</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.dump_header_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return text representation of header dict</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.formats.encode_xml">
+<code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">encode_xml</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.encode_xml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encode text such that it can be used in xml</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – label text as string</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>encoded text</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.formats.get_dumper">
+<code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">get_dumper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.get_dumper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dumper object instance for a specific format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – format name</p></li>
+<li><p><strong>arg</strong> – arguments to pass to the dumper object</p></li>
+<li><p><strong>kwarg</strong> – keyword arguments to pass to the dumper object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dumper object instance (subclass of <a class="reference internal" href="#zim.formats.DumperClass" title="zim.formats.DumperClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">DumperClass</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.formats.get_format">
+<code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">get_format</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.get_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the module object for a specific format.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.formats.get_format_module">
+<code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">get_format_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.get_format_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the module object for a specific format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> – the format name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a module object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.formats.get_parser">
+<code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">get_parser</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.get_parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a parser object instance for a specific format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – format name</p></li>
+<li><p><strong>arg</strong> – arguments to pass to the parser object</p></li>
+<li><p><strong>kwarg</strong> – keyword arguments to pass to the parser object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>parser object instance (subclass of <a class="reference internal" href="#zim.formats.ParserClass" title="zim.formats.ParserClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParserClass</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.formats.heading_to_anchor">
+<code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">heading_to_anchor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.heading_to_anchor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Derive an anchor name from a heading</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.formats.increase_list_iter">
+<code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">increase_list_iter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">listiter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.increase_list_iter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the next item in a list for a numbered list
+E.g if <code class="docutils literal notranslate"><span class="pre">listiter</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;1&quot;</span></code> this function returns <code class="docutils literal notranslate"><span class="pre">&quot;2&quot;</span></code>, if it
+is <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code> it returns <code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>listiter</strong> – the current item, either an integer number or
+single letter</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the next item, or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.formats.list_formats">
+<code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">list_formats</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.list_formats" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="zim.formats.parse_header_lines">
+<code class="sig-prename descclassname">zim.formats.</code><code class="sig-name descname">parse_header_lines</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.formats.parse_header_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read header lines in the rfc822 format.
+Can e.g. look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">text</span><span class="o">/</span><span class="n">x</span><span class="o">-</span><span class="n">zim</span><span class="o">-</span><span class="n">wiki</span>
+<span class="n">Wiki</span><span class="o">-</span><span class="n">Format</span><span class="p">:</span> <span class="n">zim</span> <span class="mf">0.4</span>
+<span class="n">Creation</span><span class="o">-</span><span class="n">Date</span><span class="p">:</span> <span class="mi">2010</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">14</span><span class="n">T14</span><span class="p">:</span><span class="mi">15</span><span class="p">:</span><span class="mf">09.134955</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the text minus the headers and a dict with the headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Zim Desktop Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Jaap Karssenberg and contributors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/zim.formats.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

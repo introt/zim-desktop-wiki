@@ -1,0 +1,684 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zim.templates package &#8212; Zim Desktop Wiki 0.74 develop documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="zim-templates-package">
+<h1>zim.templates package<a class="headerlink" href="#zim-templates-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-zim.templates.expression">
+<span id="zim-templates-expression-module"></span><h2>zim.templates.expression module<a class="headerlink" href="#module-zim.templates.expression" title="Permalink to this headline">¶</a></h2>
+<p>Module that contains the logic for evaluating expressions in the
+template.</p>
+<p>Expression evaluation is done without using a real python eval to
+keep it safe from arbitrary code execution</p>
+<p>Both parameter values and functions are stored in a dict that is
+passed to the Expression object when it is executed. The expressions
+should not allow access to anything outside this dict, and only
+sane access to objects reachable from this dict.</p>
+<p>Parameter lookup gets list and dict items as well as object attributes.
+It does not allow accessing private attributes (starting with “_”)
+or or code objects (object method of function) - callable objects on
+the other hand can be accessed.</p>
+<p>We control execution by only executing functions that are specifically
+whitelisted as being an ExpressionFunction (can be used as decorator).
+The expression classes have builtin support for some builtin methods
+on strings, lists and dicts (see <code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionString</span></code>,
+<code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionDict</span></code> and <a class="reference internal" href="#zim.templates.expression.ExpressionList" title="zim.templates.expression.ExpressionList"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionList</span></code></a> respectively), other functions
+can be supplied in the context dict or as object attributes.</p>
+<p>The biggest risks would be to put objects in the dict that allow
+access to dangerous methods or private data. Or to have functions
+that e.g. eval one of their arguments or take a callable argument</p>
+<p>The idea is that objects in the expression dict are proxies that
+expose a sub set of the full object API and template friendly methods.
+These restrictions hsould help to minimize risk of arbitrary code
+execution in expressions.</p>
+<dl class="py class">
+<dt id="zim.templates.expression.BoundExpressionFunction">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.expression.</code><code class="sig-name descname">BoundExpressionFunction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">func</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.BoundExpressionFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.templates.expression.ExpressionFunction" title="zim.templates.expression.ExpressionFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.templates.expression.ExpressionFunction</span></code></a></p>
+<p>Wrapper used by <a class="reference internal" href="#zim.templates.expression.ExpressionFunction" title="zim.templates.expression.ExpressionFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionFunction</span></code></a> when used as a decorator
+for object methods.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.templates.expression.Expression">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.expression.</code><code class="sig-name descname">Expression</code><a class="headerlink" href="#zim.templates.expression.Expression" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for all expressions</p>
+<dl class="py method">
+<dt id="zim.templates.expression.Expression.pprint">
+<code class="sig-name descname">pprint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.Expression.pprint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the expression hierarchy</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.templates.expression.ExpressionDictObject">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.expression.</code><code class="sig-name descname">ExpressionDictObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.ExpressionDictObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.templates.expression.ExpressionObjectBase" title="zim.templates.expression.ExpressionObjectBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.templates.expression.ExpressionObjectBase</span></code></a></p>
+<p>Proxy for dict objects that gives safe methods for use in
+expressions.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.templates.expression.ExpressionFunction">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.expression.</code><code class="sig-name descname">ExpressionFunction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.ExpressionFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Wrapper for methods and functions that whitelists
+functions to be called from expressions</p>
+<p>Can be used as a decorator.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.templates.expression.ExpressionFunctionCall">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.expression.</code><code class="sig-name descname">ExpressionFunctionCall</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">param</span></em>, <em class="sig-param"><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.ExpressionFunctionCall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.templates.expression.Expression" title="zim.templates.expression.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.templates.expression.Expression</span></code></a></p>
+<p>Expression with a function name and arguments, recurses for
+the arguments and evaluates the function.</p>
+<dl class="py attribute">
+<dt id="zim.templates.expression.ExpressionFunctionCall.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#zim.templates.expression.ExpressionFunctionCall.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.templates.expression.ExpressionFunctionCall.param">
+<code class="sig-name descname">param</code><a class="headerlink" href="#zim.templates.expression.ExpressionFunctionCall.param" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.templates.expression.ExpressionFunctionCall.pprint">
+<code class="sig-name descname">pprint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.ExpressionFunctionCall.pprint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the expression hierarchy</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.templates.expression.ExpressionFunctionCall.wrap_object">
+<code class="sig-name descname">wrap_object</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.ExpressionFunctionCall.wrap_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find a suitable wrapper that exposes safe methods for
+a given object</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.templates.expression.ExpressionList">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.expression.</code><code class="sig-name descname">ExpressionList</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">items</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.ExpressionList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.templates.expression.Expression" title="zim.templates.expression.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.templates.expression.Expression</span></code></a></p>
+<p>Expression for a list of expressions, recurses on all items
+when evaluated</p>
+<dl class="py method">
+<dt id="zim.templates.expression.ExpressionList.append">
+<code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.ExpressionList.append" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.templates.expression.ExpressionList.items">
+<code class="sig-name descname">items</code><a class="headerlink" href="#zim.templates.expression.ExpressionList.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.templates.expression.ExpressionList.pprint">
+<code class="sig-name descname">pprint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.ExpressionList.pprint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the expression hierarchy</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.templates.expression.ExpressionListObject">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.expression.</code><code class="sig-name descname">ExpressionListObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.ExpressionListObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.templates.expression.ExpressionObjectBase" title="zim.templates.expression.ExpressionObjectBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.templates.expression.ExpressionObjectBase</span></code></a></p>
+<p>Proxy for list objects that gives safe methods for use in
+expressions.</p>
+<dl class="py attribute">
+<dt id="zim.templates.expression.ExpressionListObject.get">
+<code class="sig-name descname">get</code><a class="headerlink" href="#zim.templates.expression.ExpressionListObject.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for methods and functions that whitelists
+functions to be called from expressions</p>
+<p>Can be used as a decorator.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.templates.expression.ExpressionLiteral">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.expression.</code><code class="sig-name descname">ExpressionLiteral</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.ExpressionLiteral" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.templates.expression.Expression" title="zim.templates.expression.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.templates.expression.Expression</span></code></a></p>
+<p>Expression with a literal value</p>
+<dl class="py method">
+<dt id="zim.templates.expression.ExpressionLiteral.pprint">
+<code class="sig-name descname">pprint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.ExpressionLiteral.pprint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the expression hierarchy</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.templates.expression.ExpressionLiteral.value">
+<code class="sig-name descname">value</code><a class="headerlink" href="#zim.templates.expression.ExpressionLiteral.value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.templates.expression.ExpressionObjectBase">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.expression.</code><code class="sig-name descname">ExpressionObjectBase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.ExpressionObjectBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base method for wrapper objects that are used to determine the
+safe functions to call on objects in the parameter dict.</p>
+<p>The attribute <code class="docutils literal notranslate"><span class="pre">_fmethods()</span></code> lists methods that can be called
+safely on the wrapped objects.</p>
+<dl class="py attribute">
+<dt id="zim.templates.expression.ExpressionObjectBase.len">
+<code class="sig-name descname">len</code><a class="headerlink" href="#zim.templates.expression.ExpressionObjectBase.len" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for methods and functions that whitelists
+functions to be called from expressions</p>
+<p>Can be used as a decorator.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.templates.expression.ExpressionObjectBase.reversed">
+<code class="sig-name descname">reversed</code><a class="headerlink" href="#zim.templates.expression.ExpressionObjectBase.reversed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for methods and functions that whitelists
+functions to be called from expressions</p>
+<p>Can be used as a decorator.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.templates.expression.ExpressionObjectBase.sorted">
+<code class="sig-name descname">sorted</code><a class="headerlink" href="#zim.templates.expression.ExpressionObjectBase.sorted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for methods and functions that whitelists
+functions to be called from expressions</p>
+<p>Can be used as a decorator.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.templates.expression.ExpressionOperator">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.expression.</code><code class="sig-name descname">ExpressionOperator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operator</span></em>, <em class="sig-param"><span class="n">lexpr</span></em>, <em class="sig-param"><span class="n">rexpr</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.ExpressionOperator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.templates.expression.Expression" title="zim.templates.expression.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.templates.expression.Expression</span></code></a></p>
+<p>Expression for an operator statement (e.g. “AND”, “OR”, “&lt;”),
+recurses for left and right side of the expression.</p>
+<dl class="py attribute">
+<dt id="zim.templates.expression.ExpressionOperator.lexpr">
+<code class="sig-name descname">lexpr</code><a class="headerlink" href="#zim.templates.expression.ExpressionOperator.lexpr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.templates.expression.ExpressionOperator.operator">
+<code class="sig-name descname">operator</code><a class="headerlink" href="#zim.templates.expression.ExpressionOperator.operator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.templates.expression.ExpressionOperator.pprint">
+<code class="sig-name descname">pprint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.ExpressionOperator.pprint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the expression hierarchy</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.templates.expression.ExpressionOperator.rexpr">
+<code class="sig-name descname">rexpr</code><a class="headerlink" href="#zim.templates.expression.ExpressionOperator.rexpr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.templates.expression.ExpressionParameter">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.expression.</code><code class="sig-name descname">ExpressionParameter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.ExpressionParameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.templates.expression.Expression" title="zim.templates.expression.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.templates.expression.Expression</span></code></a></p>
+<p>Expression with a parameter name, evaluates the parameter value</p>
+<dl class="py attribute">
+<dt id="zim.templates.expression.ExpressionParameter.key">
+<code class="sig-name descname">key</code><a class="headerlink" href="#zim.templates.expression.ExpressionParameter.key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.templates.expression.ExpressionParameter.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#zim.templates.expression.ExpressionParameter.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.templates.expression.ExpressionParameter.parent">
+<em class="property">property </em><code class="sig-name descname">parent</code><a class="headerlink" href="#zim.templates.expression.ExpressionParameter.parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a <code class="docutils literal notranslate"><span class="pre">ExpressionParameter</span></code> for the parent object.
+Used e.g. to find the parent scope for assignment.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.templates.expression.ExpressionParameter.parts">
+<code class="sig-name descname">parts</code><a class="headerlink" href="#zim.templates.expression.ExpressionParameter.parts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.templates.expression.ExpressionParameter.pprint">
+<code class="sig-name descname">pprint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.ExpressionParameter.pprint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the expression hierarchy</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.templates.expression.ExpressionStringObject">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.expression.</code><code class="sig-name descname">ExpressionStringObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.ExpressionStringObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.templates.expression.ExpressionObjectBase" title="zim.templates.expression.ExpressionObjectBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.templates.expression.ExpressionObjectBase</span></code></a></p>
+<p>Proxy for string objects that gives safe methods for use in
+expressions.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.templates.expression.ExpressionUnaryOperator">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.expression.</code><code class="sig-name descname">ExpressionUnaryOperator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operator</span></em>, <em class="sig-param"><span class="n">rexpr</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.ExpressionUnaryOperator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.templates.expression.Expression" title="zim.templates.expression.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.templates.expression.Expression</span></code></a></p>
+<p>Expression with a unary operator (e.g. “NOT”) that recurses
+for the right hand side of the statement.</p>
+<dl class="py attribute">
+<dt id="zim.templates.expression.ExpressionUnaryOperator.operator">
+<code class="sig-name descname">operator</code><a class="headerlink" href="#zim.templates.expression.ExpressionUnaryOperator.operator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.templates.expression.ExpressionUnaryOperator.pprint">
+<code class="sig-name descname">pprint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expression.ExpressionUnaryOperator.pprint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the expression hierarchy</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.templates.expression.ExpressionUnaryOperator.rexpr">
+<code class="sig-name descname">rexpr</code><a class="headerlink" href="#zim.templates.expression.ExpressionUnaryOperator.rexpr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.templates.expressionparser">
+<span id="zim-templates-expressionparser-module"></span><h2>zim.templates.expressionparser module<a class="headerlink" href="#module-zim.templates.expressionparser" title="Permalink to this headline">¶</a></h2>
+<p>This module contains the parser to parse expressions in templates
+and returns an <code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> object.</p>
+<dl class="py class">
+<dt id="zim.templates.expressionparser.ExpressionParser">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.expressionparser.</code><code class="sig-name descname">ExpressionParser</code><a class="headerlink" href="#zim.templates.expressionparser.ExpressionParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Parser for expressions</p>
+<dl class="py attribute">
+<dt id="zim.templates.expressionparser.ExpressionParser.operators">
+<code class="sig-name descname">operators</code><em class="property"> = {'!=': &lt;built-in function ne&gt;, '&lt;': &lt;built-in function lt&gt;, '&lt;=': &lt;built-in function le&gt;, '==': &lt;built-in function eq&gt;, '&gt;': &lt;built-in function gt&gt;, '&gt;=': &lt;built-in function ge&gt;, 'and': &lt;built-in function and_&gt;, 'not': &lt;built-in function not_&gt;, 'or': &lt;built-in function or_&gt;}</em><a class="headerlink" href="#zim.templates.expressionparser.ExpressionParser.operators" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.templates.expressionparser.ExpressionParser.parse">
+<code class="sig-name descname">parse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expressionparser.ExpressionParser.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse an expression</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>string</strong> – the expression text</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>an <code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.templates.expressionparser.ExpressionParser.tokens">
+<code class="sig-name descname">tokens</code><em class="property"> = [',', '[', ']', '(', ')', '==', '!=', '&gt;', '&gt;=', '&lt;', '&lt;=']</em><a class="headerlink" href="#zim.templates.expressionparser.ExpressionParser.tokens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="zim.templates.expressionparser.ExpressionSyntaxError">
+<em class="property">exception </em><code class="sig-prename descclassname">zim.templates.expressionparser.</code><code class="sig-name descname">ExpressionSyntaxError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">msg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.expressionparser.ExpressionSyntaxError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.parser.ParserError" title="zim.parser.ParserError"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.parser.ParserError</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.templates.functions">
+<span id="zim-templates-functions-module"></span><h2>zim.templates.functions module<a class="headerlink" href="#module-zim.templates.functions" title="Permalink to this headline">¶</a></h2>
+<p>This module contains generic template functions.</p>
+<p>In addition to the functions defined here, <a class="reference internal" href="zim.export.html#module-zim.export.template" title="zim.export.template"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.export.template</span></code></a>
+defines functions like <code class="docutils literal notranslate"><span class="pre">resource()</span></code> and <code class="docutils literal notranslate"><span class="pre">uri()</span></code> which require
+knowledge about the templates destination file structure.</p>
+<dl class="py function">
+<dt id="zim.templates.functions.build_template_functions">
+<code class="sig-prename descclassname">zim.templates.functions.</code><code class="sig-name descname">build_template_functions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.functions.build_template_functions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-zim.templates.parser">
+<span id="zim-templates-parser-module"></span><h2>zim.templates.parser module<a class="headerlink" href="#module-zim.templates.parser" title="Permalink to this headline">¶</a></h2>
+<p>This module defines the main parser for template text.</p>
+<p>See also the <code class="xref py py-class docutils literal notranslate"><span class="pre">expressionparser</span></code> sub-module for the parser for
+expressions in the template.</p>
+<dl class="py class">
+<dt id="zim.templates.parser.TemplateBuilderTextBuffer">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.parser.</code><code class="sig-name descname">TemplateBuilderTextBuffer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.parser.TemplateBuilderTextBuffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.parser.BuilderTextBuffer" title="zim.parser.BuilderTextBuffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.parser.BuilderTextBuffer</span></code></a></p>
+<p>Sub class of <code class="xref py py-class docutils literal notranslate"><span class="pre">BuilderTextBuffer</span></code> that is used to strip text
+around template instructions.</p>
+<dl class="py method">
+<dt id="zim.templates.parser.TemplateBuilderTextBuffer.flush">
+<code class="sig-name descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.parser.TemplateBuilderTextBuffer.flush" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.templates.parser.TemplateBuilderTextBuffer.lstrip">
+<code class="sig-name descname">lstrip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.parser.TemplateBuilderTextBuffer.lstrip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag that next piece of text needs to be lstripped up to
+and including newline</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.templates.parser.TemplateBuilderTextBuffer.rstrip">
+<code class="sig-name descname">rstrip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.parser.TemplateBuilderTextBuffer.rstrip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do an rstrip on last piece of text up to and including
+newline</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.templates.parser.TemplateBuilderTextBuffer.text">
+<code class="sig-name descname">text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.parser.TemplateBuilderTextBuffer.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – text to be appended as string</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by sub-classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.templates.parser.TemplateParser">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.parser.</code><code class="sig-name descname">TemplateParser</code><a class="headerlink" href="#zim.templates.parser.TemplateParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The parser to parse template files into a hierarchic tree of
+instructions.</p>
+<dl class="py method">
+<dt id="zim.templates.parser.TemplateParser.build_text_parser">
+<code class="sig-name descname">build_text_parser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.parser.TemplateParser.build_text_parser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.templates.parser.TemplateParser.parse">
+<code class="sig-name descname">parse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.parser.TemplateParser.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse template text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – the template text</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of <code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleTreeElements</span></code> for the main template
+structure and any blocks defined in the template</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.templates.parser.TemplateTreeBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.parser.</code><code class="sig-name descname">TemplateTreeBuilder</code><a class="headerlink" href="#zim.templates.parser.TemplateTreeBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.parser.SimpleTreeBuilder" title="zim.parser.SimpleTreeBuilder"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.parser.SimpleTreeBuilder</span></code></a></p>
+<p>Sub-class of <code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleTreeBuilder</span></code>.
+This class implements a special case for the “BLOCK” element and
+always places it in the top level of the parse tree</p>
+<dl class="py method">
+<dt id="zim.templates.parser.TemplateTreeBuilder.start">
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrib</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.parser.TemplateTreeBuilder.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start formatted region</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag</strong> – the tag name</p></li>
+<li><p><strong>attrib</strong> – optional dict with attributes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by sub-classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.templates.processor">
+<span id="zim-templates-processor-module"></span><h2>zim.templates.processor module<a class="headerlink" href="#module-zim.templates.processor" title="Permalink to this headline">¶</a></h2>
+<p>This module contains the main object to “execute” a template and
+fill in the parameters, call functions etc. The <a class="reference internal" href="#zim.templates.processor.TemplateProcessor" title="zim.templates.processor.TemplateProcessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">TemplateProcessor</span></code></a>
+defined here takes care of the template control flow (‘IF’, ‘FOR’, etc.).</p>
+<p>Also see the <code class="xref py py-class docutils literal notranslate"><span class="pre">expression</span></code> sub module that contains logic for executing
+expressions in the template.</p>
+<dl class="py class">
+<dt id="zim.templates.processor.TemplateContextDict">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.processor.</code><code class="sig-name descname">TemplateContextDict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.processor.TemplateContextDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.templates.expression.ExpressionDictObject" title="zim.templates.expression.ExpressionDictObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.templates.expression.ExpressionDictObject</span></code></a></p>
+<p>This class defines a dict with template parameters</p>
+<p>These dicts can be modified when running the template, but nested
+dicts can only be modified if they are a TemplateContextDict
+themselves.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.templates.processor.TemplateLoopState">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.processor.</code><code class="sig-name descname">TemplateLoopState</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">outer</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.processor.TemplateLoopState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Object used for the “loop” parameter in a FOR loop</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.templates.processor.TemplateProcessor">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.processor.</code><code class="sig-name descname">TemplateProcessor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parts</span></em>, <em class="sig-param"><span class="n">parse_included_file_func</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.processor.TemplateProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The template processor takes a parsed template and “executes” it
+one or more times.</p>
+<dl class="py method">
+<dt id="zim.templates.processor.TemplateProcessor.process">
+<code class="sig-name descname">process</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">output</span></em>, <em class="sig-param"><span class="n">context</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.processor.TemplateProcessor.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute the template once</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output</strong> – an object to receive the template output, can be
+a <code class="docutils literal notranslate"><span class="pre">list</span></code> and should support at least an <code class="docutils literal notranslate"><span class="pre">append()</span></code> method to
+receive string content</p></li>
+<li><p><strong>context</strong> – a <a class="reference internal" href="#zim.templates.processor.TemplateContextDict" title="zim.templates.processor.TemplateContextDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">TemplateContextDict</span></code></a> object with the
+template parameters</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.templates">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-zim.templates" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="zim.templates.Template">
+<em class="property">class </em><code class="sig-prename descclassname">zim.templates.</code><code class="sig-name descname">Template</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.Template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.signals.SignalEmitter" title="zim.signals.SignalEmitter"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.signals.SignalEmitter</span></code></a></p>
+<p>This class defines the main interface for templates
+It takes care of parsing a template file and allows evaluating
+the template with a given set of template parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Signal</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">process</span> <span class="pre">(output,</span> <span class="pre">context)</span></code>: emitted by the “process” method</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="zim.templates.Template.do_process">
+<code class="sig-name descname">do_process</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">output</span></em>, <em class="sig-param"><span class="n">context</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.Template.do_process" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.templates.Template.parse_included_file">
+<code class="sig-name descname">parse_included_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.Template.parse_included_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.templates.Template.process">
+<code class="sig-name descname">process</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">output</span></em>, <em class="sig-param"><span class="n">context</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.Template.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the template</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output</strong> – an object that has an <code class="docutils literal notranslate"><span class="pre">append()</span></code> method (e.g. a <code class="docutils literal notranslate"><span class="pre">list</span></code>)
+to receive the output text</p></li>
+<li><p><strong>context</strong> – <p>a <code class="docutils literal notranslate"><span class="pre">dict</span></code> with a set of template parameters.
+This dict is copied to prevent changes to the original dict when
+processing the template</p>
+<dl class="field-list simple">
+<dt class="field-odd">emits</dt>
+<dd class="field-odd"><p>process</p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.templates.Template.template_functions">
+<code class="sig-name descname">template_functions</code><em class="property"> = {'gettext': &lt;ExpressionFunction: template_gettext()&gt;, 'html_encode': &lt;ExpressionFunction: html_encode()&gt;, 'len': &lt;ExpressionFunction: len()&gt;, 'range': &lt;ExpressionFunction: range()&gt;, 'reversed': &lt;ExpressionFunction: &lt;lambda&gt;()&gt;, 'sorted': &lt;ExpressionFunction: sorted()&gt;, 'strfcal': &lt;ExpressionFunction: template_strfcal()&gt;, 'strftime': &lt;ExpressionFunction: template_strftime()&gt;, 'url_encode': &lt;ExpressionFunction: functools.partial(&lt;function url_encode&gt;, mode=0)()&gt;}</em><a class="headerlink" href="#zim.templates.Template.template_functions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.templates.get_template">
+<code class="sig-prename descclassname">zim.templates.</code><code class="sig-name descname">get_template</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">category</span></em>, <em class="sig-param"><span class="n">template</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.get_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a Template object for a template name or file path</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>category</strong> – the template category (e.g. “html”). Use to resolve
+the template if a template name is given</p></li>
+<li><p><strong>template</strong> – the template name or file path</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.templates.list_template_categories">
+<code class="sig-prename descclassname">zim.templates.</code><code class="sig-name descname">list_template_categories</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.list_template_categories" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of categories (sub folders)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.templates.list_templates">
+<code class="sig-prename descclassname">zim.templates.</code><code class="sig-name descname">list_templates</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">category</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.templates.list_templates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of template names</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>category</strong> – a category (sub folder) with tempaltes, e.g. “html”</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of 2-tuples of the template names and the file
+basename for the template file</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Zim Desktop Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Jaap Karssenberg and contributors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/zim.templates.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

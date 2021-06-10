@@ -1,0 +1,667 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zim.plugins.tasklist package &#8212; Zim Desktop Wiki 0.74 develop documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="zim-plugins-tasklist-package">
+<h1>zim.plugins.tasklist package<a class="headerlink" href="#zim-plugins-tasklist-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-zim.plugins.tasklist.dates">
+<span id="zim-plugins-tasklist-dates-module"></span><h2>zim.plugins.tasklist.dates module<a class="headerlink" href="#module-zim.plugins.tasklist.dates" title="Permalink to this headline">¶</a></h2>
+<p>Functions to match and parse dates in wiki pages</p>
+<p>The following unambigous date forms are supported:
+* Day by date using: yyyy-mm-dd  for example 2017-02-16
+* Month using: yyyy-mm for example 2017-02
+* Week using: (yy)yyWww or (yy)yy-Www, for example 2017W07, 17W07 or 17-W07
+* Day by week using  (yy)yyWww(D) or (yy)yy-Www(-D) for example 17-W07-2 for Tuesday
+* Week and day by week notation can also use Wkyyww(.D) for example wk1707</p>
+<p>To avoid confusion between mm/dd, dd/mm and yy-mm notations neither of
+these is supported and the year should always be given in 4 digits.</p>
+<p>When the year is shortened to two digits (“yy”) it is always prefixed by “20”,
+so “01” becomes 2001 and “99” becomes 2099. For years starting with 19 (or any
+other century) the ful four digit year needs to be used.</p>
+<p>Notation is based on <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">https://en.wikipedia.org/wiki/ISO_8601</a>. Truncating the year
+is not supported except for the week notation and separators (“-“) are required
+to avoid matching random other numbers. The “Wkyyww” notation is supported as
+non-standard alternative.</p>
+<p>Weeknumbers follow the iso calendar. However depending on locale Sunday can
+either be the first day of the starting week or the last day of the ending week.
+In the weekday notation this is made explicit by using “0” for sunday at the
+start of the week and “7” for sunday at the end of the week. Thus the dates
+“W1707.7” and “W1708.0” are the same day.</p>
+<dl class="py class">
+<dt id="zim.plugins.tasklist.dates.Day">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.tasklist.dates.</code><code class="sig-name descname">Day</code><a class="headerlink" href="#zim.plugins.tasklist.dates.Day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">zim.plugins.tasklist.dates.DateRange</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.date</span></code></p>
+<dl class="py method">
+<dt id="zim.plugins.tasklist.dates.Day.first_day">
+<em class="property">property </em><code class="sig-name descname">first_day</code><a class="headerlink" href="#zim.plugins.tasklist.dates.Day.first_day" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.dates.Day.last_day">
+<em class="property">property </em><code class="sig-name descname">last_day</code><a class="headerlink" href="#zim.plugins.tasklist.dates.Day.last_day" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.dates.Day.new_from_weeknumber">
+<em class="property">classmethod </em><code class="sig-name descname">new_from_weeknumber</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">week</span></em>, <em class="sig-param"><span class="n">weekday</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.dates.Day.new_from_weeknumber" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.dates.Day.weekcalendar">
+<code class="sig-name descname">weekcalendar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.dates.Day.weekcalendar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns (year, week, weekday)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.dates.Day.weekformat">
+<code class="sig-name descname">weekformat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.dates.Day.weekformat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format as iso-weeknumber and weekday “YYYY-Www-D”</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.tasklist.dates.Month">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.tasklist.dates.</code><code class="sig-name descname">Month</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">month</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.dates.Month" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">zim.plugins.tasklist.dates.DateRange</span></code></p>
+<dl class="py method">
+<dt id="zim.plugins.tasklist.dates.Month.last_day">
+<em class="property">property </em><code class="sig-name descname">last_day</code><a class="headerlink" href="#zim.plugins.tasklist.dates.Month.last_day" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.tasklist.dates.Week">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.tasklist.dates.</code><code class="sig-name descname">Week</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">week</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.dates.Week" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">zim.plugins.tasklist.dates.DateRange</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.plugins.tasklist.dates.parse_date">
+<code class="sig-prename descclassname">zim.plugins.tasklist.dates.</code><code class="sig-name descname">parse_date</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">date</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.dates.parse_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-zim.plugins.tasklist.gui">
+<span id="zim-plugins-tasklist-gui-module"></span><h2>zim.plugins.tasklist.gui module<a class="headerlink" href="#module-zim.plugins.tasklist.gui" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="zim.plugins.tasklist.gui.TagListTreeView">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.tasklist.gui.</code><code class="sig-name descname">TagListTreeView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">task_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TagListTreeView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.gui.html#zim.gui.widgets.SingleClickTreeView" title="zim.gui.widgets.SingleClickTreeView"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.gui.widgets.SingleClickTreeView</span></code></a></p>
+<p>TreeView with a single column ‘Tags’ which shows all tags available
+in a TaskListTreeView. Selecting a tag will filter the task list to
+only show tasks with that tag.</p>
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TagListTreeView.get_labels">
+<code class="sig-name descname">get_labels</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TagListTreeView.get_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns current selected labels</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TagListTreeView.get_tags">
+<code class="sig-name descname">get_tags</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TagListTreeView.get_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns current selected tags, or None for all tags</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TagListTreeView.on_selection_changed">
+<code class="sig-name descname">on_selection_changed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">selection</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TagListTreeView.on_selection_changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TagListTreeView.refresh">
+<code class="sig-name descname">refresh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">task_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TagListTreeView.refresh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.tasklist.gui.TaskListDialog">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.tasklist.gui.</code><code class="sig-name descname">TaskListDialog</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListDialog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.plugins.tasklist.gui.TaskListWidgetMixin" title="zim.plugins.tasklist.gui.TaskListWidgetMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.plugins.tasklist.gui.TaskListWidgetMixin</span></code></a>, <a class="reference internal" href="zim.gui.html#zim.gui.widgets.Dialog" title="zim.gui.widgets.Dialog"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.gui.widgets.Dialog</span></code></a></p>
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListDialog.do_response">
+<code class="sig-name descname">do_response</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">response</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListDialog.do_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>response(self, response_id:int)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListDialog.on_properties_changed">
+<code class="sig-name descname">on_properties_changed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">properties</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListDialog.on_properties_changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.tasklist.gui.TaskListDialogExtension">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.tasklist.gui.</code><code class="sig-name descname">TaskListDialogExtension</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListDialogExtension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.plugins.html#zim.plugins.DialogExtensionBase" title="zim.plugins.DialogExtensionBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.plugins.DialogExtensionBase</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.tasklist.gui.</code><code class="sig-name descname">TaskListTreeView</code><span class="sig-paren">(</span><em class="sig-param">tasksview</em>, <em class="sig-param">opener</em>, <em class="sig-param">task_labels</em>, <em class="sig-param">nonactionable_tags=()</em>, <em class="sig-param">filter_actionable=False</em>, <em class="sig-param">tag_by_page=False</em>, <em class="sig-param">use_workweek=False</em>, <em class="sig-param">column_layout=11</em>, <em class="sig-param">flatlist=False</em>, <em class="sig-param">sort_column=2</em>, <em class="sig-param">sort_order=&lt;enum GTK_SORT_DESCENDING of type Gtk.SortType&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.gui.html#zim.gui.widgets.BrowserTreeView" title="zim.gui.widgets.BrowserTreeView"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.gui.widgets.BrowserTreeView</span></code></a></p>
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.ACT_COL">
+<code class="sig-name descname">ACT_COL</code><em class="property"> = 1</em><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.ACT_COL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.COMPACT_COLUMN_LAYOUT">
+<code class="sig-name descname">COMPACT_COLUMN_LAYOUT</code><em class="property"> = 12</em><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.COMPACT_COLUMN_LAYOUT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.COMPACT_COLUMN_LAYOUT_WITH_DUE">
+<code class="sig-name descname">COMPACT_COLUMN_LAYOUT_WITH_DUE</code><em class="property"> = 13</em><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.COMPACT_COLUMN_LAYOUT_WITH_DUE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.DESC_COL">
+<code class="sig-name descname">DESC_COL</code><em class="property"> = 6</em><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.DESC_COL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.DUE_COL">
+<code class="sig-name descname">DUE_COL</code><em class="property"> = 4</em><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.DUE_COL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.PAGE_COL">
+<code class="sig-name descname">PAGE_COL</code><em class="property"> = 7</em><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.PAGE_COL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.PRIO_COL">
+<code class="sig-name descname">PRIO_COL</code><em class="property"> = 2</em><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.PRIO_COL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.PRIO_SORT_COL">
+<code class="sig-name descname">PRIO_SORT_COL</code><em class="property"> = 9</em><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.PRIO_SORT_COL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.PRIO_SORT_LABEL_COL">
+<code class="sig-name descname">PRIO_SORT_LABEL_COL</code><em class="property"> = 10</em><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.PRIO_SORT_LABEL_COL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.RICH_COLUMN_LAYOUT">
+<code class="sig-name descname">RICH_COLUMN_LAYOUT</code><em class="property"> = 11</em><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.RICH_COLUMN_LAYOUT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.START_COL">
+<code class="sig-name descname">START_COL</code><em class="property"> = 3</em><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.START_COL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.TAGS_COL">
+<code class="sig-name descname">TAGS_COL</code><em class="property"> = 5</em><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.TAGS_COL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.TASKID_COL">
+<code class="sig-name descname">TASKID_COL</code><em class="property"> = 8</em><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.TASKID_COL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.VIS_COL">
+<code class="sig-name descname">VIS_COL</code><em class="property"> = 0</em><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.VIS_COL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.copy_to_clipboard">
+<code class="sig-name descname">copy_to_clipboard</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">a</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.copy_to_clipboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports currently visible elements from the tasks list</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.do_focus_in_event">
+<code class="sig-name descname">do_focus_in_event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.do_focus_in_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>focus_in_event(self, event:Gdk.EventFocus) -&gt; bool</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.do_initialize_popup">
+<code class="sig-name descname">do_initialize_popup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">menu</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.do_initialize_popup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the context menu.
+This method is called before the <code class="docutils literal notranslate"><span class="pre">populate-popup</span></code> signal and
+can be used to put any standard items in the menu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>menu</strong> – the <code class="docutils literal notranslate"><span class="pre">Gtk.Menu</span></code> object for the popup</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>can be implemented by sub-classes. Default
+implementation calls <code class="xref py py-class docutils literal notranslate"><span class="pre">populate_popup_expand_collapse()</span></code>
+if the model is a <code class="docutils literal notranslate"><span class="pre">Gtk.TreeStore</span></code>. Otherwise it does nothing.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.do_row_activated">
+<code class="sig-name descname">do_row_activated</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">column</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.do_row_activated" title="Permalink to this definition">¶</a></dt>
+<dd><p>row_activated(self, path:Gtk.TreePath, column:Gtk.TreeViewColumn)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.get_labels">
+<code class="sig-name descname">get_labels</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.get_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all labels that are in use</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a dict with labels as keys and the number of tasks
+per label as value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.get_n_tasks">
+<code class="sig-name descname">get_n_tasks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.get_n_tasks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of tasks in the list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>total number</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.get_tags">
+<code class="sig-name descname">get_tags</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.get_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all tags that are in use</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a dict with tags as keys and the number of tasks
+per tag as value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.get_visible_data">
+<code class="sig-name descname">get_visible_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.get_visible_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.get_visible_data_as_csv">
+<code class="sig-name descname">get_visible_data_as_csv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.get_visible_data_as_csv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.get_visible_data_as_html">
+<code class="sig-name descname">get_visible_data_as_html</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.get_visible_data_as_html" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.refresh">
+<code class="sig-name descname">refresh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.refresh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh the model based on index data</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.set_filter">
+<code class="sig-name descname">set_filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.set_filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.set_filter_actionable">
+<code class="sig-name descname">set_filter_actionable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.set_filter_actionable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set filter state for non-actionable items</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filter</strong> – if <code class="docutils literal notranslate"><span class="pre">False</span></code> all items are shown, if <code class="docutils literal notranslate"><span class="pre">True</span></code> only actionable items</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.set_flatlist">
+<code class="sig-name descname">set_flatlist</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">flatlist</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.set_flatlist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.set_tag_filter">
+<code class="sig-name descname">set_tag_filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tags</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">labels</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.set_tag_filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListTreeView.update_properties">
+<code class="sig-name descname">update_properties</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">task_labels</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nonactionable_tags</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tag_by_page</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_workweek</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListTreeView.update_properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.tasklist.gui.TaskListWidget">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.tasklist.gui.</code><code class="sig-name descname">TaskListWidget</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tasksview</span></em>, <em class="sig-param"><span class="n">opener</span></em>, <em class="sig-param"><span class="n">properties</span></em>, <em class="sig-param"><span class="n">with_due</span></em>, <em class="sig-param"><span class="n">uistate</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListWidget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.repository.Gtk.VBox</span></code>, <a class="reference internal" href="#zim.plugins.tasklist.gui.TaskListWidgetMixin" title="zim.plugins.tasklist.gui.TaskListWidgetMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.plugins.tasklist.gui.TaskListWidgetMixin</span></code></a>, <a class="reference internal" href="zim.gui.html#zim.gui.widgets.WindowSidePaneWidget" title="zim.gui.widgets.WindowSidePaneWidget"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.gui.widgets.WindowSidePaneWidget</span></code></a></p>
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListWidget.on_properties_changed">
+<code class="sig-name descname">on_properties_changed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">properties</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListWidget.on_properties_changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.gui.TaskListWidget.title">
+<code class="sig-name descname">title</code><em class="property"> = 'Tasks'</em><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListWidget.title" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.tasklist.gui.TaskListWidgetMixin">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.tasklist.gui.</code><code class="sig-name descname">TaskListWidgetMixin</code><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListWidgetMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListWidgetMixin.on_populate_popup">
+<code class="sig-name descname">on_populate_popup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">menu</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListWidgetMixin.on_populate_popup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListWidgetMixin.on_show_active_toggle">
+<code class="sig-name descname">on_show_active_toggle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">a</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListWidgetMixin.on_show_active_toggle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.gui.TaskListWidgetMixin.on_show_flatlist_toggle">
+<code class="sig-name descname">on_show_flatlist_toggle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">a</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.TaskListWidgetMixin.on_show_flatlist_toggle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.plugins.tasklist.gui.days_to_str">
+<code class="sig-prename descclassname">zim.plugins.tasklist.gui.</code><code class="sig-name descname">days_to_str</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">days</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.gui.days_to_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-zim.plugins.tasklist.indexer">
+<span id="zim-plugins-tasklist-indexer-module"></span><h2>zim.plugins.tasklist.indexer module<a class="headerlink" href="#module-zim.plugins.tasklist.indexer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="zim.plugins.tasklist.indexer.TaskParser">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.tasklist.indexer.</code><code class="sig-name descname">TaskParser</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">task_label_re</span><span class="o">=</span><span class="default_value">re.compile('^(TODO|FIXME)(?!\\w)')</span></em>, <em class="sig-param"><span class="n">all_checkboxes</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.indexer.TaskParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="zim.plugins.tasklist.indexer.TaskParser.parse">
+<code class="sig-name descname">parse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tokens</span></em>, <em class="sig-param"><span class="n">default_start_date</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">default_due_date</span><span class="o">=</span><span class="default_value">'9999'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.indexer.TaskParser.parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.tasklist.indexer.TasksIndexer">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.tasklist.indexer.</code><code class="sig-name descname">TasksIndexer</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.indexer.TasksIndexer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.notebook.index.html#zim.notebook.index.base.IndexerBase" title="zim.notebook.index.base.IndexerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.notebook.index.base.IndexerBase</span></code></a></p>
+<p>Indexer that gets added to the <code class="xref py py-class docutils literal notranslate"><span class="pre">Index</span></code> to keep track of tasks
+in the database</p>
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.indexer.TasksIndexer.INIT_SCRIPT">
+<code class="sig-name descname">INIT_SCRIPT</code><em class="property"> = &quot;\n\t\tCREATE TABLE IF NOT EXISTS tasklist (\n\t\t\tid INTEGER PRIMARY KEY,\n\t\t\tsource INTEGER,\n\t\t\tparent INTEGER,\n\t\t\thaschildren BOOLEAN,\n\t\t\thasopenchildren BOOLEAN,\n\t\t\topen BOOLEAN,\n\t\t\tprio INTEGER,\n\t\t\tstart TEXT,\n\t\t\tdue TEXT,\n\t\t\ttags TEXT,\n\t\t\tdescription TEXT\n\t\t);\n\t\tINSERT OR REPLACE INTO zim_index VALUES ('tasklist', '0.8');\n\t&quot;</em><a class="headerlink" href="#zim.plugins.tasklist.indexer.TasksIndexer.INIT_SCRIPT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.indexer.TasksIndexer.PLUGIN_DB_FORMAT">
+<code class="sig-name descname">PLUGIN_DB_FORMAT</code><em class="property"> = '0.8'</em><a class="headerlink" href="#zim.plugins.tasklist.indexer.TasksIndexer.PLUGIN_DB_FORMAT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.indexer.TasksIndexer.PLUGIN_NAME">
+<code class="sig-name descname">PLUGIN_NAME</code><em class="property"> = 'tasklist'</em><a class="headerlink" href="#zim.plugins.tasklist.indexer.TasksIndexer.PLUGIN_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.indexer.TasksIndexer.TEARDOWN_SCRIPT">
+<code class="sig-name descname">TEARDOWN_SCRIPT</code><em class="property"> = '\n\t\tDROP TABLE IF EXISTS &quot;tasklist&quot;;\n\t\tDELETE FROM zim_index WHERE key = \'tasklist\';\n\t'</em><a class="headerlink" href="#zim.plugins.tasklist.indexer.TasksIndexer.TEARDOWN_SCRIPT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.indexer.TasksIndexer.new_from_index">
+<em class="property">classmethod </em><code class="sig-name descname">new_from_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">properties</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.indexer.TasksIndexer.new_from_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.indexer.TasksIndexer.on_page_changed">
+<code class="sig-name descname">on_page_changed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">doc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.indexer.TasksIndexer.on_page_changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.indexer.TasksIndexer.on_page_row_deleted">
+<code class="sig-name descname">on_page_row_deleted</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">row</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.indexer.TasksIndexer.on_page_row_deleted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.tasklist.indexer.TasksView">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.tasklist.indexer.</code><code class="sig-name descname">TasksView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.indexer.TasksView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.notebook.index.html#zim.notebook.index.base.IndexView" title="zim.notebook.index.base.IndexView"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.notebook.index.base.IndexView</span></code></a></p>
+<p>Database “view” that shows tasks that are indexed</p>
+<dl class="py method">
+<dt id="zim.plugins.tasklist.indexer.TasksView.get_path">
+<code class="sig-name descname">get_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">task</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.indexer.TasksView.get_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> for the source of a task</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>task</strong> – the task (as returned by <code class="xref py py-class docutils literal notranslate"><span class="pre">list_tasks()</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>an <code class="xref py py-class docutils literal notranslate"><span class="pre">IndexPath</span></code> object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.indexer.TasksView.get_task">
+<code class="sig-name descname">get_task</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">taskid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.indexer.TasksView.get_task" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.indexer.TasksView.list_open_tasks">
+<code class="sig-name descname">list_open_tasks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.indexer.TasksView.list_open_tasks" title="Permalink to this definition">¶</a></dt>
+<dd><p>List tasks</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parent</strong> – the parent task (as returned by this method) or <code class="docutils literal notranslate"><span class="pre">None</span></code> to list
+all top level tasks</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of tasks at this level as sqlite Row objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.indexer.TasksView.list_open_tasks_flatlist">
+<code class="sig-name descname">list_open_tasks_flatlist</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.indexer.TasksView.list_open_tasks_flatlist" title="Permalink to this definition">¶</a></dt>
+<dd><p>List tasks</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a list of tasks as sqlite Row objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.plugins.tasklist">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-zim.plugins.tasklist" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="zim.plugins.tasklist.TaskListNotebookExtension">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.tasklist.</code><code class="sig-name descname">TaskListNotebookExtension</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.TaskListNotebookExtension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.notebook.html#zim.notebook.notebook.NotebookExtension" title="zim.notebook.notebook.NotebookExtension"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.notebook.notebook.NotebookExtension</span></code></a></p>
+<dl class="py method">
+<dt id="zim.plugins.tasklist.TaskListNotebookExtension.on_properties_changed">
+<code class="sig-name descname">on_properties_changed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">properties</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.TaskListNotebookExtension.on_properties_changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.TaskListNotebookExtension.on_tasklist_changed">
+<code class="sig-name descname">on_tasklist_changed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indexer</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.TaskListNotebookExtension.on_tasklist_changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.tasklist.TaskListNotebookExtension.teardown">
+<code class="sig-name descname">teardown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.TaskListNotebookExtension.teardown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove changes made by <strong>this</strong> class from the extended object
+To be overloaded by child classes</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>do not call parent class <code class="docutils literal notranslate"><span class="pre">teardown()</span></code> here, that is
+already taken care of by <code class="docutils literal notranslate"><span class="pre">destroy()</span></code></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.tasklist.TaskListNotebookViewExtension">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.tasklist.</code><code class="sig-name descname">TaskListNotebookViewExtension</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.TaskListNotebookViewExtension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.gui.html#zim.gui.notebookview.NotebookViewExtension" title="zim.gui.notebookview.NotebookViewExtension"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.gui.notebookview.NotebookViewExtension</span></code></a></p>
+<dl class="py method">
+<dt id="zim.plugins.tasklist.TaskListNotebookViewExtension.on_preferences_changed">
+<code class="sig-name descname">on_preferences_changed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">preferences</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.tasklist.TaskListNotebookViewExtension.on_preferences_changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.TaskListNotebookViewExtension.show_task_list">
+<code class="sig-name descname">show_task_list</code><a class="headerlink" href="#zim.plugins.tasklist.TaskListNotebookViewExtension.show_task_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.tasklist.TaskListPlugin">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.tasklist.</code><code class="sig-name descname">TaskListPlugin</code><a class="headerlink" href="#zim.plugins.tasklist.TaskListPlugin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.plugins.html#zim.plugins.PluginClass" title="zim.plugins.PluginClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.plugins.PluginClass</span></code></a></p>
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.TaskListPlugin.hide_preferences">
+<code class="sig-name descname">hide_preferences</code><em class="property"> = ('nonactionable_tags', 'tag_by_page', 'use_workweek')</em><a class="headerlink" href="#zim.plugins.tasklist.TaskListPlugin.hide_preferences" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.TaskListPlugin.parser_preferences">
+<code class="sig-name descname">parser_preferences</code><em class="property"> = (('all_checkboxes', 'bool', 'Consider all checkboxes as tasks', True), ('labels', 'string', 'Labels marking tasks', 'FIXME, TODO', &lt;class 'zim.config.dicts.StringAllowEmpty'&gt;), ('integrate_with_journal', 'choice', 'Use date from journal pages', 'start', (('none', 'do not use'), ('start', 'as start date for tasks'), ('due', 'as due date for tasks'))), ('included_subtrees', 'string', 'Section(s) to index', '', &lt;class 'zim.config.dicts.StringAllowEmpty'&gt;), ('excluded_subtrees', 'string', 'Section(s) to ignore', '', &lt;class 'zim.config.dicts.StringAllowEmpty'&gt;))</em><a class="headerlink" href="#zim.plugins.tasklist.TaskListPlugin.parser_preferences" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.TaskListPlugin.plugin_info">
+<code class="sig-name descname">plugin_info</code><em class="property"> = {'author': 'Jaap Karssenberg', 'description': 'This plugin adds a dialog showing all open tasks in\nthis notebook. Open tasks can be either open checkboxes\nor items marked with tags like &quot;TODO&quot; or &quot;FIXME&quot;.\n\nThis is a core plugin shipping with zim.\n', 'help': 'Plugins:Task List', 'name': 'Task List'}</em><a class="headerlink" href="#zim.plugins.tasklist.TaskListPlugin.plugin_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.TaskListPlugin.plugin_notebook_properties">
+<code class="sig-name descname">plugin_notebook_properties</code><em class="property"> = (('all_checkboxes', 'bool', 'Consider all checkboxes as tasks', True), ('labels', 'string', 'Labels marking tasks', 'FIXME, TODO', &lt;class 'zim.config.dicts.StringAllowEmpty'&gt;), ('integrate_with_journal', 'choice', 'Use date from journal pages', 'start', (('none', 'do not use'), ('start', 'as start date for tasks'), ('due', 'as due date for tasks'))), ('included_subtrees', 'string', 'Section(s) to index', '', &lt;class 'zim.config.dicts.StringAllowEmpty'&gt;), ('excluded_subtrees', 'string', 'Section(s) to ignore', '', &lt;class 'zim.config.dicts.StringAllowEmpty'&gt;), ('nonactionable_tags', 'string', 'Tags for non-actionable tasks', '', &lt;class 'zim.config.dicts.StringAllowEmpty'&gt;), ('tag_by_page', 'bool', 'Turn page name into tags for task items', False), ('use_workweek', 'bool', 'Flag tasks due on Monday or Tuesday before the weekend', False))</em><a class="headerlink" href="#zim.plugins.tasklist.TaskListPlugin.plugin_notebook_properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.tasklist.TaskListPlugin.plugin_preferences">
+<code class="sig-name descname">plugin_preferences</code><em class="property"> = (('button_in_headerbar', 'bool', 'Show tasklist button in headerbar', True), ('embedded', 'bool', 'Show tasklist in sidepane', False), ('pane', 'choice', 'Position in the window', 'right_pane', (('left_pane', 'Left Side Pane'), ('right_pane', 'Right Side Pane'), ('bottom_pane', 'Bottom Pane'), ('top_pane', 'Top Pane'))), ('with_due', 'bool', 'Show due date in sidepane', False))</em><a class="headerlink" href="#zim.plugins.tasklist.TaskListPlugin.plugin_preferences" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Zim Desktop Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Jaap Karssenberg and contributors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/zim.plugins.tasklist.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

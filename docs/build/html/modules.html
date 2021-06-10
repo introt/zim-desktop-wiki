@@ -1,0 +1,490 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zim-desktop-wiki &#8212; Zim Desktop Wiki 0.74 develop documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="zim-desktop-wiki">
+<h1>zim-desktop-wiki<a class="headerlink" href="#zim-desktop-wiki" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="makeman.html">makeman module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="msgfmt.html">msgfmt module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">setup module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html">test module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-actions-module">tests.actions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-applications-module">tests.applications module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-arithmetic-module">tests.arithmetic module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-attachmentbrowser-module">tests.attachmentbrowser module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-bookmarksbar-module">tests.bookmarksbar module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-clipboard-module">tests.clipboard module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-config-module">tests.config module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-customtools-module">tests.customtools module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-datetimetz-module">tests.datetimetz module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-errors-module">tests.errors module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-export-module">tests.export module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-formats-module">tests.formats module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-fs-module">tests.fs module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-history-module">tests.history module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-imagegenerators-module">tests.imagegenerators module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-import-files-module">tests.import_files module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-indexers-module">tests.indexers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-indexviews-module">tests.indexviews module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-inlinecalculator-module">tests.inlinecalculator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-insertsymbol-module">tests.insertsymbol module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-journal-module">tests.journal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-linesorter-module">tests.linesorter module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-main-module">tests.main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-mainwindow-module">tests.mainwindow module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-newfs-module">tests.newfs module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-notebook-module">tests.notebook module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-notebookdialog-module">tests.notebookdialog module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-operations-module">tests.operations module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-package-module">tests.package module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-pageindex-module">tests.pageindex module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-pageview-module">tests.pageview module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-parsing-module">tests.parsing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-pathbar-module">tests.pathbar module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-plugins-module">tests.plugins module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-preferencesdialog-module">tests.preferencesdialog module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-printtobrowser-module">tests.printtobrowser module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-quicknote-module">tests.quicknote module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-save-page-module">tests.save_page module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-search-module">tests.search module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-searchdialog-module">tests.searchdialog module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-signals-module">tests.signals module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-sourceview-module">tests.sourceview module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-spell-module">tests.spell module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-tableeditor-module">tests.tableeditor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-tableofcontents-module">tests.tableofcontents module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-tags-module">tests.tags module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-tasklist-module">tests.tasklist module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-templateeditordialog-module">tests.templateeditordialog module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-templates-module">tests.templates module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-tokenparser-module">tests.tokenparser module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-toolbar-module">tests.toolbar module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-translations-module">tests.translations module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-uiactions-module">tests.uiactions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-utils-module">tests.utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-versioncontrol-module">tests.versioncontrol module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-widgets-module">tests.widgets module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-www-module">tests.www module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="zim.html">zim package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="zim.config.html">zim.config package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.config.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.config.html#module-zim.config.basedirs">zim.config.basedirs module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.config.html#module-zim.config.dicts">zim.config.dicts module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.config.html#module-zim.config.manager">zim.config.manager module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.config.html#module-zim.config">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="zim.export.html">zim.export package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.export.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.export.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.export.html#module-zim.export.layouts">zim.export.layouts module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.export.html#module-zim.export.linker">zim.export.linker module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.export.html#module-zim.export.selections">zim.export.selections module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.export.html#module-zim.export.template">zim.export.template module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.export.html#module-zim.export">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="zim.formats.html">zim.formats package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.formats.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.formats.html#module-zim.formats.html">zim.formats.html module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.formats.html#module-zim.formats.latex">zim.formats.latex module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.formats.html#module-zim.formats.markdown">zim.formats.markdown module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.formats.html#module-zim.formats.plain">zim.formats.plain module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.formats.html#module-zim.formats.rst">zim.formats.rst module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.formats.html#module-zim.formats.wiki">zim.formats.wiki module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.formats.html#module-zim.formats">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="zim.gui.html">zim.gui package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.actionextension">zim.gui.actionextension module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.applications">zim.gui.applications module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.clipboard">zim.gui.clipboard module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.customtools">zim.gui.customtools module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.exportdialog">zim.gui.exportdialog module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.insertedobjects">zim.gui.insertedobjects module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.mainwindow">zim.gui.mainwindow module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.navigation">zim.gui.navigation module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.notebookdialog">zim.gui.notebookdialog module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.notebookview">zim.gui.notebookview module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.preferencesdialog">zim.gui.preferencesdialog module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.propertiesdialog">zim.gui.propertiesdialog module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.recentchangesdialog">zim.gui.recentchangesdialog module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.searchdialog">zim.gui.searchdialog module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.server">zim.gui.server module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.templateeditordialog">zim.gui.templateeditordialog module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.uiactions">zim.gui.uiactions module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.widgets">zim.gui.widgets module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="zim.inc.html">zim.inc package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.inc.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.inc.html#module-zim.inc.arithmetic">zim.inc.arithmetic module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.inc.html#module-zim.inc">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="zim.main.html">zim.main package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.main.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.main.html#module-zim.main.command">zim.main.command module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.main.html#module-zim.main.ipc">zim.main.ipc module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.main.html#module-zim.main">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="zim.newfs.html">zim.newfs package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.newfs.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.newfs.html#module-zim.newfs.base">zim.newfs.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.newfs.html#module-zim.newfs.helpers">zim.newfs.helpers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.newfs.html#module-zim.newfs.local">zim.newfs.local module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.newfs.html#module-zim.newfs.mock">zim.newfs.mock module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.newfs.html#module-zim.newfs">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="zim.notebook.html">zim.notebook package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.notebook.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.notebook.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.notebook.html#module-zim.notebook.info">zim.notebook.info module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.notebook.html#module-zim.notebook.layout">zim.notebook.layout module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.notebook.html#module-zim.notebook.notebook">zim.notebook.notebook module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.notebook.html#module-zim.notebook.operations">zim.notebook.operations module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.notebook.html#module-zim.notebook.page">zim.notebook.page module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.notebook.html#module-zim.notebook">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="zim.plugins.html">zim.plugins package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.arithmetic">zim.plugins.arithmetic module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.backlinkpane">zim.plugins.backlinkpane module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.bookmarksbar">zim.plugins.bookmarksbar module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.diagrameditor">zim.plugins.diagrameditor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.distractionfree">zim.plugins.distractionfree module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.ditaaeditor">zim.plugins.ditaaeditor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.equationeditor">zim.plugins.equationeditor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.gnu_r_ploteditor">zim.plugins.gnu_r_ploteditor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.gnuplot_ploteditor">zim.plugins.gnuplot_ploteditor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.inlinecalculator">zim.plugins.inlinecalculator module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.insertsymbol">zim.plugins.insertsymbol module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.journal">zim.plugins.journal module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.linesorter">zim.plugins.linesorter module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.linkmap">zim.plugins.linkmap module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.osx_menubar">zim.plugins.osx_menubar module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.pathbar">zim.plugins.pathbar module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.printtobrowser">zim.plugins.printtobrowser module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.quicknote">zim.plugins.quicknote module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.scoreeditor">zim.plugins.scoreeditor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.screenshot">zim.plugins.screenshot module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.sequencediagrameditor">zim.plugins.sequencediagrameditor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.sourceview">zim.plugins.sourceview module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.spell">zim.plugins.spell module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.tableeditor">zim.plugins.tableeditor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.tableofcontents">zim.plugins.tableofcontents module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.tags">zim.plugins.tags module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.toolbar">zim.plugins.toolbar module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.trayicon">zim.plugins.trayicon module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#zim-plugins-zeitgeist-logger-module">zim.plugins.zeitgeist-logger module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="zim.templates.html">zim.templates package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.templates.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.templates.html#module-zim.templates.expression">zim.templates.expression module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.templates.html#module-zim.templates.expressionparser">zim.templates.expressionparser module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.templates.html#module-zim.templates.functions">zim.templates.functions module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.templates.html#module-zim.templates.parser">zim.templates.parser module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.templates.html#module-zim.templates.processor">zim.templates.processor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.templates.html#module-zim.templates">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.actions">zim.actions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.applications">zim.applications module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.datetimetz">zim.datetimetz module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.errors">zim.errors module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.fs">zim.fs module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.history">zim.history module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.import_files">zim.import_files module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.insertedobjects">zim.insertedobjects module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.parser">zim.parser module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.parsing">zim.parsing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.search">zim.search module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.signals">zim.signals module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.tokenparser">zim.tokenparser module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.utils">zim.utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.www">zim.www module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="zim.html#overview">Overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.html#infrastructure-classes">Infrastructure classes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="zim.html">zim package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="zim.config.html">zim.config package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.config.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.config.html#module-zim.config.basedirs">zim.config.basedirs module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.config.html#module-zim.config.dicts">zim.config.dicts module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.config.html#module-zim.config.manager">zim.config.manager module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.config.html#module-zim.config">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="zim.export.html">zim.export package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.export.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.export.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.export.html#module-zim.export.layouts">zim.export.layouts module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.export.html#module-zim.export.linker">zim.export.linker module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.export.html#module-zim.export.selections">zim.export.selections module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.export.html#module-zim.export.template">zim.export.template module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.export.html#module-zim.export">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="zim.formats.html">zim.formats package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.formats.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.formats.html#module-zim.formats.html">zim.formats.html module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.formats.html#module-zim.formats.latex">zim.formats.latex module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.formats.html#module-zim.formats.markdown">zim.formats.markdown module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.formats.html#module-zim.formats.plain">zim.formats.plain module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.formats.html#module-zim.formats.rst">zim.formats.rst module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.formats.html#module-zim.formats.wiki">zim.formats.wiki module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.formats.html#module-zim.formats">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="zim.gui.html">zim.gui package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.actionextension">zim.gui.actionextension module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.applications">zim.gui.applications module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.clipboard">zim.gui.clipboard module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.customtools">zim.gui.customtools module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.exportdialog">zim.gui.exportdialog module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.insertedobjects">zim.gui.insertedobjects module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.mainwindow">zim.gui.mainwindow module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.navigation">zim.gui.navigation module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.notebookdialog">zim.gui.notebookdialog module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.notebookview">zim.gui.notebookview module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.preferencesdialog">zim.gui.preferencesdialog module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.propertiesdialog">zim.gui.propertiesdialog module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.recentchangesdialog">zim.gui.recentchangesdialog module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.searchdialog">zim.gui.searchdialog module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.server">zim.gui.server module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.templateeditordialog">zim.gui.templateeditordialog module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.uiactions">zim.gui.uiactions module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui.widgets">zim.gui.widgets module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.gui.html#module-zim.gui">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="zim.inc.html">zim.inc package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.inc.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.inc.html#module-zim.inc.arithmetic">zim.inc.arithmetic module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.inc.html#module-zim.inc">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="zim.main.html">zim.main package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.main.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.main.html#module-zim.main.command">zim.main.command module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.main.html#module-zim.main.ipc">zim.main.ipc module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.main.html#module-zim.main">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="zim.newfs.html">zim.newfs package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.newfs.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.newfs.html#module-zim.newfs.base">zim.newfs.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.newfs.html#module-zim.newfs.helpers">zim.newfs.helpers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.newfs.html#module-zim.newfs.local">zim.newfs.local module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.newfs.html#module-zim.newfs.mock">zim.newfs.mock module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.newfs.html#module-zim.newfs">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="zim.notebook.html">zim.notebook package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.notebook.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.notebook.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.notebook.html#module-zim.notebook.info">zim.notebook.info module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.notebook.html#module-zim.notebook.layout">zim.notebook.layout module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.notebook.html#module-zim.notebook.notebook">zim.notebook.notebook module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.notebook.html#module-zim.notebook.operations">zim.notebook.operations module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.notebook.html#module-zim.notebook.page">zim.notebook.page module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.notebook.html#module-zim.notebook">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="zim.plugins.html">zim.plugins package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.arithmetic">zim.plugins.arithmetic module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.backlinkpane">zim.plugins.backlinkpane module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.bookmarksbar">zim.plugins.bookmarksbar module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.diagrameditor">zim.plugins.diagrameditor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.distractionfree">zim.plugins.distractionfree module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.ditaaeditor">zim.plugins.ditaaeditor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.equationeditor">zim.plugins.equationeditor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.gnu_r_ploteditor">zim.plugins.gnu_r_ploteditor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.gnuplot_ploteditor">zim.plugins.gnuplot_ploteditor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.inlinecalculator">zim.plugins.inlinecalculator module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.insertsymbol">zim.plugins.insertsymbol module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.journal">zim.plugins.journal module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.linesorter">zim.plugins.linesorter module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.linkmap">zim.plugins.linkmap module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.osx_menubar">zim.plugins.osx_menubar module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.pathbar">zim.plugins.pathbar module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.printtobrowser">zim.plugins.printtobrowser module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.quicknote">zim.plugins.quicknote module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.scoreeditor">zim.plugins.scoreeditor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.screenshot">zim.plugins.screenshot module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.sequencediagrameditor">zim.plugins.sequencediagrameditor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.sourceview">zim.plugins.sourceview module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.spell">zim.plugins.spell module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.tableeditor">zim.plugins.tableeditor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.tableofcontents">zim.plugins.tableofcontents module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.tags">zim.plugins.tags module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.toolbar">zim.plugins.toolbar module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins.trayicon">zim.plugins.trayicon module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#zim-plugins-zeitgeist-logger-module">zim.plugins.zeitgeist-logger module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.plugins.html#module-zim.plugins">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="zim.templates.html">zim.templates package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.templates.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.templates.html#module-zim.templates.expression">zim.templates.expression module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.templates.html#module-zim.templates.expressionparser">zim.templates.expressionparser module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.templates.html#module-zim.templates.functions">zim.templates.functions module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.templates.html#module-zim.templates.parser">zim.templates.parser module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.templates.html#module-zim.templates.processor">zim.templates.processor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zim.templates.html#module-zim.templates">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.actions">zim.actions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.applications">zim.applications module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.datetimetz">zim.datetimetz module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.errors">zim.errors module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.fs">zim.fs module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.history">zim.history module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.import_files">zim.import_files module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.insertedobjects">zim.insertedobjects module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.parser">zim.parser module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.parsing">zim.parsing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.search">zim.search module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.signals">zim.signals module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.tokenparser">zim.tokenparser module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.utils">zim.utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim.www">zim.www module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zim.html#module-zim">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="zim.html#overview">Overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zim.html#infrastructure-classes">Infrastructure classes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Zim Desktop Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Jaap Karssenberg and contributors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/modules.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

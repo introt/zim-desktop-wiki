@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zim.inc package &#8212; Zim Desktop Wiki 0.74 develop documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="zim-inc-package">
+<h1>zim.inc package<a class="headerlink" href="#zim-inc-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-zim.inc.arithmetic">
+<span id="zim-inc-arithmetic-module"></span><h2>zim.inc.arithmetic module<a class="headerlink" href="#module-zim.inc.arithmetic" title="Permalink to this headline">¶</a></h2>
+<p>arithmetic is a Python module that allows mixing arithmetic
+operations and text.</p>
+<p>Usage as command:</p>
+<blockquote>
+<div><p>arithmetic expression(s) Evaluate expression(s).
+arithmetic -f path       Read path contents and evaluate.
+arithmetic               Read from standard input and evaluate.
+arithmetic -h            Show usage</p>
+</div></blockquote>
+<p>Examples:</p>
+<blockquote>
+<div><p>$ arithmetic 2 x 3
+6
+$ echo 4 x 12 | arithmetic
+48
+$ echo ‘a = 5    a + 4 =’ | arithmetic
+a = 5    a + 4 = 9
+$ arithmetic &lt; filename
+…</p>
+</div></blockquote>
+<p>Usage as module:</p>
+<blockquote>
+<div><p>from arithmetic import feed
+…
+resultText = feed( inputText )
+…</p>
+</div></blockquote>
+<dl class="py function">
+<dt id="zim.inc.arithmetic.AddCommas">
+<code class="sig-prename descclassname">zim.inc.arithmetic.</code><code class="sig-name descname">AddCommas</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.AddCommas" title="Permalink to this definition">¶</a></dt>
+<dd><p>‘Return s with thousands separators.</p>
+<p>Handles sign, decimals and thousands
+separator.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.inc.arithmetic.Lexer">
+<em class="property">class </em><code class="sig-prename descclassname">zim.inc.arithmetic.</code><code class="sig-name descname">Lexer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.Lexer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="zim.inc.arithmetic.Lexer.gettoken">
+<code class="sig-name descname">gettoken</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.Lexer.gettoken" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get next token from text and return its type and value.</p>
+<p>Return (None,None) if no more text.</p>
+<p>Identifiers    letter ( letter | digit | _ )*
+Numbers        digit ( digit | , | . ) *
+Operators      - + * / ^ ** x</p>
+<p>x can be a name or an operator</p>
+<p>x preceded and followed by a digit is taken as if
+preceded and followed by a space.  i.e 5x3
+is seen as 5 x 3.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.inc.arithmetic.Parser">
+<em class="property">class </em><code class="sig-prename descclassname">zim.inc.arithmetic.</code><code class="sig-name descname">Parser</code><a class="headerlink" href="#zim.inc.arithmetic.Parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class</p>
+<dl class="py method">
+<dt id="zim.inc.arithmetic.Parser.countLines">
+<code class="sig-name descname">countLines</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.Parser.countLines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return number of lines.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.inc.arithmetic.Parser.parse">
+<code class="sig-name descname">parse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.Parser.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find expressions in text, return it with results.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.inc.arithmetic.Parser.parseLine">
+<code class="sig-name descname">parseLine</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">variables</span><span class="o">=</span><span class="default_value">{}</span></em>, <em class="sig-param"><span class="n">functions</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.Parser.parseLine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find and evaluate expressions in line i.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.inc.arithmetic.Parser.readLine">
+<code class="sig-name descname">readLine</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">lines</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.Parser.readLine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return i line from lines.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.inc.arithmetic.Parser.writeResult">
+<code class="sig-name descname">writeResult</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em>, <em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.Parser.writeResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write text in line i of lines from start to end offset.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.inc.arithmetic.ParserGTK">
+<em class="property">class </em><code class="sig-prename descclassname">zim.inc.arithmetic.</code><code class="sig-name descname">ParserGTK</code><a class="headerlink" href="#zim.inc.arithmetic.ParserGTK" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.inc.arithmetic.Parser" title="zim.inc.arithmetic.Parser"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.inc.arithmetic.Parser</span></code></a></p>
+<dl class="py method">
+<dt id="zim.inc.arithmetic.ParserGTK.countLines">
+<code class="sig-name descname">countLines</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">textBuffer</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.ParserGTK.countLines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.inc.arithmetic.ParserGTK.parse">
+<code class="sig-name descname">parse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">textBuffer</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.ParserGTK.parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.inc.arithmetic.ParserGTK.readLine">
+<code class="sig-name descname">readLine</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">textBuffer</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.ParserGTK.readLine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.inc.arithmetic.ParserGTK.writeResult">
+<code class="sig-name descname">writeResult</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">textBuffer</span></em>, <em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em>, <em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.ParserGTK.writeResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write text in line i of lines from start to end offset.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.inc.arithmetic.ParserTk">
+<em class="property">class </em><code class="sig-prename descclassname">zim.inc.arithmetic.</code><code class="sig-name descname">ParserTk</code><a class="headerlink" href="#zim.inc.arithmetic.ParserTk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.inc.arithmetic.Parser" title="zim.inc.arithmetic.Parser"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.inc.arithmetic.Parser</span></code></a></p>
+<dl class="py method">
+<dt id="zim.inc.arithmetic.ParserTk.countLines">
+<code class="sig-name descname">countLines</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">textWidget</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.ParserTk.countLines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.inc.arithmetic.ParserTk.parse">
+<code class="sig-name descname">parse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">textWidget</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.ParserTk.parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.inc.arithmetic.ParserTk.readLine">
+<code class="sig-name descname">readLine</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">textWidget</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.ParserTk.readLine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.inc.arithmetic.ParserTk.writeResult">
+<code class="sig-name descname">writeResult</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">textWidget</span></em>, <em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em>, <em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.ParserTk.writeResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write text in line i of lines from start to end offset.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.inc.arithmetic.ParserWx">
+<em class="property">class </em><code class="sig-prename descclassname">zim.inc.arithmetic.</code><code class="sig-name descname">ParserWx</code><a class="headerlink" href="#zim.inc.arithmetic.ParserWx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.inc.arithmetic.Parser" title="zim.inc.arithmetic.Parser"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.inc.arithmetic.Parser</span></code></a></p>
+<dl class="py method">
+<dt id="zim.inc.arithmetic.ParserWx.countLines">
+<code class="sig-name descname">countLines</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">TextControl</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.ParserWx.countLines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.inc.arithmetic.ParserWx.parse">
+<code class="sig-name descname">parse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">TextControl</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.ParserWx.parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.inc.arithmetic.ParserWx.readLine">
+<code class="sig-name descname">readLine</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">TextControl</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.ParserWx.readLine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.inc.arithmetic.ParserWx.writeResult">
+<code class="sig-name descname">writeResult</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">TextControl</span></em>, <em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em>, <em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.ParserWx.writeResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write text in line i of lines from start to end offset.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.inc.arithmetic.TypeAndValueOf">
+<code class="sig-prename descclassname">zim.inc.arithmetic.</code><code class="sig-name descname">TypeAndValueOf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.TypeAndValueOf" title="Permalink to this definition">¶</a></dt>
+<dd><p>“Returns a (type, value) tuple.</p>
+<p>type may be:</p>
+<p>v = void
+i = integer, f = float
+e = expression containing variables
+a = arithmetic expression, no variables
+n = name</p>
+<p>value is expression with some modifications:
+blank spaces and commas removed, x replaced by <a href="#id1"><span class="problematic" id="id2">*</span></a>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.inc.arithmetic.evaluate">
+<code class="sig-prename descclassname">zim.inc.arithmetic.</code><code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression_text</span></em>, <em class="sig-param"><span class="n">UseDigitGrouping</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">variables</span><span class="o">=</span><span class="default_value">{}</span></em>, <em class="sig-param"><span class="n">functions</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse expression, calculate and return its result.</p>
+<p>if UseDigitGrouping is True, the result includes commas.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.inc.arithmetic.feed">
+<code class="sig-prename descclassname">zim.inc.arithmetic.</code><code class="sig-name descname">feed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.feed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Feed text to the parser.  It is processed line by line.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.inc.arithmetic.safe_eval">
+<code class="sig-prename descclassname">zim.inc.arithmetic.</code><code class="sig-name descname">safe_eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.inc.arithmetic.safe_eval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Safe evaluation of a python expression</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.inc">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-zim.inc" title="Permalink to this headline">¶</a></h2>
+<p>This package contains third party libraries to be packaged
+with zim. See the respective files for the copyright and license
+notices.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Zim Desktop Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Jaap Karssenberg and contributors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/zim.inc.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

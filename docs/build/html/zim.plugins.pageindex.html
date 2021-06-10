@@ -1,0 +1,868 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zim.plugins.pageindex package &#8212; Zim Desktop Wiki 0.74 develop documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="zim-plugins-pageindex-package">
+<h1>zim.plugins.pageindex package<a class="headerlink" href="#zim-plugins-pageindex-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-zim.plugins.pageindex.generictreemodel">
+<span id="zim-plugins-pageindex-generictreemodel-module"></span><h2>zim.plugins.pageindex.generictreemodel module<a class="headerlink" href="#module-zim.plugins.pageindex.generictreemodel" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.pageindex.generictreemodel.</code><code class="sig-name descname">GenericTreeModel</code><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.overrides.GObject.Object</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.overrides.Gtk.TreeModel</span></code></p>
+<p>A base implementation of a Gtk.TreeModel for python.</p>
+<p>The GenericTreeModel eases implementing the Gtk.TreeModel interface in Python.
+The class can be subclassed to provide a TreeModel implementation which works
+directly with Python objects instead of iterators.</p>
+<p>All of the on_* methods should be overridden by subclasses to provide the
+underlying implementation a way to access custom model data. For the purposes of
+this API, all custom model data supplied or handed back through the overridable
+API will use the argument names: node, parent, and child in regards to user data
+python objects.</p>
+<p>The create_tree_iter, set_user_data, invalidate_iters, iter_is_valid methods are
+available to help manage Gtk.TreeIter objects and their Python object references.</p>
+<p>GenericTreeModel manages a pool of user data nodes that have been used with iters.
+This pool stores a references to user data nodes as a dictionary value with the
+key being the integer id of the data. This id is what the Gtk.TreeIter objects
+use to reference data in the pool.
+References will be removed from the pool when the model is deleted or explicitly
+by using the optional “node” argument to the “row_deleted” method when notifying
+the model of row deletion.</p>
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.create_tree_iter">
+<code class="sig-name descname">create_tree_iter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">user_data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.create_tree_iter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Gtk.TreeIter instance with the given user_data specific for this model.</p>
+<p>Use this method to create Gtk.TreeIter instance instead of directly calling
+Gtk.Treeiter(), this will ensure proper reference managment of wrapped used_data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_get_column_type">
+<code class="sig-name descname">do_get_column_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_get_column_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_get_flags">
+<code class="sig-name descname">do_get_flags</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_get_flags" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_get_iter">
+<code class="sig-name descname">do_get_iter</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_get_iter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_get_n_columns">
+<code class="sig-name descname">do_get_n_columns</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_get_n_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_get_path">
+<code class="sig-name descname">do_get_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_get_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_get_property">
+<code class="sig-name descname">do_get_property</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pspec</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_get_property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_get_value">
+<code class="sig-name descname">do_get_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_get_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_iter_children">
+<code class="sig-name descname">do_iter_children</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_iter_children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_iter_has_child">
+<code class="sig-name descname">do_iter_has_child</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_iter_has_child" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_iter_n_children">
+<code class="sig-name descname">do_iter_n_children</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_iter_n_children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_iter_next">
+<code class="sig-name descname">do_iter_next</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_iter_next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_iter_nth_child">
+<code class="sig-name descname">do_iter_nth_child</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_iter_nth_child" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_iter_parent">
+<code class="sig-name descname">do_iter_parent</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_iter_parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_ref_node">
+<code class="sig-name descname">do_ref_node</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_ref_node" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_set_property">
+<code class="sig-name descname">do_set_property</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pspec</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_set_property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_unref_node">
+<code class="sig-name descname">do_unref_node</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.do_unref_node" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.get_user_data">
+<code class="sig-name descname">get_user_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.get_user_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the user_data associated with the given TreeIter.</p>
+<p>GenericTreeModel stores arbitrary Python objects mapped to instances of Gtk.TreeIter.
+This method allows to retrieve the Python object held by the given iterator.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.invalidate_iter">
+<code class="sig-name descname">invalidate_iter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.invalidate_iter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear user data and its reference from the iter and this model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.invalidate_iters">
+<code class="sig-name descname">invalidate_iters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.invalidate_iters" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method invalidates all TreeIter objects associated with this custom tree model
+and frees their locally pooled references.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.iter_depth_first">
+<code class="sig-name descname">iter_depth_first</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.iter_depth_first" title="Permalink to this definition">¶</a></dt>
+<dd><p>Depth-first iteration of the entire TreeModel yielding the python nodes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.iter_is_valid">
+<code class="sig-name descname">iter_is_valid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.iter_is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the gtk.TreeIter specified by iter is valid for the custom tree model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.leak_references">
+<code class="sig-name descname">leak_references</code><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.leak_references" title="Permalink to this definition">¶</a></dt>
+<dd><p>If True, strong references to user data attached to iters are stored in a dictionary pool (default). Otherwise the user data is stored as a raw pointer to a python object without a reference.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_get_column_type">
+<code class="sig-name descname">on_get_column_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_get_column_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The column type for the given index.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_get_flags">
+<code class="sig-name descname">on_get_flags</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_get_flags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns Gtk.TreeModelFlags</dt>
+<dd class="field-odd"><p>The flags for this model. See: Gtk.TreeModelFlags</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_get_iter">
+<code class="sig-name descname">on_get_iter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_get_iter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A python object (node) for the given TreePath.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_get_n_columns">
+<code class="sig-name descname">on_get_n_columns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_get_n_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The number of columns for this model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_get_path">
+<code class="sig-name descname">on_get_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_get_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A TreePath for the given node.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_get_value">
+<code class="sig-name descname">on_get_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em>, <em class="sig-param"><span class="n">column</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridable.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p>node : object
+column : int</p>
+<blockquote>
+<div><p>Column index to get the value from.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value of the column for the given node.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_iter_children">
+<code class="sig-name descname">on_iter_children</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_iter_children" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The first child of parent or None if parent has no children.
+If parent is None, return the first node of the model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_iter_has_child">
+<code class="sig-name descname">on_iter_has_child</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_iter_has_child" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the given node has children.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_iter_n_children">
+<code class="sig-name descname">on_iter_n_children</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_iter_n_children" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The number of children for the given node. If node is None,
+return the number of top level nodes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_iter_next">
+<code class="sig-name descname">on_iter_next</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_iter_next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>node<span class="classifier">object</span></dt><dd><p>Node at current level.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A python object (node) following the given node at the current level.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_iter_nth_child">
+<code class="sig-name descname">on_iter_nth_child</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent</span></em>, <em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_iter_nth_child" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridable.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p>parent : object
+n : int</p>
+<blockquote>
+<div><p>Index of child within parent.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The child for the given parent index starting at 0. If parent None,
+return the top level node corresponding to “n”.
+If “n” is larger then available nodes, return None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_iter_parent">
+<code class="sig-name descname">on_iter_parent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">child</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_iter_parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The parent node of child or None if child is a top level node.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_ref_node">
+<code class="sig-name descname">on_ref_node</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_ref_node" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_unref_node">
+<code class="sig-name descname">on_unref_node</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_unref_node" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.row_deleted">
+<code class="sig-name descname">row_deleted</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">node</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.row_deleted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Notify the model a row has been deleted.</p>
+<p>Use the node parameter to ensure the user_data reference associated
+with the path is properly freed by this model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>path<span class="classifier">Gtk.TreePath</span></dt><dd><p>Path to the row that has been deleted.</p>
+</dd>
+<dt>node<span class="classifier">object</span></dt><dd><p>Python object used as the node returned from “on_get_iter”. This is
+optional but ensures the model will not leak references to this object.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.generictreemodel.GenericTreeModel.set_user_data">
+<code class="sig-name descname">set_user_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iter</span></em>, <em class="sig-param"><span class="n">user_data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel.set_user_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies user_data and stamp to the given iter.</p>
+<p>If the models “leak_references” property is set, a reference to the
+user_data is stored with the model to ensure we don’t run into bad
+memory problems with the TreeIter.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.plugins.pageindex.generictreemodel.handle_exception">
+<code class="sig-prename descclassname">zim.plugins.pageindex.generictreemodel.</code><code class="sig-name descname">handle_exception</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">default_return</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.generictreemodel.handle_exception" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a function which can act as a decorator for wrapping exceptions and
+returning “default_return” upon an exception being thrown.</p>
+<p>This is used to wrap Gtk.TreeModel “<a href="#id1"><span class="problematic" id="id2">do_</span></a>” method implementations so we can return
+a proper value from the override upon an exception occurring with client code
+implemented by the “<a href="#id3"><span class="problematic" id="id4">on_</span></a>” methods.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.plugins.pageindex">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-zim.plugins.pageindex" title="Permalink to this headline">¶</a></h2>
+<dl class="py data">
+<dt id="zim.plugins.pageindex.EXISTS_COL">
+<code class="sig-prename descclassname">zim.plugins.pageindex.</code><code class="sig-name descname">EXISTS_COL</code><em class="property"> = 2</em><a class="headerlink" href="#zim.plugins.pageindex.EXISTS_COL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Column to flag if the page is a placeholder or not</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="zim.plugins.pageindex.NAME_COL">
+<code class="sig-prename descclassname">zim.plugins.pageindex.</code><code class="sig-name descname">NAME_COL</code><em class="property"> = 0</em><a class="headerlink" href="#zim.plugins.pageindex.NAME_COL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Column with short page name (page.basename)</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="zim.plugins.pageindex.N_CHILD_COL">
+<code class="sig-prename descclassname">zim.plugins.pageindex.</code><code class="sig-name descname">N_CHILD_COL</code><em class="property"> = 5</em><a class="headerlink" href="#zim.plugins.pageindex.N_CHILD_COL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Column with the number of child pages</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="zim.plugins.pageindex.PATH_COL">
+<code class="sig-prename descclassname">zim.plugins.pageindex.</code><code class="sig-name descname">PATH_COL</code><em class="property"> = 1</em><a class="headerlink" href="#zim.plugins.pageindex.PATH_COL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Column with the zim PageIndexRecord itself</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.pageindex.PageIndexNotebookViewExtension">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.pageindex.</code><code class="sig-name descname">PageIndexNotebookViewExtension</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageIndexNotebookViewExtension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.gui.html#zim.gui.notebookview.NotebookViewExtension" title="zim.gui.notebookview.NotebookViewExtension"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.gui.notebookview.NotebookViewExtension</span></code></a></p>
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageIndexNotebookViewExtension.disconnect_model">
+<code class="sig-name descname">disconnect_model</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageIndexNotebookViewExtension.disconnect_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop the widget from listening to the index. Used e.g. to
+unhook the model before reloading the index, thus avoiding
+many signals to be processed by both the model and the view.
+Typically should be followed by <a class="reference internal" href="#zim.plugins.pageindex.PageIndexNotebookViewExtension.reload_model" title="zim.plugins.pageindex.PageIndexNotebookViewExtension.reload_model"><code class="xref py py-class docutils literal notranslate"><span class="pre">reload_model()</span></code></a> to get the
+view in sync with the index again.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageIndexNotebookViewExtension.on_page_changed">
+<code class="sig-name descname">on_page_changed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pageview</span></em>, <em class="sig-param"><span class="n">page</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageIndexNotebookViewExtension.on_page_changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageIndexNotebookViewExtension.reload_model">
+<code class="sig-name descname">reload_model</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageIndexNotebookViewExtension.reload_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Re-initialize the treeview model. This is called when
+reloading the index to get rid of out-of-sync model errors
+without need to close the app first.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.pageindex.PageIndexPlugin">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.pageindex.</code><code class="sig-name descname">PageIndexPlugin</code><a class="headerlink" href="#zim.plugins.pageindex.PageIndexPlugin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.plugins.html#zim.plugins.PluginClass" title="zim.plugins.PluginClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.plugins.PluginClass</span></code></a></p>
+<dl class="py attribute">
+<dt id="zim.plugins.pageindex.PageIndexPlugin.plugin_info">
+<code class="sig-name descname">plugin_info</code><em class="property"> = {'author': 'Jaap Karssenberg', 'description': 'This plugin adds the page index pane to the main window.\n', 'help': 'Plugins:PageIndex', 'name': 'Page Index'}</em><a class="headerlink" href="#zim.plugins.pageindex.PageIndexPlugin.plugin_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.plugins.pageindex.PageIndexPlugin.plugin_preferences">
+<code class="sig-name descname">plugin_preferences</code><em class="property"> = (('pane', 'choice', 'Position in the window', 'left_pane', (('left_pane', 'Left Side Pane'), ('right_pane', 'Right Side Pane'), ('bottom_pane', 'Bottom Pane'), ('top_pane', 'Top Pane'))), ('autoexpand', 'bool', 'Automatically expand sections on open page', True), ('autocollapse', 'bool', 'Automatically collapse sections on close page', True))</em><a class="headerlink" href="#zim.plugins.pageindex.PageIndexPlugin.plugin_preferences" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.pageindex.PageIndexWidget">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.pageindex.</code><code class="sig-name descname">PageIndexWidget</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">treeview</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageIndexWidget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.repository.Gtk.VBox</span></code>, <a class="reference internal" href="zim.gui.html#zim.gui.widgets.WindowSidePaneWidget" title="zim.gui.widgets.WindowSidePaneWidget"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.gui.widgets.WindowSidePaneWidget</span></code></a></p>
+<dl class="py attribute">
+<dt id="zim.plugins.pageindex.PageIndexWidget.title">
+<code class="sig-name descname">title</code><em class="property"> = 'Index'</em><a class="headerlink" href="#zim.plugins.pageindex.PageIndexWidget.title" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.pageindex.PageTreeStore">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.pageindex.</code><code class="sig-name descname">PageTreeStore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">root</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">reverse</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeStore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.notebook.index.html#zim.notebook.index.pages.PagesTreeModelMixin" title="zim.notebook.index.pages.PagesTreeModelMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.notebook.index.pages.PagesTreeModelMixin</span></code></a>, <a class="reference internal" href="#zim.plugins.pageindex.PageTreeStoreBase" title="zim.plugins.pageindex.PageTreeStoreBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.plugins.pageindex.PageTreeStoreBase</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.pageindex.PageTreeStoreBase">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.pageindex.</code><code class="sig-name descname">PageTreeStoreBase</code><a class="headerlink" href="#zim.plugins.pageindex.PageTreeStoreBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.plugins.pageindex.generictreemodel.GenericTreeModel" title="zim.plugins.pageindex.generictreemodel.GenericTreeModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.plugins.pageindex.generictreemodel.GenericTreeModel</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.repository.Gtk.TreeDragSource</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.repository.Gtk.TreeDragDest</span></code></p>
+<p>Custom gtk TreeModel that is integrated closely with the <code class="xref py py-class docutils literal notranslate"><span class="pre">Index</span></code>
+object of the notebook. This model is mostly an API layer translating
+between the <code class="docutils literal notranslate"><span class="pre">Gtk.TreeView</span></code> and the zim <code class="xref py py-class docutils literal notranslate"><span class="pre">Index</span></code> interfaces. It
+fetches data on the fly when requested and only keeps a very
+limited cache in memory. This allows scaling to very large notebooks.</p>
+<p>This custom model is based on <code class="docutils literal notranslate"><span class="pre">GenericTreeModel</span></code> which takes
+care of the C library wrapper. See the documentation there to
+get the fine details of the API.</p>
+<p>Be aware that in this interface there are two classes both
+referred to as “paths”. The first is the gtk TreePath (which is in
+fact just a tuple of integers, without a propr class) and the second
+is <code class="xref py py-class docutils literal notranslate"><span class="pre">zim.notebook.Path</span></code>. When a gtk TreePath is intended the argument is
+explicitly called “treepath”, while arguments called “path” refer to a
+zim Path.</p>
+<p>For all the methods with a name starting with <code class="docutils literal notranslate"><span class="pre">on_</span></code> the “iter”
+argument is a <code class="xref py py-class docutils literal notranslate"><span class="pre">MyTreeIter</span></code>. The GenericTreeModel in turn
+wraps these in <code class="docutils literal notranslate"><span class="pre">Gtk.TreeIter</span></code> object. So e.g. the implementation
+of <code class="docutils literal notranslate"><span class="pre">get_iter()</span></code> calls <code class="docutils literal notranslate"><span class="pre">on_get_iter()</span></code> and wraps the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">MyTreeIter</span></code> object into a <code class="docutils literal notranslate"><span class="pre">Gtk.TreeIter</span></code>.</p>
+<dl class="py attribute">
+<dt id="zim.plugins.pageindex.PageTreeStoreBase.COLUMN_TYPES">
+<code class="sig-name descname">COLUMN_TYPES</code><em class="property"> = (&lt;GType gchararray (64)&gt;, &lt;GType PyObject (45455216)&gt;, &lt;GType gboolean (20)&gt;, &lt;class 'gi.repository.Pango.Style'&gt;, &lt;GType gint (24)&gt;, &lt;GType gchararray (64)&gt;, &lt;GType gchararray (64)&gt;)</em><a class="headerlink" href="#zim.plugins.pageindex.PageTreeStoreBase.COLUMN_TYPES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeStoreBase.flush_cache">
+<code class="sig-name descname">flush_cache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeStoreBase.flush_cache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeStoreBase.get_indexpath">
+<code class="sig-name descname">get_indexpath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">treeiter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeStoreBase.get_indexpath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an <code class="xref py py-class docutils literal notranslate"><span class="pre">PageIndexRecord</span></code> for a <code class="docutils literal notranslate"><span class="pre">Gtk.TreeIter</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>treeiter</strong> – a <code class="docutils literal notranslate"><span class="pre">Gtk.TreeIter</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>an <code class="xref py py-class docutils literal notranslate"><span class="pre">PageIndexRecord</span></code> object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeStoreBase.on_get_column_type">
+<code class="sig-name descname">on_get_column_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeStoreBase.on_get_column_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The column type for the given index.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeStoreBase.on_get_flags">
+<code class="sig-name descname">on_get_flags</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeStoreBase.on_get_flags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns Gtk.TreeModelFlags</dt>
+<dd class="field-odd"><p>The flags for this model. See: Gtk.TreeModelFlags</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeStoreBase.on_get_iter">
+<code class="sig-name descname">on_get_iter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">treepath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeStoreBase.on_get_iter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an MyTreeIter for a gtk TreePath or None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeStoreBase.on_get_n_columns">
+<code class="sig-name descname">on_get_n_columns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeStoreBase.on_get_n_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The number of columns for this model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeStoreBase.on_get_path">
+<code class="sig-name descname">on_get_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeStoreBase.on_get_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a gtk TreePath for an indexpath</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeStoreBase.on_get_value">
+<code class="sig-name descname">on_get_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iter</span></em>, <em class="sig-param"><span class="n">column</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeStoreBase.on_get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridable.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p>node : object
+column : int</p>
+<blockquote>
+<div><p>Column index to get the value from.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value of the column for the given node.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeStoreBase.on_iter_children">
+<code class="sig-name descname">on_iter_children</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeStoreBase.on_iter_children" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an PageIndexRecord for the first child below path or None.
+If path is None returns the PageIndexRecord for first top level item.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeStoreBase.on_iter_has_child">
+<code class="sig-name descname">on_iter_has_child</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeStoreBase.on_iter_has_child" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if PageIndexRecord for iter has children</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeStoreBase.on_iter_n_children">
+<code class="sig-name descname">on_iter_n_children</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeStoreBase.on_iter_n_children" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of children in a namespace. When iter
+is None the number of pages in the root namespace is given.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeStoreBase.on_iter_next">
+<code class="sig-name descname">on_iter_next</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeStoreBase.on_iter_next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the PageIndexRecord for the next row on the same level or None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeStoreBase.on_iter_nth_child">
+<code class="sig-name descname">on_iter_nth_child</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iter</span></em>, <em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeStoreBase.on_iter_nth_child" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the nth child or None. If iter is <code class="docutils literal notranslate"><span class="pre">None</span></code> the
+nth item in the root namespace is returned.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeStoreBase.on_iter_parent">
+<code class="sig-name descname">on_iter_parent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeStoreBase.on_iter_parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an indexpath for parent node or None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeStoreBase.set_current_page">
+<code class="sig-name descname">set_current_page</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeStoreBase.set_current_page" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the current open page to highlight it in the index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> – the <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> that is currently open, or <code class="docutils literal notranslate"><span class="pre">None</span></code> to unset</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.plugins.pageindex.PageTreeView">
+<em class="property">class </em><code class="sig-prename descclassname">zim.plugins.pageindex.</code><code class="sig-name descname">PageTreeView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">notebook</span></em>, <em class="sig-param"><span class="n">navigation</span></em>, <em class="sig-param"><span class="n">model</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.gui.html#zim.gui.widgets.BrowserTreeView" title="zim.gui.widgets.BrowserTreeView"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.gui.widgets.BrowserTreeView</span></code></a></p>
+<p>TreeView widget to show a list of pages.</p>
+<p>This view is intended to show a <a class="reference internal" href="#zim.plugins.pageindex.PageTreeStore" title="zim.plugins.pageindex.PageTreeStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">PageTreeStore</span></code></a> model, but it
+can also handle filtered models and subclasses that have the
+same columns. (The “tags” plugin uses this same view with
+alternative models.)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Signal</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">page-activated</span> <span class="pre">(path)</span></code>: emitted when a page is clicked</p>
+</dd>
+<dt class="field-even">Signal</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">populate-popup</span> <span class="pre">(menu)</span></code>: hook to populate the context menu</p>
+</dd>
+<dt class="field-odd">Signal</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">copy</span> <span class="pre">()</span></code>: copy the current selection to the clipboard</p>
+</dd>
+<dt class="field-even">Signal</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">insert-link</span> <span class="pre">(path)</span></code>: called when the user pressed &lt;Ctrl&gt;L on page</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeView.disconnect_index">
+<code class="sig-name descname">disconnect_index</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeView.disconnect_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop the widget from listening to the index. Used e.g. to
+unhook the model before reloading the index, thus avoiding
+many signals to be processed by both the model and the view.
+Doing this requires constructing and setting a new model with
+<code class="xref py py-class docutils literal notranslate"><span class="pre">set_model()</span></code> to get the view in sync with the index again.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeView.do_drag_data_get">
+<code class="sig-name descname">do_drag_data_get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dragcontext</span></em>, <em class="sig-param"><span class="n">selectiondata</span></em>, <em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeView.do_drag_data_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>drag_data_get(self, context:Gdk.DragContext, selection_data:Gtk.SelectionData, info:int, <a href="#id5"><span class="problematic" id="id6">time_</span></a>:int)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeView.do_drag_data_received">
+<code class="sig-name descname">do_drag_data_received</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dragcontext</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">selectiondata</span></em>, <em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeView.do_drag_data_received" title="Permalink to this definition">¶</a></dt>
+<dd><p>drag_data_received(self, context:Gdk.DragContext, x:int, y:int, selection_data:Gtk.SelectionData, info:int, <a href="#id7"><span class="problematic" id="id8">time_</span></a>:int)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeView.do_initialize_popup">
+<code class="sig-name descname">do_initialize_popup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">menu</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeView.do_initialize_popup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the context menu.
+This method is called before the <code class="docutils literal notranslate"><span class="pre">populate-popup</span></code> signal and
+can be used to put any standard items in the menu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>menu</strong> – the <code class="docutils literal notranslate"><span class="pre">Gtk.Menu</span></code> object for the popup</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>can be implemented by sub-classes. Default
+implementation calls <code class="xref py py-class docutils literal notranslate"><span class="pre">populate_popup_expand_collapse()</span></code>
+if the model is a <code class="docutils literal notranslate"><span class="pre">Gtk.TreeStore</span></code>. Otherwise it does nothing.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeView.do_key_press_event">
+<code class="sig-name descname">do_key_press_event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeView.do_key_press_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>key_press_event(self, event:Gdk.EventKey) -&gt; bool</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeView.do_page_activated">
+<code class="sig-name descname">do_page_activated</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeView.do_page_activated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeView.do_row_activated">
+<code class="sig-name descname">do_row_activated</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">treepath</span></em>, <em class="sig-param"><span class="n">column</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeView.do_row_activated" title="Permalink to this definition">¶</a></dt>
+<dd><p>row_activated(self, path:Gtk.TreePath, column:Gtk.TreeViewColumn)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeView.get_expanded_path">
+<code class="sig-name descname">get_expanded_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeView.get_expanded_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the lowest expanded path towards <code class="docutils literal notranslate"><span class="pre">path</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeView.get_selected_path">
+<code class="sig-name descname">get_selected_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeView.get_selected_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the selected notebook path</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a <code class="xref py py-class docutils literal notranslate"><span class="pre">PageIndexRecord</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code> if there was no selection</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeView.restore_expanded_path">
+<code class="sig-name descname">restore_expanded_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">expanded_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeView.restore_expanded_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collaps path between <code class="docutils literal notranslate"><span class="pre">path</span></code> and <code class="docutils literal notranslate"><span class="pre">expanded_path</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeView.select_treepath">
+<code class="sig-name descname">select_treepath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">treepath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeView.select_treepath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select a gtk TreePath in the view</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>treepath</strong> – a gtk TreePath (tuple of integers)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.plugins.pageindex.PageTreeView.set_current_page">
+<code class="sig-name descname">set_current_page</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">vivificate</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.plugins.pageindex.PageTreeView.set_current_page" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select a page in the treeview</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – a notebook <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object for the page</p></li>
+<li><p><strong>vivificate</strong> – when <code class="docutils literal notranslate"><span class="pre">True</span></code> the path is created
+temporarily when it did not yet exist</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a gtk TreePath (tuple of intergers) or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="zim.plugins.pageindex.STYLE_COL">
+<code class="sig-prename descclassname">zim.plugins.pageindex.</code><code class="sig-name descname">STYLE_COL</code><em class="property"> = 3</em><a class="headerlink" href="#zim.plugins.pageindex.STYLE_COL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Column to specify style (based on empty or not)</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="zim.plugins.pageindex.TIP_COL">
+<code class="sig-prename descclassname">zim.plugins.pageindex.</code><code class="sig-name descname">TIP_COL</code><em class="property"> = 6</em><a class="headerlink" href="#zim.plugins.pageindex.TIP_COL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Column with the name to be used in the tooltip</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="zim.plugins.pageindex.WEIGHT_COL">
+<code class="sig-prename descclassname">zim.plugins.pageindex.</code><code class="sig-name descname">WEIGHT_COL</code><em class="property"> = 4</em><a class="headerlink" href="#zim.plugins.pageindex.WEIGHT_COL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Column to specify the font weight (open page in bold)</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Zim Desktop Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Jaap Karssenberg and contributors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/zim.plugins.pageindex.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

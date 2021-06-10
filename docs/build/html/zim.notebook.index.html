@@ -1,0 +1,1482 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zim.notebook.index package &#8212; Zim Desktop Wiki 0.74 develop documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="zim-notebook-index-package">
+<h1>zim.notebook.index package<a class="headerlink" href="#zim-notebook-index-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-zim.notebook.index.base">
+<span id="zim-notebook-index-base-module"></span><h2>zim.notebook.index.base module<a class="headerlink" href="#module-zim.notebook.index.base" title="Permalink to this headline">¶</a></h2>
+<dl class="py exception">
+<dt id="zim.notebook.index.base.IndexConsistencyError">
+<em class="property">exception </em><code class="sig-prename descclassname">zim.notebook.index.base.</code><code class="sig-name descname">IndexConsistencyError</code><a class="headerlink" href="#zim.notebook.index.base.IndexConsistencyError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AssertionError</span></code></p>
+<p>Error used when a lookup fails while expected to succeed</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="zim.notebook.index.base.IndexNotFoundError">
+<em class="property">exception </em><code class="sig-prename descclassname">zim.notebook.index.base.</code><code class="sig-name descname">IndexNotFoundError</code><a class="headerlink" href="#zim.notebook.index.base.IndexNotFoundError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></p>
+<p>Error used when lookup fails because a pagename does not appear
+in the index.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.base.IndexView">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.base.</code><code class="sig-name descname">IndexView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.base.IndexView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for “index view” objects</p>
+<dl class="py method">
+<dt id="zim.notebook.index.base.IndexView.new_from_index">
+<em class="property">classmethod </em><code class="sig-name descname">new_from_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.base.IndexView.new_from_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.base.IndexerBase">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.base.</code><code class="sig-name descname">IndexerBase</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.base.IndexerBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.signals.SignalEmitter" title="zim.signals.SignalEmitter"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.signals.SignalEmitter</span></code></a>, <a class="reference internal" href="zim.html#zim.signals.ConnectorMixin" title="zim.signals.ConnectorMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.signals.ConnectorMixin</span></code></a></p>
+<p>Base class for “content indexer” objects.
+It defines the callback functions that are calls from <code class="xref py py-class docutils literal notranslate"><span class="pre">PagesIndexer</span></code></p>
+<dl class="py method">
+<dt id="zim.notebook.index.base.IndexerBase.is_uptodate">
+<code class="sig-name descname">is_uptodate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.base.IndexerBase.is_uptodate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.base.IndexerBase.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.base.IndexerBase.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.base.IndexerBase.update_iter">
+<code class="sig-name descname">update_iter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.base.IndexerBase.update_iter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.base.MyTreeIter">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.base.</code><code class="sig-name descname">MyTreeIter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">treepath</span></em>, <em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">n_children</span></em>, <em class="sig-param"><span class="n">hint</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.base.MyTreeIter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="zim.notebook.index.base.MyTreeIter.hint">
+<code class="sig-name descname">hint</code><a class="headerlink" href="#zim.notebook.index.base.MyTreeIter.hint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.notebook.index.base.MyTreeIter.n_children">
+<code class="sig-name descname">n_children</code><a class="headerlink" href="#zim.notebook.index.base.MyTreeIter.n_children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.notebook.index.base.MyTreeIter.row">
+<code class="sig-name descname">row</code><a class="headerlink" href="#zim.notebook.index.base.MyTreeIter.row" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.notebook.index.base.MyTreeIter.treepath">
+<code class="sig-name descname">treepath</code><a class="headerlink" href="#zim.notebook.index.base.MyTreeIter.treepath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.base.TreeModelMixinBase">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.base.</code><code class="sig-name descname">TreeModelMixinBase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.base.TreeModelMixinBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.signals.ConnectorMixin" title="zim.signals.ConnectorMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.signals.ConnectorMixin</span></code></a></p>
+<p>This class can be used as mixin class for <code class="docutils literal notranslate"><span class="pre">Gtk.TreeModel</span></code>
+implementations that use data from the index.</p>
+<p>Treepaths are simply tuples with integers. This Mixin assumes <a class="reference internal" href="#zim.notebook.index.base.MyTreeIter" title="zim.notebook.index.base.MyTreeIter"><code class="xref py py-class docutils literal notranslate"><span class="pre">MyTreeIter</span></code></a>
+objects for iters. (Which should not be confused with <code class="docutils literal notranslate"><span class="pre">Gtk.TreeIter</span></code> as
+used by the interface!)</p>
+<dl class="py method">
+<dt id="zim.notebook.index.base.TreeModelMixinBase.connect_to_updateiter">
+<code class="sig-name descname">connect_to_updateiter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">update_iter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.base.TreeModelMixinBase.connect_to_updateiter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to a new <code class="xref py py-class docutils literal notranslate"><span class="pre">IndexUpdateIter</span></code></p>
+<p>The following signals must be implemented:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>row-inserted (treepath, treeiter)</p></li>
+<li><p>row-changed (treepath, treeiter)</p></li>
+<li><p>row-has-child-toggled (treepath, treeiter)</p></li>
+<li><p>row-deleted (treepath)</p></li>
+</ul>
+</div></blockquote>
+<p>Typically each signal should also flush the cache using
+<code class="docutils literal notranslate"><span class="pre">self.cache.clear()</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented by a subclass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.base.TreeModelMixinBase.find">
+<code class="sig-name descname">find</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.base.TreeModelMixinBase.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the treepath for a index object like a <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">IndexTag</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.notebook.index.base.IndexNotFoundError" title="zim.notebook.index.base.IndexNotFoundError"><strong>IndexNotFoundError</strong></a> – if <code class="docutils literal notranslate"><span class="pre">indexpath</span></code> is not found</p>
+</dd>
+<dt class="field-even">Implementation</dt>
+<dd class="field-even"><p>must be implemented by a subclass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.base.TreeModelMixinBase.find_all">
+<code class="sig-name descname">find_all</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.base.TreeModelMixinBase.find_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like <a class="reference internal" href="#zim.notebook.index.base.TreeModelMixinBase.find" title="zim.notebook.index.base.TreeModelMixinBase.find"><code class="xref py py-class docutils literal notranslate"><span class="pre">find()</span></code></a> but can return multiple results</p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented by subclasses that have mutiple
+entries for the same object. Default falls back to result of <a class="reference internal" href="#zim.notebook.index.base.TreeModelMixinBase.find" title="zim.notebook.index.base.TreeModelMixinBase.find"><code class="xref py py-class docutils literal notranslate"><span class="pre">find()</span></code></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.base.TreeModelMixinBase.get_mytreeiter">
+<code class="sig-name descname">get_mytreeiter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">treepath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.base.TreeModelMixinBase.get_mytreeiter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a <code class="docutils literal notranslate"><span class="pre">treeiter</span></code> object for <code class="docutils literal notranslate"><span class="pre">treepath</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented by a subclass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.base.TreeModelMixinBase.n_children_top">
+<code class="sig-name descname">n_children_top</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.base.TreeModelMixinBase.n_children_top" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of items in the top level of the model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.base.TreeModelMixinBase.teardown">
+<code class="sig-name descname">teardown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.base.TreeModelMixinBase.teardown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.notebook.index.files">
+<span id="zim-notebook-index-files-module"></span><h2>zim.notebook.index.files module<a class="headerlink" href="#module-zim.notebook.index.files" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="zim.notebook.index.files.FilesIndexChecker">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.files.</code><code class="sig-name descname">FilesIndexChecker</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">folder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.files.FilesIndexChecker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="zim.notebook.index.files.FilesIndexChecker.check_iter">
+<code class="sig-name descname">check_iter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.files.FilesIndexChecker.check_iter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generator function that walks existing records and flags
+records that are not longer valid. Yields in between checks
+to allow embedding in a loop.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Yields <code class="docutils literal notranslate"><span class="pre">True</span></code> when an out of
+date record is found.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.files.FilesIndexChecker.queue_check">
+<code class="sig-name descname">queue_check</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">recursive</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.files.FilesIndexChecker.queue_check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.files.FilesIndexer">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.files.</code><code class="sig-name descname">FilesIndexer</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.files.FilesIndexer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.signals.SignalEmitter" title="zim.signals.SignalEmitter"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.signals.SignalEmitter</span></code></a></p>
+<p>Class that will update the “files” table in the index based on
+changes seen on the file system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Signal</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">file-row-inserted</span> <span class="pre">(row,</span> <span class="pre">file)</span></code>: on new file found</p>
+</dd>
+<dt class="field-even">Signal</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">file-row-changed</span> <span class="pre">(row,</span> <span class="pre">file)</span></code>: on file content changed</p>
+</dd>
+<dt class="field-odd">Signal</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">file-row-deleted</span> <span class="pre">(row)</span></code>: on file deleted</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="zim.notebook.index.files.FilesIndexer.delete_file">
+<code class="sig-name descname">delete_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.files.FilesIndexer.delete_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.files.FilesIndexer.delete_folder">
+<code class="sig-name descname">delete_folder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.files.FilesIndexer.delete_folder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.files.FilesIndexer.interactive_add_file">
+<code class="sig-name descname">interactive_add_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.files.FilesIndexer.interactive_add_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.files.FilesIndexer.interactive_add_folder">
+<code class="sig-name descname">interactive_add_folder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">folder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.files.FilesIndexer.interactive_add_folder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.files.FilesIndexer.is_uptodate">
+<code class="sig-name descname">is_uptodate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.files.FilesIndexer.is_uptodate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.files.FilesIndexer.set_node_uptodate">
+<code class="sig-name descname">set_node_uptodate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node_id</span></em>, <em class="sig-param"><span class="n">mtime</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.files.FilesIndexer.set_node_uptodate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.files.FilesIndexer.update_file">
+<code class="sig-name descname">update_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node_id</span></em>, <em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.files.FilesIndexer.update_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.files.FilesIndexer.update_folder">
+<code class="sig-name descname">update_folder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node_id</span></em>, <em class="sig-param"><span class="n">folder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.files.FilesIndexer.update_folder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.files.FilesIndexer.update_iter">
+<code class="sig-name descname">update_iter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.files.FilesIndexer.update_iter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generator function for the actual update</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.files.TestFilesDBTable">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.files.</code><code class="sig-name descname">TestFilesDBTable</code><a class="headerlink" href="#zim.notebook.index.files.TestFilesDBTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="zim.notebook.index.files.TestFilesDBTable.assertFilesDBConsistent">
+<code class="sig-name descname">assertFilesDBConsistent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.files.TestFilesDBTable.assertFilesDBConsistent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.files.TestFilesDBTable.assertFilesDBEquals">
+<code class="sig-name descname">assertFilesDBEquals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">paths</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.files.TestFilesDBTable.assertFilesDBEquals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.notebook.index.links">
+<span id="zim-notebook-index-links-module"></span><h2>zim.notebook.index.links module<a class="headerlink" href="#module-zim.notebook.index.links" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="zim.notebook.index.links.IndexLink">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.links.</code><code class="sig-name descname">IndexLink</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source</span></em>, <em class="sig-param"><span class="n">target</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.links.IndexLink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class used to represent links between two pages</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#zim.notebook.index.links.IndexLink.source" title="zim.notebook.index.links.IndexLink.source"><strong>source</strong></a> – <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object for the source of the link</p></li>
+<li><p><a class="reference internal" href="#zim.notebook.index.links.IndexLink.target" title="zim.notebook.index.links.IndexLink.target"><strong>target</strong></a> – <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object for the target of the link</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="zim.notebook.index.links.IndexLink.source">
+<code class="sig-name descname">source</code><a class="headerlink" href="#zim.notebook.index.links.IndexLink.source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.notebook.index.links.IndexLink.target">
+<code class="sig-name descname">target</code><a class="headerlink" href="#zim.notebook.index.links.IndexLink.target" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="zim.notebook.index.links.LINK_DIR_BACKWARD">
+<code class="sig-prename descclassname">zim.notebook.index.links.</code><code class="sig-name descname">LINK_DIR_BACKWARD</code><em class="property"> = 2</em><a class="headerlink" href="#zim.notebook.index.links.LINK_DIR_BACKWARD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constant for backward links</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="zim.notebook.index.links.LINK_DIR_BOTH">
+<code class="sig-prename descclassname">zim.notebook.index.links.</code><code class="sig-name descname">LINK_DIR_BOTH</code><em class="property"> = 3</em><a class="headerlink" href="#zim.notebook.index.links.LINK_DIR_BOTH" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constant for links in any direction</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="zim.notebook.index.links.LINK_DIR_FORWARD">
+<code class="sig-prename descclassname">zim.notebook.index.links.</code><code class="sig-name descname">LINK_DIR_FORWARD</code><em class="property"> = 1</em><a class="headerlink" href="#zim.notebook.index.links.LINK_DIR_FORWARD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constant for forward links</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.links.LinksIndexer">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.links.</code><code class="sig-name descname">LinksIndexer</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.links.LinksIndexer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.notebook.index.base.IndexerBase" title="zim.notebook.index.base.IndexerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.notebook.index.base.IndexerBase</span></code></a></p>
+<dl class="py method">
+<dt id="zim.notebook.index.links.LinksIndexer.is_uptodate">
+<code class="sig-name descname">is_uptodate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.links.LinksIndexer.is_uptodate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.links.LinksIndexer.on_page_changed">
+<code class="sig-name descname">on_page_changed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">doc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.links.LinksIndexer.on_page_changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.links.LinksIndexer.on_page_row_changed">
+<code class="sig-name descname">on_page_row_changed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">newrow</span></em>, <em class="sig-param"><span class="n">oldrow</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.links.LinksIndexer.on_page_row_changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.links.LinksIndexer.on_page_row_deleted">
+<code class="sig-name descname">on_page_row_deleted</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">row</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.links.LinksIndexer.on_page_row_deleted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.links.LinksIndexer.on_page_row_inserted">
+<code class="sig-name descname">on_page_row_inserted</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">row</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.links.LinksIndexer.on_page_row_inserted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.links.LinksIndexer.update_iter">
+<code class="sig-name descname">update_iter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.links.LinksIndexer.update_iter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.links.LinksView">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.links.</code><code class="sig-name descname">LinksView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.links.LinksView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.notebook.index.base.IndexView" title="zim.notebook.index.base.IndexView"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.notebook.index.base.IndexView</span></code></a></p>
+<dl class="py method">
+<dt id="zim.notebook.index.links.LinksView.list_floating_links">
+<code class="sig-name descname">list_floating_links</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">basename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.links.LinksView.list_floating_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.links.LinksView.list_links">
+<code class="sig-name descname">list_links</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pagename</span></em>, <em class="sig-param"><span class="n">direction</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.links.LinksView.list_links" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generator listing links between pages</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pagename</strong> – the <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> for which to list links</p></li>
+<li><p><strong>direction</strong> – <p>the link direction to be listed. This can be
+one of:</p>
+<blockquote>
+<div><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">LINK_DIR_FORWARD</span></code>: for links from path</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LINK_DIR_BACKWARD</span></code>: for links to path</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LINK_DIR_BOTH</span></code>: for links from and to path</p></li>
+</ul>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>yields <a class="reference internal" href="#zim.notebook.index.links.IndexLink" title="zim.notebook.index.links.IndexLink"><code class="xref py py-class docutils literal notranslate"><span class="pre">IndexLink</span></code></a> objects</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.notebook.index.base.IndexNotFoundError" title="zim.notebook.index.base.IndexNotFoundError"><strong>IndexNotFoundError</strong></a> – if <code class="docutils literal notranslate"><span class="pre">path</span></code> is not found in the index</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.links.LinksView.list_links_section">
+<code class="sig-name descname">list_links_section</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pagename</span></em>, <em class="sig-param"><span class="n">direction</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.links.LinksView.list_links_section" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.links.LinksView.n_list_links">
+<code class="sig-name descname">n_list_links</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pagename</span></em>, <em class="sig-param"><span class="n">direction</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.links.LinksView.n_list_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.links.LinksView.n_list_links_section">
+<code class="sig-name descname">n_list_links_section</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pagename</span></em>, <em class="sig-param"><span class="n">direction</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.links.LinksView.n_list_links_section" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.notebook.index.pages">
+<span id="zim-notebook-index-pages-module"></span><h2>zim.notebook.index.pages module<a class="headerlink" href="#module-zim.notebook.index.pages" title="Permalink to this headline">¶</a></h2>
+<dl class="py data">
+<dt id="zim.notebook.index.pages.IS_PAGE">
+<code class="sig-prename descclassname">zim.notebook.index.pages.</code><code class="sig-name descname">IS_PAGE</code><em class="property"> = 1</em><a class="headerlink" href="#zim.notebook.index.pages.IS_PAGE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hint for MyTreeIter</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.pages.PageIndexRecord">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.pages.</code><code class="sig-name descname">PageIndexRecord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">row</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PageIndexRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.notebook.html#zim.notebook.page.Path" title="zim.notebook.page.Path"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.notebook.page.Path</span></code></a></p>
+<p>Object representing a page <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> in the index, with data
+for the corresponding row in the <code class="docutils literal notranslate"><span class="pre">pages</span></code> table.</p>
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PageIndexRecord.exists">
+<code class="sig-name descname">exists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PageIndexRecord.exists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PageIndexRecord.haschildren">
+<em class="property">property </em><code class="sig-name descname">haschildren</code><a class="headerlink" href="#zim.notebook.index.pages.PageIndexRecord.haschildren" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PageIndexRecord.hascontent">
+<em class="property">property </em><code class="sig-name descname">hascontent</code><a class="headerlink" href="#zim.notebook.index.pages.PageIndexRecord.hascontent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PageIndexRecord.id">
+<em class="property">property </em><code class="sig-name descname">id</code><a class="headerlink" href="#zim.notebook.index.pages.PageIndexRecord.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PageIndexRecord.mtime">
+<em class="property">property </em><code class="sig-name descname">mtime</code><a class="headerlink" href="#zim.notebook.index.pages.PageIndexRecord.mtime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PageIndexRecord.n_children">
+<em class="property">property </em><code class="sig-name descname">n_children</code><a class="headerlink" href="#zim.notebook.index.pages.PageIndexRecord.n_children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.pages.PagesIndexer">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.pages.</code><code class="sig-name descname">PagesIndexer</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesIndexer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.notebook.index.base.IndexerBase" title="zim.notebook.index.base.IndexerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.notebook.index.base.IndexerBase</span></code></a></p>
+<p>Indexer for the “pages” table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Signal</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">page-row-inserted</span> <span class="pre">(row)</span></code>: new row inserted</p>
+</dd>
+<dt class="field-even">Signal</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">page-row-changed</span> <span class="pre">(row,</span> <span class="pre">oldrow)</span></code>: row changed</p>
+</dd>
+<dt class="field-odd">Signal</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">page-row-delete</span> <span class="pre">(row)</span></code>: row to be deleted</p>
+</dd>
+<dt class="field-even">Signal</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">page-row-deleted</span> <span class="pre">(row)</span></code>: row that has been deleted</p>
+</dd>
+<dt class="field-odd">Signal</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">page-changed</span> <span class="pre">(row,</span> <span class="pre">content)</span></code>: page contents changed</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesIndexer.delete_link_placeholder">
+<code class="sig-name descname">delete_link_placeholder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pagename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesIndexer.delete_link_placeholder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesIndexer.insert_link_placeholder">
+<code class="sig-name descname">insert_link_placeholder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pagename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesIndexer.insert_link_placeholder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesIndexer.insert_page">
+<code class="sig-name descname">insert_page</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pagename</span></em>, <em class="sig-param"><span class="n">file_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesIndexer.insert_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesIndexer.on_file_row_changed">
+<code class="sig-name descname">on_file_row_changed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">filerow</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesIndexer.on_file_row_changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesIndexer.on_file_row_deleted">
+<code class="sig-name descname">on_file_row_deleted</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">filerow</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesIndexer.on_file_row_deleted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesIndexer.on_file_row_inserted">
+<code class="sig-name descname">on_file_row_inserted</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">filerow</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesIndexer.on_file_row_inserted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesIndexer.remove_page">
+<code class="sig-name descname">remove_page</code><span class="sig-paren">(</span><em class="sig-param">pagename</em>, <em class="sig-param">allow_cleanup=&lt;function PagesIndexer.&lt;lambda&gt;&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesIndexer.remove_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesIndexer.update_page">
+<code class="sig-name descname">update_page</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pagename</span></em>, <em class="sig-param"><span class="n">mtime</span></em>, <em class="sig-param"><span class="n">content</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesIndexer.update_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesIndexer.update_parent">
+<code class="sig-name descname">update_parent</code><span class="sig-paren">(</span><em class="sig-param">parentname</em>, <em class="sig-param">allow_cleanup=&lt;function PagesIndexer.&lt;lambda&gt;&gt;</em>, <em class="sig-param">oldrow=None</em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesIndexer.update_parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.pages.PagesTreeModelMixin">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.pages.</code><code class="sig-name descname">PagesTreeModelMixin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">root</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">reverse</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesTreeModelMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.notebook.index.base.TreeModelMixinBase" title="zim.notebook.index.base.TreeModelMixinBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.notebook.index.base.TreeModelMixinBase</span></code></a></p>
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesTreeModelMixin.connect_to_updateiter">
+<code class="sig-name descname">connect_to_updateiter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">update_iter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesTreeModelMixin.connect_to_updateiter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to a new <code class="xref py py-class docutils literal notranslate"><span class="pre">IndexUpdateIter</span></code></p>
+<p>The following signals must be implemented:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>row-inserted (treepath, treeiter)</p></li>
+<li><p>row-changed (treepath, treeiter)</p></li>
+<li><p>row-has-child-toggled (treepath, treeiter)</p></li>
+<li><p>row-deleted (treepath)</p></li>
+</ul>
+</div></blockquote>
+<p>Typically each signal should also flush the cache using
+<code class="docutils literal notranslate"><span class="pre">self.cache.clear()</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented by a subclass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesTreeModelMixin.find">
+<code class="sig-name descname">find</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesTreeModelMixin.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <code class="docutils literal notranslate"><span class="pre">Gtk.TreePath</span></code> for a notebook page <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>
+If the <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> appears multiple times returns the first occurrence</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.notebook.index.base.IndexNotFoundError" title="zim.notebook.index.base.IndexNotFoundError"><strong>IndexNotFoundError</strong></a> – if path not found</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesTreeModelMixin.find_all">
+<code class="sig-name descname">find_all</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesTreeModelMixin.find_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of <code class="docutils literal notranslate"><span class="pre">Gtk.TreePath</span></code> for a notebook page <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>
+Returns all occurrences in the treeview</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.notebook.index.base.IndexNotFoundError" title="zim.notebook.index.base.IndexNotFoundError"><strong>IndexNotFoundError</strong></a> – if path not found</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesTreeModelMixin.get_mytreeiter">
+<code class="sig-name descname">get_mytreeiter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">treepath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesTreeModelMixin.get_mytreeiter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a <code class="docutils literal notranslate"><span class="pre">treeiter</span></code> object for <code class="docutils literal notranslate"><span class="pre">treepath</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented by a subclass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesTreeModelMixin.n_children_top">
+<code class="sig-name descname">n_children_top</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesTreeModelMixin.n_children_top" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of items in the top level of the model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesTreeModelMixin.on_page_row_changed">
+<code class="sig-name descname">on_page_row_changed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">oldrow</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesTreeModelMixin.on_page_row_changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesTreeModelMixin.on_page_row_delete">
+<code class="sig-name descname">on_page_row_delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">row</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesTreeModelMixin.on_page_row_delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesTreeModelMixin.on_page_row_deleted">
+<code class="sig-name descname">on_page_row_deleted</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">row</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesTreeModelMixin.on_page_row_deleted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesTreeModelMixin.on_page_row_inserted">
+<code class="sig-name descname">on_page_row_inserted</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">row</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesTreeModelMixin.on_page_row_inserted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.pages.PagesView">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.pages.</code><code class="sig-name descname">PagesView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.notebook.index.base.IndexView" title="zim.notebook.index.base.IndexView"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.notebook.index.base.IndexView</span></code></a></p>
+<p>Index view that exposes the “pages” table in the index</p>
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesView.create_link">
+<code class="sig-name descname">create_link</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source</span></em>, <em class="sig-param"><span class="n">target</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesView.create_link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine best way to represent a link between two pages</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object</p></li>
+<li><p><strong>target</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a <code class="xref py py-class docutils literal notranslate"><span class="pre">HRef</span></code> object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesView.get_has_previous_has_next">
+<code class="sig-name descname">get_has_previous_has_next</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesView.get_has_previous_has_next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesView.get_next">
+<code class="sig-name descname">get_next</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesView.get_next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the next path in the index, in the same order that
+<a class="reference internal" href="#zim.notebook.index.pages.PagesView.walk" title="zim.notebook.index.pages.PagesView.walk"><code class="xref py py-class docutils literal notranslate"><span class="pre">walk()</span></code></a> will yield them</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object or <code class="docutils literal notranslate"><span class="pre">None</span></code> if <code class="docutils literal notranslate"><span class="pre">path</span></code> is the last page in
+the index</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesView.get_previous">
+<code class="sig-name descname">get_previous</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesView.get_previous" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the previous path in the index, in the same order that
+<a class="reference internal" href="#zim.notebook.index.pages.PagesView.walk" title="zim.notebook.index.pages.PagesView.walk"><code class="xref py py-class docutils literal notranslate"><span class="pre">walk()</span></code></a> will yield them</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object or <code class="docutils literal notranslate"><span class="pre">None</span></code> if {path} is the first page in
+the index</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesView.list_pages">
+<code class="sig-name descname">list_pages</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesView.list_pages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generator for child pages of <code class="docutils literal notranslate"><span class="pre">path</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>yields <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> objects for children of <code class="docutils literal notranslate"><span class="pre">path</span></code></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.notebook.index.base.IndexNotFoundError" title="zim.notebook.index.base.IndexNotFoundError"><strong>IndexNotFoundError</strong></a> – if <code class="docutils literal notranslate"><span class="pre">path</span></code> is not found in the index</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesView.list_recent_changes">
+<code class="sig-name descname">list_recent_changes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">limit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">offset</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesView.list_recent_changes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesView.lookup_by_pagename">
+<code class="sig-name descname">lookup_by_pagename</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pagename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesView.lookup_by_pagename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesView.lookup_from_user_input">
+<code class="sig-name descname">lookup_from_user_input</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">reference</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesView.lookup_from_user_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lookup a pagename based on user input</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – the user input as string</p></li>
+<li><p><strong>reference</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> in case relative links are supported as
+customer input</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object for <code class="docutils literal notranslate"><span class="pre">name</span></code></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – when <code class="docutils literal notranslate"><span class="pre">name</span></code> would reduce to empty string
+after removing all invalid characters, or if <code class="docutils literal notranslate"><span class="pre">name</span></code> is a
+relative link while no <code class="docutils literal notranslate"><span class="pre">reference</span></code> page is given.</p></li>
+<li><p><a class="reference internal" href="#zim.notebook.index.base.IndexNotFoundError" title="zim.notebook.index.base.IndexNotFoundError"><strong>IndexNotFoundError</strong></a> – when <code class="docutils literal notranslate"><span class="pre">reference</span></code> is not indexed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesView.match_all_pages">
+<code class="sig-name descname">match_all_pages</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">limit</span><span class="o">=</span><span class="default_value">10</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesView.match_all_pages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like <code class="docutils literal notranslate"><span class="pre">match_pages()</span></code> except not limited a specific namespace</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesView.match_pages">
+<code class="sig-name descname">match_pages</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">limit</span><span class="o">=</span><span class="default_value">10</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesView.match_pages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generator for child pages of <code class="docutils literal notranslate"><span class="pre">path</span></code> that match <code class="docutils literal notranslate"><span class="pre">text</span></code> in their name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object</p></li>
+<li><p><strong>text</strong> – a string</p></li>
+<li><p><strong>limit</strong> – max number of results</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>yields <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> objects for children of <code class="docutils literal notranslate"><span class="pre">path</span></code></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.notebook.index.base.IndexNotFoundError" title="zim.notebook.index.base.IndexNotFoundError"><strong>IndexNotFoundError</strong></a> – if <code class="docutils literal notranslate"><span class="pre">path</span></code> is not found in the index</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesView.n_all_pages">
+<code class="sig-name descname">n_all_pages</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesView.n_all_pages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns to total number of pages in the index</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesView.n_list_pages">
+<code class="sig-name descname">n_list_pages</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesView.n_list_pages" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesView.resolve_link">
+<code class="sig-name descname">resolve_link</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source</span></em>, <em class="sig-param"><span class="n">href</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesView.resolve_link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the end point of a link
+Depending on the link type (absolute, relative, or floating),
+this method first determines the starting point of the link
+path. Then it goes downward doing a case insensitive match
+against the index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> for the starting point of the link</p></li>
+<li><p><strong>href</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">HRef</span></code> object for the link</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object for the target of the link.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesView.walk">
+<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesView.walk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generator function to yield all pages in the index, depth
+first</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object for the starting point, can be
+used to only iterate a sub-tree. When this is <code class="docutils literal notranslate"><span class="pre">None</span></code> the
+whole notebook is iterated over</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>an iterator that yields <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> objects</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.notebook.index.base.IndexNotFoundError" title="zim.notebook.index.base.IndexNotFoundError"><strong>IndexNotFoundError</strong></a> – if <code class="docutils literal notranslate"><span class="pre">path</span></code> does not exist in the index</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesView.walk_bottomup">
+<code class="sig-name descname">walk_bottomup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesView.walk_bottomup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.pages.PagesViewInternal">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.pages.</code><code class="sig-name descname">PagesViewInternal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesViewInternal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class defines private methods used by <a class="reference internal" href="#zim.notebook.index.pages.PagesView" title="zim.notebook.index.pages.PagesView"><code class="xref py py-class docutils literal notranslate"><span class="pre">PagesView</span></code></a>,
+<code class="xref py py-class docutils literal notranslate"><span class="pre">LinksView</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">TagsView</span></code> and others.</p>
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesViewInternal.get_page_id">
+<code class="sig-name descname">get_page_id</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pagename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesViewInternal.get_page_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesViewInternal.get_pagename">
+<code class="sig-name descname">get_pagename</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">page_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesViewInternal.get_pagename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesViewInternal.resolve_link">
+<code class="sig-name descname">resolve_link</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source</span></em>, <em class="sig-param"><span class="n">href</span></em>, <em class="sig-param"><span class="n">ignore_link_placeholders</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">source_id</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesViewInternal.resolve_link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesViewInternal.resolve_pagename">
+<code class="sig-name descname">resolve_pagename</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent</span></em>, <em class="sig-param"><span class="n">names</span></em>, <em class="sig-param"><span class="n">parent_id</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesViewInternal.resolve_pagename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resolve a pagename in the right case</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesViewInternal.walk">
+<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesViewInternal.walk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.PagesViewInternal.walk_bottomup">
+<code class="sig-name descname">walk_bottomup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.PagesViewInternal.walk_bottomup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.pages.TestPagesDBTable">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.pages.</code><code class="sig-name descname">TestPagesDBTable</code><a class="headerlink" href="#zim.notebook.index.pages.TestPagesDBTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="zim.notebook.index.pages.TestPagesDBTable.assertPagesDBConsistent">
+<code class="sig-name descname">assertPagesDBConsistent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.TestPagesDBTable.assertPagesDBConsistent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.TestPagesDBTable.assertPagesDBContains">
+<code class="sig-name descname">assertPagesDBContains</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">pages</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.TestPagesDBTable.assertPagesDBContains" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.pages.TestPagesDBTable.assertPagesDBEquals">
+<code class="sig-name descname">assertPagesDBEquals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">pages</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.TestPagesDBTable.assertPagesDBEquals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.notebook.index.pages.emptyParseTree">
+<code class="sig-prename descclassname">zim.notebook.index.pages.</code><code class="sig-name descname">emptyParseTree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.pages.emptyParseTree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-zim.notebook.index.tags">
+<span id="zim-notebook-index-tags-module"></span><h2>zim.notebook.index.tags module<a class="headerlink" href="#module-zim.notebook.index.tags" title="Permalink to this headline">¶</a></h2>
+<dl class="py data">
+<dt id="zim.notebook.index.tags.IS_TAG">
+<code class="sig-prename descclassname">zim.notebook.index.tags.</code><code class="sig-name descname">IS_TAG</code><em class="property"> = 2</em><a class="headerlink" href="#zim.notebook.index.tags.IS_TAG" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hint for MyTreeIter</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.tags.IndexTag">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.tags.</code><code class="sig-name descname">IndexTag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.IndexTag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Object to represent a page tag in the <code class="xref py py-class docutils literal notranslate"><span class="pre">Index</span></code> API</p>
+<p>These are tags that appear in pages with an “&#64;”, like “&#64;foo”. They
+are indexed by the <code class="xref py py-class docutils literal notranslate"><span class="pre">Index</span></code> and represented with this class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#zim.notebook.index.tags.IndexTag.name" title="zim.notebook.index.tags.IndexTag.name"><strong>name</strong></a> – the name of the tag, e.g. “foo” for an “&#64;foo” in the page</p></li>
+<li><p><a class="reference internal" href="#zim.notebook.index.tags.IndexTag.id" title="zim.notebook.index.tags.IndexTag.id"><strong>id</strong></a> – the id of this tag in the table (primary key)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="zim.notebook.index.tags.IndexTag.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#zim.notebook.index.tags.IndexTag.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="zim.notebook.index.tags.IndexTag.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#zim.notebook.index.tags.IndexTag.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.tags.TaggedPagesTreeModelMixin">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.tags.</code><code class="sig-name descname">TaggedPagesTreeModelMixin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">tags</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TaggedPagesTreeModelMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.notebook.index.tags.TagsTreeModelBase" title="zim.notebook.index.tags.TagsTreeModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.notebook.index.tags.TagsTreeModelBase</span></code></a></p>
+<p>Tree model that shows all pages for a given set of tags</p>
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TaggedPagesTreeModelMixin.get_mytreeiter">
+<code class="sig-name descname">get_mytreeiter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">treepath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TaggedPagesTreeModelMixin.get_mytreeiter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a <code class="docutils literal notranslate"><span class="pre">treeiter</span></code> object for <code class="docutils literal notranslate"><span class="pre">treepath</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented by a subclass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TaggedPagesTreeModelMixin.n_children_top">
+<code class="sig-name descname">n_children_top</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TaggedPagesTreeModelMixin.n_children_top" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of items in the top level of the model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TaggedPagesTreeModelMixin.on_tag_added_to_page">
+<code class="sig-name descname">on_tag_added_to_page</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">pagerow</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TaggedPagesTreeModelMixin.on_tag_added_to_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TaggedPagesTreeModelMixin.on_tag_remove_from_page">
+<code class="sig-name descname">on_tag_remove_from_page</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">pagerow</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TaggedPagesTreeModelMixin.on_tag_remove_from_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.tags.TagsIndexer">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.tags.</code><code class="sig-name descname">TagsIndexer</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsIndexer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.notebook.index.base.IndexerBase" title="zim.notebook.index.base.IndexerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.notebook.index.base.IndexerBase</span></code></a></p>
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsIndexer.on_page_changed">
+<code class="sig-name descname">on_page_changed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pagesindexer</span></em>, <em class="sig-param"><span class="n">pagerow</span></em>, <em class="sig-param"><span class="n">doc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsIndexer.on_page_changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsIndexer.on_page_row_delete">
+<code class="sig-name descname">on_page_row_delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pageindexer</span></em>, <em class="sig-param"><span class="n">pagerow</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsIndexer.on_page_row_delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsIndexer.update_iter">
+<code class="sig-name descname">update_iter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsIndexer.update_iter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.tags.TagsTreeModelBase">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.tags.</code><code class="sig-name descname">TagsTreeModelBase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">tags</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsTreeModelBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.notebook.index.pages.PagesTreeModelMixin" title="zim.notebook.index.pages.PagesTreeModelMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.notebook.index.pages.PagesTreeModelMixin</span></code></a></p>
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsTreeModelBase.connect_to_updateiter">
+<code class="sig-name descname">connect_to_updateiter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">update_iter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsTreeModelBase.connect_to_updateiter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to a new <code class="xref py py-class docutils literal notranslate"><span class="pre">IndexUpdateIter</span></code></p>
+<p>The following signals must be implemented:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>row-inserted (treepath, treeiter)</p></li>
+<li><p>row-changed (treepath, treeiter)</p></li>
+<li><p>row-has-child-toggled (treepath, treeiter)</p></li>
+<li><p>row-deleted (treepath)</p></li>
+</ul>
+</div></blockquote>
+<p>Typically each signal should also flush the cache using
+<code class="docutils literal notranslate"><span class="pre">self.cache.clear()</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented by a subclass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsTreeModelBase.on_tag_removed_from_page">
+<code class="sig-name descname">on_tag_removed_from_page</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">pagerow</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsTreeModelBase.on_tag_removed_from_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsTreeModelBase.on_tag_row_deleted">
+<code class="sig-name descname">on_tag_row_deleted</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">row</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsTreeModelBase.on_tag_row_deleted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsTreeModelBase.on_tag_row_inserted">
+<code class="sig-name descname">on_tag_row_inserted</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">row</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsTreeModelBase.on_tag_row_inserted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.tags.TagsTreeModelMixin">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.tags.</code><code class="sig-name descname">TagsTreeModelMixin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">tags</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsTreeModelMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.notebook.index.tags.TagsTreeModelBase" title="zim.notebook.index.tags.TagsTreeModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.notebook.index.tags.TagsTreeModelBase</span></code></a></p>
+<p>Tree model mixin class that uses tags as the toplevel</p>
+<blockquote>
+<div><dl>
+<dt>tag1</dt><dd><dl class="simple">
+<dt>page_with_tag1</dt><dd><p>child
+child</p>
+</dd>
+</dl>
+<p>…</p>
+</dd>
+<dt>tag2</dt><dd><p>page_with_tag2</p>
+</dd>
+</dl>
+<p>…</p>
+</div></blockquote>
+<p>If any tags are given on construction, the top level will be limitted
+to that set. But the model also supports showing all tags.</p>
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsTreeModelMixin.find">
+<code class="sig-name descname">find</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsTreeModelMixin.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <code class="docutils literal notranslate"><span class="pre">Gtk.TreePath</span></code> for a notebook page <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>
+If the <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> appears multiple times returns the first occurrence</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.notebook.index.base.IndexNotFoundError" title="zim.notebook.index.base.IndexNotFoundError"><strong>IndexNotFoundError</strong></a> – if path not found</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsTreeModelMixin.find_all">
+<code class="sig-name descname">find_all</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsTreeModelMixin.find_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of <code class="docutils literal notranslate"><span class="pre">Gtk.TreePath</span></code> for a notebook page <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>
+Returns all occurrences in the treeview</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.notebook.index.base.IndexNotFoundError" title="zim.notebook.index.base.IndexNotFoundError"><strong>IndexNotFoundError</strong></a> – if path not found</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsTreeModelMixin.get_mytreeiter">
+<code class="sig-name descname">get_mytreeiter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">treepath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsTreeModelMixin.get_mytreeiter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a <code class="docutils literal notranslate"><span class="pre">treeiter</span></code> object for <code class="docutils literal notranslate"><span class="pre">treepath</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Implementation</dt>
+<dd class="field-odd"><p>must be implemented by a subclass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsTreeModelMixin.on_tag_added_to_page">
+<code class="sig-name descname">on_tag_added_to_page</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">pagerow</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsTreeModelMixin.on_tag_added_to_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsTreeModelMixin.on_tag_remove_from_page">
+<code class="sig-name descname">on_tag_remove_from_page</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">pagerow</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsTreeModelMixin.on_tag_remove_from_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsTreeModelMixin.on_tag_removed_from_page">
+<code class="sig-name descname">on_tag_removed_from_page</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">pagerow</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsTreeModelMixin.on_tag_removed_from_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsTreeModelMixin.on_tag_row_deleted">
+<code class="sig-name descname">on_tag_row_deleted</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">row</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsTreeModelMixin.on_tag_row_deleted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsTreeModelMixin.on_tag_row_inserted">
+<code class="sig-name descname">on_tag_row_inserted</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">row</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsTreeModelMixin.on_tag_row_inserted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.tags.TagsView">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.tags.</code><code class="sig-name descname">TagsView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.notebook.index.base.IndexView" title="zim.notebook.index.base.IndexView"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.notebook.index.base.IndexView</span></code></a></p>
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsView.list_all_tags">
+<code class="sig-name descname">list_all_tags</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsView.list_all_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all tags in the index as <a class="reference internal" href="#zim.notebook.index.tags.IndexTag" title="zim.notebook.index.tags.IndexTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">IndexTag</span></code></a> objects</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsView.list_all_tags_by_n_pages">
+<code class="sig-name descname">list_all_tags_by_n_pages</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsView.list_all_tags_by_n_pages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all tags in the index as <a class="reference internal" href="#zim.notebook.index.tags.IndexTag" title="zim.notebook.index.tags.IndexTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">IndexTag</span></code></a> objects</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsView.list_intersecting_tags">
+<code class="sig-name descname">list_intersecting_tags</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tags</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsView.list_intersecting_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>List tags that have pages in common with a given set of tags</p>
+<p>Generator function that lists all tags that occur on pages
+that match the given tag set. This is used to narrow down
+possible tag sets that are not empty. (This method is used e.g.
+in the <a class="reference internal" href="zim.plugins.html#zim.plugins.tags.TagCloudWidget" title="zim.plugins.tags.TagCloudWidget"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.plugins.tags.TagCloudWidget</span></code></a> widget to decide which
+tags to show once some tags are selected.)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tags</strong> – an iterable of <a class="reference internal" href="#zim.notebook.index.tags.IndexTag" title="zim.notebook.index.tags.IndexTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">IndexTag</span></code></a> objects</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>yields <a class="reference internal" href="#zim.notebook.index.tags.IndexTag" title="zim.notebook.index.tags.IndexTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">IndexTag</span></code></a> objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsView.list_pages">
+<code class="sig-name descname">list_pages</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsView.list_pages" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all pages tagged with a given tag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tag</strong> – a tag name as string or an <code class="docutils literal notranslate"><span class="pre">IndexTag</span></code> object</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>yields <code class="xref py py-class docutils literal notranslate"><span class="pre">PageIndexRecord</span></code> objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsView.list_tags">
+<code class="sig-name descname">list_tags</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsView.list_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all tags for a given page</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> – a <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object for the page</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>yields <a class="reference internal" href="#zim.notebook.index.tags.IndexTag" title="zim.notebook.index.tags.IndexTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">IndexTag</span></code></a> objects</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#zim.notebook.index.base.IndexNotFoundError" title="zim.notebook.index.base.IndexNotFoundError"><strong>IndexNotFoundError</strong></a> – if <code class="docutils literal notranslate"><span class="pre">path</span></code> is not found in the index</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsView.lookup_by_tagname">
+<code class="sig-name descname">lookup_by_tagname</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsView.lookup_by_tagname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsView.n_list_all_tags">
+<code class="sig-name descname">n_list_all_tags</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsView.n_list_all_tags" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsView.n_list_pages">
+<code class="sig-name descname">n_list_pages</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsView.n_list_pages" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.tags.TagsView.n_list_tags">
+<code class="sig-name descname">n_list_tags</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.tags.TagsView.n_list_tags" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-zim.notebook.index">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-zim.notebook.index" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="zim.notebook.index.BackgroundCheck">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.</code><code class="sig-name descname">BackgroundCheck</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">checker</span></em>, <em class="sig-param"><span class="n">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.BackgroundCheck" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="zim.notebook.index.BackgroundCheck.on_idle_iter">
+<code class="sig-name descname">on_idle_iter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.BackgroundCheck.on_idle_iter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.BackgroundCheck.start">
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.BackgroundCheck.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.BackgroundCheck.stop">
+<code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.BackgroundCheck.stop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.Index">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.</code><code class="sig-name descname">Index</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.Index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.signals.SignalEmitter" title="zim.signals.SignalEmitter"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.signals.SignalEmitter</span></code></a></p>
+<p>The Index keeps a cache of all pages in a notebook store, all
+links between pages and all tags. This data is used to speed up
+many operatons in the user interface, like showing the notebook
+index in the side pane, showing “what links here” and faster search
+for page attributes.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Index</span></code> object is an opaque object that only exposes an API
+to trigger index updates and notifications when changes are found.
+It does not expose the data it keeps directly. To query the index,
+you need to construct an “index view” first, see e.g. the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">PagesIndexView</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">LinksIndexView</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">TagsIndexView</span></code> classes.
+For convenience the <code class="xref py py-class docutils literal notranslate"><span class="pre">Notebook</span></code> class also exposes these three
+views with the respective attributes <code class="docutils literal notranslate"><span class="pre">pages</span></code>, <code class="docutils literal notranslate"><span class="pre">links</span></code> and <code class="docutils literal notranslate"><span class="pre">tags</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Signal</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">new-update-iter</span> <span class="pre">(update_iter)</span></code>: signal used for plugins wanting
+to extend the indexer</p>
+</dd>
+<dt class="field-even">Signal</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">changed</span> <span class="pre">()</span></code>: emitted after changes have been committed</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="zim.notebook.index.Index.check_and_update">
+<code class="sig-name descname">check_and_update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.Index.check_and_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update all data in the index</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.Index.check_and_update_iter">
+<code class="sig-name descname">check_and_update_iter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.Index.check_and_update_iter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.Index.check_async">
+<code class="sig-name descname">check_async</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">notebook</span></em>, <em class="sig-param"><span class="n">paths</span></em>, <em class="sig-param"><span class="n">recursive</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.Index.check_async" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.Index.file_moved">
+<code class="sig-name descname">file_moved</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">oldfile</span></em>, <em class="sig-param"><span class="n">newfile</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.Index.file_moved" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.Index.flag_reindex">
+<code class="sig-name descname">flag_reindex</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.Index.flag_reindex" title="Permalink to this definition">¶</a></dt>
+<dd><p>This methods flags all pages with content to be re-indexed.
+Main reason to use this would be when loading a new plugin that
+wants to index all pages.
+Differs from <a class="reference internal" href="#zim.notebook.index.Index.flush" title="zim.notebook.index.Index.flush"><code class="xref py py-class docutils literal notranslate"><span class="pre">flush()</span></code></a> because it does not drop all data</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.Index.flush">
+<code class="sig-name descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.Index.flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete all data in the index</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.Index.get_property">
+<code class="sig-name descname">get_property</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.Index.get_property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.Index.is_uptodate">
+<em class="property">property </em><code class="sig-name descname">is_uptodate</code><a class="headerlink" href="#zim.notebook.index.Index.is_uptodate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.Index.on_commit">
+<code class="sig-name descname">on_commit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.Index.on_commit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.Index.remove_file">
+<code class="sig-name descname">remove_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.Index.remove_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.Index.set_property">
+<code class="sig-name descname">set_property</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.Index.set_property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.Index.start_background_check">
+<code class="sig-name descname">start_background_check</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">notebook</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.Index.start_background_check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.Index.stop_background_check">
+<code class="sig-name descname">stop_background_check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.Index.stop_background_check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.Index.touch_current_page_placeholder">
+<code class="sig-name descname">touch_current_page_placeholder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.Index.touch_current_page_placeholder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a placeholder for <code class="docutils literal notranslate"><span class="pre">path</span></code> if the page does not
+exist. Cleans up old placeholders.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.Index.update_file">
+<code class="sig-name descname">update_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.Index.update_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.IndexCheckAndUpdateOperation">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.</code><code class="sig-name descname">IndexCheckAndUpdateOperation</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.IndexCheckAndUpdateOperation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zim.notebook.index.IndexUpdateOperation" title="zim.notebook.index.IndexUpdateOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.notebook.index.IndexUpdateOperation</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.IndexUpdateIter">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.</code><code class="sig-name descname">IndexUpdateIter</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.IndexUpdateIter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.html#zim.signals.SignalEmitter" title="zim.signals.SignalEmitter"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.signals.SignalEmitter</span></code></a></p>
+<dl class="py method">
+<dt id="zim.notebook.index.IndexUpdateIter.add_indexer">
+<code class="sig-name descname">add_indexer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indexer</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.IndexUpdateIter.add_indexer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.IndexUpdateIter.check_and_update">
+<code class="sig-name descname">check_and_update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.IndexUpdateIter.check_and_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience method to do a full update and check at once</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.IndexUpdateIter.check_and_update_iter">
+<code class="sig-name descname">check_and_update_iter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.IndexUpdateIter.check_and_update_iter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.IndexUpdateIter.get_indexer">
+<code class="sig-name descname">get_indexer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cls</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.IndexUpdateIter.get_indexer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.IndexUpdateIter.is_uptodate">
+<code class="sig-name descname">is_uptodate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.IndexUpdateIter.is_uptodate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.IndexUpdateIter.partial_update_iter">
+<code class="sig-name descname">partial_update_iter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.IndexUpdateIter.partial_update_iter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like <code class="xref py py-class docutils literal notranslate"><span class="pre">update_iter()</span></code> but omits checking new files</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.IndexUpdateIter.remove_indexer">
+<code class="sig-name descname">remove_indexer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indexer</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.IndexUpdateIter.remove_indexer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="zim.notebook.index.IndexUpdateIter.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.IndexUpdateIter.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience method to do a full update at once</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="zim.notebook.index.IndexUpdateOperation">
+<em class="property">class </em><code class="sig-prename descclassname">zim.notebook.index.</code><code class="sig-name descname">IndexUpdateOperation</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arg</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwarg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.IndexUpdateOperation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zim.notebook.html#zim.notebook.operations.NotebookOperation" title="zim.notebook.operations.NotebookOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">zim.notebook.operations.NotebookOperation</span></code></a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="zim.notebook.index.on_out_of_date_found">
+<code class="sig-prename descclassname">zim.notebook.index.</code><code class="sig-name descname">on_out_of_date_found</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">notebook</span></em>, <em class="sig-param"><span class="n">background_check</span></em><span class="sig-paren">)</span><a class="headerlink" href="#zim.notebook.index.on_out_of_date_found" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Zim Desktop Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Jaap Karssenberg and contributors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/zim.notebook.index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
