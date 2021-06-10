@@ -78,7 +78,6 @@
 
 # Additional ISO-8859/1 entities listed in rfc1866 (section 14)
 \iexcl	161
-\iquest	191
 \cent	162
 \pound	163
 \curren	164
@@ -88,7 +87,6 @@
 \uml	168
 \ordf	170
 \laquo	171
-\raquo	187
 \not	172
 \shy	173
 \macr	175
@@ -103,21 +101,11 @@
 \middot	183
 \cedil	184
 \ordm	186
-\frac12	189
-\frac13	8531
+\raquo	187
 \frac14	188
-\frac15	8533
-\frac16	8537
-\frac18	8539
-\frac23	8532
-\frac25	8534
+\frac12	189
 \frac34	190
-\frac35	8535
-\frac38	8540
-\frac45	8536
-\frac56	8538
-\frac58	8541
-\frac78	8542
+\iquest	191
 \times	215
 \divide	247
 
@@ -190,7 +178,6 @@
 \rlm	8207
 \ndash	8211
 \mdash	8212
-\horbar 8213
 \lsquo	8216
 \rsquo	8217
 \sbquo	8218
@@ -218,12 +205,6 @@
 \uarr	8593
 \rarr	8594
 \darr	8595
-\nearr	8599
-\searr	8600
-\nwarr	8598
-\swarr	8601
-\curarr	8631
-\cularr	8630
 \harr	8596
 \crarr	8629
 \lArr	8656
@@ -247,7 +228,6 @@
 \prop	8733
 \infin	8734
 \ang	8736
-\angsph	8738
 \and	8743
 \or	8744
 \cap	8745
@@ -259,11 +239,8 @@
 \asymp	8776
 \ne	8800
 \equiv	8801
-\wedgeq	8793
 \le	8804
-\les	10877
 \ge	8805
-\ges	10878
 \sub	8834
 \sup	8835
 \nsub	8836
@@ -351,8 +328,5 @@
 \phone	9990 # Telephone Sign
 \flag	9873 # Black Flag
 
-\numero	8470 # numero sign
-\female	9792
-\male	9794
-
 ## Suggestions for more shortcuts are welcome - please file in bug tracker ##
+

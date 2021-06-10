@@ -4701,12 +4701,11 @@ class TextView(Gtk.TextView):
 	def click_anchor(self):
 		'''Show popover for anchor under the cursor'''
 		iter, coords = self._get_pointer_location()
-		if iter:
-			pixbuf = self._get_pixbuf_at_pointer(iter, coords)
-			if pixbuf and hasattr(pixbuf, 'zim_type') and pixbuf.zim_type == 'anchor':
-				return False # TODO: add popover wo copy to clipboard and edit the anchor
-			else:
-				return False
+		pixbuf = self._get_pixbuf_at_pointer(iter, coords)
+		if pixbuf and hasattr(pixbuf, 'zim_type') and pixbuf.zim_type == 'anchor':
+			return False # TODO: add popover wo copy to clipboard and edit the anchor
+		else:
+			return False
 
 	def get_visual_home_positions(self, iter):
 		'''Get the TextIters for the visuale start of the line
@@ -7919,12 +7918,8 @@ class EditImageDialog(Dialog):
 
 	def do_file_changed(self):
 		# Prevent images becoming one pixel wide
-		try:
-			if self._image_data['width'] == 1:
-				self.reset_dimensions()
-		except KeyError:
-			# width hasn't been set
-			pass
+		if self._image_data['width'] is 1:
+			self.reset_dimensions()
 
 	def do_width_changed(self):
 		if hasattr(self, '_block') and self._block:
