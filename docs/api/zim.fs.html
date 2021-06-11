@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.fs : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.fs.html">fs</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Module with basic filesystem objects.</p><p>This module must be used by all other zim modules for filesystem interaction. It takes care of proper encoding file paths (system dependent) and file contents (UTF-8) and implements a number of sanity checks.</p><p>The main classes are <code><a href="zim.fs.File.html">File</a></code> and <code><a href="zim.fs.Dir.html">Dir</a></code> which implement file and folder objects. There is also a singleton object to represent the whole filesystem, whichprovides signals when a file or folder is created, moved or deleted. This is stored in <code><a href="#FS">zim.fs.FS</a></code>.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id189">
+  
+  <tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#adapt_from_newfs">adapt_from_newfs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#Gio">Gio</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#xdgmime">xdgmime</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#mimetypes">mimetypes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#IMAGE_EXTENSIONS">IMAGE_EXTENSIONS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#isabs">isabs</a></code></td>
+    <td><span>Wrapper for <code>os.path.isabs</code>. @param path: a file system path as string @returns: <code>True</code> when the path is absolute instead of a relative path</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_tmpdir">get_tmpdir</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#normalize_file_uris">normalize_file_uris</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#normalize_win32_share">normalize_win32_share</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#lrmdir">lrmdir</a></code></td>
+    <td><span>Wrapper for <code>os.rmdir</code> that also knows how to unlink symlinks. Fails when the folder is not a link and is not empty. @param path: a file system path as string</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#cleanup_filename">cleanup_filename</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#format_file_size">format_file_size</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.fs.PathLookupError.html">PathLookupError</a></code></td>
+    <td><span>Error raised when there is an error finding the specified path</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.fs.FileWriteError.html">FileWriteError</a></code></td>
+    <td><span>Error raised when we can not write a file. Either due to file permissions or e.g. because it is detected the file changed on disk.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.fs.FileNotFoundError.html">FileNotFoundError</a></code></td>
+    <td><span>Error raised when a file does not exist that is expected to exist.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.fs.FileUnicodeError.html">FileUnicodeError</a></code></td>
+    <td><span>Error raised when there is an issue decoding the file contents. Typically due to different encoding where UTF-8 is expected.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.fs.FSSingletonClass.html">FSSingletonClass</a></code></td>
+    <td><span>Class used for the singleton 'zim.fs.FS' instance</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#FS">FS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.fs.UnixPath.html">UnixPath</a></code></td>
+    <td><span>Base class for Dir and File objects, represents a file path</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.fs.WindowsPath.html">WindowsPath</a></code></td>
+    <td><span>Base class for Dir and File objects, represents a file path on windows.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.fs.Dir.html">Dir</a></code></td>
+    <td><span>Class representing a single file system folder</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.fs.FilteredDir.html">FilteredDir</a></code></td>
+    <td><span>Class implementing a folder with a filtered listing. Can be used to e.g. filter all objects that are also ignored by version control.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.fs.File.html">File</a></code></td>
+    <td><span>Class representing a single file.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.fs.TmpFile.html">TmpFile</a></code></td>
+    <td><span>Class for temporary files. These are stored in the temp directory and by default they are deleted again when the object is destructed.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#is_hidden_file">is_hidden_file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.fs.FSObjectMonitor.html">FSObjectMonitor</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_tmpdir">_tmpdir</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_md5">_md5</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_glob_to_regex">_glob_to_regex</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_replace_file">_replace_file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  <a name="zim.fs.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L30">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.fs.adapt_from_newfs">
+    
+  </a>
+  <a name="adapt_from_newfs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">adapt_from_newfs</span>(file):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L37">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.fs.Gio">
+    
+  </a>
+  <a name="Gio">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">Gio</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L51">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.fs.xdgmime">
+    
+  </a>
+  <a name="xdgmime">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">xdgmime</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L57">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.fs.mimetypes">
+    
+  </a>
+  <a name="mimetypes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">mimetypes</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L58">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.fs.IMAGE_EXTENSIONS">
+    
+  </a>
+  <a name="IMAGE_EXTENSIONS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">IMAGE_EXTENSIONS</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L72">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, ...]</code>)
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.fs.isabs">
+    
+  </a>
+  <a name="isabs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">isabs</span>(path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L110">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Wrapper for <code>os.path.isabs</code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a file system path as string</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> when the path is absolute instead of a relative path</td></tr></table></div>
+  </div>
+</div><div class="basevariable private">
+  
+  <a name="zim.fs._tmpdir">
+    
+  </a>
+  <a name="_tmpdir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_tmpdir</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L120">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.fs.get_tmpdir">
+    
+  </a>
+  <a name="get_tmpdir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_tmpdir</span>():
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L121">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get a folder in the system temp dir for usage by zim. This zim specific temp folder has permission set to be readable only by the current users, and is touched if it didn't exist yet. Used as base folder by <code><a href="zim.fs.TmpFile.html">TmpFile</a></code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.fs.Dir.html">Dir</a></code> object for the zim specific tmp folder</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.fs.normalize_file_uris">
+    
+  </a>
+  <a name="normalize_file_uris">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">normalize_file_uris</span>(path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L137">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Function to deal with invalid or non-local file URIs. Translates <code>file:/</code> to the proper <code>file:///</code> form and replaces URIs of the form <code>file://host/share</code> to <code>smb://host/share</code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a filesystem path or URL</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">the proper URI or the original input path</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.fs.normalize_win32_share">
+    
+  </a>
+  <a name="normalize_win32_share">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">normalize_win32_share</span>(path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L155">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Translates paths for windows shares in the platform specific form. So on windows it translates <code>smb://</code> URLs to <code>\host\share</code> form, and vice versa on all other platforms. Just returns the original path if it was already in the right form, or when it is not a path for a share drive.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a filesystem path or URL</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">the platform specific path or the original input path</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.fs.lrmdir">
+    
+  </a>
+  <a name="lrmdir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">lrmdir</span>(path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L177">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Wrapper for <code>os.rmdir</code> that also knows how to unlink symlinks. Fails when the folder is not a link and is not empty.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a file system path as string</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.fs.cleanup_filename">
+    
+  </a>
+  <a name="cleanup_filename">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">cleanup_filename</span>(name):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L191">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Removes all characters in 'name' that are not allowed as part of a file name. This function is intended for e.g. config files etc. <b>not</b> for page files in a store. For file system filenames we can not use: '\', '/', ':', '*', '?', '"', '&lt;', '&gt;', '|' And we also exclude "\t" and "\n".</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">name</td><td>the filename as string</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">the name with invalid characters removed</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.fs.format_file_size">
+    
+  </a>
+  <a name="format_file_size">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">format_file_size</span>(bytes):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L206">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a human readable label  for a file size E.g. <code>1230</code> becomes <code>"1.23kb"</code>, idem for "Mb" and "Gb"</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">bytes</td><td>file size in bytes as integer</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">size as string</td></tr></table></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="zim.fs._md5">
+    
+  </a>
+  <a name="_md5">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_md5</span>(content):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L231">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.fs.FS">
+    
+  </a>
+  <a name="FS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">FS</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L308">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="zim.fs._glob_to_regex">
+    
+  </a>
+  <a name="_glob_to_regex">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_glob_to_regex</span>(glob):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L946">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="zim.fs._replace_file">
+    
+  </a>
+  <a name="_replace_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_replace_file</span>(src, dst):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1372">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.fs.is_hidden_file">
+    
+  </a>
+  <a name="is_hidden_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">is_hidden_file</span>(file):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1393">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

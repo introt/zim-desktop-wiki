@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.plugins.base.imagegenerator.ImageGeneratorObjectType : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code>.<code><a href="zim.plugins.base.html">base</a></code>.<code><a href="zim.plugins.base.imagegenerator.html">imagegenerator</a></code>.<code><a href="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.html">ImageGeneratorObjectType</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ImageGeneratorObjectType</span>(<a href="zim.plugins.InsertedObjectTypeExtension.html" title="zim.plugins.InsertedObjectTypeExtension">InsertedObjectTypeExtension</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L31">(source)</a></code></p><p>Known subclasses: <code><a href="zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType.html">zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType</a></code></p>
+        <p><a href="classIndex.html#zim.plugins.base.imagegenerator.ImageGeneratorObjectType">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Base class for object types that produce an image based on text input from the user. Plugins should contain a sub-class of of this class to define the object type name, label etc. It then will automatically load a sub-class from ImageGeneratorClass defined in the same plugin to do the work.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id889">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#syntax">syntax</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Constructor @param plugin: the plugin object to which this extension belongs @param obj: the object being extended</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#generator_klass">generator_klass</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#new_model_interactive">new_model_interactive</a></code></td>
+    <td><span>Create a new object model interactively Interactive means that we can use e.g. a dialog to prompt for input. The default behavior is to use <code><a href="#new_object">new_object()</a></code>.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#model_from_data">model_from_data</a></code></td>
+    <td><span>Returns a model for the object</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#data_from_model">data_from_model</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#create_widget">create_widget</a></code></td>
+    <td><span>Return a Gtk widget for the given model @param model: an object created with <code><a href="#model_from_data">model_from_data()</a></code> @returns: a Gtk widget object derived from <code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html">InsertedObjectWidget</a></code></span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.plugins.InsertedObjectTypeExtension.html">InsertedObjectTypeExtension</a></code>:
+          </p>
+          <table class="children sortable" id="id890">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.InsertedObjectTypeExtension.html#teardown">teardown</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.InsertedObjectTypeExtension.html#_objmap">_objmap</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.insertedobjects.InsertedObjectType.html">InsertedObjectType</a></code> (via <code><a href="zim.plugins.InsertedObjectTypeExtension.html">InsertedObjectTypeExtension</a></code>):
+          </p>
+          <table class="children sortable" id="id891">
+  
+  <tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="zim.insertedobjects.InsertedObjectType.html#name">name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="zim.insertedobjects.InsertedObjectType.html#label">label</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="zim.insertedobjects.InsertedObjectType.html#verb_icon">verb_icon</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.insertedobjects.InsertedObjectType.html#object_attr">object_attr</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.insertedobjects.InsertedObjectType.html#parse_attrib">parse_attrib</a></code></td>
+    <td><span>Convenience method to enforce the supported attributes and their types. @returns: a <code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code> using the <code>object_attr</code> dict as definition</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.insertedobjects.InsertedObjectType.html#new_object">new_object</a></code></td>
+    <td><span>Create a new empty object @returns: a 2-tuple <code>(attrib, data)</code></span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.insertedobjects.InsertedObjectType.html#format">format</a></code></td>
+    <td><span>Format the object using a specific output format Intended to improve rendering of the object on exporting.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.insertedobjects.InsertedObjectType.html#_model_from_data_wrapper">_model_from_data_wrapper</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.insertedobjects.InsertedObjectType.html#_data_from_model_wrapper">_data_from_model_wrapper</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.insertedobjects.InsertedObjectType.html#_format_wrapper">_format_wrapper</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.plugins.ExtensionBase.html">ExtensionBase</a></code> (via <code><a href="zim.plugins.InsertedObjectTypeExtension.html">InsertedObjectTypeExtension</a></code>):
+          </p>
+          <table class="children sortable" id="id892">
+  
+  <tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.ExtensionBase.html#plugin">plugin</a></code></td>
+    <td><span>the plugin object to which this extension belongs</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.ExtensionBase.html#obj">obj</a></code></td>
+    <td><span>the extendable object</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="zim.plugins.ExtensionBase.html#__signals__">__signals__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.ExtensionBase.html#destroy">destroy</a></code></td>
+    <td><span>Called when the plugin is being destroyed Calls <code><a href="#teardown">teardown()</a></code> followed by the <code>teardown()</code> methods of parent base classes.</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.signals.SignalEmitter.html">SignalEmitter</a></code> (via <code><a href="zim.plugins.InsertedObjectTypeExtension.html">InsertedObjectTypeExtension</a></code>, <code><a href="zim.plugins.ExtensionBase.html">ExtensionBase</a></code>):
+          </p>
+          <table class="children sortable" id="id893">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#__new__">__new__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#connect">connect</a></code></td>
+    <td><span>Register a handler for a specific object.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#connect_after">connect_after</a></code></td>
+    <td><span>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#disconnect">disconnect</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#emit">emit</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#emit_return_first">emit_return_first</a></code></td>
+    <td><span>Emits a signal and stops emission on the first handler that returns a not-None value.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#emit_return_iter">emit_return_iter</a></code></td>
+    <td><span>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#block_signals">block_signals</a></code></td>
+    <td><span>Returns a context manager for blocking one or more signals</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#_connect">_connect</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#_setup_signal">_setup_signal</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#_teardown_signal">_teardown_signal</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code> (via <code><a href="zim.plugins.InsertedObjectTypeExtension.html">InsertedObjectTypeExtension</a></code>, <code><a href="zim.plugins.ExtensionBase.html">ExtensionBase</a></code>):
+          </p>
+          <table class="children sortable" id="id894">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#connectto">connectto</a></code></td>
+    <td><span>Connect to signals of another object E.g.:</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#connectto_all">connectto_all</a></code></td>
+    <td><span>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
+    <td><span>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_all">disconnect_all</a></code></td>
+    <td><span>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_disconnect_from">_disconnect_from</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.syntax">
+    
+  </a>
+  <a name="syntax">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">syntax</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L39">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.plugins.diagrameditor.BackwardDiagramImageObjectType.html">zim.plugins.diagrameditor.BackwardDiagramImageObjectType</a></code>, <code><a href="zim.plugins.ditaaeditor.BackwardDitaaImageObjectType.html">zim.plugins.ditaaeditor.BackwardDitaaImageObjectType</a></code>, <code><a href="zim.plugins.equationeditor.BackwardEquationImageObjectType.html">zim.plugins.equationeditor.BackwardEquationImageObjectType</a></code>, <code><a href="zim.plugins.gnu_r_ploteditor.BackwardGnuRPlotImageObjectType.html">zim.plugins.gnu_r_ploteditor.BackwardGnuRPlotImageObjectType</a></code>, <code><a href="zim.plugins.gnuplot_ploteditor.BackwardGnuplotImageObjectType.html">zim.plugins.gnuplot_ploteditor.BackwardGnuplotImageObjectType</a></code>, <code><a href="zim.plugins.scoreeditor.BackwardScoreImageObjectType.html">zim.plugins.scoreeditor.BackwardScoreImageObjectType</a></code>, <code><a href="zim.plugins.sequencediagrameditor.BackwardSequenceDiagramImageObjectType.html">zim.plugins.sequencediagrameditor.BackwardSequenceDiagramImageObjectType</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, plugin, objmap):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L41">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.plugins.InsertedObjectTypeExtension.html#__init__">zim.plugins.InsertedObjectTypeExtension.__init__</a></code></div>
+    
+    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">plugin</td><td>the plugin object to which this extension belongs</td></tr><tr><td></td><td class="fieldArg">objmap</td><td><span class="undocumented">Undocumented</span></td></tr><tr><td></td><td class="fieldArg">obj</td><td>the object being extended</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.generator_klass">
+    
+  </a>
+  <a name="generator_klass">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">generator_klass</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L44">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.new_model_interactive">
+    
+  </a>
+  <a name="new_model_interactive">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">new_model_interactive</span>(self, parent, notebook, page):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L50">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.insertedobjects.InsertedObjectType.html#new_model_interactive">zim.insertedobjects.InsertedObjectType.new_model_interactive</a></code></div>
+    
+    <div><p>Create a new object model interactively Interactive means that we can use e.g. a dialog to prompt for input. The default behavior is to use <code><a href="#new_object">new_object()</a></code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">parent</td><td>Gtk widget to use as parent widget for dialogs</td></tr><tr><td></td><td class="fieldArg">notebook</td><td>a <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object</td></tr><tr><td></td><td class="fieldArg">page</td><td>a <code><a href="zim.notebook.page.Page.html">Page</a></code> object for the page where this object occurs</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a model object (see <code><a href="#model_from_data">model_from_data()</a></code>)</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><span class="undocumented">Unknown exception</span></td><td>ValueError: if user cancelled the action</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.model_from_data">
+    
+  </a>
+  <a name="model_from_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">model_from_data</span>(self, notebook, page, attrib, data):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L56">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.insertedobjects.InsertedObjectType.html#model_from_data">zim.insertedobjects.InsertedObjectType.model_from_data</a></code></div><div class="interfaceinfo">overridden in <code><a href="zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType.html">zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType</a></code></div>
+    
+    <div><p>Returns a model for the object</p><p>The main purpose for the model is that it is shared between widgets that show the same object. See e.g. <code>Gtk.TextBuffer</code> or <code>Gtk.TreeModel</code> for examples.</p><p>No API is expected of the model object other than that it can be used as argument for <code><a href="#create_widget">create_widget()</a></code> and <code><a href="#data_from_model">data_from_model()</a></code> and a "changed" signal that should be emitted when the content has changed, so the pageview knows that the page has changed and should be saved before closing.</p><p>Since the model is specific for the page where the object occurs, any user of the object type should serialize back to data before e.g. copying the object to a different page.</p><p>This method should always be robust for missing attributes and body contents. The <code>attrib</code> will automatically be checked by <code><a href="#parse_attrib">parse_attrib</a></code> before being given to this method.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">notebook</td><td>a <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object</td></tr><tr><td></td><td class="fieldArg">page</td><td>a <code><a href="zim.notebook.page.Page.html">Page</a></code> object for the page where this object occurs</td></tr><tr><td></td><td class="fieldArg">attrib</td><td>dict with object attributes</td></tr><tr><td></td><td class="fieldArg">data</td><td>string with object content</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a model object</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.data_from_model">
+    
+  </a>
+  <a name="data_from_model">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">data_from_model</span>(self, model):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L60">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.insertedobjects.InsertedObjectType.html#data_from_model">zim.insertedobjects.InsertedObjectType.data_from_model</a></code></div>
+    
+    <div><p>Returns the object data for a model object This method is used to serialize the model object back into a form that can be handled when parsing wiki content.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">model</td><td>an object created with <code><a href="#model_from_data">model_from_data()</a></code></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a 2-tuple <code>(attrib, data)</code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.create_widget">
+    
+  </a>
+  <a name="create_widget">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">create_widget</span>(self, model):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L63">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.insertedobjects.InsertedObjectType.html#create_widget">zim.insertedobjects.InsertedObjectType.create_widget</a></code></div>
+    
+    <div><p>Return a Gtk widget for the given model</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">model</td><td>an object created with <code><a href="#model_from_data">model_from_data()</a></code></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a Gtk widget object derived from <code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html">InsertedObjectWidget</a></code></td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

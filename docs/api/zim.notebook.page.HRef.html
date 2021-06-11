@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.notebook.page.HRef : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.notebook.html">notebook</a></code>.<code><a href="zim.notebook.page.html">page</a></code>.<code><a href="zim.notebook.page.HRef.html">HRef</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">HRef</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L332">(source)</a></code></p>
+        <p><a href="classIndex.html#zim.notebook.page.HRef">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="undocumented">Undocumented</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id796">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#__slots__">__slots__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#new_from_wiki_link">new_from_wiki_link</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#rel">rel</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#names">names</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#anchor">anchor</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__str__">__str__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parts">parts</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#to_wiki_link">to_wiki_link</a></code></td>
+    <td><span>Returns href as text for wiki link</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="zim.notebook.page.HRef.__slots__">
+    
+  </a>
+  <a name="__slots__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__slots__</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L334">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, ...]</code>)
+  </div>
+</div><div class="baseclassmethod">
+  
+  <a name="zim.notebook.page.HRef.new_from_wiki_link">
+    
+  </a>
+  <a name="new_from_wiki_link">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">new_from_wiki_link</span>(klass, href):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L336">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Constructor that constructs a <code><a href="zim.notebook.page.HRef.html">HRef</a></code> object for a link as written in zim's wiki syntax.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">klass</td><td><span class="undocumented">Undocumented</span></td></tr><tr><td></td><td class="fieldArg">href</td><td>a string for the link</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.notebook.page.HRef.html">HRef</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></td><td>when the string could not be parsed (see <code><a href="zim.notebook.page.Path.html#makeValidPageName">Path.makeValidPageName()</a></code>)</td></tr><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">This method HRef class assumes the logic of our wiki links for other formats, a separate constructor may be needed</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.HRef.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, rel, names, anchor=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L363">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.notebook.page.HRef.rel">
+    
+  </a>
+  <a name="rel">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">rel</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L364">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.notebook.page.HRef.names">
+    
+  </a>
+  <a name="names">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">names</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L365">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.notebook.page.HRef.anchor">
+    
+  </a>
+  <a name="anchor">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">anchor</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L366">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.HRef.__str__">
+    
+  </a>
+  <a name="__str__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L368">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.HRef.parts">
+    
+  </a>
+  <a name="parts">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parts</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L372">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.HRef.to_wiki_link">
+    
+  </a>
+  <a name="to_wiki_link">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">to_wiki_link</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L375">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns href as text for wiki link</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

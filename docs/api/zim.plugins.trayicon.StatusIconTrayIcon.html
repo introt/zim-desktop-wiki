@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.plugins.trayicon.StatusIconTrayIcon : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code>.<code><a href="zim.plugins.trayicon.html">trayicon</a></code>.<code><a href="zim.plugins.trayicon.StatusIconTrayIcon.html">StatusIconTrayIcon</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">StatusIconTrayIcon</span>(<a href="zim.plugins.trayicon.TrayIconBase.html" title="zim.plugins.trayicon.TrayIconBase">TrayIconBase</a>, <span title="gi.repository.Gtk.StatusIcon">Gtk.StatusIcon</span>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/trayicon.py#L240">(source)</a></code></p>
+        <p><a href="classIndex.html#zim.plugins.trayicon.StatusIconTrayIcon">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Base class for a tray icon based on Gtk.StatusIcon</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1416">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#__gsignals__">__gsignals__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#do_activate">do_activate</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#do_popup_menu_notebooks">do_popup_menu_notebooks</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#do_popup_menu">do_popup_menu</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#destroy">destroy</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.plugins.trayicon.TrayIconBase.html">TrayIconBase</a></code>:
+          </p>
+          <table class="children sortable" id="id1417">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.trayicon.TrayIconBase.html#get_trayicon_menu">get_trayicon_menu</a></code></td>
+    <td><span>Returns the main 'tray icon menu</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.trayicon.TrayIconBase.html#list_open_notebooks">list_open_notebooks</a></code></td>
+    <td><span>Returns a list of open notebook.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.trayicon.TrayIconBase.html#list_all_notebooks">list_all_notebooks</a></code></td>
+    <td><span>Returns a list of all notebooks known in the current context</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.trayicon.TrayIconBase.html#populate_menu_with_notebooks">populate_menu_with_notebooks</a></code></td>
+    <td><span>Populate a menu with a list of notebooks</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.trayicon.TrayIconBase.html#do_activate_notebook">do_activate_notebook</a></code></td>
+    <td><span>Open a specific notebook.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.trayicon.TrayIconBase.html#do_quit">do_quit</a></code></td>
+    <td><span>Quit zim.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.trayicon.TrayIconBase.html#do_open_notebook">do_open_notebook</a></code></td>
+    <td><span>Opens the notebook dialogs</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.trayicon.TrayIconBase.html#do_quick_note">do_quick_note</a></code></td>
+    <td><span>Show the dialog from the quicknote plugin</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="zim.plugins.trayicon.StatusIconTrayIcon.__gsignals__">
+    
+  </a>
+  <a name="__gsignals__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__gsignals__</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/trayicon.py#L243">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.trayicon.StatusIconTrayIcon.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/trayicon.py#L247">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.trayicon.StatusIconTrayIcon.do_activate">
+    
+  </a>
+  <a name="do_activate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">do_activate</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/trayicon.py#L260">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.trayicon.StatusIconTrayIcon.do_popup_menu_notebooks">
+    
+  </a>
+  <a name="do_popup_menu_notebooks">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">do_popup_menu_notebooks</span>(self, list, button=1, activate_time=0):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/trayicon.py#L276">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.trayicon.StatusIconTrayIcon.do_popup_menu">
+    
+  </a>
+  <a name="do_popup_menu">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">do_popup_menu</span>(self, button=3, activate_time=0):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/trayicon.py#L282">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.trayicon.StatusIconTrayIcon.destroy">
+    
+  </a>
+  <a name="destroy">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">destroy</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/trayicon.py#L288">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

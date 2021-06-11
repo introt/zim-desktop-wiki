@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.parser : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.parser.html">parser</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Generic parser for wiki formats</p><p>This parser for wiki text (and similar formats) consists of two classes: the <code><a href="zim.parser.Rule.html">Rule</a></code> class which defines objects which specify a single parser rule, and the <code><a href="zim.parser.Parser.html">Parser</a></code> class which takes a number of rules and parses a piece of text accordingly. The parser just does a series of regex matches and calls a method on the specific rule objects to process the match. Recursion can be achieved by making the rules process with another <code><a href="zim.parser.Parser.html">Parser</a></code> object.</p><p>All rules have access to a <code><a href="zim.parser.Builder.html">Builder</a></code> object which is used to construct the resulting parse tree.</p><p>There are several limitation to this parser. Most importantly it does not have backtracking, so once a rule matches it is not allowed to fail. But since we are dealing with wiki input it is a good assumption that the parser should always result in a representation of the text, even if it is broken according to the grammar. So rules should be made robust when implementing a wiki parser.</p><p>Another limitation comes from the fact that we use regular expressions. There is a limit on the number of capturing groups you can have in a single regex (100 on my system), and since all rules in a set are compiled into one big expression this can become an issue for more complex parser implementations. However for a typical wiki implementation this should be sufficient.</p><p>Note that the regexes are compiles using the flags <code>re.U</code>, <code>re.M</code>, and <code>re.X</code>. This means any whitespace in the expression is ignored, and a literal space need to be written as "<code>\ </code>". In general you need to use the "r" string prefix to ensure those backslashes make it through to the final expression.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id803">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#fix_line_end">fix_line_end</a></code></td>
+    <td><span>Fixes missing line end @param text: the input text @returns: the fixed text</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#convert_space_to_tab">convert_space_to_tab</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.parser.Builder.html">Builder</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.parser.BuilderTextBuffer.html">BuilderTextBuffer</a></code></td>
+    <td><span>Wrapper that buffers text going to a <code><a href="zim.parser.Builder.html">Builder</a></code> object such that the last piece of text remains accessible for inspection and can be modified.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.parser.SimpleTreeElement.html">SimpleTreeElement</a></code></td>
+    <td><span class="undocumented">No class docstring; 0/1 class variables, 0/2 instance variables, 1/6 methods documented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.parser.SimpleTreeBuilder.html">SimpleTreeBuilder</a></code></td>
+    <td><span>Builder class that builds a tree of <code><a href="zim.parser.SimpleTreeElement.html">SimpleTreeElement</a></code>s</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.parser.ParserError.html">ParserError</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.parser.Rule.html">Rule</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.parser.Parser.html">Parser</a></code></td>
+    <td><span>Parser class that matches multiple rules at once. It will compile the patterns of various rules into a single regex and based on the match call the correct rules for processing.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_line_count">get_line_count</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="zim.parser.fix_line_end">
+    
+  </a>
+  <a name="fix_line_end">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">fix_line_end</span>(text):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L50">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Fixes missing line end</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">text</td><td>the input text</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">the fixed text</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.parser.convert_space_to_tab">
+    
+  </a>
+  <a name="convert_space_to_tab">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">convert_space_to_tab</span>(text, tabstop=4):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L67">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Convert spaces to tabs</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">text</td><td>the input text</td></tr><tr><td></td><td class="fieldArg">tabstop</td><td>the number of spaces to represent a tab</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">the fixed text</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.parser.get_line_count">
+    
+  </a>
+  <a name="get_line_count">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_line_count</span>(text, offset):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L479">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Helper function used to report line numbers for exceptions that happen during parsing.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">text</td><td>the text being parsed</td></tr><tr><td></td><td class="fieldArg">offset</td><td>character offset in this text</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a 2-tuple of the line and column that corresponds to this offset</td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.gui.mainwindow.PageWindow : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.mainwindow.html">mainwindow</a></code>.<code><a href="zim.gui.mainwindow.PageWindow.html">PageWindow</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">PageWindow</span>(<a href="zim.gui.mainwindow.WindowBaseMixin.html" title="zim.gui.mainwindow.WindowBaseMixin">WindowBaseMixin</a>, <a href="zim.gui.widgets.Window.html" title="zim.gui.widgets.Window">Window</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/mainwindow.py#L876">(source)</a></code></p>
+        <p><a href="classIndex.html#zim.gui.mainwindow.PageWindow">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Window to show a single page</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id314">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#__gsignals__">__gsignals__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#navigation">navigation</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#notebook">notebook</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#page">page</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#uistate">uistate</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#pageview">pageview</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#uimanager">uimanager</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_headerbar">_headerbar</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_populate_headerbar">_populate_headerbar</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_save_uistate">_save_uistate</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.gui.mainwindow.WindowBaseMixin.html">WindowBaseMixin</a></code>:
+          </p>
+          <table class="children sortable" id="id315">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.mainwindow.WindowBaseMixin.html#set_title">set_title</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.mainwindow.WindowBaseMixin.html#toggle_fullscreen">toggle_fullscreen</a></code></td>
+    <td><span>Menu action to toggle the fullscreen state of the window</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.mainwindow.WindowBaseMixin.html#toggle_editable">toggle_editable</a></code></td>
+    <td><span>Menu action to toggle the read-only state of the application @emits: readonly-changed</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.mainwindow.WindowBaseMixin.html#_init_fullscreen_headerbar">_init_fullscreen_headerbar</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.mainwindow.WindowBaseMixin.html#_in_fullscreen_eventbox">_in_fullscreen_eventbox</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.mainwindow.WindowBaseMixin.html#_fullscreen_eventbox">_fullscreen_eventbox</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.mainwindow.WindowBaseMixin.html#_fullscreen_revealer">_fullscreen_revealer</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.mainwindow.WindowBaseMixin.html#_fullscreen_headerbar">_fullscreen_headerbar</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.mainwindow.WindowBaseMixin.html#_on_fullscreen_eventbox_enter">_on_fullscreen_eventbox_enter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.mainwindow.WindowBaseMixin.html#_on_fullscreen_eventbox_leave">_on_fullscreen_eventbox_leave</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.mainwindow.WindowBaseMixin.html#_update_fullscreen_revealer">_update_fullscreen_revealer</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.mainwindow.WindowBaseMixin.html#_populate_headerbars">_populate_headerbars</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.mainwindow.WindowBaseMixin.html#_style_toggle_editable_button">_style_toggle_editable_button</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.gui.widgets.Window.html">Window</a></code>:
+          </p>
+          <table class="children sortable" id="id316">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#add">add</a></code></td>
+    <td><span>Add the main widget. @param widget: gtk widget to add in the window</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#add_bar">add_bar</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#add_center_bar">add_center_bar</a></code></td>
+    <td><span>Add a widget in the central part of the window above the page. @param widget: the gtk widget to show in the tab</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#move_bottom_minimized_tabs_to_statusbar">move_bottom_minimized_tabs_to_statusbar</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#add_tab">add_tab</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#remove">remove</a></code></td>
+    <td><span>Remove widget from any pane @param widget: the widget to remove</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#init_uistate">init_uistate</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#save_uistate">save_uistate</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#get_pane_state">get_pane_state</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#set_pane_state">set_pane_state</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#toggle_panes">toggle_panes</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#show_all_panes">show_all_panes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#get_visible_panes">get_visible_panes</a></code></td>
+    <td><span>Returns a list of panes that are visible</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#get_used_panes">get_used_panes</a></code></td>
+    <td><span>Returns a list of panes that are in use (i.e. not empty)</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#do_set_focus">do_set_focus</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#focus_sidepane">focus_sidepane</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#focus_last_focussed_sidepane">focus_last_focussed_sidepane</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#pack_start">pack_start</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#show">show</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#show_all">show_all</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#present">present</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_registered">_registered</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_last_sidepane_focus">_last_sidepane_focus</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_zim_window_overlay">_zim_window_overlay</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_zim_window_main">_zim_window_main</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_zim_window_central_hbox">_zim_window_central_hbox</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_zim_window_left_paned">_zim_window_left_paned</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_zim_window_right_paned">_zim_window_right_paned</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_zim_window_central_vbox">_zim_window_central_vbox</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_zim_window_top_paned">_zim_window_top_paned</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_zim_window_bottom_paned">_zim_window_bottom_paned</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_zim_window_left_pane">_zim_window_left_pane</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_zim_window_right_pane">_zim_window_right_pane</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_zim_window_top_pane">_zim_window_top_pane</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_zim_window_bottom_pane">_zim_window_bottom_pane</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_zim_window_left_minimized">_zim_window_left_minimized</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_zim_window_right_minimized">_zim_window_right_minimized</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_zim_window_top_minimized">_zim_window_top_minimized</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_zim_window_bottom_minimized">_zim_window_bottom_minimized</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_zim_window_sidepanes">_zim_window_sidepanes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_get_pane_ordering">_get_pane_ordering</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_set_pane_ordering">_set_pane_ordering</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Window.html#_panes">_panes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="zim.gui.mainwindow.PageWindow.__gsignals__">
+    
+  </a>
+  <a name="__gsignals__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__gsignals__</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/mainwindow.py#L880">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.gui.widgets.Window.html#__gsignals__">zim.gui.widgets.Window.__gsignals__</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.mainwindow.PageWindow.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, notebook, page, anchor, navigation, editable=True):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/mainwindow.py#L884">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.gui.widgets.Window.html#__init__">zim.gui.widgets.Window.__init__</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.gui.mainwindow.PageWindow.navigation">
+    
+  </a>
+  <a name="navigation">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">navigation</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/mainwindow.py#L886">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.gui.mainwindow.PageWindow.notebook">
+    
+  </a>
+  <a name="notebook">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">notebook</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/mainwindow.py#L887">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.gui.mainwindow.PageWindow._headerbar">
+    
+  </a>
+  <a name="_headerbar">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_headerbar</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/mainwindow.py#L889">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.gui.mainwindow.PageWindow.page">
+    
+  </a>
+  <a name="page">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">page</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/mainwindow.py#L904">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.gui.mainwindow.PageWindow.uistate">
+    
+  </a>
+  <a name="uistate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">uistate</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/mainwindow.py#L906">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.gui.mainwindow.PageWindow.pageview">
+    
+  </a>
+  <a name="pageview">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pageview</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/mainwindow.py#L911">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.gui.mainwindow.PageWindow.uimanager">
+    
+  </a>
+  <a name="uimanager">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">uimanager</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/mainwindow.py#L917">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.gui.mainwindow.PageWindow._populate_headerbar">
+    
+  </a>
+  <a name="_populate_headerbar">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_populate_headerbar</span>(self, headerbar):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/mainwindow.py#L953">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.gui.mainwindow.PageWindow._save_uistate">
+    
+  </a>
+  <a name="_save_uistate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_save_uistate</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/mainwindow.py#L961">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

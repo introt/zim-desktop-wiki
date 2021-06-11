@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.plugins.tasklist.dates : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code>.<code><a href="zim.plugins.tasklist.html">tasklist</a></code>.<code><a href="zim.plugins.tasklist.dates.html">dates</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/dates.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Functions to match and parse dates in wiki pages</p><p>The following unambigous date forms are supported: * Day by date using: yyyy-mm-dd  for example 2017-02-16 * Month using: yyyy-mm for example 2017-02 * Week using: (yy)yyWww or (yy)yy-Www, for example 2017W07, 17W07 or 17-W07 * Day by week using  (yy)yyWww(D) or (yy)yy-Www(-D) for example 17-W07-2 for Tuesday * Week and day by week notation can also use Wkyyww(.D) for example wk1707</p><p>To avoid confusion between mm/dd, dd/mm and yy-mm notations neither of these is supported and the year should always be given in 4 digits.</p><p>When the year is shortened to two digits ("yy") it is always prefixed by "20", so "01" becomes 2001 and "99" becomes 2099. For years starting with 19 (or any other century) the ful four digit year needs to be used.</p><p>Notation is based on https://en.wikipedia.org/wiki/ISO_8601. Truncating the year is not supported except for the week notation and separators ("-") are required to avoid matching random other numbers. The "Wkyyww" notation is supported as non-standard alternative.</p><p>Weeknumbers follow the iso calendar. However depending on locale Sunday can either be the first day of the starting week or the last day of the ending week. In the weekday notation this is made explicit by using "0" for sunday at the start of the week and "7" for sunday at the end of the week. Thus the dates "W1707.7" and "W1708.0" are the same day.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1358">
+  
+  <tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#date_re">date_re</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#parse_date">parse_date</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.plugins.tasklist.dates.DateRange.html">DateRange</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.plugins.tasklist.dates.Day.html">Day</a></code></td>
+    <td><span class="undocumented">No class docstring; 0/1 class methods, 2/2 methods, 0/2 propertys documented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.plugins.tasklist.dates.Week.html">Week</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.plugins.tasklist.dates.Month.html">Month</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  <a name="zim.plugins.tasklist.dates.date_re">
+    
+  </a>
+  <a name="date_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">date_re</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/dates.py#L45">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.plugins.tasklist.dates.parse_date">
+    
+  </a>
+  <a name="parse_date">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse_date</span>(date):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/dates.py#L55">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

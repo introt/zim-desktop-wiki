@@ -1,0 +1,824 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.newfs.mock.MockFile : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.newfs.html">newfs</a></code>.<code><a href="zim.newfs.mock.html">mock</a></code>.<code><a href="zim.newfs.mock.MockFile.html">MockFile</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">MockFile</span>(<a href="zim.newfs.mock.MockFSObjectBase.html" title="zim.newfs.mock.MockFSObjectBase">MockFSObjectBase</a>, <a href="zim.newfs.base.File.html" title="zim.newfs.base.File">File</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/mock.py#L375">(source)</a></code></p>
+        <p><a href="classIndex.html#zim.newfs.mock.MockFile">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="undocumented">Undocumented</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id673">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#endofline">endofline</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#size">size</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#read_binary">read_binary</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#read">read</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#readline">readline</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#readlines">readlines</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#write_binary">write_binary</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#write">write</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#writelines">writelines</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_mimetype">_mimetype</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_node">_node</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.newfs.mock.MockFSObjectBase.html">MockFSObjectBase</a></code>:
+          </p>
+          <table class="children sortable" id="id674">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.mock.MockFSObjectBase.html#__eq__">__eq__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.mock.MockFSObjectBase.html#parent">parent</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.mock.MockFSObjectBase.html#exists">exists</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.mock.MockFSObjectBase.html#iswritable">iswritable</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.mock.MockFSObjectBase.html#isequal">isequal</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.mock.MockFSObjectBase.html#ctime">ctime</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.mock.MockFSObjectBase.html#mtime">mtime</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.mock.MockFSObjectBase.html#moveto">moveto</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.mock.MockFSObjectBase.html#copyto">copyto</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.mock.MockFSObjectBase.html#remove">remove</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.newfs.mock.MockFSObjectBase.html#_fs">_fs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.mock.MockFSObjectBase.html#_set_mtime">_set_mtime</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.mock.MockFSObjectBase.html#_mock_copyto">_mock_copyto</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.mock.MockFSObjectBase.html#_remove">_remove</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.newfs.base.FSObjectBase.html">FSObjectBase</a></code> (via <code><a href="zim.newfs.mock.MockFSObjectBase.html">MockFSObjectBase</a></code>):
+          </p>
+          <table class="children sortable" id="id675">
+  
+  <tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#watcher">watcher</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#touch">touch</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#_moveto">_moveto</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#_cleanup">_cleanup</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.newfs.base.FilePath.html">FilePath</a></code> (via <code><a href="zim.newfs.mock.MockFSObjectBase.html">MockFSObjectBase</a></code>, <code><a href="zim.newfs.base.FSObjectBase.html">FSObjectBase</a></code>):
+          </p>
+          <table class="children sortable" id="id676">
+  
+  <tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#__slots__">__slots__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#pathnames">pathnames</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#path">path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#islocal">islocal</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#__str__">__str__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#serialize_zim_config">serialize_zim_config</a></code></td>
+    <td><span>Returns the file path as string for serializing the object</span></td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#new_from_zim_config">new_from_zim_config</a></code></td>
+    <td><span>Returns a new object based on the string representation for that path</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#uri">uri</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#basename">basename</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#dirname">dirname</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#userpath">userpath</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#get_childpath">get_childpath</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#get_abspath">get_abspath</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#ischild">ischild</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#relpath">relpath</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#commonparent">commonparent</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.newfs.base.File.html">File</a></code>:
+          </p>
+          <table class="children sortable" id="id677">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.File.html#__iter__">__iter__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.File.html#isimage">isimage</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.File.html#mimetype">mimetype</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.File.html#touch">touch</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.File.html#read_with_etag">read_with_etag</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.File.html#readlines_with_etag">readlines_with_etag</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.File.html#write_with_etag">write_with_etag</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.File.html#writelines_with_etag">writelines_with_etag</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.File.html#verify_etag">verify_etag</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.File.html#_write_decoration">_write_decoration</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.File.html#_read_with_etag">_read_with_etag</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.File.html#_write_with_etag">_write_with_etag</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.File.html#_copyto">_copyto</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.newfs.base.FSObjectBase.html">FSObjectBase</a></code> (via <code><a href="zim.newfs.base.File.html">File</a></code>):
+          </p>
+          <table class="children sortable" id="id678">
+  
+  <tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#watcher">watcher</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#isequal">isequal</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#parent">parent</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#ctime">ctime</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#mtime">mtime</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#exists">exists</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#iswritable">iswritable</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#moveto">moveto</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#copyto">copyto</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#remove">remove</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#_set_mtime">_set_mtime</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#_moveto">_moveto</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#_cleanup">_cleanup</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.newfs.base.FilePath.html">FilePath</a></code> (via <code><a href="zim.newfs.base.File.html">File</a></code>, <code><a href="zim.newfs.base.FSObjectBase.html">FSObjectBase</a></code>):
+          </p>
+          <table class="children sortable" id="id679">
+  
+  <tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#__slots__">__slots__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#pathnames">pathnames</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#path">path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#islocal">islocal</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#__str__">__str__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#__eq__">__eq__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#serialize_zim_config">serialize_zim_config</a></code></td>
+    <td><span>Returns the file path as string for serializing the object</span></td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#new_from_zim_config">new_from_zim_config</a></code></td>
+    <td><span>Returns a new object based on the string representation for that path</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#uri">uri</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#basename">basename</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#dirname">dirname</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#userpath">userpath</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#get_childpath">get_childpath</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#get_abspath">get_abspath</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#ischild">ischild</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#relpath">relpath</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#commonparent">commonparent</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="zim.newfs.mock.MockFile.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, path, endofline=_EOL, watcher=None, _fs=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/mock.py#L377">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.newfs.mock.MockFSObjectBase.html#__init__">zim.newfs.mock.MockFSObjectBase.__init__</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.newfs.mock.MockFile._mimetype">
+    
+  </a>
+  <a name="_mimetype">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_mimetype</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/mock.py#L380">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.newfs.base.File.html#_mimetype">zim.newfs.base.File._mimetype</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.newfs.mock.MockFile.endofline">
+    
+  </a>
+  <a name="endofline">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">endofline</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/mock.py#L381">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.newfs.mock.MockFile._node">
+    
+  </a>
+  <a name="_node">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_node</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/mock.py#L383">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.newfs.mock.MockFSObjectBase.html#_node">zim.newfs.mock.MockFSObjectBase._node</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.newfs.mock.MockFile.size">
+    
+  </a>
+  <a name="size">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">size</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/mock.py#L389">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.newfs.base.File.html#size">zim.newfs.base.File.size</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.newfs.mock.MockFile.read_binary">
+    
+  </a>
+  <a name="read_binary">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">read_binary</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/mock.py#L392">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.newfs.base.File.html#read_binary">zim.newfs.base.File.read_binary</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.newfs.mock.MockFile.read">
+    
+  </a>
+  <a name="read">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">read</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/mock.py#L395">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.newfs.base.File.html#read">zim.newfs.base.File.read</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.newfs.mock.MockFile.readline">
+    
+  </a>
+  <a name="readline">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">readline</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/mock.py#L398">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.newfs.base.File.html#readline">zim.newfs.base.File.readline</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.newfs.mock.MockFile.readlines">
+    
+  </a>
+  <a name="readlines">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">readlines</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/mock.py#L401">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.newfs.base.File.html#readlines">zim.newfs.base.File.readlines</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.newfs.mock.MockFile.write_binary">
+    
+  </a>
+  <a name="write_binary">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">write_binary</span>(self, data):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/mock.py#L404">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.newfs.base.File.html#write_binary">zim.newfs.base.File.write_binary</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.newfs.mock.MockFile.write">
+    
+  </a>
+  <a name="write">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">write</span>(self, text):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/mock.py#L416">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.newfs.base.File.html#write">zim.newfs.base.File.write</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.newfs.mock.MockFile.writelines">
+    
+  </a>
+  <a name="writelines">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">writelines</span>(self, lines):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/mock.py#L420">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.newfs.base.File.html#writelines">zim.newfs.base.File.writelines</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

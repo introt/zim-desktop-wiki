@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.gui.notebookdialog.NotebookTreeModel : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.notebookdialog.html">notebookdialog</a></code>.<code><a href="zim.gui.notebookdialog.NotebookTreeModel.html">NotebookTreeModel</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">NotebookTreeModel</span>(<span title="gi.repository.Gtk.ListStore">Gtk.ListStore</span>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/notebookdialog.py#L74">(source)</a></code></p>
+        <p><a href="classIndex.html#zim.gui.notebookdialog.NotebookTreeModel">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>TreeModel that wraps a notebook list</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">To refer to the notebook in an unambiguous way, use the uri stored in the <code><a href="zim.notebook.info.NotebookInfo.html">NotebookInfo</a></code> object.</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: column</td><td colspan="2"><code>OPEN_COL</code>: boolean, True if the notebook is opened already</td></tr><tr><td></td><td colspan="2"><code>NAME_COL</code>: string, name of the notebook</td></tr><tr><td></td><td colspan="2"><code>TEXT_COL</code>: string, formatted string containg the name and path</td></tr><tr><td></td><td colspan="2"><code>PIXBUF_COL</code>: GdkPixbuf.Pixbuf, the icon of the notebook (if any)</td></tr><tr><td></td><td colspan="2"><code>INFO_COL</code>: <code><a href="zim.notebook.info.NotebookInfo.html">NotebookInfo</a></code> object</td></tr></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id323">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Constructor. If "notebooklist" is None, the default list as provided by zim.notebook.get_notebook_list() is used.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#notebooklist">notebooklist</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_iter_for_notebook">get_iter_for_notebook</a></code></td>
+    <td><span>Returns the TreeIter for a notebook path or None</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#append_notebook">append_notebook</a></code></td>
+    <td><span>Append a notebook to the list. If the name is not specified it will be looked up by reading the config file of the notebook. Returns an iter for this notebook in the list.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_iter_for_default">get_iter_for_default</a></code></td>
+    <td><span>Returns a TreeIter for the default notebook or None</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_default_from_iter">set_default_from_iter</a></code></td>
+    <td><span>Set the default notebook using a TreeIter, set to None to reset the default.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#write">write</a></code></td>
+    <td><span>Save the notebook list.</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_loading">_loading</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_append">_append</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="zim.gui.notebookdialog.NotebookTreeModel.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, notebooklist=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/notebookdialog.py#L87">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Constructor. If "notebooklist" is None, the default list as provided by zim.notebook.get_notebook_list() is used.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">notebooklist</td><td>a list of <code><a href="zim.notebook.info.NotebookInfo.html">NotebookInfo</a></code> objects</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.gui.notebookdialog.NotebookTreeModel.notebooklist">
+    
+  </a>
+  <a name="notebooklist">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">notebooklist</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/notebookdialog.py#L97">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.gui.notebookdialog.NotebookTreeModel._loading">
+    
+  </a>
+  <a name="_loading">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_loading</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/notebookdialog.py#L101">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.notebookdialog.NotebookTreeModel.get_iter_for_notebook">
+    
+  </a>
+  <a name="get_iter_for_notebook">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_iter_for_notebook</span>(self, uri):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/notebookdialog.py#L106">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns the TreeIter for a notebook path or None</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.notebookdialog.NotebookTreeModel.append_notebook">
+    
+  </a>
+  <a name="append_notebook">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">append_notebook</span>(self, uri, name=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/notebookdialog.py#L115">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Append a notebook to the list. If the name is not specified it will be looked up by reading the config file of the notebook. Returns an iter for this notebook in the list.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.gui.notebookdialog.NotebookTreeModel._append">
+    
+  </a>
+  <a name="_append">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_append</span>(self, info):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/notebookdialog.py#L127">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.notebookdialog.NotebookTreeModel.get_iter_for_default">
+    
+  </a>
+  <a name="get_iter_for_default">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_iter_for_default</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/notebookdialog.py#L142">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a TreeIter for the default notebook or None</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.notebookdialog.NotebookTreeModel.set_default_from_iter">
+    
+  </a>
+  <a name="set_default_from_iter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_default_from_iter</span>(self, iter):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/notebookdialog.py#L149">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set the default notebook using a TreeIter, set to None to reset the default.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.notebookdialog.NotebookTreeModel.write">
+    
+  </a>
+  <a name="write">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">write</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/notebookdialog.py#L159">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Save the notebook list.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

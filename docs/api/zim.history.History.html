@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.history.History : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.history.html">history</a></code>.<code><a href="zim.history.History.html">History</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">History</span>(<a href="zim.signals.SignalEmitter.html" title="zim.signals.SignalEmitter">SignalEmitter</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L82">(source)</a></code></p>
+        <p><a href="classIndex.html#zim.history.History">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>History class, keeps track of a list of <code><a href="zim.history.HistoryPath.html">HistoryPath</a></code> objects. Also has a 'current' page which should match the current page in the interface. The current page normally is the latest page in the list, but when the user navigates back in the history it can be another position.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Unknown Field: signal</td><td colspan="2"><code>changed ()</code>: emitted when the path list changed</td></tr></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id549">
+  
+  <tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#notebook">notebook</a></code></td>
+    <td><span>the <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code></span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#uistate">uistate</a></code></td>
+    <td><span>the <code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code> used to store the history</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#__signals__">__signals__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#append">append</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_current">get_current</a></code></td>
+    <td><span>Get current path @returns: a <code><a href="zim.history.HistoryPath.html">HistoryPath</a></code> object</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_current">set_current</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_previous">get_previous</a></code></td>
+    <td><span>Get the previous path @returns: a <code><a href="zim.history.HistoryPath.html">HistoryPath</a></code> object or <code>None</code> if current is already the first path in the list</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_next">get_next</a></code></td>
+    <td><span>Get the next path @returns: a <code><a href="zim.history.HistoryPath.html">HistoryPath</a></code> object or <code>None</code> if current is already the last path in the list</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_child">get_child</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_grandchild">get_grandchild</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_state">set_state</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_state">get_state</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_history">get_history</a></code></td>
+    <td><span>Generator function that yields history records, latest first @returns: yields <code><a href="zim.history.HistoryPath.html">HistoryPath</a></code> objects</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_recent">get_recent</a></code></td>
+    <td><span>Generator function that yields recent pages @returns: yields <code><a href="zim.history.RecentPath.html">RecentPath</a></code> objects</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_current">_current</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property private">
+    
+    <td>Property</td>
+    <td><code><a href="#_history">_history</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property private">
+    
+    <td>Property</td>
+    <td><code><a href="#_recent">_recent</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_on_page_deleted">_on_page_deleted</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_on_page_moved">_on_page_moved</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_update_recent">_update_recent</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.signals.SignalEmitter.html">SignalEmitter</a></code>:
+          </p>
+          <table class="children sortable" id="id550">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#__new__">__new__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#connect">connect</a></code></td>
+    <td><span>Register a handler for a specific object.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#connect_after">connect_after</a></code></td>
+    <td><span>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#disconnect">disconnect</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#emit">emit</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#emit_return_first">emit_return_first</a></code></td>
+    <td><span>Emits a signal and stops emission on the first handler that returns a not-None value.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#emit_return_iter">emit_return_iter</a></code></td>
+    <td><span>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#block_signals">block_signals</a></code></td>
+    <td><span>Returns a context manager for blocking one or more signals</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#_connect">_connect</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#_setup_signal">_setup_signal</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#_teardown_signal">_teardown_signal</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseinstancevariable">
+  
+  <a name="zim.history.History.notebook">
+    
+  </a>
+  <a name="notebook">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">notebook</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L89">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>the <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.history.History.uistate">
+    
+  </a>
+  <a name="uistate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">uistate</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L90">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>the <code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code> used to store the history</div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="zim.history.History.__signals__">
+    
+  </a>
+  <a name="__signals__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__signals__</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L118">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.signals.SignalEmitter.html#__signals__">zim.signals.SignalEmitter.__signals__</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.history.History.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, notebook, uistate=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L122">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">notebook</td><td>a <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object</td></tr><tr><td></td><td class="fieldArg">uistate</td><td><code><a href="zim.config.dicts.SectionedConfigDict.html">SectionedConfigDict</a></code> to store the history (history will use the 'History' section in ConfigDict)</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.history.History._current">
+    
+  </a>
+  <a name="_current">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_current</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L145">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseproperty private">
+  
+  <a name="zim.history.History._history">
+    
+  </a>
+  <a name="_history">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">_history</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L166">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseproperty private">
+  
+  <a name="zim.history.History._recent">
+    
+  </a>
+  <a name="_recent">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">_recent</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L170">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.history.History._on_page_deleted">
+    
+  </a>
+  <a name="_on_page_deleted">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_on_page_deleted</span>(self, nb, page):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L174">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.history.History._on_page_moved">
+    
+  </a>
+  <a name="_on_page_moved">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_on_page_moved</span>(self, nb, oldpath, newpath):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L186">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.history.History.append">
+    
+  </a>
+  <a name="append">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">append</span>(self, path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L202">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Append a new page to the history. Will drop the forward stack and make this page the latest page.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td><code><a href="zim.notebook.page.Path.html">Path</a></code> for the current page</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: emits</td><td colspan="2">changed</td></tr></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.history.History._update_recent">
+    
+  </a>
+  <a name="_update_recent">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_recent</span>(self, path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L230">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.history.History.get_current">
+    
+  </a>
+  <a name="get_current">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_current</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L244">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get current path</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.history.HistoryPath.html">HistoryPath</a></code> object</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.history.History.set_current">
+    
+  </a>
+  <a name="set_current">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_current</span>(self, path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L253">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set current path (changes the pointer, does not change the list of pages)</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a <code><a href="zim.history.HistoryPath.html">HistoryPath</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></td><td>when the path is not in the history list</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.history.History.get_previous">
+    
+  </a>
+  <a name="get_previous">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_previous</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L266">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get the previous path</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.history.HistoryPath.html">HistoryPath</a></code> object or <code>None</code> if current is already the first path in the list</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.history.History.get_next">
+    
+  </a>
+  <a name="get_next">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_next</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L276">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get the next path</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.history.HistoryPath.html">HistoryPath</a></code> object or <code>None</code> if current is already the last path in the list</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.history.History.get_child">
+    
+  </a>
+  <a name="get_child">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_child</span>(self, path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L286">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get the most recent path that is a direct child of the given path. If there is a recent grand-child of the given path in the history, that will be used as a bases to get a new <code><a href="zim.notebook.page.Path.html">Path</a></code> object. Used by the keybinding for navigating to child pages.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a <code><a href="zim.notebook.page.Path.html">Path</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.history.HistoryPath.html">HistoryPath</a></code> or <code><a href="zim.notebook.page.Path.html">Path</a></code> object or <code>None</code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.history.History.get_grandchild">
+    
+  </a>
+  <a name="get_grandchild">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_grandchild</span>(self, path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L307">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get the deepest nested grand-child of a given path. Used for the 'namespace' pathbar to keep showing child pages when the user navigates up.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a <code><a href="zim.notebook.page.Path.html">Path</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.history.HistoryPath.html">HistoryPath</a></code> object or <code>None</code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.history.History.set_state">
+    
+  </a>
+  <a name="set_state">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_state</span>(self, path, cursor, scroll):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L325">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Looks through the history and recent pages to set the last known cursor position for a page.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a <code><a href="zim.notebook.page.Path.html">Path</a></code> object</td></tr><tr><td></td><td class="fieldArg">cursor</td><td>cursor position</td></tr><tr><td></td><td class="fieldArg">scroll</td><td>scroll position</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.history.History.get_state">
+    
+  </a>
+  <a name="get_state">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_state</span>(self, path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L338">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Looks through the history and recent pages to the last known cursor position for a page.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a <code><a href="zim.notebook.page.Path.html">Path</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a tuple of cursor and scroll position for <code>path</code> or <code>(None, None)</code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.history.History.get_history">
+    
+  </a>
+  <a name="get_history">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_history</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L353">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Generator function that yields history records, latest first</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">yields <code><a href="zim.history.HistoryPath.html">HistoryPath</a></code> objects</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.history.History.get_recent">
+    
+  </a>
+  <a name="get_recent">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_recent</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/history.py#L361">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Generator function that yields recent pages</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">yields <code><a href="zim.history.RecentPath.html">RecentPath</a></code> objects</td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

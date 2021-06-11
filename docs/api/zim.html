@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="package"><code><code><a href="zim.html">zim</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        package documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/__init__.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>This is the development documentation of zim.</p><p><b>NOTE:</b> There is also some generic development documentation in the "CONTRIBUTING.md" file in the source distribution. Please also have a look at that if you want to help with zim development.</p><p>In this API documentation many of the methods with names starting with <code>do_</code> and <code>on_</code> are not documented. The reason is that these are signal handlers that are not part of the external API. They act upon a signal but should never be called directly by other objects.</p><h1>Overview</h1><p>The script <code>zim.py</code> is a thin wrapper around the <code>main()</code> function defined in <code><a href="zim.main.html">zim.main</a></code>. This main function constructs a <code>Command</code> object that implements a specific commandline command. The <code>Command</code> object then either connects to a running instance of zim, or executes the application.</p><p>To execute the application, the command typically constructs a <code>Notebook</code> and depending on the command the graphical interface is constructed, a webserver is started or some other action is executed on the notebook.</p><p>The <code>Notebook</code> object is found in <code><a href="zim.notebook.html">zim.notebook</a></code> and implements the API for accessing and storing pages, attachments and other data in the notebook folder.</p><p>The notebook works together with an <code>Index</code> object which keeps a SQLite database of all the pages to speed up notebook access and allows to e.g. show a list of pages in the side pane of the user interface.</p><p>Another aspect of the notebook is the parsing of the wiki text in the pages such that it can be shown in the interface or exported to another format. See <code><a href="zim.formats.html">zim.formats</a></code> for implementations of different parsers.</p><p>All classes related to configuration are located in <code><a href="zim.config.html">zim.config</a></code>. The <code>ConfigManager</code> handles looking up config files and provides them for all components.</p><p>Plugins are defined as sub-modules of <code><a href="zim.plugins.html">zim.plugins</a></code>. The <code>PluginManager</code> manages the plugins that are loaded and objects that can be extended by plugins.</p><p>The graphical user interface is implemented in the <code><a href="zim.gui.html">zim.gui</a></code> module and it's sub-modules. The webinterface is implemented in <code><a href="zim.www.html">zim.www</a></code>.</p><p>Functionality for exporting content is implemented in <code>zim.exporter</code>. And search functionality can be found in <code><a href="zim.search.html">zim.search</a></code>.</p><p>Many classes in zim have signals which allow other objects to connect to a listen for specific events. This allows for an event driven chain of control, which is mainly used in the graphical interface, but is also used elsewhere. If you are not familiar with event driven programs please refer to a Gtk manual.</p><h2>Infrastructure classes</h2><p>All functions and objects to interact with the file system can be found in <code><a href="zim.fs.html">zim.fs</a></code>.</p><p>For executing external applications see <code><a href="zim.applications.html">zim.applications</a></code> or <code><a href="zim.gui.applications.html">zim.gui.applications</a></code>.</p><p>Some generic base classes and functions can be found in <code><a href="zim.utils.html">zim.utils</a></code></p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Unknown Field: newfield</td><td class="fieldArg">signal</td><td>Signal, Signals</td></tr><tr><td></td><td class="fieldArg">emits</td><td>Emits, Emits</td></tr><tr><td></td><td class="fieldArg">implementation</td><td>Implementation</td></tr></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1">
+  
+  <tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.actions.html">actions</a></code></td>
+    <td><span>Action interface classes.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.applications.html">applications</a></code></td>
+    <td><span>This module contains helper classes for running external applications.</span></td>
+  </tr><tr class="package">
+    
+    <td>Package</td>
+    <td><code><a href="zim.config.html">config</a></code></td>
+    <td><span class="undocumented">No package docstring; 2/3 modules documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.datetimetz.html">datetimetz</a></code></td>
+    <td><span>Thin wrapper for 'datetime' module from the standard library. Provides timezone info for the local time. Based on example code from standard library datetime documentation.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.errors.html">errors</a></code></td>
+    <td><span>This module contains the base class for all errors in zim</span></td>
+  </tr><tr class="package">
+    
+    <td>Package</td>
+    <td><code><a href="zim.export.html">export</a></code></td>
+    <td><span>This module contains the framework for exporting data from zim.</span></td>
+  </tr><tr class="package">
+    
+    <td>Package</td>
+    <td><code><a href="zim.formats.html">formats</a></code></td>
+    <td><span>Package with source formats for pages.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.fs.html">fs</a></code></td>
+    <td><span>Module with basic filesystem objects.</span></td>
+  </tr><tr class="package">
+    
+    <td>Package</td>
+    <td><code><a href="zim.gui.html">gui</a></code></td>
+    <td><span class="undocumented">No package docstring; 6/18 modules, 0/1 packages documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.history.html">history</a></code></td>
+    <td><span>This module implements the history for navigating pages in the notebook.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.import_files.html">import_files</a></code></td>
+    <td><span class="undocumented">No module docstring; 2/2 functions, 0/1 variables documented</span></td>
+  </tr><tr class="package">
+    
+    <td>Package</td>
+    <td><code><a href="zim.inc.html">inc</a></code></td>
+    <td><span>This package contains third party libraries to be packaged with zim. See the respective files for the copyright and license notices.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.insertedobjects.html">insertedobjects</a></code></td>
+    <td><span class="undocumented">No module docstring; 1/1 classes documented</span></td>
+  </tr><tr class="package">
+    
+    <td>Package</td>
+    <td><code><a href="zim.main.html">main</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="package">
+    
+    <td>Package</td>
+    <td><code><a href="zim.newfs.html">newfs</a></code></td>
+    <td><span>Module which contains all classes to deal with the filesystem</span></td>
+  </tr><tr class="package">
+    
+    <td>Package</td>
+    <td><code><a href="zim.notebook.html">notebook</a></code></td>
+    <td><span>This module contains the main Notebook class and related classes.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.parser.html">parser</a></code></td>
+    <td><span>Generic parser for wiki formats</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.parsing.html">parsing</a></code></td>
+    <td><span>This module contains utilities for parsing strings and text</span></td>
+  </tr><tr class="package">
+    
+    <td>Package</td>
+    <td><code><a href="zim.plugins.html">plugins</a></code></td>
+    <td><span>API documentation of the zim plugin framework.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.search.html">search</a></code></td>
+    <td><span>This module contains the logic for searching in a notebook.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.signals.html">signals</a></code></td>
+    <td><span class="undocumented">No module docstring; 5/9 classes, 1/2 functions, 0/6 variables documented</span></td>
+  </tr><tr class="package">
+    
+    <td>Package</td>
+    <td><code><a href="zim.templates.html">templates</a></code></td>
+    <td><span class="undocumented">No package docstring; 5/5 modules documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.tokenparser.html">tokenparser</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.utils.html">utils</a></code></td>
+    <td><span>Module with assorted useful classes and functions used in the zim code</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.www.html">www</a></code></td>
+    <td><span>This module contains a web interface for zim. This is an alternative to the GUI application.</span></td>
+  </tr>
+</table>
+        
+
+          <p class="fromInitPy">From the <code>__init__.py</code> module:</p><table class="children sortable" id="id2">
+  
+  <tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="zim.html#ZIM_EXECUTABLE">ZIM_EXECUTABLE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="zim.html#__author__">__author__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="zim.html#__copyright__">__copyright__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="zim.html#__license__">__license__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="zim.html#__url__">__url__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="zim.html#__version__">__version__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="zim.html#debug_log_file">debug_log_file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="zim.html#logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="zim.html#trans">trans</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="zim.html#_enc">_enc</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="zim.html#_lang">_lang</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="zim.html#_localedir">_localedir</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="zim.html#_pref_enc">_pref_enc</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  <a name="zim.__version__">
+    
+  </a>
+  <a name="__version__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__version__</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/__init__.py#L96">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.__url__">
+    
+  </a>
+  <a name="__url__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__url__</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/__init__.py#L97">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.__author__">
+    
+  </a>
+  <a name="__author__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__author__</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/__init__.py#L98">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.__copyright__">
+    
+  </a>
+  <a name="__copyright__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__copyright__</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/__init__.py#L99">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.__license__">
+    
+  </a>
+  <a name="__license__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__license__</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/__init__.py#L100">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/__init__.py#L118">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.debug_log_file">
+    
+  </a>
+  <a name="debug_log_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">debug_log_file</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/__init__.py#L120">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.ZIM_EXECUTABLE">
+    
+  </a>
+  <a name="ZIM_EXECUTABLE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ZIM_EXECUTABLE</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/__init__.py#L132">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable private">
+  
+  <a name="zim._pref_enc">
+    
+  </a>
+  <a name="_pref_enc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_pref_enc</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/__init__.py#L142">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable private">
+  
+  <a name="zim._lang">
+    
+  </a>
+  <a name="_lang">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_lang</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/__init__.py#L156">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable private">
+  
+  <a name="zim._enc">
+    
+  </a>
+  <a name="_enc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_enc</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/__init__.py#L156">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable private">
+  
+  <a name="zim._localedir">
+    
+  </a>
+  <a name="_localedir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_localedir</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/__init__.py#L163">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.trans">
+    
+  </a>
+  <a name="trans">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">trans</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/__init__.py#L181">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

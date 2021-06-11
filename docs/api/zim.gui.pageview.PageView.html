@@ -1,0 +1,3057 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.gui.pageview.PageView : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.pageview.html">pageview</a></code>.<code><a href="zim.gui.pageview.PageView.html">PageView</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">PageView</span>(<a href="zim.signals.GSignalEmitterMixin.html" title="zim.signals.GSignalEmitterMixin">GSignalEmitterMixin</a>, <span title="gi.repository.Gtk.VBox">Gtk.VBox</span>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5774">(source)</a></code></p><p>Known subclasses: <code><a href="zim.gui.notebookview.NotebookView.html">zim.gui.notebookview.NotebookView</a></code></p>
+        <p><a href="classIndex.html#zim.gui.pageview.PageView">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Widget to display a single page, consists of a <code><a href="zim.gui.pageview.TextView.html">TextView</a></code> and a <code><a href="zim.gui.pageview.FindBar.html">FindBar</a></code>. Also adds menu items and in general integrates the TextView with the rest of the application.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Unknown Field: signal</td><td colspan="2"><code>modified-changed ()</code>: emitted when the page is edited</td></tr><tr><td></td><td colspan="2"><code>textstyle-changed (style)</code>: Emitted when textstyle at the cursor changes, gets the list of text styles or None.</td></tr><tr><td></td><td colspan="2"><code>activate-link (link, hints)</code>: emitted when a link is opened, stops emission after the first handler returns <code>True</code></td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: todo</td><td colspan="2">document preferences supported by PageView</td></tr><tr><td></td><td colspan="2">document extra keybindings implemented in this widget</td></tr><tr><td></td><td colspan="2">document style properties supported by this widget</td></tr></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id370">
+  
+  <tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#text_style">text_style</a></code></td>
+    <td><span>a <code>ConfigSectionsDict</code> with style properties. Although this is a class attribute loading the data from the config file is delayed till the first object is constructed</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#page">page</a></code></td>
+    <td><span><code><a href="zim.notebook.page.Page.html">Page</a></code> object for the current page displayed in the widget</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#readonly">readonly</a></code></td>
+    <td><span><code>True</code> when the widget is read-only, see <code><a href="#set_readonly">set_readonly()</a></code> for details</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#view">view</a></code></td>
+    <td><span>the <code><a href="zim.gui.pageview.TextView.html">TextView</a></code> child object</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#find_bar">find_bar</a></code></td>
+    <td><span>the <code><a href="zim.gui.pageview.FindBar.html">FindBar</a></code> child widget</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#preferences">preferences</a></code></td>
+    <td><span>a <code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code> with preferences</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#__gsignals__">__gsignals__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#__signals__">__signals__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Constructor @param notebook: the <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object @param navigation: <code><a href="zim.gui.navigation.NavigationModel.html">NavigationModel</a></code> object</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#notebook">notebook</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#navigation">navigation</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#ui_is_initialized">ui_is_initialized</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#textview">textview</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#swindow">swindow</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#edit_bar">edit_bar</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#grab_focus">grab_focus</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_preferences_changed">on_preferences_changed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_text_style_changed">on_text_style_changed</a></code></td>
+    <td><span>(Re-)intializes properties for TextView, TextBuffer and TextTags based on the properties in the style config.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_link_enter">on_link_enter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_link_leave">on_link_leave</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_edit_bar_visible">set_edit_bar_visible</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_page">set_page</a></code></td>
+    <td><span>Set the current page to be displayed in the pageview</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_modified_changed">on_modified_changed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#save_changes">save_changes</a></code></td>
+    <td><span>Save contents of the widget back to the page object and synchronize it with the notebook.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_insertedobjecttypemap_changed">on_insertedobjecttypemap_changed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_readonly">set_readonly</a></code></td>
+    <td><span>Set the widget read-only or not</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_cursor_pos">set_cursor_pos</a></code></td>
+    <td><span>Set the cursor position in the buffer and scroll the TextView to show it</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_cursor_pos">get_cursor_pos</a></code></td>
+    <td><span>Get the cursor position in the buffer</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#scroll_cursor_on_screen">scroll_cursor_on_screen</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_scroll_pos">set_scroll_pos</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_scroll_pos">get_scroll_pos</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_selection">get_selection</a></code></td>
+    <td><span>Convenience method to get the text of the current selection.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_word">get_word</a></code></td>
+    <td><span>Convenience method to get the word that is under the cursor</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#replace_selection">replace_selection</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#do_mark_set">do_mark_set</a></code></td>
+    <td><span>@emits link-caret-enter @emits link-caret-leave</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#do_textstyle_changed">do_textstyle_changed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#activate_link">activate_link</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#do_activate_link">do_activate_link</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#navigate_to_anchor">navigate_to_anchor</a></code></td>
+    <td><span>Navigate to an anchor on the current page. @param name: The name of the anchor to navigate to @param select_line: Select the whole line after</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#do_populate_popup">do_populate_popup</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#save_page">save_page</a></code></td>
+    <td><span>Menu action to save the current page.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#undo">undo</a></code></td>
+    <td><span>Menu action to undo a single step</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#redo">redo</a></code></td>
+    <td><span>Menu action to redo a single step</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#cut">cut</a></code></td>
+    <td><span>Menu action for cut to clipboard</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#copy">copy</a></code></td>
+    <td><span>Menu action for copy to clipboard</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#paste">paste</a></code></td>
+    <td><span>Menu action for paste from clipboard</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#delete">delete</a></code></td>
+    <td><span>Menu action for delete</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#uncheck_checkbox">uncheck_checkbox</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#toggle_checkbox">toggle_checkbox</a></code></td>
+    <td><span>Menu action to toggle checkbox at the cursor or in current selected text</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#xtoggle_checkbox">xtoggle_checkbox</a></code></td>
+    <td><span>Menu action to toggle checkbox at the cursor or in current selected text</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#migrate_checkbox">migrate_checkbox</a></code></td>
+    <td><span>Menu action to toggle checkbox at the cursor or in current selected text</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#transmigrate_checkbox">transmigrate_checkbox</a></code></td>
+    <td><span>Menu action to toggle checkbox at the cursor or in current selected text</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#edit_object">edit_object</a></code></td>
+    <td><span>Menu action to trigger proper edit dialog for the current object at the cursor</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#remove_link">remove_link</a></code></td>
+    <td><span>Menu action to remove link object at the current cursor position</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#copy_current_line">copy_current_line</a></code></td>
+    <td><span>Menu action to copy the current line to the clipboard</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#insert_date">insert_date</a></code></td>
+    <td><span>Menu action to insert a date, shows the <code><a href="zim.gui.pageview.InsertDateDialog.html">InsertDateDialog</a></code></span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#insert_object">insert_object</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#insert_object_model">insert_object_model</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#insert_line">insert_line</a></code></td>
+    <td><span>This function is called from menu action. Insert a line at the cursor position.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#show_insert_image">show_insert_image</a></code></td>
+    <td><span>Menu action to insert an image, shows the <code><a href="zim.gui.pageview.InsertImageDialog.html">InsertImageDialog</a></code> @param file: optional file to suggest in the dialog</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#attach_file">attach_file</a></code></td>
+    <td><span>Menu action to show the <code><a href="zim.gui.pageview.AttachFileDialog.html">AttachFileDialog</a></code> @param file: optional file to suggest in the dialog</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#insert_image">insert_image</a></code></td>
+    <td><span>Insert a image @param file: the image file to insert. If <code>file</code> does not exist or isn't an image, a "broken image" icon will be shown</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#insert_bullet_list">insert_bullet_list</a></code></td>
+    <td><span>Menu action insert a bullet item at the cursor</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#insert_numbered_list">insert_numbered_list</a></code></td>
+    <td><span>Menu action insert a numbered list item at the cursor</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#insert_checkbox_list">insert_checkbox_list</a></code></td>
+    <td><span>Menu action insert an open checkbox at the cursor</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#apply_format_bullet_list">apply_format_bullet_list</a></code></td>
+    <td><span>Menu action to format selection as bullet list</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#apply_format_numbered_list">apply_format_numbered_list</a></code></td>
+    <td><span>Menu action to format selection as numbered list</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#apply_format_checkbox_list">apply_format_checkbox_list</a></code></td>
+    <td><span>Menu action to format selection as checkbox list</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#clear_list_format">clear_list_format</a></code></td>
+    <td><span>Menu action to remove list formatting</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#insert_text_from_file">insert_text_from_file</a></code></td>
+    <td><span>Menu action to show a <code><a href="zim.gui.pageview.InsertTextFromFileDialog.html">InsertTextFromFileDialog</a></code></span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#insert_links">insert_links</a></code></td>
+    <td><span>Non-interactive method to insert one or more links</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#insert_link">insert_link</a></code></td>
+    <td><span>Menu item to show the <code><a href="zim.gui.pageview.InsertLinkDialog.html">InsertLinkDialog</a></code></span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#insert_new_file">insert_new_file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#open_file_templates_folder">open_file_templates_folder</a></code></td>
+    <td><span>Menu action to open the templates folder</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#clear_formatting">clear_formatting</a></code></td>
+    <td><span>Menu item to remove formatting from current (auto-)selection</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#clear_heading_format">clear_heading_format</a></code></td>
+    <td><span>Menu item to remove heading</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#do_toggle_format_action_alt">do_toggle_format_action_alt</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#do_toggle_format_action">do_toggle_format_action</a></code></td>
+    <td><span>Handler that catches all actions to apply and/or toggle formats</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#toggle_format">toggle_format</a></code></td>
+    <td><span>Toggle the format for the current (auto-)selection or new insertions at the current cursor position</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#autoselect">autoselect</a></code></td>
+    <td><span>Auto select either a word or a line.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#find">find</a></code></td>
+    <td><span>Find some string in the text, scroll there and select it</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#show_find">show_find</a></code></td>
+    <td><span>Show the <code><a href="zim.gui.pageview.FindBar.html">FindBar</a></code> widget</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#hide_find">hide_find</a></code></td>
+    <td><span>Hide the <code><a href="zim.gui.pageview.FindBar.html">FindBar</a></code> widget</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#find_next">find_next</a></code></td>
+    <td><span>Menu action to skip to next match</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#find_previous">find_previous</a></code></td>
+    <td><span>Menu action to go back to previous match</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#show_find_and_replace">show_find_and_replace</a></code></td>
+    <td><span>Menu action to show the <code><a href="zim.gui.pageview.FindAndReplaceDialog.html">FindAndReplaceDialog</a></code></span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#show_word_count">show_word_count</a></code></td>
+    <td><span>Menu action to show the <code><a href="zim.gui.pageview.WordCountDialog.html">WordCountDialog</a></code></span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#zoom_in">zoom_in</a></code></td>
+    <td><span>Menu action to increase the font size</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#zoom_out">zoom_out</a></code></td>
+    <td><span>Menu action to decrease the font size</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#zoom_reset">zoom_reset</a></code></td>
+    <td><span>Menu action to reset the font size</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_buffer_signals">_buffer_signals</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_readonly_set">_readonly_set</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_readonly_set_error">_readonly_set_error</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_caret_link">_caret_link</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_undo_history_queue">_undo_history_queue</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_hack_hbox">_hack_hbox</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_hack_label">_hack_label</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_overlay_label">_overlay_label</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_edit_bar_visible">_edit_bar_visible</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_save_page_handler">_save_page_handler</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_insertedobject_manager">_insertedobject_manager</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_connect_focus_event">_connect_focus_event</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_create_textbuffer">_create_textbuffer</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_hack_on_inserted_tree">_hack_on_inserted_tree</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_update_readonly">_update_readonly</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_set_menuitems_sensitive">_set_menuitems_sensitive</a></code></td>
+    <td><span>Batch update global menu sensitivity while respecting sensitivities set due to cursor position, readonly state etc.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_do_activate_link">_do_activate_link</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_default_do_populate_popup">_default_do_populate_popup</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_checkbox_do_populate_popup">_checkbox_do_populate_popup</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_start_bullet">_start_bullet</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_apply_bullet">_apply_bullet</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_update_new_file_submenu">_update_new_file_submenu</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_zoom_increase_decrease_font_size">_zoom_increase_decrease_font_size</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.signals.GSignalEmitterMixin.html">GSignalEmitterMixin</a></code>:
+          </p>
+          <table class="children sortable" id="id371">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.GSignalEmitterMixin.html#connect">connect</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.GSignalEmitterMixin.html#connect_after">connect_after</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.GSignalEmitterMixin.html#disconnect">disconnect</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.GSignalEmitterMixin.html#emit_return_first">emit_return_first</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.GSignalEmitterMixin.html#emit_return_iter">emit_return_iter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.GSignalEmitterMixin.html#_signal_hooks">_signal_hooks</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.GSignalEmitterMixin.html#_signals_inner">_signals_inner</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseinstancevariable">
+  
+  <a name="zim.gui.pageview.PageView.text_style">
+    
+  </a>
+  <a name="text_style">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">text_style</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5781">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>a <code>ConfigSectionsDict</code> with style properties. Although this is a class attribute loading the data from the config file is delayed till the first object is constructed</div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.gui.pageview.PageView.page">
+    
+  </a>
+  <a name="page">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">page</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5785">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><code><a href="zim.notebook.page.Page.html">Page</a></code> object for the current page displayed in the widget</div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.gui.pageview.PageView.readonly">
+    
+  </a>
+  <a name="readonly">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">readonly</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5786">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><code>True</code> when the widget is read-only, see <code><a href="#set_readonly">set_readonly()</a></code> for details</div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.gui.pageview.PageView.view">
+    
+  </a>
+  <a name="view">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">view</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5788">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>the <code><a href="zim.gui.pageview.TextView.html">TextView</a></code> child object</div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.gui.pageview.PageView.find_bar">
+    
+  </a>
+  <a name="find_bar">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">find_bar</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5789">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>the <code><a href="zim.gui.pageview.FindBar.html">FindBar</a></code> child widget</div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.gui.pageview.PageView.preferences">
+    
+  </a>
+  <a name="preferences">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">preferences</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5790">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>a <code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code> with preferences</div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="zim.gui.pageview.PageView.__gsignals__">
+    
+  </a>
+  <a name="__gsignals__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__gsignals__</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5804">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="zim.gui.pageview.PageView.__signals__">
+    
+  </a>
+  <a name="__signals__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__signals__</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5813">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, notebook, navigation):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5817">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.signals.GSignalEmitterMixin.html#__init__">zim.signals.GSignalEmitterMixin.__init__</a></code></div>
+    
+    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">notebook</td><td>the <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object</td></tr><tr><td></td><td class="fieldArg">navigation</td><td><code><a href="zim.gui.navigation.NavigationModel.html">NavigationModel</a></code> object</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.gui.pageview.PageView._buffer_signals">
+    
+  </a>
+  <a name="_buffer_signals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_buffer_signals</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5825">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.gui.pageview.PageView.notebook">
+    
+  </a>
+  <a name="notebook">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">notebook</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5826">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.gui.pageview.PageView.navigation">
+    
+  </a>
+  <a name="navigation">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">navigation</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5828">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.gui.pageview.PageView._readonly_set">
+    
+  </a>
+  <a name="_readonly_set">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_readonly_set</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5830">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.gui.pageview.PageView._readonly_set_error">
+    
+  </a>
+  <a name="_readonly_set_error">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_readonly_set_error</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5831">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.gui.pageview.PageView.ui_is_initialized">
+    
+  </a>
+  <a name="ui_is_initialized">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ui_is_initialized</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5832">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.gui.pageview.PageView._caret_link">
+    
+  </a>
+  <a name="_caret_link">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_caret_link</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5833">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.gui.pageview.PageView._undo_history_queue">
+    
+  </a>
+  <a name="_undo_history_queue">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_undo_history_queue</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5834">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code>)
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.gui.pageview.PageView.textview">
+    
+  </a>
+  <a name="textview">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">textview</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5852">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.gui.pageview.PageView.swindow">
+    
+  </a>
+  <a name="swindow">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">swindow</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5853">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.gui.pageview.PageView._hack_hbox">
+    
+  </a>
+  <a name="_hack_hbox">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_hack_hbox</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5854">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.gui.pageview.PageView._hack_label">
+    
+  </a>
+  <a name="_hack_label">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_hack_label</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5856">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.gui.pageview.PageView._overlay_label">
+    
+  </a>
+  <a name="_overlay_label">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_overlay_label</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5861">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.gui.pageview.PageView.edit_bar">
+    
+  </a>
+  <a name="edit_bar">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">edit_bar</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5898">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.gui.pageview.PageView._edit_bar_visible">
+    
+  </a>
+  <a name="_edit_bar_visible">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_edit_bar_visible</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5899">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.gui.pageview.PageView._save_page_handler">
+    
+  </a>
+  <a name="_save_page_handler">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_save_page_handler</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5947">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.gui.pageview.PageView._insertedobject_manager">
+    
+  </a>
+  <a name="_insertedobject_manager">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_insertedobject_manager</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5965">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.grab_focus">
+    
+  </a>
+  <a name="grab_focus">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">grab_focus</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5968">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.on_preferences_changed">
+    
+  </a>
+  <a name="on_preferences_changed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_preferences_changed</span>(self, *a):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5971">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.on_text_style_changed">
+    
+  </a>
+  <a name="on_text_style_changed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_text_style_changed</span>(self, *a):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5975">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>(Re-)intializes properties for TextView, TextBuffer and TextTags based on the properties in the style config.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.gui.pageview.PageView._connect_focus_event">
+    
+  </a>
+  <a name="_connect_focus_event">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_connect_focus_event</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6055">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.on_link_enter">
+    
+  </a>
+  <a name="on_link_enter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_link_enter</span>(self, view, link):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6076">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.on_link_leave">
+    
+  </a>
+  <a name="on_link_leave">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_link_leave</span>(self, view, link):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6088">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.set_edit_bar_visible">
+    
+  </a>
+  <a name="set_edit_bar_visible">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_edit_bar_visible</span>(self, visible):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6091">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.set_page">
+    
+  </a>
+  <a name="set_page">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_page</span>(self, page, cursor=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6100">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set the current page to be displayed in the pageview</p><p>When the page does not yet exist a template is loaded for a new page which is obtained from <code><a href="zim.notebook.notebook.Notebook.html#get_template">Notebook.get_template()</a></code>.</p><p>Exceptions while loading the page are handled gracefully with an error dialog and will result in the widget to be read-only and insensitive until the next page is loaded.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">page</td><td>a <code><a href="zim.notebook.page.Page.html">Page</a></code> object</td></tr><tr><td></td><td class="fieldArg">cursor</td><td>optional cursor position (integer)<p>When the cursor is set to <code>-1</code> the cursor will be placed at the end of the buffer.</p><p>If cursor is <code>None</code> the cursor is set at the start of the page for existing pages or to the end of the template when the page does not yet exist.</p></td></tr></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.gui.pageview.PageView._create_textbuffer">
+    
+  </a>
+  <a name="_create_textbuffer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_create_textbuffer</span>(self, parsetree=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6170">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.on_modified_changed">
+    
+  </a>
+  <a name="on_modified_changed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_modified_changed</span>(self, buffer):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6187">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.save_changes">
+    
+  </a>
+  <a name="save_changes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">save_changes</span>(self, write_if_not_modified=False):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6203">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Save contents of the widget back to the page object and synchronize it with the notebook.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">write_if_not_modified</td><td>If <code>True</code> page will be written even if it is not changed. (This allows e.g. to force saving template content to disk without editing.)</td></tr></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.gui.pageview.PageView._hack_on_inserted_tree">
+    
+  </a>
+  <a name="_hack_on_inserted_tree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_hack_on_inserted_tree</span>(self, *a):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6215">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.on_insertedobjecttypemap_changed">
+    
+  </a>
+  <a name="on_insertedobjecttypemap_changed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_insertedobjecttypemap_changed</span>(self, *a):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6242">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.set_readonly">
+    
+  </a>
+  <a name="set_readonly">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_readonly</span>(self, readonly):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6246">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set the widget read-only or not</p><p>Sets the read-only state but also update menu items etc. to reflect the new state.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">readonly</td><td><code>True</code> or <code>False</code> to set the read-only state<p>Effective read-only state seen in the <code>self.readonly</code> attribute is in fact <code>True</code> (so read-only) when either the widget itself OR the current page is read-only. So setting read-only to <code>False</code> here may not immediately change <code>self.readonly</code> if a read-only page is loaded.</p></td></tr></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.gui.pageview.PageView._update_readonly">
+    
+  </a>
+  <a name="_update_readonly">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_readonly</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6264">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.gui.pageview.PageView._set_menuitems_sensitive">
+    
+  </a>
+  <a name="_set_menuitems_sensitive">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_set_menuitems_sensitive</span>(self, sensitive, force_sensitive=()):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6275">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Batch update global menu sensitivity while respecting sensitivities set due to cursor position, readonly state etc.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.set_cursor_pos">
+    
+  </a>
+  <a name="set_cursor_pos">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_cursor_pos</span>(self, pos):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6298">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set the cursor position in the buffer and scroll the TextView to show it</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">pos</td><td>the cursor position as an integer offset from the start of the buffer<p>As a special case when the cursor position is <code>-1</code> the cursor is set at the end of the buffer.</p></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.get_cursor_pos">
+    
+  </a>
+  <a name="get_cursor_pos">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_cursor_pos</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6318">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get the cursor position in the buffer</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">the cursor position as an integer offset from the start of the buffer</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.scroll_cursor_on_screen">
+    
+  </a>
+  <a name="scroll_cursor_on_screen">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">scroll_cursor_on_screen</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6328">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.set_scroll_pos">
+    
+  </a>
+  <a name="set_scroll_pos">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_scroll_pos</span>(self, pos):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6332">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.get_scroll_pos">
+    
+  </a>
+  <a name="get_scroll_pos">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_scroll_pos</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6335">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.get_selection">
+    
+  </a>
+  <a name="get_selection">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_selection</span>(self, format=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6338">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Convenience method to get the text of the current selection.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">format</td><td>format to use for the formatting of the returned text (e.g. 'wiki' or 'html'). If the format is <code>None</code> only the text will be returned without any formatting.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">text selection or <code>None</code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.get_word">
+    
+  </a>
+  <a name="get_word">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_word</span>(self, format=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6360">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Convenience method to get the word that is under the cursor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">format</td><td>format to use for the formatting of the returned text (e.g. 'wiki' or 'html'). If the format is <code>None</code> only the text will be returned without any formatting.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">current word or <code>None</code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.replace_selection">
+    
+  </a>
+  <a name="replace_selection">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">replace_selection</span>(self, text, autoselect=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6373">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.do_mark_set">
+    
+  </a>
+  <a name="do_mark_set">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">do_mark_set</span>(self, buffer, iter, mark):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6391">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>@emits link-caret-enter @emits link-caret-leave</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.do_textstyle_changed">
+    
+  </a>
+  <a name="do_textstyle_changed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">do_textstyle_changed</span>(self, styles):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6437">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.activate_link">
+    
+  </a>
+  <a name="activate_link">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">activate_link</span>(self, link, new_window=False):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6444">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.do_activate_link">
+    
+  </a>
+  <a name="do_activate_link">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">do_activate_link</span>(self, link, hints):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6467">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.gui.pageview.PageView._do_activate_link">
+    
+  </a>
+  <a name="_do_activate_link">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_do_activate_link</span>(self, link, hints):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6474">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.navigate_to_anchor">
+    
+  </a>
+  <a name="navigate_to_anchor">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">navigate_to_anchor</span>(self, name, select_line=False):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6504">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Navigate to an anchor on the current page.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">name</td><td>The name of the anchor to navigate to</td></tr><tr><td></td><td class="fieldArg">select_line</td><td>Select the whole line after</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.do_populate_popup">
+    
+  </a>
+  <a name="do_populate_popup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">do_populate_popup</span>(self, menu):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6521">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.gui.pageview.PageView._default_do_populate_popup">
+    
+  </a>
+  <a name="_default_do_populate_popup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_default_do_populate_popup</span>(self, menu):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6539">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.gui.pageview.PageView._checkbox_do_populate_popup">
+    
+  </a>
+  <a name="_checkbox_do_populate_popup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_checkbox_do_populate_popup</span>(self, menu, buffer, iter):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6743">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.save_page">
+    
+  </a>
+  <a name="save_page">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('_Save'), '&lt;Primary&gt;S', menuhints='edit')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">save_page</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6762">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to save the current page.</p><p>Can result in a <code><a href="zim.gui.pageview.SavePageErrorDialog.html">SavePageErrorDialog</a></code> when there is an error while saving a page. If that dialog is cancelled by the user, the page may not be saved after all.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.undo">
+    
+  </a>
+  <a name="undo">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('_Undo'), '&lt;Primary&gt;Z', menuhints='edit')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">undo</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6772">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to undo a single step</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.redo">
+    
+  </a>
+  <a name="redo">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('_Redo'), '&lt;Primary&gt;&lt;shift&gt;Z', alt_accelerator='&lt;Primary&gt;Y',
+    menuhints='edit')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">redo</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6779">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to redo a single step</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.cut">
+    
+  </a>
+  <a name="cut">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('Cu_t'), '&lt;Primary&gt;X', menuhints='edit')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">cut</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6786">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action for cut to clipboard</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.copy">
+    
+  </a>
+  <a name="copy">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('_Copy'), '&lt;Primary&gt;C', menuhints='edit')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">copy</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6791">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action for copy to clipboard</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.paste">
+    
+  </a>
+  <a name="paste">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('_Paste'), '&lt;Primary&gt;V', menuhints='edit')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">paste</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6796">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action for paste from clipboard</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.delete">
+    
+  </a>
+  <a name="delete">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('_Delete'), menuhints='edit')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">delete</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6801">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action for delete</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.uncheck_checkbox">
+    
+  </a>
+  <a name="uncheck_checkbox">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('Un-check Checkbox'), verb_icon=STOCK_UNCHECKED_BOX, menuhints='edit')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">uncheck_checkbox</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6806">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.toggle_checkbox">
+    
+  </a>
+  <a name="toggle_checkbox">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_("Toggle Checkbox 'V'"), 'F12', verb_icon=STOCK_CHECKED_BOX,
+    menuhints='edit')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">toggle_checkbox</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6812">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to toggle checkbox at the cursor or in current selected text</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.xtoggle_checkbox">
+    
+  </a>
+  <a name="xtoggle_checkbox">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_("Toggle Checkbox 'X'"), '&lt;shift&gt;F12', verb_icon=STOCK_XCHECKED_BOX,
+    menuhints='edit')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">xtoggle_checkbox</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6821">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to toggle checkbox at the cursor or in current selected text</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.migrate_checkbox">
+    
+  </a>
+  <a name="migrate_checkbox">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_("Toggle Checkbox '&gt;'"), verb_icon=STOCK_MIGRATED_BOX, menuhints='edit'
+    )<br />
+    <span class="py-keyword">def</span> <span class="py-defname">migrate_checkbox</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6830">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to toggle checkbox at the cursor or in current selected text</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.transmigrate_checkbox">
+    
+  </a>
+  <a name="transmigrate_checkbox">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_("Toggle Checkbox '&lt;'"), verb_icon=STOCK_TRANSMIGRATED_BOX,
+    menuhints='edit')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">transmigrate_checkbox</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6839">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to toggle checkbox at the cursor or in current selected text</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.edit_object">
+    
+  </a>
+  <a name="edit_object">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('_Edit Link or Object...'), '&lt;Primary&gt;E', menuhints='edit')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">edit_object</span>(self, iter=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6848">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to trigger proper edit dialog for the current object at the cursor</p><p>Can show e.g. <code><a href="zim.gui.pageview.InsertLinkDialog.html">InsertLinkDialog</a></code> for a link, <code>EditImageDialog</code> for the a image, or a plugin dialog for e.g. an equation.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">iter</td><td><code>TextIter</code> for an alternative cursor position</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.remove_link">
+    
+  </a>
+  <a name="remove_link">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('_Remove Link'), menuhints='edit')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">remove_link</span>(self, iter=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6886">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to remove link object at the current cursor position</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">iter</td><td><code>TextIter</code> for an alternative cursor position</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.copy_current_line">
+    
+  </a>
+  <a name="copy_current_line">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('Copy Line'), accelerator='&lt;Primary&gt;&lt;Shift&gt;C', menuhints='edit')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">copy_current_line</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6904">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to copy the current line to the clipboard</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.insert_date">
+    
+  </a>
+  <a name="insert_date">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('Date and Time...'), accelerator='&lt;Primary&gt;D', menuhints='insert')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">insert_date</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6920">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to insert a date, shows the <code><a href="zim.gui.pageview.InsertDateDialog.html">InsertDateDialog</a></code></p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.insert_object">
+    
+  </a>
+  <a name="insert_object">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">insert_object</span>(self, attrib, data):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6925">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.insert_object_model">
+    
+  </a>
+  <a name="insert_object_model">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">insert_object_model</span>(self, otype, model):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6930">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.insert_line">
+    
+  </a>
+  <a name="insert_line">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('Horizontal _Line'), menuhints='insert')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">insert_line</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6935">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>This function is called from menu action. Insert a line at the cursor position.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.show_insert_image">
+    
+  </a>
+  <a name="show_insert_image">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('_Image...'), menuhints='insert')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">show_insert_image</span>(self, file=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6947">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to insert an image, shows the <code><a href="zim.gui.pageview.InsertImageDialog.html">InsertImageDialog</a></code></p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">file</td><td>optional file to suggest in the dialog</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.attach_file">
+    
+  </a>
+  <a name="attach_file">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('_Attachment...'), verb_icon='zim-attachment', menuhints='insert')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">attach_file</span>(self, file=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6954">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to show the <code><a href="zim.gui.pageview.AttachFileDialog.html">AttachFileDialog</a></code></p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">file</td><td>optional file to suggest in the dialog</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.insert_image">
+    
+  </a>
+  <a name="insert_image">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">insert_image</span>(self, file):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6961">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Insert a image</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">file</td><td>the image file to insert. If <code>file</code> does not exist or isn't an image, a "broken image" icon will be shown</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.insert_bullet_list">
+    
+  </a>
+  <a name="insert_bullet_list">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('Bulle_t List'), menuhints='insert')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">insert_bullet_list</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6971">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action insert a bullet item at the cursor</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.insert_numbered_list">
+    
+  </a>
+  <a name="insert_numbered_list">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('_Numbered List'), menuhints='insert')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">insert_numbered_list</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6976">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action insert a numbered list item at the cursor</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.insert_checkbox_list">
+    
+  </a>
+  <a name="insert_checkbox_list">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('Checkbo_x List'), menuhints='insert')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">insert_checkbox_list</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6981">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action insert an open checkbox at the cursor</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.gui.pageview.PageView._start_bullet">
+    
+  </a>
+  <a name="_start_bullet">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_start_bullet</span>(self, bullet_type):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6986">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.apply_format_bullet_list">
+    
+  </a>
+  <a name="apply_format_bullet_list">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('Bulle_t List'), menuhints='edit')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">apply_format_bullet_list</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L6998">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to format selection as bullet list</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.apply_format_numbered_list">
+    
+  </a>
+  <a name="apply_format_numbered_list">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('_Numbered List'), menuhints='edit')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">apply_format_numbered_list</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7003">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to format selection as numbered list</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.apply_format_checkbox_list">
+    
+  </a>
+  <a name="apply_format_checkbox_list">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('Checkbo_x List'), menuhints='edit')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">apply_format_checkbox_list</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7008">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to format selection as checkbox list</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.clear_list_format">
+    
+  </a>
+  <a name="clear_list_format">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('_Remove List'), menuhints='edit')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">clear_list_format</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7013">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to remove list formatting</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.gui.pageview.PageView._apply_bullet">
+    
+  </a>
+  <a name="_apply_bullet">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_apply_bullet</span>(self, bullet_type):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7018">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.insert_text_from_file">
+    
+  </a>
+  <a name="insert_text_from_file">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('Text From _File...'), menuhints='insert')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">insert_text_from_file</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7041">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to show a <code><a href="zim.gui.pageview.InsertTextFromFileDialog.html">InsertTextFromFileDialog</a></code></p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.insert_links">
+    
+  </a>
+  <a name="insert_links">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">insert_links</span>(self, links):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7046">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Non-interactive method to insert one or more links</p><p>Inserts the links separated by newlines. Intended e.g. for drag-and-drop or copy-paste actions of e.g. files from a file browser.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">links</td><td>list of links, either as string, <code><a href="zim.notebook.page.Path.html">Path</a></code> objects, or <code><a href="zim.fs.File.html">File</a></code> objects</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.insert_link">
+    
+  </a>
+  <a name="insert_link">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('_Link...'), '&lt;Primary&gt;L', verb_icon='zim-link', menuhints='insert')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">insert_link</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7085">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu item to show the <code><a href="zim.gui.pageview.InsertLinkDialog.html">InsertLinkDialog</a></code></p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.gui.pageview.PageView._update_new_file_submenu">
+    
+  </a>
+  <a name="_update_new_file_submenu">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_new_file_submenu</span>(self, action):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7090">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.insert_new_file">
+    
+  </a>
+  <a name="insert_new_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">insert_new_file</span>(self, template, basename=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7140">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.open_file_templates_folder">
+    
+  </a>
+  <a name="open_file_templates_folder">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('File _Templates...'))<br />
+    <span class="py-keyword">def</span> <span class="py-defname">open_file_templates_folder</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7163">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to open the templates folder</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.clear_formatting">
+    
+  </a>
+  <a name="clear_formatting">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('_Clear Formatting'), accelerator='&lt;Primary&gt;9', menuhints='edit',
+    verb_icon='edit-clear-all-symbolic')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">clear_formatting</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7186">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu item to remove formatting from current (auto-)selection</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.clear_heading_format">
+    
+  </a>
+  <a name="clear_heading_format">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('_Remove Heading'), menuhints='edit')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">clear_heading_format</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7206">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu item to remove heading</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.do_toggle_format_action_alt">
+    
+  </a>
+  <a name="do_toggle_format_action_alt">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">do_toggle_format_action_alt</span>(self, active, action):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7223">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.do_toggle_format_action">
+    
+  </a>
+  <a name="do_toggle_format_action">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">do_toggle_format_action</span>(self, action):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7226">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Handler that catches all actions to apply and/or toggle formats</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.toggle_format">
+    
+  </a>
+  <a name="toggle_format">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">toggle_format</span>(self, format):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7241">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Toggle the format for the current (auto-)selection or new insertions at the current cursor position</p><p>When the cursor is at the begin or in the middle of a word and there is not selection, the word is selected automatically to toggle the format. For headings and other line based formats auto-selects the whole line.</p><p>This is the handler for all the format actions.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">format</td><td>the format style name (e.g. "h1", "strong" etc.)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.autoselect">
+    
+  </a>
+  <a name="autoselect">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">autoselect</span>(self, selectline=False):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7276">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Auto select either a word or a line.</p><p>Does not do anything if a selection is present already or when the preference for auto-select is set to False.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">selectline</td><td>if <code>True</code> auto-select a whole line, only auto-select a single word otherwise</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> when this function changed the selection.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.find">
+    
+  </a>
+  <a name="find">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">find</span>(self, string, flags=0):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7301">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Find some string in the text, scroll there and select it</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">string</td><td>the text to find</td></tr><tr><td></td><td class="fieldArg">flags</td><td>options for find behavior, see <code><a href="zim.gui.pageview.TextFinder.html#find">TextFinder.find()</a></code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.show_find">
+    
+  </a>
+  <a name="show_find">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('_Find...'), '&lt;Primary&gt;F', alt_accelerator='&lt;Primary&gt;F3')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">show_find</span>(self, string=None, flags=0, highlight=False):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7312">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Show the <code><a href="zim.gui.pageview.FindBar.html">FindBar</a></code> widget</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">string</td><td>the text to find</td></tr><tr><td></td><td class="fieldArg">flags</td><td>options for find behavior, see <code><a href="zim.gui.pageview.TextFinder.html#find">TextFinder.find()</a></code></td></tr><tr><td></td><td class="fieldArg">highlight</td><td>if <code>True</code> highlight the results</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.hide_find">
+    
+  </a>
+  <a name="hide_find">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">hide_find</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7328">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Hide the <code><a href="zim.gui.pageview.FindBar.html">FindBar</a></code> widget</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.find_next">
+    
+  </a>
+  <a name="find_next">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('Find Ne_xt'), accelerator='&lt;Primary&gt;G', alt_accelerator='F3')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">find_next</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7333">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to skip to next match</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.find_previous">
+    
+  </a>
+  <a name="find_previous">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('Find Pre_vious'), accelerator='&lt;Primary&gt;&lt;shift&gt;G',
+    alt_accelerator='&lt;shift&gt;F3')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">find_previous</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7339">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to go back to previous match</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.show_find_and_replace">
+    
+  </a>
+  <a name="show_find_and_replace">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('_Replace...'), '&lt;Primary&gt;H', menuhints='edit')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">show_find_and_replace</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7345">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to show the <code><a href="zim.gui.pageview.FindAndReplaceDialog.html">FindAndReplaceDialog</a></code></p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.show_word_count">
+    
+  </a>
+  <a name="show_word_count">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('Word Count...'))<br />
+    <span class="py-keyword">def</span> <span class="py-defname">show_word_count</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7352">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to show the <code><a href="zim.gui.pageview.WordCountDialog.html">WordCountDialog</a></code></p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.zoom_in">
+    
+  </a>
+  <a name="zoom_in">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('_Zoom In'), '&lt;Primary&gt;plus', alt_accelerator='&lt;Primary&gt;equal')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">zoom_in</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7357">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to increase the font size</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.zoom_out">
+    
+  </a>
+  <a name="zoom_out">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('Zoom _Out'), '&lt;Primary&gt;minus')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">zoom_out</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7362">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to decrease the font size</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.gui.pageview.PageView._zoom_increase_decrease_font_size">
+    
+  </a>
+  <a name="_zoom_increase_decrease_font_size">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_zoom_increase_decrease_font_size</span>(self, plus_or_minus):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7367">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.pageview.PageView.zoom_reset">
+    
+  </a>
+  <a name="zoom_reset">
+    
+  </a>
+  <div class="functionHeader">
+    @action(_('_Normal Size'), '&lt;Primary&gt;0')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">zoom_reset</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L7390">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Menu action to reset the font size</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

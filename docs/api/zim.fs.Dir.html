@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.fs.Dir : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.fs.html">fs</a></code>.<code><a href="zim.fs.Dir.html">Dir</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Dir</span>(<a href="zim.fs.UnixPath.html" title="zim.fs.UnixPath">FilePath</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L654">(source)</a></code></p><p>Known subclasses: <code><a href="zim.fs.FilteredDir.html">zim.fs.FilteredDir</a></code></p>
+        <p><a href="classIndex.html#zim.fs.Dir">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Class representing a single file system folder</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id201">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__eq__">__eq__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#exists">exists</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#list">list</a></code></td>
+    <td><span>List the file contents</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#walk">walk</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_file_tree_as_text">get_file_tree_as_text</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#touch">touch</a></code></td>
+    <td><span>Create this folder and any parent folders that do not yet exist. @param mode: creation mode (e.g. 0700)</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#remove">remove</a></code></td>
+    <td><span>Remove this folder, fails if it is not empty.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#cleanup">cleanup</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#remove_children">remove_children</a></code></td>
+    <td><span>Recursively remove everything below this folder .</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#copyto">copyto</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#file">file</a></code></td>
+    <td><span>Get a <code><a href="zim.fs.File.html">File</a></code> object for a path below this folder</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#resolve_file">resolve_file</a></code></td>
+    <td><span>Get a <code><a href="zim.fs.File.html">File</a></code> object for a path relative to this folder</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#new_file">new_file</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#subdir">subdir</a></code></td>
+    <td><span>Get a <code><a href="zim.fs.Dir.html">Dir</a></code> object for a path below this folder</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#resolve_dir">resolve_dir</a></code></td>
+    <td><span>Get a <code><a href="zim.fs.Dir.html">Dir</a></code> object for a path relative to this folder</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#new_subdir">new_subdir</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_list">_list</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.fs.UnixPath.html">UnixPath</a></code>:
+          </p>
+          <table class="children sortable" id="id202">
+  
+  <tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.fs.UnixPath.html#path">path</a></code></td>
+    <td><span>the absolute file path as string file system encoding (should only be used by low-level functions)</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.fs.UnixPath.html#user_path">user_path</a></code></td>
+    <td><span>User_path property</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.fs.UnixPath.html#uri">uri</a></code></td>
+    <td><span>File uri property</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.fs.UnixPath.html#basename">basename</a></code></td>
+    <td><span>Basename property</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.fs.UnixPath.html#dirname">dirname</a></code></td>
+    <td><span>Dirname property</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.fs.UnixPath.html#dir">dir</a></code></td>
+    <td><span>Returns a <code><a href="zim.fs.Dir.html">Dir</a></code> object for the parent dir</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#__init__">__init__</a></code></td>
+    <td><span>Constructor</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#serialize_zim_config">serialize_zim_config</a></code></td>
+    <td><span>Returns the file path as string for serializing the object</span></td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#new_from_zim_config">new_from_zim_config</a></code></td>
+    <td><span>Returns a new object based on the string representation for that path</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#__iter__">__iter__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#__str__">__str__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#__add__">__add__</a></code></td>
+    <td><span>Concatenates paths, only creates objects of the same class. See <code><a href="zim.fs.Dir.html#file">Dir.file()</a></code> and <code><a href="zim.fs.Dir.html#subdir">Dir.subdir()</a></code> instead to create other objects.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#__ne__">__ne__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#monitor">monitor</a></code></td>
+    <td><span>Creates a <code><a href="zim.fs.FSObjectMonitor.html">FSObjectMonitor</a></code> for this path</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#iswritable">iswritable</a></code></td>
+    <td><span>Check if a file or folder is writable. Uses permissions of parent folder if the file or folder does not (yet) exist. @returns: <code>True</code> if the file or folder is writable</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#mtime">mtime</a></code></td>
+    <td><span>Get the modification time of the file path. @returns: the mtime timestamp</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#ctime">ctime</a></code></td>
+    <td><span>Get the creation time of the file path. @returns: the mtime timestamp</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#size">size</a></code></td>
+    <td><span>Get file size in bytes See <code><a href="zim.fs.html#format_file_size">format_file_size()</a></code> to get a human readable label @returns: file size in bytes</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#isequal">isequal</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#split">split</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#relpath">relpath</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#commonparent">commonparent</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#ischild">ischild</a></code></td>
+    <td><span>Check if this path is a child path of a folder @returns: <code>True</code> if this path is a child path of <code>parent</code></span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#isdir">isdir</a></code></td>
+    <td><span>Check if this path is a folder or not. Used to detect if e.g. a <code><a href="zim.fs.File.html">File</a></code> object should have really been a <code><a href="zim.fs.Dir.html">Dir</a></code> object. @returns: <code>True</code> when this path is a folder</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#rename">rename</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.fs.UnixPath.html#_serialized">_serialized</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basestaticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#_parse_uri">_parse_uri</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#_set_path">_set_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="zim.fs.Dir.__eq__">
+    
+  </a>
+  <a name="__eq__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L657">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.fs.UnixPath.html#__eq__">zim.fs.UnixPath.__eq__</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.fs.Dir.exists">
+    
+  </a>
+  <a name="exists">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">exists</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L663">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.fs.UnixPath.html#exists">zim.fs.UnixPath.exists</a></code></div>
+    
+    <div><p>Check if a file or folder exists.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> if the file or folder exists</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">must be implemented by sub classes in order that they enforce the type of the resource as well</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.fs.Dir.list">
+    
+  </a>
+  <a name="list">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">list</span>(self, glob=None, includehidden=False, includetmp=False, raw=False):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L666">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.fs.FilteredDir.html">zim.fs.FilteredDir</a></code></div>
+    
+    <div><p>List the file contents</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">glob</td><td>a file name glob to filter the listed files, e.g <code>"*.png"</code></td></tr><tr><td></td><td class="fieldArg">includehidden</td><td>if <code>True</code> include hidden files (e.g. names starting with "."), ignore otherwise</td></tr><tr><td></td><td class="fieldArg">includetmp</td><td>if <code>True</code> include temporary files (e.g. names ending in "~"), ignore otherwise</td></tr><tr><td></td><td class="fieldArg">raw</td><td>for filtered folders (<code>FilteredDir</code> instances) setting <code>raw</code> to <code>True</code> will disable filtering</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a sorted list of names for files and subdirectories. Will not return names that could not be decoded properly and will throw warnings if those are encountered. Hidden files are silently ignored.</td></tr></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.fs.Dir._list">
+    
+  </a>
+  <a name="_list">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_list</span>(self, includehidden, includetmp):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L691">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.fs.Dir.walk">
+    
+  </a>
+  <a name="walk">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">walk</span>(self, raw=True):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L705">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Generator that yields all files and folders below this dir as objects.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">raw</td><td>see <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list()</a></code></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">yields <code><a href="zim.fs.File.html">File</a></code> and <code><a href="zim.fs.Dir.html">Dir</a></code> objects, depth first</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.fs.Dir.get_file_tree_as_text">
+    
+  </a>
+  <a name="get_file_tree_as_text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_file_tree_as_text</span>(self, raw=True):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L721">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns an overview of files and folders below this dir as text. Used in tests.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">raw</td><td>see <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list()</a></code></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">file listing as string</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.fs.Dir.touch">
+    
+  </a>
+  <a name="touch">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">touch</span>(self, mode=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L735">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Create this folder and any parent folders that do not yet exist.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">mode</td><td>creation mode (e.g. 0700)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.fs.Dir.remove">
+    
+  </a>
+  <a name="remove">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">remove</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L754">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Remove this folder, fails if it is not empty.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.fs.Dir.cleanup">
+    
+  </a>
+  <a name="cleanup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">cleanup</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L760">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Remove this foldder and any empty parent folders. If the folder does not exist, still check for empty parent folders. Fails silently if the folder is not empty.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> when successfull (so <code>False</code> means it still exists).</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.fs.Dir.remove_children">
+    
+  </a>
+  <a name="remove_children">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">remove_children</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L776">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Recursively remove everything below this folder .</p><p><b>WARNING:</b> This is quite powerful and can do a lot of damage when executed for the wrong folder, so pleae make sure to double check the dir is actually what you think it is before calling this.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.fs.Dir.copyto">
+    
+  </a>
+  <a name="copyto">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">copyto</span>(self, dest):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L794">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Recursively copy the contents of this folder. When the destination folder already exists the contents will be merged, so you need to check existence of the destination first if you want a clean new copy.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">dest</td><td>a <code><a href="zim.fs.Dir.html">Dir</a></code> object</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.fs.Dir.file">
+    
+  </a>
+  <a name="file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">file</span>(self, path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L820">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get a <code><a href="zim.fs.File.html">File</a></code> object for a path below this folder</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a (relative) file path as string, tuple or <code><a href="zim.fs.UnixPath.html">FilePath</a></code> object. When <code>path</code> is a <code><a href="zim.fs.File.html">File</a></code> object already this method still enforces it is below this folder. So this method can be used as check as well.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.fs.File.html">File</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="zim.fs.PathLookupError.html">PathLookupError</a></td><td>if the path is not below this folder</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.fs.Dir.resolve_file">
+    
+  </a>
+  <a name="resolve_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">resolve_file</span>(self, path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L836">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get a <code><a href="zim.fs.File.html">File</a></code> object for a path relative to this folder</p><p>Like <code><a href="#file">file()</a></code> but allows the path to start with "../" as well, so can handle any relative path.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a (relative) file path as string, tuple or <code><a href="zim.fs.UnixPath.html">FilePath</a></code> object.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.fs.File.html">File</a></code> object</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.fs.Dir.new_file">
+    
+  </a>
+  <a name="new_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">new_file</span>(self, path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L856">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get a <code><a href="zim.fs.File.html">File</a></code> object for a new file below this folder. Like <code><a href="#file">file()</a></code> but guarantees the file does not yet exist by adding sequential numbers if needed. So the resulting file may have a modified name.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a (relative) file path as string, tuple or <code><a href="zim.fs.UnixPath.html">FilePath</a></code> object.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.fs.File.html">File</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="zim.fs.PathLookupError.html">PathLookupError</a></td><td>if the path is not below this folder</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.fs.Dir.subdir">
+    
+  </a>
+  <a name="subdir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">subdir</span>(self, path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L885">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get a <code><a href="zim.fs.Dir.html">Dir</a></code> object for a path below this folder</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a (relative) file path as string, tuple or <code><a href="zim.fs.UnixPath.html">FilePath</a></code> object. When <code>path</code> is a <code><a href="zim.fs.Dir.html">Dir</a></code> object already this method still enforces it is below this folder. So this method can be used as check as well.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.fs.Dir.html">Dir</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="zim.fs.PathLookupError.html">PathLookupError</a></td><td>if the path is not below this folder</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.fs.Dir.resolve_dir">
+    
+  </a>
+  <a name="resolve_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">resolve_dir</span>(self, path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L903">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get a <code><a href="zim.fs.Dir.html">Dir</a></code> object for a path relative to this folder</p><p>Like <code><a href="#subdir">subdir()</a></code> but allows the path to start with "../" as well, so can handle any relative path.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a (relative) file path as string, tuple or <code><a href="zim.fs.UnixPath.html">FilePath</a></code> object.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.fs.Dir.html">Dir</a></code> object</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.fs.Dir.new_subdir">
+    
+  </a>
+  <a name="new_subdir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">new_subdir</span>(self, path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L923">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get a <code><a href="zim.fs.Dir.html">Dir</a></code> object for a new sub-folder below this folder. Like <code><a href="#subdir">subdir()</a></code> but guarantees the folder does not yet exist by adding sequential numbers if needed. So the resulting folder may have a modified name.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a (relative) file path as string, tuple or <code><a href="zim.fs.UnixPath.html">FilePath</a></code> object.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.fs.Dir.html">Dir</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="zim.fs.PathLookupError.html">PathLookupError</a></td><td>if the path is not below this folder</td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

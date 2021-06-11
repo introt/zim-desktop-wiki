@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.plugins.pathbar : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code>.<code><a href="zim.plugins.pathbar.html">pathbar</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pathbar.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="undocumented">Undocumented</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1128">
+  
+  <tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#MAX_BUTTON_WIDTH">MAX_BUTTON_WIDTH</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#MIN_BUTTON_WIDTH">MIN_BUTTON_WIDTH</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.plugins.pathbar.PathBarPlugin.html">PathBarPlugin</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#PATHBAR_NONE">PATHBAR_NONE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#PATHBAR_RECENT">PATHBAR_RECENT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#PATHBAR_RECENT_CHANGED">PATHBAR_RECENT_CHANGED</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#PATHBAR_HISTORY">PATHBAR_HISTORY</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#PATHBAR_PATH">PATHBAR_PATH</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#PATHBAR_TYPES">PATHBAR_TYPES</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.plugins.pathbar.PathBarMainWindowExtension.html">PathBarMainWindowExtension</a></code></td>
+    <td><span class="undocumented">No class docstring; 0/1 class variables, 0/1 instance variables, 1/4 methods documented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#DIR_FORWARD">DIR_FORWARD</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#DIR_BACKWARD">DIR_BACKWARD</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html">ScrolledHBox</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.plugins.pathbar.ScrollButton.html">ScrollButton</a></code></td>
+    <td><span>Arrow buttons used by ScrolledHBox</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.plugins.pathbar.PathBar.html">PathBar</a></code></td>
+    <td><span>Base class for pathbars in the zim GUI, extends ScrolledHBox for usage with a list of ToggleButtons representing zim Path objects</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.plugins.pathbar.HistoryPathBar.html">HistoryPathBar</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.plugins.pathbar.RecentPathBar.html">RecentPathBar</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.plugins.pathbar.RecentChangesPathBar.html">RecentChangesPathBar</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.plugins.pathbar.NamespacePathBar.html">NamespacePathBar</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.plugins.pathbar.TestPath.html">TestPath</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.plugins.pathbar.MockHistory.html">MockHistory</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.plugins.pathbar.MockNavigation.html">MockNavigation</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.plugins.pathbar.TestPathBar.html">TestPathBar</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#window">window</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#vbox">vbox</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ltr">ltr</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  <a name="zim.plugins.pathbar.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pathbar.py#L28">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.plugins.pathbar.MAX_BUTTON_WIDTH">
+    
+  </a>
+  <a name="MAX_BUTTON_WIDTH">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">MAX_BUTTON_WIDTH</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pathbar.py#L31">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.plugins.pathbar.MIN_BUTTON_WIDTH">
+    
+  </a>
+  <a name="MIN_BUTTON_WIDTH">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">MIN_BUTTON_WIDTH</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pathbar.py#L32">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.plugins.pathbar.PATHBAR_NONE">
+    
+  </a>
+  <a name="PATHBAR_NONE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PATHBAR_NONE</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pathbar.py#L49">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.plugins.pathbar.PATHBAR_RECENT">
+    
+  </a>
+  <a name="PATHBAR_RECENT">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PATHBAR_RECENT</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pathbar.py#L50">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.plugins.pathbar.PATHBAR_RECENT_CHANGED">
+    
+  </a>
+  <a name="PATHBAR_RECENT_CHANGED">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PATHBAR_RECENT_CHANGED</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pathbar.py#L51">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.plugins.pathbar.PATHBAR_HISTORY">
+    
+  </a>
+  <a name="PATHBAR_HISTORY">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PATHBAR_HISTORY</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pathbar.py#L52">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.plugins.pathbar.PATHBAR_PATH">
+    
+  </a>
+  <a name="PATHBAR_PATH">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PATHBAR_PATH</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pathbar.py#L53">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.plugins.pathbar.PATHBAR_TYPES">
+    
+  </a>
+  <a name="PATHBAR_TYPES">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PATHBAR_TYPES</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pathbar.py#L54">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.plugins.pathbar.DIR_FORWARD">
+    
+  </a>
+  <a name="DIR_FORWARD">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">DIR_FORWARD</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pathbar.py#L121">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.plugins.pathbar.DIR_BACKWARD">
+    
+  </a>
+  <a name="DIR_BACKWARD">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">DIR_BACKWARD</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pathbar.py#L122">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.plugins.pathbar.window">
+    
+  </a>
+  <a name="window">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">window</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pathbar.py#L677">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.plugins.pathbar.vbox">
+    
+  </a>
+  <a name="vbox">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">vbox</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pathbar.py#L679">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.plugins.pathbar.ltr">
+    
+  </a>
+  <a name="ltr">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ltr</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pathbar.py#L684">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.templates.parser.TemplateBuilderTextBuffer : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.templates.html">templates</a></code>.<code><a href="zim.templates.parser.html">parser</a></code>.<code><a href="zim.templates.parser.TemplateBuilderTextBuffer.html">TemplateBuilderTextBuffer</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TemplateBuilderTextBuffer</span>(<a href="zim.parser.BuilderTextBuffer.html" title="zim.parser.BuilderTextBuffer">BuilderTextBuffer</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/parser.py#L18">(source)</a></code></p>
+        <p><a href="classIndex.html#zim.templates.parser.TemplateBuilderTextBuffer">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Sub class of <code><a href="zim.parser.BuilderTextBuffer.html">BuilderTextBuffer</a></code> that is used to strip text around template instructions.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1528">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#text">text</a></code></td>
+    <td><span>Append text @param text: text to be appended as string @implementation: must be implemented by sub-classes</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#flush">flush</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#buffer">buffer</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#rstrip">rstrip</a></code></td>
+    <td><span>Do an rstrip on last piece of text up to and including newline</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#lstrip">lstrip</a></code></td>
+    <td><span>Flag that next piece of text needs to be lstripped up to and including newline</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_rstrip_re">_rstrip_re</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_lstrip_re">_lstrip_re</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_lstrip_pending">_lstrip_pending</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_rstrip">_rstrip</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_lstrip">_lstrip</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.parser.BuilderTextBuffer.html">BuilderTextBuffer</a></code>:
+          </p>
+          <table class="children sortable" id="id1529">
+  
+  <tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.parser.BuilderTextBuffer.html#builder">builder</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.parser.BuilderTextBuffer.html#get_text">get_text</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.parser.BuilderTextBuffer.html#set_text">set_text</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.parser.BuilderTextBuffer.html#clear_text">clear_text</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.parser.BuilderTextBuffer.html#start">start</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.parser.BuilderTextBuffer.html#end">end</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.parser.BuilderTextBuffer.html#append">append</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable private">
+  
+  <a name="zim.templates.parser.TemplateBuilderTextBuffer._rstrip_re">
+    
+  </a>
+  <a name="_rstrip_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_rstrip_re</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/parser.py#L23">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  <a name="zim.templates.parser.TemplateBuilderTextBuffer._lstrip_re">
+    
+  </a>
+  <a name="_lstrip_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_lstrip_re</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/parser.py#L24">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.templates.parser.TemplateBuilderTextBuffer.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, builder):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/parser.py#L26">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.parser.BuilderTextBuffer.html#__init__">zim.parser.BuilderTextBuffer.__init__</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.templates.parser.TemplateBuilderTextBuffer._lstrip_pending">
+    
+  </a>
+  <a name="_lstrip_pending">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_lstrip_pending</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/parser.py#L28">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.templates.parser.TemplateBuilderTextBuffer.text">
+    
+  </a>
+  <a name="text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">text</span>(self, text):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/parser.py#L30">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.parser.BuilderTextBuffer.html#text">zim.parser.BuilderTextBuffer.text</a></code></div>
+    
+    <div><p>Append text</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">text</td><td>text to be appended as string</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">must be implemented by sub-classes</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.templates.parser.TemplateBuilderTextBuffer.flush">
+    
+  </a>
+  <a name="flush">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">flush</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/parser.py#L33">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.parser.BuilderTextBuffer.html#flush">zim.parser.BuilderTextBuffer.flush</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.templates.parser.TemplateBuilderTextBuffer.buffer">
+    
+  </a>
+  <a name="buffer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">buffer</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/parser.py#L43">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.parser.BuilderTextBuffer.html#buffer">zim.parser.BuilderTextBuffer.buffer</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.templates.parser.TemplateBuilderTextBuffer.rstrip">
+    
+  </a>
+  <a name="rstrip">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">rstrip</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/parser.py#L45">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Do an rstrip on last piece of text up to and including newline</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.templates.parser.TemplateBuilderTextBuffer._rstrip">
+    
+  </a>
+  <a name="_rstrip">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_rstrip</span>(self, text):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/parser.py#L53">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.templates.parser.TemplateBuilderTextBuffer.lstrip">
+    
+  </a>
+  <a name="lstrip">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">lstrip</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/parser.py#L59">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Flag that next piece of text needs to be lstripped up to and including newline</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.templates.parser.TemplateBuilderTextBuffer._lstrip">
+    
+  </a>
+  <a name="_lstrip">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_lstrip</span>(self, text):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/parser.py#L65">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

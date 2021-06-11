@@ -1,0 +1,1518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.gui.widgets : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.widgets.html">widgets</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>This module contains a number of custom gtk widgets that are used in the zim gui modules.</p><p>These include base clases for windows and dialogs like <code><a href="zim.gui.widgets.Window.html">Window</a></code>, <code><a href="zim.gui.widgets.Dialog.html">Dialog</a></code>, <code><a href="zim.gui.widgets.FileDialog.html">FileDialog</a></code>, <code><a href="zim.gui.widgets.QuestionDialog.html">QuestionDialog</a></code>, <code><a href="zim.gui.widgets.ErrorDialog.html">ErrorDialog</a></code>, and <code><a href="zim.gui.widgets.Assistant.html">Assistant</a></code>. Especially the Dialog class contains a number of convenience methods.</p><p>An important class is te <code><a href="zim.gui.widgets.InputForm.html">InputForm</a></code> which is used extensively in the zim gui to layout forms of input fields etc. And the related specialized input widgets like <code><a href="zim.gui.widgets.InputEntry.html">InputEntry</a></code>, <code><a href="zim.gui.widgets.FileEntry.html">FileEntry</a></code>, <code><a href="zim.gui.widgets.FolderEntry.html">FolderEntry</a></code>, <code><a href="zim.gui.widgets.LinkEntry.html">LinkEntry</a></code>, <code><a href="zim.gui.widgets.PageEntry.html">PageEntry</a></code> and <code><a href="zim.gui.widgets.NamespaceEntry.html">NamespaceEntry</a></code>. These widgets take care of converting specific object types, proper utf-8 encoding etc.</p><p>The remaining classes are various widgets used in the gui: <code>Button</code>, <code><a href="zim.gui.widgets.IconButton.html">IconButton</a></code>, <code><a href="zim.gui.widgets.IconChooserButton.html">IconChooserButton</a></code>, <code><a href="zim.gui.widgets.MenuButton.html">MenuButton</a></code>, <code><a href="zim.gui.widgets.ImageView.html">ImageView</a></code>, <code><a href="zim.gui.widgets.SingleClickTreeView.html">SingleClickTreeView</a></code> and <code><a href="zim.gui.widgets.BrowserTreeView.html">BrowserTreeView</a></code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Unknown Field: newfield</td><td class="fieldArg">requires</td><td>Requires</td></tr></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id487">
+  
+  <tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#GtkSource">GtkSource</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#TEST_MODE">TEST_MODE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#TEST_MODE_RUN_CB">TEST_MODE_RUN_CB</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#KEYVAL_LEFT">KEYVAL_LEFT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#KEYVAL_RIGHT">KEYVAL_RIGHT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#KEYVALS_ASTERISK">KEYVALS_ASTERISK</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#KEYVALS_SLASH">KEYVALS_SLASH</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#KEYVAL_ESC">KEYVAL_ESC</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#CANCEL_STR">CANCEL_STR</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#OK_STR">OK_STR</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#encode_markup_text">encode_markup_text</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#decode_markup_text">decode_markup_text</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#strip_boolean_result">strip_boolean_result</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#gtk_window_set_default_icon">gtk_window_set_default_icon</a></code></td>
+    <td><span>Function to set the zim icon as the default window icon for all gtk windows in this process.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#to_utf8_normalized_casefolded">to_utf8_normalized_casefolded</a></code></td>
+    <td><span>Convert text to utf8 normalized and casefolded form. @param text: text string to convert @returns: converted text</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#ScrolledWindow">ScrolledWindow</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#ScrolledTextView">ScrolledTextView</a></code></td>
+    <td><span>Initializes a <code>Gtk.TextView</code> with sane defaults for displaying a piece of multiline text and wraps it in a scrolled window</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#ScrolledSourceView">ScrolledSourceView</a></code></td>
+    <td><span>If GTKSourceView was successfullly loaded, this generates a SourceView and initializes it. Otherwise ScrolledTextView will be used as a fallback.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#populate_popup_add_separator">populate_popup_add_separator</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#gtk_combobox_set_active_text">gtk_combobox_set_active_text</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#gtk_notebook_get_active_page">gtk_notebook_get_active_page</a></code></td>
+    <td><span>Returns the active child widget or <code>None</code></span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#gtk_popup_at_pointer">gtk_popup_at_pointer</a></code></td>
+    <td><span>Introduced in Gtk 3.22, so wrap our own to be compatible for 3.18 and up</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#rotate_pixbuf">rotate_pixbuf</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#help_text_factory">help_text_factory</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#input_table_factory">input_table_factory</a></code></td>
+    <td><span>Function to help with the layout of widgets in tables.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.IconButton.html">IconButton</a></code></td>
+    <td><span>Button with a stock icon, but no label.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.IconChooserButton.html">IconChooserButton</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.SingleClickTreeView.html">SingleClickTreeView</a></code></td>
+    <td><span>Sub-class of <code>Gtk.TreeView</code> that implements single-click navigation.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.BrowserTreeView.html">BrowserTreeView</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#widget_set_css">widget_set_css</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#button_set_statusbar_style">button_set_statusbar_style</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.MenuButton.html">MenuButton</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.PanedClass.html">PanedClass</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.HPaned.html">HPaned</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.VPaned.html">VPaned</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.InputForm.html">InputForm</a></code></td>
+    <td><span>This class implements a table with input widgets. It takes care of constructing the widgets and lay them out as a well formatted input form.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html">InputEntry</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.FSPathEntry.html">FSPathEntry</a></code></td>
+    <td><span>Base class for <code><a href="zim.gui.widgets.FileEntry.html">FileEntry</a></code> and <code><a href="zim.gui.widgets.FolderEntry.html">FolderEntry</a></code>, handles input of file system paths.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.FileEntry.html">FileEntry</a></code></td>
+    <td><span>Widget to select a file</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.FolderEntry.html">FolderEntry</a></code></td>
+    <td><span>Widget to select a folder</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#gtk_entry_completion_match_func">gtk_entry_completion_match_func</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#gtk_entry_completion_match_func_startswith">gtk_entry_completion_match_func_startswith</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.PageEntry.html">PageEntry</a></code></td>
+    <td><span>Widget to select a zim page path</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.NamespaceEntry.html">NamespaceEntry</a></code></td>
+    <td><span>Widget to select a zim page path as a namespace</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.LinkEntry.html">LinkEntry</a></code></td>
+    <td><span>Widget entering links in zim pages. This widget accepts either zim page paths, file paths and URLs.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#format_title">format_title</a></code></td>
+    <td><span>Formats a window title (in fact just adds " - Zim" to the end).</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_window">get_window</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.uistate_property.html">uistate_property</a></code></td>
+    <td><span>Class for uistate get/set attributes</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#LEFT_PANE">LEFT_PANE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#RIGHT_PANE">RIGHT_PANE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#TOP_PANE">TOP_PANE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#BOTTOM_PANE">BOTTOM_PANE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#PANE_POSITIONS">PANE_POSITIONS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#TOP">TOP</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#BOTTOM">BOTTOM</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#LEFT">LEFT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#RIGHT">RIGHT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#POSITIONS">POSITIONS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.WindowSidePane.html">WindowSidePane</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.MinimizedTabs.html">MinimizedTabs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.HMinimizedTabs.html">HMinimizedTabs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.VMinimizedTabs.html">VMinimizedTabs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.WindowSidePaneWidget.html">WindowSidePaneWidget</a></code></td>
+    <td><span>Base class for widgets that want to integrate nicely in the <code><a href="zim.gui.widgets.WindowSidePane.html">WindowSidePane</a></code></span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.ConfigDefinitionPaneToggle.html">ConfigDefinitionPaneToggle</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.ConfigDefinitionPaneState.html">ConfigDefinitionPaneState</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.Window.html">Window</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.Dialog.html">Dialog</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.ErrorDialog.html">ErrorDialog</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.QuestionDialog.html">QuestionDialog</a></code></td>
+    <td><span>Convenience class to prompt the user with Yes/No answer type of questions.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.MessageDialog.html">MessageDialog</a></code></td>
+    <td><span>Convenience wrapper for <code>Gtk.MessageDialog</code>, should be used for informational popups without an action.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.FileDialog.html">FileDialog</a></code></td>
+    <td><span>File Chooser dialog, that allows to browser the file system and select files or folders. Similar to <code>Gtk.FileChooserDialog</code> but inherits from <code><a href="zim.gui.widgets.Dialog.html">Dialog</a></code> instead.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.ProgressDialog.html">ProgressDialog</a></code></td>
+    <td><span>Dialog to show a progress bar for a operation</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.LogFileDialog.html">LogFileDialog</a></code></td>
+    <td><span>Simple dialog to show a log file</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.Assistant.html">Assistant</a></code></td>
+    <td><span>Dialog with multi-page input, sometimes also revert to as a "wizard". Similar to <code>Gtk.Assistent</code> separate implementation to allow more flexibility in the dialog layout.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.AssistantPage.html">AssistantPage</a></code></td>
+    <td><span>Base class for pages in an <code><a href="zim.gui.widgets.Assistant.html">Assistant</a></code> dialog.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.widgets.ImageView.html">ImageView</a></code></td>
+    <td><span>Widget to show an image, scales the image and sets proper background.</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_ref_cache">_ref_cache</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_gtk_popup_at_pointer_backward">_gtk_popup_at_pointer_backward</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_do_sync_widget_state">_do_sync_widget_state</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_do_sync_widget_state_check_active">_do_sync_widget_state_check_active</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_sync_widget_state">_sync_widget_state</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_hide">_hide</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_show">_show</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  <a name="zim.gui.widgets.GtkSource">
+    
+  </a>
+  <a name="GtkSource">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">GtkSource</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L53">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.gui.widgets.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L69">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.gui.widgets.TEST_MODE">
+    
+  </a>
+  <a name="TEST_MODE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TEST_MODE</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L73">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.gui.widgets.TEST_MODE_RUN_CB">
+    
+  </a>
+  <a name="TEST_MODE_RUN_CB">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TEST_MODE_RUN_CB</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L74">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.gui.widgets.KEYVAL_LEFT">
+    
+  </a>
+  <a name="KEYVAL_LEFT">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">KEYVAL_LEFT</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L81">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.gui.widgets.KEYVAL_RIGHT">
+    
+  </a>
+  <a name="KEYVAL_RIGHT">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">KEYVAL_RIGHT</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L82">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.gui.widgets.KEYVALS_ASTERISK">
+    
+  </a>
+  <a name="KEYVALS_ASTERISK">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">KEYVALS_ASTERISK</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L83">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.gui.widgets.KEYVALS_SLASH">
+    
+  </a>
+  <a name="KEYVALS_SLASH">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">KEYVALS_SLASH</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L85">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.gui.widgets.KEYVAL_ESC">
+    
+  </a>
+  <a name="KEYVAL_ESC">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">KEYVAL_ESC</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L88">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.gui.widgets.CANCEL_STR">
+    
+  </a>
+  <a name="CANCEL_STR">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">CANCEL_STR</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L91">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.gui.widgets.OK_STR">
+    
+  </a>
+  <a name="OK_STR">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">OK_STR</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L92">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.encode_markup_text">
+    
+  </a>
+  <a name="encode_markup_text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">encode_markup_text</span>(text):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L94">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Encode text such that it can be used in a piece of markup text without causing errors. Needed for all places where e.g. a label depends on user input and is formatted with markup to show it as bold text.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">text</td><td>label text as string</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">encoded text</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.decode_markup_text">
+    
+  </a>
+  <a name="decode_markup_text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">decode_markup_text</span>(text):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L105">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Decode text that was encoded with <code><a href="#encode_markup_text">encode_markup_text()</a></code> and remove any markup tags.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">text</td><td>markup text</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">normal text</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.strip_boolean_result">
+    
+  </a>
+  <a name="strip_boolean_result">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">strip_boolean_result</span>(ret):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L115">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.gtk_window_set_default_icon">
+    
+  </a>
+  <a name="gtk_window_set_default_icon">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">gtk_window_set_default_icon</span>():
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L132">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Function to set the zim icon as the default window icon for all gtk windows in this process.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.to_utf8_normalized_casefolded">
+    
+  </a>
+  <a name="to_utf8_normalized_casefolded">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">to_utf8_normalized_casefolded</span>(text):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L176">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Convert text to utf8 normalized and casefolded form.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">text</td><td>text string to convert</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">converted text</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.ScrolledWindow">
+    
+  </a>
+  <a name="ScrolledWindow">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ScrolledWindow</span>(widget, hpolicy=Gtk.PolicyType.AUTOMATIC, vpolicy=Gtk.PolicyType.AUTOMATIC, shadow=Gtk.ShadowType.IN):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L187">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Wrap <code>widget</code> in a <code>Gtk.ScrolledWindow</code> and return the resulting widget</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">widget</td><td>any Gtk widget</td></tr><tr><td></td><td class="fieldArg">hpolicy</td><td>the horizontal scrollbar policy</td></tr><tr><td></td><td class="fieldArg">vpolicy</td><td>the vertical scrollbar policy</td></tr><tr><td></td><td class="fieldArg">shadow</td><td>the shadow type</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code>Gtk.ScrolledWindow</code></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.ScrolledTextView">
+    
+  </a>
+  <a name="ScrolledTextView">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ScrolledTextView</span>(text=None, monospace=False, **kwarg):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L223">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Initializes a <code>Gtk.TextView</code> with sane defaults for displaying a piece of multiline text and wraps it in a scrolled window</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">text</td><td>initial text to show in the textview</td></tr><tr><td></td><td class="fieldArg">monospace</td><td>when <code>True</code> the font will be set to monospaced and line wrapping disabled, use this to display log files etc.</td></tr><tr><td></td><td class="fieldArg">kwarg</td><td>arguments passed on to <code><a href="#ScrolledWindow">ScrolledWindow</a></code></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a 2-tuple of the scrolled window and the textview</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.ScrolledSourceView">
+    
+  </a>
+  <a name="ScrolledSourceView">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ScrolledSourceView</span>(text=None, syntax=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L248">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>If GTKSourceView was successfullly loaded, this generates a SourceView and initializes it. Otherwise ScrolledTextView will be used as a fallback.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">text</td><td>initial text to show in the view</td></tr><tr><td></td><td class="fieldArg">syntax</td><td>this will try to enable syntax highlighting for the given language. If None, no syntax highlighting will be enabled.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a 2-tuple of a window and a view.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.populate_popup_add_separator">
+    
+  </a>
+  <a name="populate_popup_add_separator">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">populate_popup_add_separator</span>(menu, prepend=False):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L277">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Convenience function that adds a <code>Gtk.SeparatorMenuItem</code> to a context menu. Checks if the menu already contains items, if it is empty does nothing. Also if the menu already has a seperator in the required place this function does nothing. This helps with building menus more dynamically.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">menu</td><td>the <code>Gtk.Menu</code> object for the popup</td></tr><tr><td></td><td class="fieldArg">prepend</td><td>if <code>False</code> append, if <code>True</code> prepend</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.gtk_combobox_set_active_text">
+    
+  </a>
+  <a name="gtk_combobox_set_active_text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">gtk_combobox_set_active_text</span>(combobox, text):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L299">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Opposite of <code>Gtk.ComboBox.get_active_text()</code>. Sets the active item based on a string. Will match this string against the list of options and select the correct index.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></td><td>when the string is not found in the list.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.gtk_notebook_get_active_page">
+    
+  </a>
+  <a name="gtk_notebook_get_active_page">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">gtk_notebook_get_active_page</span>(nb):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L313">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns the active child widget or <code>None</code></p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.gtk_popup_at_pointer">
+    
+  </a>
+  <a name="gtk_popup_at_pointer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">gtk_popup_at_pointer</span>(menu, event=None, button=3):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L322">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Introduced in Gtk 3.22, so wrap our own to be compatible for 3.18 and up</p></div>
+  </div>
+</div><div class="basevariable private">
+  
+  <a name="zim.gui.widgets._ref_cache">
+    
+  </a>
+  <a name="_ref_cache">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_ref_cache</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L330">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="zim.gui.widgets._gtk_popup_at_pointer_backward">
+    
+  </a>
+  <a name="_gtk_popup_at_pointer_backward">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_gtk_popup_at_pointer_backward</span>(menu, event, button):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L332">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.rotate_pixbuf">
+    
+  </a>
+  <a name="rotate_pixbuf">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">rotate_pixbuf</span>(pixbuf):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L341">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Rotate the pixbuf to match orientation from EXIF info. This is intended for e.g. photos that have EXIF information that shows how the camera was held.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a new version of the pixbuf or the pixbuf itself.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.help_text_factory">
+    
+  </a>
+  <a name="help_text_factory">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">help_text_factory</span>(text):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L364">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Create a label with an "info" icon in front of it. Intended for informational text in dialogs.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">text</td><td>the text to display</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code>Gtk.HBox</code></td></tr></table></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="zim.gui.widgets._do_sync_widget_state">
+    
+  </a>
+  <a name="_do_sync_widget_state">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_do_sync_widget_state</span>(widget, a, subject):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L384">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="zim.gui.widgets._do_sync_widget_state_check_active">
+    
+  </a>
+  <a name="_do_sync_widget_state_check_active">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_do_sync_widget_state_check_active</span>(widget, *a):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L394">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="zim.gui.widgets._sync_widget_state">
+    
+  </a>
+  <a name="_sync_widget_state">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_sync_widget_state</span>(widget, subject, check_active=False):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L403">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.input_table_factory">
+    
+  </a>
+  <a name="input_table_factory">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">input_table_factory</span>(inputs, table=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L423">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Function to help with the layout of widgets in tables.</p><p>Only use this function directly if you want a completely custom input form. For standard forms see the <code><a href="zim.gui.widgets.InputForm.html">InputForm</a></code> class.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">inputs</td><td>a list of inputs. These inputs should be either a tuple of a string and one or more widgets, a single widget, a string, or <code>None</code>.<p>For a tuple the lable will be lined out in the first column followed by all the widgets. If a tuple is given and the first item is <code>None</code>, the widget will be lined out in the 2nd column.</p><p>A single widget will be lined out in line with the lables (this is meant for e.g. checkboxes that have the label behind the checkbox as part of the widget).</p><p>A string will be put as a label on it's own row. Use of markup is assumed.</p><p>An input that has a <code>None</code> value will result in an empty row in the table, separating field above and below.</p></td></tr><tr><td></td><td class="fieldArg">table</td><td>options <code>Gtk.Table</code>, if given inputs will be appended to this table</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code>Gtk.Table</code></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.widget_set_css">
+    
+  </a>
+  <a name="widget_set_css">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">widget_set_css</span>(widget, name, css):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L747">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.button_set_statusbar_style">
+    
+  </a>
+  <a name="button_set_statusbar_style">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">button_set_statusbar_style</span>(button):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L756">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.gtk_entry_completion_match_func">
+    
+  </a>
+  <a name="gtk_entry_completion_match_func">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">gtk_entry_completion_match_func</span>(completion, key, iter, column):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1695">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.gtk_entry_completion_match_func_startswith">
+    
+  </a>
+  <a name="gtk_entry_completion_match_func_startswith">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">gtk_entry_completion_match_func_startswith</span>(completion, key, iter, column):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1707">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.format_title">
+    
+  </a>
+  <a name="format_title">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">format_title</span>(title):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2022">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Formats a window title (in fact just adds " - Zim" to the end).</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.gui.widgets.get_window">
+    
+  </a>
+  <a name="get_window">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_window</span>(widget):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2028">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.gui.widgets.LEFT_PANE">
+    
+  </a>
+  <a name="LEFT_PANE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">LEFT_PANE</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2057">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.gui.widgets.RIGHT_PANE">
+    
+  </a>
+  <a name="RIGHT_PANE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">RIGHT_PANE</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2058">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.gui.widgets.TOP_PANE">
+    
+  </a>
+  <a name="TOP_PANE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TOP_PANE</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2059">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.gui.widgets.BOTTOM_PANE">
+    
+  </a>
+  <a name="BOTTOM_PANE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">BOTTOM_PANE</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2060">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.gui.widgets.PANE_POSITIONS">
+    
+  </a>
+  <a name="PANE_POSITIONS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PANE_POSITIONS</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2062">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.gui.widgets.TOP">
+    
+  </a>
+  <a name="TOP">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TOP</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2069">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.gui.widgets.BOTTOM">
+    
+  </a>
+  <a name="BOTTOM">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">BOTTOM</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2070">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.gui.widgets.LEFT">
+    
+  </a>
+  <a name="LEFT">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">LEFT</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2071">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.gui.widgets.RIGHT">
+    
+  </a>
+  <a name="RIGHT">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">RIGHT</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2072">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.gui.widgets.POSITIONS">
+    
+  </a>
+  <a name="POSITIONS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">POSITIONS</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2074">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="zim.gui.widgets._hide">
+    
+  </a>
+  <a name="_hide">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_hide</span>(widget):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2082">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="zim.gui.widgets._show">
+    
+  </a>
+  <a name="_show">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_show</span>(widget):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2087">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

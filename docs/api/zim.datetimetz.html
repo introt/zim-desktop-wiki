@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.datetimetz : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.datetimetz.html">datetimetz</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/datetimetz.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Thin wrapper for 'datetime' module from the standard library. Provides timezone info for the local time. Based on example code from standard library datetime documentation.</p><p>Main usage of this module is the function <code><a href="#now">now()</a></code>. It imports all from the standard datetime, so it can be used as a transparant replacement.</p><p>Also adds a <code><a href="#strfcal">strfcal()</a></code> method and extends <code><a href="#strftime">strftime()</a></code> to deal with weeknumbers correctly.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id85">
+  
+  <tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#now">now</a></code></td>
+    <td><span>Like <code>datetime.now()</code> but with local timezone info</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ZERO">ZERO</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#STDOFFSET">STDOFFSET</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#DSTOFFSET">DSTOFFSET</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#DSTDIFF">DSTDIFF</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.datetimetz.LocalTimezone.html">LocalTimezone</a></code></td>
+    <td><span>Implementation of tzinfo with the current time zone, based on the platform's idea of local time</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#MONDAY">MONDAY</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#SUNDAY">SUNDAY</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#FIRST_DAY_OF_WEEK">FIRST_DAY_OF_WEEK</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#init_first_day_of_week">init_first_day_of_week</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#dates_for_week">dates_for_week</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#weekcalendar">weekcalendar</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#strfcal">strfcal</a></code></td>
+    <td><span>Method similar to strftime, but dealing with the weeknumber, day of the week and the year of that week.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#strftime">strftime</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  <a name="zim.datetimetz.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/datetimetz.py#L23">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.datetimetz.now">
+    
+  </a>
+  <a name="now">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">now</span>():
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/datetimetz.py#L26">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Like <code>datetime.now()</code> but with local timezone info</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.datetimetz.ZERO">
+    
+  </a>
+  <a name="ZERO">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ZERO</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/datetimetz.py#L36">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.datetimetz.STDOFFSET">
+    
+  </a>
+  <a name="STDOFFSET">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">STDOFFSET</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/datetimetz.py#L37">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.datetimetz.DSTOFFSET">
+    
+  </a>
+  <a name="DSTOFFSET">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">DSTOFFSET</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/datetimetz.py#L39">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.datetimetz.DSTDIFF">
+    
+  </a>
+  <a name="DSTDIFF">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">DSTDIFF</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/datetimetz.py#L43">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.datetimetz.MONDAY">
+    
+  </a>
+  <a name="MONDAY">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">MONDAY</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/datetimetz.py#L79">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.datetimetz.SUNDAY">
+    
+  </a>
+  <a name="SUNDAY">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">SUNDAY</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/datetimetz.py#L80">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.datetimetz.FIRST_DAY_OF_WEEK">
+    
+  </a>
+  <a name="FIRST_DAY_OF_WEEK">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">FIRST_DAY_OF_WEEK</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/datetimetz.py#L81">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.datetimetz.init_first_day_of_week">
+    
+  </a>
+  <a name="init_first_day_of_week">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">init_first_day_of_week</span>():
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/datetimetz.py#L82">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.datetimetz.dates_for_week">
+    
+  </a>
+  <a name="dates_for_week">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dates_for_week</span>(year, week):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/datetimetz.py#L109">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns the first and last day of the week for a given week number of a given year.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">year</td><td>year as int (e.g. 2012)</td></tr><tr><td></td><td class="fieldArg">week</td><td>week number as int (0 .. 53)</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a 2-tuple of:<ul><li>a <code>datetime.date</code> object for the start date of the week</li><li>a <code>datetime.date</code> object for the end dateof the week</li></ul></td></tr><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">first day of the week can be either <code>MONDAY</code> or <code>SUNDAY</code>, this is configured in <code>FIRST_DAY_OF_WEEK</code> based on the locale.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.datetimetz.weekcalendar">
+    
+  </a>
+  <a name="weekcalendar">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">weekcalendar</span>(date):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/datetimetz.py#L153">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get the year, week number and week day for a specific date. Like <code>datetime.date.isocalendar()</code> but takes into account <code>FIRST_DAY_OF_WEEK</code> correctly.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">date</td><td>a <code>datetime.date</code> or <code>datetime.datetime</code> object</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a year, a week number and a weekday as integers The weekday numbering depends on locale, 1 is always first day of the week, either a Sunday or a Monday.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.datetimetz.strfcal">
+    
+  </a>
+  <a name="strfcal">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">strfcal</span>(format, date):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/datetimetz.py#L184">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Method similar to strftime, but dealing with the weeknumber, day of the week and the year of that week.</p><p>Week 1 is the first week where the Thursday is in the new year. So e.g. the last day of 2012 is a Monday. And therefore the calendar week for 31 Dec 2012 is already week 1 2013.</p><p>The locale decides whether a week starts on Monday (as the ISO standard would have it) or on Sunday. So depending on your locale Sun 6 Jan 2013 is either still week 1 or already the first day of week 2.</p><p>Codes supported by this method:</p><ul><li><code>%w</code> is replaced by the weekday as a decimal number [1,7], with 1 representing either Monday or Sunday depending on the locale</li><li><code>%W</code> is replaced by the weeknumber depending on the locale</li><li><code>%Y</code> is replaced by the year with century as a decimal number, the year depends on the weeknumber depending on the locale</li><li><code>%%</code> is replaced by %</li></ul><p>Difference between this method and strftime is that:</p><ol><li>It uses locale to determine the first day of the week</li><li>It returns the year that goes with the weeknumber</li></ol></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.datetimetz.strftime">
+    
+  </a>
+  <a name="strftime">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">strftime</span>(format, date):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/datetimetz.py#L231">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

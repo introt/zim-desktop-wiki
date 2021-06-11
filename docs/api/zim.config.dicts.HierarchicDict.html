@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.config.dicts.HierarchicDict : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.config.html">config</a></code>.<code><a href="zim.config.dicts.html">dicts</a></code>.<code><a href="zim.config.dicts.HierarchicDict.html">HierarchicDict</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">HierarchicDict</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L844">(source)</a></code></p>
+        <p><a href="classIndex.html#zim.config.dicts.HierarchicDict">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>This class implements a data store that behaves as a hierarchic dict of dicts. Each key in this object is considered a hierarchic path (the path separator is ':' for obvious reasons). The dict for each key will "inherit" all values from parent paths. However setting a new value will set it specifically for that key, without changing the value in the "parents". This is specifically used to store namespace properties for zim notebooks. So each child namespace will inherit the properties of it's parents unless it was explicitly set for that child namespace.</p><p>There is a special member dict stored under the key "__defaults__" which has the top-level fallback properties.</p><p>This object only implements <code>__getitem__()</code>, but no <code>__setitem__()</code>.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id68">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#__slots__">__slots__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Constructor</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#dict">dict</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__getitem__">__getitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="zim.config.dicts.HierarchicDict.__slots__">
+    
+  </a>
+  <a name="__slots__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__slots__</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L863">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, ...]</code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.config.dicts.HierarchicDict.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, defaults=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L865">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">defaults</td><td>dict with the default properties</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.config.dicts.HierarchicDict.dict">
+    
+  </a>
+  <a name="dict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">dict</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L870">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="#dict">dict</a></code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.config.dicts.HierarchicDict.__getitem__">
+    
+  </a>
+  <a name="__getitem__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__getitem__</span>(self, k):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L873">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

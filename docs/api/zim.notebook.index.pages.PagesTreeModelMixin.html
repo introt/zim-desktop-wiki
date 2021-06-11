@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.notebook.index.pages.PagesTreeModelMixin : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.notebook.html">notebook</a></code>.<code><a href="zim.notebook.index.html">index</a></code>.<code><a href="zim.notebook.index.pages.html">pages</a></code>.<code><a href="zim.notebook.index.pages.PagesTreeModelMixin.html">PagesTreeModelMixin</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">PagesTreeModelMixin</span>(<a href="zim.notebook.index.base.TreeModelMixinBase.html" title="zim.notebook.index.base.TreeModelMixinBase">TreeModelMixinBase</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L831">(source)</a></code></p><p>Known subclasses: <code><a href="zim.notebook.index.tags.TagsTreeModelBase.html">zim.notebook.index.tags.TagsTreeModelBase</a></code>, <code><a href="zim.plugins.pageindex.PageTreeStore.html">zim.plugins.pageindex.PageTreeStore</a></code></p>
+        <p><a href="classIndex.html#zim.notebook.index.pages.PagesTreeModelMixin">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="undocumented">Undocumented</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id728">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#connect_to_updateiter">connect_to_updateiter</a></code></td>
+    <td><span>Connect to a new <code><a href="zim.notebook.index.IndexUpdateIter.html">IndexUpdateIter</a></code></span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_page_row_inserted">on_page_row_inserted</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_page_row_changed">on_page_row_changed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_page_row_delete">on_page_row_delete</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_page_row_deleted">on_page_row_deleted</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#n_children_top">n_children_top</a></code></td>
+    <td><span>Return the number of items in the top level of the model</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_mytreeiter">get_mytreeiter</a></code></td>
+    <td><span>Returns a <code>treeiter</code> object for <code>treepath</code> or <code>None</code> @implementation: must be implemented by a subclass</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#find">find</a></code></td>
+    <td><span>Returns the <code>Gtk.TreePath</code> for a notebook page <code><a href="zim.notebook.page.Path.html">Path</a></code> If the <code><a href="zim.notebook.page.Path.html">Path</a></code> appears multiple times returns the first occurrence @raises IndexNotFoundError: if path not found</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#find_all">find_all</a></code></td>
+    <td><span>Returns a list of <code>Gtk.TreePath</code> for a notebook page <code><a href="zim.notebook.page.Path.html">Path</a></code> Returns all occurrences in the treeview @raises IndexNotFoundError: if path not found</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_REVERSE">_REVERSE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_MY_ROOT_NAME">_MY_ROOT_NAME</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_MY_ROOT_NAME_C">_MY_ROOT_NAME_C</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_MY_ROOT_ID">_MY_ROOT_ID</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_deleted_paths">_deleted_paths</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_set_root_id">_set_root_id</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_check_parent_has_child_toggled">_check_parent_has_child_toggled</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_find_all_pages">_find_all_pages</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.notebook.index.base.TreeModelMixinBase.html">TreeModelMixinBase</a></code>:
+          </p>
+          <table class="children sortable" id="id729">
+  
+  <tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.notebook.index.base.TreeModelMixinBase.html#index">index</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.notebook.index.base.TreeModelMixinBase.html#db">db</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.notebook.index.base.TreeModelMixinBase.html#cache">cache</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.base.TreeModelMixinBase.html#teardown">teardown</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code> (via <code><a href="zim.notebook.index.base.TreeModelMixinBase.html">TreeModelMixinBase</a></code>):
+          </p>
+          <table class="children sortable" id="id730">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#connectto">connectto</a></code></td>
+    <td><span>Connect to signals of another object E.g.:</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#connectto_all">connectto_all</a></code></td>
+    <td><span>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
+    <td><span>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_all">disconnect_all</a></code></td>
+    <td><span>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_disconnect_from">_disconnect_from</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="zim.notebook.index.pages.PagesTreeModelMixin.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, index, root=None, reverse=False):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L840">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.notebook.index.base.TreeModelMixinBase.html#__init__">zim.notebook.index.base.TreeModelMixinBase.__init__</a></code></div><div class="interfaceinfo">overridden in <code><a href="zim.notebook.index.tags.TagsTreeModelBase.html">zim.notebook.index.tags.TagsTreeModelBase</a></code>, <code><a href="zim.plugins.pageindex.PageTreeStore.html">zim.plugins.pageindex.PageTreeStore</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.notebook.index.pages.PagesTreeModelMixin._REVERSE">
+    
+  </a>
+  <a name="_REVERSE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_REVERSE</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L842">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.notebook.index.pages.PagesTreeModelMixin._MY_ROOT_NAME">
+    
+  </a>
+  <a name="_MY_ROOT_NAME">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_MY_ROOT_NAME</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L844">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.notebook.index.pages.PagesTreeModelMixin._MY_ROOT_NAME_C">
+    
+  </a>
+  <a name="_MY_ROOT_NAME_C">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_MY_ROOT_NAME_C</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L845">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.notebook.index.pages.PagesTreeModelMixin._MY_ROOT_ID">
+    
+  </a>
+  <a name="_MY_ROOT_ID">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_MY_ROOT_ID</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L846">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.notebook.index.pages.PagesTreeModelMixin._deleted_paths">
+    
+  </a>
+  <a name="_deleted_paths">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_deleted_paths</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L852">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.notebook.index.pages.PagesTreeModelMixin._set_root_id">
+    
+  </a>
+  <a name="_set_root_id">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_set_root_id</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L854">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.index.pages.PagesTreeModelMixin.connect_to_updateiter">
+    
+  </a>
+  <a name="connect_to_updateiter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">connect_to_updateiter</span>(self, index, update_iter):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L860">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.notebook.index.base.TreeModelMixinBase.html#connect_to_updateiter">zim.notebook.index.base.TreeModelMixinBase.connect_to_updateiter</a></code></div><div class="interfaceinfo">overridden in <code><a href="zim.notebook.index.tags.TagsTreeModelBase.html">zim.notebook.index.tags.TagsTreeModelBase</a></code></div>
+    
+    <div><p>Connect to a new <code><a href="zim.notebook.index.IndexUpdateIter.html">IndexUpdateIter</a></code></p><p>The following signals must be implemented:</p><ul><li>row-inserted (treepath, treeiter)</li><li>row-changed (treepath, treeiter)</li><li>row-has-child-toggled (treepath, treeiter)</li><li>row-deleted (treepath)</li></ul><p>Typically each signal should also flush the cache using <code>self.cache.clear()</code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">must be implemented by a subclass</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.index.pages.PagesTreeModelMixin.on_page_row_inserted">
+    
+  </a>
+  <a name="on_page_row_inserted">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_page_row_inserted</span>(self, o, row):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L865">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.notebook.index.pages.PagesTreeModelMixin._check_parent_has_child_toggled">
+    
+  </a>
+  <a name="_check_parent_has_child_toggled">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_check_parent_has_child_toggled</span>(self, treepath, count):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L876">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.index.pages.PagesTreeModelMixin.on_page_row_changed">
+    
+  </a>
+  <a name="on_page_row_changed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_page_row_changed</span>(self, o, row, oldrow):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L882">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.index.pages.PagesTreeModelMixin.on_page_row_delete">
+    
+  </a>
+  <a name="on_page_row_delete">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_page_row_delete</span>(self, o, row):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L889">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.index.pages.PagesTreeModelMixin.on_page_row_deleted">
+    
+  </a>
+  <a name="on_page_row_deleted">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_page_row_deleted</span>(self, o, row):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L892">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.index.pages.PagesTreeModelMixin.n_children_top">
+    
+  </a>
+  <a name="n_children_top">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">n_children_top</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L908">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.notebook.index.base.TreeModelMixinBase.html#n_children_top">zim.notebook.index.base.TreeModelMixinBase.n_children_top</a></code></div><div class="interfaceinfo">overridden in <code><a href="zim.notebook.index.tags.TaggedPagesTreeModelMixin.html">zim.notebook.index.tags.TaggedPagesTreeModelMixin</a></code></div>
+    
+    <div><p>Return the number of items in the top level of the model</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.index.pages.PagesTreeModelMixin.get_mytreeiter">
+    
+  </a>
+  <a name="get_mytreeiter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_mytreeiter</span>(self, treepath):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L916">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.notebook.index.base.TreeModelMixinBase.html#get_mytreeiter">zim.notebook.index.base.TreeModelMixinBase.get_mytreeiter</a></code></div><div class="interfaceinfo">overridden in <code><a href="zim.notebook.index.tags.TaggedPagesTreeModelMixin.html">zim.notebook.index.tags.TaggedPagesTreeModelMixin</a></code>, <code><a href="zim.notebook.index.tags.TagsTreeModelMixin.html">zim.notebook.index.tags.TagsTreeModelMixin</a></code></div>
+    
+    <div><p>Returns a <code>treeiter</code> object for <code>treepath</code> or <code>None</code></p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">must be implemented by a subclass</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.index.pages.PagesTreeModelMixin.find">
+    
+  </a>
+  <a name="find">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">find</span>(self, path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L966">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.notebook.index.base.TreeModelMixinBase.html#find">zim.notebook.index.base.TreeModelMixinBase.find</a></code></div><div class="interfaceinfo">overridden in <code><a href="zim.notebook.index.tags.TagsTreeModelMixin.html">zim.notebook.index.tags.TagsTreeModelMixin</a></code></div>
+    
+    <div><p>Returns the <code>Gtk.TreePath</code> for a notebook page <code><a href="zim.notebook.page.Path.html">Path</a></code> If the <code><a href="zim.notebook.page.Path.html">Path</a></code> appears multiple times returns the first occurrence</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="zim.notebook.index.base.IndexNotFoundError.html">IndexNotFoundError</a></td><td>if path not found</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.index.pages.PagesTreeModelMixin.find_all">
+    
+  </a>
+  <a name="find_all">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">find_all</span>(self, path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L979">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.notebook.index.base.TreeModelMixinBase.html#find_all">zim.notebook.index.base.TreeModelMixinBase.find_all</a></code></div><div class="interfaceinfo">overridden in <code><a href="zim.notebook.index.tags.TagsTreeModelMixin.html">zim.notebook.index.tags.TagsTreeModelMixin</a></code></div>
+    
+    <div><p>Returns a list of <code>Gtk.TreePath</code> for a notebook page <code><a href="zim.notebook.page.Path.html">Path</a></code> Returns all occurrences in the treeview</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="zim.notebook.index.base.IndexNotFoundError.html">IndexNotFoundError</a></td><td>if path not found</td></tr></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.notebook.index.pages.PagesTreeModelMixin._find_all_pages">
+    
+  </a>
+  <a name="_find_all_pages">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_find_all_pages</span>(self, name, update_cache=True):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L992">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.notebook.index.tags.TaggedPagesTreeModelMixin.html">zim.notebook.index.tags.TaggedPagesTreeModelMixin</a></code>, <code><a href="zim.notebook.index.tags.TagsTreeModelMixin.html">zim.notebook.index.tags.TagsTreeModelMixin</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

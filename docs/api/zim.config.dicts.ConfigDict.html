@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.config.dicts.ConfigDict : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.config.html">config</a></code>.<code><a href="zim.config.dicts.html">dicts</a></code>.<code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ConfigDict</span>(<a href="zim.config.dicts.ControlledDict.html" title="zim.config.dicts.ControlledDict">ControlledDict</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L458">(source)</a></code></p>
+        <p><a href="classIndex.html#zim.config.dicts.ConfigDict">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>The class defines a dictionary of config keys.</p><p>To add a key in this dictionary it must first be defined using one of the sub-classes of <code><a href="zim.config.dicts.ConfigDefinition.html">ConfigDefinition</a></code>. This definition takes care of validating the value of the config keys and (de-)serializing the values from and to text representation used in the config files.</p><p>Both getting and setting a value will raise a <code>KeyError</code> when the key has not been defined first. An <code>ValueError</code> is raised when the value does not conform to the definition.</p><p>THis class derives from <code><a href="zim.config.dicts.ControlledDict.html">ControlledDict</a></code> which in turn derives from <code><a href="zim.utils.DefinitionOrderedDict.html">DefinitionOrderedDict</a></code> so changes to the config can be tracked by the <code>changed</code> signal, and values are kept in the same order so the order in which items are written to the config file is predictable.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id55">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#definitions">definitions</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#copy">copy</a></code></td>
+    <td><span>Shallow copy of the items @returns: a new object of the same class with the same items</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#update">update</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dump">dump</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#all_items">all_items</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__setitem__">__setitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__delitem__">__delitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#input">input</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#define">define</a></code></td>
+    <td><span>Set one or more definitions for this config dict Can cause error log when values prior given to <code>input()</code> do not match the definition.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#setdefault">setdefault</a></code></td>
+    <td><span>Set the default value for a configuration item.</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_input">_input</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_set_input">_set_input</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.config.dicts.ControlledDict.html">ControlledDict</a></code>:
+          </p>
+          <table class="children sortable" id="id56">
+  
+  <tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="zim.config.dicts.ControlledDict.html#__signals__">__signals__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.config.dicts.ControlledDict.html#changed">changed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.config.dicts.ControlledDict.html#on_child_changed">on_child_changed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.config.dicts.ControlledDict.html#do_changed">do_changed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.config.dicts.ControlledDict.html#modified">modified</a></code></td>
+    <td><span><code>True</code> when the values were modified, used to e.g. track when a config needs to be written back to file</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.config.dicts.ControlledDict.html#set_modified">set_modified</a></code></td>
+    <td><span>Set the modified state. Used to reset modified to <code>False</code> after the configuration has been saved to file. @param modified: <code>True</code> or <code>False</code></span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.config.dicts.ControlledDict.html#_modified">_modified</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.signals.SignalEmitter.html">SignalEmitter</a></code> (via <code><a href="zim.config.dicts.ControlledDict.html">ControlledDict</a></code>):
+          </p>
+          <table class="children sortable" id="id57">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#__new__">__new__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#connect">connect</a></code></td>
+    <td><span>Register a handler for a specific object.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#connect_after">connect_after</a></code></td>
+    <td><span>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#disconnect">disconnect</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#emit">emit</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#emit_return_first">emit_return_first</a></code></td>
+    <td><span>Emits a signal and stops emission on the first handler that returns a not-None value.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#emit_return_iter">emit_return_iter</a></code></td>
+    <td><span>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#block_signals">block_signals</a></code></td>
+    <td><span>Returns a context manager for blocking one or more signals</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#_connect">_connect</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#_setup_signal">_setup_signal</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#_teardown_signal">_teardown_signal</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code> (via <code><a href="zim.config.dicts.ControlledDict.html">ControlledDict</a></code>):
+          </p>
+          <table class="children sortable" id="id58">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#connectto">connectto</a></code></td>
+    <td><span>Connect to signals of another object E.g.:</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#connectto_all">connectto_all</a></code></td>
+    <td><span>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
+    <td><span>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_all">disconnect_all</a></code></td>
+    <td><span>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_disconnect_from">_disconnect_from</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="zim.config.dicts.ConfigDict.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, E=None, **F):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L477">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.config.dicts.ControlledDict.html#__init__">zim.config.dicts.ControlledDict.__init__</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.config.dicts.ConfigDict.definitions">
+    
+  </a>
+  <a name="definitions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">definitions</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L480">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.config.dicts.ConfigDict._input">
+    
+  </a>
+  <a name="_input">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_input</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L481">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.config.dicts.ConfigDict.copy">
+    
+  </a>
+  <a name="copy">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">copy</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L485">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Shallow copy of the items</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a new object of the same class with the same items</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.config.dicts.ConfigDict.update">
+    
+  </a>
+  <a name="update">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">update</span>(self, E=None, **F):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L494">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.config.dicts.ControlledDict.html#update">zim.config.dicts.ControlledDict.update</a></code></div>
+    
+    <div><p>Like <code>dict.update()</code>, copying values from <code>E</code> or <code>F</code>. However if <code>E</code> is also a <code>ConfigDict</code>, also the definitions are copied along. Do use <code>update()</code> when setting multiple values at once since it results in emitting <code>changed</code> only once.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.config.dicts.ConfigDict.dump">
+    
+  </a>
+  <a name="dump">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dump</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L507">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a dict that combines the defined keys with any undefined input keys. Used e.g. when you only define part of the keys in the dict, but want to preserve all of them when writing back to a file.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.config.dicts.ConfigDict.all_items">
+    
+  </a>
+  <a name="all_items">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">all_items</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L515">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.config.dicts.ConfigDict.__setitem__">
+    
+  </a>
+  <a name="__setitem__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__setitem__</span>(self, k, v):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L522">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.config.dicts.ControlledDict.html#__setitem__">zim.config.dicts.ControlledDict.__setitem__</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.config.dicts.ConfigDict.__delitem__">
+    
+  </a>
+  <a name="__delitem__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__delitem__</span>(self, k):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L533">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.config.dicts.ControlledDict.html#__delitem__">zim.config.dicts.ControlledDict.__delitem__</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.config.dicts.ConfigDict.input">
+    
+  </a>
+  <a name="input">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">input</span>(self, E=None, **F):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L539">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Like <code>update()</code> but won't raise on failures. Values for undefined keys are stored and validated once the key is defined. Invalid values only cause a logged error message but do not cause errors to be raised.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.config.dicts.ConfigDict.define">
+    
+  </a>
+  <a name="define">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">define</span>(self, E=None, **F):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L558">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set one or more definitions for this config dict Can cause error log when values prior given to <code>input()</code> do not match the definition.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.config.dicts.ConfigDict._set_input">
+    
+  </a>
+  <a name="_set_input">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_set_input</span>(self, key, value):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L586">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.config.dicts.ConfigDict.setdefault">
+    
+  </a>
+  <a name="setdefault">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">setdefault</span>(self, key, default, check=None, allow_empty=False):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L599">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set the default value for a configuration item.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">key</td><td>the dict key</td></tr><tr><td></td><td class="fieldArg">default</td><td>the default value for this key</td></tr><tr><td></td><td class="fieldArg">check</td><td>the check to do on the values, when the check fails the value is considered mal-formed and the default is used while a warning is logged.<p>If <code>check</code> is <code>None</code> the default behavior will be to compare the classes of the set value and the default and enforce them to be of the same type. Automatic conversion is done for values of type <code>list</code> with defaults of type <code>tuple</code>. And for defaults of type <code>str</code> or <code>unicode</code> the <code>basestring</code> type is used as check. As a special case when the default is <code>None</code> the check is not allowed to be <code>None</code> as well.</p><p>If <code>check</code> is given and it is a class the existing value will be checked to be of that class. Same special case for tuples and strings applies here.</p><p>If <code>check</code> is given and is a <code>set</code>, <code>list</code> or <code>tuple</code> the value will be tested to be in this set or list.</p><p>If the default is an integer and <code>check</code> is a tuple of two integers, the check will be that the value is in this range. (For compatibility with <code><a href="zim.gui.widgets.InputForm.html">InputForm</a></code> extra argument for integer spin boxes.)</p><p>If <code>check</code> is given and it is a function it will be used to check the value in the dictionary if it exists. The function is called as:</p><pre class="literalblock">
+        check(value, default)
+</pre><p>Where <code>value</code> is the current value in the dict and <code>default</code> is the default value that was provided. The function can not only check the value, it can also do on the fly modifications, e.g. to coerce it into a specific type. If the value is OK the function should return the (modified) value, if not it should raise an <code>AssertionError</code>. When this error is raised the default is used and the dict is considered being modified.</p><p>( Note that 'assert' statements in the code can be removed by code optimization, so explicitly call "<code>raise AssertionError</code>". )</p><p>Examples of functions that can be used as a check are: <code>check_class_allow_empty</code> and <code><a href="zim.config.dicts.Coordinate.html">value_is_coord</a></code>.</p></td></tr><tr><td></td><td class="fieldArg">allow_empty</td><td>if <code>True</code> the value is allowed to be empty (either empty string or <code>None</code>). In this case the default is not set to overwrite an empty value, but only for a mal-formed value or for a value that doesn't exist yet in the dict.</td></tr><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">Usage of this method with keyword arguments is depreciated, use <code><a href="#define">define()</a></code> instead.<p>Compatible with <code>dict.setdefault()</code> but extended with functionality to check the value that is in the dict, and use the default if the value is mal-formed. This is used extensively in zim to do a sanity check on values in the configuration files. If you initialize the config items with this method you can assume them to be safe afterward and avoid a lot of checks or bugs later in the code.</p></td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

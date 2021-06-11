@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.gui.customtools.CustomToolManager : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.customtools.html">customtools</a></code>.<code><a href="zim.gui.customtools.CustomToolManager.html">CustomToolManager</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">CustomToolManager</span>(<a href="zim.signals.SignalEmitter.html" title="zim.signals.SignalEmitter">SignalEmitter</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py#L58">(source)</a></code></p>
+        <p><a href="classIndex.html#zim.gui.customtools.CustomToolManager">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Manager for dealing with the desktop files which are used to store custom tools.</p><p>Custom tools are external commands that are intended to show in the "Tools" menu in zim (and optionally in the tool bar). They are defined as desktop entry files in a special folder (typically "~/.local/share/zim/customtools") and use several non standard keys. See <code><a href="zim.gui.customtools.CustomTool.html">CustomTool</a></code> for details.</p><p>This object is iterable and maintains a specific order for tools to be shown in in the user interface.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id252">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#__signals__">__signals__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__iter__">__iter__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_tool">get_tool</a></code></td>
+    <td><span>Get a <code><a href="zim.gui.customtools.CustomTool.html">CustomTool</a></code> by name. @param name: the tool name @returns: a <code><a href="zim.gui.customtools.CustomTool.html">CustomTool</a></code> object or <code>None</code></span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#create">create</a></code></td>
+    <td><span>Create a new custom tool</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#delete">delete</a></code></td>
+    <td><span>Remove a custom tool from the list and delete the definition file. @param tool: a custom tool name or <code><a href="zim.gui.customtools.CustomTool.html">CustomTool</a></code> object</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#index">index</a></code></td>
+    <td><span>Get the position of a specific tool in the list. @param tool: a custom tool name or <code><a href="zim.gui.customtools.CustomTool.html">CustomTool</a></code> object @returns: an integer for the position</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#reorder">reorder</a></code></td>
+    <td><span>Change the position of a tool in the list. @param tool: a custom tool name or <code><a href="zim.gui.customtools.CustomTool.html">CustomTool</a></code> object @param i: the new position as integer</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_names">_names</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_tools">_tools</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_listfile">_listfile</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_on_list_changed">_on_list_changed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_on_tool_changed">_on_tool_changed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_read_list">_read_list</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_write_list">_write_list</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.signals.SignalEmitter.html">SignalEmitter</a></code>:
+          </p>
+          <table class="children sortable" id="id253">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#__new__">__new__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#connect">connect</a></code></td>
+    <td><span>Register a handler for a specific object.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#connect_after">connect_after</a></code></td>
+    <td><span>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#disconnect">disconnect</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#emit">emit</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#emit_return_first">emit_return_first</a></code></td>
+    <td><span>Emits a signal and stops emission on the first handler that returns a not-None value.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#emit_return_iter">emit_return_iter</a></code></td>
+    <td><span>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#block_signals">block_signals</a></code></td>
+    <td><span>Returns a context manager for blocking one or more signals</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#_connect">_connect</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#_setup_signal">_setup_signal</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#_teardown_signal">_teardown_signal</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="zim.gui.customtools.CustomToolManager.__signals__">
+    
+  </a>
+  <a name="__signals__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__signals__</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py#L72">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.signals.SignalEmitter.html#__signals__">zim.signals.SignalEmitter.__signals__</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.customtools.CustomToolManager.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py#L76">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.gui.customtools.CustomToolManager._names">
+    
+  </a>
+  <a name="_names">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_names</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py#L77">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.gui.customtools.CustomToolManager._tools">
+    
+  </a>
+  <a name="_tools">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_tools</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py#L78">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.gui.customtools.CustomToolManager._listfile">
+    
+  </a>
+  <a name="_listfile">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_listfile</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py#L79">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.gui.customtools.CustomToolManager._on_list_changed">
+    
+  </a>
+  <a name="_on_list_changed">
+    
+  </a>
+  <div class="functionHeader">
+    @SignalHandler<br />
+    <span class="py-keyword">def</span> <span class="py-defname">_on_list_changed</span>(self, *a):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py#L83">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.gui.customtools.CustomToolManager._on_tool_changed">
+    
+  </a>
+  <a name="_on_tool_changed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_on_tool_changed</span>(self, tool, *a):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py#L88">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.gui.customtools.CustomToolManager._read_list">
+    
+  </a>
+  <a name="_read_list">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_read_list</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py#L93">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.gui.customtools.CustomToolManager._write_list">
+    
+  </a>
+  <a name="_write_list">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_write_list</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py#L102">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.customtools.CustomToolManager.__iter__">
+    
+  </a>
+  <a name="__iter__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__iter__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py#L107">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.customtools.CustomToolManager.get_tool">
+    
+  </a>
+  <a name="get_tool">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_tool</span>(self, name):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py#L113">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get a <code><a href="zim.gui.customtools.CustomTool.html">CustomTool</a></code> by name.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">name</td><td>the tool name</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.gui.customtools.CustomTool.html">CustomTool</a></code> object or <code>None</code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.customtools.CustomToolManager.create">
+    
+  </a>
+  <a name="create">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">create</span>(self, Name, **properties):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py#L132">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Create a new custom tool</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">Name</td><td>the name to show in the Tools menu</td></tr><tr><td></td><td class="fieldArg">properties</td><td>properties for the custom tool, e.g.:<ul><li>Comment</li><li>Icon</li><li>X-Zim-ExecTool</li><li>X-Zim-ReadOnly</li><li>X-Zim-ShowInToolBar</li></ul></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a new <code><a href="zim.gui.customtools.CustomTool.html">CustomTool</a></code> object.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.customtools.CustomToolManager.delete">
+    
+  </a>
+  <a name="delete">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">delete</span>(self, tool):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py#L160">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Remove a custom tool from the list and delete the definition file.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">tool</td><td>a custom tool name or <code><a href="zim.gui.customtools.CustomTool.html">CustomTool</a></code> object</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.customtools.CustomToolManager.index">
+    
+  </a>
+  <a name="index">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">index</span>(self, tool):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py#L172">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get the position of a specific tool in the list.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">tool</td><td>a custom tool name or <code><a href="zim.gui.customtools.CustomTool.html">CustomTool</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">an integer for the position</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.customtools.CustomToolManager.reorder">
+    
+  </a>
+  <a name="reorder">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">reorder</span>(self, tool, i):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py#L181">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Change the position of a tool in the list.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">tool</td><td>a custom tool name or <code><a href="zim.gui.customtools.CustomTool.html">CustomTool</a></code> object</td></tr><tr><td></td><td class="fieldArg">i</td><td>the new position as integer</td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

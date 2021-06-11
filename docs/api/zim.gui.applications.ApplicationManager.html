@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.gui.applications.ApplicationManager : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.applications.html">applications</a></code>.<code><a href="zim.gui.applications.ApplicationManager.html">ApplicationManager</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ApplicationManager</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L248">(source)</a></code></p>
+        <p><a href="classIndex.html#zim.gui.applications.ApplicationManager">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Manager object for dealing with desktop applications. Uses the freedesktop.org (XDG) system to locate desktop entry files for installed applications.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id221">
+  
+  <tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#get_application">get_application</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#get_default_application">get_default_application</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#set_default_application">set_default_application</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#create">create</a></code></td>
+    <td><span>Create a new usercreated desktop entry which defines a custom command to handle a certain file type.</span></td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#get_fallback_filebrowser">get_fallback_filebrowser</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#get_fallback_emailclient">get_fallback_emailclient</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#get_fallback_webbrowser">get_fallback_webbrowser</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#list_applications">list_applications</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_defaults_app_cache">_defaults_app_cache</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="staticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="#_mimeapps_files">_mimeapps_files</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_get_default_application">_get_default_application</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable private">
+  
+  <a name="zim.gui.applications.ApplicationManager._defaults_app_cache">
+    
+  </a>
+  <a name="_defaults_app_cache">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_defaults_app_cache</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L254">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
+  </div>
+</div><div class="basestaticmethod">
+  
+  <a name="zim.gui.applications.ApplicationManager.get_application">
+    
+  </a>
+  <a name="get_application">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">get_application</span>(name):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L256">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get an application by name. Will search installed ".desktop" files of the same name</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">name</td><td>the application name (e.g. "firefox"). As a special case "webbrowser" maps to a <code><a href="zim.applications.WebBrowser.html">WebBrowser</a></code> application instance and "startfile" to a <code><a href="zim.applications.StartFile.html">StartFile</a></code> application instance</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">an <code><a href="zim.applications.Application.html">Application</a></code> object or <code>None</code></td></tr></table></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  <a name="zim.gui.applications.ApplicationManager.get_default_application">
+    
+  </a>
+  <a name="get_default_application">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">get_default_application</span>(klass, mimetype):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L280">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get the default application to open a file with a specific mimetype. It searches <code>applications/defaults.list</code> files to lookup the application.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">klass</td><td><span class="undocumented">Undocumented</span></td></tr><tr><td></td><td class="fieldArg">mimetype</td><td>the mime-type of the file (e.g. "text/html")</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">an <code><a href="zim.applications.Application.html">Application</a></code> object or <code>None</code></td></tr></table></div>
+  </div>
+</div><div class="basestaticmethod private">
+  
+  <a name="zim.gui.applications.ApplicationManager._mimeapps_files">
+    
+  </a>
+  <a name="_mimeapps_files">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">_mimeapps_files</span>():
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L298">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  <a name="zim.gui.applications.ApplicationManager._get_default_application">
+    
+  </a>
+  <a name="_get_default_application">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">_get_default_application</span>(klass, mimetype):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L321">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  <a name="zim.gui.applications.ApplicationManager.set_default_application">
+    
+  </a>
+  <a name="set_default_application">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">set_default_application</span>(klass, mimetype, application):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L350">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set the default application to open a file with a specific mimetype. Updates the <code>applications/defaults.list</code> file. As a special case when you set the default to <code>None</code> it will remove the entry from <code>defauts.list</code> allowing system defaults to be used again.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">klass</td><td><span class="undocumented">Undocumented</span></td></tr><tr><td></td><td class="fieldArg">mimetype</td><td>the mime-type of the file (e.g. "text/html")</td></tr><tr><td></td><td class="fieldArg">application</td><td>an <code><a href="zim.applications.Application.html">Application</a></code> object or <code>None</code></td></tr></table></div>
+  </div>
+</div><div class="basestaticmethod">
+  
+  <a name="zim.gui.applications.ApplicationManager.create">
+    
+  </a>
+  <a name="create">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">create</span>(mimetype, Name, Exec, **param):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L375">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Create a new usercreated desktop entry which defines a custom command to handle a certain file type.</p><p>Note that the name under which this definition is stored is not the same as <code>Name</code>. Check the '<code>key</code>' attribute of the returned object if you want the name to retrieve this application later.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">mimetype</td><td>the file mime-type to handle with this command</td></tr><tr><td></td><td class="fieldArg">Name</td><td>the name to show in e.g. the "Open With.." menu</td></tr><tr><td></td><td class="fieldArg">Exec</td><td>the command to run as string (will be split on whitespace, so quote arguments that may contain a space).</td></tr><tr><td></td><td class="fieldArg">param</td><td>any additional keys for the desktop entry</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">the <code><a href="zim.gui.applications.DesktopEntryFile.html">DesktopEntryFile</a></code> object with some sensible defaults for a user created application entry.</td></tr></table></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  <a name="zim.gui.applications.ApplicationManager.get_fallback_filebrowser">
+    
+  </a>
+  <a name="get_fallback_filebrowser">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">get_fallback_filebrowser</span>(klass):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L400">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  <a name="zim.gui.applications.ApplicationManager.get_fallback_emailclient">
+    
+  </a>
+  <a name="get_fallback_emailclient">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">get_fallback_emailclient</span>(klass):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L420">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  <a name="zim.gui.applications.ApplicationManager.get_fallback_webbrowser">
+    
+  </a>
+  <a name="get_fallback_webbrowser">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">get_fallback_webbrowser</span>(klass):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L439">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  <a name="zim.gui.applications.ApplicationManager.list_applications">
+    
+  </a>
+  <a name="list_applications">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">list_applications</span>(klass, mimetype, nodisplay=False):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L447">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get a list of applications that can handle a specific file type.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">klass</td><td><span class="undocumented">Undocumented</span></td></tr><tr><td></td><td class="fieldArg">mimetype</td><td>the mime-type of the file (e.g. "text/html")</td></tr><tr><td></td><td class="fieldArg">nodisplay</td><td>if <code>True</code> also entries that have the <code>NoDisplay</code> flag are included</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a list of <code><a href="zim.applications.Application.html">Application</a></code> objects that are known to be able to handle this file type</td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

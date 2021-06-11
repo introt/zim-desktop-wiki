@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.plugins.tags.TagsPluginWidget : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code>.<code><a href="zim.plugins.tags.html">tags</a></code>.<code><a href="zim.plugins.tags.TagsPluginWidget.html">TagsPluginWidget</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TagsPluginWidget</span>(<span title="gi.repository.Gtk.VPaned">Gtk.VPaned</span>, <a href="zim.gui.widgets.WindowSidePaneWidget.html" title="zim.gui.widgets.WindowSidePaneWidget">WindowSidePaneWidget</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L78">(source)</a></code></p>
+        <p><a href="classIndex.html#zim.plugins.tags.TagsPluginWidget">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Widget combining a tag cloud and a tag based page treeview</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1316">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#title">title</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#notebook">notebook</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#index">index</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#uistate">uistate</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#tagcloud">tagcloud</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#treeview">treeview</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_page">set_page</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#toggle_treeview">toggle_treeview</a></code></td>
+    <td><span>Toggle the treeview type in the widget</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#toggle_show_full_page_name">toggle_show_full_page_name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_populate_popup">on_populate_popup</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_cloud_selection_changed">on_cloud_selection_changed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_cloud_sortin_changed">on_cloud_sortin_changed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#disconnect_model">disconnect_model</a></code></td>
+    <td><span>Stop the model from listening to the index. Used to unhook the model before reloading the index. Typically should be followed by reload_model().</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#reconnect_model">reconnect_model</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#reload_model">reload_model</a></code></td>
+    <td><span>Re-initialize the treeview model. This is called when reloading the index to get rid of out-of-sync model errors without need to close the app first.</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.gui.widgets.WindowSidePaneWidget.html">WindowSidePaneWidget</a></code>:
+          </p>
+          <table class="children sortable" id="id1317">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.WindowSidePaneWidget.html#get_title_label">get_title_label</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.WindowSidePaneWidget.html#set_title">set_title</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.WindowSidePaneWidget.html#set_embeded_closebutton">set_embeded_closebutton</a></code></td>
+    <td><span>Embed a button in the widget to close the side pane @param button: a button widget or <code>None</code> to unset @returns: <code>True</code> if supported and successfull</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.WindowSidePaneWidget.html#_title_labels">_title_labels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.WindowSidePaneWidget.html#_drop_label">_drop_label</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code> (via <code><a href="zim.gui.widgets.WindowSidePaneWidget.html">WindowSidePaneWidget</a></code>):
+          </p>
+          <table class="children sortable" id="id1318">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#connectto">connectto</a></code></td>
+    <td><span>Connect to signals of another object E.g.:</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#connectto_all">connectto_all</a></code></td>
+    <td><span>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
+    <td><span>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_all">disconnect_all</a></code></td>
+    <td><span>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_disconnect_from">_disconnect_from</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="zim.plugins.tags.TagsPluginWidget.title">
+    
+  </a>
+  <a name="title">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">title</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L81">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.gui.widgets.WindowSidePaneWidget.html#title">zim.gui.widgets.WindowSidePaneWidget.title</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tags.TagsPluginWidget.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, notebook, navigation, uistate):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L83">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.plugins.tags.TagsPluginWidget.notebook">
+    
+  </a>
+  <a name="notebook">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">notebook</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L85">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.plugins.tags.TagsPluginWidget.index">
+    
+  </a>
+  <a name="index">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">index</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L86">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.plugins.tags.TagsPluginWidget.uistate">
+    
+  </a>
+  <a name="uistate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">uistate</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L87">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.plugins.tags.TagsPluginWidget.tagcloud">
+    
+  </a>
+  <a name="tagcloud">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">tagcloud</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L93">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.plugins.tags.TagsPluginWidget.treeview">
+    
+  </a>
+  <a name="treeview">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">treeview</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L96">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tags.TagsPluginWidget.set_page">
+    
+  </a>
+  <a name="set_page">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_page</span>(self, page):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L105">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tags.TagsPluginWidget.toggle_treeview">
+    
+  </a>
+  <a name="toggle_treeview">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">toggle_treeview</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L112">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Toggle the treeview type in the widget</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tags.TagsPluginWidget.toggle_show_full_page_name">
+    
+  </a>
+  <a name="toggle_show_full_page_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">toggle_show_full_page_name</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L123">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tags.TagsPluginWidget.on_populate_popup">
+    
+  </a>
+  <a name="on_populate_popup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_populate_popup</span>(self, treeview, menu):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L127">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tags.TagsPluginWidget.on_cloud_selection_changed">
+    
+  </a>
+  <a name="on_cloud_selection_changed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_cloud_selection_changed</span>(self, cloud):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L146">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tags.TagsPluginWidget.on_cloud_sortin_changed">
+    
+  </a>
+  <a name="on_cloud_sortin_changed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_cloud_sortin_changed</span>(self, cloud, sorting):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L150">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tags.TagsPluginWidget.disconnect_model">
+    
+  </a>
+  <a name="disconnect_model">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">disconnect_model</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L153">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Stop the model from listening to the index. Used to unhook the model before reloading the index. Typically should be followed by reload_model().</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tags.TagsPluginWidget.reconnect_model">
+    
+  </a>
+  <a name="reconnect_model">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">reconnect_model</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L161">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tags.TagsPluginWidget.reload_model">
+    
+  </a>
+  <a name="reload_model">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">reload_model</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L165">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Re-initialize the treeview model. This is called when reloading the index to get rid of out-of-sync model errors without need to close the app first.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

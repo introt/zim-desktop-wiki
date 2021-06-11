@@ -1,0 +1,1264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.notebook.page.Page : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.notebook.html">notebook</a></code>.<code><a href="zim.notebook.page.html">page</a></code>.<code><a href="zim.notebook.page.Page.html">Page</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Page</span>(<a href="zim.notebook.page.Path.html" title="zim.notebook.page.Path">Path</a>, <a href="zim.signals.SignalEmitter.html" title="zim.signals.SignalEmitter">SignalEmitter</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L400">(source)</a></code></p>
+        <p><a href="classIndex.html#zim.notebook.page.Page">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Class to represent a single page in the notebook.</p><p>Page objects inherit from <code><a href="zim.notebook.page.Path.html">Path</a></code> but have internal state reflecting content in the notebook. We try to keep Page objects unique by hashing them in <code><a href="zim.notebook.notebook.Notebook.html#get_page">Notebook.get_page()</a></code>, Path object on the other hand are cheap and can have multiple instances for the same logical path. We ask for a path object instead of a name in the constructor to encourage the use of Path objects over passing around page names as string.</p><p>You can use a Page object instead of a Path anywhere in the APIs where a path is needed as argument etc.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Unknown Field: signal</td><td colspan="2"><code>storage-changed (changed-on-disk)</code>: signal emitted on page change. The argument "changed-on-disk" is <code>True</code> when an external edit was detected. For internal edits it is <code>False</code>.</td></tr><tr><td></td><td colspan="2"><code>modified-changed ()</code>: emitted when the page is edited</td></tr></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id800">
+  
+  <tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#name">name</a></code></td>
+    <td><span>full page name (inherited from <code><a href="zim.notebook.page.Path.html">Path</a></code>)</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#hascontent">hascontent</a></code></td>
+    <td><span>Returns whether this page has content</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#haschildren">haschildren</a></code></td>
+    <td><span><code>True</code> if the page has sub-pages</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#modified">modified</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#readonly">readonly</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#__signals__">__signals__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Constructor.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#format">format</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#source">source</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#source_file">source_file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#attachments_folder">attachments_folder</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#mtime">mtime</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#ctime">ctime</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_modified">set_modified</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_buffer_modified_changed">on_buffer_modified_changed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#check_source_changed">check_source_changed</a></code></td>
+    <td><span>Checks for changes in the source file and load it if needed</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#exists">exists</a></code></td>
+    <td><span><code>True</code> when the page has either content or children</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#isequal">isequal</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_parsetree">get_parsetree</a></code></td>
+    <td><span>Returns the contents of the page</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_parsetree">set_parsetree</a></code></td>
+    <td><span>Set the parsetree with content for this page</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#append_parsetree">append_parsetree</a></code></td>
+    <td><span>Append content</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_textbuffer">get_textbuffer</a></code></td>
+    <td><span>Get a <code>Gtk.TextBuffer</code> for the page</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#reload_textbuffer">reload_textbuffer</a></code></td>
+    <td><span>Reload page content from source file and update the textbuffer if set</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dump">dump</a></code></td>
+    <td><span>Get content in a specific format</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parse">parse</a></code></td>
+    <td><span>Store formatted text in the page</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_links">get_links</a></code></td>
+    <td><span>Generator for links in the page content</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_tags">get_tags</a></code></td>
+    <td><span>Generator for tags in the page content</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_anchors">get_anchors</a></code></td>
+    <td><span>Generator returning all the (explicit) anchors in the page content</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_title">get_title</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#heading_matches_pagename">heading_matches_pagename</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_modified">_modified</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_change_counter">_change_counter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_parsetree">_parsetree</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_textbuffer">_textbuffer</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_meta">_meta</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_readonly">_readonly</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_last_etag">_last_etag</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_store">_store</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_store_tree">_store_tree</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.notebook.page.Path.html">Path</a></code>:
+          </p>
+          <table class="children sortable" id="id801">
+  
+  <tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="zim.notebook.page.Path.html#__slots__">__slots__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basestaticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="zim.notebook.page.Path.html#assertValidPageName">assertValidPageName</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basestaticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="zim.notebook.page.Path.html#makeValidPageName">makeValidPageName</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="zim.notebook.page.Path.html#new_from_zim_config">new_from_zim_config</a></code></td>
+    <td><span>Returns a new object based on the string representation for that path.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.page.Path.html#serialize_zim_config">serialize_zim_config</a></code></td>
+    <td><span>Returns the name for serializing this path</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.page.Path.html#__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.page.Path.html#__str__">__str__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.page.Path.html#__hash__">__hash__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.page.Path.html#__eq__">__eq__</a></code></td>
+    <td><span>Paths are equal when their names are the same</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.page.Path.html#__ne__">__ne__</a></code></td>
+    <td><span>Paths are not equal when their names are not the same</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.page.Path.html#__add__">__add__</a></code></td>
+    <td><span><code>path + name</code> is an alias for <code>path.child(name)</code></span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.notebook.page.Path.html#parts">parts</a></code></td>
+    <td><span>Get all the parts of the name (split on ":")</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.notebook.page.Path.html#basename">basename</a></code></td>
+    <td><span>Get the basename of the path (last part of the name)</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.notebook.page.Path.html#namespace">namespace</a></code></td>
+    <td><span>Gives the name for the parent page. Returns an empty string for the top level namespace.</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.notebook.page.Path.html#isroot">isroot</a></code></td>
+    <td><span><code>True</code> when this Path represents the top level namespace</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.page.Path.html#relname">relname</a></code></td>
+    <td><span>Get a part of this path relative to a parent path</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.notebook.page.Path.html#parent">parent</a></code></td>
+    <td><span>Get the path for the parent page</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.page.Path.html#parents">parents</a></code></td>
+    <td><span>Generator function for parent Paths including root</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.page.Path.html#child">child</a></code></td>
+    <td><span>Get a child Path</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.page.Path.html#ischild">ischild</a></code></td>
+    <td><span>Check whether this path is a child of a given path @param parent: a <code><a href="zim.notebook.page.Path.html">Path</a></code> object @returns: True when this path is a (grand-)child of <code>parent</code></span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.page.Path.html#match_namespace">match_namespace</a></code></td>
+    <td><span>Check whether this path is in a specific section of the notebook @param namespace: a <code><a href="zim.notebook.page.Path.html">Path</a></code> object @returns: True when this path is equal to <code>namespace</code> or is a (grand-)child of <code>namespace</code></span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.page.Path.html#commonparent">commonparent</a></code></td>
+    <td><span>Find a common parent for two Paths</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.signals.SignalEmitter.html">SignalEmitter</a></code>:
+          </p>
+          <table class="children sortable" id="id802">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#__new__">__new__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#connect">connect</a></code></td>
+    <td><span>Register a handler for a specific object.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#connect_after">connect_after</a></code></td>
+    <td><span>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#disconnect">disconnect</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#emit">emit</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#emit_return_first">emit_return_first</a></code></td>
+    <td><span>Emits a signal and stops emission on the first handler that returns a not-None value.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#emit_return_iter">emit_return_iter</a></code></td>
+    <td><span>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#block_signals">block_signals</a></code></td>
+    <td><span>Returns a context manager for blocking one or more signals</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#_connect">_connect</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#_setup_signal">_setup_signal</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#_teardown_signal">_teardown_signal</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseinstancevariable">
+  
+  <a name="zim.notebook.page.Page.name">
+    
+  </a>
+  <a name="name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">name</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L414">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.notebook.page.Path.html#name">zim.notebook.page.Path.name</a></code></div>
+    
+    <div>full page name (inherited from <code><a href="zim.notebook.page.Path.html">Path</a></code>)</div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="zim.notebook.page.Page.hascontent">
+    
+  </a>
+  <a name="hascontent">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">hascontent</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L468">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Returns whether this page has content</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.notebook.page.Page.haschildren">
+    
+  </a>
+  <a name="haschildren">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">haschildren</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L416">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><code>True</code> if the page has sub-pages</div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="zim.notebook.page.Page.modified">
+    
+  </a>
+  <a name="modified">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">modified</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L478">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="zim.notebook.page.Page.readonly">
+    
+  </a>
+  <a name="readonly">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">readonly</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L454">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="zim.notebook.page.Page.__signals__">
+    
+  </a>
+  <a name="__signals__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__signals__</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L427">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.signals.SignalEmitter.html#__signals__">zim.signals.SignalEmitter.__signals__</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Page.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, path, haschildren, file, folder, format):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L432">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.notebook.page.Path.html#__init__">zim.notebook.page.Path.__init__</a></code></div>
+    
+    <div><p>Constructor.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td><span class="undocumented">Undocumented</span></td></tr><tr><td></td><td class="fieldArg">haschildren</td><td><span class="undocumented">Undocumented</span></td></tr><tr><td></td><td class="fieldArg">file</td><td><span class="undocumented">Undocumented</span></td></tr><tr><td></td><td class="fieldArg">folder</td><td><span class="undocumented">Undocumented</span></td></tr><tr><td></td><td class="fieldArg">format</td><td><span class="undocumented">Undocumented</span></td></tr><tr><td></td><td class="fieldArg">name</td><td>the absolute page name in the right case as a string or as a tuple strings<p>The name ":" is used as a special case to construct a path for the toplevel namespace in a notebook.</p></td></tr><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">This constructor does not do any checks for the sanity of the path name. Never construct a path directly from user input, but use either <code>index.lookup_from_user_input()</code> or first check the name with <code><a href="#makeValidPageName">makeValidPageName()</a></code></td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.notebook.page.Page._modified">
+    
+  </a>
+  <a name="_modified">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_modified</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L438">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.notebook.page.Page._change_counter">
+    
+  </a>
+  <a name="_change_counter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_change_counter</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L439">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.notebook.page.Page._parsetree">
+    
+  </a>
+  <a name="_parsetree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_parsetree</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L440">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.notebook.page.Page._textbuffer">
+    
+  </a>
+  <a name="_textbuffer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_textbuffer</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L441">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.notebook.page.Page._meta">
+    
+  </a>
+  <a name="_meta">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_meta</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L442">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.notebook.page.Page._readonly">
+    
+  </a>
+  <a name="_readonly">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_readonly</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L444">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.notebook.page.Page._last_etag">
+    
+  </a>
+  <a name="_last_etag">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_last_etag</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L445">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.notebook.page.Page.format">
+    
+  </a>
+  <a name="format">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">format</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L447">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.notebook.page.Page.source">
+    
+  </a>
+  <a name="source">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">source</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L450">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.notebook.page.Page.source_file">
+    
+  </a>
+  <a name="source_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">source_file</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L451">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.notebook.page.Page.attachments_folder">
+    
+  </a>
+  <a name="attachments_folder">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">attachments_folder</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L452">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="zim.notebook.page.Page.mtime">
+    
+  </a>
+  <a name="mtime">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">mtime</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L460">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="zim.notebook.page.Page.ctime">
+    
+  </a>
+  <a name="ctime">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">ctime</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L464">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Page.set_modified">
+    
+  </a>
+  <a name="set_modified">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_modified</span>(self, modified):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L482">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Page.on_buffer_modified_changed">
+    
+  </a>
+  <a name="on_buffer_modified_changed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_buffer_modified_changed</span>(self, buffer):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L494">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.notebook.page.Page._store">
+    
+  </a>
+  <a name="_store">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_store</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L506">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.notebook.page.Page._store_tree">
+    
+  </a>
+  <a name="_store_tree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_store_tree</span>(self, tree):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L510">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Page.check_source_changed">
+    
+  </a>
+  <a name="check_source_changed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">check_source_changed</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L538">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Checks for changes in the source file and load it if needed</p><p>If the page has a <code>textbuffer</code> and it contains unsaved changes, this method will not overwrite them and you'll get an error on next attempt to save. To force overwrite see <code><a href="#reload_textbuffer">reload_textbuffer()</a></code></p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Page.exists">
+    
+  </a>
+  <a name="exists">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">exists</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L565">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p><code>True</code> when the page has either content or children</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Page.isequal">
+    
+  </a>
+  <a name="isequal">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">isequal</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L569">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Check equality of pages This method is intended to deal with case-insensitive storage backends (e.g. case insensitive file system) where the method is supposed to check equality of the resource. Note that this may be the case even when the page objects differ and can have a different name (so <code>__cmp__</code> will not show them to be equal). However default falls back to <code>__cmp__</code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> of both page objects point to the same resource</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">can be implementated by subclasses</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Page.get_parsetree">
+    
+  </a>
+  <a name="get_parsetree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_parsetree</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L587">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns the contents of the page</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.formats.ParseTree.html">zim.formats.ParseTree</a></code> object or <code>None</code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Page.set_parsetree">
+    
+  </a>
+  <a name="set_parsetree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_parsetree</span>(self, tree):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L612">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set the parsetree with content for this page</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">tree</td><td>a <code><a href="zim.formats.ParseTree.html">zim.formats.ParseTree</a></code> object with content or <code>None</code> to remove all content from the page</td></tr><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">after setting new content in the Page object it still needs to be stored in the notebook to save this content permanently. See <code><a href="zim.notebook.notebook.Notebook.html#store_page">Notebook.store_page()</a></code>.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Page.append_parsetree">
+    
+  </a>
+  <a name="append_parsetree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">append_parsetree</span>(self, tree):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L642">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Append content</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">tree</td><td>a <code><a href="zim.formats.ParseTree.html">zim.formats.ParseTree</a></code> object with content</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Page.get_textbuffer">
+    
+  </a>
+  <a name="get_textbuffer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_textbuffer</span>(self, constructor=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L656">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get a <code>Gtk.TextBuffer</code> for the page</p><p>Will either return an existing buffer or construct a new one and return it. A <code>Gtk.TextBuffer</code> can be shared between multiple <code>Gtk.TextView</code>s. The page object owns the textbuffer to allow multiple views on the same page.</p><p>Once a buffer is set, also methods like <code><a href="#get_parsetree">get_parsetree()</a></code> and <code><a href="#get_parsetree">get_parsetree()</a></code> will interact with this buffer.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">constructor</td><td>if not buffer was set previously, this function is called to construct the buffer.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code>TextBuffer</code> object or <code>None</code> if no buffer is set and no constructor is provided.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Page.reload_textbuffer">
+    
+  </a>
+  <a name="reload_textbuffer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">reload_textbuffer</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L683">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Reload page content from source file and update the textbuffer if set</p><p>NOTE: this method overwrites any changes in the <code>textbuffer</code> or <code>parsetree</code> that have not been saved to file !</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Page.dump">
+    
+  </a>
+  <a name="dump">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dump</span>(self, format, linker=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L700">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get content in a specific format</p><p>Convenience method that converts the current parse tree to a particular format first.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">format</td><td>either a format module or a string that is understood by <code><a href="zim.formats.html#get_format">zim.formats.get_format()</a></code>.</td></tr><tr><td></td><td class="fieldArg">linker</td><td>a linker object (see e.g. <code><a href="zim.formats.BaseLinker.html">BaseLinker</a></code>)</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">text as a list of lines or an empty list</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Page.parse">
+    
+  </a>
+  <a name="parse">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse</span>(self, format, text, append=False):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L725">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Store formatted text in the page</p><p>Convenience method that parses text and sets the parse tree accordingly.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">format</td><td>either a format module or a string that is understood by <code><a href="zim.formats.html#get_format">zim.formats.get_format()</a></code>.</td></tr><tr><td></td><td class="fieldArg">text</td><td>text as a string or as a list of lines</td></tr><tr><td></td><td class="fieldArg">append</td><td>if <code>True</code> the text is appended instead of replacing current content.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Page.get_links">
+    
+  </a>
+  <a name="get_links">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_links</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L745">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Generator for links in the page content</p><p>This method gives the raw links from the content, if you want nice <code>Link</code> objects use <code>index.list_links()</code> instead.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">yields a list of 3-tuples <code>(type, href, attrib)</code> where:<ul><li><code>type</code> is the link type (e.g. "page" or "file")</li><li><code>href</code> is the link itself</li><li><code>attrib</code> is a dict with link properties</li></ul></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Page.get_tags">
+    
+  </a>
+  <a name="get_tags">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_tags</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L775">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Generator for tags in the page content</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">yields an unordered list of unique 2-tuples <code>(name, attrib)</code> for tags in the parsetree.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Page.get_anchors">
+    
+  </a>
+  <a name="get_anchors">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_anchors</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L792">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Generator returning all the (explicit) anchors in the page content</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Page.get_title">
+    
+  </a>
+  <a name="get_title">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_title</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L803">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Page.heading_matches_pagename">
+    
+  </a>
+  <a name="heading_matches_pagename">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">heading_matches_pagename</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L810">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns whether the heading matches the page name. Used to determine whether the page should have its heading auto-changed on rename/move.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> when the heading can be auto-changed.</td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

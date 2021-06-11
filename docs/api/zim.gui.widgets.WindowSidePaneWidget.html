@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.gui.widgets.WindowSidePaneWidget : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.widgets.html">widgets</a></code>.<code><a href="zim.gui.widgets.WindowSidePaneWidget.html">WindowSidePaneWidget</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">WindowSidePaneWidget</span>(<a href="zim.signals.ConnectorMixin.html" title="zim.signals.ConnectorMixin">ConnectorMixin</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2308">(source)</a></code></p><p>Known subclasses: <code><a href="zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.html">zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget</a></code>, <code><a href="zim.plugins.backlinkpane.BackLinksWidget.html">zim.plugins.backlinkpane.BackLinksWidget</a></code>, <code><a href="zim.plugins.journal.CalendarWidget.html">zim.plugins.journal.CalendarWidget</a></code>, <code><a href="zim.plugins.pageindex.PageIndexWidget.html">zim.plugins.pageindex.PageIndexWidget</a></code>, <code><a href="zim.plugins.tableofcontents.SidePaneToC.html">zim.plugins.tableofcontents.SidePaneToC</a></code>, <code><a href="zim.plugins.tags.TagsPluginWidget.html">zim.plugins.tags.TagsPluginWidget</a></code>, <code><a href="zim.plugins.tasklist.gui.TaskListWidget.html">zim.plugins.tasklist.gui.TaskListWidget</a></code></p>
+        <p><a href="classIndex.html#zim.gui.widgets.WindowSidePaneWidget">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Base class for widgets that want to integrate nicely in the <code><a href="zim.gui.widgets.WindowSidePane.html">WindowSidePane</a></code></p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id524">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_title_label">get_title_label</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_title">set_title</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#title">title</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_embeded_closebutton">set_embeded_closebutton</a></code></td>
+    <td><span>Embed a button in the widget to close the side pane @param button: a button widget or <code>None</code> to unset @returns: <code>True</code> if supported and successfull</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_title_labels">_title_labels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_drop_label">_drop_label</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code>:
+          </p>
+          <table class="children sortable" id="id525">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#connectto">connectto</a></code></td>
+    <td><span>Connect to signals of another object E.g.:</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#connectto_all">connectto_all</a></code></td>
+    <td><span>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
+    <td><span>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_all">disconnect_all</a></code></td>
+    <td><span>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_disconnect_from">_disconnect_from</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="zim.gui.widgets.WindowSidePaneWidget.get_title_label">
+    
+  </a>
+  <a name="get_title_label">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_title_label</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2313">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.gui.widgets.WindowSidePaneWidget._title_labels">
+    
+  </a>
+  <a name="_title_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_title_labels</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2316">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.gui.widgets.WindowSidePaneWidget._drop_label">
+    
+  </a>
+  <a name="_drop_label">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_drop_label</span>(self, label):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2321">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.widgets.WindowSidePaneWidget.set_title">
+    
+  </a>
+  <a name="set_title">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_title</span>(self, text):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2325">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.gui.widgets.WindowSidePaneWidget.title">
+    
+  </a>
+  <a name="title">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">title</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2326">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.html">zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget</a></code>, <code><a href="zim.plugins.backlinkpane.BackLinksWidget.html">zim.plugins.backlinkpane.BackLinksWidget</a></code>, <code><a href="zim.plugins.journal.CalendarWidget.html">zim.plugins.journal.CalendarWidget</a></code>, <code><a href="zim.plugins.pageindex.PageIndexWidget.html">zim.plugins.pageindex.PageIndexWidget</a></code>, <code><a href="zim.plugins.tableofcontents.SidePaneToC.html">zim.plugins.tableofcontents.SidePaneToC</a></code>, <code><a href="zim.plugins.tags.TagsPluginWidget.html">zim.plugins.tags.TagsPluginWidget</a></code>, <code><a href="zim.plugins.tasklist.gui.TaskListWidget.html">zim.plugins.tasklist.gui.TaskListWidget</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.gui.widgets.WindowSidePaneWidget.set_embeded_closebutton">
+    
+  </a>
+  <a name="set_embeded_closebutton">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_embeded_closebutton</span>(self, button):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2331">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget.html">zim.plugins.attachmentbrowser.AttachmentBrowserPluginWidget</a></code>, <code><a href="zim.plugins.journal.CalendarWidget.html">zim.plugins.journal.CalendarWidget</a></code></div>
+    
+    <div><p>Embed a button in the widget to close the side pane</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">button</td><td>a button widget or <code>None</code> to unset</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> if supported and successfull</td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

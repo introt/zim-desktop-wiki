@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.plugins.tags.TaggedPageTreeStore : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code>.<code><a href="zim.plugins.tags.html">tags</a></code>.<code><a href="zim.plugins.tags.TaggedPageTreeStore.html">TaggedPageTreeStore</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TaggedPageTreeStore</span>(<a href="zim.notebook.index.tags.TaggedPagesTreeModelMixin.html" title="zim.notebook.index.tags.TaggedPagesTreeModelMixin">TaggedPagesTreeModelMixin</a>, <a href="zim.plugins.tags.DuplicatePageTreeStore.html" title="zim.plugins.tags.DuplicatePageTreeStore">DuplicatePageTreeStore</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L259">(source)</a></code></p>
+        <p><a href="classIndex.html#zim.plugins.tags.TaggedPageTreeStore">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>A TreeModel that lists all Zim pages in a flat list. Pages with associated sub-pages still show them as sub-nodes. Intended to be filtered by tags.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1331">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Initialize. Make sure to call this from derived classes if overridden.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#show_full_page_name">show_full_page_name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_get_value">on_get_value</a></code></td>
+    <td><span>Returns the data for a specific column</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.notebook.index.tags.TaggedPagesTreeModelMixin.html">TaggedPagesTreeModelMixin</a></code>:
+          </p>
+          <table class="children sortable" id="id1332">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.tags.TaggedPagesTreeModelMixin.html#on_tag_added_to_page">on_tag_added_to_page</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.tags.TaggedPagesTreeModelMixin.html#on_tag_remove_from_page">on_tag_remove_from_page</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.tags.TaggedPagesTreeModelMixin.html#n_children_top">n_children_top</a></code></td>
+    <td><span>Return the number of items in the top level of the model</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.tags.TaggedPagesTreeModelMixin.html#get_mytreeiter">get_mytreeiter</a></code></td>
+    <td><span>Returns a <code>treeiter</code> object for <code>treepath</code> or <code>None</code> @implementation: must be implemented by a subclass</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.tags.TaggedPagesTreeModelMixin.html#_matches_all">_matches_all</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.notebook.index.tags.TaggedPagesTreeModelMixin.html#_deleted_tag_path">_deleted_tag_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.tags.TaggedPagesTreeModelMixin.html#_find_all_pages">_find_all_pages</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.notebook.index.tags.TagsTreeModelBase.html">TagsTreeModelBase</a></code> (via <code><a href="zim.notebook.index.tags.TaggedPagesTreeModelMixin.html">TaggedPagesTreeModelMixin</a></code>):
+          </p>
+          <table class="children sortable" id="id1333">
+  
+  <tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.notebook.index.tags.TagsTreeModelBase.html#tags">tags</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.tags.TagsTreeModelBase.html#connect_to_updateiter">connect_to_updateiter</a></code></td>
+    <td><span>Connect to a new <code><a href="zim.notebook.index.IndexUpdateIter.html">IndexUpdateIter</a></code></span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.tags.TagsTreeModelBase.html#on_tag_row_inserted">on_tag_row_inserted</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.tags.TagsTreeModelBase.html#on_tag_row_deleted">on_tag_row_deleted</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.tags.TagsTreeModelBase.html#on_tag_removed_from_page">on_tag_removed_from_page</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.notebook.index.tags.TagsTreeModelBase.html#_tagids">_tagids</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.notebook.index.tags.TagsTreeModelBase.html#_tagquery">_tagquery</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.tags.TagsTreeModelBase.html#_update_ids">_update_ids</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.tags.TagsTreeModelBase.html#_emit_children_inserted">_emit_children_inserted</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.notebook.index.pages.PagesTreeModelMixin.html">PagesTreeModelMixin</a></code> (via <code><a href="zim.notebook.index.tags.TaggedPagesTreeModelMixin.html">TaggedPagesTreeModelMixin</a></code>, <code><a href="zim.notebook.index.tags.TagsTreeModelBase.html">TagsTreeModelBase</a></code>):
+          </p>
+          <table class="children sortable" id="id1334">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.pages.PagesTreeModelMixin.html#on_page_row_inserted">on_page_row_inserted</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.pages.PagesTreeModelMixin.html#on_page_row_changed">on_page_row_changed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.pages.PagesTreeModelMixin.html#on_page_row_delete">on_page_row_delete</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.pages.PagesTreeModelMixin.html#on_page_row_deleted">on_page_row_deleted</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.pages.PagesTreeModelMixin.html#find">find</a></code></td>
+    <td><span>Returns the <code>Gtk.TreePath</code> for a notebook page <code><a href="zim.notebook.page.Path.html">Path</a></code> If the <code><a href="zim.notebook.page.Path.html">Path</a></code> appears multiple times returns the first occurrence @raises IndexNotFoundError: if path not found</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.pages.PagesTreeModelMixin.html#find_all">find_all</a></code></td>
+    <td><span>Returns a list of <code>Gtk.TreePath</code> for a notebook page <code><a href="zim.notebook.page.Path.html">Path</a></code> Returns all occurrences in the treeview @raises IndexNotFoundError: if path not found</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.notebook.index.pages.PagesTreeModelMixin.html#_REVERSE">_REVERSE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.notebook.index.pages.PagesTreeModelMixin.html#_MY_ROOT_NAME">_MY_ROOT_NAME</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.notebook.index.pages.PagesTreeModelMixin.html#_MY_ROOT_NAME_C">_MY_ROOT_NAME_C</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.notebook.index.pages.PagesTreeModelMixin.html#_MY_ROOT_ID">_MY_ROOT_ID</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.notebook.index.pages.PagesTreeModelMixin.html#_deleted_paths">_deleted_paths</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.pages.PagesTreeModelMixin.html#_set_root_id">_set_root_id</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.pages.PagesTreeModelMixin.html#_check_parent_has_child_toggled">_check_parent_has_child_toggled</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.notebook.index.base.TreeModelMixinBase.html">TreeModelMixinBase</a></code> (via <code><a href="zim.notebook.index.tags.TaggedPagesTreeModelMixin.html">TaggedPagesTreeModelMixin</a></code>, <code><a href="zim.notebook.index.tags.TagsTreeModelBase.html">TagsTreeModelBase</a></code>, <code><a href="zim.notebook.index.pages.PagesTreeModelMixin.html">PagesTreeModelMixin</a></code>):
+          </p>
+          <table class="children sortable" id="id1335">
+  
+  <tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.notebook.index.base.TreeModelMixinBase.html#index">index</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.notebook.index.base.TreeModelMixinBase.html#db">db</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.notebook.index.base.TreeModelMixinBase.html#cache">cache</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.notebook.index.base.TreeModelMixinBase.html#teardown">teardown</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code> (via <code><a href="zim.notebook.index.tags.TaggedPagesTreeModelMixin.html">TaggedPagesTreeModelMixin</a></code>, <code><a href="zim.notebook.index.tags.TagsTreeModelBase.html">TagsTreeModelBase</a></code>, <code><a href="zim.notebook.index.pages.PagesTreeModelMixin.html">PagesTreeModelMixin</a></code>, <code><a href="zim.notebook.index.base.TreeModelMixinBase.html">TreeModelMixinBase</a></code>):
+          </p>
+          <table class="children sortable" id="id1336">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#connectto">connectto</a></code></td>
+    <td><span>Connect to signals of another object E.g.:</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#connectto_all">connectto_all</a></code></td>
+    <td><span>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
+    <td><span>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_all">disconnect_all</a></code></td>
+    <td><span>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_disconnect_from">_disconnect_from</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.plugins.tags.DuplicatePageTreeStore.html">DuplicatePageTreeStore</a></code>:
+          </p>
+          <table class="children sortable" id="id1337">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.tags.DuplicatePageTreeStore.html#set_current_page">set_current_page</a></code></td>
+    <td><span>Since there may be duplicates of each page, highlight all of them</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.tags.DuplicatePageTreeStore.html#current_page">current_page</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.tags.DuplicatePageTreeStore.html#get_indexpath">get_indexpath</a></code></td>
+    <td><span>Get an <code><a href="zim.notebook.index.pages.PageIndexRecord.html">PageIndexRecord</a></code> for a <code>Gtk.TreeIter</code></span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.plugins.pageindex.PageTreeStoreBase.html">PageTreeStoreBase</a></code> (via <code><a href="zim.plugins.tags.DuplicatePageTreeStore.html">DuplicatePageTreeStore</a></code>):
+          </p>
+          <table class="children sortable" id="id1338">
+  
+  <tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="zim.plugins.pageindex.PageTreeStoreBase.html#COLUMN_TYPES">COLUMN_TYPES</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.PageTreeStoreBase.html#flush_cache">flush_cache</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.PageTreeStoreBase.html#on_get_flags">on_get_flags</a></code></td>
+    <td><span>Overridable.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.PageTreeStoreBase.html#on_get_n_columns">on_get_n_columns</a></code></td>
+    <td><span>Overridable.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.PageTreeStoreBase.html#on_get_column_type">on_get_column_type</a></code></td>
+    <td><span>Overridable.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.PageTreeStoreBase.html#on_get_iter">on_get_iter</a></code></td>
+    <td><span>Returns an MyTreeIter for a gtk TreePath or None</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.PageTreeStoreBase.html#on_get_path">on_get_path</a></code></td>
+    <td><span>Returns a gtk TreePath for an indexpath</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.PageTreeStoreBase.html#on_iter_next">on_iter_next</a></code></td>
+    <td><span>Returns the PageIndexRecord for the next row on the same level or None</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.PageTreeStoreBase.html#on_iter_children">on_iter_children</a></code></td>
+    <td><span>Returns an PageIndexRecord for the first child below path or None. If path is None returns the PageIndexRecord for first top level item.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.PageTreeStoreBase.html#on_iter_has_child">on_iter_has_child</a></code></td>
+    <td><span>Returns True if PageIndexRecord for iter has children</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.PageTreeStoreBase.html#on_iter_n_children">on_iter_n_children</a></code></td>
+    <td><span>Returns the number of children in a namespace. When iter is None the number of pages in the root namespace is given.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.PageTreeStoreBase.html#on_iter_nth_child">on_iter_nth_child</a></code></td>
+    <td><span>Returns the nth child or None. If iter is <code>None</code> the nth item in the root namespace is returned.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.PageTreeStoreBase.html#on_iter_parent">on_iter_parent</a></code></td>
+    <td><span>Returns an indexpath for parent node or None</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.pageindex.PageTreeStoreBase.html#_flush_scheduled">_flush_scheduled</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.PageTreeStoreBase.html#_emit_page_changes">_emit_page_changes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html">GenericTreeModel</a></code> (via <code><a href="zim.plugins.tags.DuplicatePageTreeStore.html">DuplicatePageTreeStore</a></code>, <code><a href="zim.plugins.pageindex.PageTreeStoreBase.html">PageTreeStoreBase</a></code>):
+          </p>
+          <table class="children sortable" id="id1339">
+  
+  <tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#leak_references">leak_references</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#stamp">stamp</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#iter_depth_first">iter_depth_first</a></code></td>
+    <td><span>Depth-first iteration of the entire TreeModel yielding the python nodes.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#invalidate_iter">invalidate_iter</a></code></td>
+    <td><span>Clear user data and its reference from the iter and this model.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#invalidate_iters">invalidate_iters</a></code></td>
+    <td><span>This method invalidates all TreeIter objects associated with this custom tree model and frees their locally pooled references.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#iter_is_valid">iter_is_valid</a></code></td>
+    <td><span>:Returns: True if the gtk.TreeIter specified by iter is valid for the custom tree model.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#get_user_data">get_user_data</a></code></td>
+    <td><span>Get the user_data associated with the given TreeIter.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#set_user_data">set_user_data</a></code></td>
+    <td><span>Applies user_data and stamp to the given iter.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#create_tree_iter">create_tree_iter</a></code></td>
+    <td><span>Create a Gtk.TreeIter instance with the given user_data specific for this model.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#row_deleted">row_deleted</a></code></td>
+    <td><span>Notify the model a row has been deleted.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_get_flags">do_get_flags</a></code></td>
+    <td><span>Internal method.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_get_n_columns">do_get_n_columns</a></code></td>
+    <td><span>Internal method.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_get_column_type">do_get_column_type</a></code></td>
+    <td><span>Internal method.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_get_iter">do_get_iter</a></code></td>
+    <td><span>Internal method.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_iter_next">do_iter_next</a></code></td>
+    <td><span>Internal method.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_get_path">do_get_path</a></code></td>
+    <td><span>Internal method.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_get_value">do_get_value</a></code></td>
+    <td><span>Internal method.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_iter_children">do_iter_children</a></code></td>
+    <td><span>Internal method.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_iter_has_child">do_iter_has_child</a></code></td>
+    <td><span>Internal method.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_iter_n_children">do_iter_n_children</a></code></td>
+    <td><span>Internal method.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_iter_nth_child">do_iter_nth_child</a></code></td>
+    <td><span>Internal method.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_iter_parent">do_iter_parent</a></code></td>
+    <td><span>Internal method.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_ref_node">do_ref_node</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_unref_node">do_unref_node</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#on_ref_node">on_ref_node</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#on_unref_node">on_unref_node</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#_held_refs">_held_refs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#_create_tree_iter">_create_tree_iter</a></code></td>
+    <td><span>Internal creation of a (bool, TreeIter) pair for returning directly back to the view interfacing with this model.</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="zim.plugins.tags.TaggedPageTreeStore.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, index, tags, show_full_page_name=True):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L265">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.notebook.index.tags.TagsTreeModelBase.html#__init__">zim.notebook.index.tags.TagsTreeModelBase.__init__</a></code></div>
+    
+    <div><p>Initialize. Make sure to call this from derived classes if overridden.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.plugins.tags.TaggedPageTreeStore.show_full_page_name">
+    
+  </a>
+  <a name="show_full_page_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">show_full_page_name</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L268">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tags.TaggedPageTreeStore.on_get_value">
+    
+  </a>
+  <a name="on_get_value">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_get_value</span>(self, iter, column):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L270">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.plugins.pageindex.PageTreeStoreBase.html#on_get_value">zim.plugins.pageindex.PageTreeStoreBase.on_get_value</a></code></div>
+    
+    <div><p>Returns the data for a specific column</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

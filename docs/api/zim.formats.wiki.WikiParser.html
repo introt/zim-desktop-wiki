@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.formats.wiki.WikiParser : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.formats.html">formats</a></code>.<code><a href="zim.formats.wiki.html">wiki</a></code>.<code><a href="zim.formats.wiki.WikiParser.html">WikiParser</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">WikiParser</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L175">(source)</a></code></p>
+        <p><a href="classIndex.html#zim.formats.wiki.WikiParser">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="undocumented">Undocumented</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id183">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#BULLETS">BULLETS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#backward_indented_blocks">backward_indented_blocks</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#backward_url_parsing">backward_url_parsing</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#inline_parser">inline_parser</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#list_and_indent_parser">list_and_indent_parser</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#block_parser">block_parser</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__call__">__call__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#nested_inline_parser_below_link">nested_inline_parser_below_link</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parse_heading">parse_heading</a></code></td>
+    <td><span>Parse heading and determine it's level</span></td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#parse_pre">parse_pre</a></code></td>
+    <td><span>Verbatim block with indenting</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parse_object">parse_object</a></code></td>
+    <td><span>Custom object</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#check_multi_attribute">check_multi_attribute</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parse_table">parse_table</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parse_para">parse_para</a></code></td>
+    <td><span>Split a text into paragraphs and empty lines</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parse_list">parse_list</a></code></td>
+    <td><span>Parse lists into items and recurse to get inline formatting per list item</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parse_list_lines">parse_list_lines</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parse_indent">parse_indent</a></code></td>
+    <td><span>Parse indented blocks and turn them into 'div' elements</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parse_link">parse_link</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#parse_image">parse_image</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parse_url">parse_url</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#parse_tag">parse_tag</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#parse_anchor">parse_anchor</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#parse_line">parse_line</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_init_inline_parse">_init_inline_parse</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_init_intermediate_parser">_init_intermediate_parser</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_init_block_parser">_init_block_parser</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_parse_object">_parse_object</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="zim.formats.wiki.WikiParser.BULLETS">
+    
+  </a>
+  <a name="BULLETS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">BULLETS</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L182">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.formats.wiki.WikiParser.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, backward_indented_blocks=False, backward_url_parsing=False):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L191">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.formats.wiki.WikiParser.backward_indented_blocks">
+    
+  </a>
+  <a name="backward_indented_blocks">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">backward_indented_blocks</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L192">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.formats.wiki.WikiParser.backward_url_parsing">
+    
+  </a>
+  <a name="backward_url_parsing">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">backward_url_parsing</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L193">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.formats.wiki.WikiParser.inline_parser">
+    
+  </a>
+  <a name="inline_parser">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">inline_parser</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L194">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.formats.wiki.WikiParser.list_and_indent_parser">
+    
+  </a>
+  <a name="list_and_indent_parser">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">list_and_indent_parser</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L195">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.formats.wiki.WikiParser.block_parser">
+    
+  </a>
+  <a name="block_parser">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">block_parser</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L196">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.formats.wiki.WikiParser.__call__">
+    
+  </a>
+  <a name="__call__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__call__</span>(self, builder, text):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L198">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.formats.wiki.WikiParser._init_inline_parse">
+    
+  </a>
+  <a name="_init_inline_parse">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_init_inline_parse</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L203">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.formats.wiki.WikiParser.nested_inline_parser_below_link">
+    
+  </a>
+  <a name="nested_inline_parser_below_link">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">nested_inline_parser_below_link</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L208">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.formats.wiki.WikiParser._init_intermediate_parser">
+    
+  </a>
+  <a name="_init_intermediate_parser">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_init_intermediate_parser</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L235">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.formats.wiki.WikiParser._init_block_parser">
+    
+  </a>
+  <a name="_init_block_parser">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_init_block_parser</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L274">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.formats.wiki.WikiParser.parse_heading">
+    
+  </a>
+  <a name="parse_heading">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse_heading</span>(self, builder, text):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L310">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Parse heading and determine it's level</p></div>
+  </div>
+</div><div class="basestaticmethod">
+  
+  <a name="zim.formats.wiki.WikiParser.parse_pre">
+    
+  </a>
+  <a name="parse_pre">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">parse_pre</span>(builder, indent, text):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L328">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Verbatim block with indenting</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.formats.wiki.WikiParser.parse_object">
+    
+  </a>
+  <a name="parse_object">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse_object</span>(self, builder, indent, header, body):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L339">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Custom object</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.formats.wiki.WikiParser._parse_object">
+    
+  </a>
+  <a name="_parse_object">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_object</span>(self, builder, indent, otype, param, body):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L360">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.formats.wiki.WikiParser.check_multi_attribute">
+    
+  </a>
+  <a name="check_multi_attribute">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">check_multi_attribute</span>(self, attrib, key, default, list_length):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L378">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Correct multi-attributes, so they do fit with column length of table :param attrib: key-value store :param key: key to select of attribute :param default: default value for one list entry :param list_length: required length of selected attribute :return: attribute-value as list of different options</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.formats.wiki.WikiParser.parse_table">
+    
+  </a>
+  <a name="parse_table">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse_table</span>(self, builder, headerline, alignstyle, body):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L398">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.formats.wiki.WikiParser.parse_para">
+    
+  </a>
+  <a name="parse_para">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse_para</span>(self, builder, text):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L461">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Split a text into paragraphs and empty lines</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.formats.wiki.WikiParser.parse_list">
+    
+  </a>
+  <a name="parse_list">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse_list</span>(self, builder, text, indent=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L482">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Parse lists into items and recurse to get inline formatting per list item</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.formats.wiki.WikiParser.parse_list_lines">
+    
+  </a>
+  <a name="parse_list_lines">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse_list_lines</span>(self, builder, lines, level, attrib=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L495">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.formats.wiki.WikiParser.parse_indent">
+    
+  </a>
+  <a name="parse_indent">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse_indent</span>(self, builder, text, indent):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L546">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Parse indented blocks and turn them into 'div' elements</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.formats.wiki.WikiParser.parse_link">
+    
+  </a>
+  <a name="parse_link">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse_link</span>(self, builder, text):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L553">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basestaticmethod">
+  
+  <a name="zim.formats.wiki.WikiParser.parse_image">
+    
+  </a>
+  <a name="parse_image">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">parse_image</span>(builder, text):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L576">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.formats.wiki.WikiParser.parse_url">
+    
+  </a>
+  <a name="parse_url">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse_url</span>(self, builder, *a):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L594">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basestaticmethod">
+  
+  <a name="zim.formats.wiki.WikiParser.parse_tag">
+    
+  </a>
+  <a name="parse_tag">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">parse_tag</span>(builder, text):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L609">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basestaticmethod">
+  
+  <a name="zim.formats.wiki.WikiParser.parse_anchor">
+    
+  </a>
+  <a name="parse_anchor">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">parse_anchor</span>(builder, name, *a):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L613">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basestaticmethod">
+  
+  <a name="zim.formats.wiki.WikiParser.parse_line">
+    
+  </a>
+  <a name="parse_line">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">parse_line</span>(builder, text):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L617">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

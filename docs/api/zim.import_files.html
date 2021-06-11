@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.import_files : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.import_files.html">import_files</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/import_files.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="undocumented">Undocumented</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id551">
+  
+  <tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#import_file">import_file</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#import_folder">import_folder</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  <a name="zim.import_files.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/import_files.py#L10">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.import_files.import_file">
+    
+  </a>
+  <a name="import_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">import_file</span>(file, notebook, path, format='wiki'):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/import_files.py#L13">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Import a file into a zim notebook page</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">file</td><td>a <code><a href="zim.fs.File.html">File</a></code> object to import from</td></tr><tr><td></td><td class="fieldArg">notebook</td><td>a <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object to import into</td></tr><tr><td></td><td class="fieldArg">path</td><td>the <code><a href="zim.notebook.page.Path.html">Path</a></code> to import to within the notebook</td></tr><tr><td></td><td class="fieldArg">format</td><td><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">the <code><a href="zim.notebook.page.Page.html">Page</a></code> object for the imported page, this may be a different page than the one <code>path</code> is pointing - see <code>notebook.get_new_page()</code></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.import_files.import_folder">
+    
+  </a>
+  <a name="import_folder">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">import_folder</span>(folder, notebook, path, filter=None, format='wiki'):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/import_files.py#L35">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Import a folder recursively</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">folder</td><td>a <code><a href="zim.newfs.base.Folder.html">Folder</a></code> object to import from</td></tr><tr><td></td><td class="fieldArg">notebook</td><td>a <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object to import into</td></tr><tr><td></td><td class="fieldArg">path</td><td>the <code><a href="zim.notebook.page.Path.html">Path</a></code> to import to within the notebook</td></tr><tr><td></td><td class="fieldArg">filter</td><td>optional filter function to decide which files and folder to import when scanning <code>folder</code>. Will be given each file or folder found when scanning <code>folder</code> and expected to return boolean whether to import yes or no.</td></tr><tr><td></td><td class="fieldArg">format</td><td><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

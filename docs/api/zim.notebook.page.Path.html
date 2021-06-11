@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.notebook.page.Path : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.notebook.html">notebook</a></code>.<code><a href="zim.notebook.page.html">page</a></code>.<code><a href="zim.notebook.page.Path.html">Path</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Path</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L74">(source)</a></code></p><p>Known subclasses: <code><a href="zim.notebook.index.pages.PageIndexRecord.html">zim.notebook.index.pages.PageIndexRecord</a></code>, <code><a href="zim.notebook.page.Page.html">zim.notebook.page.Page</a></code></p>
+        <p><a href="classIndex.html#zim.notebook.page.Path">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id795">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#__slots__">__slots__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#assertValidPageName">assertValidPageName</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#makeValidPageName">makeValidPageName</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Constructor.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#name">name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#new_from_zim_config">new_from_zim_config</a></code></td>
+    <td><span>Returns a new object based on the string representation for that path.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#serialize_zim_config">serialize_zim_config</a></code></td>
+    <td><span>Returns the name for serializing this path</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__str__">__str__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__hash__">__hash__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__eq__">__eq__</a></code></td>
+    <td><span>Paths are equal when their names are the same</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__ne__">__ne__</a></code></td>
+    <td><span>Paths are not equal when their names are not the same</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__add__">__add__</a></code></td>
+    <td><span><code>path + name</code> is an alias for <code>path.child(name)</code></span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#parts">parts</a></code></td>
+    <td><span>Get all the parts of the name (split on ":")</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#basename">basename</a></code></td>
+    <td><span>Get the basename of the path (last part of the name)</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#namespace">namespace</a></code></td>
+    <td><span>Gives the name for the parent page. Returns an empty string for the top level namespace.</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#isroot">isroot</a></code></td>
+    <td><span><code>True</code> when this Path represents the top level namespace</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#relname">relname</a></code></td>
+    <td><span>Get a part of this path relative to a parent path</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#parent">parent</a></code></td>
+    <td><span>Get the path for the parent page</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parents">parents</a></code></td>
+    <td><span>Generator function for parent Paths including root</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#child">child</a></code></td>
+    <td><span>Get a child Path</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#ischild">ischild</a></code></td>
+    <td><span>Check whether this path is a child of a given path @param parent: a <code><a href="zim.notebook.page.Path.html">Path</a></code> object @returns: True when this path is a (grand-)child of <code>parent</code></span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#match_namespace">match_namespace</a></code></td>
+    <td><span>Check whether this path is in a specific section of the notebook @param namespace: a <code><a href="zim.notebook.page.Path.html">Path</a></code> object @returns: True when this path is equal to <code>namespace</code> or is a (grand-)child of <code>namespace</code></span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#commonparent">commonparent</a></code></td>
+    <td><span>Find a common parent for two Paths</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="zim.notebook.page.Path.__slots__">
+    
+  </a>
+  <a name="__slots__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__slots__</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L123">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.notebook.index.pages.PageIndexRecord.html">zim.notebook.index.pages.PageIndexRecord</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, ...]</code>)
+  </div>
+</div><div class="basestaticmethod">
+  
+  <a name="zim.notebook.page.Path.assertValidPageName">
+    
+  </a>
+  <a name="assertValidPageName">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">assertValidPageName</span>(name):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L125">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Raises an <code>AssertionError</code> if <code>name</code> does not represent a valid page name. This is a strict check, most names that fail this test can still be cleaned up by the <code><a href="#makeValidPageName">makeValidPageName()</a></code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">name</td><td>a string</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="https://docs.python.org/3/library/exceptions.html#AssertionError">AssertionError</a></td><td>if the name is not valid</td></tr></table></div>
+  </div>
+</div><div class="basestaticmethod">
+  
+  <a name="zim.notebook.page.Path.makeValidPageName">
+    
+  </a>
+  <a name="makeValidPageName">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">makeValidPageName</span>(name):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L140">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Remove any invalid characters from the string and return a valid page name. Only string that can not be turned in somthing valid is a string that reduces to an empty string after removing all invalid characters.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">name</td><td>a string</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a string</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></td><td>when the result would be an empty string</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Path.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, name):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L159">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.notebook.index.pages.PageIndexRecord.html">zim.notebook.index.pages.PageIndexRecord</a></code>, <code><a href="zim.notebook.page.Page.html">zim.notebook.page.Page</a></code></div>
+    
+    <div><p>Constructor.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">name</td><td>the absolute page name in the right case as a string or as a tuple strings<p>The name ":" is used as a special case to construct a path for the toplevel namespace in a notebook.</p></td></tr><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">This constructor does not do any checks for the sanity of the path name. Never construct a path directly from user input, but use either <code>index.lookup_from_user_input()</code> or first check the name with <code><a href="#makeValidPageName">makeValidPageName()</a></code></td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.notebook.page.Path.name">
+    
+  </a>
+  <a name="name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">name</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L174">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.notebook.page.Page.html">zim.notebook.page.Page</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  <a name="zim.notebook.page.Path.new_from_zim_config">
+    
+  </a>
+  <a name="new_from_zim_config">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">new_from_zim_config</span>(klass, string):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L183">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a new object based on the string representation for that path.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Path.serialize_zim_config">
+    
+  </a>
+  <a name="serialize_zim_config">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">serialize_zim_config</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L190">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns the name for serializing this path</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Path.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L194">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Path.__str__">
+    
+  </a>
+  <a name="__str__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L197">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Path.__hash__">
+    
+  </a>
+  <a name="__hash__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__hash__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L200">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Path.__eq__">
+    
+  </a>
+  <a name="__eq__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L203">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Paths are equal when their names are the same</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Path.__ne__">
+    
+  </a>
+  <a name="__ne__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__ne__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L210">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Paths are not equal when their names are not the same</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Path.__add__">
+    
+  </a>
+  <a name="__add__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__add__</span>(self, name):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L214">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p><code>path + name</code> is an alias for <code>path.child(name)</code></p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="zim.notebook.page.Path.parts">
+    
+  </a>
+  <a name="parts">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">parts</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L218">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Get all the parts of the name (split on ":")</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="zim.notebook.page.Path.basename">
+    
+  </a>
+  <a name="basename">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">basename</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L223">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Get the basename of the path (last part of the name)</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="zim.notebook.page.Path.namespace">
+    
+  </a>
+  <a name="namespace">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">namespace</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L229">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Gives the name for the parent page. Returns an empty string for the top level namespace.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="zim.notebook.page.Path.isroot">
+    
+  </a>
+  <a name="isroot">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">isroot</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L240">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p><code>True</code> when this Path represents the top level namespace</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Path.relname">
+    
+  </a>
+  <a name="relname">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">relname</span>(self, path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L245">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get a part of this path relative to a parent path</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a parent <code><a href="zim.notebook.page.Path.html">Path</a></code><p>Raises an error if <code>path</code> is not a parent</p></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">the part of the path that is relative to <code>path</code></td></tr></table></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="zim.notebook.page.Path.parent">
+    
+  </a>
+  <a name="parent">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">parent</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L262">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Get the path for the parent page</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Path.parents">
+    
+  </a>
+  <a name="parents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parents</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L273">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Generator function for parent Paths including root</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Path.child">
+    
+  </a>
+  <a name="child">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">child</span>(self, basename):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L284">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get a child Path</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">basename</td><td>the relative name for the child</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a new <code><a href="zim.notebook.page.Path.html">Path</a></code> object</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Path.ischild">
+    
+  </a>
+  <a name="ischild">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ischild</span>(self, parent):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L292">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Check whether this path is a child of a given path</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">parent</td><td>a <code><a href="zim.notebook.page.Path.html">Path</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">True when this path is a (grand-)child of <code>parent</code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Path.match_namespace">
+    
+  </a>
+  <a name="match_namespace">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">match_namespace</span>(self, namespace):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L299">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Check whether this path is in a specific section of the notebook</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">namespace</td><td>a <code><a href="zim.notebook.page.Path.html">Path</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">True when this path is equal to <code>namespace</code> or is a (grand-)child of <code>namespace</code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.notebook.page.Path.commonparent">
+    
+  </a>
+  <a name="commonparent">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">commonparent</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/page.py#L306">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Find a common parent for two Paths</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">other</td><td>another <code><a href="zim.notebook.page.Path.html">Path</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.notebook.page.Path.html">Path</a></code> object for the first common parent</td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

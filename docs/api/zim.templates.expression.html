@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.templates.expression : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.templates.html">templates</a></code>.<code><a href="zim.templates.expression.html">expression</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expression.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Module that contains the logic for evaluating expressions in the template.</p><p>Expression evaluation is done without using a real python eval to keep it safe from arbitrary code execution</p><p>Both parameter values and functions are stored in a dict that is passed to the Expression object when it is executed. The expressions should not allow access to anything outside this dict, and only sane access to objects reachable from this dict.</p><p>Parameter lookup gets list and dict items as well as object attributes. It does not allow accessing private attributes (starting with "_") or or code objects (object method of function) - callable objects on the other hand can be accessed.</p><p>We control execution by only executing functions that are specifically whitelisted as being an ExpressionFunction (can be used as decorator). The expression classes have builtin support for some builtin methods on strings, lists and dicts (see <code>ExpressionString</code>, <code>ExpressionDict</code> and <code><a href="zim.templates.expression.ExpressionList.html">ExpressionList</a></code> respectively), other functions can be supplied in the context dict or as object attributes.</p><p>The biggest risks would be to put objects in the dict that allow access to dangerous methods or private data. Or to have functions that e.g. eval one of their arguments or take a callable argument</p><p>The idea is that objects in the expression dict are proxies that expose a sub set of the full object API and template friendly methods. These restrictions hsould help to minimize risk of arbitrary code execution in expressions.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1498">
+  
+  <tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.templates.expression.Expression.html">Expression</a></code></td>
+    <td><span>Base class for all expressions</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.templates.expression.ExpressionLiteral.html">ExpressionLiteral</a></code></td>
+    <td><span>Expression with a literal value</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.templates.expression.ExpressionParameter.html">ExpressionParameter</a></code></td>
+    <td><span>Expression with a parameter name, evaluates the parameter value</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.templates.expression.ExpressionList.html">ExpressionList</a></code></td>
+    <td><span>Expression for a list of expressions, recurses on all items when evaluated</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.templates.expression.ExpressionOperator.html">ExpressionOperator</a></code></td>
+    <td><span>Expression for an operator statement (e.g. "AND", "OR", "&lt;"), recurses for left and right side of the expression.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.templates.expression.ExpressionUnaryOperator.html">ExpressionUnaryOperator</a></code></td>
+    <td><span>Expression with a unary operator (e.g. "NOT") that recurses for the right hand side of the statement.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.templates.expression.ExpressionFunctionCall.html">ExpressionFunctionCall</a></code></td>
+    <td><span>Expression with a function name and arguments, recurses for the arguments and evaluates the function.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.templates.expression.ExpressionFunction.html">ExpressionFunction</a></code></td>
+    <td><span>Wrapper for methods and functions that whitelists functions to be called from expressions</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.templates.expression.BoundExpressionFunction.html">BoundExpressionFunction</a></code></td>
+    <td><span>Wrapper used by <code><a href="zim.templates.expression.ExpressionFunction.html">ExpressionFunction</a></code> when used as a decorator for object methods.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.templates.expression.ExpressionObjectBase.html">ExpressionObjectBase</a></code></td>
+    <td><span>Base method for wrapper objects that are used to determine the safe functions to call on objects in the parameter dict.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.templates.expression.ExpressionStringObject.html">ExpressionStringObject</a></code></td>
+    <td><span>Proxy for string objects that gives safe methods for use in expressions.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.templates.expression.ExpressionDictObject.html">ExpressionDictObject</a></code></td>
+    <td><span>Proxy for dict objects that gives safe methods for use in expressions.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.templates.expression.ExpressionListObject.html">ExpressionListObject</a></code></td>
+    <td><span>Proxy for list objects that gives safe methods for use in expressions.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  <a name="zim.templates.expression.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expression.py#L48">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.gui.widgets.NamespaceEntry : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.widgets.html">widgets</a></code>.<code><a href="zim.gui.widgets.NamespaceEntry.html">NamespaceEntry</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">NamespaceEntry</span>(<a href="zim.gui.widgets.PageEntry.html" title="zim.gui.widgets.PageEntry">PageEntry</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1966">(source)</a></code></p>
+        <p><a href="classIndex.html#zim.gui.widgets.NamespaceEntry">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Widget to select a zim page path as a namespace</p><p>Use this instead of <code><a href="zim.gui.widgets.PageEntry.html">PageEntry</a></code> when you want to allow selecting a namespace. E.g. this will be allowed to select ":" or empty string for the root namespace, which is not allowed in PageEntry.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id509">
+  
+  <tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_allow_select_root">_allow_select_root</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.gui.widgets.PageEntry.html">PageEntry</a></code>:
+          </p>
+          <table class="children sortable" id="id510">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.PageEntry.html#__init__">__init__</a></code></td>
+    <td><span>Constructor</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.PageEntry.html#notebook">notebook</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.PageEntry.html#notebookpath">notebookpath</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.PageEntry.html#subpaths_only">subpaths_only</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.PageEntry.html#existing_only">existing_only</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.PageEntry.html#set_use_relative_paths">set_use_relative_paths</a></code></td>
+    <td><span>Set the notebook and path to be used for relative paths.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.PageEntry.html#set_path">set_path</a></code></td>
+    <td><span>Set the path to be shown in the entry. If you have the link as a string, use <code>set_text()</code> instead</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.PageEntry.html#get_path">get_path</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.PageEntry.html#update_input_valid">update_input_valid</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.PageEntry.html#update_completion">update_completion</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.PageEntry.html#_fill_completion_for_anchor">_fill_completion_for_anchor</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.PageEntry.html#_fill_completion_any">_fill_completion_any</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.gui.widgets.InputEntry.html">InputEntry</a></code> (via <code><a href="zim.gui.widgets.PageEntry.html">PageEntry</a></code>):
+          </p>
+          <table class="children sortable" id="id511">
+  
+  <tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#__gsignals__">__gsignals__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#ERROR_COLOR">ERROR_COLOR</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#allow_empty">allow_empty</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#show_empty_invalid">show_empty_invalid</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#allow_whitespace">allow_whitespace</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#check_func">check_func</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#set_check_func">set_check_func</a></code></td>
+    <td><span>Set a function to check whether input is valid or not @param check_func: the function</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#set_icon">set_icon</a></code></td>
+    <td><span>Add an icon in the entry widget behind the text</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#set_icon_to_clear">set_icon_to_clear</a></code></td>
+    <td><span>Adds a "clear" icon in the entry widget</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#get_text">get_text</a></code></td>
+    <td><span>Get the text from the widget. Like <code>Gtk.Entry.get_text()</code> but with UTF-8 decoding and whitespace stripped. @returns: string</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#get_input_valid">get_input_valid</a></code></td>
+    <td><span>Get the valid state. @returns: <code>True</code> if the input is valid</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#set_input_valid">set_input_valid</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#clear">clear</a></code></td>
+    <td><span>Clear the text in the entry</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#_normal_color">_normal_color</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#_input_valid">_input_valid</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#_set_base_color">_set_base_color</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable private">
+  
+  <a name="zim.gui.widgets.NamespaceEntry._allow_select_root">
+    
+  </a>
+  <a name="_allow_select_root">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_allow_select_root</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1974">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.gui.widgets.PageEntry.html#_allow_select_root">zim.gui.widgets.PageEntry._allow_select_root</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

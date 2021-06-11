@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.config : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="package"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.config.html">config</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        package documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/__init__.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="undocumented">Undocumented</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id28">
+  
+  <tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.config.basedirs.html">basedirs</a></code></td>
+    <td><span>This module defines the search path for zim config files following the freedesktop.org (XDG) Base Dir specification.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.config.dicts.html">dicts</a></code></td>
+    <td><span>This module contains base classes to map config files to dicts</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.config.manager.html">manager</a></code></td>
+    <td><span class="undocumented">No module docstring; 6/6 classes, 0/2 functions, 0/2 variables documented</span></td>
+  </tr>
+</table>
+        
+
+          <p class="fromInitPy">From the <code>__init__.py</code> module:</p><table class="children sortable" id="id29">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="zim.config.html#data_dir">data_dir</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="zim.config.html#data_dirs">data_dirs</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="zim.config.html#data_file">data_file</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="zim.config.html#logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="zim.config.html#user_dirs">user_dirs</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  <a name="zim.config.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/__init__.py#L6">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.config.data_dirs">
+    
+  </a>
+  <a name="data_dirs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">data_dirs</span>(path=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/__init__.py#L41">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Generator listing paths that contain zim data files in the order that they should be searched. These will be the equivalent of e.g. "~/.local/share/zim", "/usr/share/zim", etc.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a file path relative to to the data dir, including this will list sub-folders with this relative path.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">yields <code><a href="zim.fs.Dir.html">Dir</a></code> objects for the data dirs</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.config.data_dir">
+    
+  </a>
+  <a name="data_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">data_dir</span>(path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/__init__.py#L68">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get an data dir sub-folder.  Will look up <code>path</code> relative to all data dirs and return the first one that exists. Use this function to find any folders from the "data/" folder in the source package.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a file path relative to to the data dir</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.fs.Dir.html">Dir</a></code> object or <code>None</code></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.config.data_file">
+    
+  </a>
+  <a name="data_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">data_file</span>(path):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/__init__.py#L83">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get a data file. Will look up <code>path</code> relative to all data dirs and return the first one that exists. Use this function to find any files from the "data/" folder in the source package.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a file path relative to to the data dir (e.g. "zim.png")</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.fs.File.html">File</a></code> object or <code>None</code></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.config.user_dirs">
+    
+  </a>
+  <a name="user_dirs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">user_dirs</span>():
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/__init__.py#L98">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get the XDG user dirs.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a dict with directories for the XDG user dirs. These are typically defined in "~/.config/user-dirs.dirs". Common user dirs are: "XDG_DESKTOP_DIR", "XDG_DOWNLOAD_DIR", etc. If no definition is found an empty dict will be returned.</td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

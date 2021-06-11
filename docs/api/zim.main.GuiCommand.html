@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.main.GuiCommand : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.main.html">main</a></code>.<code><a href="zim.main.GuiCommand.html">GuiCommand</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">GuiCommand</span>(<a href="zim.main.NotebookCommand.html" title="zim.main.NotebookCommand">NotebookCommand</a>, <a href="zim.main.command.GtkCommand.html" title="zim.main.command.GtkCommand">GtkCommand</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L197">(source)</a></code></p><p>Known subclasses: <code><a href="zim.main.ManualCommand.html">zim.main.ManualCommand</a></code></p>
+        <p><a href="classIndex.html#zim.main.GuiCommand">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Class implementing the <code>--gui</code> command and run the gtk interface</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id574">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#arguments">arguments</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#options">options</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#build_notebook">build_notebook</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#run">run</a></code></td>
+    <td><span>Run the command @raises UsageError: when arguments are not correct @implementation: must be implemented by subclasses</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_present_window">_present_window</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_run_new_window">_run_new_window</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.main.NotebookCommand.html">NotebookCommand</a></code>:
+          </p>
+          <table class="children sortable" id="id575">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.main.NotebookCommand.html#get_default_or_only_notebook">get_default_or_only_notebook</a></code></td>
+    <td><span>Helper to get a default notebook</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.main.NotebookCommand.html#get_notebook_argument">get_notebook_argument</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.main.command.Command.html">Command</a></code> (via <code><a href="zim.main.NotebookCommand.html">NotebookCommand</a></code>):
+          </p>
+          <table class="children sortable" id="id576">
+  
+  <tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="zim.main.command.Command.html#default_options">default_options</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.main.command.Command.html#__init__">__init__</a></code></td>
+    <td><span>Constructor @param command: the command switch (first commandline argument) @param pwd: optional working directory path</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.main.command.Command.html#command">command</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.main.command.Command.html#args">args</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.main.command.Command.html#opts">opts</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.main.command.Command.html#pwd">pwd</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.main.command.Command.html#parse_options">parse_options</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.main.command.Command.html#get_options">get_options</a></code></td>
+    <td><span>Retrieve a dict with a sub-set of the command options @param names: that options in the subset</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.main.command.Command.html#get_arguments">get_arguments</a></code></td>
+    <td><span>Get the arguments, to be used by the implementation of <code>run()</code> @raises UsageError: when arguments are not correct @returns: tuple of arguments, padded with None to correct length</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.main.command.Command.html#ignore_options">ignore_options</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.main.command.GtkCommand.html">GtkCommand</a></code>:
+          </p>
+          <table class="children sortable" id="id577">
+  
+  <tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="zim.main.command.GtkCommand.html#default_options">default_options</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.main.command.GtkCommand.html#standalone_process">standalone_process</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.main.command.GtkCommand.html#run_local">run_local</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.main.command.Command.html">Command</a></code> (via <code><a href="zim.main.command.GtkCommand.html">GtkCommand</a></code>):
+          </p>
+          <table class="children sortable" id="id578">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.main.command.Command.html#__init__">__init__</a></code></td>
+    <td><span>Constructor @param command: the command switch (first commandline argument) @param pwd: optional working directory path</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.main.command.Command.html#command">command</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.main.command.Command.html#args">args</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.main.command.Command.html#opts">opts</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.main.command.Command.html#pwd">pwd</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.main.command.Command.html#parse_options">parse_options</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.main.command.Command.html#get_options">get_options</a></code></td>
+    <td><span>Retrieve a dict with a sub-set of the command options @param names: that options in the subset</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.main.command.Command.html#get_arguments">get_arguments</a></code></td>
+    <td><span>Get the arguments, to be used by the implementation of <code>run()</code> @raises UsageError: when arguments are not correct @returns: tuple of arguments, padded with None to correct length</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.main.command.Command.html#ignore_options">ignore_options</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="zim.main.GuiCommand.arguments">
+    
+  </a>
+  <a name="arguments">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">arguments</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L200">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.main.command.Command.html#arguments">zim.main.command.Command.arguments</a></code></div><div class="interfaceinfo">overridden in <code><a href="zim.main.ManualCommand.html">zim.main.ManualCommand</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, ...]</code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="zim.main.GuiCommand.options">
+    
+  </a>
+  <a name="options">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">options</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L201">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.main.command.Command.html#options">zim.main.command.Command.options</a></code></div><div class="interfaceinfo">overridden in <code><a href="zim.main.ManualCommand.html">zim.main.ManualCommand</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a></code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.main.GuiCommand.build_notebook">
+    
+  </a>
+  <a name="build_notebook">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">build_notebook</span>(self, ensure_uptodate=False):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L208">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.main.NotebookCommand.html#build_notebook">zim.main.NotebookCommand.build_notebook</a></code></div>
+    
+    <div><p>Get the <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object for this command Tries to automount the file location if needed.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">ensure_uptodate</td><td>if <code>True</code> index is updated when needed. Only set to <code>False</code> when index update is handled explicitly (e.g. in the main gui).</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object and a <code><a href="zim.notebook.page.Path.html">Path</a></code> object or <code>None</code></td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="zim.main.NotebookLookupError.html">NotebookLookupError</a></td><td>if the notebook could not be resolved or is not given</td></tr><tr><td></td><td class="fieldArg"><a href="https://docs.python.org/3/library/exceptions.html#FileNotFoundError">FileNotFoundError</a></td><td>if the notebook location does not exist and could not be mounted.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.main.GuiCommand.run">
+    
+  </a>
+  <a name="run">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">run</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L258">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.main.command.Command.html#run">zim.main.command.Command.run</a></code></div><div class="interfaceinfo">overridden in <code><a href="zim.main.ManualCommand.html">zim.main.ManualCommand</a></code></div>
+    
+    <div><p>Run the command</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="zim.main.command.UsageError.html">UsageError</a></td><td>when arguments are not correct</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">must be implemented by subclasses</td></tr></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.main.GuiCommand._present_window">
+    
+  </a>
+  <a name="_present_window">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_present_window</span>(self, window, page):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L280">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.main.GuiCommand._run_new_window">
+    
+  </a>
+  <a name="_run_new_window">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_run_new_window</span>(self, notebook, page):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L293">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

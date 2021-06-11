@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.config.dicts : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.config.html">config</a></code>.<code><a href="zim.config.dicts.html">dicts</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>This module contains base classes to map config files to dicts</p><p>The main classes are <code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code> and <code><a href="zim.config.dicts.INIConfigFile.html">INIConfigFile</a></code>. The <code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code> defines a dictionary of config keys. To add a key in this dictionary it must first be defined using one of the sub-classes of <code><a href="zim.config.dicts.ConfigDefinition.html">ConfigDefinition</a></code>. This definition takes care of validating the value of the config keys and (de-)serializing the values from and to text representation used in the config files. The <code><a href="zim.config.dicts.INIConfigFile.html">INIConfigFile</a></code> maps to a INI-style config file that defines multiple sections with config keys. It is represented as a dictionary where each key maps a to a <code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code>.</p><p>Both derive from <code><a href="zim.config.dicts.ControlledDict.html">ControlledDict</a></code> which defines the <code>changed</code> signal which can be used to track changes in the configuration.</p><p>Typically these classes are not instantiated directly, but by the <code><a href="zim.config.manager.html#ConfigManager">ConfigManager</a></code> defined in <code><a href="zim.config.manager.html">zim.config.manager</a></code>.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id31">
+  
+  <tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.config.dicts.ControlledDict.html">ControlledDict</a></code></td>
+    <td><span>Sub-class of <code>DefinitionOrderedDict</code> that tracks modified state. This modified state is recursive for nested <code>ControlledDict</code>s.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.config.dicts.ConfigDefinition.html">ConfigDefinition</a></code></td>
+    <td><span>Definition for a key in a <code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code></span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.config.dicts.ConfigDefinitionByClass.html">ConfigDefinitionByClass</a></code></td>
+    <td><span>Definition that enforces the value has to have a certain class</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.config.dicts.Boolean.html">Boolean</a></code></td>
+    <td><span>This class defines a config key that maps to a boolean</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.config.dicts.String.html">String</a></code></td>
+    <td><span>This class defines a config key that maps to a string</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.config.dicts.StringAllowEmpty.html">StringAllowEmpty</a></code></td>
+    <td><span>Like <code>String</code> but defaults to <code>allow_empty=True</code></span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.config.dicts.Integer.html">Integer</a></code></td>
+    <td><span>This class defines a config key that maps to an integer value</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.config.dicts.Float.html">Float</a></code></td>
+    <td><span>This class defines a config key that maps to a float</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.config.dicts.Choice.html">Choice</a></code></td>
+    <td><span>Definition that allows selecting a value from a given set Will be presented in the gui as a dropdown with a list of choices</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.config.dicts.Range.html">Range</a></code></td>
+    <td><span>Definition that defines an integer value in a certain range</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.config.dicts.Coordinate.html">Coordinate</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#build_config_definition">build_config_definition</a></code></td>
+    <td><span>Convenience method to construct a <code><a href="zim.config.dicts.ConfigDefinition.html">ConfigDefinition</a></code> object based on a default value and/or a check.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code></td>
+    <td><span>The class defines a dictionary of config keys.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.config.dicts.SectionedConfigDict.html">SectionedConfigDict</a></code></td>
+    <td><span>Dict with multiple sections of config values Sections are handled automatically when a non-existing item is retrieved.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.config.dicts.INIConfigFile.html">INIConfigFile</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.config.dicts.HierarchicDict.html">HierarchicDict</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.config.dicts.HierarchicDictFrame.html">HierarchicDictFrame</a></code></td>
+    <td><span>Object acts as a member dict for <code><a href="zim.config.dicts.HierarchicDict.html">HierarchicDict</a></code></span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_definition_classes">_definition_classes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  <a name="zim.config.dicts.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L48">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable private">
+  
+  <a name="zim.config.dicts._definition_classes">
+    
+  </a>
+  <a name="_definition_classes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_definition_classes</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L421">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.config.dicts.build_config_definition">
+    
+  </a>
+  <a name="build_config_definition">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">build_config_definition</span>(default=None, check=None, allow_empty=False):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/dicts.py#L429">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Convenience method to construct a <code><a href="zim.config.dicts.ConfigDefinition.html">ConfigDefinition</a></code> object based on a default value and/or a check.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

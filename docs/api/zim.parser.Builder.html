@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.parser.Builder : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.parser.html">parser</a></code>.<code><a href="zim.parser.Builder.html">Builder</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Builder</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L87">(source)</a></code></p><p>Known subclasses: <code><a href="zim.formats.ParseTreeBuilder.html">zim.formats.ParseTreeBuilder</a></code>, <code><a href="zim.parser.BuilderTextBuffer.html">zim.parser.BuilderTextBuffer</a></code>, <code><a href="zim.parser.SimpleTreeBuilder.html">zim.parser.SimpleTreeBuilder</a></code>, <code><a href="zim.tokenparser.TokenBuilder.html">zim.tokenparser.TokenBuilder</a></code></p>
+        <p><a href="classIndex.html#zim.parser.Builder">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>This class defines a 'builder' interface for parse trees. It is used by the parser to construct the parse tree while keeping the parser objects agnostic of how the resulting parse tree objects look.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id804">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#start">start</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#text">text</a></code></td>
+    <td><span>Append text @param text: text to be appended as string @implementation: must be implemented by sub-classes</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#end">end</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#append">append</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="zim.parser.Builder.start">
+    
+  </a>
+  <a name="start">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">start</span>(self, tag, attrib=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L94">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.formats.ParseTreeBuilder.html">zim.formats.ParseTreeBuilder</a></code>, <code><a href="zim.parser.BuilderTextBuffer.html">zim.parser.BuilderTextBuffer</a></code>, <code><a href="zim.parser.SimpleTreeBuilder.html">zim.parser.SimpleTreeBuilder</a></code>, <code><a href="zim.tokenparser.TokenBuilder.html">zim.tokenparser.TokenBuilder</a></code></div>
+    
+    <div><p>Start formatted region</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">tag</td><td>the tag name</td></tr><tr><td></td><td class="fieldArg">attrib</td><td>optional dict with attributes</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">must be implemented by sub-classes</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.parser.Builder.text">
+    
+  </a>
+  <a name="text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">text</span>(self, text):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L102">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.formats.ParseTreeBuilder.html">zim.formats.ParseTreeBuilder</a></code>, <code><a href="zim.parser.BuilderTextBuffer.html">zim.parser.BuilderTextBuffer</a></code>, <code><a href="zim.parser.SimpleTreeBuilder.html">zim.parser.SimpleTreeBuilder</a></code>, <code><a href="zim.tokenparser.TokenBuilder.html">zim.tokenparser.TokenBuilder</a></code></div>
+    
+    <div><p>Append text</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">text</td><td>text to be appended as string</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">must be implemented by sub-classes</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.parser.Builder.end">
+    
+  </a>
+  <a name="end">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">end</span>(self, tag):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L109">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.formats.ParseTreeBuilder.html">zim.formats.ParseTreeBuilder</a></code>, <code><a href="zim.parser.BuilderTextBuffer.html">zim.parser.BuilderTextBuffer</a></code>, <code><a href="zim.parser.SimpleTreeBuilder.html">zim.parser.SimpleTreeBuilder</a></code>, <code><a href="zim.tokenparser.TokenBuilder.html">zim.tokenparser.TokenBuilder</a></code></div>
+    
+    <div><p>End formatted region</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">tag</td><td>the tag name</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg">XXX</td><td>when tag does not match current state</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">must be implemented by sub-classes</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.parser.Builder.append">
+    
+  </a>
+  <a name="append">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">append</span>(self, tag, attrib=None, text=None):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L117">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.formats.ParseTreeBuilder.html">zim.formats.ParseTreeBuilder</a></code>, <code><a href="zim.parser.BuilderTextBuffer.html">zim.parser.BuilderTextBuffer</a></code>, <code><a href="zim.parser.SimpleTreeBuilder.html">zim.parser.SimpleTreeBuilder</a></code>, <code><a href="zim.tokenparser.TokenBuilder.html">zim.tokenparser.TokenBuilder</a></code></div>
+    
+    <div><p>Convenience function to open a tag, append text and close it immediatly. Only used for formatted text that has no sub-processing done.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">tag</td><td>the tag name</td></tr><tr><td></td><td class="fieldArg">attrib</td><td>optional dict with attributes</td></tr><tr><td></td><td class="fieldArg">text</td><td>formatted text</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">optional for subclasses, default implementation calls <code><a href="#start">start()</a></code>, <code><a href="#text">text()</a></code>, and <code><a href="#end">end()</a></code></td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

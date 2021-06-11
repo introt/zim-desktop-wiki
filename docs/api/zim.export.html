@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.export : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="package"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.export.html">export</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        package documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/export/__init__.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>This module contains the framework for exporting data from zim.</p><p>The main API for exporting from the application is the <code><a href="zim.export.exporters.Exporter.html">Exporter</a></code> object. There are subclasses of Exporter to export to multiple files, to a single file or to a MHTML file.</p><p>To configure the exporter object an additional <code><a href="zim.export.layouts.ExportLayout.html">ExportLayout</a></code> object is used. This layout defines the exact mapping of pages to files to be used.</p><p>To specific the pages to export a subclass of the <code><a href="zim.export.selections.PageSelection.html">PageSelection</a></code> class is used. There are selection classes to export the whole notebook or to export a single page.</p><p>The <code><a href="zim.export.template.ExportTemplateContext.html">ExportTemplateContext</a></code> object defines specific template parameters for exporting. See also <code><a href="zim.templates.html">zim.templates</a></code> for template parsing and processing classes.</p><p>See the module functions for convenient standard configurations.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id89">
+  
+  <tr class="package">
+    
+    <td>Package</td>
+    <td><code><a href="zim.export.exporters.html">exporters</a></code></td>
+    <td><span>The exporters are the main public objects for exporting, they control the execution of the whole process. Each exporter implements a different export style.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.export.layouts.html">layouts</a></code></td>
+    <td><span>The ExportLayout object determines the mapping of pages to files when exporting. The subclasses give alternative file layouts.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.export.linker.html">linker</a></code></td>
+    <td><span>The ExportLinker object translates links in zim pages to URLS for the export content</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.export.selections.html">selections</a></code></td>
+    <td><span>PageSelection objects wrap the list of pages to be exported</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="zim.export.template.html">template</a></code></td>
+    <td><span>This module defines the ExportTemplateContext, which is a dictionary used to set the template parameters when exporting.</span></td>
+  </tr><tr class="module private">
+    
+    <td>Module</td>
+    <td><code><a href="zim.export.__main__.html">__main__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          <p class="fromInitPy">From the <code>__init__.py</code> module:</p><table class="children sortable" id="id90">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="zim.export.html#build_mhtml_file_exporter">build_mhtml_file_exporter</a></code></td>
+    <td><span>Returns an <code><a href="zim.export.exporters.Exporter.html">Exporter</a></code> that is suitable for exporting a set of pages to a single mhtml file</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="zim.export.html#build_notebook_exporter">build_notebook_exporter</a></code></td>
+    <td><span>Returns an <code><a href="zim.export.exporters.Exporter.html">Exporter</a></code> that is suitable for exporting a whole notebook to a folder with one file per page</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="zim.export.html#build_page_exporter">build_page_exporter</a></code></td>
+    <td><span>Returns an <code><a href="zim.export.exporters.Exporter.html">Exporter</a></code> that is suitable for exporting a page with subpages to a file and a folder (e.g. "page.html" with "page_files/")</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="zim.export.html#build_single_file_exporter">build_single_file_exporter</a></code></td>
+    <td><span>Returns an <code><a href="zim.export.exporters.Exporter.html">Exporter</a></code> that is suitable for exporting a set of pages to a single file</span></td>
+  </tr>
+</table>
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="zim.export.build_notebook_exporter">
+    
+  </a>
+  <a name="build_notebook_exporter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">build_notebook_exporter</span>(dir, format, template, **opts):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/export/__init__.py#L38">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns an <code><a href="zim.export.exporters.Exporter.html">Exporter</a></code> that is suitable for exporting a whole notebook to a folder with one file per page</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.export.build_page_exporter">
+    
+  </a>
+  <a name="build_page_exporter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">build_page_exporter</span>(file, format, template, page, **opts):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/export/__init__.py#L54">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns an <code><a href="zim.export.exporters.Exporter.html">Exporter</a></code> that is suitable for exporting a page with subpages to a file and a folder (e.g. "page.html" with "page_files/")</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.export.build_single_file_exporter">
+    
+  </a>
+  <a name="build_single_file_exporter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">build_single_file_exporter</span>(file, format, template, namespace=None, **opts):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/export/__init__.py#L70">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns an <code><a href="zim.export.exporters.Exporter.html">Exporter</a></code> that is suitable for exporting a set of pages to a single file</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.export.build_mhtml_file_exporter">
+    
+  </a>
+  <a name="build_mhtml_file_exporter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">build_mhtml_file_exporter</span>(file, template, **opts):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/export/__init__.py#L85">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns an <code><a href="zim.export.exporters.Exporter.html">Exporter</a></code> that is suitable for exporting a set of pages to a single mhtml file</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

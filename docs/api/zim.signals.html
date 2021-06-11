@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.signals : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.signals.html">signals</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="undocumented">Undocumented</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1484">
+  
+  <tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#SIGNAL_RUN_FIRST">SIGNAL_RUN_FIRST</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#SIGNAL_BEFORE">SIGNAL_BEFORE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#SIGNAL_NORMAL">SIGNAL_NORMAL</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#SIGNAL_RUN_LAST">SIGNAL_RUN_LAST</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#SIGNAL_AFTER">SIGNAL_AFTER</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.signals.SignalHandler.html">SignalHandler</a></code></td>
+    <td><span>Wrapper for a signal handler method that allows blocking the handler for incoming signals. To be used as function decorator.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.signals.BoundSignalHandler.html">BoundSignalHandler</a></code></td>
+    <td><span class="undocumented">No class docstring; 0/3 instance variables, 1/5 methods documented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.signals.SignalHandlerBlockContextManager.html">SignalHandlerBlockContextManager</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code></td>
+    <td><span>Mixin class that has convenience methods for objects that want to connect to signals of other objects.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.signals.SignalEmitterMeta.html">SignalEmitterMeta</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#init_signals_for_new_object">init_signals_for_new_object</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.signals.SignalEmitter.html">SignalEmitter</a></code></td>
+    <td><span>Replacement for <code>GObject</code> to make objects emit signals. API should be (mostly) compatible with API offered by GObject.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.signals.GSignalEmitterMixin.html">GSignalEmitterMixin</a></code></td>
+    <td><span>Implements a subset of <code><a href="zim.signals.SignalEmitter.html">SignalEmitter</a></code> to extend <code>GObject.GObject</code> classes with methods to use signals as callbacks.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.signals.BlockSignalsContextManager.html">BlockSignalsContextManager</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.signals.DelayedCallback.html">DelayedCallback</a></code></td>
+    <td><span>Wrapper for callbacks that need to be delayed after a signal</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#callback">callback</a></code></td>
+    <td><span>Returns a wrapper functions that call func and. Intended as wrapper for callbacks connected to (gtk) signals. The wrapper ignores any arguments given.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  <a name="zim.signals.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L13">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.signals.SIGNAL_RUN_FIRST">
+    
+  </a>
+  <a name="SIGNAL_RUN_FIRST">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">SIGNAL_RUN_FIRST</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L16">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.signals.SIGNAL_BEFORE">
+    
+  </a>
+  <a name="SIGNAL_BEFORE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">SIGNAL_BEFORE</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L17">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.signals.SIGNAL_NORMAL">
+    
+  </a>
+  <a name="SIGNAL_NORMAL">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">SIGNAL_NORMAL</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L17">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.signals.SIGNAL_RUN_LAST">
+    
+  </a>
+  <a name="SIGNAL_RUN_LAST">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">SIGNAL_RUN_LAST</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L18">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.signals.SIGNAL_AFTER">
+    
+  </a>
+  <a name="SIGNAL_AFTER">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">SIGNAL_AFTER</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L19">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.signals.init_signals_for_new_object">
+    
+  </a>
+  <a name="init_signals_for_new_object">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">init_signals_for_new_object</span>(obj):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L238">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="zim.signals.callback">
+    
+  </a>
+  <a name="callback">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">callback</span>(func, *arg, **kwarg):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L528">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a wrapper functions that call func and. Intended as wrapper for callbacks connected to (gtk) signals. The wrapper ignores any arguments given.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

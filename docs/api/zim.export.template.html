@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.export.template : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.export.html">export</a></code>.<code><a href="zim.export.template.html">template</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/export/template.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>This module defines the ExportTemplateContext, which is a dictionary used to set the template parameters when exporting.</p><p>Export template parameters supported:</p><pre class="literalblock">
+  generator
+        .name   -- "Zim x.xx"
+        .user
+
+  title
+
+  navigation    - links to other export pages (if not included here)
+        home
+        up
+        prev                    -- prev export file or None
+        next                    -- next export file or None
+
+  links                 -- links to other export pages (index &amp; plugins / ...) - sorted dict to have Index, Home first followed by plugins
+
+        link
+                .name
+                .basename
+
+  pages                 -- iter over special + content
+        .special        -- iter special pages to be included (index / plugins / ...) - support get() as well here
+        .content        -- iter pages being exported
+
+                page
+                        .title          -- heading or basename
+                        .name / .section / .basename
+                        .heading
+                        .body           -- full body minus first heading
+                        .content        -- heading + body
+                        .headings(max_level)    -- iter over headings
+
+                                headingsection
+                                        .level
+                                        .heading
+                                        .body
+                                        .content
+
+                        .links
+                        .backlinks
+                        .attachments
+
+                                file
+                                        .basename
+                                        .mtime
+                                        .size
+
+  options               -- dict with template options (for format)
+
+  toc([page])                   -- iter of headings in this page or all of pages
+  index([section])      -- index of full export job, not just in this page
+  uri(link|file)
+  resource(file)
+  anchor(page|section)
+</pre><p>From template base:</p><pre class="literalblock">
+  range() / len() / sorted() / reversed()
+  strftime()
+  strfcal()
+</pre><p>Test in a template for single page export use: "IF loop.first and loop.last"</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id131">
+  
+  <tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.export.template.ExportTemplateContext.html">ExportTemplateContext</a></code></td>
+    <td><span class="undocumented">No class docstring; 0/6 instance variables, 3/6 methods documented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.export.template.ExportTemplatePageIter.html">ExportTemplatePageIter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.export.template.HeadingSplitter.html">HeadingSplitter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.export.template.PageListProxy.html">PageListProxy</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.export.template.ParseTreeProxy.html">ParseTreeProxy</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.export.template.PageProxy.html">PageProxy</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.export.template.HeadingProxy.html">HeadingProxy</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.export.template.FilePathProxy.html">FilePathProxy</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.export.template.FileProxy.html">FileProxy</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.export.template.NotebookPathProxy.html">NotebookPathProxy</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.export.template.UriProxy.html">UriProxy</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  <a name="zim.export.template.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/export/template.py#L78">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

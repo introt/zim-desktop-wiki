@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.search : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.search.html">search</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>This module contains the logic for searching in a notebook.</p><p>Supported operators:</p><ul><li>"NOT", "not" and "-"</li><li>"AND", "and", "+" and "&amp;&amp;"</li><li>"OR", "or" and "||"</li></ul><p>Order of precedence: AND, OR, NOT so "foo AND NOT bar OR baz" means AND(foo, OR(NOT(bar), baz))</p><p>Supported keywords:</p><ul><li><code>Content</code></li><li><code>Name</code></li><li><code>Section</code>: alias for "Name XXX or Name: XXX:*"</li><li><code>Namespace</code>: alias for "Name XXX or Name: XXX:*" -- backward compatible</li><li><code>Links</code>: forward - alias for linksfrom</li><li><code>LinksFrom</code>: forward</li><li><code>LinksTo</code>: backward</li><li><code>ContentOrName</code>: the default, like Name: *X* or Content: X</li><li><code>Tag</code>: look for a single tag</li></ul><p>For the Content field we need to request the actual page contents, all other fields we get from the index and are more efficient to query.</p><p>For link keywords only a '*' at the right side is allowed For the name keyword a '*' is allowed on both sides For content '*' can occur on both sides, but does not match whitespace</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1479">
+  
+  <tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#OPERATOR_OR">OPERATOR_OR</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#OPERATOR_AND">OPERATOR_AND</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#OPERATOR_NOT">OPERATOR_NOT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#operators">operators</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#KEYWORDS">KEYWORDS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#keyword_re">keyword_re</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#operators_re">operators_re</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#tag_re">tag_re</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.search.QueryTerm.html">QueryTerm</a></code></td>
+    <td><span>Wrapper for a single term in a query. Consists of a keyword, a string and a flag for inverse (NOT operator).</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.search.QueryGroup.html">QueryGroup</a></code></td>
+    <td><span>Wrapper for a sub group of a query. Just a list of QueryTerms with an associated operator (either AND or OR).</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.search.Query.html">Query</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.search.PageSelection.html">PageSelection</a></code></td>
+    <td><span>This class is just a container of path objects</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.search.SearchSelection.html">SearchSelection</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  <a name="zim.search.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L55">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.search.OPERATOR_OR">
+    
+  </a>
+  <a name="OPERATOR_OR">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">OPERATOR_OR</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L58">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.search.OPERATOR_AND">
+    
+  </a>
+  <a name="OPERATOR_AND">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">OPERATOR_AND</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L59">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.search.OPERATOR_NOT">
+    
+  </a>
+  <a name="OPERATOR_NOT">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">OPERATOR_NOT</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L60">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.search.operators">
+    
+  </a>
+  <a name="operators">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">operators</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L62">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.search.KEYWORDS">
+    
+  </a>
+  <a name="KEYWORDS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">KEYWORDS</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L72">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, ...]</code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.search.keyword_re">
+    
+  </a>
+  <a name="keyword_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">keyword_re</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L77">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.search.operators_re">
+    
+  </a>
+  <a name="operators_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">operators_re</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L78">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="zim.search.tag_re">
+    
+  </a>
+  <a name="tag_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">tag_re</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L79">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

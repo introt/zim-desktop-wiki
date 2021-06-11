@@ -1,0 +1,1228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>zim.plugins.tableeditor.TableViewWidget : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code>.<code><a href="zim.plugins.tableeditor.html">tableeditor</a></code>.<code><a href="zim.plugins.tableeditor.TableViewWidget.html">TableViewWidget</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TableViewWidget</span>(<a href="zim.gui.insertedobjects.InsertedObjectWidget.html" title="zim.gui.insertedobjects.InsertedObjectWidget">InsertedObjectWidget</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L323">(source)</a></code></p>
+        <p><a href="classIndex.html#zim.plugins.tableeditor.TableViewWidget">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="undocumented">Undocumented</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1276">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#expand">expand</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#textarea_width">textarea_width</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#model">model</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#toolbar">toolbar</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#vbox">vbox</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#scroll_win">scroll_win</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#treeview">treeview</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_model_changed">on_model_changed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#old_do_size_request">old_do_size_request</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_focus_in">on_focus_in</a></code></td>
+    <td><span>After a table is selected, this function will be triggered</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_focus_out">on_focus_out</a></code></td>
+    <td><span>After a table is deselected, this function will be triggered</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#create_toolbar">create_toolbar</a></code></td>
+    <td><span>This function creates a toolbar which is displayed next to the table</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#create_treeview">create_treeview</a></code></td>
+    <td><span>Initializes a treeview with its model (liststore) and all its columns</span></td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#create_headerlabel">create_headerlabel</a></code></td>
+    <td><span>Sets options for the treeview header</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_treeview">get_treeview</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_preferences">set_preferences</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_move_cursor">on_move_cursor</a></code></td>
+    <td><span>If you try to move the cursor out of the tableditor release the cursor to the parent textview</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#fetch_cell_by_event">fetch_cell_by_event</a></code></td>
+    <td><span>Looks for the cell where the mouse clicked on it</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_linkurl">get_linkurl</a></code></td>
+    <td><span>Checks a cellvalue if it contains a link and returns only the link value</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_button_press_event">on_button_press_event</a></code></td>
+    <td><span>Displays a context-menu on right button click Opens the link of a tablecell on CTRL pressed and left button click</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_add_row">on_add_row</a></code></td>
+    <td><span>Context menu: Add a row</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_clone_row">on_clone_row</a></code></td>
+    <td><span>Context menu: Clone a row</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_delete_row">on_delete_row</a></code></td>
+    <td><span>Context menu: Delete a row</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_move_row">on_move_row</a></code></td>
+    <td><span>Trigger for moving a row one position up/down</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_open_link">on_open_link</a></code></td>
+    <td><span>Context menu: Open a link, which is written in a cell</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_open_help">on_open_help</a></code></td>
+    <td><span>Context menu: Open help</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_change_columns">on_change_columns</a></code></td>
+    <td><span>Context menu: Edit table, run the EditTableDialog</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_cell_changed">on_cell_changed</a></code></td>
+    <td><span>Trigger after cell-editing, to transform displayed table cell into right format</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_cell_editing_started">on_cell_editing_started</a></code></td>
+    <td><span>Trigger before cell-editing, to transform text-field data into right format</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_cell_focus_out">on_cell_focus_out</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_cell_editing_canceled">on_cell_editing_canceled</a></code></td>
+    <td><span>Trigger after a cell is edited but any change is skipped</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#sort_by_number_or_string">sort_by_number_or_string</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#selection_info">selection_info</a></code></td>
+    <td><span>Info-Popup for selecting a cell before this action can be done</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_has_cursor">_has_cursor</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_timer">_timer</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_keep_toolbar_open">_keep_toolbar_open</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_cellinput_canceled">_cellinput_canceled</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_toolbar_enabled">_toolbar_enabled</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_init_treeview">_init_treeview</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_column_alignment">_column_alignment</a></code></td>
+    <td><span>The column alignment must be converted from numeric to keywords</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html">InsertedObjectWidget</a></code>:
+          </p>
+          <table class="children sortable" id="id1277">
+  
+  <tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html#__gsignals__">__gsignals__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html#add">add</a></code></td>
+    <td><span>Add a widget to the object</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html#add_header">add_header</a></code></td>
+    <td><span>Add an header widget on top of the object</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html#remove">remove</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html#do_realize">do_realize</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html#set_textview_wrap_width">set_textview_wrap_width</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html#has_cursor">has_cursor</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html#set_has_cursor">set_has_cursor</a></code></td>
+    <td><span>See has_cursor()</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html#grab_cursor">grab_cursor</a></code></td>
+    <td><span>Emits the grab-cursor signal</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html#release_cursor">release_cursor</a></code></td>
+    <td><span>Emits the release-cursor signal</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html#do_button_press_event">do_button_press_event</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html#do_button_release_event">do_button_release_event</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html#do_popup_menu">do_popup_menu</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html#populate_popup">populate_popup</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html#edit_object">edit_object</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html#_vbox">_vbox</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html#_do_popup_menu">_do_popup_menu</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, model):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L325">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html#__init__">zim.gui.insertedobjects.InsertedObjectWidget.__init__</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.expand">
+    
+  </a>
+  <a name="expand">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">expand</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L327">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html#expand">zim.gui.insertedobjects.InsertedObjectWidget.expand</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.textarea_width">
+    
+  </a>
+  <a name="textarea_width">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">textarea_width</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L328">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.model">
+    
+  </a>
+  <a name="model">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">model</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L329">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget._has_cursor">
+    
+  </a>
+  <a name="_has_cursor">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_has_cursor</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L332">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html#_has_cursor">zim.gui.insertedobjects.InsertedObjectWidget._has_cursor</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget._timer">
+    
+  </a>
+  <a name="_timer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_timer</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L335">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget._keep_toolbar_open">
+    
+  </a>
+  <a name="_keep_toolbar_open">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_keep_toolbar_open</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L336">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget._cellinput_canceled">
+    
+  </a>
+  <a name="_cellinput_canceled">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_cellinput_canceled</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L337">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget._toolbar_enabled">
+    
+  </a>
+  <a name="_toolbar_enabled">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_toolbar_enabled</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L338">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.toolbar">
+    
+  </a>
+  <a name="toolbar">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">toolbar</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L341">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.vbox">
+    
+  </a>
+  <a name="vbox">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">vbox</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L350">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.scroll_win">
+    
+  </a>
+  <a name="scroll_win">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">scroll_win</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L353">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget._init_treeview">
+    
+  </a>
+  <a name="_init_treeview">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_init_treeview</span>(self, model):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L359">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.treeview">
+    
+  </a>
+  <a name="treeview">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">treeview</span> =
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L361">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.on_model_changed">
+    
+  </a>
+  <a name="on_model_changed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_model_changed</span>(self, model):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L380">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.old_do_size_request">
+    
+  </a>
+  <a name="old_do_size_request">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">old_do_size_request</span>(self, requisition):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L387">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.on_focus_in">
+    
+  </a>
+  <a name="on_focus_in">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_focus_in</span>(self, treeview, event, toolbar):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L428">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>After a table is selected, this function will be triggered</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.on_focus_out">
+    
+  </a>
+  <a name="on_focus_out">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_focus_out</span>(self, treeview, event, toolbar):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L437">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>After a table is deselected, this function will be triggered</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.create_toolbar">
+    
+  </a>
+  <a name="create_toolbar">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">create_toolbar</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L451">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>This function creates a toolbar which is displayed next to the table</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget._column_alignment">
+    
+  </a>
+  <a name="_column_alignment">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_column_alignment</span>(self, aligntext):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L486">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>The column alignment must be converted from numeric to keywords</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.create_treeview">
+    
+  </a>
+  <a name="create_treeview">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">create_treeview</span>(self, model):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L498">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Initializes a treeview with its model (liststore) and all its columns</p></div>
+  </div>
+</div><div class="basestaticmethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.create_headerlabel">
+    
+  </a>
+  <a name="create_headerlabel">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">create_headerlabel</span>(title):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L544">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Sets options for the treeview header</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.get_treeview">
+    
+  </a>
+  <a name="get_treeview">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_treeview</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L564">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.set_preferences">
+    
+  </a>
+  <a name="set_preferences">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_preferences</span>(self, preferences):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L568">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.on_move_cursor">
+    
+  </a>
+  <a name="on_move_cursor">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_move_cursor</span>(self, view, step_size, count):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L572">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>If you try to move the cursor out of the tableditor release the cursor to the parent textview</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.fetch_cell_by_event">
+    
+  </a>
+  <a name="fetch_cell_by_event">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">fetch_cell_by_event</span>(self, event, treeview):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L576">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Looks for the cell where the mouse clicked on it</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.get_linkurl">
+    
+  </a>
+  <a name="get_linkurl">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_linkurl</span>(self, celltext):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L585">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Checks a cellvalue if it contains a link and returns only the link value</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.on_button_press_event">
+    
+  </a>
+  <a name="on_button_press_event">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_button_press_event</span>(self, treeview, event):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L592">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Displays a context-menu on right button click Opens the link of a tablecell on CTRL pressed and left button click</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.on_add_row">
+    
+  </a>
+  <a name="on_add_row">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_add_row</span>(self, action):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L644">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Context menu: Add a row</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.on_clone_row">
+    
+  </a>
+  <a name="on_clone_row">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_clone_row</span>(self, action):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L658">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Context menu: Clone a row</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.on_delete_row">
+    
+  </a>
+  <a name="on_delete_row">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_delete_row</span>(self, action):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L670">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Context menu: Delete a row</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.on_move_row">
+    
+  </a>
+  <a name="on_move_row">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_move_row</span>(self, action, direction):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L687">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Trigger for moving a row one position up/down</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.on_open_link">
+    
+  </a>
+  <a name="on_open_link">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_open_link</span>(self, action, link):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L711">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Context menu: Open a link, which is written in a cell</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.on_open_help">
+    
+  </a>
+  <a name="on_open_help">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_open_help</span>(self, action):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L715">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Context menu: Open help</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.on_change_columns">
+    
+  </a>
+  <a name="on_change_columns">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_change_columns</span>(self, action):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L719">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Context menu: Edit table, run the EditTableDialog</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.on_cell_changed">
+    
+  </a>
+  <a name="on_cell_changed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_cell_changed</span>(self, cellrenderer, path, text, liststore, colid):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L730">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Trigger after cell-editing, to transform displayed table cell into right format</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.on_cell_editing_started">
+    
+  </a>
+  <a name="on_cell_editing_started">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_cell_editing_started</span>(self, cellrenderer, editable, path, liststore, colid):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L737">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Trigger before cell-editing, to transform text-field data into right format</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.on_cell_focus_out">
+    
+  </a>
+  <a name="on_cell_focus_out">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_cell_focus_out</span>(self, editable, event, cellrenderer, path, liststore, colid):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L747">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.on_cell_editing_canceled">
+    
+  </a>
+  <a name="on_cell_editing_canceled">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_cell_editing_canceled</span>(self, renderer):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L751">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Trigger after a cell is edited but any change is skipped</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.sort_by_number_or_string">
+    
+  </a>
+  <a name="sort_by_number_or_string">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">sort_by_number_or_string</span>(self, liststore, treeiter1, treeiter2, colid):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L756">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Sort algorithm for sorting numbers correctly and putting 10 after 3. This part can be improved in future to support also currencies, dates, floats, etc. :param liststore: model of treeview :param treeiter1: treeiter 1 :param treeiter2: treeiter 2 :param colid: a column number :return: -1 / first data is smaller than second, 0 / equality, 1 / else</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="zim.plugins.tableeditor.TableViewWidget.selection_info">
+    
+  </a>
+  <a name="selection_info">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">selection_info</span>(self):
+    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tableeditor.py#L770">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Info-Popup for selecting a cell before this action can be done</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>
