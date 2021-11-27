@@ -140,7 +140,7 @@ class Dumper(DumperClass):
 
 			if strings:
 				# close last <li> element
-				strings.append('</li>\n')
+				strings.append('</details>\n')
 
 			if self.context[-1].tag in ('ul', 'ol'):
 				# Nested list
@@ -177,21 +177,23 @@ class Dumper(DumperClass):
 	def dump_li(self, tag, attrib, strings):
 		bullet = attrib.get('bullet', BULLET)
 		if self.context[-1].tag == BULLETLIST and bullet != BULLET:
-			start = '<li class="%s"' % bullet
+			start = '<details class="%s"' % bullet
 		else:
-			start = '<li'
+			start = '<details'
 
 		if self._isrtl:
 			start += ' dir=\'rtl\'>'
 		else:
 			start += '>'
+		start += '<summary>'
 		self._isrtl = None # reset
 
 		strings.insert(0, start)
+		strings.append('</summary>')
 
 		if self.context[-1].text:
 			# we are not the first <li> element, close previous
-			strings.insert(0, '</li>\n')
+			strings.insert(0, '</details>\n')
 
 		return strings
 
