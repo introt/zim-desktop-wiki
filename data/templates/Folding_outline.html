@@ -14,14 +14,20 @@
 		tt         { color: #2e3436;            }
 		pre        { color: #2e3436;
 					 margin-left: 20px          }
-		h1 { color: #4e9a06; font-size: 1.75em; text-decoration: underline }
-		details > summary.s1 { color: #4e9a06; font-size: 1.75em; text-decoration: underline }
-		details > summary.s2 { color: #4e9a06; font-size: 1.52em; font-weight: bold }
-		details > summary.s3 { color: #4e9a06; font-size: 1.32em; font-style: italic; font-weight: bold }
-		details > summary.s4 { color: #4e9a06; font-size: 1.15em; font-weight: bold }
-		details > summary.s5 { color: #4e9a06; font-size: 1em; font-style: italic; }
-		details > summary.s5 { color: #4e9a06; font-size: 1em }
-		p          { margin-top: 0              }
+		.s1 { font-size: 1.75em; text-decoration: underline }
+		.s2 { font-size: 1.52em }
+		.s3 { font-size: 1.32em }
+		.s4 { font-size: 1.15em }
+		.s3, .s5 { font-style: italic }
+		.s5, .s6 { font-size: 1em }
+		.s1, .s2, .s3, .s4, .s5 { color: #4e9a06 }
+		.s1, .s2, .s3, .s4 { font-weight: bold }
+		.d1 { margin-left: 0em }
+		.d2 { margin-left: 1em }
+		.d3 { margin-left: 2em }
+		.d4 { margin-left: 3em }
+		.d5 { margin-left: 4em }
+		.d6 { margin-left: 5em }
 		span.zim-tag {
 			color: #ce5c00;
 		}
@@ -84,12 +90,12 @@
 	[% FOR section IN page.headings() %]
 		[% IF loop.first %]
 			<div class='heading'>
-			<h1>[% page.title %] <a name='[% anchor(page) %]'></a></h1>
+			<h1 class='s1'>[% page.title %] <a name='[% anchor(page) %]'></a></h1>
 			</div>
 			<div class='content'>
 				[% section.body %]
 		[% ELSE %]
-			<details><summary class=s[% section.level %]>[% section.heading %]</summary>[% section.body %]</details>
+			<details class=d[% section.level %]><summary class=s[% section.level %]>[% section.heading %]</summary>[% section.body %]</details>
 
 		[% END %]
 	[% END %]

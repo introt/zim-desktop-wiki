@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Folding template (outline edition)</title>
+	<title>Folding outline template</title>
 	<meta name='Generator' content='Zim 0.74.2'>
 	<style type='text/css'>
 		a          { text-decoration: none      }
@@ -14,14 +14,20 @@
 		tt         { color: #2e3436;            }
 		pre        { color: #2e3436;
 					 margin-left: 20px          }
-		h1 { color: #4e9a06; font-size: 1.75em; text-decoration: underline }
-		details > summary.s1 { color: #4e9a06; font-size: 1.75em; text-decoration: underline }
-		details > summary.s2 { color: #4e9a06; font-size: 1.52em; font-weight: bold }
-		details > summary.s3 { color: #4e9a06; font-size: 1.32em; font-style: italic; font-weight: bold }
-		details > summary.s4 { color: #4e9a06; font-size: 1.15em; font-weight: bold }
-		details > summary.s5 { color: #4e9a06; font-size: 1em; font-style: italic; }
-		details > summary.s5 { color: #4e9a06; font-size: 1em }
-		p          { margin-top: 0              }
+		.s1 { font-size: 1.75em; text-decoration: underline }
+		.s2 { font-size: 1.52em }
+		.s3 { font-size: 1.32em }
+		.s4 { font-size: 1.15em }
+		.s3, .s5 { font-style: italic }
+		.s5, .s6 { font-size: 1em }
+		.s1, .s2, .s3, .s4, .s5 { color: #4e9a06 }
+		.s1, .s2, .s3, .s4 { font-weight: bold }
+		.d1 { margin-left: 0em }
+		.d2 { margin-left: 1em }
+		.d3 { margin-left: 2em }
+		.d4 { margin-left: 3em }
+		.d5 { margin-left: 4em }
+		.d6 { margin-left: 5em }
 		span.zim-tag {
 			color: #ce5c00;
 		}
@@ -48,11 +54,11 @@
 
 <!-- Header -->
 <div class='header'>
-	[ <span class='insen'>Prev</span> ]
+	[ <a href='../folders.html'>Prev</a> ]
 
 	[ <span class='insen'>Index</span> ]
 
-	[ <span class='insen'>Next</span> ]
+	[ <a href='./Folding_template_demo.html'>Next</a> ]
 </div>
 
 <hr />
@@ -60,7 +66,11 @@
 <div class="menu">
 <details><summary>Index</summary>
 <ul>
-<li><b>Folding template</b></li>
+<li><a href="../folders.html" title="Templates" class="page">Templates</a>
+<ul>
+<li><b>Folding outline demo</b></li>
+<li><a href="./Folding_template_demo.html" title="Folding template demo" class="page">Folding template demo</a></li>
+</ul></li>
 </ul>
 
 </details>
@@ -70,7 +80,7 @@
 
 <div class='pages'>
 			<div class='heading'>
-			<h1>Folding template (outline edition) <a name='Templates:Folding template'></a></h1>
+			<h1 class='s1'>Folding outline template <a name='Templates:Folding outline demo'></a></h1>
 			</div>
 			<div class='content'>
 				<p>
@@ -78,71 +88,71 @@ Created Saturday 04 December 2021
 </p>
 
 
-			<details><summary class=s2>What is this?</summary><p>
+			<details class=d2><summary class=s2>What is this?</summary><p>
 This is an example page for the <tt>folding_outline </tt>template, demonstrating the possibilities of the interactive yet JavaScript free <tt>&lt;summary&gt;</tt> HTML element.
 </p>
 
 <p>
-It's not meant to be pretty.
+It's not meant to be pretty. See <a href="./Folding_template_demo.html" title="Templates:Folding template demo" class="page">Templates:Folding template demo</a> for a variant where the deeper levels get folded inside the upper ones.
 </p>
 
 </details>
 
-			<details><summary class=s2>Index</summary><p>
+			<details class=d2><summary class=s2>Index</summary><p>
 The index has been moved from the side to up top, giving the page contents more room. It could open to the side, moving the page contents, but the more pressing issue is the fact that its tree view doesn't fold. I'm not sure if this can be achieved with templates alone, but regardless of the possible template hacks I'd like to see it implemented in the HTML exporter itself.
 </p>
 
 </details>
 
-			<details><summary class=s2>Headers</summary><p>
+			<details class=d2><summary class=s2>Headers</summary><p>
 These are the main meat of the demo
 </p>
 
 </details>
 
-			<details><summary class=s3>Demo: Going deeper</summary><p>
+			<details class=d3><summary class=s3>Demo: Going deeper</summary><p>
 Demoing how multiple levels are handled
 </p>
 
 </details>
 
-			<details><summary class=s4>And deeper</summary><p>
+			<details class=d4><summary class=s4>And deeper</summary><p>
 Level 4 text
 </p>
 
 </details>
 
-			<details><summary class=s4>Staying the same depth</summary></details>
+			<details class=d4><summary class=s4>Staying the same depth</summary></details>
 
-			<details><summary class=s5>Going really deep</summary><p>
+			<details class=d5><summary class=s5>Going really deep</summary><p>
 Level 5 text
 </p>
 
 </details>
 
-			<details><summary class=s4>Coming back up</summary><p>
-<img src="./Folding_outline_demo_files/pasted_image.png">
+			<details class=d4><summary class=s4>Coming back up</summary><p>
+<img src="./Folding_outline_demo/pasted_image.png">
 </p>
 
 </details>
 
-			<details><summary class=s3>Problems with a linear approach</summary></details>
+			<details class=d3><summary class=s3>Problems with a linear approach</summary></details>
 
-			<details><summary class=s4>Headers without bodies</summary></details>
+			<details class=d4><summary class=s4>Headers without bodies</summary></details>
 
-			<details><summary class=s2>Backlinks and attachments</summary><p>
+			<details class=d2><summary class=s2>Backlinks and attachments</summary><p>
 In addition to expanding and folding, I've made their amounts visible without unfolding.
 </p>
 
 </details>
 
-			<details><summary class=s4>Backlinks</summary><p>
+			<details class=d4><summary class=s4>Backlinks</summary><p>
 Aren't they much tidier and easier to read as a pretty list?
 </p>
 
 </details>
 
-			<details><summary class=s4>Attachments</summary><p>
+			<details class=d4><summary class=s4>Attachments</summary><p>
 These can take up a lot of screen space. Not anymore!
 </p>
 </details>
@@ -152,21 +162,26 @@ These can take up a lot of screen space. Not anymore!
 	<br />
 
 	<div class='page-footer'>
-		<details><summary><b>Backlinks (2)</b></summary><ul>
+		<details><summary><b>Backlinks (3)</b></summary><ul>
 
 		<li><a href=''>Home</a></li>
 
 		
 		
 
-		<li><a href=''>Templates</a></li>
+		<li><a href='../folders.html'>Templates</a></li>
+
+		
+		
+
+		<li><a href='./Folding_template_demo.html'>Templates:Folding template demo</a></li>
 
 		</ul></details>
 
 			<details><summary><b>Attachments (1)</b></summary>
 			<table>
 
-			<tr><td><a href='./Folding_outline_files/pasted_image.png'>pasted_image.png</a></td><td>&nbsp;</td><td>1.20kb</td></tr>
+			<tr><td><a href='./Folding_outline_demo/pasted_image.png'>pasted_image.png</a></td><td>&nbsp;</td><td>108b</td></tr>
 
 			</table></details>
 	</div>
