@@ -45,7 +45,7 @@ For content '*' can occur on both sides, but does not match whitespace
 # below it.
 
 
-import re
+import os, re
 import logging
 
 from zim.parsing import split_quoted_strings, unescape_quoted_string, Re
@@ -271,12 +271,47 @@ class SearchSelection(PageSelection):
 		self.scores = {}
 
 		# Actual search
-		self.update(self._process_group(query.root, selection, callback))
+		#self.update(self._process_group(query.root, selection, callback))
+		self.update(self._paths_from_grep_search(query.string))
 
 		# Clean up results
 		scored = set(self.scores.keys())
 		for path in scored - self:
 			self.scores.pop(path)
+
+	def _grep_line_to_pagename(self, s):
+		s=s.rstrip();
+		sep=os.path.sep
+
+		if s.endswith(self.notebook.properties['default_file_extension']):
+			return s[:-4].replace(sep, ':')
+
+		# TODO: dupe-suppress results that include both the page and an image caption
+		if s.endswith('.caption'):
+			return s[:s.rindex(sep)].replace(sep, ':')
+
+		logger.debug('Unknown grep return line: %s', s)
+		return None
+
+	def _paths_from_grep_search(self, s):
+		import subprocess
+
+		myresults = SearchSelection(None)
+		myresults.scores = self.scores # HACK for callback function
+
+		command=['grep', '-ri', '--files-with-match', '--include=*.txt', '--include=*.caption', '--', s]
+		notebook_dir=self.notebook.info.uri[7:] # strip file://
+
+		logger.debug('Search notebook_dir: %s', notebook_dir)
+
+		# TODO: support the 'limit search to current page and subpages' by adding a second/third parameter (relative page path & attachment directory)
+		for line in subprocess.Popen(command, stdout=subprocess.PIPE, cwd=notebook_dir, universal_newlines=True).stdout:
+			pagename=self._grep_line_to_pagename(line)
+			if pagename:
+				#logger.debug('result: %s', pagename)
+				myresults.add(Path(pagename))
+
+		return myresults
 
 	def _process_group(self, group, scope=None, callback=None):
 		# This method processes all search terms in a QueryGroup
