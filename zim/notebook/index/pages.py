@@ -765,12 +765,14 @@ class PagesView(IndexView):
 		@returns: a L{HRef} object
 		'''
 		if target == source: # weird edge case ..
-			return HRef(HREF_REL_FLOATING, target.basename)
+			#return HRef(HREF_REL_FLOATING, target.basename)
+			return HRef(HREF_REL_ABSOLUTE, target.name)
 		elif target.ischild(source):
 			return HRef(HREF_REL_RELATIVE, target.relname(source))
 		else:
-			href = self._find_floating_link(source, target)
-			return href or HRef(HREF_REL_ABSOLUTE, target.name)
+			#href = self._find_floating_link(source, target)
+			#return href or HRef(HREF_REL_ABSOLUTE, target.name)
+			return HRef(HREF_REL_ABSOLUTE, target.name)
 
 	def _find_floating_link(self, source, target):
 		# Relative links only resolve for pages that have a common parent

@@ -1711,7 +1711,7 @@ class PageEntry(InputEntry):
 	This widget features completion for existing page names and shows
 	whether the entered text is not a valid page name.
 
-	The page paths can be shown eitehr absolute or relative. If a
+	The page paths can be shown either absolute or relative. If a
 	reference path is given paths will be shown relative to this reference.
 	'''
 
@@ -1929,7 +1929,7 @@ class PageEntry(InputEntry):
 
 		if path.isroot:
 			def relative_link(target):
-				return target.name
+				return target.absname
 		else:
 			def relative_link(target):
 				href = self.notebook.pages.create_link(path, target)

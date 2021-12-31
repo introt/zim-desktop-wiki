@@ -8124,13 +8124,16 @@ class InsertLinkDialog(Dialog):
 	def do_response_ok(self):
 		self.uistate['short_links'] = self.form['short_links']
 
+		# this is a string, not a HRef!
 		href = self.form['href']
 		if not href:
 			self.form.widgets['href'].set_input_valid(False)
 			return False
 
-		type = link_type(href)
-		if type == 'file':
+		# this is a string, not a function!
+		#type = link_type(href)
+		ltype = link_type(href)
+		if ltype == 'file':
 			# Try making the path relative
 			try:
 				file = self.form.widgets['href'].get_file()
@@ -8139,6 +8142,11 @@ class InsertLinkDialog(Dialog):
 				href = notebook.relative_filepath(file, page) or file.uri
 			except:
 				pass # E.g. malformed path
+		h = HRef.new_from_wiki_link(href)
+		if True and ltype == 'page' and h.rel != 2:
+			# True is a stand-in for not self.uistate['rel_links']
+			# != 2 makes sure absolute links start with :
+			href = self.pageview.notebook.pages.resolve_link(self.pageview.page, h).absname
 
 		text = self.form['text'] or href
 
