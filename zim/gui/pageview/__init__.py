@@ -35,7 +35,7 @@ import zim.errors
 from zim.newfs import FilePath, LocalFile, LocalFolder
 from zim.errors import Error
 from zim.config import String, Float, Integer, Boolean, Choice, ConfigManager
-from zim.notebook import Path, interwiki_link, HRef, PageNotFoundError
+from zim.notebook import Path, interwiki_link, HRef, HREF_REL_ABSOLUTE, PageNotFoundError
 from zim.notebook.operations import NotebookState, ongoing_operation
 from zim.parsing import link_type, Re
 from zim.formats import heading_to_anchor, get_format, increase_list_iter, \
@@ -1106,7 +1106,7 @@ class TextBuffer(Gtk.TextBuffer):
 		with self.tmp_cursor(iter):
 			self.insert_link_at_cursor(text, href, **attrib)
 
-	def insert_link_at_cursor(self, text, href=None, **attrib):
+	def insert_link_at_cursor(self, text: str, href: str=None, **attrib):
 		'''Insert a link into the buffer
 
 		Like insert_link() but inserts at the current cursor position
@@ -7669,7 +7669,7 @@ class InsertDateDialog(Dialog):
 			text = model[0][self.DATE_COL]
 
 		if self.link and self.linkbutton.get_active():
-			self.buffer.insert_link_at_cursor(text, self.link.name)
+			self.buffer.insert_link_at_cursor(text, HRef(HREF_REL_ABSOLUTE, self.link.name).to_wiki_link())
 		else:
 			self.buffer.insert_at_cursor(text)
 

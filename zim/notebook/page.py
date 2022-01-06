@@ -342,8 +342,8 @@ class HRef(object):
 		@raises ValueError: when the string could not be parsed
 		(see L{Path.makeValidPageName()})
 
-		@note: This method HRef class assumes the logic of our wiki links
-		for other formats, a separate constructor may be needed
+		@note: This method HRef class assumes the logic of our wiki links.
+		For other formats, a separate constructor may be needed.
 		'''
 		if href.startswith(':'):
 			rel = HREF_REL_ABSOLUTE
@@ -360,7 +360,7 @@ class HRef(object):
 
 		return klass(rel, names, anchor)
 
-	def __init__(self, rel, names, anchor=None):
+	def __init__(self, rel, names: str, anchor=None):
 		self.rel = rel
 		self.names = names
 		self.anchor = anchor
