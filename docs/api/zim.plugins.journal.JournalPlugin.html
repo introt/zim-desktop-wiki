@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.plugins.journal.JournalPlugin : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.plugins.journal.JournalPlugin</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code>.<code><a href="zim.plugins.journal.html">journal</a></code>.<code><a href="zim.plugins.journal.JournalPlugin.html">JournalPlugin</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.plugins.html">plugins</a></code><wbr></wbr>.<code><a href="zim.plugins.journal.html">journal</a></code><wbr></wbr>.<code><a href="zim.plugins.journal.JournalPlugin.html">JournalPlugin</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">JournalPlugin</span>(<a href="zim.plugins.PluginClass.html" title="zim.plugins.PluginClass">PluginClass</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L94">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">JournalPlugin</span>(<a href="zim.plugins.PluginClass.html" title="zim.plugins.PluginClass">PluginClass</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L94" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.plugins.journal.JournalPlugin">View In Hierarchy</a></p>
       </div>
 
@@ -43,9 +74,45 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1048">
+        <table class="children sortable" id="id1035">
   
-  <tr class="classvariable">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#date_from_path">date_from_path</a></code></td>
+    <td>Returns the date for a specific path or <tt class="rst-docutils literal">None</tt></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#path_for_month_from_date">path_for_month_from_date</a></code></td>
+    <td>Returns the namespace path for a certain month</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#path_from_date">path_from_date</a></code></td>
+    <td>Returns the path for a journal page for a specific date</td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#DAY">DAY</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#MONTH">MONTH</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#WEEK">WEEK</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#YEAR">YEAR</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
     
     <td>Class Variable</td>
     <td><code><a href="#plugin_info">plugin_info</a></code></td>
@@ -53,75 +120,71 @@
   </tr><tr class="classvariable">
     
     <td>Class Variable</td>
-    <td><code><a href="#DAY">DAY</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#WEEK">WEEK</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#MONTH">MONTH</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#YEAR">YEAR</a></code></td>
+    <td><code><a href="#plugin_notebook_properties">plugin_notebook_properties</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="classvariable">
     
     <td>Class Variable</td>
     <td><code><a href="#plugin_preferences">plugin_preferences</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#plugin_notebook_properties">plugin_notebook_properties</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#path_from_date">path_from_date</a></code></td>
-    <td><span>Returns the path for a journal page for a specific date</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#path_for_month_from_date">path_for_month_from_date</a></code></td>
-    <td><span>Returns the namespace path for a certain month</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#date_from_path">date_from_path</a></code></td>
-    <td><span>Returns the date for a specific path or <code>None</code></span></td>
   </tr>
 </table>
         
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.plugins.PluginClass.html">PluginClass</a></code>:
           </p>
-          <table class="children sortable" id="id1049">
+          <table class="children sortable" id="id1036">
   
-  <tr class="baseproperty">
+  
+  <tr class="baseclassmethod">
     
-    <td>Property</td>
-    <td><code><a href="zim.plugins.PluginClass.html#config_key">config_key</a></code></td>
-    <td><span>The name of section used in the config files to store the preferences for this plugin.</span></td>
+    <td>Class Method</td>
+    <td><code><a href="zim.plugins.PluginClass.html#check_dependencies">check_dependencies</a></code></td>
+    <td>Checks what dependencies are met and gives details for display in the preferences dialog</td>
   </tr><tr class="baseclassmethod">
     
     <td>Class Method</td>
     <td><code><a href="zim.plugins.PluginClass.html#check_dependencies_ok">check_dependencies_ok</a></code></td>
-    <td><span>Checks minimum dependencies are met</span></td>
+    <td>Checks minimum dependencies are met</td>
   </tr><tr class="baseclassmethod">
     
     <td>Class Method</td>
-    <td><code><a href="zim.plugins.PluginClass.html#check_dependencies">check_dependencies</a></code></td>
-    <td><span>Checks what dependencies are met and gives details for display in the preferences dialog</span></td>
+    <td><code><a href="zim.plugins.PluginClass.html#discover_classes">discover_classes</a></code></td>
+    <td>Yields a list of classes derived from <tt class="rst-docutils literal">baseclass</tt> and defined in the same module as the plugin</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="zim.plugins.PluginClass.html#lookup_subclass">lookup_subclass</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basestaticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="zim.plugins.PluginClass.html#form_fields">form_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.plugins.PluginClass.html#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.PluginClass.html#destroy">destroy</a></code></td>
+    <td>Destroy the plugin object and all extensions It is only called when a user actually disables the plugin, not when the application exits.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.PluginClass.html#notebook_properties">notebook_properties</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.PluginClass.html#teardown">teardown</a></code></td>
+    <td>Cleanup method called by <tt class="rst-docutils literal">destroy()</tt>. Can be implemented by sub-classes.</td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.PluginClass.html#extension_classes">extension_classes</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="baseinstancevariable">
     
@@ -133,41 +196,11 @@
     <td>Instance Variable</td>
     <td><code><a href="zim.plugins.PluginClass.html#preferences">preferences</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseinstancevariable">
+  </tr><tr class="baseproperty">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.plugins.PluginClass.html#extension_classes">extension_classes</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basestaticmethod">
-    
-    <td>Static Method</td>
-    <td><code><a href="zim.plugins.PluginClass.html#form_fields">form_fields</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.PluginClass.html#notebook_properties">notebook_properties</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseclassmethod">
-    
-    <td>Class Method</td>
-    <td><code><a href="zim.plugins.PluginClass.html#lookup_subclass">lookup_subclass</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="baseclassmethod">
-    
-    <td>Class Method</td>
-    <td><code><a href="zim.plugins.PluginClass.html#discover_classes">discover_classes</a></code></td>
-    <td><span>Yields a list of classes derived from <code>baseclass</code> and defined in the same module as the plugin</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.PluginClass.html#destroy">destroy</a></code></td>
-    <td><span>Destroy the plugin object and all extensions It is only called when a user actually disables the plugin, not when the application exits.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.PluginClass.html#teardown">teardown</a></code></td>
-    <td><span>Cleanup method called by <code>destroy()</code>. Can be implemented by sub-classes.</span></td>
+    <td>Property</td>
+    <td><code><a href="zim.plugins.PluginClass.html#config_key">config_key</a></code></td>
+    <td>The name of section used in the config files to store the preferences for this plugin.</td>
   </tr><tr class="basestaticmethod private">
     
     <td>Static Method</td>
@@ -179,37 +212,38 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code> (via <code><a href="zim.plugins.PluginClass.html">PluginClass</a></code>):
           </p>
-          <table class="children sortable" id="id1050">
+          <table class="children sortable" id="id1037">
+  
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto">connectto</a></code></td>
-    <td><span>Connect to signals of another object E.g.:</span></td>
+    <td>Connect to signals of another object E.g.:</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto_all">connectto_all</a></code></td>
-    <td><span>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
-    <td><span>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</span></td>
+    <td>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_all">disconnect_all</a></code></td>
-    <td><span>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</span></td>
-  </tr><tr class="baseinstancevariable private">
+    <td>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</td>
+  </tr><tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
+    <td>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#_disconnect_from">_disconnect_from</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -220,196 +254,8 @@
 
       <div id="childList">
 
-        <div class="baseclassvariable">
+        <div class="basemethod">
   
-  <a name="zim.plugins.journal.JournalPlugin.plugin_info">
-    
-  </a>
-  <a name="plugin_info">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">plugin_info</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L96">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.plugins.PluginClass.html#plugin_info">zim.plugins.PluginClass.plugin_info</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseclassvariable">
-  
-  <a name="zim.plugins.journal.JournalPlugin.DAY">
-    
-  </a>
-  <a name="DAY">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">DAY</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L109">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseclassvariable">
-  
-  <a name="zim.plugins.journal.JournalPlugin.WEEK">
-    
-  </a>
-  <a name="WEEK">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">WEEK</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L110">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseclassvariable">
-  
-  <a name="zim.plugins.journal.JournalPlugin.MONTH">
-    
-  </a>
-  <a name="MONTH">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">MONTH</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L111">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseclassvariable">
-  
-  <a name="zim.plugins.journal.JournalPlugin.YEAR">
-    
-  </a>
-  <a name="YEAR">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">YEAR</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L112">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseclassvariable">
-  
-  <a name="zim.plugins.journal.JournalPlugin.plugin_preferences">
-    
-  </a>
-  <a name="plugin_preferences">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">plugin_preferences</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L114">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.plugins.PluginClass.html#plugin_preferences">zim.plugins.PluginClass.plugin_preferences</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseclassvariable">
-  
-  <a name="zim.plugins.journal.JournalPlugin.plugin_notebook_properties">
-    
-  </a>
-  <a name="plugin_notebook_properties">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">plugin_notebook_properties</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L120">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.plugins.PluginClass.html#plugin_notebook_properties">zim.plugins.PluginClass.plugin_notebook_properties</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.journal.JournalPlugin.path_from_date">
-    
-  </a>
-  <a name="path_from_date">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">path_from_date</span>(self, notebook, date):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L125">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Returns the path for a journal page for a specific date</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.journal.JournalPlugin.path_for_month_from_date">
-    
-  </a>
-  <a name="path_for_month_from_date">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">path_for_month_from_date</span>(self, notebook, date):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L142">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Returns the namespace path for a certain month</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.plugins.journal.JournalPlugin.date_from_path">
     
@@ -420,7 +266,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">date_from_path</span>(self, path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L147">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L147">
       
       (source)
     </a>
@@ -428,16 +274,226 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Returns the date for a specific path or <code>None</code></p></div>
+    <div>Returns the date for a specific path or <tt class="rst-docutils literal">None</tt></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.journal.JournalPlugin.path_for_month_from_date">
+    
+  </a>
+  <a name="path_for_month_from_date">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">path_for_month_from_date</span>(self, notebook, date):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L142">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns the namespace path for a certain month</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.journal.JournalPlugin.path_from_date">
+    
+  </a>
+  <a name="path_from_date">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">path_from_date</span>(self, notebook, date):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L125">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns the path for a journal page for a specific date</div>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.plugins.journal.JournalPlugin.DAY">
+    
+  </a>
+  <a name="DAY">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">DAY</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L109">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>_(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">Day</span><span class="rst-variable-quote">'</span>)</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.plugins.journal.JournalPlugin.MONTH">
+    
+  </a>
+  <a name="MONTH">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">MONTH</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L111">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>_(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">Month</span><span class="rst-variable-quote">'</span>)</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.plugins.journal.JournalPlugin.WEEK">
+    
+  </a>
+  <a name="WEEK">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">WEEK</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L110">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>_(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">Week</span><span class="rst-variable-quote">'</span>)</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.plugins.journal.JournalPlugin.YEAR">
+    
+  </a>
+  <a name="YEAR">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">YEAR</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L112">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>_(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">Year</span><span class="rst-variable-quote">'</span>)</code></pre></td></tr></table>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="zim.plugins.journal.JournalPlugin.plugin_info">
+    
+  </a>
+  <a name="plugin_info">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">plugin_info</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L96">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.plugins.PluginClass.html#plugin_info">zim.plugins.PluginClass.plugin_info</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="zim.plugins.journal.JournalPlugin.plugin_notebook_properties">
+    
+  </a>
+  <a name="plugin_notebook_properties">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">plugin_notebook_properties</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L120">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.plugins.PluginClass.html#plugin_notebook_properties">zim.plugins.PluginClass.plugin_notebook_properties</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="zim.plugins.journal.JournalPlugin.plugin_preferences">
+    
+  </a>
+  <a name="plugin_preferences">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">plugin_preferences</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/journal.py#L114">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.plugins.PluginClass.html#plugin_preferences">zim.plugins.PluginClass.plugin_preferences</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

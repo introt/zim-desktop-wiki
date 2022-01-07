@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.plugins.versioncontrol.git.GITApplicationBackend : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.plugins.versioncontrol.git.GITApplicationBackend</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code>.<code><a href="zim.plugins.versioncontrol.html">versioncontrol</a></code>.<code><a href="zim.plugins.versioncontrol.git.html">git</a></code>.<code><a href="zim.plugins.versioncontrol.git.GITApplicationBackend.html">GITApplicationBackend</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.plugins.html">plugins</a></code><wbr></wbr>.<code><a href="zim.plugins.versioncontrol.html">versioncontrol</a></code><wbr></wbr>.<code><a href="zim.plugins.versioncontrol.git.html">git</a></code><wbr></wbr>.<code><a href="zim.plugins.versioncontrol.git.GITApplicationBackend.html">GITApplicationBackend</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">GITApplicationBackend</span>(<a href="zim.plugins.versioncontrol.VCSApplicationBase.html" title="zim.plugins.versioncontrol.VCSApplicationBase">VCSApplicationBase</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L18">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">GITApplicationBackend</span>(<a href="zim.plugins.versioncontrol.VCSApplicationBase.html" title="zim.plugins.versioncontrol.VCSApplicationBase">VCSApplicationBase</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L18" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.plugins.versioncontrol.git.GITApplicationBackend">View In Hierarchy</a></p>
       </div>
 
@@ -43,28 +74,19 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1461">
+        <table class="children sortable" id="id1435">
+  
   
   <tr class="classmethod">
     
     <td>Class Method</td>
     <td><code><a href="#build_bin_application_instance">build_bin_application_instance</a></code></td>
-    <td><span>Builds an <code><a href="zim.applications.Application.html">Application</a></code> object for the backend command @returns: an <code><a href="zim.applications.Application.html">Application</a></code> object @implementation: must be implemented in child classes.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#build_revision_arguments">build_revision_arguments</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#path_arg">path_arg</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Builds an <code><a href="zim.applications.Application.html">Application</a></code> object for the backend command @returns: an <code><a href="zim.applications.Application.html">Application</a></code> object @implementation: must be implemented in child classes.</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#add">add</a></code></td>
-    <td><span>Runs: git add {{PATH}}</span></td>
+    <td>Runs: git add {{PATH}}</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -73,13 +95,18 @@
   </tr><tr class="method">
     
     <td>Method</td>
+    <td><code><a href="#build_revision_arguments">build_revision_arguments</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
     <td><code><a href="#cat">cat</a></code></td>
-    <td><span>Runs: git cat {{PATH}} {{REV_ARGS}}</span></td>
+    <td>Runs: git cat {{PATH}} {{REV_ARGS}}</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#commit">commit</a></code></td>
-    <td><span>Runs: git commit -m {{MSG}} {{PATH}}</span></td>
+    <td>Runs: git commit -m {{MSG}} {{PATH}}</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -89,7 +116,12 @@
     
     <td>Method</td>
     <td><code><a href="#ignore">ignore</a></code></td>
-    <td><span>Build a .gitignore file including the file_to_ignore_content</span></td>
+    <td>Build a .gitignore file including the file_to_ignore_content</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#init">init</a></code></td>
+    <td>Runs: git init</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -98,18 +130,8 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#repo_exists">repo_exists</a></code></td>
-    <td><span>Returns True if a repository is already setup @returns: <code>True</code> if a repository is already setup in the root directory @implementation: must be implemented in child classes.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#init">init</a></code></td>
-    <td><span>Runs: git init</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
     <td><code><a href="#is_modified">is_modified</a></code></td>
-    <td><span>Returns true if the repo is not up-to-date, or False @returns: True if the repo is not up-to-date, or False</span></td>
+    <td>Returns true if the repo is not up-to-date, or False @returns: True if the repo is not up-to-date, or False</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -124,12 +146,22 @@
     
     <td>Method</td>
     <td><code><a href="#move">move</a></code></td>
-    <td><span>Must implement the VCS operation required after a file has been moved into the repository.</span></td>
+    <td>Must implement the VCS operation required after a file has been moved into the repository.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#path_arg">path_arg</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#remove">remove</a></code></td>
     <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#repo_exists">repo_exists</a></code></td>
+    <td>Returns True if a repository is already setup @returns: <tt class="rst-docutils literal">True</tt> if a repository is already setup in the root directory @implementation: must be implemented in child classes.</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -139,40 +171,46 @@
     
     <td>Method</td>
     <td><code><a href="#stage">stage</a></code></td>
-    <td><span>Prepares the repo for a commit. Used, for example, by git to stage changes so that the status message in SaveVersionDialog shows what will be committed.</span></td>
+    <td>Prepares the repo for a commit. Used, for example, by git to stage changes so that the status message in SaveVersionDialog shows what will be committed.</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#status">status</a></code></td>
-    <td><span>Runs: git status @param porcelain: see --porcelain in git documentation, used for testing</span></td>
+    <td>Runs: git status @param porcelain: see --porcelain in git documentation, used for testing</td>
   </tr>
 </table>
         
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html">VCSApplicationBase</a></code>:
           </p>
-          <table class="children sortable" id="id1462">
+          <table class="children sortable" id="id1436">
   
-  <tr class="basemethod">
+  
+  <tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#tryexec">tryexec</a></code></td>
+    <td>Check if the command associated with the backend is available. @returns: <tt class="rst-docutils literal">True</tt> if the command is available</td>
+  </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#__init__">__init__</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="baseinstancevariable">
+  </tr><tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#root">root</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseinstancevariable">
+    <td>Method</td>
+    <td><code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#commit_version">commit_version</a></code></td>
+    <td>Run a commit operation.</td>
+  </tr><tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#notebook_dir">notebook_dir</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Method</td>
+    <td><code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#list_versions">list_versions</a></code></td>
+    <td>Returns a list of all versions, for a file or for the entire repo</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#on_created">on_created</a></code></td>
-    <td><span>Callback when a file has been created @param fs: the watcher object @param path: a <code><a href="zim.fs.File.html">File</a></code> or <code><a href="zim.newfs.base.Folder.html">Folder</a></code> object</span></td>
+    <td>Callback when a file has been created @param fs: the watcher object @param path: a <code><a href="zim.fs.File.html">File</a></code> or <code><a href="zim.newfs.base.Folder.html">Folder</a></code> object</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -182,17 +220,7 @@
     
     <td>Method</td>
     <td><code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#on_removed">on_removed</a></code></td>
-    <td><span>Callback when a file has been delted @param fs: the watcher object @param path: a <code><a href="zim.fs.File.html">File</a></code> or <code><a href="zim.newfs.base.Folder.html">Folder</a></code> object</span></td>
-  </tr><tr class="baseclassmethod">
-    
-    <td>Class Method</td>
-    <td><code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#tryexec">tryexec</a></code></td>
-    <td><span>Check if the command associated with the backend is available. @returns: <code>True</code> if the command is available</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#run">run</a></code></td>
-    <td><span>Execute a command with the associated binary with 'params' parameters. Note: the working directory is the root associated to the repository</span></td>
+    <td>Callback when a file has been delted @param fs: the watcher object @param path: a <code><a href="zim.fs.File.html">File</a></code> or <code><a href="zim.newfs.base.Folder.html">Folder</a></code> object</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -201,60 +229,66 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#commit_version">commit_version</a></code></td>
-    <td><span>Run a commit operation.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#list_versions">list_versions</a></code></td>
-    <td><span>Returns a list of all versions, for a file or for the entire repo</span></td>
-  </tr><tr class="baseinstancevariable private">
+    <td><code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#run">run</a></code></td>
+    <td>Execute a command with the associated binary with 'params' parameters. Note: the working directory is the root associated to the repository</td>
+  </tr><tr class="baseinstancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#_app">_app</a></code></td>
+    <td><code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#notebook_dir">notebook_dir</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#root">root</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
     <td><code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#_ignored">_ignored</a></code></td>
     <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#_app">_app</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
           
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code> (via <code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html">VCSApplicationBase</a></code>):
           </p>
-          <table class="children sortable" id="id1463">
+          <table class="children sortable" id="id1437">
+  
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto">connectto</a></code></td>
-    <td><span>Connect to signals of another object E.g.:</span></td>
+    <td>Connect to signals of another object E.g.:</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto_all">connectto_all</a></code></td>
-    <td><span>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
-    <td><span>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</span></td>
+    <td>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_all">disconnect_all</a></code></td>
-    <td><span>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</span></td>
-  </tr><tr class="baseinstancevariable private">
+    <td>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</td>
+  </tr><tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
+    <td>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#_disconnect_from">_disconnect_from</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -267,6 +301,7 @@
 
         <div class="baseclassmethod">
   
+  
   <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.build_bin_application_instance">
     
   </a>
@@ -274,9 +309,9 @@
     
   </a>
   <div class="functionHeader">
-    @classmethod<br />
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod">classmethod</a><br />
     <span class="py-keyword">def</span> <span class="py-defname">build_bin_application_instance</span>(cls):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L20">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L20">
       
       (source)
     </a>
@@ -284,51 +319,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#build_bin_application_instance">zim.plugins.versioncontrol.VCSApplicationBase.build_bin_application_instance</a></code></div>
     
-    <div><p>Builds an <code><a href="zim.applications.Application.html">Application</a></code> object for the backend command</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">an <code><a href="zim.applications.Application.html">Application</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">must be implemented in child classes.</td></tr></table></div>
+    <div>Builds an <code><a href="zim.applications.Application.html">Application</a></code> object for the backend command<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">an <code><a href="zim.applications.Application.html">Application</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: implementation</td></tr><tr><td colspan="2">must be implemented in child classes.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.build_revision_arguments">
-    
-  </a>
-  <a name="build_revision_arguments">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">build_revision_arguments</span>(self, versions, is_for_diff=False):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L24">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Build a list including required string/int for running an VCS command # Accepts: None, int, string, (int,), (int, int) # Always returns a list # versions content:</p><ul><li>None: return an empty list</li><li>int ou string: return ['-r', int]</li><li>tuple or list: return ['-r', '%i..%i']</li></ul><p>It's all based on the fact that defining revision with current VCS is: -r revision -r rev1..rev2</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.path_arg">
-    
-  </a>
-  <a name="path_arg">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">path_arg</span>(self, path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L59">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.add">
     
@@ -338,8 +332,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">add</span>(self, path=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L70">
+    <span class="py-keyword">def</span> <span class="py-defname">add</span>(self, path=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L70">
       
       (source)
     </a>
@@ -347,9 +341,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#add">zim.plugins.versioncontrol.VCSApplicationBase.add</a></code></div>
     
-    <div><p>Runs: git add {{PATH}}</p></div>
+    <div>Runs: git add {{PATH}}</div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.annotate">
     
@@ -359,8 +354,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">annotate</span>(self, file, version=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L80">
+    <span class="py-keyword">def</span> <span class="py-defname">annotate</span>(self, file, version=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L80">
       
       (source)
     </a>
@@ -368,9 +363,39 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#annotate">zim.plugins.versioncontrol.VCSApplicationBase.annotate</a></code></div>
     
-    <div><p>FIXME Document return 0: line1 2: line1 ...</p></div>
+    <div>FIXME Document return 0: line1 2: line1 ...</div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.build_revision_arguments">
+    
+  </a>
+  <a name="build_revision_arguments">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">build_revision_arguments</span>(self, versions, is_for_diff=<a href="https://docs.python.org/3/library/constants.html#False">False</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L24">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Build a list including required string/int for running an VCS command # Accepts: None, int, string, (int,), (int, int) # Always returns a list # versions content:</p>
+<ul class="rst-simple">
+<li>None: return an empty list</li>
+<li>int ou string: return ['-r', int]</li>
+<li>tuple or list: return ['-r', '%i..%i']</li>
+</ul>
+<p>It's all based on the fact that defining revision with current VCS is: -r revision -r rev1..rev2</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.cat">
     
@@ -381,7 +406,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">cat</span>(self, path, version):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L90">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L90">
       
       (source)
     </a>
@@ -389,9 +414,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#cat">zim.plugins.versioncontrol.VCSApplicationBase.cat</a></code></div>
     
-    <div><p>Runs: git cat {{PATH}} {{REV_ARGS}}</p></div>
+    <div>Runs: git cat {{PATH}} {{REV_ARGS}}</div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.commit">
     
@@ -402,7 +428,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">commit</span>(self, path, msg):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L97">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L97">
       
       (source)
     </a>
@@ -410,9 +436,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#commit">zim.plugins.versioncontrol.VCSApplicationBase.commit</a></code></div>
     
-    <div><p>Runs: git commit -m {{MSG}} {{PATH}}</p></div>
+    <div>Runs: git commit -m {{MSG}} {{PATH}}</div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.diff">
     
@@ -422,8 +449,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">diff</span>(self, versions=None, file=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L111">
+    <span class="py-keyword">def</span> <span class="py-defname">diff</span>(self, versions=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, file=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L111">
       
       (source)
     </a>
@@ -435,6 +462,7 @@
   </div>
 </div><div class="basemethod">
   
+  
   <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.ignore">
     
   </a>
@@ -444,7 +472,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">ignore</span>(self, file_to_ignore_regexp):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L125">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L125">
       
       (source)
     </a>
@@ -452,51 +480,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#ignore">zim.plugins.versioncontrol.VCSApplicationBase.ignore</a></code></div>
     
-    <div><p>Build a .gitignore file including the file_to_ignore_content</p></div>
+    <div>Build a .gitignore file including the file_to_ignore_content</div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.init_repo">
-    
-  </a>
-  <a name="init_repo">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">init_repo</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L132">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#init_repo">zim.plugins.versioncontrol.VCSApplicationBase.init_repo</a></code></div>
-    
-    <div><p>initialize a repository in the associated folder. Runs <code><a href="#init">init()</a></code>, adds existing files etc.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">nothing.</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">must be implemented in the child class.</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.repo_exists">
-    
-  </a>
-  <a name="repo_exists">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">repo_exists</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L141">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#repo_exists">zim.plugins.versioncontrol.VCSApplicationBase.repo_exists</a></code></div>
-    
-    <div><p>Returns True if a repository is already setup</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> if a repository is already setup in the root directory</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">must be implemented in child classes.</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.init">
     
@@ -507,7 +494,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">init</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L144">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L144">
       
       (source)
     </a>
@@ -515,9 +502,32 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#init">zim.plugins.versioncontrol.VCSApplicationBase.init</a></code></div>
     
-    <div><p>Runs: git init</p></div>
+    <div>Runs: git init</div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.init_repo">
+    
+  </a>
+  <a name="init_repo">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">init_repo</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L132">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#init_repo">zim.plugins.versioncontrol.VCSApplicationBase.init_repo</a></code></div>
+    
+    <div>initialize a repository in the associated folder. Runs <code><a href="#init">init()</a></code>, adds existing files etc.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">nothing.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: implementation</td></tr><tr><td colspan="2">must be implemented in the child class.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.is_modified">
     
@@ -528,7 +538,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">is_modified</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L150">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L150">
       
       (source)
     </a>
@@ -536,9 +546,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#is_modified">zim.plugins.versioncontrol.VCSApplicationBase.is_modified</a></code></div>
     
-    <div><p>Returns true if the repo is not up-to-date, or False</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">True if the repo is not up-to-date, or False</td></tr></table></div>
+    <div>Returns true if the repo is not up-to-date, or False<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">True if the repo is not up-to-date, or False</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.log">
     
@@ -548,8 +559,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">log</span>(self, path=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L158">
+    <span class="py-keyword">def</span> <span class="py-defname">log</span>(self, path=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L158">
       
       (source)
     </a>
@@ -561,6 +572,7 @@
   </div>
 </div><div class="basemethod">
   
+  
   <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.log_to_revision_list">
     
   </a>
@@ -570,7 +582,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">log_to_revision_list</span>(self, log_op_output):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L170">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L170">
       
       (source)
     </a>
@@ -578,9 +590,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#log_to_revision_list">zim.plugins.versioncontrol.VCSApplicationBase.log_to_revision_list</a></code></div>
     
-    <div><p>Converts the result of a log() call into a list of tuples representing          the commits.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">log_op_output</td><td>a list of str() representing the log operation output before being parsed.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a list of tuple (revision-id, date, user, commit-message)                       representing the entire life.</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">must be implemented in the child class.                                 Actually, this method is a "log" operation parser which will convert str lines into list of 4-str tuples : (revision-id, date, user, commit-message)</td></tr></table></div>
+    <div>Converts the result of a log() call into a list of tuples representing          the commits.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">log_op_output</span></td><td class="fieldArgDesc">a list of str() representing the log operation output before being parsed.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of tuple (revision-id, date, user, commit-message)                       representing the entire life.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: implementation</td></tr><tr><td colspan="2">must be implemented in the child class.                                 Actually, this method is a "log" operation parser which will convert str lines into list of 4-str tuples : (revision-id, date, user, commit-message)</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.move">
     
@@ -591,7 +604,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">move</span>(self, oldpath, newpath):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L209">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L209">
       
       (source)
     </a>
@@ -603,6 +616,29 @@
   </div>
 </div><div class="basemethod">
   
+  
+  <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.path_arg">
+    
+  </a>
+  <a name="path_arg">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">path_arg</span>(self, path):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L59">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
   <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.remove">
     
   </a>
@@ -612,7 +648,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">remove</span>(self, path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L212">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L212">
       
       (source)
     </a>
@@ -620,9 +656,32 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#remove">zim.plugins.versioncontrol.VCSApplicationBase.remove</a></code></div>
     
-    <div><p>Remove a file from the repository.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td><span class="undocumented">Undocumented</span></td></tr><tr><td></td><td class="fieldArg">file</td><td>a <code><a href="zim.fs.File.html">File</a></code> instance representing the file that have been deleted</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> if the command was successfull</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">must be implemented in child class.                             CAUTION: this must implement the VCS operation required                                 after a versionned file has been deleted from the file system.                                                                  Example: in mercurial it has been implemented with: hg rm &lt;file&gt;</td></tr></table></div>
+    <div>Remove a file from the repository.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">file</span></td><td class="fieldArgDesc">a <code><a href="zim.fs.File.html">File</a></code> instance representing the file that have been deleted</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> if the command was successfull</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: implementation</td></tr><tr><td colspan="2">must be implemented in child class.                             CAUTION: this must implement the VCS operation required                                 after a versionned file has been deleted from the file system.                                                                  Example: in mercurial it has been implemented with: hg rm &lt;file&gt;</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.repo_exists">
+    
+  </a>
+  <a name="repo_exists">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">repo_exists</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L141">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#repo_exists">zim.plugins.versioncontrol.VCSApplicationBase.repo_exists</a></code></div>
+    
+    <div>Returns True if a repository is already setup<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> if a repository is already setup in the root directory</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: implementation</td></tr><tr><td colspan="2">must be implemented in child classes.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.revert">
     
@@ -632,8 +691,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">revert</span>(self, path=None, version=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L215">
+    <span class="py-keyword">def</span> <span class="py-defname">revert</span>(self, path=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, version=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L215">
       
       (source)
     </a>
@@ -645,6 +704,7 @@
   </div>
 </div><div class="basemethod">
   
+  
   <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.stage">
     
   </a>
@@ -654,7 +714,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">stage</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L233">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L233">
       
       (source)
     </a>
@@ -662,9 +722,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#stage">zim.plugins.versioncontrol.VCSApplicationBase.stage</a></code></div>
     
-    <div><p>Prepares the repo for a commit. Used, for example, by git to stage changes so that the status message in SaveVersionDialog shows what will be committed.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">optional to be implemented in child class</td></tr></table></div>
+    <div>Prepares the repo for a commit. Used, for example, by git to stage changes so that the status message in SaveVersionDialog shows what will be committed.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: implementation</td></tr><tr><td colspan="2">optional to be implemented in child class</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.plugins.versioncontrol.git.GITApplicationBackend.status">
     
@@ -674,8 +735,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">status</span>(self, porcelain=False):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L236">
+    <span class="py-keyword">def</span> <span class="py-defname">status</span>(self, porcelain=<a href="https://docs.python.org/3/library/constants.html#False">False</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/git.py#L236">
       
       (source)
     </a>
@@ -683,16 +744,21 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.plugins.versioncontrol.VCSApplicationBase.html#status">zim.plugins.versioncontrol.VCSApplicationBase.status</a></code></div>
     
-    <div><p>Runs: git status</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">porcelain</td><td>see --porcelain in git documentation, used for testing</td></tr></table></div>
+    <div>Runs: git status<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">porcelain</span></td><td class="fieldArgDesc">see --porcelain in git documentation, used for testing</td></tr></table></div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

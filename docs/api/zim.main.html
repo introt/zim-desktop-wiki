@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.main : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.main</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="package"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.main.html">main</a></code></code></h1>
+        <h1 class="package"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.main.html">main</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,118 +65,120 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py">(source)</a>
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>This module defines the <code><a href="#main">main()</a></code> function for executing the zim application. It also defines a number of command classes that implement specific commandline commands and an singleton application object that takes core of the process life cycle.</p></div>
+        <div>This module defines the <code><a href="#main">main()</a></code> function for executing the zim application. It also defines a number of command classes that implement specific commandline commands and an singleton application object that takes core of the process life cycle.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id564">
+        <table class="children sortable" id="id573">
+  
   
   <tr class="module">
     
     <td>Module</td>
     <td><code><a href="zim.main.command.html">command</a></code></td>
-    <td><span>This module is responsible for commandline parsing. It provides a base class for the commandline commands defined in <code><a href="zim.main.html">zim.main</a></code></span></td>
+    <td>This module is responsible for commandline parsing. It provides a base class for the commandline commands defined in <code><a href="zim.main.html">zim.main</a></code></td>
   </tr><tr class="module">
     
     <td>Module</td>
     <td><code><a href="zim.main.ipc.html">ipc</a></code></td>
-    <td><span>This module is responsible for the inter-process communication (ipc) between zim instances.</span></td>
+    <td>This module is responsible for the inter-process communication (ipc) between zim instances.</td>
   </tr>
 </table>
         
 
-          <p class="fromInitPy">From the <code>__init__.py</code> module:</p><table class="children sortable" id="id565">
+          <p class="fromInitPy">From <code>__init__.py</code>:</p><table class="children sortable" id="id574">
+  
   
   <tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.main.ExportCommand.html">ExportCommand</a></code></td>
-    <td><span>Class implementing the <code>--export</code> command</span></td>
+    <td>Class implementing the <tt class="rst-docutils literal"><span class="pre">--export</span></tt> command</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.main.GuiCommand.html">GuiCommand</a></code></td>
-    <td><span>Class implementing the <code>--gui</code> command and run the gtk interface</span></td>
+    <td>Class implementing the <tt class="rst-docutils literal"><span class="pre">--gui</span></tt> command and run the gtk interface</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.main.HelpCommand.html">HelpCommand</a></code></td>
-    <td><span>Class implementing the <code>--help</code> command</span></td>
+    <td>Class implementing the <tt class="rst-docutils literal"><span class="pre">--help</span></tt> command</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.main.IndexCommand.html">IndexCommand</a></code></td>
-    <td><span>Class implementing the <code>--index</code> command</span></td>
+    <td>Class implementing the <tt class="rst-docutils literal"><span class="pre">--index</span></tt> command</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.main.ManualCommand.html">ManualCommand</a></code></td>
-    <td><span>Like <code><a href="zim.main.GuiCommand.html">GuiCommand</a></code> but always opens the manual</span></td>
+    <td>Like <code><a href="zim.main.GuiCommand.html">GuiCommand</a></code> but always opens the manual</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.main.NotebookCommand.html">NotebookCommand</a></code></td>
-    <td><span>Base class for commands that act on a notebook</span></td>
+    <td>Base class for commands that act on a notebook</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.main.NotebookLookupError.html">NotebookLookupError</a></code></td>
-    <td><span>Error when failing to locate a notebook</span></td>
+    <td>Error when failing to locate a notebook</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.main.SearchCommand.html">SearchCommand</a></code></td>
-    <td><span>Class implementing the <code>--search</code> command</span></td>
+    <td>Class implementing the <tt class="rst-docutils literal"><span class="pre">--search</span></tt> command</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.main.ServerCommand.html">ServerCommand</a></code></td>
-    <td><span>Class implementing the <code>--server</code> command and running the web server.</span></td>
+    <td>Class implementing the <tt class="rst-docutils literal"><span class="pre">--server</span></tt> command and running the web server.</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.main.ServerGuiCommand.html">ServerGuiCommand</a></code></td>
-    <td><span>Like <code><a href="zim.main.ServerCommand.html">ServerCommand</a></code> but uses the graphical interface for the server defined in <code><a href="zim.gui.server.html">zim.gui.server</a></code>.</span></td>
+    <td>Like <code><a href="zim.main.ServerCommand.html">ServerCommand</a></code> but uses the graphical interface for the server defined in <code><a href="zim.gui.server.html">zim.gui.server</a></code>.</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.main.VersionCommand.html">VersionCommand</a></code></td>
-    <td><span>Class implementing the <code>--version</code> command</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.main.html#ZIM_APPLICATION">ZIM_APPLICATION</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Class implementing the <tt class="rst-docutils literal"><span class="pre">--version</span></tt> command</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.main.ZimApplication.html">ZimApplication</a></code></td>
-    <td><span>This object is repsonsible for managing the life cycle of the application process.</span></td>
+    <td>This object is repsonsible for managing the life cycle of the application process.</td>
   </tr><tr class="function">
     
     <td>Function</td>
-    <td><code><a href="zim.main.html#build_command">build_command</a></code></td>
-    <td><span>Parse all commandline options @returns: a <code><a href="zim.main.command.Command.html">Command</a></code> object @raises UsageError: if args is not correct</span></td>
-  </tr><tr class="variable">
+    <td><code><a href="#build_command">build_command</a></code></td>
+    <td>Parse all commandline options @returns: a <code><a href="zim.main.command.Command.html">Command</a></code> object @raises UsageError: if args is not correct</td>
+  </tr><tr class="function">
     
-    <td>Variable</td>
-    <td><code><a href="zim.main.html#commands">commands</a></code></td>
+    <td>Function</td>
+    <td><code><a href="#main">main</a></code></td>
+    <td>Run full zim application @returns: exit code (if error handled, else just raises)</td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#ZIM_APPLICATION">ZIM_APPLICATION</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
     <td>Variable</td>
-    <td><code><a href="zim.main.html#logger">logger</a></code></td>
+    <td><code><a href="#commands">commands</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
+  </tr><tr class="variable">
     
-    <td>Function</td>
-    <td><code><a href="zim.main.html#main">main</a></code></td>
-    <td><span>Run full zim application @returns: exit code (if error handled, else just raises)</span></td>
+    <td>Variable</td>
+    <td><code><a href="#logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
       </div>
@@ -153,6 +186,7 @@
       <div id="childList">
 
         <div class="basevariable">
+  
   
   <a name="zim.main.logger">
     
@@ -163,7 +197,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">logger</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L19">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L19">
       
       (source)
     </a>
@@ -172,8 +206,10 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basevariable">
+  
   
   <a name="zim.main.commands">
     
@@ -184,7 +220,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">commands</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L548">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L586">
       
       (source)
     </a>
@@ -193,8 +229,10 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.main.build_command">
     
@@ -204,8 +242,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">build_command</span>(args, pwd=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L561">
+    <span class="py-keyword">def</span> <span class="py-defname">build_command</span>(args, pwd=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L599">
       
       (source)
     </a>
@@ -213,9 +251,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Parse all commandline options</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.main.command.Command.html">Command</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="zim.main.command.UsageError.html">UsageError</a></td><td>if args is not correct</td></tr></table></div>
+    <div>Parse all commandline options<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="zim.main.command.Command.html">Command</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="zim.main.command.UsageError.html">UsageError</a></code></td><td>if args is not correct</td></tr></table></div>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.main.ZIM_APPLICATION">
     
@@ -226,7 +265,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">ZIM_APPLICATION</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L895">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L933">
       
       (source)
     </a>
@@ -235,8 +274,10 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><a href="zim.main.ZimApplication.html">ZimApplication</a>()</code></pre></td></tr></table>
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.main.main">
     
@@ -247,7 +288,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">main</span>(*argv):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L898">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L936">
       
       (source)
     </a>
@@ -255,16 +296,21 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Run full zim application</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">exit code (if error handled, else just raises)</td></tr></table></div>
+    <div>Run full zim application<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">exit code (if error handled, else just raises)</td></tr></table></div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.notebook.index.links.LinksIndexer : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.notebook.index.links.LinksIndexer</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.notebook.html">notebook</a></code>.<code><a href="zim.notebook.index.html">index</a></code>.<code><a href="zim.notebook.index.links.html">links</a></code>.<code><a href="zim.notebook.index.links.LinksIndexer.html">LinksIndexer</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.notebook.html">notebook</a></code><wbr></wbr>.<code><a href="zim.notebook.index.html">index</a></code><wbr></wbr>.<code><a href="zim.notebook.index.links.html">links</a></code><wbr></wbr>.<code><a href="zim.notebook.index.links.LinksIndexer.html">LinksIndexer</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">LinksIndexer</span>(<a href="zim.notebook.index.base.IndexerBase.html" title="zim.notebook.index.base.IndexerBase">IndexerBase</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L63">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">LinksIndexer</span>(<a href="zim.notebook.index.base.IndexerBase.html" title="zim.notebook.index.base.IndexerBase">IndexerBase</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L60" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.notebook.index.links.LinksIndexer">View In Hierarchy</a></p>
       </div>
 
@@ -43,14 +74,10 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id712">
+        <table class="children sortable" id="id709">
   
-  <tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#__signals__">__signals__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
+  
+  <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
@@ -58,12 +85,12 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#on_page_changed">on_page_changed</a></code></td>
+    <td><code><a href="#is_uptodate">is_uptodate</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#on_page_row_inserted">on_page_row_inserted</a></code></td>
+    <td><code><a href="#on_page_changed">on_page_changed</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
@@ -78,12 +105,27 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#is_uptodate">is_uptodate</a></code></td>
+    <td><code><a href="#on_page_row_inserted">on_page_row_inserted</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#update_iter">update_iter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#__signals__">__signals__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_allow_cleanup">_allow_cleanup</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_recursive_flag_links_for_update">_recursive_flag_links_for_update</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable private">
     
@@ -95,28 +137,24 @@
     <td>Instance Variable</td>
     <td><code><a href="#_pagesindexer">_pagesindexer</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
-    <td><code><a href="#_allow_cleanup">_allow_cleanup</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
         
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.notebook.index.base.IndexerBase.html">IndexerBase</a></code>:
           </p>
-          <table class="children sortable" id="id713">
+          <table class="children sortable" id="id710">
   
-  <tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.notebook.index.base.IndexerBase.html#db">db</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
+  
+  <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.notebook.index.base.IndexerBase.html#update">update</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.notebook.index.base.IndexerBase.html#db">db</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -124,7 +162,8 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.signals.SignalEmitter.html">SignalEmitter</a></code> (via <code><a href="zim.notebook.index.base.IndexerBase.html">IndexerBase</a></code>):
           </p>
-          <table class="children sortable" id="id714">
+          <table class="children sortable" id="id711">
+  
   
   <tr class="basemethod">
     
@@ -134,13 +173,18 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#block_signals">block_signals</a></code></td>
+    <td>Returns a context manager for blocking one or more signals</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#connect">connect</a></code></td>
-    <td><span>Register a handler for a specific object.</span></td>
+    <td>Register a handler for a specific object.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#connect_after">connect_after</a></code></td>
-    <td><span>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</span></td>
+    <td>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -155,17 +199,12 @@
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#emit_return_first">emit_return_first</a></code></td>
-    <td><span>Emits a signal and stops emission on the first handler that returns a not-None value.</span></td>
+    <td>Emits a signal and stops emission on the first handler that returns a not-None value.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#emit_return_iter">emit_return_iter</a></code></td>
-    <td><span>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.signals.SignalEmitter.html#block_signals">block_signals</a></code></td>
-    <td><span>Returns a context manager for blocking one or more signals</span></td>
+    <td>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -187,37 +226,38 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code> (via <code><a href="zim.notebook.index.base.IndexerBase.html">IndexerBase</a></code>):
           </p>
-          <table class="children sortable" id="id715">
+          <table class="children sortable" id="id712">
+  
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto">connectto</a></code></td>
-    <td><span>Connect to signals of another object E.g.:</span></td>
+    <td>Connect to signals of another object E.g.:</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto_all">connectto_all</a></code></td>
-    <td><span>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
-    <td><span>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</span></td>
+    <td>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_all">disconnect_all</a></code></td>
-    <td><span>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</span></td>
-  </tr><tr class="baseinstancevariable private">
+    <td>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</td>
+  </tr><tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
+    <td>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#_disconnect_from">_disconnect_from</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -228,28 +268,8 @@
 
       <div id="childList">
 
-        <div class="baseclassvariable">
+        <div class="basemethod">
   
-  <a name="zim.notebook.index.links.LinksIndexer.__signals__">
-    
-  </a>
-  <a name="__signals__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">__signals__</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L65">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.notebook.index.base.IndexerBase.html#__signals__">zim.notebook.index.base.IndexerBase.__signals__</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.notebook.index.links.LinksIndexer.__init__">
     
@@ -260,7 +280,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, db, pagesindexer):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L67">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L64">
       
       (source)
     </a>
@@ -270,133 +290,8 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.notebook.index.links.LinksIndexer._pages">
-    
-  </a>
-  <a name="_pages">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_pages</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L69">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.notebook.index.links.LinksIndexer._pagesindexer">
-    
-  </a>
-  <a name="_pagesindexer">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_pagesindexer</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L70">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
 </div><div class="basemethod">
   
-  <a name="zim.notebook.index.links.LinksIndexer.on_page_changed">
-    
-  </a>
-  <a name="on_page_changed">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">on_page_changed</span>(self, o, row, doc):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L95">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.notebook.index.links.LinksIndexer.on_page_row_inserted">
-    
-  </a>
-  <a name="on_page_row_inserted">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">on_page_row_inserted</span>(self, o, row):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L115">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.notebook.index.links.LinksIndexer.on_page_row_changed">
-    
-  </a>
-  <a name="on_page_row_changed">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">on_page_row_changed</span>(self, o, newrow, oldrow):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L127">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.notebook.index.links.LinksIndexer.on_page_row_deleted">
-    
-  </a>
-  <a name="on_page_row_deleted">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">on_page_row_deleted</span>(self, o, row):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L131">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.notebook.index.links.LinksIndexer.is_uptodate">
     
@@ -407,7 +302,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">is_uptodate</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L145">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L158">
       
       (source)
     </a>
@@ -419,6 +314,95 @@
   </div>
 </div><div class="basemethod">
   
+  
+  <a name="zim.notebook.index.links.LinksIndexer.on_page_changed">
+    
+  </a>
+  <a name="on_page_changed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_page_changed</span>(self, o, row, doc):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L92">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.index.links.LinksIndexer.on_page_row_changed">
+    
+  </a>
+  <a name="on_page_row_changed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_page_row_changed</span>(self, o, newrow, oldrow):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L124">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.index.links.LinksIndexer.on_page_row_deleted">
+    
+  </a>
+  <a name="on_page_row_deleted">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_page_row_deleted</span>(self, o, row):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L145">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.index.links.LinksIndexer.on_page_row_inserted">
+    
+  </a>
+  <a name="on_page_row_inserted">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_page_row_inserted</span>(self, o, row):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L112">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
   <a name="zim.notebook.index.links.LinksIndexer.update_iter">
     
   </a>
@@ -428,7 +412,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">update_iter</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L151">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L164">
       
       (source)
     </a>
@@ -438,7 +422,31 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="zim.notebook.index.links.LinksIndexer.__signals__">
+    
+  </a>
+  <a name="__signals__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__signals__</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L62">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.notebook.index.base.IndexerBase.html#__signals__">zim.notebook.index.base.IndexerBase.__signals__</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div><div class="basemethod private">
+  
   
   <a name="zim.notebook.index.links.LinksIndexer._allow_cleanup">
     
@@ -449,7 +457,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_allow_cleanup</span>(self, row):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L200">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L213">
       
       (source)
     </a>
@@ -459,14 +467,87 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.notebook.index.links.LinksIndexer._recursive_flag_links_for_update">
+    
+  </a>
+  <a name="_recursive_flag_links_for_update">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_recursive_flag_links_for_update</span>(self, row):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L134">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.notebook.index.links.LinksIndexer._pages">
+    
+  </a>
+  <a name="_pages">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_pages</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L66">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.notebook.index.links.LinksIndexer._pagesindexer">
+    
+  </a>
+  <a name="_pagesindexer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_pagesindexer</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/links.py#L67">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

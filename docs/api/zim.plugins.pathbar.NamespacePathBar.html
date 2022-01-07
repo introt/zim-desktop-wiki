@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.plugins.pathbar.NamespacePathBar : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.plugins.pathbar.NamespacePathBar</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code>.<code><a href="zim.plugins.pathbar.html">pathbar</a></code>.<code><a href="zim.plugins.pathbar.NamespacePathBar.html">NamespacePathBar</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.plugins.html">plugins</a></code><wbr></wbr>.<code><a href="zim.plugins.pathbar.html">pathbar</a></code><wbr></wbr>.<code><a href="zim.plugins.pathbar.NamespacePathBar.html">NamespacePathBar</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">NamespacePathBar</span>(<a href="zim.plugins.pathbar.PathBar.html" title="zim.plugins.pathbar.PathBar">PathBar</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pathbar.py#L621">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">NamespacePathBar</span>(<a href="zim.plugins.pathbar.PathBar.html" title="zim.plugins.pathbar.PathBar">PathBar</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pathbar.py#L630" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.plugins.pathbar.NamespacePathBar">View In Hierarchy</a></p>
       </div>
 
@@ -43,30 +74,72 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1151">
+        <table class="children sortable" id="id1138">
+  
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#get_paths">get_paths</a></code></td>
-    <td><span>To be implemented by the sub class, should return a list (or iterable) of notebook paths to show in the pathbar.</span></td>
+    <td>To be implemented by the sub class, should return a list (or iterable) of notebook paths to show in the pathbar. The visible part of these paths is determined by _get_labels.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_labels">_get_labels</a></code></td>
+    <td>Returns list (or iterable) of path labels to show in the pathbar. Usually this means the shortest unique names, but may also be just the basenames as is the case with <tt class="rst-docutils literal">PATHBAR_PATH</tt>.</td>
   </tr>
 </table>
         
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.plugins.pathbar.PathBar.html">PathBar</a></code>:
           </p>
-          <table class="children sortable" id="id1152">
+          <table class="children sortable" id="id1139">
+  
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.plugins.pathbar.PathBar.html#__init__">__init__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pathbar.PathBar.html#get_button_popup">get_button_popup</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pathbar.PathBar.html#on_button_clicked">on_button_clicked</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pathbar.PathBar.html#on_button_popup_menu">on_button_popup_menu</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pathbar.PathBar.html#on_button_release_event">on_button_release_event</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pathbar.PathBar.html#on_drag_data_get">on_drag_data_get</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pathbar.PathBar.html#set_page">set_page</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="baseinstancevariable">
     
     <td>Instance Variable</td>
     <td><code><a href="zim.plugins.pathbar.PathBar.html#history">history</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.pathbar.PathBar.html#navigation">navigation</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="baseinstancevariable">
     
@@ -78,50 +151,15 @@
     <td>Instance Variable</td>
     <td><code><a href="zim.plugins.pathbar.PathBar.html#page">page</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.plugins.pathbar.PathBar.html#navigation">navigation</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
+  </tr><tr class="basemethod private">
     
     <td>Method</td>
-    <td><code><a href="zim.plugins.pathbar.PathBar.html#set_page">set_page</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.pathbar.PathBar.html#on_button_clicked">on_button_clicked</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.pathbar.PathBar.html#on_button_release_event">on_button_release_event</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.pathbar.PathBar.html#on_button_popup_menu">on_button_popup_menu</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.pathbar.PathBar.html#get_button_popup">get_button_popup</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.pathbar.PathBar.html#on_drag_data_get">on_drag_data_get</a></code></td>
+    <td><code><a href="zim.plugins.pathbar.PathBar.html#_select">_select</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
     <td><code><a href="zim.plugins.pathbar.PathBar.html#_update">_update</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod private">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.pathbar.PathBar.html#_select">_select</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -129,22 +167,13 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.plugins.pathbar.ScrolledHBox.html">ScrolledHBox</a></code> (via <code><a href="zim.plugins.pathbar.PathBar.html">PathBar</a></code>):
           </p>
-          <table class="children sortable" id="id1153">
+          <table class="children sortable" id="id1140">
   
-  <tr class="baseclassvariable">
+  
+  <tr class="basemethod">
     
-    <td>Class Variable</td>
-    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#__gsignals__">__gsignals__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseclassvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#initial_scroll_timeout">initial_scroll_timeout</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseclassvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#scroll_timeout">scroll_timeout</a></code></td>
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#__del__">__del__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
     
@@ -154,17 +183,17 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#remove">remove</a></code></td>
+    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#do_get_preferred_height">do_get_preferred_height</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#pack_start">pack_start</a></code></td>
+    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#do_get_preferred_width">do_get_preferred_width</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#pack_end">pack_end</a></code></td>
+    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#do_size_allocate">do_size_allocate</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
     
@@ -179,13 +208,23 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#__del__">__del__</a></code></td>
+    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#pack_end">pack_end</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#pack_start">pack_start</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#remove">remove</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#scroll">scroll</a></code></td>
-    <td><span>Scroll n items in either direction. Direction should be either DIR_FORWARD or DIR_BACKWARD, while n should be integer. Returns boolean for success.</span></td>
+    <td>Scroll n items in either direction. Direction should be either DIR_FORWARD or DIR_BACKWARD, while n should be integer. Returns boolean for success.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -195,56 +234,36 @@
     
     <td>Method</td>
     <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#start_scrolling">start_scrolling</a></code></td>
-    <td><span>Start continues scrolling. Direction should be either DIR_FORWARD or DIR_BACKWARD. If we were scrolling already, stops this action before setting new scroll direction.</span></td>
+    <td>Start continues scrolling. Direction should be either DIR_FORWARD or DIR_BACKWARD. If we were scrolling already, stops this action before setting new scroll direction.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#stop_scrolling">stop_scrolling</a></code></td>
-    <td><span>Stop continues scrolling. Does not do anything if we were not scrolling.</span></td>
-  </tr><tr class="basemethod">
+    <td>Stop continues scrolling. Does not do anything if we were not scrolling.</td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#__gsignals__">__gsignals__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#initial_scroll_timeout">initial_scroll_timeout</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#scroll_timeout">scroll_timeout</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
     
     <td>Method</td>
-    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#do_get_preferred_width">do_get_preferred_width</a></code></td>
+    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#_distribute_size">_distribute_size</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
+  </tr><tr class="basemethod private">
     
     <td>Method</td>
-    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#do_get_preferred_height">do_get_preferred_height</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#do_size_allocate">do_size_allocate</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseinstancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#_scroll_timeout">_scroll_timeout</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseinstancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#_minwidth">_minwidth</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseinstancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#_anchor">_anchor</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseinstancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#_state">_state</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseinstancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#_forw_button">_forw_button</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseinstancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#_back_button">_back_button</a></code></td>
+    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#_on_button_clicked">_on_button_clicked</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod private">
     
@@ -256,15 +275,35 @@
     <td>Method</td>
     <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#_on_button_release">_on_button_release</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod private">
+  </tr><tr class="baseinstancevariable private">
     
-    <td>Method</td>
-    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#_on_button_clicked">_on_button_clicked</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#_anchor">_anchor</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod private">
+  </tr><tr class="baseinstancevariable private">
     
-    <td>Method</td>
-    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#_distribute_size">_distribute_size</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#_back_button">_back_button</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#_forw_button">_forw_button</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#_minwidth">_minwidth</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#_scroll_timeout">_scroll_timeout</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.pathbar.ScrolledHBox.html#_state">_state</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -277,6 +316,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.plugins.pathbar.NamespacePathBar.get_paths">
     
   </a>
@@ -286,7 +326,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">get_paths</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pathbar.py#L627">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pathbar.py#L636">
       
       (source)
     </a>
@@ -294,16 +334,43 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.plugins.pathbar.PathBar.html#get_paths">zim.plugins.pathbar.PathBar.get_paths</a></code></div>
     
-    <div><p>To be implemented by the sub class, should return a list (or iterable) of notebook paths to show in the pathbar.</p></div>
+    <div>To be implemented by the sub class, should return a list (or iterable) of notebook paths to show in the pathbar. The visible part of these paths is determined by _get_labels.</div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.plugins.pathbar.NamespacePathBar._get_labels">
+    
+  </a>
+  <a name="_get_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_labels</span>(self, paths):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pathbar.py#L648">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.plugins.pathbar.PathBar.html#_get_labels">zim.plugins.pathbar.PathBar._get_labels</a></code></div>
+    
+    <div>Returns list (or iterable) of path labels to show in the pathbar. Usually this means the shortest unique names, but may also be just the basenames as is the case with <tt class="rst-docutils literal">PATHBAR_PATH</tt>.</div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

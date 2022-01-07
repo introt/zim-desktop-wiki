@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.gui.widgets.Dialog : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.gui.widgets.Dialog</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.widgets.html">widgets</a></code>.<code><a href="zim.gui.widgets.Dialog.html">Dialog</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.gui.html">gui</a></code><wbr></wbr>.<code><a href="zim.gui.widgets.html">widgets</a></code><wbr></wbr>.<code><a href="zim.gui.widgets.Dialog.html">Dialog</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,43 +65,22 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Dialog</span>(<span title="gi.repository.Gtk.Dialog">Gtk.Dialog</span>, <a href="zim.signals.ConnectorMixin.html" title="zim.signals.ConnectorMixin">ConnectorMixin</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2783">(source)</a></code></p><p>Known subclasses: <code><a href="zim.gui.applications.AddApplicationDialog.html">zim.gui.applications.AddApplicationDialog</a></code>, <code><a href="zim.gui.applications.CustomizeOpenWithDialog.html">zim.gui.applications.CustomizeOpenWithDialog</a></code>, <code><a href="zim.gui.customtools.CustomToolManagerDialog.html">zim.gui.customtools.CustomToolManagerDialog</a></code>, <code><a href="zim.gui.customtools.EditCustomToolDialog.html">zim.gui.customtools.EditCustomToolDialog</a></code>, <code><a href="zim.gui.mainwindow.OpenPageDialog.html">zim.gui.mainwindow.OpenPageDialog</a></code>, <code><a href="zim.gui.notebookdialog.AddNotebookDialog.html">zim.gui.notebookdialog.AddNotebookDialog</a></code>, <code><a href="zim.gui.notebookdialog.NotebookDialog.html">zim.gui.notebookdialog.NotebookDialog</a></code>, <code><a href="zim.gui.pageview.EditImageDialog.html">zim.gui.pageview.EditImageDialog</a></code>, <code><a href="zim.gui.pageview.FindAndReplaceDialog.html">zim.gui.pageview.FindAndReplaceDialog</a></code>, <code><a href="zim.gui.pageview.InsertDateDialog.html">zim.gui.pageview.InsertDateDialog</a></code>, <code><a href="zim.gui.pageview.InsertLinkDialog.html">zim.gui.pageview.InsertLinkDialog</a></code>, <code><a href="zim.gui.pageview.MoveTextDialog.html">zim.gui.pageview.MoveTextDialog</a></code>, <code><a href="zim.gui.pageview.NewFileDialog.html">zim.gui.pageview.NewFileDialog</a></code>, <code><a href="zim.gui.pageview.PromptExistingFileDialog.html">zim.gui.pageview.PromptExistingFileDialog</a></code>, <code><a href="zim.gui.pageview.WordCountDialog.html">zim.gui.pageview.WordCountDialog</a></code>, <code><a href="zim.gui.preferencesdialog.PluginConfigureDialog.html">zim.gui.preferencesdialog.PluginConfigureDialog</a></code>, <code><a href="zim.gui.preferencesdialog.PreferencesDialog.html">zim.gui.preferencesdialog.PreferencesDialog</a></code>, <code><a href="zim.gui.propertiesdialog.PropertiesDialog.html">zim.gui.propertiesdialog.PropertiesDialog</a></code>, <code><a href="zim.gui.recentchangesdialog.RecentChangesDialog.html">zim.gui.recentchangesdialog.RecentChangesDialog</a></code>, <code><a href="zim.gui.searchdialog.SearchDialog.html">zim.gui.searchdialog.SearchDialog</a></code>, <code><a href="zim.gui.templateeditordialog.PromptNameDialog.html">zim.gui.templateeditordialog.PromptNameDialog</a></code>, <code><a href="zim.gui.templateeditordialog.TemplateEditorDialog.html">zim.gui.templateeditordialog.TemplateEditorDialog</a></code>, <code><a href="zim.gui.uiactions.DeletePageDialog.html">zim.gui.uiactions.DeletePageDialog</a></code>, <code><a href="zim.gui.uiactions.MovePageDialog.html">zim.gui.uiactions.MovePageDialog</a></code>, <code><a href="zim.gui.uiactions.NewPageDialog.html">zim.gui.uiactions.NewPageDialog</a></code>, <code><a href="zim.gui.widgets.Assistant.html">zim.gui.widgets.Assistant</a></code>, <code><a href="zim.gui.widgets.FileDialog.html">zim.gui.widgets.FileDialog</a></code>, <code><a href="zim.gui.widgets.LogFileDialog.html">zim.gui.widgets.LogFileDialog</a></code>, <code><a href="zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog.html">zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog</a></code>, <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorDialog.html">zim.plugins.base.imagegenerator.ImageGeneratorDialog</a></code>, <code><a href="zim.plugins.commandpalette.ZimCommandPaletteDialog.html">zim.plugins.commandpalette.ZimCommandPaletteDialog</a></code>, <code><a href="zim.plugins.insertsymbol.InsertSymbolDialog.html">zim.plugins.insertsymbol.InsertSymbolDialog</a></code>, <code><a href="zim.plugins.linkmap.LinkMapDialog.html">zim.plugins.linkmap.LinkMapDialog</a></code>, <code><a href="zim.plugins.quicknote.QuickNoteDialog.html">zim.plugins.quicknote.QuickNoteDialog</a></code>, <code><a href="zim.plugins.screenshot.InsertScreenshotDialog.html">zim.plugins.screenshot.InsertScreenshotDialog</a></code>, <code><a href="zim.plugins.sourceview.InsertCodeBlockDialog.html">zim.plugins.sourceview.InsertCodeBlockDialog</a></code>, <code><a href="zim.plugins.tableeditor.EditTableDialog.html">zim.plugins.tableeditor.EditTableDialog</a></code>, <code><a href="zim.plugins.tasklist.gui.TaskListDialog.html">zim.plugins.tasklist.gui.TaskListDialog</a></code>, <code><a href="zim.plugins.versioncontrol.SaveVersionDialog.html">zim.plugins.versioncontrol.SaveVersionDialog</a></code>, <code><a href="zim.plugins.versioncontrol.TextDialog.html">zim.plugins.versioncontrol.TextDialog</a></code>, <code><a href="zim.plugins.versioncontrol.VersionControlInitDialog.html">zim.plugins.versioncontrol.VersionControlInitDialog</a></code>, <code><a href="zim.plugins.versioncontrol.VersionsDialog.html">zim.plugins.versioncontrol.VersionsDialog</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Dialog</span>(<span title="gi.repository.Gtk.Dialog">Gtk.Dialog</span>, <a href="zim.signals.ConnectorMixin.html" title="zim.signals.ConnectorMixin">ConnectorMixin</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2770" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="zim.gui.applications.AddApplicationDialog.html">zim.gui.applications.AddApplicationDialog</a></code>, <code><a href="zim.gui.applications.CustomizeOpenWithDialog.html">zim.gui.applications.CustomizeOpenWithDialog</a></code>, <code><a href="zim.gui.customtools.CustomToolManagerDialog.html">zim.gui.customtools.CustomToolManagerDialog</a></code>, <code><a href="zim.gui.customtools.EditCustomToolDialog.html">zim.gui.customtools.EditCustomToolDialog</a></code>, <code><a href="zim.gui.mainwindow.OpenPageDialog.html">zim.gui.mainwindow.OpenPageDialog</a></code>, <code><a href="zim.gui.notebookdialog.AddNotebookDialog.html">zim.gui.notebookdialog.AddNotebookDialog</a></code>, <code><a href="zim.gui.notebookdialog.NotebookDialog.html">zim.gui.notebookdialog.NotebookDialog</a></code>, <code><a href="zim.gui.pageview.EditImageDialog.html">zim.gui.pageview.EditImageDialog</a></code>, <code><a href="zim.gui.pageview.FindAndReplaceDialog.html">zim.gui.pageview.FindAndReplaceDialog</a></code>, <code><a href="zim.gui.pageview.InsertDateDialog.html">zim.gui.pageview.InsertDateDialog</a></code>, <code><a href="zim.gui.pageview.InsertLinkDialog.html">zim.gui.pageview.InsertLinkDialog</a></code>, <code><a href="zim.gui.pageview.MoveTextDialog.html">zim.gui.pageview.MoveTextDialog</a></code>, <code><a href="zim.gui.pageview.NewFileDialog.html">zim.gui.pageview.NewFileDialog</a></code>, <code><a href="zim.gui.pageview.PromptExistingFileDialog.html">zim.gui.pageview.PromptExistingFileDialog</a></code>, <code><a href="zim.gui.pageview.WordCountDialog.html">zim.gui.pageview.WordCountDialog</a></code>, <code><a href="zim.gui.preferencesdialog.PluginConfigureDialog.html">zim.gui.preferencesdialog.PluginConfigureDialog</a></code>, <code><a href="zim.gui.preferencesdialog.PreferencesDialog.html">zim.gui.preferencesdialog.PreferencesDialog</a></code>, <code><a href="zim.gui.propertiesdialog.PropertiesDialog.html">zim.gui.propertiesdialog.PropertiesDialog</a></code>, <code><a href="zim.gui.recentchangesdialog.RecentChangesDialog.html">zim.gui.recentchangesdialog.RecentChangesDialog</a></code>, <code><a href="zim.gui.searchdialog.SearchDialog.html">zim.gui.searchdialog.SearchDialog</a></code>, <code><a href="zim.gui.templateeditordialog.PromptNameDialog.html">zim.gui.templateeditordialog.PromptNameDialog</a></code>, <code><a href="zim.gui.templateeditordialog.TemplateEditorDialog.html">zim.gui.templateeditordialog.TemplateEditorDialog</a></code>, <code><a href="zim.gui.uiactions.DeletePageDialogBase.html">zim.gui.uiactions.DeletePageDialogBase</a></code>, <code><a href="zim.gui.uiactions.MovePageDialog.html">zim.gui.uiactions.MovePageDialog</a></code>, <code><a href="zim.gui.uiactions.NewPageDialog.html">zim.gui.uiactions.NewPageDialog</a></code>, <code><a href="zim.gui.widgets.Assistant.html">zim.gui.widgets.Assistant</a></code>, <code><a href="zim.gui.widgets.FileDialog.html">zim.gui.widgets.FileDialog</a></code>, <code><a href="zim.gui.widgets.LogFileDialog.html">zim.gui.widgets.LogFileDialog</a></code>, <code><a href="zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog.html">zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog</a></code>, <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorDialog.html">zim.plugins.base.imagegenerator.ImageGeneratorDialog</a></code>, <code><a href="zim.plugins.commandpalette.ZimCommandPaletteDialog.html">zim.plugins.commandpalette.ZimCommandPaletteDialog</a></code>, <code><a href="zim.plugins.insertsymbol.InsertSymbolDialog.html">zim.plugins.insertsymbol.InsertSymbolDialog</a></code>, <code><a href="zim.plugins.linkmap.LinkMapDialog.html">zim.plugins.linkmap.LinkMapDialog</a></code>, <code><a href="zim.plugins.quicknote.QuickNoteDialog.html">zim.plugins.quicknote.QuickNoteDialog</a></code>, <code><a href="zim.plugins.screenshot.InsertScreenshotDialog.html">zim.plugins.screenshot.InsertScreenshotDialog</a></code>, <code><a href="zim.plugins.sourceview.InsertCodeBlockDialog.html">zim.plugins.sourceview.InsertCodeBlockDialog</a></code>, <code><a href="zim.plugins.tableeditor.EditTableDialog.html">zim.plugins.tableeditor.EditTableDialog</a></code>, <code><a href="zim.plugins.versioncontrol.SaveVersionDialog.html">zim.plugins.versioncontrol.SaveVersionDialog</a></code>, <code><a href="zim.plugins.versioncontrol.TextDialog.html">zim.plugins.versioncontrol.TextDialog</a></code>, <code><a href="zim.plugins.versioncontrol.VersionControlInitDialog.html">zim.plugins.versioncontrol.VersionControlInitDialog</a></code>, <code><a href="zim.plugins.versioncontrol.VersionsDialog.html">zim.plugins.versioncontrol.VersionsDialog</a></code></p>
         <p><a href="classIndex.html#zim.gui.widgets.Dialog">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Sub-class of <code>Gtk.Dialog</code> with a number of convenience methods to create dialogs. Also takes care of registering dialogs with the main interface object, so plugins can hook into them. Intended as base class for all input dialogs in zim. (See <code><a href="zim.gui.widgets.ErrorDialog.html">ErrorDialog</a></code>, <code><a href="zim.gui.widgets.QuestionDialog.html">QuestionDialog</a></code>, <code><a href="zim.gui.widgets.MessageDialog.html">MessageDialog</a></code> and <code><a href="zim.gui.widgets.FileDialog.html">FileDialog</a></code> for other dialog types).</p><p>A minimal sub-class should implement a constructor which calls <code><a href="#__init__">Dialog.__init__()</a></code> and <code><a href="#add_form">Dialog.add_form()</a></code> to defined the dialog, and implements <code>do_response_ok()</code> to handle the result.</p><p>The <code>Dialog</code> class takes care of calling <code>ConnecterMixin.disconnect_all()</code> when it is destroyed. So sub-classes can use the <code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code> methods and all callbacks will be cleaned up after the dialog.</p></div>
+        <div><p>Sub-class of <tt class="rst-docutils literal">Gtk.Dialog</tt> with a number of convenience methods to create dialogs. Also takes care of registering dialogs with the main interface object, so plugins can hook into them. Intended as base class for all input dialogs in zim. (See <code><a href="zim.gui.widgets.ErrorDialog.html">ErrorDialog</a></code>, <code><a href="zim.gui.widgets.QuestionDialog.html">QuestionDialog</a></code>, <code><a href="zim.gui.widgets.MessageDialog.html">MessageDialog</a></code> and <code><a href="zim.gui.widgets.FileDialog.html">FileDialog</a></code> for other dialog types).</p>
+<p>A minimal sub-class should implement a constructor which calls <code><a href="#__init__">Dialog.__init__()</a></code> and <code><a href="#add_form">Dialog.add_form()</a></code> to defined the dialog, and implements <tt class="rst-docutils literal">do_response_ok()</tt> to handle the result.</p>
+<p>The <tt class="rst-docutils literal">Dialog</tt> class takes care of calling <code>ConnecterMixin.disconnect_all()</code> when it is destroyed. So sub-classes can use the <code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code> methods and all callbacks will be cleaned up after the dialog.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id529">
+        <table class="children sortable" id="id537">
   
-  <tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#vbox">vbox</a></code></td>
-    <td><span><code>Gtk.VBox</code> for main widgets of the dialog</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#form">form</a></code></td>
-    <td><span><code><a href="zim.gui.widgets.InputForm.html">InputForm</a></code> added by <code>add_form()</code></span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#uistate">uistate</a></code></td>
-    <td><span><code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code> to store state of the dialog, persistent per notebook. The size and position of the dialog are stored as automatically in this dict already.</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#result">result</a></code></td>
-    <td><span>result to be returned by <code><a href="#run">run()</a></code></span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#destroyed">destroyed</a></code></td>
-    <td><span>when <code>True</code> the dialog is already destroyed</span></td>
-  </tr><tr class="classmethod">
+  
+  <tr class="classmethod">
     
     <td>Class Method</td>
     <td><code><a href="#unique">unique</a></code></td>
@@ -79,12 +89,7 @@
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Constructor.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#on_destroy">on_destroy</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Constructor.</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -93,73 +98,18 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#set_help">set_help</a></code></td>
-    <td><span>Set the name of the manual page with help for this dialog. Setting this will add a "help" button to the dialog. @param pagename: the manual page name</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#help_page">help_page</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#show_help">show_help</a></code></td>
-    <td><span>Show a help page @param page: the manual page, if <code>None</code> the page as set with <code><a href="#set_help">set_help()</a></code> is used</span></td>
+    <td><code><a href="#add_form">add_form</a></code></td>
+    <td>Convenience method to construct a form with input widgets and add them to the dialog. See <code><a href="zim.gui.widgets.InputForm.html#add_inputs">InputForm.add_inputs()</a></code> for details.</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#add_help_text">add_help_text</a></code></td>
-    <td><span>Adds a label with an info icon in front of it. Intended for informational text in dialogs. @param text: help text</span></td>
+    <td>Adds a label with an info icon in front of it. Intended for informational text in dialogs. @param text: help text</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#add_text">add_text</a></code></td>
-    <td><span>Adds a label to the dialog Also see <code><a href="#add_help_text">add_help_text()</a></code> for another style option. @param text: dialog text</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#add_form">add_form</a></code></td>
-    <td><span>Convenience method to construct a form with input widgets and add them to the dialog. See <code><a href="zim.gui.widgets.InputForm.html#add_inputs">InputForm.add_inputs()</a></code> for details.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#set_input">set_input</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#get_input">get_input</a></code></td>
-    <td><span>Method used in test suite to get "interactive" inputs</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#get_input_enabled">get_input_enabled</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#run">run</a></code></td>
-    <td><span>Wrapper for <code>Gtk.Dialog.run()</code>, also calls <code>show_all()</code> @returns: <code>self.result</code></span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#present">present</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#show">show</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#show_all">show_all</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#response_ok">response_ok</a></code></td>
-    <td><span>Trigger the response signal with response type 'OK'.</span></td>
+    <td>Adds a label to the dialog Also see <code><a href="#add_help_text">add_help_text()</a></code> for another style option. @param text: dialog text</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -173,23 +123,103 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#do_response_ok">do_response_ok</a></code></td>
-    <td><span>Handler called when the user clicks the "OK" button (or an equivalent button)</span></td>
+    <td><code><a href="#do_response_cancel">do_response_cancel</a></code></td>
+    <td>Handler called when the user clicks the "Cancel" button.</td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#do_response_cancel">do_response_cancel</a></code></td>
-    <td><span>Handler called when the user clicks the "Cancel" button.</span></td>
+    <td><code><a href="#do_response_ok">do_response_ok</a></code></td>
+    <td>Handler called when the user clicks the "OK" button (or an equivalent button)</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_input">get_input</a></code></td>
+    <td>Method used in test suite to get "interactive" inputs</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_input_enabled">get_input_enabled</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_destroy">on_destroy</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#present">present</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#response_ok">response_ok</a></code></td>
+    <td>Trigger the response signal with response type 'OK'.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#run">run</a></code></td>
+    <td>Wrapper for <tt class="rst-docutils literal">Gtk.Dialog.run()</tt>, also calls <tt class="rst-docutils literal">show_all()</tt> @returns: <tt class="rst-docutils literal">self.result</tt></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#save_uistate">save_uistate</a></code></td>
-    <td><span>Method when the dialog is about to exit or hide and wants to save the uistate. Sub-classes implementing this method should use it to set additional state parameter in <code>self.uistate</code>.</span></td>
-  </tr><tr class="instancevariable private">
+    <td>Method when the dialog is about to exit or hide and wants to save the uistate. Sub-classes implementing this method should use it to set additional state parameter in <tt class="rst-docutils literal">self.uistate</tt>.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_help">set_help</a></code></td>
+    <td>Set the name of the manual page with help for this dialog. Setting this will add a "help" button to the dialog. @param pagename: the manual page name</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_input">set_input</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#show">show</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#show_all">show_all</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#show_help">show_help</a></code></td>
+    <td>Show a help page @param page: the manual page, if <tt class="rst-docutils literal">None</tt> the page as set with <code><a href="#set_help">set_help()</a></code> is used</td>
+  </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_registered">_registered</a></code></td>
+    <td><code><a href="#destroyed">destroyed</a></code></td>
+    <td>when <tt class="rst-docutils literal">True</tt> the dialog is already destroyed</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#form">form</a></code></td>
+    <td><code><a href="zim.gui.widgets.InputForm.html">InputForm</a></code> added by <tt class="rst-docutils literal">add_form()</tt></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#help_page">help_page</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#result">result</a></code></td>
+    <td>result to be returned by <code><a href="#run">run()</a></code></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#uistate">uistate</a></code></td>
+    <td><code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code> to store state of the dialog, persistent per notebook. The size and position of the dialog are stored as automatically in this dict already.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#vbox">vbox</a></code></td>
+    <td><tt class="rst-docutils literal">Gtk.VBox</tt> for main widgets of the dialog</td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -201,37 +231,38 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code>:
           </p>
-          <table class="children sortable" id="id530">
+          <table class="children sortable" id="id538">
+  
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto">connectto</a></code></td>
-    <td><span>Connect to signals of another object E.g.:</span></td>
+    <td>Connect to signals of another object E.g.:</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto_all">connectto_all</a></code></td>
-    <td><span>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
-    <td><span>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</span></td>
+    <td>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_all">disconnect_all</a></code></td>
-    <td><span>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</span></td>
-  </tr><tr class="baseinstancevariable private">
+    <td>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</td>
+  </tr><tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
+    <td>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#_disconnect_from">_disconnect_from</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -242,112 +273,8 @@
 
       <div id="childList">
 
-        <div class="baseinstancevariable">
+        <div class="baseclassmethod">
   
-  <a name="zim.gui.widgets.Dialog.vbox">
-    
-  </a>
-  <a name="vbox">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">vbox</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2800">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><code>Gtk.VBox</code> for main widgets of the dialog</div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.widgets.Dialog.form">
-    
-  </a>
-  <a name="form">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">form</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2801">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.propertiesdialog.PropertiesDialog.html">zim.gui.propertiesdialog.PropertiesDialog</a></code>, <code><a href="zim.plugins.quicknote.QuickNoteDialog.html">zim.plugins.quicknote.QuickNoteDialog</a></code></div>
-    
-    <div><code><a href="zim.gui.widgets.InputForm.html">InputForm</a></code> added by <code>add_form()</code></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.widgets.Dialog.uistate">
-    
-  </a>
-  <a name="uistate">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">uistate</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2802">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.widgets.Assistant.html">zim.gui.widgets.Assistant</a></code>, <code><a href="zim.plugins.quicknote.QuickNoteDialog.html">zim.plugins.quicknote.QuickNoteDialog</a></code></div>
-    
-    <div><code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code> to store state of the dialog, persistent per notebook. The size and position of the dialog are stored as automatically in this dict already.</div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.widgets.Dialog.result">
-    
-  </a>
-  <a name="result">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">result</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2805">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.applications.AddApplicationDialog.html">zim.gui.applications.AddApplicationDialog</a></code>, <code><a href="zim.gui.customtools.EditCustomToolDialog.html">zim.gui.customtools.EditCustomToolDialog</a></code>, <code><a href="zim.gui.notebookdialog.AddNotebookDialog.html">zim.gui.notebookdialog.AddNotebookDialog</a></code>, <code><a href="zim.gui.notebookdialog.NotebookDialog.html">zim.gui.notebookdialog.NotebookDialog</a></code>, <code><a href="zim.gui.pageview.NewFileDialog.html">zim.gui.pageview.NewFileDialog</a></code>, <code><a href="zim.gui.pageview.PromptExistingFileDialog.html">zim.gui.pageview.PromptExistingFileDialog</a></code>, <code><a href="zim.gui.templateeditordialog.PromptNameDialog.html">zim.gui.templateeditordialog.PromptNameDialog</a></code>, <code><a href="zim.gui.widgets.FileDialog.html">zim.gui.widgets.FileDialog</a></code>, <code><a href="zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog.html">zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog</a></code>, <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorDialog.html">zim.plugins.base.imagegenerator.ImageGeneratorDialog</a></code>, <code><a href="zim.plugins.commandpalette.ZimCommandPaletteDialog.html">zim.plugins.commandpalette.ZimCommandPaletteDialog</a></code>, <code><a href="zim.plugins.sourceview.InsertCodeBlockDialog.html">zim.plugins.sourceview.InsertCodeBlockDialog</a></code>, <code><a href="zim.plugins.tableeditor.EditTableDialog.html">zim.plugins.tableeditor.EditTableDialog</a></code>, <code><a href="zim.plugins.versioncontrol.VersionControlInitDialog.html">zim.plugins.versioncontrol.VersionControlInitDialog</a></code></div>
-    
-    <div>result to be returned by <code><a href="#run">run()</a></code></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.widgets.Dialog.destroyed">
-    
-  </a>
-  <a name="destroyed">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">destroyed</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2806">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div>when <code>True</code> the dialog is already destroyed</div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
-  </div>
-</div><div class="baseclassmethod">
   
   <a name="zim.gui.widgets.Dialog.unique">
     
@@ -356,9 +283,9 @@
     
   </a>
   <div class="functionHeader">
-    @classmethod<br />
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod">classmethod</a><br />
     <span class="py-keyword">def</span> <span class="py-defname">unique</span>(klass, handler, *args, **opts):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2809">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2796">
       
       (source)
     </a>
@@ -366,12 +293,16 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Constructor which ensures there is only one instance of this dialog at a time. It implements a singleton pattern by installing a weak reference in the handler object. If there is an dialog active which is not yet destroyed, this dialog is returned, otherwise a new dialog is created.</p><p>Typically you can use this as:</p><pre class="literalblock">
+    <div><p>Constructor which ensures there is only one instance of this dialog at a time. It implements a singleton pattern by installing a weak reference in the handler object. If there is an dialog active which is not yet destroyed, this dialog is returned, otherwise a new dialog is created.</p>
+<p>Typically you can use this as:</p>
+<pre class="rst-literal-block">
         dialog = MyDialog.unique(parent, somearg)
         dialog.present()
-</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">klass</td><td><span class="undocumented">Undocumented</span></td></tr><tr><td></td><td class="fieldArg">handler</td><td>the object constructing the dialog</td></tr><tr><td></td><td class="fieldArg">args</td><td>arguments to pass to the dialog constructor</td></tr><tr><td></td><td class="fieldArg">opts</td><td>arguments to pass to the dialog constructor</td></tr><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">when a dialog already existed the arguments provided to this constructor are not used</td></tr></table></div>
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">klass</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">handler</span></td><td class="fieldArgDesc">the object constructing the dialog</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">*args</span></td><td class="fieldArgDesc">arguments to pass to the dialog constructor</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**opts</span></td><td class="fieldArgDesc">arguments to pass to the dialog constructor</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Note</td></tr><tr><td colspan="2">when a dialog already existed the arguments provided to this constructor are not used</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.gui.widgets.Dialog.__init__">
     
@@ -381,81 +312,25 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, parent, title, buttons=Gtk.ButtonsType.OK_CANCEL, button=None, use_default_button=False, help_text=None, help=None, defaultwindowsize=(-1, -1)):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2844">
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, parent, title, buttons=Gtk.ButtonsType.OK_CANCEL, button=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, use_default_button=<a href="https://docs.python.org/3/library/constants.html#False">False</a>, help_text=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, help=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, defaultwindowsize=(<wbr></wbr>-1, <wbr></wbr>-1)):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2831">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.applications.AddApplicationDialog.html">zim.gui.applications.AddApplicationDialog</a></code>, <code><a href="zim.gui.applications.CustomizeOpenWithDialog.html">zim.gui.applications.CustomizeOpenWithDialog</a></code>, <code><a href="zim.gui.customtools.CustomToolManagerDialog.html">zim.gui.customtools.CustomToolManagerDialog</a></code>, <code><a href="zim.gui.customtools.EditCustomToolDialog.html">zim.gui.customtools.EditCustomToolDialog</a></code>, <code><a href="zim.gui.mainwindow.OpenPageDialog.html">zim.gui.mainwindow.OpenPageDialog</a></code>, <code><a href="zim.gui.notebookdialog.AddNotebookDialog.html">zim.gui.notebookdialog.AddNotebookDialog</a></code>, <code><a href="zim.gui.notebookdialog.NotebookDialog.html">zim.gui.notebookdialog.NotebookDialog</a></code>, <code><a href="zim.gui.pageview.EditImageDialog.html">zim.gui.pageview.EditImageDialog</a></code>, <code><a href="zim.gui.pageview.FindAndReplaceDialog.html">zim.gui.pageview.FindAndReplaceDialog</a></code>, <code><a href="zim.gui.pageview.InsertDateDialog.html">zim.gui.pageview.InsertDateDialog</a></code>, <code><a href="zim.gui.pageview.InsertLinkDialog.html">zim.gui.pageview.InsertLinkDialog</a></code>, <code><a href="zim.gui.pageview.MoveTextDialog.html">zim.gui.pageview.MoveTextDialog</a></code>, <code><a href="zim.gui.pageview.NewFileDialog.html">zim.gui.pageview.NewFileDialog</a></code>, <code><a href="zim.gui.pageview.PromptExistingFileDialog.html">zim.gui.pageview.PromptExistingFileDialog</a></code>, <code><a href="zim.gui.pageview.WordCountDialog.html">zim.gui.pageview.WordCountDialog</a></code>, <code><a href="zim.gui.preferencesdialog.PluginConfigureDialog.html">zim.gui.preferencesdialog.PluginConfigureDialog</a></code>, <code><a href="zim.gui.preferencesdialog.PreferencesDialog.html">zim.gui.preferencesdialog.PreferencesDialog</a></code>, <code><a href="zim.gui.propertiesdialog.PropertiesDialog.html">zim.gui.propertiesdialog.PropertiesDialog</a></code>, <code><a href="zim.gui.recentchangesdialog.RecentChangesDialog.html">zim.gui.recentchangesdialog.RecentChangesDialog</a></code>, <code><a href="zim.gui.searchdialog.SearchDialog.html">zim.gui.searchdialog.SearchDialog</a></code>, <code><a href="zim.gui.templateeditordialog.PromptNameDialog.html">zim.gui.templateeditordialog.PromptNameDialog</a></code>, <code><a href="zim.gui.templateeditordialog.TemplateEditorDialog.html">zim.gui.templateeditordialog.TemplateEditorDialog</a></code>, <code><a href="zim.gui.uiactions.DeletePageDialog.html">zim.gui.uiactions.DeletePageDialog</a></code>, <code><a href="zim.gui.uiactions.MovePageDialog.html">zim.gui.uiactions.MovePageDialog</a></code>, <code><a href="zim.gui.uiactions.NewPageDialog.html">zim.gui.uiactions.NewPageDialog</a></code>, <code><a href="zim.gui.widgets.Assistant.html">zim.gui.widgets.Assistant</a></code>, <code><a href="zim.gui.widgets.FileDialog.html">zim.gui.widgets.FileDialog</a></code>, <code><a href="zim.gui.widgets.LogFileDialog.html">zim.gui.widgets.LogFileDialog</a></code>, <code><a href="zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog.html">zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog</a></code>, <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorDialog.html">zim.plugins.base.imagegenerator.ImageGeneratorDialog</a></code>, <code><a href="zim.plugins.commandpalette.ZimCommandPaletteDialog.html">zim.plugins.commandpalette.ZimCommandPaletteDialog</a></code>, <code><a href="zim.plugins.insertsymbol.InsertSymbolDialog.html">zim.plugins.insertsymbol.InsertSymbolDialog</a></code>, <code><a href="zim.plugins.linkmap.LinkMapDialog.html">zim.plugins.linkmap.LinkMapDialog</a></code>, <code><a href="zim.plugins.quicknote.QuickNoteDialog.html">zim.plugins.quicknote.QuickNoteDialog</a></code>, <code><a href="zim.plugins.screenshot.InsertScreenshotDialog.html">zim.plugins.screenshot.InsertScreenshotDialog</a></code>, <code><a href="zim.plugins.sourceview.InsertCodeBlockDialog.html">zim.plugins.sourceview.InsertCodeBlockDialog</a></code>, <code><a href="zim.plugins.tableeditor.EditTableDialog.html">zim.plugins.tableeditor.EditTableDialog</a></code>, <code><a href="zim.plugins.tasklist.gui.TaskListDialog.html">zim.plugins.tasklist.gui.TaskListDialog</a></code>, <code><a href="zim.plugins.versioncontrol.SaveVersionDialog.html">zim.plugins.versioncontrol.SaveVersionDialog</a></code>, <code><a href="zim.plugins.versioncontrol.TextDialog.html">zim.plugins.versioncontrol.TextDialog</a></code>, <code><a href="zim.plugins.versioncontrol.VersionControlInitDialog.html">zim.plugins.versioncontrol.VersionControlInitDialog</a></code>, <code><a href="zim.plugins.versioncontrol.VersionsDialog.html">zim.plugins.versioncontrol.VersionsDialog</a></code></div>
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.applications.AddApplicationDialog.html">zim.gui.applications.AddApplicationDialog</a></code>, <code><a href="zim.gui.applications.CustomizeOpenWithDialog.html">zim.gui.applications.CustomizeOpenWithDialog</a></code>, <code><a href="zim.gui.customtools.CustomToolManagerDialog.html">zim.gui.customtools.CustomToolManagerDialog</a></code>, <code><a href="zim.gui.customtools.EditCustomToolDialog.html">zim.gui.customtools.EditCustomToolDialog</a></code>, <code><a href="zim.gui.mainwindow.OpenPageDialog.html">zim.gui.mainwindow.OpenPageDialog</a></code>, <code><a href="zim.gui.notebookdialog.AddNotebookDialog.html">zim.gui.notebookdialog.AddNotebookDialog</a></code>, <code><a href="zim.gui.notebookdialog.NotebookDialog.html">zim.gui.notebookdialog.NotebookDialog</a></code>, <code><a href="zim.gui.pageview.EditImageDialog.html">zim.gui.pageview.EditImageDialog</a></code>, <code><a href="zim.gui.pageview.FindAndReplaceDialog.html">zim.gui.pageview.FindAndReplaceDialog</a></code>, <code><a href="zim.gui.pageview.InsertDateDialog.html">zim.gui.pageview.InsertDateDialog</a></code>, <code><a href="zim.gui.pageview.InsertLinkDialog.html">zim.gui.pageview.InsertLinkDialog</a></code>, <code><a href="zim.gui.pageview.MoveTextDialog.html">zim.gui.pageview.MoveTextDialog</a></code>, <code><a href="zim.gui.pageview.NewFileDialog.html">zim.gui.pageview.NewFileDialog</a></code>, <code><a href="zim.gui.pageview.PromptExistingFileDialog.html">zim.gui.pageview.PromptExistingFileDialog</a></code>, <code><a href="zim.gui.pageview.WordCountDialog.html">zim.gui.pageview.WordCountDialog</a></code>, <code><a href="zim.gui.preferencesdialog.PluginConfigureDialog.html">zim.gui.preferencesdialog.PluginConfigureDialog</a></code>, <code><a href="zim.gui.preferencesdialog.PreferencesDialog.html">zim.gui.preferencesdialog.PreferencesDialog</a></code>, <code><a href="zim.gui.propertiesdialog.PropertiesDialog.html">zim.gui.propertiesdialog.PropertiesDialog</a></code>, <code><a href="zim.gui.recentchangesdialog.RecentChangesDialog.html">zim.gui.recentchangesdialog.RecentChangesDialog</a></code>, <code><a href="zim.gui.searchdialog.SearchDialog.html">zim.gui.searchdialog.SearchDialog</a></code>, <code><a href="zim.gui.templateeditordialog.PromptNameDialog.html">zim.gui.templateeditordialog.PromptNameDialog</a></code>, <code><a href="zim.gui.templateeditordialog.TemplateEditorDialog.html">zim.gui.templateeditordialog.TemplateEditorDialog</a></code>, <code><a href="zim.gui.uiactions.DeletePageDialogBase.html">zim.gui.uiactions.DeletePageDialogBase</a></code>, <code><a href="zim.gui.uiactions.MovePageDialog.html">zim.gui.uiactions.MovePageDialog</a></code>, <code><a href="zim.gui.uiactions.NewPageDialog.html">zim.gui.uiactions.NewPageDialog</a></code>, <code><a href="zim.gui.widgets.Assistant.html">zim.gui.widgets.Assistant</a></code>, <code><a href="zim.gui.widgets.FileDialog.html">zim.gui.widgets.FileDialog</a></code>, <code><a href="zim.gui.widgets.LogFileDialog.html">zim.gui.widgets.LogFileDialog</a></code>, <code><a href="zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog.html">zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog</a></code>, <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorDialog.html">zim.plugins.base.imagegenerator.ImageGeneratorDialog</a></code>, <code><a href="zim.plugins.commandpalette.ZimCommandPaletteDialog.html">zim.plugins.commandpalette.ZimCommandPaletteDialog</a></code>, <code><a href="zim.plugins.insertsymbol.InsertSymbolDialog.html">zim.plugins.insertsymbol.InsertSymbolDialog</a></code>, <code><a href="zim.plugins.linkmap.LinkMapDialog.html">zim.plugins.linkmap.LinkMapDialog</a></code>, <code><a href="zim.plugins.quicknote.QuickNoteDialog.html">zim.plugins.quicknote.QuickNoteDialog</a></code>, <code><a href="zim.plugins.screenshot.InsertScreenshotDialog.html">zim.plugins.screenshot.InsertScreenshotDialog</a></code>, <code><a href="zim.plugins.sourceview.InsertCodeBlockDialog.html">zim.plugins.sourceview.InsertCodeBlockDialog</a></code>, <code><a href="zim.plugins.tableeditor.EditTableDialog.html">zim.plugins.tableeditor.EditTableDialog</a></code>, <code><a href="zim.plugins.versioncontrol.SaveVersionDialog.html">zim.plugins.versioncontrol.SaveVersionDialog</a></code>, <code><a href="zim.plugins.versioncontrol.TextDialog.html">zim.plugins.versioncontrol.TextDialog</a></code>, <code><a href="zim.plugins.versioncontrol.VersionControlInitDialog.html">zim.plugins.versioncontrol.VersionControlInitDialog</a></code>, <code><a href="zim.plugins.versioncontrol.VersionsDialog.html">zim.plugins.versioncontrol.VersionsDialog</a></code></div>
     
-    <div><p>Constructor.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">parent</td><td>either a parent gtk widget or <code>None</code>. Only used to set the dialog on top of the right parent window</td></tr><tr><td></td><td class="fieldArg">title</td><td>the dialog title</td></tr><tr><td></td><td class="fieldArg">buttons</td><td>a constant controlling what kind of buttons the dialog will have. One of:<ul><li><code>None</code> or <code>Gtk.ButtonsType.NONE</code>: for dialogs taking care of constructing the buttons themselves</li><li><code>Gtk.ButtonsType.OK_CANCEL</code>: Render Ok and Cancel</li><li><code>Gtk.ButtonsType.CLOSE</code>: Only set a Close button</li></ul></td></tr><tr><td></td><td class="fieldArg">button</td><td>a label to use instead of the default 'Ok' button</td></tr><tr><td></td><td class="fieldArg">use_default_button</td><td><span class="undocumented">Undocumented</span></td></tr><tr><td></td><td class="fieldArg">help_text</td><td>set the help text, see <code><a href="#add_help_text">add_help_text()</a></code></td></tr><tr><td></td><td class="fieldArg">help</td><td>pagename for a manual page, see <code><a href="#set_help">set_help()</a></code></td></tr><tr><td></td><td class="fieldArg">defaultwindowsize</td><td>default window size in pixels</td></tr></table></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Dialog._registered">
-    
-  </a>
-  <a name="_registered">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_registered</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2875">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Dialog._no_ok_action">
-    
-  </a>
-  <a name="_no_ok_action">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_no_ok_action</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2899">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.pageview.PromptExistingFileDialog.html">zim.gui.pageview.PromptExistingFileDialog</a></code>, <code><a href="zim.gui.widgets.Assistant.html">zim.gui.widgets.Assistant</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
+    <div>Constructor.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">parent</span></td><td class="fieldArgDesc">either a parent gtk widget or <tt class="rst-docutils literal">None</tt>. Only used to set the dialog on top of the right parent window</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">title</span></td><td class="fieldArgDesc">the dialog title</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">buttons</span></td><td class="fieldArgDesc"><p>a constant controlling what kind of buttons the dialog will have. One of:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">None</tt> or <tt class="rst-docutils literal">Gtk.ButtonsType.NONE</tt>: for dialogs taking care of constructing the buttons themselves</li>
+<li><tt class="rst-docutils literal">Gtk.ButtonsType.OK_CANCEL</tt>: Render Ok and Cancel</li>
+<li><tt class="rst-docutils literal">Gtk.ButtonsType.CLOSE</tt>: Only set a Close button</li>
+</ul>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">button</span></td><td class="fieldArgDesc">a label to use instead of the default 'Ok' button</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">use_default_button</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">help_text</span></td><td class="fieldArgDesc">set the help text, see <code><a href="#add_help_text">add_help_text()</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">help</span></td><td class="fieldArgDesc">pagename for a manual page, see <code><a href="#set_help">set_help()</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">defaultwindowsize</span></td><td class="fieldArgDesc">default window size in pixels</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.Dialog.on_destroy">
-    
-  </a>
-  <a name="on_destroy">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">on_destroy</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2928">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.widgets.Dialog.add_extra_button">
     
@@ -465,8 +340,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">add_extra_button</span>(self, button, pack_start=True):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2934">
+    <span class="py-keyword">def</span> <span class="py-defname">add_extra_button</span>(self, button, pack_start=<a href="https://docs.python.org/3/library/constants.html#True">True</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2920">
       
       (source)
     </a>
@@ -474,20 +349,21 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Add a button to the action area at the bottom of the dialog. Packs the button in the list of primary buttons (by default these are in the lower right of the dialog)</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">button</td><td>the <code>Gtk.Button</code> (or other widget)</td></tr><tr><td></td><td class="fieldArg">pack_start</td><td>if <code>True</code> pack to the left (towards the middle of the dialog), if <code>False</code> pack to the right.</td></tr></table></div>
+    <div>Add a button to the action area at the bottom of the dialog. Packs the button in the list of primary buttons (by default these are in the lower right of the dialog)<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">button</span></td><td class="fieldArgDesc">the <tt class="rst-docutils literal">Gtk.Button</tt> (or other widget)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pack_start</span></td><td class="fieldArgDesc">if <tt class="rst-docutils literal">True</tt> pack to the left (towards the middle of the dialog), if <tt class="rst-docutils literal">False</tt> pack to the right.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.Dialog.set_help">
+  
+  <a name="zim.gui.widgets.Dialog.add_form">
     
   </a>
-  <a name="set_help">
+  <a name="add_form">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">set_help</span>(self, pagename):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2946">
+    <span class="py-keyword">def</span> <span class="py-defname">add_form</span>(self, inputs, values=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, depends=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, trigger_response=<a href="https://docs.python.org/3/library/constants.html#True">True</a>, notebook=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2969">
       
       (source)
     </a>
@@ -495,51 +371,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Set the name of the manual page with help for this dialog. Setting this will add a "help" button to the dialog.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">pagename</td><td>the manual page name</td></tr></table></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.widgets.Dialog.help_page">
-    
-  </a>
-  <a name="help_page">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">help_page</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2951">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Convenience method to construct a form with input widgets and add them to the dialog. See <code><a href="zim.gui.widgets.InputForm.html#add_inputs">InputForm.add_inputs()</a></code> for details.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">inputs</span></td><td class="fieldArgDesc">list with input definitions</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">values</span></td><td class="fieldArgDesc">initial values for the inputs</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">depends</span></td><td class="fieldArgDesc">dict with dependencies between inputs</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trigger_response</span></td><td class="fieldArgDesc">if <tt class="rst-docutils literal">True</tt> pressing <tt class="rst-docutils literal">&lt;Enter&gt;</tt> in the last entry widget will immediatly call <code><a href="#response_ok">response_ok()</a></code>. Set to <tt class="rst-docutils literal">False</tt> if more forms will follow in the same dialog.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">notebook</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.Dialog.show_help">
-    
-  </a>
-  <a name="show_help">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">show_help</span>(self, page=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2957">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.notebookdialog.NotebookDialog.html">zim.gui.notebookdialog.NotebookDialog</a></code></div>
-    
-    <div><p>Show a help page</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">page</td><td>the manual page, if <code>None</code> the page as set with <code><a href="#set_help">set_help()</a></code> is used</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.widgets.Dialog.add_help_text">
     
@@ -550,7 +385,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">add_help_text</span>(self, text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2965">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2951">
       
       (source)
     </a>
@@ -558,9 +393,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Adds a label with an info icon in front of it. Intended for informational text in dialogs.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">text</td><td>help text</td></tr></table></div>
+    <div>Adds a label with an info icon in front of it. Intended for informational text in dialogs.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">text</span></td><td class="fieldArgDesc">help text</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.gui.widgets.Dialog.add_text">
     
@@ -571,7 +407,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">add_text</span>(self, text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2973">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2959">
       
       (source)
     </a>
@@ -579,51 +415,98 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Adds a label to the dialog Also see <code><a href="#add_help_text">add_help_text()</a></code> for another style option.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">text</td><td>dialog text</td></tr></table></div>
+    <div>Adds a label to the dialog Also see <code><a href="#add_help_text">add_help_text()</a></code> for another style option.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">text</span></td><td class="fieldArgDesc">dialog text</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.Dialog.add_form">
+  
+  <a name="zim.gui.widgets.Dialog.assert_response_ok">
     
   </a>
-  <a name="add_form">
+  <a name="assert_response_ok">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">add_form</span>(self, inputs, values=None, depends=None, trigger_response=True, notebook=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2983">
+    <span class="py-keyword">def</span> <span class="py-defname">assert_response_ok</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3062">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.widgets.Assistant.html">zim.gui.widgets.Assistant</a></code></div>
     
-    
-    <div><p>Convenience method to construct a form with input widgets and add them to the dialog. See <code><a href="zim.gui.widgets.InputForm.html#add_inputs">InputForm.add_inputs()</a></code> for details.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">inputs</td><td>list with input definitions</td></tr><tr><td></td><td class="fieldArg">values</td><td>initial values for the inputs</td></tr><tr><td></td><td class="fieldArg">depends</td><td>dict with dependencies between inputs</td></tr><tr><td></td><td class="fieldArg">trigger_response</td><td>if <code>True</code> pressing <code>&lt;Enter&gt;</code> in the last entry widget will immediatly call <code><a href="#response_ok">response_ok()</a></code>. Set to <code>False</code> if more forms will follow in the same dialog.</td></tr><tr><td></td><td class="fieldArg">notebook</td><td><span class="undocumented">Undocumented</span></td></tr></table></div>
+    <div>Like <code><a href="#response_ok">response_ok()</a></code>, but raise an error when <code><a href="#do_response_ok">do_response_ok</a></code> returns <tt class="rst-docutils literal">False</tt>. Also it explicitly does not handle errors in <code><a href="#do_response_ok">do_response_ok</a></code>. Intended for use by the test suite.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">self.result</tt></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#AssertionError">AssertionError</a></code></td><td>if <code><a href="#do_response_ok">do_response_ok</a></code> returns <tt class="rst-docutils literal">False</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.Dialog.set_input">
+  
+  <a name="zim.gui.widgets.Dialog.do_response">
     
   </a>
-  <a name="set_input">
+  <a name="do_response">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">set_input</span>(self, **fields):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3009">
+    <span class="py-keyword">def</span> <span class="py-defname">do_response</span>(self, id):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3076">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.pageview.FindAndReplaceDialog.html">zim.gui.pageview.FindAndReplaceDialog</a></code></div>
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.pageview.FindAndReplaceDialog.html">zim.gui.pageview.FindAndReplaceDialog</a></code>, <code><a href="zim.gui.widgets.Assistant.html">zim.gui.widgets.Assistant</a></code>, <code><a href="zim.plugins.quicknote.QuickNoteDialog.html">zim.plugins.quicknote.QuickNoteDialog</a></code></div>
     
-    <div><p>Method used in test suite to set "interactive" inputs</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">fields</td><td>key value pairs of inputs to set</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="https://docs.python.org/3/library/exceptions.html#KeyError">KeyError</a></td><td>if a key is not recognized</td></tr><tr><td></td><td class="fieldArg"><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></td><td>if the value is of the wrong type and cannot be converted by the widget</td></tr><tr><td></td><td class="fieldArg"><a href="https://docs.python.org/3/library/exceptions.html#AssertionError">AssertionError</a></td><td>if a key is recognized, but the input is not enabled for interactive input - e.g. widget insensitive or hidden</td></tr></table></div>
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Dialog.do_response_cancel">
+    
+  </a>
+  <a name="do_response_cancel">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">do_response_cancel</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3130">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.preferencesdialog.PreferencesDialog.html">zim.gui.preferencesdialog.PreferencesDialog</a></code>, <code><a href="zim.plugins.tableeditor.EditTableDialog.html">zim.plugins.tableeditor.EditTableDialog</a></code></div>
+    
+    <div>Handler called when the user clicks the "Cancel" button.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> if the dialog can be destroyed close. Returning <tt class="rst-docutils literal">False</tt> will keep the dialog open.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Note</td></tr><tr><td colspan="2">this method is <strong>not</strong> called when the dialog is closed using e.g. the "[x]" button in the window decoration. It is only used when the user explicitly clicks "Cancel".</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: implementation</td></tr><tr><td colspan="2">can be implemented by sub-classes that have an "Cancel" button</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Dialog.do_response_ok">
+    
+  </a>
+  <a name="do_response_ok">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">do_response_ok</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3118">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.applications.AddApplicationDialog.html">zim.gui.applications.AddApplicationDialog</a></code>, <code><a href="zim.gui.customtools.EditCustomToolDialog.html">zim.gui.customtools.EditCustomToolDialog</a></code>, <code><a href="zim.gui.exportdialog.ExportDialog.html">zim.gui.exportdialog.ExportDialog</a></code>, <code><a href="zim.gui.mainwindow.OpenPageDialog.html">zim.gui.mainwindow.OpenPageDialog</a></code>, <code><a href="zim.gui.notebookdialog.AddNotebookDialog.html">zim.gui.notebookdialog.AddNotebookDialog</a></code>, <code><a href="zim.gui.notebookdialog.NotebookDialog.html">zim.gui.notebookdialog.NotebookDialog</a></code>, <code><a href="zim.gui.pageview.EditImageDialog.html">zim.gui.pageview.EditImageDialog</a></code>, <code><a href="zim.gui.pageview.InsertDateDialog.html">zim.gui.pageview.InsertDateDialog</a></code>, <code><a href="zim.gui.pageview.InsertLinkDialog.html">zim.gui.pageview.InsertLinkDialog</a></code>, <code><a href="zim.gui.pageview.MoveTextDialog.html">zim.gui.pageview.MoveTextDialog</a></code>, <code><a href="zim.gui.pageview.NewFileDialog.html">zim.gui.pageview.NewFileDialog</a></code>, <code><a href="zim.gui.pageview.PromptExistingFileDialog.html">zim.gui.pageview.PromptExistingFileDialog</a></code>, <code><a href="zim.gui.preferencesdialog.PluginConfigureDialog.html">zim.gui.preferencesdialog.PluginConfigureDialog</a></code>, <code><a href="zim.gui.preferencesdialog.PreferencesDialog.html">zim.gui.preferencesdialog.PreferencesDialog</a></code>, <code><a href="zim.gui.propertiesdialog.PropertiesDialog.html">zim.gui.propertiesdialog.PropertiesDialog</a></code>, <code><a href="zim.gui.templateeditordialog.PromptNameDialog.html">zim.gui.templateeditordialog.PromptNameDialog</a></code>, <code><a href="zim.gui.uiactions.DeletePageDialog.html">zim.gui.uiactions.DeletePageDialog</a></code>, <code><a href="zim.gui.uiactions.MovePageDialog.html">zim.gui.uiactions.MovePageDialog</a></code>, <code><a href="zim.gui.uiactions.NewPageDialog.html">zim.gui.uiactions.NewPageDialog</a></code>, <code><a href="zim.gui.uiactions.TrashPageDialog.html">zim.gui.uiactions.TrashPageDialog</a></code>, <code><a href="zim.gui.widgets.FileDialog.html">zim.gui.widgets.FileDialog</a></code>, <code><a href="zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog.html">zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog</a></code>, <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorDialog.html">zim.plugins.base.imagegenerator.ImageGeneratorDialog</a></code>, <code><a href="zim.plugins.commandpalette.ZimCommandPaletteDialog.html">zim.plugins.commandpalette.ZimCommandPaletteDialog</a></code>, <code><a href="zim.plugins.insertsymbol.InsertSymbolDialog.html">zim.plugins.insertsymbol.InsertSymbolDialog</a></code>, <code><a href="zim.plugins.quicknote.QuickNoteDialog.html">zim.plugins.quicknote.QuickNoteDialog</a></code>, <code><a href="zim.plugins.screenshot.InsertScreenshotDialog.html">zim.plugins.screenshot.InsertScreenshotDialog</a></code>, <code><a href="zim.plugins.sourceview.InsertCodeBlockDialog.html">zim.plugins.sourceview.InsertCodeBlockDialog</a></code>, <code><a href="zim.plugins.tableeditor.EditTableDialog.html">zim.plugins.tableeditor.EditTableDialog</a></code>, <code><a href="zim.plugins.versioncontrol.SaveVersionDialog.html">zim.plugins.versioncontrol.SaveVersionDialog</a></code>, <code><a href="zim.plugins.versioncontrol.VersionControlInitDialog.html">zim.plugins.versioncontrol.VersionControlInitDialog</a></code></div>
+    
+    <div>Handler called when the user clicks the "OK" button (or an equivalent button)<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> if successfull and the dialog can close. Returns <tt class="rst-docutils literal">False</tt> if e.g. input is not valid, this will keep the dialog open.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: implementation</td></tr><tr><td colspan="2">must be implemented by sub-classes that have an "OK" button</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.gui.widgets.Dialog.get_input">
     
@@ -634,7 +517,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">get_input</span>(self, key):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3028">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3014">
       
       (source)
     </a>
@@ -642,9 +525,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Method used in test suite to get "interactive" inputs</p></div>
+    <div>Method used in test suite to get "interactive" inputs</div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.gui.widgets.Dialog.get_input_enabled">
     
@@ -655,7 +539,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">get_input_enabled</span>(self, key):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3038">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3024">
       
       (source)
     </a>
@@ -667,26 +551,28 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.Dialog.run">
+  
+  <a name="zim.gui.widgets.Dialog.on_destroy">
     
   </a>
-  <a name="run">
+  <a name="on_destroy">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">run</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3042">
+    <span class="py-keyword">def</span> <span class="py-defname">on_destroy</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2914">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.widgets.Assistant.html">zim.gui.widgets.Assistant</a></code>, <code><a href="zim.plugins.insertsymbol.InsertSymbolDialog.html">zim.plugins.insertsymbol.InsertSymbolDialog</a></code>, <code><a href="zim.plugins.quicknote.QuickNoteDialog.html">zim.plugins.quicknote.QuickNoteDialog</a></code></div>
     
-    <div><p>Wrapper for <code>Gtk.Dialog.run()</code>, also calls <code>show_all()</code></p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>self.result</code></td></tr></table></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.gui.widgets.Dialog.present">
     
@@ -697,7 +583,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">present</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3055">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3041">
       
       (source)
     </a>
@@ -709,6 +595,117 @@
   </div>
 </div><div class="basemethod">
   
+  
+  <a name="zim.gui.widgets.Dialog.response_ok">
+    
+  </a>
+  <a name="response_ok">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">response_ok</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3058">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Trigger the response signal with response type 'OK'.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Dialog.run">
+    
+  </a>
+  <a name="run">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">run</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3028">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.widgets.Assistant.html">zim.gui.widgets.Assistant</a></code>, <code><a href="zim.plugins.insertsymbol.InsertSymbolDialog.html">zim.plugins.insertsymbol.InsertSymbolDialog</a></code>, <code><a href="zim.plugins.quicknote.QuickNoteDialog.html">zim.plugins.quicknote.QuickNoteDialog</a></code></div>
+    
+    <div>Wrapper for <tt class="rst-docutils literal">Gtk.Dialog.run()</tt>, also calls <tt class="rst-docutils literal">show_all()</tt><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">self.result</tt></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Dialog.save_uistate">
+    
+  </a>
+  <a name="save_uistate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">save_uistate</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3146">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.pageview.InsertDateDialog.html">zim.gui.pageview.InsertDateDialog</a></code>, <code><a href="zim.plugins.quicknote.QuickNoteDialog.html">zim.plugins.quicknote.QuickNoteDialog</a></code>, <code><a href="zim.plugins.versioncontrol.VersionsDialog.html">zim.plugins.versioncontrol.VersionsDialog</a></code></div>
+    
+    <div>Method when the dialog is about to exit or hide and wants to save the uistate. Sub-classes implementing this method should use it to set additional state parameter in <tt class="rst-docutils literal">self.uistate</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: implementation</td></tr><tr><td colspan="2">can be implemented by sub-classes that have some additional uistate to save</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Dialog.set_help">
+    
+  </a>
+  <a name="set_help">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_help</span>(self, pagename):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2932">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Set the name of the manual page with help for this dialog. Setting this will add a "help" button to the dialog.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pagename</span></td><td class="fieldArgDesc">the manual page name</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Dialog.set_input">
+    
+  </a>
+  <a name="set_input">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_input</span>(self, **fields):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2995">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.pageview.FindAndReplaceDialog.html">zim.gui.pageview.FindAndReplaceDialog</a></code></div>
+    
+    <div>Method used in test suite to set "interactive" inputs<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**fields</span></td><td class="fieldArgDesc">key value pairs of inputs to set</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#KeyError">KeyError</a></code></td><td>if a key is not recognized</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></code></td><td>if the value is of the wrong type and cannot be converted by the widget</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#AssertionError">AssertionError</a></code></td><td>if a key is recognized, but the input is not enabled for interactive input - e.g. widget insensitive or hidden</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
   <a name="zim.gui.widgets.Dialog.show">
     
   </a>
@@ -718,7 +715,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">show</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3063">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3049">
       
       (source)
     </a>
@@ -730,6 +727,7 @@
   </div>
 </div><div class="basemethod">
   
+  
   <a name="zim.gui.widgets.Dialog.show_all">
     
   </a>
@@ -739,7 +737,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">show_all</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3066">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3052">
       
       (source)
     </a>
@@ -751,138 +749,200 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.Dialog.response_ok">
-    
-  </a>
-  <a name="response_ok">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">response_ok</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3074">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Trigger the response signal with response type 'OK'.</p></div>
-  </div>
-</div><div class="basemethod">
   
-  <a name="zim.gui.widgets.Dialog.assert_response_ok">
+  <a name="zim.gui.widgets.Dialog.show_help">
     
   </a>
-  <a name="assert_response_ok">
+  <a name="show_help">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">assert_response_ok</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3078">
+    <span class="py-keyword">def</span> <span class="py-defname">show_help</span>(self, page=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2943">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.widgets.Assistant.html">zim.gui.widgets.Assistant</a></code></div>
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.notebookdialog.NotebookDialog.html">zim.gui.notebookdialog.NotebookDialog</a></code></div>
     
-    <div><p>Like <code><a href="#response_ok">response_ok()</a></code>, but raise an error when <code><a href="#do_response_ok">do_response_ok</a></code> returns <code>False</code>. Also it explicitly does not handle errors in <code><a href="#do_response_ok">do_response_ok</a></code>. Intended for use by the test suite.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>self.result</code></td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="https://docs.python.org/3/library/exceptions.html#AssertionError">AssertionError</a></td><td>if <code><a href="#do_response_ok">do_response_ok</a></code> returns <code>False</code></td></tr></table></div>
+    <div>Show a help page<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">page</span></td><td class="fieldArgDesc">the manual page, if <tt class="rst-docutils literal">None</tt> the page as set with <code><a href="#set_help">set_help()</a></code> is used</td></tr></table></div>
   </div>
-</div><div class="basemethod">
+</div><div class="baseinstancevariable">
   
-  <a name="zim.gui.widgets.Dialog.do_response">
+  
+  <a name="zim.gui.widgets.Dialog.destroyed">
     
   </a>
-  <a name="do_response">
+  <a name="destroyed">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">do_response</span>(self, id):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3092">
+    <span class="py-defname">destroyed</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2793">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.pageview.FindAndReplaceDialog.html">zim.gui.pageview.FindAndReplaceDialog</a></code>, <code><a href="zim.gui.widgets.Assistant.html">zim.gui.widgets.Assistant</a></code>, <code><a href="zim.plugins.quicknote.QuickNoteDialog.html">zim.plugins.quicknote.QuickNoteDialog</a></code>, <code><a href="zim.plugins.tasklist.gui.TaskListDialog.html">zim.plugins.tasklist.gui.TaskListDialog</a></code></div>
+  <div class="functionBody">
+    
+    
+    <div>when <tt class="rst-docutils literal">True</tt> the dialog is already destroyed</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.widgets.Dialog.form">
+    
+  </a>
+  <a name="form">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">form</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2788">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.propertiesdialog.PropertiesDialog.html">zim.gui.propertiesdialog.PropertiesDialog</a></code>, <code><a href="zim.plugins.quicknote.QuickNoteDialog.html">zim.plugins.quicknote.QuickNoteDialog</a></code></div>
+    
+    <div><code><a href="zim.gui.widgets.InputForm.html">InputForm</a></code> added by <tt class="rst-docutils literal">add_form()</tt></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.widgets.Dialog.help_page">
+    
+  </a>
+  <a name="help_page">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">help_page</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2937">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
-</div><div class="basemethod">
+</div><div class="baseinstancevariable">
   
-  <a name="zim.gui.widgets.Dialog.do_response_ok">
+  
+  <a name="zim.gui.widgets.Dialog.result">
     
   </a>
-  <a name="do_response_ok">
+  <a name="result">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">do_response_ok</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3134">
+    <span class="py-defname">result</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2792">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.applications.AddApplicationDialog.html">zim.gui.applications.AddApplicationDialog</a></code>, <code><a href="zim.gui.customtools.EditCustomToolDialog.html">zim.gui.customtools.EditCustomToolDialog</a></code>, <code><a href="zim.gui.exportdialog.ExportDialog.html">zim.gui.exportdialog.ExportDialog</a></code>, <code><a href="zim.gui.mainwindow.OpenPageDialog.html">zim.gui.mainwindow.OpenPageDialog</a></code>, <code><a href="zim.gui.notebookdialog.AddNotebookDialog.html">zim.gui.notebookdialog.AddNotebookDialog</a></code>, <code><a href="zim.gui.notebookdialog.NotebookDialog.html">zim.gui.notebookdialog.NotebookDialog</a></code>, <code><a href="zim.gui.pageview.EditImageDialog.html">zim.gui.pageview.EditImageDialog</a></code>, <code><a href="zim.gui.pageview.InsertDateDialog.html">zim.gui.pageview.InsertDateDialog</a></code>, <code><a href="zim.gui.pageview.InsertLinkDialog.html">zim.gui.pageview.InsertLinkDialog</a></code>, <code><a href="zim.gui.pageview.MoveTextDialog.html">zim.gui.pageview.MoveTextDialog</a></code>, <code><a href="zim.gui.pageview.NewFileDialog.html">zim.gui.pageview.NewFileDialog</a></code>, <code><a href="zim.gui.pageview.PromptExistingFileDialog.html">zim.gui.pageview.PromptExistingFileDialog</a></code>, <code><a href="zim.gui.preferencesdialog.PluginConfigureDialog.html">zim.gui.preferencesdialog.PluginConfigureDialog</a></code>, <code><a href="zim.gui.preferencesdialog.PreferencesDialog.html">zim.gui.preferencesdialog.PreferencesDialog</a></code>, <code><a href="zim.gui.propertiesdialog.PropertiesDialog.html">zim.gui.propertiesdialog.PropertiesDialog</a></code>, <code><a href="zim.gui.templateeditordialog.PromptNameDialog.html">zim.gui.templateeditordialog.PromptNameDialog</a></code>, <code><a href="zim.gui.uiactions.DeletePageDialog.html">zim.gui.uiactions.DeletePageDialog</a></code>, <code><a href="zim.gui.uiactions.MovePageDialog.html">zim.gui.uiactions.MovePageDialog</a></code>, <code><a href="zim.gui.uiactions.NewPageDialog.html">zim.gui.uiactions.NewPageDialog</a></code>, <code><a href="zim.gui.widgets.FileDialog.html">zim.gui.widgets.FileDialog</a></code>, <code><a href="zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog.html">zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog</a></code>, <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorDialog.html">zim.plugins.base.imagegenerator.ImageGeneratorDialog</a></code>, <code><a href="zim.plugins.commandpalette.ZimCommandPaletteDialog.html">zim.plugins.commandpalette.ZimCommandPaletteDialog</a></code>, <code><a href="zim.plugins.insertsymbol.InsertSymbolDialog.html">zim.plugins.insertsymbol.InsertSymbolDialog</a></code>, <code><a href="zim.plugins.quicknote.QuickNoteDialog.html">zim.plugins.quicknote.QuickNoteDialog</a></code>, <code><a href="zim.plugins.screenshot.InsertScreenshotDialog.html">zim.plugins.screenshot.InsertScreenshotDialog</a></code>, <code><a href="zim.plugins.sourceview.InsertCodeBlockDialog.html">zim.plugins.sourceview.InsertCodeBlockDialog</a></code>, <code><a href="zim.plugins.tableeditor.EditTableDialog.html">zim.plugins.tableeditor.EditTableDialog</a></code>, <code><a href="zim.plugins.versioncontrol.SaveVersionDialog.html">zim.plugins.versioncontrol.SaveVersionDialog</a></code>, <code><a href="zim.plugins.versioncontrol.VersionControlInitDialog.html">zim.plugins.versioncontrol.VersionControlInitDialog</a></code></div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.applications.AddApplicationDialog.html">zim.gui.applications.AddApplicationDialog</a></code>, <code><a href="zim.gui.customtools.EditCustomToolDialog.html">zim.gui.customtools.EditCustomToolDialog</a></code>, <code><a href="zim.gui.notebookdialog.AddNotebookDialog.html">zim.gui.notebookdialog.AddNotebookDialog</a></code>, <code><a href="zim.gui.notebookdialog.NotebookDialog.html">zim.gui.notebookdialog.NotebookDialog</a></code>, <code><a href="zim.gui.pageview.NewFileDialog.html">zim.gui.pageview.NewFileDialog</a></code>, <code><a href="zim.gui.pageview.PromptExistingFileDialog.html">zim.gui.pageview.PromptExistingFileDialog</a></code>, <code><a href="zim.gui.templateeditordialog.PromptNameDialog.html">zim.gui.templateeditordialog.PromptNameDialog</a></code>, <code><a href="zim.gui.uiactions.TrashPageDialog.html">zim.gui.uiactions.TrashPageDialog</a></code>, <code><a href="zim.gui.widgets.FileDialog.html">zim.gui.widgets.FileDialog</a></code>, <code><a href="zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog.html">zim.plugins.attachmentbrowser.filerenamedialog.FileRenameDialog</a></code>, <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorDialog.html">zim.plugins.base.imagegenerator.ImageGeneratorDialog</a></code>, <code><a href="zim.plugins.commandpalette.ZimCommandPaletteDialog.html">zim.plugins.commandpalette.ZimCommandPaletteDialog</a></code>, <code><a href="zim.plugins.sourceview.InsertCodeBlockDialog.html">zim.plugins.sourceview.InsertCodeBlockDialog</a></code>, <code><a href="zim.plugins.tableeditor.EditTableDialog.html">zim.plugins.tableeditor.EditTableDialog</a></code>, <code><a href="zim.plugins.versioncontrol.VersionControlInitDialog.html">zim.plugins.versioncontrol.VersionControlInitDialog</a></code></div>
     
-    <div><p>Handler called when the user clicks the "OK" button (or an equivalent button)</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> if successfull and the dialog can close. Returns <code>False</code> if e.g. input is not valid, this will keep the dialog open.</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">must be implemented by sub-classes that have an "OK" button</td></tr></table></div>
+    <div>result to be returned by <code><a href="#run">run()</a></code></div>
+    
   </div>
-</div><div class="basemethod">
+</div><div class="baseinstancevariable">
   
-  <a name="zim.gui.widgets.Dialog.do_response_cancel">
+  
+  <a name="zim.gui.widgets.Dialog.uistate">
     
   </a>
-  <a name="do_response_cancel">
+  <a name="uistate">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">do_response_cancel</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3146">
+    <span class="py-defname">uistate</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2789">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.preferencesdialog.PreferencesDialog.html">zim.gui.preferencesdialog.PreferencesDialog</a></code>, <code><a href="zim.plugins.tableeditor.EditTableDialog.html">zim.plugins.tableeditor.EditTableDialog</a></code></div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.widgets.Assistant.html">zim.gui.widgets.Assistant</a></code>, <code><a href="zim.plugins.quicknote.QuickNoteDialog.html">zim.plugins.quicknote.QuickNoteDialog</a></code></div>
     
-    <div><p>Handler called when the user clicks the "Cancel" button.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> if the dialog can be destroyed close. Returning <code>False</code> will keep the dialog open.</td></tr><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">this method is <b>not</b> called when the dialog is closed using e.g. the "[x]" button in the window decoration. It is only used when the user explicitly clicks "Cancel".</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">can be implemented by sub-classes that have an "Cancel" button</td></tr></table></div>
+    <div><code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code> to store state of the dialog, persistent per notebook. The size and position of the dialog are stored as automatically in this dict already.</div>
+    
   </div>
-</div><div class="basemethod">
+</div><div class="baseinstancevariable">
   
-  <a name="zim.gui.widgets.Dialog.save_uistate">
+  
+  <a name="zim.gui.widgets.Dialog.vbox">
     
   </a>
-  <a name="save_uistate">
+  <a name="vbox">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">save_uistate</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3161">
+    <span class="py-defname">vbox</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2787">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.pageview.InsertDateDialog.html">zim.gui.pageview.InsertDateDialog</a></code>, <code><a href="zim.plugins.quicknote.QuickNoteDialog.html">zim.plugins.quicknote.QuickNoteDialog</a></code>, <code><a href="zim.plugins.versioncontrol.VersionsDialog.html">zim.plugins.versioncontrol.VersionsDialog</a></code></div>
+  <div class="functionBody">
     
-    <div><p>Method when the dialog is about to exit or hide and wants to save the uistate. Sub-classes implementing this method should use it to set additional state parameter in <code>self.uistate</code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">can be implemented by sub-classes that have some additional uistate to save</td></tr></table></div>
+    
+    <div><tt class="rst-docutils literal">Gtk.VBox</tt> for main widgets of the dialog</div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Dialog._no_ok_action">
+    
+  </a>
+  <a name="_no_ok_action">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_no_ok_action</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2885">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.pageview.PromptExistingFileDialog.html">zim.gui.pageview.PromptExistingFileDialog</a></code>, <code><a href="zim.gui.widgets.Assistant.html">zim.gui.widgets.Assistant</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

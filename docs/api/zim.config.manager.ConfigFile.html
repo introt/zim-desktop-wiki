@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.config.manager.ConfigFile : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.config.manager.ConfigFile</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.config.html">config</a></code>.<code><a href="zim.config.manager.html">manager</a></code>.<code><a href="zim.config.manager.ConfigFile.html">ConfigFile</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.config.html">config</a></code><wbr></wbr>.<code><a href="zim.config.manager.html">manager</a></code><wbr></wbr>.<code><a href="zim.config.manager.ConfigFile.html">ConfigFile</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,31 +65,24 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ConfigFile</span>(<a href="zim.signals.ConnectorMixin.html" title="zim.signals.ConnectorMixin">ConnectorMixin</a>, <a href="zim.signals.SignalEmitter.html" title="zim.signals.SignalEmitter">SignalEmitter</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L178">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ConfigFile</span>(<a href="zim.signals.ConnectorMixin.html" title="zim.signals.ConnectorMixin">ConnectorMixin</a>, <a href="zim.signals.SignalEmitter.html" title="zim.signals.SignalEmitter">SignalEmitter</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L176" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.config.manager.ConfigFile">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Container object for a config file</p><p>Maps to a "base" file in the home folder, used to write new values, and an optional default file, which is used for reading only.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">this class implement similar API to the <code><a href="zim.fs.File.html">File</a></code> class but is explicitly not a sub-class of <code><a href="zim.fs.File.html">File</a></code> because config files should typically not be moved, renamed, etc. It just implements the reading and writing methods.</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: signal</td><td colspan="2"><code>changed ()</code>: emitted when the underlying file changed (based on <code>gio</code> monitoring support).</td></tr></table></div>
+        <div><p>Container object for a config file</p>
+<p>Maps to a "base" file in the home folder, used to write new values, and an optional default file, which is used for reading only.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Note</td></tr><tr><td colspan="2">this class implement similar API to the <code><a href="zim.fs.File.html">File</a></code> class but is explicitly not a sub-class of <code><a href="zim.fs.File.html">File</a></code> because config files should typically not be moved, renamed, etc. It just implements the reading and writing methods.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: signal</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">changed ()</tt>: emitted when the underlying file changed (based on <tt class="rst-docutils literal">gio</tt> monitoring support).</td></tr></table></div>
       </div>
 
       <div id="splitTables">
         <table class="children sortable" id="id82">
   
-  <tr class="instancevariable">
+  
+  <tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#file">file</a></code></td>
-    <td><span>the underlying file object for the base config file in the home folder</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#defaults">defaults</a></code></td>
-    <td><span>a generator that yields default files</span></td>
-  </tr><tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#__signals__">__signals__</a></code></td>
+    <td>Method</td>
+    <td><code><a href="#__eq__">__eq__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
@@ -73,28 +97,13 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#__eq__">__eq__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
     <td><code><a href="#check_has_changed_on_disk">check_has_changed_on_disk</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="property">
-    
-    <td>Property</td>
-    <td><code><a href="#basename">basename</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#exists">exists</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#touch">touch</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -108,18 +117,43 @@
   </tr><tr class="method">
     
     <td>Method</td>
+    <td><code><a href="#remove">remove</a></code></td>
+    <td>Remove user file, leaves default files in place</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#touch">touch</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
     <td><code><a href="#write">write</a></code></td>
-    <td><span>Write base file, see <code><a href="zim.fs.File.html#write">File.write()</a></code></span></td>
+    <td>Write base file, see <code><a href="zim.fs.File.html#write">File.write()</a></code></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#writelines">writelines</a></code></td>
-    <td><span>Write base file, see <code><a href="zim.fs.File.html#writelines">File.writelines()</a></code></span></td>
-  </tr><tr class="method">
+    <td>Write base file, see <code><a href="zim.fs.File.html#writelines">File.writelines()</a></code></td>
+  </tr><tr class="classvariable">
     
-    <td>Method</td>
-    <td><code><a href="#remove">remove</a></code></td>
-    <td><span>Remove user file, leaves default files in place</span></td>
+    <td>Class Variable</td>
+    <td><code><a href="#__signals__">__signals__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#defaults">defaults</a></code></td>
+    <td>a generator that yields default files</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#file">file</a></code></td>
+    <td>the underlying file object for the base config file in the home folder</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#basename">basename</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
         
@@ -128,35 +162,36 @@
           </p>
           <table class="children sortable" id="id83">
   
+  
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto">connectto</a></code></td>
-    <td><span>Connect to signals of another object E.g.:</span></td>
+    <td>Connect to signals of another object E.g.:</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto_all">connectto_all</a></code></td>
-    <td><span>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
-    <td><span>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</span></td>
+    <td>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_all">disconnect_all</a></code></td>
-    <td><span>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</span></td>
-  </tr><tr class="baseinstancevariable private">
+    <td>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</td>
+  </tr><tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
+    <td>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#_disconnect_from">_disconnect_from</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -166,6 +201,7 @@
           </p>
           <table class="children sortable" id="id84">
   
+  
   <tr class="basemethod">
     
     <td>Method</td>
@@ -174,13 +210,18 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#block_signals">block_signals</a></code></td>
+    <td>Returns a context manager for blocking one or more signals</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#connect">connect</a></code></td>
-    <td><span>Register a handler for a specific object.</span></td>
+    <td>Register a handler for a specific object.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#connect_after">connect_after</a></code></td>
-    <td><span>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</span></td>
+    <td>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -195,17 +236,12 @@
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#emit_return_first">emit_return_first</a></code></td>
-    <td><span>Emits a signal and stops emission on the first handler that returns a not-None value.</span></td>
+    <td>Emits a signal and stops emission on the first handler that returns a not-None value.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#emit_return_iter">emit_return_iter</a></code></td>
-    <td><span>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.signals.SignalEmitter.html#block_signals">block_signals</a></code></td>
-    <td><span>Returns a context manager for blocking one or more signals</span></td>
+    <td>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -230,112 +266,8 @@
 
       <div id="childList">
 
-        <div class="baseinstancevariable">
+        <div class="basemethod">
   
-  <a name="zim.config.manager.ConfigFile.file">
-    
-  </a>
-  <a name="file">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">file</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L184">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div>the underlying file object for the base config file in the home folder</div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.config.manager.ConfigFile.defaults">
-    
-  </a>
-  <a name="defaults">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">defaults</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L186">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div>a generator that yields default files</div>
-  </div>
-</div><div class="baseclassvariable">
-  
-  <a name="zim.config.manager.ConfigFile.__signals__">
-    
-  </a>
-  <a name="__signals__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">__signals__</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L197">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.signals.SignalEmitter.html#__signals__">zim.signals.SignalEmitter.__signals__</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.config.manager.ConfigFile.__init__">
-    
-  </a>
-  <a name="__init__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, file, defaults=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L201">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.config.manager.ConfigFile.__repr__">
-    
-  </a>
-  <a name="__repr__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L205">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.config.manager.ConfigFile.__eq__">
     
@@ -346,7 +278,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L208">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L206">
       
       (source)
     </a>
@@ -357,6 +289,51 @@
     <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.config.manager.ConfigFile.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, file, defaults=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L199">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.config.manager.ConfigFile.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L203">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.config.manager.ConfigFile.check_has_changed_on_disk">
     
@@ -367,7 +344,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">check_has_changed_on_disk</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L212">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L210">
       
       (source)
     </a>
@@ -377,28 +354,8 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="baseproperty">
-  
-  <a name="zim.config.manager.ConfigFile.basename">
-    
-  </a>
-  <a name="basename">
-    
-  </a>
-  <div class="functionHeader">
-    @property<br />
-    <span class="py-defname">basename</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L215">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.config.manager.ConfigFile.exists">
     
@@ -409,7 +366,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">exists</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L219">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L217">
       
       (source)
     </a>
@@ -421,26 +378,6 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.config.manager.ConfigFile.touch">
-    
-  </a>
-  <a name="touch">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">touch</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L223">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Ensure the custom file in the home folder exists. Either by copying a default config file, or touching an empty file. Intended to be called before trying to edit the file with an external editor.</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.config.manager.ConfigFile.read">
     
@@ -450,8 +387,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">read</span>(self, fail=False):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L236">
+    <span class="py-keyword">def</span> <span class="py-defname">read</span>(self, fail=<a href="https://docs.python.org/3/library/constants.html#False">False</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L234">
       
       (source)
     </a>
@@ -459,9 +396,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Read the base file or first default file</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">fail</td><td>if <code>True</code> a <code><a href="https://docs.python.org/3/library/exceptions.html#FileNotFoundError">FileNotFoundError</a></code> error is raised when neither the base file or a default file are found. If <code>False</code> it will return <code>''</code> for a non-existing file.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">file content as a string</td></tr></table></div>
+    <div>Read the base file or first default file<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fail</span></td><td class="fieldArgDesc">if <tt class="rst-docutils literal">True</tt> a <code><a href="https://docs.python.org/3/library/exceptions.html#FileNotFoundError">FileNotFoundError</a></code> error is raised when neither the base file or a default file are found. If <tt class="rst-docutils literal">False</tt> it will return <tt class="rst-docutils literal">''</tt> for a non-existing file.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">file content as a string</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.config.manager.ConfigFile.readlines">
     
@@ -471,8 +409,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">readlines</span>(self, fail=False):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L254">
+    <span class="py-keyword">def</span> <span class="py-defname">readlines</span>(self, fail=<a href="https://docs.python.org/3/library/constants.html#False">False</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L252">
       
       (source)
     </a>
@@ -480,51 +418,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Read the base file or first default file</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">fail</td><td>if <code>True</code> a <code><a href="https://docs.python.org/3/library/exceptions.html#FileNotFoundError">FileNotFoundError</a></code> error is raised when neither the base file or a default file are found. If <code>False</code> it will return <code>[]</code> for a non-existing file.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">file content as a list of lines</td></tr></table></div>
+    <div>Read the base file or first default file<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fail</span></td><td class="fieldArgDesc">if <tt class="rst-docutils literal">True</tt> a <code><a href="https://docs.python.org/3/library/exceptions.html#FileNotFoundError">FileNotFoundError</a></code> error is raised when neither the base file or a default file are found. If <tt class="rst-docutils literal">False</tt> it will return <tt class="rst-docutils literal">[]</tt> for a non-existing file.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">file content as a list of lines</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.config.manager.ConfigFile.write">
-    
-  </a>
-  <a name="write">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">write</span>(self, text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L272">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Write base file, see <code><a href="zim.fs.File.html#write">File.write()</a></code></p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.config.manager.ConfigFile.writelines">
-    
-  </a>
-  <a name="writelines">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">writelines</span>(self, lines):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L277">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Write base file, see <code><a href="zim.fs.File.html#writelines">File.writelines()</a></code></p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.config.manager.ConfigFile.remove">
     
@@ -535,7 +432,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">remove</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L282">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L280">
       
       (source)
     </a>
@@ -543,16 +440,179 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Remove user file, leaves default files in place</p></div>
+    <div>Remove user file, leaves default files in place</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.config.manager.ConfigFile.touch">
+    
+  </a>
+  <a name="touch">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">touch</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L221">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Ensure the custom file in the home folder exists. Either by copying a default config file, or touching an empty file. Intended to be called before trying to edit the file with an external editor.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.config.manager.ConfigFile.write">
+    
+  </a>
+  <a name="write">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">write</span>(self, text):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L270">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Write base file, see <code><a href="zim.fs.File.html#write">File.write()</a></code></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.config.manager.ConfigFile.writelines">
+    
+  </a>
+  <a name="writelines">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">writelines</span>(self, lines):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L275">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Write base file, see <code><a href="zim.fs.File.html#writelines">File.writelines()</a></code></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="zim.config.manager.ConfigFile.__signals__">
+    
+  </a>
+  <a name="__signals__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__signals__</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L195">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.signals.SignalEmitter.html#__signals__">zim.signals.SignalEmitter.__signals__</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.config.manager.ConfigFile.defaults">
+    
+  </a>
+  <a name="defaults">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">defaults</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L184">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>a generator that yields default files</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.config.manager.ConfigFile.file">
+    
+  </a>
+  <a name="file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">file</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L182">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>the underlying file object for the base config file in the home folder</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="zim.config.manager.ConfigFile.basename">
+    
+  </a>
+  <a name="basename">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property">property</a><br />
+    <span class="py-defname">basename</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L213">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

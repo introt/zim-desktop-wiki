@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>zim.notebook.content_updater</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.notebook.html">notebook</a></code><wbr></wbr>.<code><a href="zim.notebook.content_updater.html">content_updater</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/content_updater.py" class="sourceLink">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="undocumented">Undocumented</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id691">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#replace_parsetree_links_and_copy_images">replace_parsetree_links_and_copy_images</a></code></td>
+    <td>Changes parsetree in place to resolve links for the new location Also copies images to the new location</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#set_parsetree_attributes_to_resolve_links">set_parsetree_attributes_to_resolve_links</a></code></td>
+    <td>Changes parsetree in place so links can later be resolved against the source page</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#update_parsetree_and_copy_images">update_parsetree_and_copy_images</a></code></td>
+    <td>Convenience method to update parsetree in place and copy any images for use in a new page</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_copy_image">_copy_image</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_copy_image_object">_copy_image_object</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_replace_links_to_interwiki_and_copy_images">_replace_links_to_interwiki_and_copy_images</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_replace_links_to_page_and_copy_images">_replace_links_to_page_and_copy_images</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_resolve_links_and_images">_resolve_links_and_images</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_strip_link_and_image_attribs">_strip_link_and_image_attribs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_update_image">_update_image</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  
+  <a name="zim.notebook.content_updater.replace_parsetree_links_and_copy_images">
+    
+  </a>
+  <a name="replace_parsetree_links_and_copy_images">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">replace_parsetree_links_and_copy_images</span>(parsetree, notebook, path):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/content_updater.py#L71">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Changes parsetree in place to resolve links for the new location Also copies images to the new location</p>
+<p>TODO: in theory you want the move images in certain cases - e.g. on clipboard "cut" operation. However at the moment we cannot check links from other pages to the image file; so it is not wise to do so. Improve logic when this is possible and add a "cut/copy" switch to the method. On "cut" move if no other use of the image on the same (old) page and update links in other pages; else copy.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.notebook.content_updater.set_parsetree_attributes_to_resolve_links">
+    
+  </a>
+  <a name="set_parsetree_attributes_to_resolve_links">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_parsetree_attributes_to_resolve_links</span>(parsetree, notebook, path):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/content_updater.py#L28">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Changes parsetree in place so links can later be resolved against the source page</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.notebook.content_updater.update_parsetree_and_copy_images">
+    
+  </a>
+  <a name="update_parsetree_and_copy_images">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">update_parsetree_and_copy_images</span>(parsetree, notebook, oldpath, newpath):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/content_updater.py#L20">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Convenience method to update parsetree in place and copy any images for use in a new page</div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.notebook.content_updater.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/content_updater.py#L17">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.notebook.content_updater._copy_image">
+    
+  </a>
+  <a name="_copy_image">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_copy_image</span>(notebook, new_path, src_file, node):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/content_updater.py#L216">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.notebook.content_updater._copy_image_object">
+    
+  </a>
+  <a name="_copy_image_object">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_copy_image_object</span>(notebook, new_path, src_file, node):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/content_updater.py#L224">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.notebook.content_updater._replace_links_to_interwiki_and_copy_images">
+    
+  </a>
+  <a name="_replace_links_to_interwiki_and_copy_images">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_replace_links_to_interwiki_and_copy_images</span>(src_interwiki, notebook, new_path, node):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/content_updater.py#L118">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.notebook.content_updater._replace_links_to_page_and_copy_images">
+    
+  </a>
+  <a name="_replace_links_to_page_and_copy_images">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_replace_links_to_page_and_copy_images</span>(notebook, old_folder, new_path, node):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/content_updater.py#L160">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.notebook.content_updater._resolve_links_and_images">
+    
+  </a>
+  <a name="_resolve_links_and_images">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_resolve_links_and_images</span>(notebook, src_path, node):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/content_updater.py#L40">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.notebook.content_updater._strip_link_and_image_attribs">
+    
+  </a>
+  <a name="_strip_link_and_image_attribs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_strip_link_and_image_attribs</span>(node):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/content_updater.py#L106">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.notebook.content_updater._update_image">
+    
+  </a>
+  <a name="_update_image">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_image</span>(notebook, new_path, src_file, node):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/content_updater.py#L209">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

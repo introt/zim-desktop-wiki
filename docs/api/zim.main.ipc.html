@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.main.ipc : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.main.ipc</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.main.html">main</a></code>.<code><a href="zim.main.ipc.html">ipc</a></code></code></h1>
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.main.html">main</a></code><wbr></wbr>.<code><a href="zim.main.ipc.html">ipc</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,37 +65,59 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py">(source)</a>
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>This module is responsible for the inter-process communication (ipc) between zim instances.</p><p>It provides low level functions to:</p><ol><li>Dispatching a list of commandline arguments to a socket</li><li>Listening to a socket for commandline arguments. If recieved, a callback is invoked to handle those arguments.</li></ol></div>
+        <div><p>This module is responsible for the inter-process communication (ipc) between zim instances.</p>
+<p>It provides low level functions to:</p>
+<ol class="rst-simple">
+<li>Dispatching a list of commandline arguments to a socket</li>
+<li>Listening to a socket for commandline arguments. If recieved, a callback is invoked to handle those arguments.</li>
+</ol>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id608">
+        <table class="children sortable" id="id580">
   
-  <tr class="variable">
+  
+  <tr class="function">
     
-    <td>Variable</td>
-    <td><code><a href="#GObject">GObject</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#logger">logger</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Function</td>
+    <td><code><a href="#dispatch">dispatch</a></code></td>
+    <td>If there is an existing zim process pass along the arguments @param args: commandline arguments @raises AssertionError: when no existing zim process or connection failed</td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#get_in_main_process">get_in_main_process</a></code></td>
-    <td><span>Returns <code>True</code> if we are already in the main process</span></td>
+    <td>Returns <tt class="rst-docutils literal">True</tt> if we are already in the main process</td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#set_in_main_process">set_in_main_process</a></code></td>
-    <td><span>Set whether we are in the main process or not</span></td>
+    <td>Set whether we are in the main process or not</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#start_listening">start_listening</a></code></td>
+    <td>Start listening to socket or named pipe for new commandline calls. Also sets current process to be the main process. @param handler: the method to call when new commands are recieveds</td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#SERVER_ADDRESS">SERVER_ADDRESS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#SERVER_ADDRESS_FAMILY">SERVER_ADDRESS_FAMILY</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#GObject">GObject</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
     <td>Variable</td>
@@ -73,17 +126,7 @@
   </tr><tr class="variable">
     
     <td>Variable</td>
-    <td><code><a href="#userstring">userstring</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#SERVER_ADDRESS">SERVER_ADDRESS</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#SERVER_ADDRESS_FAMILY">SERVER_ADDRESS_FAMILY</a></code></td>
+    <td><code><a href="#logger">logger</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
@@ -95,30 +138,15 @@
     <td>Variable</td>
     <td><code><a href="#tmpdir">tmpdir</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#dispatch">dispatch</a></code></td>
-    <td><span>If there is an existing zim process pass along the arguments @param args: commandline arguments @raises AssertionError: when no existing zim process or connection failed</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#start_listening">start_listening</a></code></td>
-    <td><span>Start listening to socket or named pipe for new commandline calls. Also sets current process to be the main process. @param handler: the method to call when new commands are recieveds</span></td>
-  </tr><tr class="variable private">
+  </tr><tr class="variable">
     
     <td>Variable</td>
-    <td><code><a href="#_IN_MAIN_PROCESS">_IN_MAIN_PROCESS</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable private">
-    
-    <td>Variable</td>
-    <td><code><a href="#_m">_m</a></code></td>
+    <td><code><a href="#userstring">userstring</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="function private">
     
     <td>Function</td>
-    <td><code><a href="#_listener_thread_main">_listener_thread_main</a></code></td>
+    <td><code><a href="#_close_listener">_close_listener</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="function private">
     
@@ -133,7 +161,17 @@
   </tr><tr class="function private">
     
     <td>Function</td>
-    <td><code><a href="#_close_listener">_close_listener</a></code></td>
+    <td><code><a href="#_listener_thread_main">_listener_thread_main</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_IN_MAIN_PROCESS">_IN_MAIN_PROCESS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_m">_m</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -144,259 +182,8 @@
 
       <div id="childList">
 
-        <div class="basevariable">
+        <div class="basefunction">
   
-  <a name="zim.main.ipc.GObject">
-    
-  </a>
-  <a name="GObject">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">GObject</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L32">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.main.ipc.logger">
-    
-  </a>
-  <a name="logger">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">logger</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L38">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable private">
-  
-  <a name="zim.main.ipc._IN_MAIN_PROCESS">
-    
-  </a>
-  <a name="_IN_MAIN_PROCESS">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_IN_MAIN_PROCESS</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L41">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.main.ipc.get_in_main_process">
-    
-  </a>
-  <a name="get_in_main_process">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_in_main_process</span>():
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L44">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Returns <code>True</code> if we are already in the main process</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.main.ipc.set_in_main_process">
-    
-  </a>
-  <a name="set_in_main_process">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">set_in_main_process</span>(in_main_process):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L49">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Set whether we are in the main process or not</p></div>
-  </div>
-</div><div class="basevariable private">
-  
-  <a name="zim.main.ipc._m">
-    
-  </a>
-  <a name="_m">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_m</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L56">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.main.ipc.key">
-    
-  </a>
-  <a name="key">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">key</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L59">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.main.ipc.userstring">
-    
-  </a>
-  <a name="userstring">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">userstring</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L65">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.main.ipc.SERVER_ADDRESS">
-    
-  </a>
-  <a name="SERVER_ADDRESS">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">SERVER_ADDRESS</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L66">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.main.ipc.SERVER_ADDRESS_FAMILY">
-    
-  </a>
-  <a name="SERVER_ADDRESS_FAMILY">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">SERVER_ADDRESS_FAMILY</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L67">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.main.ipc.runtime_dir">
-    
-  </a>
-  <a name="runtime_dir">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">runtime_dir</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L72">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.main.ipc.tmpdir">
-    
-  </a>
-  <a name="tmpdir">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">tmpdir</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L76">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
   
   <a name="zim.main.ipc.dispatch">
     
@@ -407,7 +194,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">dispatch</span>(*args):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L118">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L118">
       
       (source)
     </a>
@@ -415,9 +202,54 @@
   <div class="docstring functionBody">
     
     
-    <div><p>If there is an existing zim process pass along the arguments</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">args</td><td>commandline arguments</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="https://docs.python.org/3/library/exceptions.html#AssertionError">AssertionError</a></td><td>when no existing zim process or connection failed</td></tr></table></div>
+    <div>If there is an existing zim process pass along the arguments<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">*args</span></td><td class="fieldArgDesc">commandline arguments</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#AssertionError">AssertionError</a></code></td><td>when no existing zim process or connection failed</td></tr></table></div>
   </div>
 </div><div class="basefunction">
+  
+  
+  <a name="zim.main.ipc.get_in_main_process">
+    
+  </a>
+  <a name="get_in_main_process">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_in_main_process</span>():
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L44">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns <tt class="rst-docutils literal">True</tt> if we are already in the main process</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.main.ipc.set_in_main_process">
+    
+  </a>
+  <a name="set_in_main_process">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_in_main_process</span>(in_main_process):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L49">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Set whether we are in the main process or not</div>
+  </div>
+</div><div class="basefunction">
+  
   
   <a name="zim.main.ipc.start_listening">
     
@@ -428,7 +260,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">start_listening</span>(handler):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L142">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L142">
       
       (source)
     </a>
@@ -436,72 +268,194 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Start listening to socket or named pipe for new commandline calls. Also sets current process to be the main process.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">handler</td><td>the method to call when new commands are recieveds</td></tr></table></div>
+    <div>Start listening to socket or named pipe for new commandline calls. Also sets current process to be the main process.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">handler</span></td><td class="fieldArgDesc">the method to call when new commands are recieveds</td></tr></table></div>
   </div>
-</div><div class="basefunction private">
+</div><div class="baseconstant">
   
-  <a name="zim.main.ipc._listener_thread_main">
+  
+  <a name="zim.main.ipc.SERVER_ADDRESS">
     
   </a>
-  <a name="_listener_thread_main">
+  <a name="SERVER_ADDRESS">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_listener_thread_main</span>(listener, handler):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L176">
+    <span class="py-defname">SERVER_ADDRESS</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L66">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>(<a href="#runtime_dir">runtime_dir</a>+<span class="rst-variable-quote">'</span><span class="rst-variable-string">/zim-</span><span class="rst-variable-quote">'</span>)+<a href="#key">key</a></code></pre></td></tr></table>
   </div>
-</div><div class="basefunction private">
+</div><div class="baseconstant">
   
-  <a name="zim.main.ipc._do_accept">
+  
+  <a name="zim.main.ipc.SERVER_ADDRESS_FAMILY">
     
   </a>
-  <a name="_do_accept">
+  <a name="SERVER_ADDRESS_FAMILY">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_do_accept</span>(listener, handler, *a):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L181">
+    <span class="py-defname">SERVER_ADDRESS_FAMILY</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L67">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">AF_UNIX</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basefunction private">
+</div><div class="basevariable">
   
-  <a name="zim.main.ipc._get_socket_for_listener">
+  
+  <a name="zim.main.ipc.GObject">
     
   </a>
-  <a name="_get_socket_for_listener">
+  <a name="GObject">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_get_socket_for_listener</span>(listener):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L208">
+    <span class="py-defname">GObject</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L32">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.main.ipc.key">
+    
+  </a>
+  <a name="key">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">key</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L59">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.main.ipc.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L38">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.main.ipc.runtime_dir">
+    
+  </a>
+  <a name="runtime_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">runtime_dir</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L72">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.main.ipc.tmpdir">
+    
+  </a>
+  <a name="tmpdir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">tmpdir</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L76">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.main.ipc.userstring">
+    
+  </a>
+  <a name="userstring">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">userstring</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L65">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basefunction private">
+  
   
   <a name="zim.main.ipc._close_listener">
     
@@ -512,7 +466,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_close_listener</span>():
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L219">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L219">
       
       (source)
     </a>
@@ -522,14 +476,131 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.main.ipc._do_accept">
+    
+  </a>
+  <a name="_do_accept">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_do_accept</span>(listener, handler, *a):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L181">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.main.ipc._get_socket_for_listener">
+    
+  </a>
+  <a name="_get_socket_for_listener">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_socket_for_listener</span>(listener):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L208">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.main.ipc._listener_thread_main">
+    
+  </a>
+  <a name="_listener_thread_main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_listener_thread_main</span>(listener, handler):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L176">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="zim.main.ipc._IN_MAIN_PROCESS">
+    
+  </a>
+  <a name="_IN_MAIN_PROCESS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_IN_MAIN_PROCESS</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L41">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><a href="https://docs.python.org/3/library/constants.html#False">False</a></code></pre></td></tr></table>
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="zim.main.ipc._m">
+    
+  </a>
+  <a name="_m">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_m</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/ipc.py#L56">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

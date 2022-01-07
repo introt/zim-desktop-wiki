@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.gui.widgets.Assistant : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.gui.widgets.Assistant</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.widgets.html">widgets</a></code>.<code><a href="zim.gui.widgets.Assistant.html">Assistant</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.gui.html">gui</a></code><wbr></wbr>.<code><a href="zim.gui.widgets.html">widgets</a></code><wbr></wbr>.<code><a href="zim.gui.widgets.Assistant.html">Assistant</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,32 +65,71 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Assistant</span>(<a href="zim.gui.widgets.Dialog.html" title="zim.gui.widgets.Dialog">Dialog</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3793">(source)</a></code></p><p>Known subclasses: <code><a href="zim.gui.exportdialog.ExportDialog.html">zim.gui.exportdialog.ExportDialog</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Assistant</span>(<a href="zim.gui.widgets.Dialog.html" title="zim.gui.widgets.Dialog">Dialog</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3778" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="zim.gui.exportdialog.ExportDialog.html">zim.gui.exportdialog.ExportDialog</a></code></p>
         <p><a href="classIndex.html#zim.gui.widgets.Assistant">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Dialog with multi-page input, sometimes also revert to as a "wizard". Similar to <code>Gtk.Assistent</code> separate implementation to allow more flexibility in the dialog layout.</p><p>Each "page" in the assistant is a step in the work flow. Pages should inherit from <code><a href="zim.gui.widgets.AssistantPage.html">AssistantPage</a></code>. Pages share the 'uistate' dict with assistant object, and can also use this to communicate state to another page. So each step can change its look based on state set in the previous step. (This is sometimes called a "Whiteboard" design pattern: each page can access the same "whiteboard" that is the uistate dict.)</p><p>Sub-classes of this dialog can freely manipulate the flow of pages e.g. by overloading the <code><a href="#previous_page">previous_page()</a></code> and <code><a href="#next_page">next_page()</a></code> methods.</p></div>
+        <div><p>Dialog with multi-page input, sometimes also revert to as a "wizard". Similar to <tt class="rst-docutils literal">Gtk.Assistent</tt> separate implementation to allow more flexibility in the dialog layout.</p>
+<p>Each "page" in the assistant is a step in the work flow. Pages should inherit from <code><a href="zim.gui.widgets.AssistantPage.html">AssistantPage</a></code>. Pages share the 'uistate' dict with assistant object, and can also use this to communicate state to another page. So each step can change its look based on state set in the previous step. (This is sometimes called a "Whiteboard" design pattern: each page can access the same "whiteboard" that is the uistate dict.)</p>
+<p>Sub-classes of this dialog can freely manipulate the flow of pages e.g. by overloading the <code><a href="#previous_page">previous_page()</a></code> and <code><a href="#next_page">next_page()</a></code> methods.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id541">
+        <table class="children sortable" id="id549">
+  
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Constructor</span></td>
-  </tr><tr class="instancevariable">
+    <td>Constructor</td>
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#uistate">uistate</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
+    <td>Method</td>
+    <td><code><a href="#append_page">append_page</a></code></td>
+    <td>Append a page @param page: an <code><a href="zim.gui.widgets.AssistantPage.html">AssistantPage</a></code> object</td>
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#ok_button">ok_button</a></code></td>
+    <td>Method</td>
+    <td><code><a href="#assert_response_ok">assert_response_ok</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#do_response">do_response</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_page">get_page</a></code></td>
+    <td>Get the current page @returns: a <code><a href="zim.gui.widgets.AssistantPage.html">AssistantPage</a></code> object</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_pages">get_pages</a></code></td>
+    <td>Get all pages @returns: a list of <code><a href="zim.gui.widgets.AssistantPage.html">AssistantPage</a></code> objects</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#next_page">next_page</a></code></td>
+    <td>Go forward to the next page</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#previous_page">previous_page</a></code></td>
+    <td>Go back to the previous page</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#run">run</a></code></td>
+    <td>Wrapper for <tt class="rst-docutils literal">Gtk.Dialog.run()</tt>, also calls <tt class="rst-docutils literal">show_all()</tt> @returns: <tt class="rst-docutils literal">self.result</tt></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_page">set_page</a></code></td>
+    <td>Set the current page, based on sequence number @param i: the index of the page to be shown</td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -70,55 +140,25 @@
     <td>Instance Variable</td>
     <td><code><a href="#forw_button">forw_button</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
+  </tr><tr class="instancevariable">
     
-    <td>Method</td>
-    <td><code><a href="#append_page">append_page</a></code></td>
-    <td><span>Append a page @param page: an <code><a href="zim.gui.widgets.AssistantPage.html">AssistantPage</a></code> object</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#run">run</a></code></td>
-    <td><span>Wrapper for <code>Gtk.Dialog.run()</code>, also calls <code>show_all()</code> @returns: <code>self.result</code></span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#get_pages">get_pages</a></code></td>
-    <td><span>Get all pages @returns: a list of <code><a href="zim.gui.widgets.AssistantPage.html">AssistantPage</a></code> objects</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#get_page">get_page</a></code></td>
-    <td><span>Get the current page @returns: a <code><a href="zim.gui.widgets.AssistantPage.html">AssistantPage</a></code> object</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#set_page">set_page</a></code></td>
-    <td><span>Set the current page, based on sequence number @param i: the index of the page to be shown</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#next_page">next_page</a></code></td>
-    <td><span>Go forward to the next page</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#previous_page">previous_page</a></code></td>
-    <td><span>Go back to the previous page</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#do_response">do_response</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="#ok_button">ok_button</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#uistate">uistate</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#assert_response_ok">assert_response_ok</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
+    <td><code><a href="#_update_valid">_update_valid</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_pages">_pages</a></code></td>
+    <td><code><a href="#_no_ok_action">_no_ok_action</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable private">
     
@@ -128,17 +168,12 @@
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_uistate">_uistate</a></code></td>
+    <td><code><a href="#_pages">_pages</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_no_ok_action">_no_ok_action</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
-    <td><code><a href="#_update_valid">_update_valid</a></code></td>
+    <td><code><a href="#_uistate">_uistate</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -146,38 +181,14 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.gui.widgets.Dialog.html">Dialog</a></code>:
           </p>
-          <table class="children sortable" id="id542">
+          <table class="children sortable" id="id550">
   
-  <tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.gui.widgets.Dialog.html#vbox">vbox</a></code></td>
-    <td><span><code>Gtk.VBox</code> for main widgets of the dialog</span></td>
-  </tr><tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.gui.widgets.Dialog.html#form">form</a></code></td>
-    <td><span><code><a href="zim.gui.widgets.InputForm.html">InputForm</a></code> added by <code>add_form()</code></span></td>
-  </tr><tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.gui.widgets.Dialog.html#result">result</a></code></td>
-    <td><span>result to be returned by <code><a href="#run">run()</a></code></span></td>
-  </tr><tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.gui.widgets.Dialog.html#destroyed">destroyed</a></code></td>
-    <td><span>when <code>True</code> the dialog is already destroyed</span></td>
-  </tr><tr class="baseclassmethod">
+  
+  <tr class="baseclassmethod">
     
     <td>Class Method</td>
     <td><code><a href="zim.gui.widgets.Dialog.html#unique">unique</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.gui.widgets.Dialog.html#on_destroy">on_destroy</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -186,43 +197,33 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.gui.widgets.Dialog.html#set_help">set_help</a></code></td>
-    <td><span>Set the name of the manual page with help for this dialog. Setting this will add a "help" button to the dialog. @param pagename: the manual page name</span></td>
-  </tr><tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.gui.widgets.Dialog.html#help_page">help_page</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.gui.widgets.Dialog.html#show_help">show_help</a></code></td>
-    <td><span>Show a help page @param page: the manual page, if <code>None</code> the page as set with <code><a href="#set_help">set_help()</a></code> is used</span></td>
+    <td><code><a href="zim.gui.widgets.Dialog.html#add_form">add_form</a></code></td>
+    <td>Convenience method to construct a form with input widgets and add them to the dialog. See <code><a href="zim.gui.widgets.InputForm.html#add_inputs">InputForm.add_inputs()</a></code> for details.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.gui.widgets.Dialog.html#add_help_text">add_help_text</a></code></td>
-    <td><span>Adds a label with an info icon in front of it. Intended for informational text in dialogs. @param text: help text</span></td>
+    <td>Adds a label with an info icon in front of it. Intended for informational text in dialogs. @param text: help text</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.gui.widgets.Dialog.html#add_text">add_text</a></code></td>
-    <td><span>Adds a label to the dialog Also see <code><a href="#add_help_text">add_help_text()</a></code> for another style option. @param text: dialog text</span></td>
+    <td>Adds a label to the dialog Also see <code><a href="#add_help_text">add_help_text()</a></code> for another style option. @param text: dialog text</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.gui.widgets.Dialog.html#add_form">add_form</a></code></td>
-    <td><span>Convenience method to construct a form with input widgets and add them to the dialog. See <code><a href="zim.gui.widgets.InputForm.html#add_inputs">InputForm.add_inputs()</a></code> for details.</span></td>
+    <td><code><a href="zim.gui.widgets.Dialog.html#do_response_cancel">do_response_cancel</a></code></td>
+    <td>Handler called when the user clicks the "Cancel" button.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.gui.widgets.Dialog.html#set_input">set_input</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
+    <td><code><a href="zim.gui.widgets.Dialog.html#do_response_ok">do_response_ok</a></code></td>
+    <td>Handler called when the user clicks the "OK" button (or an equivalent button)</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.gui.widgets.Dialog.html#get_input">get_input</a></code></td>
-    <td><span>Method used in test suite to get "interactive" inputs</span></td>
+    <td>Method used in test suite to get "interactive" inputs</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -231,8 +232,33 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Dialog.html#on_destroy">on_destroy</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
     <td><code><a href="zim.gui.widgets.Dialog.html#present">present</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Dialog.html#response_ok">response_ok</a></code></td>
+    <td>Trigger the response signal with response type 'OK'.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Dialog.html#save_uistate">save_uistate</a></code></td>
+    <td>Method when the dialog is about to exit or hide and wants to save the uistate. Sub-classes implementing this method should use it to set additional state parameter in <tt class="rst-docutils literal">self.uistate</tt>.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Dialog.html#set_help">set_help</a></code></td>
+    <td>Set the name of the manual page with help for this dialog. Setting this will add a "help" button to the dialog. @param pagename: the manual page name</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.Dialog.html#set_input">set_input</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -246,65 +272,71 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.gui.widgets.Dialog.html#response_ok">response_ok</a></code></td>
-    <td><span>Trigger the response signal with response type 'OK'.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.gui.widgets.Dialog.html#do_response_ok">do_response_ok</a></code></td>
-    <td><span>Handler called when the user clicks the "OK" button (or an equivalent button)</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.gui.widgets.Dialog.html#do_response_cancel">do_response_cancel</a></code></td>
-    <td><span>Handler called when the user clicks the "Cancel" button.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.gui.widgets.Dialog.html#save_uistate">save_uistate</a></code></td>
-    <td><span>Method when the dialog is about to exit or hide and wants to save the uistate. Sub-classes implementing this method should use it to set additional state parameter in <code>self.uistate</code>.</span></td>
-  </tr><tr class="baseinstancevariable private">
+    <td><code><a href="zim.gui.widgets.Dialog.html#show_help">show_help</a></code></td>
+    <td>Show a help page @param page: the manual page, if <tt class="rst-docutils literal">None</tt> the page as set with <code><a href="#set_help">set_help()</a></code> is used</td>
+  </tr><tr class="baseinstancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="zim.gui.widgets.Dialog.html#_registered">_registered</a></code></td>
+    <td><code><a href="zim.gui.widgets.Dialog.html#destroyed">destroyed</a></code></td>
+    <td>when <tt class="rst-docutils literal">True</tt> the dialog is already destroyed</td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Dialog.html#form">form</a></code></td>
+    <td><code><a href="zim.gui.widgets.InputForm.html">InputForm</a></code> added by <tt class="rst-docutils literal">add_form()</tt></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Dialog.html#help_page">help_page</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Dialog.html#result">result</a></code></td>
+    <td>result to be returned by <code><a href="#run">run()</a></code></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.Dialog.html#vbox">vbox</a></code></td>
+    <td><tt class="rst-docutils literal">Gtk.VBox</tt> for main widgets of the dialog</td>
   </tr>
 </table>
           
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code> (via <code><a href="zim.gui.widgets.Dialog.html">Dialog</a></code>):
           </p>
-          <table class="children sortable" id="id543">
+          <table class="children sortable" id="id551">
+  
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto">connectto</a></code></td>
-    <td><span>Connect to signals of another object E.g.:</span></td>
+    <td>Connect to signals of another object E.g.:</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto_all">connectto_all</a></code></td>
-    <td><span>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
-    <td><span>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</span></td>
+    <td>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_all">disconnect_all</a></code></td>
-    <td><span>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</span></td>
-  </tr><tr class="baseinstancevariable private">
+    <td>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</td>
+  </tr><tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
+    <td>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#_disconnect_from">_disconnect_from</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -317,6 +349,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.gui.widgets.Assistant.__init__">
     
   </a>
@@ -326,7 +359,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, parent, title, **options):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3810">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3795">
       
       (source)
     </a>
@@ -334,177 +367,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.gui.widgets.Dialog.html#__init__">zim.gui.widgets.Dialog.__init__</a></code></div><div class="interfaceinfo">overridden in <code><a href="zim.gui.exportdialog.ExportDialog.html">zim.gui.exportdialog.ExportDialog</a></code></div>
     
-    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">parent</td><td>either a parent window or dialog or <code>None</code></td></tr><tr><td></td><td class="fieldArg">title</td><td>dialog title</td></tr><tr><td></td><td class="fieldArg">options</td><td>other dialog options, see <code><a href="zim.gui.widgets.Dialog.html#__init__">Dialog.__init__()</a></code></td></tr></table></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Assistant._pages">
-    
-  </a>
-  <a name="_pages">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_pages</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3819">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code>)
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Assistant._page">
-    
-  </a>
-  <a name="_page">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_page</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3820">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Assistant._uistate">
-    
-  </a>
-  <a name="_uistate">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_uistate</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3821">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.widgets.Assistant.uistate">
-    
-  </a>
-  <a name="uistate">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">uistate</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3822">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.gui.widgets.Dialog.html#uistate">zim.gui.widgets.Dialog.uistate</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Assistant._no_ok_action">
-    
-  </a>
-  <a name="_no_ok_action">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_no_ok_action</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3825">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.gui.widgets.Dialog.html#_no_ok_action">zim.gui.widgets.Dialog._no_ok_action</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.widgets.Assistant.ok_button">
-    
-  </a>
-  <a name="ok_button">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">ok_button</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3827">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.widgets.Assistant.back_button">
-    
-  </a>
-  <a name="back_button">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">back_button</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3829">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.widgets.Assistant.forw_button">
-    
-  </a>
-  <a name="forw_button">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">forw_button</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3833">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Constructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">parent</span></td><td class="fieldArgDesc">either a parent window or dialog or <tt class="rst-docutils literal">None</tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">title</span></td><td class="fieldArgDesc">dialog title</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**options</span></td><td class="fieldArgDesc">other dialog options, see <code><a href="zim.gui.widgets.Dialog.html#__init__">Dialog.__init__()</a></code></td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.gui.widgets.Assistant.append_page">
     
@@ -515,7 +381,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">append_page</span>(self, page):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3839">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3824">
       
       (source)
     </a>
@@ -523,156 +389,32 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Append a page</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">page</td><td>an <code><a href="zim.gui.widgets.AssistantPage.html">AssistantPage</a></code> object</td></tr></table></div>
+    <div>Append a page<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">page</span></td><td class="fieldArgDesc">an <code><a href="zim.gui.widgets.AssistantPage.html">AssistantPage</a></code> object</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.Assistant.run">
+  
+  <a name="zim.gui.widgets.Assistant.assert_response_ok">
     
   </a>
-  <a name="run">
+  <a name="assert_response_ok">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">run</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3847">
+    <span class="py-keyword">def</span> <span class="py-defname">assert_response_ok</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3941">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.gui.widgets.Dialog.html#run">zim.gui.widgets.Dialog.run</a></code></div>
+    <div class="interfaceinfo">overrides <code><a href="zim.gui.widgets.Dialog.html#assert_response_ok">zim.gui.widgets.Dialog.assert_response_ok</a></code></div>
     
-    <div><p>Wrapper for <code>Gtk.Dialog.run()</code>, also calls <code>show_all()</code></p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>self.result</code></td></tr></table></div>
+    <div>Like <code><a href="#response_ok">response_ok()</a></code>, but raise an error when <code><a href="#do_response_ok">do_response_ok</a></code> returns <tt class="rst-docutils literal">False</tt>. Also it explicitly does not handle errors in <code><a href="#do_response_ok">do_response_ok</a></code>. Intended for use by the test suite.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">self.result</tt></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#AssertionError">AssertionError</a></code></td><td>if <code><a href="#do_response_ok">do_response_ok</a></code> returns <tt class="rst-docutils literal">False</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.Assistant.get_pages">
-    
-  </a>
-  <a name="get_pages">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_pages</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3852">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Get all pages</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a list of <code><a href="zim.gui.widgets.AssistantPage.html">AssistantPage</a></code> objects</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.Assistant.get_page">
-    
-  </a>
-  <a name="get_page">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_page</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3858">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Get the current page</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.gui.widgets.AssistantPage.html">AssistantPage</a></code> object</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.Assistant.set_page">
-    
-  </a>
-  <a name="set_page">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">set_page</span>(self, i):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3867">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Set the current page, based on sequence number</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">i</td><td>the index of the page to be shown</td></tr></table></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.gui.widgets.Assistant._update_valid">
-    
-  </a>
-  <a name="_update_valid">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_update_valid</span>(self, *a):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3932">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.Assistant.next_page">
-    
-  </a>
-  <a name="next_page">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">next_page</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3938">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Go forward to the next page</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.Assistant.previous_page">
-    
-  </a>
-  <a name="previous_page">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">previous_page</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3942">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Go back to the previous page</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.widgets.Assistant.do_response">
     
@@ -683,7 +425,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">do_response</span>(self, id):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3946">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3931">
       
       (source)
     </a>
@@ -695,33 +437,355 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.Assistant.assert_response_ok">
+  
+  <a name="zim.gui.widgets.Assistant.get_page">
     
   </a>
-  <a name="assert_response_ok">
+  <a name="get_page">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">assert_response_ok</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3956">
+    <span class="py-keyword">def</span> <span class="py-defname">get_page</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3843">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.gui.widgets.Dialog.html#assert_response_ok">zim.gui.widgets.Dialog.assert_response_ok</a></code></div>
     
-    <div><p>Like <code><a href="#response_ok">response_ok()</a></code>, but raise an error when <code><a href="#do_response_ok">do_response_ok</a></code> returns <code>False</code>. Also it explicitly does not handle errors in <code><a href="#do_response_ok">do_response_ok</a></code>. Intended for use by the test suite.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>self.result</code></td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="https://docs.python.org/3/library/exceptions.html#AssertionError">AssertionError</a></td><td>if <code><a href="#do_response_ok">do_response_ok</a></code> returns <code>False</code></td></tr></table></div>
+    
+    <div>Get the current page<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="zim.gui.widgets.AssistantPage.html">AssistantPage</a></code> object</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Assistant.get_pages">
+    
+  </a>
+  <a name="get_pages">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_pages</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3837">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Get all pages<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of <code><a href="zim.gui.widgets.AssistantPage.html">AssistantPage</a></code> objects</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Assistant.next_page">
+    
+  </a>
+  <a name="next_page">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">next_page</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3923">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Go forward to the next page</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Assistant.previous_page">
+    
+  </a>
+  <a name="previous_page">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">previous_page</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3927">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Go back to the previous page</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Assistant.run">
+    
+  </a>
+  <a name="run">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">run</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3832">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.gui.widgets.Dialog.html#run">zim.gui.widgets.Dialog.run</a></code></div>
+    
+    <div>Wrapper for <tt class="rst-docutils literal">Gtk.Dialog.run()</tt>, also calls <tt class="rst-docutils literal">show_all()</tt><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">self.result</tt></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Assistant.set_page">
+    
+  </a>
+  <a name="set_page">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_page</span>(self, i):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3852">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Set the current page, based on sequence number<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">i</span></td><td class="fieldArgDesc">the index of the page to be shown</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.widgets.Assistant.back_button">
+    
+  </a>
+  <a name="back_button">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">back_button</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3814">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.widgets.Assistant.forw_button">
+    
+  </a>
+  <a name="forw_button">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">forw_button</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3818">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.widgets.Assistant.ok_button">
+    
+  </a>
+  <a name="ok_button">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ok_button</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3812">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.widgets.Assistant.uistate">
+    
+  </a>
+  <a name="uistate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">uistate</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3807">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.gui.widgets.Dialog.html#uistate">zim.gui.widgets.Dialog.uistate</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.gui.widgets.Assistant._update_valid">
+    
+  </a>
+  <a name="_update_valid">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_valid</span>(self, *a):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3917">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Assistant._no_ok_action">
+    
+  </a>
+  <a name="_no_ok_action">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_no_ok_action</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3810">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.gui.widgets.Dialog.html#_no_ok_action">zim.gui.widgets.Dialog._no_ok_action</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Assistant._page">
+    
+  </a>
+  <a name="_page">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_page</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3805">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Assistant._pages">
+    
+  </a>
+  <a name="_pages">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_pages</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3804">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Assistant._uistate">
+    
+  </a>
+  <a name="_uistate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_uistate</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L3806">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

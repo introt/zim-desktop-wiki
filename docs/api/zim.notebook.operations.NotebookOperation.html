@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.notebook.operations.NotebookOperation : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.notebook.operations.NotebookOperation</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.notebook.html">notebook</a></code>.<code><a href="zim.notebook.operations.html">operations</a></code>.<code><a href="zim.notebook.operations.NotebookOperation.html">NotebookOperation</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.notebook.html">notebook</a></code><wbr></wbr>.<code><a href="zim.notebook.operations.html">operations</a></code><wbr></wbr>.<code><a href="zim.notebook.operations.NotebookOperation.html">NotebookOperation</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">NotebookOperation</span>(<a href="zim.signals.SignalEmitter.html" title="zim.signals.SignalEmitter">SignalEmitter</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L156">(source)</a></code></p><p>Known subclasses: <code><a href="zim.notebook.index.IndexUpdateOperation.html">zim.notebook.index.IndexUpdateOperation</a></code>, <code><a href="zim.notebook.operations.SimpleAsyncOperation.html">zim.notebook.operations.SimpleAsyncOperation</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">NotebookOperation</span>(<a href="zim.signals.SignalEmitter.html" title="zim.signals.SignalEmitter">SignalEmitter</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L156" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="zim.notebook.index.IndexUpdateOperation.html">zim.notebook.index.IndexUpdateOperation</a></code>, <code><a href="zim.notebook.operations.SimpleAsyncOperation.html">zim.notebook.operations.SimpleAsyncOperation</a></code></p>
         <p><a href="classIndex.html#zim.notebook.operations.NotebookOperation">View In Hierarchy</a></p>
       </div>
 
@@ -43,32 +74,48 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id788">
+        <table class="children sortable" id="id795">
   
-  <tr class="classvariable">
+  
+  <tr class="method">
     
-    <td>Class Variable</td>
-    <td><code><a href="#__signals__">__signals__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Method</td>
+    <td><code><a href="#__call__">__call__</a></code></td>
+    <td>This method is called when another operation tries to start while we are running. When called either finish quickly or raise <code><a href="zim.notebook.operations.NotebookOperationOngoing.html">NotebookOperationOngoing</a></code>.</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="instancevariable">
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#notebook">notebook</a></code></td>
+    <td>Method</td>
+    <td><code><a href="#__iter__">__iter__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#message">message</a></code></td>
+    <td>Method</td>
+    <td><code><a href="#cancel">cancel</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#finished">finished</a></code></td>
+    <td>Method</td>
+    <td><code><a href="#is_running">is_running</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#run_on_idle">run_on_idle</a></code></td>
+    <td>Start the operation by setting up the main loop event handler.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#wait">wait</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#__signals__">__signals__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
@@ -80,50 +127,35 @@
     <td>Instance Variable</td>
     <td><code><a href="#exception">exception</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#is_running">is_running</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#__call__">__call__</a></code></td>
-    <td><span>This method is called when another operation tries to start while we are running. When called either finish quickly or raise <code><a href="zim.notebook.operations.NotebookOperationOngoing.html">NotebookOperationOngoing</a></code>.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#run_on_idle">run_on_idle</a></code></td>
-    <td><span>Start the operation by setting up the main loop event handler.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#wait">wait</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#cancel">cancel</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#__iter__">__iter__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_do_work">_do_work</a></code></td>
+    <td><code><a href="#finished">finished</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#message">message</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#notebook">notebook</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_start">_start</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_block">_block</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
+  </tr><tr class="instancevariable private">
     
-    <td>Method</td>
-    <td><code><a href="#_start">_start</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="#_do_work">_do_work</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -131,7 +163,8 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.signals.SignalEmitter.html">SignalEmitter</a></code>:
           </p>
-          <table class="children sortable" id="id789">
+          <table class="children sortable" id="id796">
+  
   
   <tr class="basemethod">
     
@@ -141,13 +174,18 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#block_signals">block_signals</a></code></td>
+    <td>Returns a context manager for blocking one or more signals</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#connect">connect</a></code></td>
-    <td><span>Register a handler for a specific object.</span></td>
+    <td>Register a handler for a specific object.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#connect_after">connect_after</a></code></td>
-    <td><span>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</span></td>
+    <td>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -162,17 +200,12 @@
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#emit_return_first">emit_return_first</a></code></td>
-    <td><span>Emits a signal and stops emission on the first handler that returns a not-None value.</span></td>
+    <td>Emits a signal and stops emission on the first handler that returns a not-None value.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#emit_return_iter">emit_return_iter</a></code></td>
-    <td><span>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.signals.SignalEmitter.html#block_signals">block_signals</a></code></td>
-    <td><span>Returns a context manager for blocking one or more signals</span></td>
+    <td>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -197,217 +230,8 @@
 
       <div id="childList">
 
-        <div class="baseclassvariable">
+        <div class="basemethod">
   
-  <a name="zim.notebook.operations.NotebookOperation.__signals__">
-    
-  </a>
-  <a name="__signals__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">__signals__</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L187">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.signals.SignalEmitter.html#__signals__">zim.signals.SignalEmitter.__signals__</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.notebook.operations.NotebookOperation.__init__">
-    
-  </a>
-  <a name="__init__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, notebook, message, iterator):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L193">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.notebook.index.IndexUpdateOperation.html">zim.notebook.index.IndexUpdateOperation</a></code>, <code><a href="zim.notebook.operations.SimpleAsyncOperation.html">zim.notebook.operations.SimpleAsyncOperation</a></code></div>
-    
-    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">notebook</td><td>the <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object</td></tr><tr><td></td><td class="fieldArg">message</td><td>a message string for <code><a href="zim.notebook.operations.NotebookOperationOngoing.html">NotebookOperationOngoing</a></code> errors and for the heading of progress dialogs</td></tr><tr><td></td><td class="fieldArg">iterator</td><td>iterator that yields for chunks of work</td></tr></table></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.notebook.operations.NotebookOperation.notebook">
-    
-  </a>
-  <a name="notebook">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">notebook</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L200">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.notebook.operations.NotebookOperation.message">
-    
-  </a>
-  <a name="message">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">message</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L201">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.notebook.operations.NotebookOperation.finished">
-    
-  </a>
-  <a name="finished">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">finished</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L202">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.notebook.operations.NotebookOperation.cancelled">
-    
-  </a>
-  <a name="cancelled">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">cancelled</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L203">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.notebook.operations.NotebookOperation.exception">
-    
-  </a>
-  <a name="exception">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">exception</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L204">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.notebook.operations.NotebookOperation._do_work">
-    
-  </a>
-  <a name="_do_work">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_do_work</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L205">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.notebook.operations.NotebookOperation._block">
-    
-  </a>
-  <a name="_block">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_block</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L206">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.notebook.operations.NotebookOperation.is_running">
-    
-  </a>
-  <a name="is_running">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">is_running</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L238">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.notebook.operations.NotebookOperation.__call__">
     
@@ -418,7 +242,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__call__</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L211">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L211">
       
       (source)
     </a>
@@ -426,93 +250,32 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="zim.notebook.operations.SimpleAsyncOperation.html">zim.notebook.operations.SimpleAsyncOperation</a></code></div>
     
-    <div><p>This method is called when another operation tries to start while we are running. When called either finish quickly or raise <code><a href="zim.notebook.operations.NotebookOperationOngoing.html">NotebookOperationOngoing</a></code>.</p></div>
+    <div>This method is called when another operation tries to start while we are running. When called either finish quickly or raise <code><a href="zim.notebook.operations.NotebookOperationOngoing.html">NotebookOperationOngoing</a></code>.</div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.notebook.operations.NotebookOperation.run_on_idle">
+  
+  <a name="zim.notebook.operations.NotebookOperation.__init__">
     
   </a>
-  <a name="run_on_idle">
+  <a name="__init__">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">run_on_idle</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L222">
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, notebook, message, iterator):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L193">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.notebook.index.IndexUpdateOperation.html">zim.notebook.index.IndexUpdateOperation</a></code>, <code><a href="zim.notebook.operations.SimpleAsyncOperation.html">zim.notebook.operations.SimpleAsyncOperation</a></code></div>
     
-    
-    <div><p>Start the operation by setting up the main loop event handler.</p><p>May raise <code><a href="zim.notebook.operations.NotebookOperationOngoing.html">NotebookOperationOngoing</a></code> if another operation is already ongoing.</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.notebook.operations.NotebookOperation._start">
-    
-  </a>
-  <a name="_start">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_start</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L241">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Constructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">notebook</span></td><td class="fieldArgDesc">the <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">message</span></td><td class="fieldArgDesc">a message string for <code><a href="zim.notebook.operations.NotebookOperationOngoing.html">NotebookOperationOngoing</a></code> errors and for the heading of progress dialogs</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">iterator</span></td><td class="fieldArgDesc">iterator that yields for chunks of work</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.notebook.operations.NotebookOperation.wait">
-    
-  </a>
-  <a name="wait">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">wait</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L246">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.notebook.operations.SimpleAsyncOperation.html">zim.notebook.operations.SimpleAsyncOperation</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.notebook.operations.NotebookOperation.cancel">
-    
-  </a>
-  <a name="cancel">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">cancel</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L250">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.notebook.operations.SimpleAsyncOperation.html">zim.notebook.operations.SimpleAsyncOperation</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.notebook.operations.NotebookOperation.__iter__">
     
@@ -523,7 +286,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__iter__</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L256">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L256">
       
       (source)
     </a>
@@ -533,14 +296,315 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.operations.NotebookOperation.cancel">
+    
+  </a>
+  <a name="cancel">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">cancel</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L250">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.notebook.operations.SimpleAsyncOperation.html">zim.notebook.operations.SimpleAsyncOperation</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.operations.NotebookOperation.is_running">
+    
+  </a>
+  <a name="is_running">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">is_running</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L238">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.operations.NotebookOperation.run_on_idle">
+    
+  </a>
+  <a name="run_on_idle">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">run_on_idle</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L222">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Start the operation by setting up the main loop event handler.</p>
+<p>May raise <code><a href="zim.notebook.operations.NotebookOperationOngoing.html">NotebookOperationOngoing</a></code> if another operation is already ongoing.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.operations.NotebookOperation.wait">
+    
+  </a>
+  <a name="wait">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">wait</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L246">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.notebook.operations.SimpleAsyncOperation.html">zim.notebook.operations.SimpleAsyncOperation</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="zim.notebook.operations.NotebookOperation.__signals__">
+    
+  </a>
+  <a name="__signals__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__signals__</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L187">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.signals.SignalEmitter.html#__signals__">zim.signals.SignalEmitter.__signals__</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.notebook.operations.NotebookOperation.cancelled">
+    
+  </a>
+  <a name="cancelled">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">cancelled</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L203">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.notebook.operations.NotebookOperation.exception">
+    
+  </a>
+  <a name="exception">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">exception</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L204">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.notebook.operations.NotebookOperation.finished">
+    
+  </a>
+  <a name="finished">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">finished</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L202">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.notebook.operations.NotebookOperation.message">
+    
+  </a>
+  <a name="message">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">message</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L201">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.notebook.operations.NotebookOperation.notebook">
+    
+  </a>
+  <a name="notebook">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">notebook</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L200">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.notebook.operations.NotebookOperation._start">
+    
+  </a>
+  <a name="_start">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_start</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L241">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.notebook.operations.NotebookOperation._block">
+    
+  </a>
+  <a name="_block">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_block</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L206">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.notebook.operations.NotebookOperation._do_work">
+    
+  </a>
+  <a name="_do_work">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_do_work</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/operations.py#L205">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.templates.expression.ExpressionFunction : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.templates.expression.ExpressionFunction</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.templates.html">templates</a></code>.<code><a href="zim.templates.expression.html">expression</a></code>.<code><a href="zim.templates.expression.ExpressionFunction.html">ExpressionFunction</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.templates.html">templates</a></code><wbr></wbr>.<code><a href="zim.templates.expression.html">expression</a></code><wbr></wbr>.<code><a href="zim.templates.expression.ExpressionFunction.html">ExpressionFunction</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,26 +65,24 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ExpressionFunction</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expression.py#L314">(source)</a></code></p><p>Known subclasses: <code><a href="zim.templates.expression.BoundExpressionFunction.html">zim.templates.expression.BoundExpressionFunction</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ExpressionFunction</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expression.py#L309" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="zim.templates.expression.BoundExpressionFunction.html">zim.templates.expression.BoundExpressionFunction</a></code></p>
         <p><a href="classIndex.html#zim.templates.expression.ExpressionFunction">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Wrapper for methods and functions that whitelists functions to be called from expressions</p><p>Can be used as a decorator.</p></div>
+        <div><p>Wrapper for methods and functions that whitelists functions to be called from expressions</p>
+<p>Can be used as a decorator.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1512">
+        <table class="children sortable" id="id1533">
+  
   
   <tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Constructor @param func: the actual function</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#__get__">__get__</a></code></td>
+    <td><code><a href="#__call__">__call__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
@@ -63,8 +92,13 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#__call__">__call__</a></code></td>
+    <td><code><a href="#__get__">__get__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td>Constructor @param func: the actual function</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -86,89 +120,6 @@
 
         <div class="basemethod">
   
-  <a name="zim.templates.expression.ExpressionFunction.__init__">
-    
-  </a>
-  <a name="__init__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, func):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expression.py#L321">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.templates.expression.BoundExpressionFunction.html">zim.templates.expression.BoundExpressionFunction</a></code></div>
-    
-    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">func</td><td>the actual function</td></tr></table></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.templates.expression.ExpressionFunction._func">
-    
-  </a>
-  <a name="_func">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_func</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expression.py#L325">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.templates.expression.BoundExpressionFunction.html">zim.templates.expression.BoundExpressionFunction</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.templates.expression.ExpressionFunction.__get__">
-    
-  </a>
-  <a name="__get__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">__get__</span>(self, instance, owner):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expression.py#L327">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.templates.expression.ExpressionFunction.__eq__">
-    
-  </a>
-  <a name="__eq__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expression.py#L334">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.templates.expression.ExpressionFunction.__call__">
     
@@ -179,7 +130,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__call__</span>(self, *a):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expression.py#L337">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expression.py#L332">
       
       (source)
     </a>
@@ -191,16 +142,17 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.templates.expression.ExpressionFunction.__repr__">
+  
+  <a name="zim.templates.expression.ExpressionFunction.__eq__">
     
   </a>
-  <a name="__repr__">
+  <a name="__eq__">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expression.py#L340">
+    <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expression.py#L329">
       
       (source)
     </a>
@@ -210,14 +162,108 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.templates.expression.ExpressionFunction.__get__">
+    
+  </a>
+  <a name="__get__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__get__</span>(self, instance, owner):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expression.py#L322">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.templates.expression.ExpressionFunction.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, func):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expression.py#L316">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.templates.expression.BoundExpressionFunction.html">zim.templates.expression.BoundExpressionFunction</a></code></div>
+    
+    <div>Constructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">func</span></td><td class="fieldArgDesc">the actual function</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.templates.expression.ExpressionFunction.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expression.py#L335">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.templates.expression.ExpressionFunction._func">
+    
+  </a>
+  <a name="_func">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_func</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expression.py#L320">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.templates.expression.BoundExpressionFunction.html">zim.templates.expression.BoundExpressionFunction</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

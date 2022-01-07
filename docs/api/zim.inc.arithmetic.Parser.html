@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.inc.arithmetic.Parser : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.inc.arithmetic.Parser</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.inc.html">inc</a></code>.<code><a href="zim.inc.arithmetic.html">arithmetic</a></code>.<code><a href="zim.inc.arithmetic.Parser.html">Parser</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.inc.html">inc</a></code><wbr></wbr>.<code><a href="zim.inc.arithmetic.html">arithmetic</a></code><wbr></wbr>.<code><a href="zim.inc.arithmetic.Parser.html">Parser</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,22 +65,48 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Parser</span>: <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/inc/arithmetic.py#L295">(source)</a></code></p><p>Known subclasses: <code><a href="zim.inc.arithmetic.ParserGTK.html">zim.inc.arithmetic.ParserGTK</a></code>, <code><a href="zim.inc.arithmetic.ParserTk.html">zim.inc.arithmetic.ParserTk</a></code>, <code><a href="zim.inc.arithmetic.ParserWx.html">zim.inc.arithmetic.ParserWx</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Parser</span>: <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/inc/arithmetic.py#L295" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="zim.inc.arithmetic.ParserGTK.html">zim.inc.arithmetic.ParserGTK</a></code>, <code><a href="zim.inc.arithmetic.ParserTk.html">zim.inc.arithmetic.ParserTk</a></code>, <code><a href="zim.inc.arithmetic.ParserWx.html">zim.inc.arithmetic.ParserWx</a></code></p>
         <p><a href="classIndex.html#zim.inc.arithmetic.Parser">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Base class</p></div>
+        <div>Base class</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id555">
+        <table class="children sortable" id="id564">
+  
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#countLines">countLines</a></code></td>
+    <td>Return number of lines.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parse">parse</a></code></td>
+    <td>Find expressions in text, return it with results.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parseLine">parseLine</a></code></td>
+    <td>Find and evaluate expressions in line i.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#readLine">readLine</a></code></td>
+    <td>Return i line from lines.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#writeResult">writeResult</a></code></td>
+    <td>Write text in line i of lines from start to end offset.</td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -60,31 +117,6 @@
     <td>Instance Variable</td>
     <td><code><a href="#variables">variables</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#parse">parse</a></code></td>
-    <td><span>Find expressions in text, return it with results.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#countLines">countLines</a></code></td>
-    <td><span>Return number of lines.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#readLine">readLine</a></code></td>
-    <td><span>Return i line from lines.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#writeResult">writeResult</a></code></td>
-    <td><span>Write text in line i of lines from start to end offset.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#parseLine">parseLine</a></code></td>
-    <td><span>Find and evaluate expressions in line i.</span></td>
   </tr>
 </table>
         
@@ -96,6 +128,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.inc.arithmetic.Parser.__init__">
     
   </a>
@@ -105,7 +138,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/inc/arithmetic.py#L298">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/inc/arithmetic.py#L298">
       
       (source)
     </a>
@@ -115,70 +148,8 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.inc.arithmetic.Parser.functions">
-    
-  </a>
-  <a name="functions">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">functions</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/inc/arithmetic.py#L300">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.inc.arithmetic.Parser.variables">
-    
-  </a>
-  <a name="variables">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">variables</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/inc/arithmetic.py#L301">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
-  </div>
 </div><div class="basemethod">
   
-  <a name="zim.inc.arithmetic.Parser.parse">
-    
-  </a>
-  <a name="parse">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">parse</span>(self, text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/inc/arithmetic.py#L303">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.inc.arithmetic.ParserGTK.html">zim.inc.arithmetic.ParserGTK</a></code>, <code><a href="zim.inc.arithmetic.ParserTk.html">zim.inc.arithmetic.ParserTk</a></code>, <code><a href="zim.inc.arithmetic.ParserWx.html">zim.inc.arithmetic.ParserWx</a></code></div>
-    
-    <div><p>Find expressions in text, return it with results.</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.inc.arithmetic.Parser.countLines">
     
@@ -189,7 +160,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">countLines</span>(self, lines):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/inc/arithmetic.py#L313">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/inc/arithmetic.py#L313">
       
       (source)
     </a>
@@ -197,20 +168,21 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="zim.inc.arithmetic.ParserGTK.html">zim.inc.arithmetic.ParserGTK</a></code>, <code><a href="zim.inc.arithmetic.ParserTk.html">zim.inc.arithmetic.ParserTk</a></code>, <code><a href="zim.inc.arithmetic.ParserWx.html">zim.inc.arithmetic.ParserWx</a></code></div>
     
-    <div><p>Return number of lines.</p></div>
+    <div>Return number of lines.</div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.inc.arithmetic.Parser.readLine">
+  
+  <a name="zim.inc.arithmetic.Parser.parse">
     
   </a>
-  <a name="readLine">
+  <a name="parse">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">readLine</span>(self, i, lines):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/inc/arithmetic.py#L317">
+    <span class="py-keyword">def</span> <span class="py-defname">parse</span>(self, text):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/inc/arithmetic.py#L303">
       
       (source)
     </a>
@@ -218,30 +190,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="zim.inc.arithmetic.ParserGTK.html">zim.inc.arithmetic.ParserGTK</a></code>, <code><a href="zim.inc.arithmetic.ParserTk.html">zim.inc.arithmetic.ParserTk</a></code>, <code><a href="zim.inc.arithmetic.ParserWx.html">zim.inc.arithmetic.ParserWx</a></code></div>
     
-    <div><p>Return i line from lines.</p></div>
+    <div>Find expressions in text, return it with results.</div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.inc.arithmetic.Parser.writeResult">
-    
-  </a>
-  <a name="writeResult">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">writeResult</span>(self, i, lines, start, end, text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/inc/arithmetic.py#L321">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.inc.arithmetic.ParserGTK.html">zim.inc.arithmetic.ParserGTK</a></code>, <code><a href="zim.inc.arithmetic.ParserTk.html">zim.inc.arithmetic.ParserTk</a></code>, <code><a href="zim.inc.arithmetic.ParserWx.html">zim.inc.arithmetic.ParserWx</a></code></div>
-    
-    <div><p>Write text in line i of lines from start to end offset.</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.inc.arithmetic.Parser.parseLine">
     
@@ -252,7 +204,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parseLine</span>(self, i, lines, variables={}, functions={}):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/inc/arithmetic.py#L326">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/inc/arithmetic.py#L326">
       
       (source)
     </a>
@@ -260,16 +212,111 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Find and evaluate expressions in line i.</p></div>
+    <div>Find and evaluate expressions in line i.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.inc.arithmetic.Parser.readLine">
+    
+  </a>
+  <a name="readLine">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">readLine</span>(self, i, lines):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/inc/arithmetic.py#L317">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.inc.arithmetic.ParserGTK.html">zim.inc.arithmetic.ParserGTK</a></code>, <code><a href="zim.inc.arithmetic.ParserTk.html">zim.inc.arithmetic.ParserTk</a></code>, <code><a href="zim.inc.arithmetic.ParserWx.html">zim.inc.arithmetic.ParserWx</a></code></div>
+    
+    <div>Return i line from lines.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.inc.arithmetic.Parser.writeResult">
+    
+  </a>
+  <a name="writeResult">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">writeResult</span>(self, i, lines, start, end, text):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/inc/arithmetic.py#L321">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.inc.arithmetic.ParserGTK.html">zim.inc.arithmetic.ParserGTK</a></code>, <code><a href="zim.inc.arithmetic.ParserTk.html">zim.inc.arithmetic.ParserTk</a></code>, <code><a href="zim.inc.arithmetic.ParserWx.html">zim.inc.arithmetic.ParserWx</a></code></div>
+    
+    <div>Write text in line i of lines from start to end offset.</div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.inc.arithmetic.Parser.functions">
+    
+  </a>
+  <a name="functions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">functions</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/inc/arithmetic.py#L300">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.inc.arithmetic.Parser.variables">
+    
+  </a>
+  <a name="variables">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">variables</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/inc/arithmetic.py#L301">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

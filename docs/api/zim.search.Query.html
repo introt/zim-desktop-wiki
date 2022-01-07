@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.search.Query : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.search.Query</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.search.html">search</a></code>.<code><a href="zim.search.Query.html">Query</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.search.html">search</a></code><wbr></wbr>.<code><a href="zim.search.Query.html">Query</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,16 +65,17 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Query</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L118">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Query</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L120" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.search.Query">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>This class wraps a query as typed by the user. It parses the query into a tree of QueryGroup and QueryTerm objects. The 'root' attribute contains the top of the tree, while the 'string' attribute contains the original query.</p></div>
+        <div>This class wraps a query as typed by the user. It parses the query into a tree of QueryGroup and QueryTerm objects. The 'root' attribute contains the top of the tree, while the 'string' attribute contains the original query.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1482">
+        <table class="children sortable" id="id1505">
+  
   
   <tr class="method">
     
@@ -53,7 +85,7 @@
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#string">string</a></code></td>
+    <td><code><a href="#find_input">find_input</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
@@ -63,17 +95,17 @@
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#find_input">find_input</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
-    <td><code><a href="#_parse_query">_parse_query</a></code></td>
+    <td><code><a href="#string">string</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
     <td><code><a href="#_generate_find_input">_generate_find_input</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_parse_query">_parse_query</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
@@ -91,6 +123,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.search.Query.__init__">
     
   </a>
@@ -100,7 +133,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, string):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L125">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L127">
       
       (source)
     </a>
@@ -112,47 +145,6 @@
   </div>
 </div><div class="baseinstancevariable">
   
-  <a name="zim.search.Query.string">
-    
-  </a>
-  <a name="string">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">string</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L126">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.search.Query.root">
-    
-  </a>
-  <a name="root">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">root</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L127">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
   
   <a name="zim.search.Query.find_input">
     
@@ -163,7 +155,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">find_input</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L128">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L130">
       
       (source)
     </a>
@@ -172,29 +164,56 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
-</div><div class="basemethod private">
+</div><div class="baseinstancevariable">
   
-  <a name="zim.search.Query._parse_query">
+  
+  <a name="zim.search.Query.root">
     
   </a>
-  <a name="_parse_query">
+  <a name="root">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_parse_query</span>(self, string):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L130">
+    <span class="py-defname">root</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L129">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.search.Query.string">
+    
+  </a>
+  <a name="string">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">string</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L128">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basemethod private">
+  
   
   <a name="zim.search.Query._generate_find_input">
     
@@ -205,7 +224,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_generate_find_input</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L202">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L204">
       
       (source)
     </a>
@@ -217,6 +236,29 @@
   </div>
 </div><div class="basemethod private">
   
+  
+  <a name="zim.search.Query._parse_query">
+    
+  </a>
+  <a name="_parse_query">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_query</span>(self, string):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L132">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
   <a name="zim.search.Query._walk_text_content">
     
   </a>
@@ -226,7 +268,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_walk_text_content</span>(self, group):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L213">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/search.py#L215">
       
       (source)
     </a>
@@ -239,11 +281,16 @@
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

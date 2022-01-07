@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.formats.TableParser : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.formats.TableParser</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.formats.html">formats</a></code>.<code><a href="zim.formats.TableParser.html">TableParser</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.formats.html">formats</a></code><wbr></wbr>.<code><a href="zim.formats.TableParser.html">TableParser</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,27 +65,23 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TableParser</span>: <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1576">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TableParser</span>: <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1511" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.formats.TableParser">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Common functions for converting a table from its' xml structure to another format</p></div>
+        <div>Common functions for converting a table from its' xml structure to another format</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id160">
+        <table class="children sortable" id="id188">
+  
   
   <tr class="staticmethod">
     
     <td>Static Method</td>
-    <td><code><a href="#width2dim">width2dim</a></code></td>
-    <td><span>Calculates the characters on each column and return list of widths :param lines: 2-dim multiline rows :return: the number of characters of the longest cell-value by column</span></td>
-  </tr><tr class="staticmethod">
-    
-    <td>Static Method</td>
-    <td><code><a href="#width3dim">width3dim</a></code></td>
-    <td><span>Calculates the characters on each column and return list of widths :param lines: 3-dim multiline rows :return: the number of characters of the longest cell-value by column</span></td>
+    <td><code><a href="#alignrow">alignrow</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="staticmethod">
     
     <td>Static Method</td>
@@ -64,11 +91,11 @@
     
     <td>Static Method</td>
     <td><code><a href="#get_options">get_options</a></code></td>
-    <td><span>Lists the attributes as tuple :param attrib: :return: tuple of attributes</span></td>
+    <td>Lists the attributes as tuple :param attrib: :return: tuple of attributes</td>
   </tr><tr class="staticmethod">
     
     <td>Static Method</td>
-    <td><code><a href="#rowsep">rowsep</a></code></td>
+    <td><code><a href="#headline">headline</a></code></td>
     <td><span class="undocumented">No summary</span></td>
   </tr><tr class="staticmethod">
     
@@ -78,18 +105,23 @@
   </tr><tr class="staticmethod">
     
     <td>Static Method</td>
-    <td><code><a href="#headline">headline</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="staticmethod">
-    
-    <td>Static Method</td>
     <td><code><a href="#rowline">rowline</a></code></td>
     <td><span class="undocumented">No summary</span></td>
   </tr><tr class="staticmethod">
     
     <td>Static Method</td>
-    <td><code><a href="#alignrow">alignrow</a></code></td>
+    <td><code><a href="#rowsep">rowsep</a></code></td>
     <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#width2dim">width2dim</a></code></td>
+    <td>Calculates the characters on each column and return list of widths :param lines: 2-dim multiline rows :return: the number of characters of the longest cell-value by column</td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#width3dim">width3dim</a></code></td>
+    <td>Calculates the characters on each column and return list of widths :param lines: 3-dim multiline rows :return: the number of characters of the longest cell-value by column</td>
   </tr>
 </table>
         
@@ -101,16 +133,17 @@
 
         <div class="basestaticmethod">
   
-  <a name="zim.formats.TableParser.width2dim">
+  
+  <a name="zim.formats.TableParser.alignrow">
     
   </a>
-  <a name="width2dim">
+  <a name="alignrow">
     
   </a>
   <div class="functionHeader">
-    @staticmethod<br />
-    <span class="py-keyword">def</span> <span class="py-defname">width2dim</span>(lines):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1579">
+    @<a href="https://docs.python.org/3/library/functions.html#staticmethod">staticmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">alignrow</span>(row, maxwidths, aligns, y=<span class="rst-variable-quote">'</span><span class="rst-variable-string"> </span><span class="rst-variable-quote">'</span>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1633">
       
       (source)
     </a>
@@ -118,30 +151,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Calculates the characters on each column and return list of widths :param lines: 2-dim multiline rows :return: the number of characters of the longest cell-value by column</p></div>
+    <div>Formats a row with the right alignments :param row: tuple of cells :param maxwidths: list of column length :param aligns:  list of alignments :param y: space-separator :return: a textline</div>
   </div>
 </div><div class="basestaticmethod">
   
-  <a name="zim.formats.TableParser.width3dim">
-    
-  </a>
-  <a name="width3dim">
-    
-  </a>
-  <div class="functionHeader">
-    @staticmethod<br />
-    <span class="py-keyword">def</span> <span class="py-defname">width3dim</span>(lines):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1589">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Calculates the characters on each column and return list of widths :param lines: 3-dim multiline rows :return: the number of characters of the longest cell-value by column</p></div>
-  </div>
-</div><div class="basestaticmethod">
   
   <a name="zim.formats.TableParser.convert_to_multiline_cells">
     
@@ -150,9 +163,9 @@
     
   </a>
   <div class="functionHeader">
-    @staticmethod<br />
+    @<a href="https://docs.python.org/3/library/functions.html#staticmethod">staticmethod</a><br />
     <span class="py-keyword">def</span> <span class="py-defname">convert_to_multiline_cells</span>(rows):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1600">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1535">
       
       (source)
     </a>
@@ -164,6 +177,7 @@
   </div>
 </div><div class="basestaticmethod">
   
+  
   <a name="zim.formats.TableParser.get_options">
     
   </a>
@@ -171,9 +185,9 @@
     
   </a>
   <div class="functionHeader">
-    @staticmethod<br />
+    @<a href="https://docs.python.org/3/library/functions.html#staticmethod">staticmethod</a><br />
     <span class="py-keyword">def</span> <span class="py-defname">get_options</span>(attrib):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1615">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1550">
       
       (source)
     </a>
@@ -181,51 +195,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Lists the attributes as tuple :param attrib: :return: tuple of attributes</p></div>
+    <div>Lists the attributes as tuple :param attrib: :return: tuple of attributes</div>
   </div>
 </div><div class="basestaticmethod">
   
-  <a name="zim.formats.TableParser.rowsep">
-    
-  </a>
-  <a name="rowsep">
-    
-  </a>
-  <div class="functionHeader">
-    @staticmethod<br />
-    <span class="py-keyword">def</span> <span class="py-defname">rowsep</span>(maxwidths, x='+', y='-'):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1627">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Displays a row separator example: rowsep((3,0), '-', '+') -&gt; +-----+--+ :param maxwidths: list of column lengths :param x: point-separator :param y: line-separator :return: a textline</p></div>
-  </div>
-</div><div class="basestaticmethod">
-  
-  <a name="zim.formats.TableParser.headsep">
-    
-  </a>
-  <a name="headsep">
-    
-  </a>
-  <div class="functionHeader">
-    @staticmethod<br />
-    <span class="py-keyword">def</span> <span class="py-defname">headsep</span>(maxwidths, aligns, x='|', y='-'):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1639">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Displays a header separation with alignment infos example: rowsep((3,0), '-', '+') -&gt; +-----+--+ :param maxwidths: list of column lengths :param aligns:  list of alignments :param x: point-separator :param y: line-separator :return: a text line</p></div>
-  </div>
-</div><div class="basestaticmethod">
   
   <a name="zim.formats.TableParser.headline">
     
@@ -234,9 +207,9 @@
     
   </a>
   <div class="functionHeader">
-    @staticmethod<br />
-    <span class="py-keyword">def</span> <span class="py-defname">headline</span>(row, maxwidths, aligns, wraps, x='|', y=' '):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1664">
+    @<a href="https://docs.python.org/3/library/functions.html#staticmethod">staticmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">headline</span>(row, maxwidths, aligns, wraps, x=<span class="rst-variable-quote">'</span><span class="rst-variable-string">|</span><span class="rst-variable-quote">'</span>, y=<span class="rst-variable-quote">'</span><span class="rst-variable-string"> </span><span class="rst-variable-quote">'</span>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1599">
       
       (source)
     </a>
@@ -244,9 +217,32 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Displays a headerline line in text format :param row: tuple of cells :param maxwidths: list of column length :param aligns:  list of alignments :param x:  point-separator :param y: space-separator :return: a textline</p></div>
+    <div>Displays a headerline line in text format :param row: tuple of cells :param maxwidths: list of column length :param aligns:  list of alignments :param x:  point-separator :param y: space-separator :return: a textline</div>
   </div>
 </div><div class="basestaticmethod">
+  
+  
+  <a name="zim.formats.TableParser.headsep">
+    
+  </a>
+  <a name="headsep">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#staticmethod">staticmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">headsep</span>(maxwidths, aligns, x=<span class="rst-variable-quote">'</span><span class="rst-variable-string">|</span><span class="rst-variable-quote">'</span>, y=<span class="rst-variable-quote">'</span><span class="rst-variable-string">-</span><span class="rst-variable-quote">'</span>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1574">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Displays a header separation with alignment infos example: rowsep((3,0), '-', '+') -&gt; +-----+--+ :param maxwidths: list of column lengths :param aligns:  list of alignments :param x: point-separator :param y: line-separator :return: a text line</div>
+  </div>
+</div><div class="basestaticmethod">
+  
   
   <a name="zim.formats.TableParser.rowline">
     
@@ -255,9 +251,9 @@
     
   </a>
   <div class="functionHeader">
-    @staticmethod<br />
-    <span class="py-keyword">def</span> <span class="py-defname">rowline</span>(row, maxwidths, aligns, x='|', y=' '):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1683">
+    @<a href="https://docs.python.org/3/library/functions.html#staticmethod">staticmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">rowline</span>(row, maxwidths, aligns, x=<span class="rst-variable-quote">'</span><span class="rst-variable-string">|</span><span class="rst-variable-quote">'</span>, y=<span class="rst-variable-quote">'</span><span class="rst-variable-string"> </span><span class="rst-variable-quote">'</span>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1618">
       
       (source)
     </a>
@@ -265,20 +261,21 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Displays a normal column line in text format example: rowline((3,0), (left, left), '+','-') -&gt; +-aa--+--+ :param row: tuple of cells :param maxwidths: list of column length :param aligns:  list of alignments :param x:  point-separator :param y: space-separator :return: a textline</p></div>
+    <div>Displays a normal column line in text format example: rowline((3,0), (left, left), '+','-') -&gt; +-aa--+--+ :param row: tuple of cells :param maxwidths: list of column length :param aligns:  list of alignments :param x:  point-separator :param y: space-separator :return: a textline</div>
   </div>
 </div><div class="basestaticmethod">
   
-  <a name="zim.formats.TableParser.alignrow">
+  
+  <a name="zim.formats.TableParser.rowsep">
     
   </a>
-  <a name="alignrow">
+  <a name="rowsep">
     
   </a>
   <div class="functionHeader">
-    @staticmethod<br />
-    <span class="py-keyword">def</span> <span class="py-defname">alignrow</span>(row, maxwidths, aligns, y=' '):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1698">
+    @<a href="https://docs.python.org/3/library/functions.html#staticmethod">staticmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">rowsep</span>(maxwidths, x=<span class="rst-variable-quote">'</span><span class="rst-variable-string">+</span><span class="rst-variable-quote">'</span>, y=<span class="rst-variable-quote">'</span><span class="rst-variable-string">-</span><span class="rst-variable-quote">'</span>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1562">
       
       (source)
     </a>
@@ -286,16 +283,65 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Formats a row with the right alignments :param row: tuple of cells :param maxwidths: list of column length :param aligns:  list of alignments :param y: space-separator :return: a textline</p></div>
+    <div>Displays a row separator example: rowsep((3,0), '-', '+') -&gt; +-----+--+ :param maxwidths: list of column lengths :param x: point-separator :param y: line-separator :return: a textline</div>
+  </div>
+</div><div class="basestaticmethod">
+  
+  
+  <a name="zim.formats.TableParser.width2dim">
+    
+  </a>
+  <a name="width2dim">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#staticmethod">staticmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">width2dim</span>(lines):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1514">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Calculates the characters on each column and return list of widths :param lines: 2-dim multiline rows :return: the number of characters of the longest cell-value by column</div>
+  </div>
+</div><div class="basestaticmethod">
+  
+  
+  <a name="zim.formats.TableParser.width3dim">
+    
+  </a>
+  <a name="width3dim">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#staticmethod">staticmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">width3dim</span>(lines):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1524">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Calculates the characters on each column and return list of widths :param lines: 3-dim multiline rows :return: the number of characters of the longest cell-value by column</div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

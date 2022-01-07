@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.signals.SignalEmitter : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.signals.SignalEmitter</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.signals.html">signals</a></code>.<code><a href="zim.signals.SignalEmitter.html">SignalEmitter</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.signals.html">signals</a></code><wbr></wbr>.<code><a href="zim.signals.SignalEmitter.html">SignalEmitter</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,23 +65,25 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">SignalEmitter</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L247">(source)</a></code></p><p>Known subclasses: <code><a href="zim.config.dicts.ControlledDict.html">zim.config.dicts.ControlledDict</a></code>, <code><a href="zim.config.manager.ConfigFile.html">zim.config.manager.ConfigFile</a></code>, <code><a href="zim.fs.FSObjectMonitor.html">zim.fs.FSObjectMonitor</a></code>, <code><a href="zim.fs.FSSingletonClass.html">zim.fs.FSSingletonClass</a></code>, <code><a href="zim.gui.customtools.CustomToolManager.html">zim.gui.customtools.CustomToolManager</a></code>, <code><a href="zim.history.History.html">zim.history.History</a></code>, <code><a href="zim.newfs.helpers.FileTreeWatcher.html">zim.newfs.helpers.FileTreeWatcher</a></code>, <code><a href="zim.newfs.helpers.FSObjectMonitor.html">zim.newfs.helpers.FSObjectMonitor</a></code>, <code><a href="zim.notebook.index.base.IndexerBase.html">zim.notebook.index.base.IndexerBase</a></code>, <code><a href="zim.notebook.index.files.FilesIndexer.html">zim.notebook.index.files.FilesIndexer</a></code>, <code><a href="zim.notebook.index.Index.html">zim.notebook.index.Index</a></code>, <code><a href="zim.notebook.index.IndexUpdateIter.html">zim.notebook.index.IndexUpdateIter</a></code>, <code><a href="zim.notebook.notebook.Notebook.html">zim.notebook.notebook.Notebook</a></code>, <code><a href="zim.notebook.operations.NotebookOperation.html">zim.notebook.operations.NotebookOperation</a></code>, <code><a href="zim.notebook.page.Page.html">zim.notebook.page.Page</a></code>, <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorModel.html">zim.plugins.base.imagegenerator.ImageGeneratorModel</a></code>, <code><a href="zim.plugins.ExtensionBase.html">zim.plugins.ExtensionBase</a></code>, <code><a href="zim.plugins.InsertedObjectTypeMap.html">zim.plugins.InsertedObjectTypeMap</a></code>, <code><a href="zim.plugins.PluginManagerClass.html">zim.plugins.PluginManagerClass</a></code>, <code><a href="zim.plugins.tableeditor.TableModel.html">zim.plugins.tableeditor.TableModel</a></code>, <code><a href="zim.plugins.trayicon.AppIndicatorTrayIcon.html">zim.plugins.trayicon.AppIndicatorTrayIcon</a></code>, <code><a href="zim.templates.Template.html">zim.templates.Template</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">SignalEmitter</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L247" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="zim.config.dicts.ControlledDict.html">zim.config.dicts.ControlledDict</a></code>, <code><a href="zim.config.manager.ConfigFile.html">zim.config.manager.ConfigFile</a></code>, <code><a href="zim.fs.FSObjectMonitor.html">zim.fs.FSObjectMonitor</a></code>, <code><a href="zim.fs.FSSingletonClass.html">zim.fs.FSSingletonClass</a></code>, <code><a href="zim.gui.customtools.CustomToolManager.html">zim.gui.customtools.CustomToolManager</a></code>, <code><a href="zim.history.History.html">zim.history.History</a></code>, <code><a href="zim.newfs.helpers.FileTreeWatcher.html">zim.newfs.helpers.FileTreeWatcher</a></code>, <code><a href="zim.newfs.helpers.FSObjectMonitor.html">zim.newfs.helpers.FSObjectMonitor</a></code>, <code><a href="zim.notebook.index.base.IndexerBase.html">zim.notebook.index.base.IndexerBase</a></code>, <code><a href="zim.notebook.index.files.FilesIndexer.html">zim.notebook.index.files.FilesIndexer</a></code>, <code><a href="zim.notebook.index.Index.html">zim.notebook.index.Index</a></code>, <code><a href="zim.notebook.index.IndexUpdateIter.html">zim.notebook.index.IndexUpdateIter</a></code>, <code><a href="zim.notebook.notebook.Notebook.html">zim.notebook.notebook.Notebook</a></code>, <code><a href="zim.notebook.operations.NotebookOperation.html">zim.notebook.operations.NotebookOperation</a></code>, <code><a href="zim.notebook.page.Page.html">zim.notebook.page.Page</a></code>, <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorModel.html">zim.plugins.base.imagegenerator.ImageGeneratorModel</a></code>, <code><a href="zim.plugins.ExtensionBase.html">zim.plugins.ExtensionBase</a></code>, <code><a href="zim.plugins.InsertedObjectTypeMap.html">zim.plugins.InsertedObjectTypeMap</a></code>, <code><a href="zim.plugins.PluginManagerClass.html">zim.plugins.PluginManagerClass</a></code>, <code><a href="zim.plugins.tableeditor.TableModel.html">zim.plugins.tableeditor.TableModel</a></code>, <code><a href="zim.plugins.trayicon.AppIndicatorTrayIcon.html">zim.plugins.trayicon.AppIndicatorTrayIcon</a></code>, <code><a href="zim.templates.Template.html">zim.templates.Template</a></code></p>
         <p><a href="classIndex.html#zim.signals.SignalEmitter">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Replacement for <code>GObject</code> to make objects emit signals. API should be (mostly) compatible with API offered by GObject.</p><p>Supported signals need to be defined in the dict <code>__signals__</code>. For each signal a 3-tuple is provided where the first argument is either <code>SIGNAL_RUN_FIRST</code> or <code>SIGNAL_RUN_LAST</code>, the second is the return argument (or <code>None</code> for most signals) and the third is the argument spec for the signal.</p><p>When a signal is emitted all handlers are called one by one and exceptions in a handler are intercepted. If the class defines a method <code>do_signalname()</code> (where "signalname" is the name of the signal with "-" replaced by "_") this is considered a default handler that is automatically connected. The <code>SIGNAL_RUN_FIRST</code> and <code>SIGNAL_RUN_LAST</code> flags in the signal spec control where in the  emission sequence this default handler is called: it either runs as the first or as the last handler. Typically the default handler is used to implement the change signalled by the signal. So if your signal name suggests something happened already (e.g. "changed"), probably you want to use <code>SIGNAL_RUN_FIRST</code>. However if the action is phrased as still happening (e.g. "change") and the handlers can influence this, you probably want <code>SIGNAL_RUN_LAST</code>.</p><p>Signals connected with <code><a href="#connect_after">connect_after()</a></code> always run after all the normal handlers (which are connected with <code><a href="#connect">connect()</a></code>) and after the default handler (even if the default handler is setup with <code>SIGNAL_RUN_LAST</code>).</p><p>If a signal defines a return type, emission should use either <code><a href="#emit_return_first">emit_return_first()</a></code> or <code><a href="#emit_return_iter">emit_return_iter()</a></code> to handle return values.</p><p>(Also see the Glib documentation to understand the full system of which we implement a sub-set here.)</p></div>
+        <div><p>Replacement for <tt class="rst-docutils literal">GObject</tt> to make objects emit signals. API should be (mostly) compatible with API offered by GObject.</p>
+<p>Supported signals need to be defined in the dict <tt class="rst-docutils literal">__signals__</tt>. For each signal a 3-tuple is provided where the first argument is either <tt class="rst-docutils literal">SIGNAL_RUN_FIRST</tt> or <tt class="rst-docutils literal">SIGNAL_RUN_LAST</tt>, the second is the return argument (or <tt class="rst-docutils literal">None</tt> for most signals) and the third is the argument spec for the signal.</p>
+<p>When a signal is emitted all handlers are called one by one and exceptions in a handler are intercepted. If the class defines a method <tt class="rst-docutils literal">do_signalname()</tt> (where "signalname" is the name of the signal with "-" replaced by "_") this is considered a default handler that is automatically connected. The <tt class="rst-docutils literal">SIGNAL_RUN_FIRST</tt> and <tt class="rst-docutils literal">SIGNAL_RUN_LAST</tt> flags in the signal spec control where in the  emission sequence this default handler is called: it either runs as the first or as the last handler. Typically the default handler is used to implement the change signalled by the signal. So if your signal name suggests something happened already (e.g. "changed"), probably you want to use <tt class="rst-docutils literal">SIGNAL_RUN_FIRST</tt>. However if the action is phrased as still happening (e.g. "change") and the handlers can influence this, you probably want <tt class="rst-docutils literal">SIGNAL_RUN_LAST</tt>.</p>
+<p>Signals connected with <code><a href="#connect_after">connect_after()</a></code> always run after all the normal handlers (which are connected with <code><a href="#connect">connect()</a></code>) and after the default handler (even if the default handler is setup with <tt class="rst-docutils literal">SIGNAL_RUN_LAST</tt>).</p>
+<p>If a signal defines a return type, emission should use either <code><a href="#emit_return_first">emit_return_first()</a></code> or <code><a href="#emit_return_iter">emit_return_iter()</a></code> to handle return values.</p>
+<p>(Also see the Glib documentation to understand the full system of which we implement a sub-set here.)</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1490">
+        <table class="children sortable" id="id1513">
   
-  <tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#__signals__">__signals__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
+  
+  <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__new__">__new__</a></code></td>
@@ -58,13 +91,18 @@
   </tr><tr class="method">
     
     <td>Method</td>
+    <td><code><a href="#block_signals">block_signals</a></code></td>
+    <td>Returns a context manager for blocking one or more signals</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
     <td><code><a href="#connect">connect</a></code></td>
-    <td><span>Register a handler for a specific object.</span></td>
+    <td>Register a handler for a specific object.</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#connect_after">connect_after</a></code></td>
-    <td><span>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</span></td>
+    <td>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -79,17 +117,17 @@
     
     <td>Method</td>
     <td><code><a href="#emit_return_first">emit_return_first</a></code></td>
-    <td><span>Emits a signal and stops emission on the first handler that returns a not-None value.</span></td>
+    <td>Emits a signal and stops emission on the first handler that returns a not-None value.</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#emit_return_iter">emit_return_iter</a></code></td>
-    <td><span>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</span></td>
-  </tr><tr class="method">
+    <td>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</td>
+  </tr><tr class="classvariable">
     
-    <td>Method</td>
-    <td><code><a href="#block_signals">block_signals</a></code></td>
-    <td><span>Returns a context manager for blocking one or more signals</span></td>
+    <td>Class Variable</td>
+    <td><code><a href="#__signals__">__signals__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -114,28 +152,8 @@
 
       <div id="childList">
 
-        <div class="baseclassvariable">
+        <div class="basemethod">
   
-  <a name="zim.signals.SignalEmitter.__signals__">
-    
-  </a>
-  <a name="__signals__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">__signals__</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L283">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.config.dicts.ControlledDict.html">zim.config.dicts.ControlledDict</a></code>, <code><a href="zim.config.manager.ConfigFile.html">zim.config.manager.ConfigFile</a></code>, <code><a href="zim.fs.FSObjectMonitor.html">zim.fs.FSObjectMonitor</a></code>, <code><a href="zim.fs.FSSingletonClass.html">zim.fs.FSSingletonClass</a></code>, <code><a href="zim.gui.customtools.CustomToolManager.html">zim.gui.customtools.CustomToolManager</a></code>, <code><a href="zim.history.History.html">zim.history.History</a></code>, <code><a href="zim.newfs.helpers.FileTreeWatcher.html">zim.newfs.helpers.FileTreeWatcher</a></code>, <code><a href="zim.newfs.helpers.FSObjectMonitor.html">zim.newfs.helpers.FSObjectMonitor</a></code>, <code><a href="zim.notebook.index.base.IndexerBase.html">zim.notebook.index.base.IndexerBase</a></code>, <code><a href="zim.notebook.index.files.FilesIndexer.html">zim.notebook.index.files.FilesIndexer</a></code>, <code><a href="zim.notebook.index.Index.html">zim.notebook.index.Index</a></code>, <code><a href="zim.notebook.index.IndexUpdateIter.html">zim.notebook.index.IndexUpdateIter</a></code>, <code><a href="zim.notebook.notebook.Notebook.html">zim.notebook.notebook.Notebook</a></code>, <code><a href="zim.notebook.operations.NotebookOperation.html">zim.notebook.operations.NotebookOperation</a></code>, <code><a href="zim.notebook.page.Page.html">zim.notebook.page.Page</a></code>, <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorModel.html">zim.plugins.base.imagegenerator.ImageGeneratorModel</a></code>, <code><a href="zim.plugins.ExtensionBase.html">zim.plugins.ExtensionBase</a></code>, <code><a href="zim.plugins.InsertedObjectTypeMap.html">zim.plugins.InsertedObjectTypeMap</a></code>, <code><a href="zim.plugins.PluginManagerClass.html">zim.plugins.PluginManagerClass</a></code>, <code><a href="zim.plugins.tableeditor.TableModel.html">zim.plugins.tableeditor.TableModel</a></code>, <code><a href="zim.plugins.trayicon.AppIndicatorTrayIcon.html">zim.plugins.trayicon.AppIndicatorTrayIcon</a></code>, <code><a href="zim.templates.Template.html">zim.templates.Template</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.signals.SignalEmitter.__new__">
     
@@ -146,7 +164,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__new__</span>(cls, *arg, **kwarg):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L285">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L285">
       
       (source)
     </a>
@@ -158,194 +176,6 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.signals.SignalEmitter.connect">
-    
-  </a>
-  <a name="connect">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">connect</span>(self, signal, handler):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L291">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Register a handler for a specific object.</p><p>Note that connecting makes a hard reference to the connected object. So connecting an bound method will prevent the object the method belongs to to be destroyed until the signal is disconnected.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">signal</td><td>the signal name</td></tr><tr><td></td><td class="fieldArg">handler</td><td>callback to be called upon the signal, first object to the callback will be the emitting object, other params are signal specific.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">an id for the registered handler</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.signals.SignalEmitter.connect_after">
-    
-  </a>
-  <a name="connect_after">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">connect_after</span>(self, signal, handler):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L307">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.signals.SignalEmitter._connect">
-    
-  </a>
-  <a name="_connect">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_connect</span>(self, category, signal, callback):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L311">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.signals.SignalEmitter._setup_signal">
-    
-  </a>
-  <a name="_setup_signal">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_setup_signal</span>(self, signal):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L328">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.fs.FSObjectMonitor.html">zim.fs.FSObjectMonitor</a></code>, <code><a href="zim.newfs.helpers.FSObjectMonitor.html">zim.newfs.helpers.FSObjectMonitor</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.signals.SignalEmitter.disconnect">
-    
-  </a>
-  <a name="disconnect">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">disconnect</span>(self, handlerid):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L331">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.signals.SignalEmitter._teardown_signal">
-    
-  </a>
-  <a name="_teardown_signal">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_teardown_signal</span>(self, signal):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L348">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.fs.FSObjectMonitor.html">zim.fs.FSObjectMonitor</a></code>, <code><a href="zim.newfs.helpers.FSObjectMonitor.html">zim.newfs.helpers.FSObjectMonitor</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.signals.SignalEmitter.emit">
-    
-  </a>
-  <a name="emit">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">emit</span>(self, signal, *args):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L351">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.signals.SignalEmitter.emit_return_first">
-    
-  </a>
-  <a name="emit_return_first">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">emit_return_first</span>(self, signal, *args):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L371">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Emits a signal and stops emission on the first handler that returns a not-None value.</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.signals.SignalEmitter.emit_return_iter">
-    
-  </a>
-  <a name="emit_return_iter">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">emit_return_iter</span>(self, signal, *args):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L379">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.signals.SignalEmitter.block_signals">
     
@@ -356,7 +186,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">block_signals</span>(self, *signals):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L397">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L397">
       
       (source)
     </a>
@@ -364,16 +194,244 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Returns a context manager for blocking one or more signals</p></div>
+    <div>Returns a context manager for blocking one or more signals</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.signals.SignalEmitter.connect">
+    
+  </a>
+  <a name="connect">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">connect</span>(self, signal, handler):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L291">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Register a handler for a specific object.</p>
+<p>Note that connecting makes a hard reference to the connected object. So connecting an bound method will prevent the object the method belongs to to be destroyed until the signal is disconnected.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">signal</span></td><td class="fieldArgDesc">the signal name</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">handler</span></td><td class="fieldArgDesc">callback to be called upon the signal, first object to the callback will be the emitting object, other params are signal specific.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">an id for the registered handler</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.signals.SignalEmitter.connect_after">
+    
+  </a>
+  <a name="connect_after">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">connect_after</span>(self, signal, handler):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L307">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.signals.SignalEmitter.disconnect">
+    
+  </a>
+  <a name="disconnect">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">disconnect</span>(self, handlerid):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L331">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.signals.SignalEmitter.emit">
+    
+  </a>
+  <a name="emit">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">emit</span>(self, signal, *args):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L351">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.signals.SignalEmitter.emit_return_first">
+    
+  </a>
+  <a name="emit_return_first">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">emit_return_first</span>(self, signal, *args):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L371">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Emits a signal and stops emission on the first handler that returns a not-None value.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.signals.SignalEmitter.emit_return_iter">
+    
+  </a>
+  <a name="emit_return_iter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">emit_return_iter</span>(self, signal, *args):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L379">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="zim.signals.SignalEmitter.__signals__">
+    
+  </a>
+  <a name="__signals__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__signals__</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L283">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.config.dicts.ControlledDict.html">zim.config.dicts.ControlledDict</a></code>, <code><a href="zim.config.manager.ConfigFile.html">zim.config.manager.ConfigFile</a></code>, <code><a href="zim.fs.FSObjectMonitor.html">zim.fs.FSObjectMonitor</a></code>, <code><a href="zim.fs.FSSingletonClass.html">zim.fs.FSSingletonClass</a></code>, <code><a href="zim.gui.customtools.CustomToolManager.html">zim.gui.customtools.CustomToolManager</a></code>, <code><a href="zim.history.History.html">zim.history.History</a></code>, <code><a href="zim.newfs.helpers.FileTreeWatcher.html">zim.newfs.helpers.FileTreeWatcher</a></code>, <code><a href="zim.newfs.helpers.FSObjectMonitor.html">zim.newfs.helpers.FSObjectMonitor</a></code>, <code><a href="zim.notebook.index.base.IndexerBase.html">zim.notebook.index.base.IndexerBase</a></code>, <code><a href="zim.notebook.index.files.FilesIndexer.html">zim.notebook.index.files.FilesIndexer</a></code>, <code><a href="zim.notebook.index.Index.html">zim.notebook.index.Index</a></code>, <code><a href="zim.notebook.index.IndexUpdateIter.html">zim.notebook.index.IndexUpdateIter</a></code>, <code><a href="zim.notebook.notebook.Notebook.html">zim.notebook.notebook.Notebook</a></code>, <code><a href="zim.notebook.operations.NotebookOperation.html">zim.notebook.operations.NotebookOperation</a></code>, <code><a href="zim.notebook.page.Page.html">zim.notebook.page.Page</a></code>, <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorModel.html">zim.plugins.base.imagegenerator.ImageGeneratorModel</a></code>, <code><a href="zim.plugins.ExtensionBase.html">zim.plugins.ExtensionBase</a></code>, <code><a href="zim.plugins.InsertedObjectTypeMap.html">zim.plugins.InsertedObjectTypeMap</a></code>, <code><a href="zim.plugins.PluginManagerClass.html">zim.plugins.PluginManagerClass</a></code>, <code><a href="zim.plugins.tableeditor.TableModel.html">zim.plugins.tableeditor.TableModel</a></code>, <code><a href="zim.plugins.trayicon.AppIndicatorTrayIcon.html">zim.plugins.trayicon.AppIndicatorTrayIcon</a></code>, <code><a href="zim.templates.Template.html">zim.templates.Template</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.signals.SignalEmitter._connect">
+    
+  </a>
+  <a name="_connect">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_connect</span>(self, category, signal, callback):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L311">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.signals.SignalEmitter._setup_signal">
+    
+  </a>
+  <a name="_setup_signal">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_setup_signal</span>(self, signal):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L328">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.fs.FSObjectMonitor.html">zim.fs.FSObjectMonitor</a></code>, <code><a href="zim.newfs.helpers.FSObjectMonitor.html">zim.newfs.helpers.FSObjectMonitor</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.signals.SignalEmitter._teardown_signal">
+    
+  </a>
+  <a name="_teardown_signal">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_teardown_signal</span>(self, signal):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/signals.py#L348">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.fs.FSObjectMonitor.html">zim.fs.FSObjectMonitor</a></code>, <code><a href="zim.newfs.helpers.FSObjectMonitor.html">zim.newfs.helpers.FSObjectMonitor</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.gui.pageview.TextBufferList : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.gui.pageview.TextBufferList</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.pageview.html">pageview</a></code>.<code><a href="zim.gui.pageview.TextBufferList.html">TextBufferList</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.gui.html">gui</a></code><wbr></wbr>.<code><a href="zim.gui.pageview.html">pageview</a></code><wbr></wbr>.<code><a href="zim.gui.pageview.TextBufferList.html">TextBufferList</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,42 +65,76 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TextBufferList</span>(<a href="https://docs.python.org/3/library/stdtypes.html#list" title="list">list</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3383">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TextBufferList</span>(<a href="https://docs.python.org/3/library/stdtypes.html#list" title="list">list</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3405" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.gui.pageview.TextBufferList">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>This class represents a bullet or checkbox list in a <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code>. It is used to perform recursive actions on the list.</p><p>While the <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code> just treats list items as lines that start with a bullet, the TextBufferList maps to a number of lines that together form a list. It uses "row ids" to refer to specific items within this range.</p><p>TextBufferList objects will become invalid after any modification to the buffer that changes the line count within the list. Using them after such modification will result in errors.</p></div>
+        <div><p>This class represents a bullet or checkbox list in a <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code>. It is used to perform recursive actions on the list.</p>
+<p>While the <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code> just treats list items as lines that start with a bullet, the TextBufferList maps to a number of lines that together form a list. It uses "row ids" to refer to specific items within this range.</p>
+<p>TextBufferList objects will become invalid after any modification to the buffer that changes the line count within the list. Using them after such modification will result in errors.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id351">
+        <table class="children sortable" id="id353">
   
-  <tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#LINE_COL">LINE_COL</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#INDENT_COL">INDENT_COL</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#BULLET_COL">BULLET_COL</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="classmethod">
+  
+  <tr class="classmethod">
     
     <td>Class Method</td>
     <td><code><a href="#new_from_line">new_from_line</a></code></td>
-    <td><span>Constructor for a new TextBufferList mapping the list at a specific line in the buffer</span></td>
+    <td>Constructor for a new TextBufferList mapping the list at a specific line in the buffer</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Constructor</span></td>
+    <td>Constructor</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#can_indent">can_indent</a></code></td>
+    <td>Check whether a specific item in the list can be indented</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#can_unindent">can_unindent</a></code></td>
+    <td>Check if a specific item in the list has indenting which can be reduced</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_row_at_line">get_row_at_line</a></code></td>
+    <td>Get the row in the list for a specific line</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#indent">indent</a></code></td>
+    <td>Indent a list item and all it's children</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_bullet">set_bullet</a></code></td>
+    <td>Set the bullet type for a specific item and update parents and children accordingly</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#unindent">unindent</a></code></td>
+    <td>Un-indent a list item and it's children</td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#BULLET_COL">BULLET_COL</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#INDENT_COL">INDENT_COL</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#LINE_COL">LINE_COL</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -85,50 +150,10 @@
     <td>Instance Variable</td>
     <td><code><a href="#lastline">lastline</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#get_row_at_line">get_row_at_line</a></code></td>
-    <td><span>Get the row in the list for a specific line</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#can_indent">can_indent</a></code></td>
-    <td><span>Check whether a specific item in the list can be indented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#can_unindent">can_unindent</a></code></td>
-    <td><span>Check if a specific item in the list has indenting which can be reduced</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#indent">indent</a></code></td>
-    <td><span>Indent a list item and all it's children</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#unindent">unindent</a></code></td>
-    <td><span>Un-indent a list item and it's children</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#set_bullet">set_bullet</a></code></td>
-    <td><span>Set the bullet type for a specific item and update parents and children accordingly</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_indent">_indent</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
-    <td><code><a href="#_indent_row">_indent_row</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
-    <td><code><a href="#_checkbox_unchecked">_checkbox_unchecked</a></code></td>
+    <td><code><a href="#_change_bullet_type">_change_bullet_type</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
@@ -138,7 +163,17 @@
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_change_bullet_type">_change_bullet_type</a></code></td>
+    <td><code><a href="#_checkbox_unchecked">_checkbox_unchecked</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_indent">_indent</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_indent_row">_indent_row</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
@@ -154,70 +189,8 @@
 
       <div id="childList">
 
-        <div class="baseclassvariable">
+        <div class="baseclassmethod">
   
-  <a name="zim.gui.pageview.TextBufferList.LINE_COL">
-    
-  </a>
-  <a name="LINE_COL">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">LINE_COL</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3400">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="baseclassvariable">
-  
-  <a name="zim.gui.pageview.TextBufferList.INDENT_COL">
-    
-  </a>
-  <a name="INDENT_COL">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">INDENT_COL</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3401">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="baseclassvariable">
-  
-  <a name="zim.gui.pageview.TextBufferList.BULLET_COL">
-    
-  </a>
-  <a name="BULLET_COL">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">BULLET_COL</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3402">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="baseclassmethod">
   
   <a name="zim.gui.pageview.TextBufferList.new_from_line">
     
@@ -226,9 +199,9 @@
     
   </a>
   <div class="functionHeader">
-    @classmethod<br />
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod">classmethod</a><br />
     <span class="py-keyword">def</span> <span class="py-defname">new_from_line</span>(self, textbuffer, line):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3404">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3426">
       
       (source)
     </a>
@@ -236,9 +209,12 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Constructor for a new TextBufferList mapping the list at a specific line in the buffer</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">textbuffer</td><td>a <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code> object</td></tr><tr><td></td><td class="fieldArg">line</td><td>a line number<p>This line should be part of a list, the TextBufferList object that is returned maps the full list, so it possibly extends above and below <code>line</code>.</p></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a 2-tuple of a row id and a the new TextBufferList object, or <code>(None, None)</code> if <code>line</code> is not part of a list. The row id points to <code>line</code> in the list.</td></tr></table></div>
+    <div>Constructor for a new TextBufferList mapping the list at a specific line in the buffer<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">textbuffer</span></td><td class="fieldArgDesc">a <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code> object</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">line</span></td><td class="fieldArgDesc"><p>a line number</p>
+<p>This line should be part of a list, the TextBufferList object that is returned maps the full list, so it possibly extends above and below <tt class="rst-docutils literal">line</tt>.</p>
+</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a 2-tuple of a row id and a the new TextBufferList object, or <tt class="rst-docutils literal">(None, None)</tt> if <tt class="rst-docutils literal">line</tt> is not part of a list. The row id points to <tt class="rst-docutils literal">line</tt> in the list.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.gui.pageview.TextBufferList.__init__">
     
@@ -249,7 +225,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, textbuffer, firstline, lastline):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3446">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3468">
       
       (source)
     </a>
@@ -257,93 +233,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">textbuffer</td><td>a <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code> object</td></tr><tr><td></td><td class="fieldArg">firstline</td><td>the line number for the first line of the list</td></tr><tr><td></td><td class="fieldArg">lastline</td><td>the line number for the last line of the list</td></tr></table></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.TextBufferList.buffer">
-    
-  </a>
-  <a name="buffer">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">buffer</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3453">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.TextBufferList.firstline">
-    
-  </a>
-  <a name="firstline">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">firstline</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3454">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.TextBufferList.lastline">
-    
-  </a>
-  <a name="lastline">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">lastline</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3455">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Constructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">textbuffer</span></td><td class="fieldArgDesc">a <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code> object</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">firstline</span></td><td class="fieldArgDesc">the line number for the first line of the list</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">lastline</span></td><td class="fieldArgDesc">the line number for the last line of the list</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.pageview.TextBufferList.get_row_at_line">
-    
-  </a>
-  <a name="get_row_at_line">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_row_at_line</span>(self, line):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3462">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Get the row in the list for a specific line</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">line</td><td>the line number for a line in the <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">the row id for a row in the list or <code>None</code> when the line was outside of the list</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.pageview.TextBufferList.can_indent">
     
@@ -354,7 +247,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">can_indent</span>(self, row):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3475">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3497">
       
       (source)
     </a>
@@ -362,15 +255,23 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Check whether a specific item in the list can be indented</p><p>List items can only be indented if they are on top of the list or when there is some node above them to serve as new parent node. This avoids indenting two levels below the parent.</p><p>So e.g. in the case of:</p><pre class="literalblock">
+    <div><p>Check whether a specific item in the list can be indented</p>
+<p>List items can only be indented if they are on top of the list or when there is some node above them to serve as new parent node. This avoids indenting two levels below the parent.</p>
+<p>So e.g. in the case of:</p>
+<pre class="rst-literal-block">
   * item a
   * item b
-</pre><p>then "item b" can indent and become a child of "item a". However after indenting once:</p><pre class="literalblock">
+</pre>
+<p>then "item b" can indent and become a child of "item a". However after indenting once:</p>
+<pre class="rst-literal-block">
   * item a
       * item b
-</pre><p>now "item b" can not be indented further because it is already one level below "item a".</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">row</td><td>the row id</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> when indenting is possible</td></tr></table></div>
+</pre>
+<p>now "item b" can not be indented further because it is already one level below "item a".</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">row</span></td><td class="fieldArgDesc">the row id</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> when indenting is possible</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.gui.pageview.TextBufferList.can_unindent">
     
@@ -381,7 +282,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">can_unindent</span>(self, row):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3508">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3530">
       
       (source)
     </a>
@@ -389,9 +290,32 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Check if a specific item in the list has indenting which can be reduced</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">row</td><td>the row id</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> when the item has indenting</td></tr></table></div>
+    <div>Check if a specific item in the list has indenting which can be reduced<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">row</span></td><td class="fieldArgDesc">the row id</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> when the item has indenting</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.gui.pageview.TextBufferList.get_row_at_line">
+    
+  </a>
+  <a name="get_row_at_line">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_row_at_line</span>(self, line):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3484">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Get the row in the list for a specific line<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">line</span></td><td class="fieldArgDesc">the line number for a line in the <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the row id for a row in the list or <tt class="rst-docutils literal">None</tt> when the line was outside of the list</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.gui.pageview.TextBufferList.indent">
     
@@ -402,7 +326,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">indent</span>(self, row):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3517">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3539">
       
       (source)
     </a>
@@ -410,80 +334,23 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Indent a list item and all it's children</p><p>For example, when indenting "item b" in this list:</p><pre class="literalblock">
+    <div><p>Indent a list item and all it's children</p>
+<p>For example, when indenting "item b" in this list:</p>
+<pre class="rst-literal-block">
   * item a
   * item b
       * item C
-</pre><p>it will result in:</p><pre class="literalblock">
+</pre>
+<p>it will result in:</p>
+<pre class="rst-literal-block">
   * item a
       * item b
           * item C
-</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">row</td><td>the row id</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> if successfulll</td></tr></table></div>
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">row</span></td><td class="fieldArgDesc">the row id</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> if successfulll</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.pageview.TextBufferList.unindent">
-    
-  </a>
-  <a name="unindent">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">unindent</span>(self, row):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3541">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Un-indent a list item and it's children</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">row</td><td>the row id</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> if successfulll</td></tr></table></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.gui.pageview.TextBufferList._indent">
-    
-  </a>
-  <a name="_indent">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_indent</span>(self, row, step):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3553">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.gui.pageview.TextBufferList._indent_row">
-    
-  </a>
-  <a name="_indent_row">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_indent_row</span>(self, row, step):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3579">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.pageview.TextBufferList.set_bullet">
     
@@ -494,7 +361,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">set_bullet</span>(self, row, bullet):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3587">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3609">
       
       (source)
     </a>
@@ -502,26 +369,32 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Set the bullet type for a specific item and update parents and children accordingly</p><p>Used to (un-)check the checkboxes and synchronize child nodes and parent nodes. When a box is checked, any open child nodes are checked. Also when this is the last checkbox on the given level to be checked, the parent box can be checked as well. When a box is un-checked, also the parent checkbox is un-checked. Both updating of children and parents is recursive.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">row</td><td>the row id</td></tr><tr><td></td><td class="fieldArg">bullet</td><td>the bullet type, which can be one of:<pre class="literalblock">
+    <div><p>Set the bullet type for a specific item and update parents and children accordingly</p>
+<p>Used to (un-)check the checkboxes and synchronize child nodes and parent nodes. When a box is checked, any open child nodes are checked. Also when this is the last checkbox on the given level to be checked, the parent box can be checked as well. When a box is un-checked, also the parent checkbox is un-checked. Both updating of children and parents is recursive.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">row</span></td><td class="fieldArgDesc">the row id</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bullet</span></td><td class="fieldArgDesc"><p>the bullet type, which can be one of:</p>
+<pre class="rst-literal-block">
         BULLET
         CHECKED_BOX
         UNCHECKED_BOX
         XCHECKED_BOX
         MIGRATED_BOX
-</pre></td></tr></table></div>
+        TRANSMIGRATED_BOX
+</pre>
+</td></tr></table></div>
   </div>
-</div><div class="basemethod private">
+</div><div class="basemethod">
   
-  <a name="zim.gui.pageview.TextBufferList._checkbox_unchecked">
+  
+  <a name="zim.gui.pageview.TextBufferList.unindent">
     
   </a>
-  <a name="_checkbox_unchecked">
+  <a name="unindent">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_checkbox_unchecked</span>(self, row):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3616">
+    <span class="py-keyword">def</span> <span class="py-defname">unindent</span>(self, row):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3563">
       
       (source)
     </a>
@@ -529,30 +402,148 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Un-indent a list item and it's children<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">row</span></td><td class="fieldArgDesc">the row id</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> if successfulll</td></tr></table></div>
   </div>
-</div><div class="basemethod private">
+</div><div class="baseconstant">
   
-  <a name="zim.gui.pageview.TextBufferList._checkbox_checked">
+  
+  <a name="zim.gui.pageview.TextBufferList.BULLET_COL">
     
   </a>
-  <a name="_checkbox_checked">
+  <a name="BULLET_COL">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_checkbox_checked</span>(self, row, state):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3625">
+    <span class="py-defname">BULLET_COL</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3424">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>2</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.pageview.TextBufferList.INDENT_COL">
+    
+  </a>
+  <a name="INDENT_COL">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">INDENT_COL</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3423">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>1</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.pageview.TextBufferList.LINE_COL">
+    
+  </a>
+  <a name="LINE_COL">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">LINE_COL</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3422">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>0</code></pre></td></tr></table>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.TextBufferList.buffer">
+    
+  </a>
+  <a name="buffer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">buffer</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3475">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.TextBufferList.firstline">
+    
+  </a>
+  <a name="firstline">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">firstline</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3476">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.TextBufferList.lastline">
+    
+  </a>
+  <a name="lastline">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">lastline</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3477">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basemethod private">
+  
   
   <a name="zim.gui.pageview.TextBufferList._change_bullet_type">
     
@@ -563,7 +554,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_change_bullet_type</span>(self, row, bullet):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3667">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3690">
       
       (source)
     </a>
@@ -575,6 +566,95 @@
   </div>
 </div><div class="basemethod private">
   
+  
+  <a name="zim.gui.pageview.TextBufferList._checkbox_checked">
+    
+  </a>
+  <a name="_checkbox_checked">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_checkbox_checked</span>(self, row, state):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3648">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.gui.pageview.TextBufferList._checkbox_unchecked">
+    
+  </a>
+  <a name="_checkbox_unchecked">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_checkbox_unchecked</span>(self, row):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3639">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.gui.pageview.TextBufferList._indent">
+    
+  </a>
+  <a name="_indent">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_indent</span>(self, row, step):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3575">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.gui.pageview.TextBufferList._indent_row">
+    
+  </a>
+  <a name="_indent_row">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_indent_row</span>(self, row, step):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3601">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
   <a name="zim.gui.pageview.TextBufferList._parents">
     
   </a>
@@ -584,7 +664,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_parents</span>(self, row):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3672">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3695">
       
       (source)
     </a>
@@ -597,11 +677,16 @@
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

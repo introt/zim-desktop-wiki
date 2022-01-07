@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.gui.pageview.SavePageHandler : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.gui.pageview.SavePageHandler</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.pageview.html">pageview</a></code>.<code><a href="zim.gui.pageview.SavePageHandler.html">SavePageHandler</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.gui.html">gui</a></code><wbr></wbr>.<code><a href="zim.gui.pageview.html">pageview</a></code><wbr></wbr>.<code><a href="zim.gui.pageview.SavePageHandler.html">SavePageHandler</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,26 +65,59 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">SavePageHandler</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5360">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">SavePageHandler</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5405" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.gui.pageview.SavePageHandler">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Object for handling page saving.</p><p>This class implements auto-saving on a timer and tries writing in a background thread to ot block the user interface.</p></div>
+        <div><p>Object for handling page saving.</p>
+<p>This class implements auto-saving on a timer and tries writing in a background thread to ot block the user interface.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id356">
+        <table class="children sortable" id="id358">
+  
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#cancel_autosave">cancel_autosave</a></code></td>
+    <td>Cancel a pending autosave</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#do_try_save_page">do_try_save_page</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#queue_autosave">queue_autosave</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#save_page_now">save_page_now</a></code></td>
+    <td>Save the page in the foregound</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#try_save_page">try_save_page</a></code></td>
+    <td>Try to save the page</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#wait_for_store_page_async">wait_for_store_page_async</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#pageview">pageview</a></code></td>
+    <td><code><a href="#get_page_cb">get_page_cb</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
@@ -63,7 +127,7 @@
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#get_page_cb">get_page_cb</a></code></td>
+    <td><code><a href="#pageview">pageview</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
@@ -75,35 +139,10 @@
     <td>Instance Variable</td>
     <td><code><a href="#use_thread">use_thread</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
+  </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#wait_for_store_page_async">wait_for_store_page_async</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#queue_autosave">queue_autosave</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#cancel_autosave">cancel_autosave</a></code></td>
-    <td><span>Cancel a pending autosave</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#save_page_now">save_page_now</a></code></td>
-    <td><span>Save the page in the foregound</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#try_save_page">try_save_page</a></code></td>
-    <td><span>Try to save the page</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#do_try_save_page">do_try_save_page</a></code></td>
+    <td><code><a href="#_assert_can_save_page">_assert_can_save_page</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable private">
     
@@ -114,11 +153,6 @@
     
     <td>Instance Variable</td>
     <td><code><a href="#_error_event">_error_event</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
-    <td><code><a href="#_assert_can_save_page">_assert_can_save_page</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -131,6 +165,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.gui.pageview.SavePageHandler.__init__">
     
   </a>
@@ -139,176 +174,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, pageview, notebook, get_page_cb, timeout=15, use_thread=True):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5367">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.SavePageHandler.pageview">
-    
-  </a>
-  <a name="pageview">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">pageview</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5368">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.SavePageHandler.notebook">
-    
-  </a>
-  <a name="notebook">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">notebook</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5369">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.SavePageHandler.get_page_cb">
-    
-  </a>
-  <a name="get_page_cb">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">get_page_cb</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5370">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.SavePageHandler.timeout">
-    
-  </a>
-  <a name="timeout">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">timeout</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5371">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.SavePageHandler.use_thread">
-    
-  </a>
-  <a name="use_thread">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">use_thread</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5372">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.pageview.SavePageHandler._autosave_timer">
-    
-  </a>
-  <a name="_autosave_timer">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_autosave_timer</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5373">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.pageview.SavePageHandler._error_event">
-    
-  </a>
-  <a name="_error_event">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_error_event</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5374">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.pageview.SavePageHandler.wait_for_store_page_async">
-    
-  </a>
-  <a name="wait_for_store_page_async">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">wait_for_store_page_async</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5376">
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, pageview, notebook, get_page_cb, timeout=15, use_thread=<a href="https://docs.python.org/3/library/constants.html#True">True</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5412">
       
       (source)
     </a>
@@ -320,26 +187,6 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.pageview.SavePageHandler.queue_autosave">
-    
-  </a>
-  <a name="queue_autosave">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">queue_autosave</span>(self, timeout=15):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5380">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Queue a single autosave action after a given timeout. Will not do anything once an autosave is already queued. Autosave will keep running until page is no longer modified and then stop.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">timeout</td><td>timeout in seconds</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.pageview.SavePageHandler.cancel_autosave">
     
@@ -350,7 +197,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">cancel_autosave</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5393">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5438">
       
       (source)
     </a>
@@ -358,20 +205,21 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Cancel a pending autosave</p></div>
+    <div>Cancel a pending autosave</div>
   </div>
-</div><div class="basemethod private">
+</div><div class="basemethod">
   
-  <a name="zim.gui.pageview.SavePageHandler._assert_can_save_page">
+  
+  <a name="zim.gui.pageview.SavePageHandler.do_try_save_page">
     
   </a>
-  <a name="_assert_can_save_page">
+  <a name="do_try_save_page">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_assert_can_save_page</span>(self, page):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5399">
+    <span class="py-keyword">def</span> <span class="py-defname">do_try_save_page</span>(self, *a):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5491">
       
       (source)
     </a>
@@ -383,6 +231,29 @@
   </div>
 </div><div class="basemethod">
   
+  
+  <a name="zim.gui.pageview.SavePageHandler.queue_autosave">
+    
+  </a>
+  <a name="queue_autosave">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">queue_autosave</span>(self, timeout=15):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5425">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Queue a single autosave action after a given timeout. Will not do anything once an autosave is already queued. Autosave will keep running until page is no longer modified and then stop.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">timeout</span></td><td class="fieldArgDesc">timeout in seconds</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
   <a name="zim.gui.pageview.SavePageHandler.save_page_now">
     
   </a>
@@ -391,8 +262,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">save_page_now</span>(self, dialog_timeout=False):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5405">
+    <span class="py-keyword">def</span> <span class="py-defname">save_page_now</span>(self, dialog_timeout=<a href="https://docs.python.org/3/library/constants.html#False">False</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5450">
       
       (source)
     </a>
@@ -400,9 +271,12 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Save the page in the foregound</p><p>Can result in a <code><a href="zim.gui.pageview.SavePageErrorDialog.html">SavePageErrorDialog</a></code> when there is an error while saving a page. If that dialog is cancelled by the user, the page may not be saved after all.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">dialog_timeout</td><td>passed on to <code><a href="zim.gui.pageview.SavePageErrorDialog.html">SavePageErrorDialog</a></code></td></tr></table></div>
+    <div><p>Save the page in the foregound</p>
+<p>Can result in a <code><a href="zim.gui.pageview.SavePageErrorDialog.html">SavePageErrorDialog</a></code> when there is an error while saving a page. If that dialog is cancelled by the user, the page may not be saved after all.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dialog_timeout</span></td><td class="fieldArgDesc">passed on to <code><a href="zim.gui.pageview.SavePageErrorDialog.html">SavePageErrorDialog</a></code></td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.gui.pageview.SavePageHandler.try_save_page">
     
@@ -413,7 +287,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">try_save_page</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5434">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5479">
       
       (source)
     </a>
@@ -425,16 +299,17 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.pageview.SavePageHandler.do_try_save_page">
+  
+  <a name="zim.gui.pageview.SavePageHandler.wait_for_store_page_async">
     
   </a>
-  <a name="do_try_save_page">
+  <a name="wait_for_store_page_async">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">do_try_save_page</span>(self, *a):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5446">
+    <span class="py-keyword">def</span> <span class="py-defname">wait_for_store_page_async</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5421">
       
       (source)
     </a>
@@ -444,14 +319,202 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.SavePageHandler.get_page_cb">
+    
+  </a>
+  <a name="get_page_cb">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">get_page_cb</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5415">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.SavePageHandler.notebook">
+    
+  </a>
+  <a name="notebook">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">notebook</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5414">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.SavePageHandler.pageview">
+    
+  </a>
+  <a name="pageview">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pageview</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5413">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.SavePageHandler.timeout">
+    
+  </a>
+  <a name="timeout">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">timeout</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5416">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.SavePageHandler.use_thread">
+    
+  </a>
+  <a name="use_thread">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">use_thread</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5417">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.gui.pageview.SavePageHandler._assert_can_save_page">
+    
+  </a>
+  <a name="_assert_can_save_page">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_assert_can_save_page</span>(self, page):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5444">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.pageview.SavePageHandler._autosave_timer">
+    
+  </a>
+  <a name="_autosave_timer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_autosave_timer</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5418">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.pageview.SavePageHandler._error_event">
+    
+  </a>
+  <a name="_error_event">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_error_event</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5419">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

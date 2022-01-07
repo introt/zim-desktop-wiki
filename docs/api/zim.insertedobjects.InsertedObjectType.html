@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.insertedobjects.InsertedObjectType : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.insertedobjects.InsertedObjectType</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.insertedobjects.html">insertedobjects</a></code>.<code><a href="zim.insertedobjects.InsertedObjectType.html">InsertedObjectType</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.insertedobjects.html">insertedobjects</a></code><wbr></wbr>.<code><a href="zim.insertedobjects.InsertedObjectType.html">InsertedObjectType</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,26 +65,75 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">InsertedObjectType</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L11">(source)</a></code></p><p>Known subclasses: <code><a href="zim.gui.insertedobjects.UnknownInsertedImageObject.html">zim.gui.insertedobjects.UnknownInsertedImageObject</a></code>, <code><a href="zim.gui.insertedobjects.UnknownInsertedObject.html">zim.gui.insertedobjects.UnknownInsertedObject</a></code>, <code><a href="zim.plugins.InsertedObjectTypeExtension.html">zim.plugins.InsertedObjectTypeExtension</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">InsertedObjectType</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L11" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="zim.gui.insertedobjects.UnknownInsertedImageObject.html">zim.gui.insertedobjects.UnknownInsertedImageObject</a></code>, <code><a href="zim.gui.insertedobjects.UnknownInsertedObject.html">zim.gui.insertedobjects.UnknownInsertedObject</a></code>, <code><a href="zim.plugins.InsertedObjectTypeExtension.html">zim.plugins.InsertedObjectTypeExtension</a></code></p>
         <p><a href="classIndex.html#zim.insertedobjects.InsertedObjectType">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Base class for defining "objects" that can be inserted in a wiki page</p><p>This class is called "InsertedObjectType" instead of "InsertedObject" because it does *not* represent a single inserted object, but defines a type of object of which many instances can occur. The instances themselves are represented by a series of tokens for the parser and a model plus a widget for the user interface.</p><p>Note: if you are looking for how to define a new object type from a plugin, please see <code><a href="zim.plugins.InsertedObjectTypeExtension.html">InsertedObjectTypeExtension</a></code> in <code><a href="zim.plugins.html">zim.plugins</a></code>. Base classes for widgets can be found in <code><a href="zim.gui.insertedobjects.html">zim.gui.insertedobjects</a></code>.</p></div>
+        <div><p>Base class for defining "objects" that can be inserted in a wiki page</p>
+<p>This class is called "InsertedObjectType" instead of "InsertedObject" because it does *not* represent a single inserted object, but defines a type of object of which many instances can occur. The instances themselves are represented by a series of tokens for the parser and a model plus a widget for the user interface.</p>
+<p>Note: if you are looking for how to define a new object type from a plugin, please see <code><a href="zim.plugins.InsertedObjectTypeExtension.html">InsertedObjectTypeExtension</a></code> in <code><a href="zim.plugins.html">zim.plugins</a></code>. Base classes for widgets can be found in <code><a href="zim.gui.insertedobjects.html">zim.gui.insertedobjects</a></code>.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id563">
+        <table class="children sortable" id="id572">
   
-  <tr class="classvariable">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#create_widget">create_widget</a></code></td>
+    <td>Return a Gtk widget for the given model @param model: an object created with <code><a href="#model_from_data">model_from_data()</a></code> @returns: a Gtk widget object derived from <code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html">InsertedObjectWidget</a></code></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#data_from_model">data_from_model</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#format">format</a></code></td>
+    <td>Format the object using a specific output format Intended to improve rendering of the object on exporting.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#model_from_data">model_from_data</a></code></td>
+    <td>Returns a model for the object</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#new_model_interactive">new_model_interactive</a></code></td>
+    <td>Create a new object model interactively Interactive means that we can use e.g. a dialog to prompt for input. The default behavior is to use <code><a href="#new_object">new_object()</a></code>.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#new_object">new_object</a></code></td>
+    <td>Create a new empty object @returns: a 2-tuple <tt class="rst-docutils literal">(attrib, data)</tt></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parse_attrib">parse_attrib</a></code></td>
+    <td>Convenience method to enforce the supported attributes and their types. @returns: a <code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code> using the <tt class="rst-docutils literal">object_attr</tt> dict as definition</td>
+  </tr><tr class="classvariable">
     
     <td>Class Variable</td>
-    <td><code><a href="#name">name</a></code></td>
+    <td><code><a href="#is_inline">is_inline</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="classvariable">
     
     <td>Class Variable</td>
     <td><code><a href="#label">label</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#name">name</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="classvariable">
     
@@ -65,51 +145,6 @@
     <td>Instance Variable</td>
     <td><code><a href="#object_attr">object_attr</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#parse_attrib">parse_attrib</a></code></td>
-    <td><span>Convenience method to enforce the supported attributes and their types. @returns: a <code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code> using the <code>object_attr</code> dict as definition</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#new_object">new_object</a></code></td>
-    <td><span>Create a new empty object @returns: a 2-tuple <code>(attrib, data)</code></span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#new_model_interactive">new_model_interactive</a></code></td>
-    <td><span>Create a new object model interactively Interactive means that we can use e.g. a dialog to prompt for input. The default behavior is to use <code><a href="#new_object">new_object()</a></code>.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#model_from_data">model_from_data</a></code></td>
-    <td><span>Returns a model for the object</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#data_from_model">data_from_model</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#create_widget">create_widget</a></code></td>
-    <td><span>Return a Gtk widget for the given model @param model: an object created with <code><a href="#model_from_data">model_from_data()</a></code> @returns: a Gtk widget object derived from <code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html">InsertedObjectWidget</a></code></span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#format">format</a></code></td>
-    <td><span>Format the object using a specific output format Intended to improve rendering of the object on exporting.</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
-    <td><code><a href="#_model_from_data_wrapper">_model_from_data_wrapper</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -120,6 +155,11 @@
     <td>Method</td>
     <td><code><a href="#_format_wrapper">_format_wrapper</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_model_from_data_wrapper">_model_from_data_wrapper</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
         
@@ -129,91 +169,8 @@
 
       <div id="childList">
 
-        <div class="baseclassvariable">
+        <div class="basemethod">
   
-  <a name="zim.insertedobjects.InsertedObjectType.name">
-    
-  </a>
-  <a name="name">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">name</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L29">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.insertedobjects.UnknownInsertedImageObject.html">zim.gui.insertedobjects.UnknownInsertedImageObject</a></code>, <code><a href="zim.gui.insertedobjects.UnknownInsertedObject.html">zim.gui.insertedobjects.UnknownInsertedObject</a></code>, <code><a href="zim.plugins.diagrameditor.BackwardDiagramImageObjectType.html">zim.plugins.diagrameditor.BackwardDiagramImageObjectType</a></code>, <code><a href="zim.plugins.ditaaeditor.BackwardDitaaImageObjectType.html">zim.plugins.ditaaeditor.BackwardDitaaImageObjectType</a></code>, <code><a href="zim.plugins.equationeditor.BackwardEquationImageObjectType.html">zim.plugins.equationeditor.BackwardEquationImageObjectType</a></code>, <code><a href="zim.plugins.gnu_r_ploteditor.BackwardGnuRPlotImageObjectType.html">zim.plugins.gnu_r_ploteditor.BackwardGnuRPlotImageObjectType</a></code>, <code><a href="zim.plugins.gnuplot_ploteditor.BackwardGnuplotImageObjectType.html">zim.plugins.gnuplot_ploteditor.BackwardGnuplotImageObjectType</a></code>, <code><a href="zim.plugins.scoreeditor.BackwardScoreImageObjectType.html">zim.plugins.scoreeditor.BackwardScoreImageObjectType</a></code>, <code><a href="zim.plugins.sequencediagrameditor.BackwardSequenceDiagramImageObjectType.html">zim.plugins.sequencediagrameditor.BackwardSequenceDiagramImageObjectType</a></code>, <code><a href="zim.plugins.sourceview.SourceViewObjectType.html">zim.plugins.sourceview.SourceViewObjectType</a></code>, <code><a href="zim.plugins.tableeditor.TableViewObjectType.html">zim.plugins.tableeditor.TableViewObjectType</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseclassvariable">
-  
-  <a name="zim.insertedobjects.InsertedObjectType.label">
-    
-  </a>
-  <a name="label">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">label</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L31">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.insertedobjects.UnknownInsertedImageObject.html">zim.gui.insertedobjects.UnknownInsertedImageObject</a></code>, <code><a href="zim.gui.insertedobjects.UnknownInsertedObject.html">zim.gui.insertedobjects.UnknownInsertedObject</a></code>, <code><a href="zim.plugins.diagrameditor.BackwardDiagramImageObjectType.html">zim.plugins.diagrameditor.BackwardDiagramImageObjectType</a></code>, <code><a href="zim.plugins.ditaaeditor.BackwardDitaaImageObjectType.html">zim.plugins.ditaaeditor.BackwardDitaaImageObjectType</a></code>, <code><a href="zim.plugins.equationeditor.BackwardEquationImageObjectType.html">zim.plugins.equationeditor.BackwardEquationImageObjectType</a></code>, <code><a href="zim.plugins.gnu_r_ploteditor.BackwardGnuRPlotImageObjectType.html">zim.plugins.gnu_r_ploteditor.BackwardGnuRPlotImageObjectType</a></code>, <code><a href="zim.plugins.gnuplot_ploteditor.BackwardGnuplotImageObjectType.html">zim.plugins.gnuplot_ploteditor.BackwardGnuplotImageObjectType</a></code>, <code><a href="zim.plugins.scoreeditor.BackwardScoreImageObjectType.html">zim.plugins.scoreeditor.BackwardScoreImageObjectType</a></code>, <code><a href="zim.plugins.sequencediagrameditor.BackwardSequenceDiagramImageObjectType.html">zim.plugins.sequencediagrameditor.BackwardSequenceDiagramImageObjectType</a></code>, <code><a href="zim.plugins.sourceview.SourceViewObjectType.html">zim.plugins.sourceview.SourceViewObjectType</a></code>, <code><a href="zim.plugins.tableeditor.TableViewObjectType.html">zim.plugins.tableeditor.TableViewObjectType</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseclassvariable">
-  
-  <a name="zim.insertedobjects.InsertedObjectType.verb_icon">
-    
-  </a>
-  <a name="verb_icon">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">verb_icon</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L32">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.plugins.tableeditor.TableViewObjectType.html">zim.plugins.tableeditor.TableViewObjectType</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.insertedobjects.InsertedObjectType.object_attr">
-    
-  </a>
-  <a name="object_attr">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">object_attr</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L34">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType.html">zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType</a></code>, <code><a href="zim.plugins.sourceview.SourceViewObjectType.html">zim.plugins.sourceview.SourceViewObjectType</a></code>, <code><a href="zim.plugins.tableeditor.TableViewObjectType.html">zim.plugins.tableeditor.TableViewObjectType</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.insertedobjects.InsertedObjectType.__init__">
     
@@ -224,7 +181,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L36">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L34">
       
       (source)
     </a>
@@ -236,152 +193,6 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.insertedobjects.InsertedObjectType.parse_attrib">
-    
-  </a>
-  <a name="parse_attrib">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">parse_attrib</span>(self, attrib):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L52">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.insertedobjects.UnknownInsertedImageObject.html">zim.gui.insertedobjects.UnknownInsertedImageObject</a></code>, <code><a href="zim.gui.insertedobjects.UnknownInsertedObject.html">zim.gui.insertedobjects.UnknownInsertedObject</a></code></div>
-    
-    <div><p>Convenience method to enforce the supported attributes and their types.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code> using the <code>object_attr</code> dict as definition</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.insertedobjects.InsertedObjectType.new_object">
-    
-  </a>
-  <a name="new_object">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">new_object</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L62">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Create a new empty object</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a 2-tuple <code>(attrib, data)</code></td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.insertedobjects.InsertedObjectType.new_model_interactive">
-    
-  </a>
-  <a name="new_model_interactive">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">new_model_interactive</span>(self, parent, notebook, page):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L69">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.html">zim.plugins.base.imagegenerator.ImageGeneratorObjectType</a></code>, <code><a href="zim.plugins.sourceview.SourceViewObjectType.html">zim.plugins.sourceview.SourceViewObjectType</a></code>, <code><a href="zim.plugins.tableeditor.TableViewObjectType.html">zim.plugins.tableeditor.TableViewObjectType</a></code></div>
-    
-    <div><p>Create a new object model interactively Interactive means that we can use e.g. a dialog to prompt for input. The default behavior is to use <code><a href="#new_object">new_object()</a></code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">parent</td><td>Gtk widget to use as parent widget for dialogs</td></tr><tr><td></td><td class="fieldArg">notebook</td><td>a <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object</td></tr><tr><td></td><td class="fieldArg">page</td><td>a <code><a href="zim.notebook.page.Page.html">Page</a></code> object for the page where this object occurs</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a model object (see <code><a href="#model_from_data">model_from_data()</a></code>)</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><span class="undocumented">Unknown exception</span></td><td>ValueError: if user cancelled the action</td></tr></table></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.insertedobjects.InsertedObjectType._model_from_data_wrapper">
-    
-  </a>
-  <a name="_model_from_data_wrapper">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_model_from_data_wrapper</span>(self, notebook, page, attrib, data):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L83">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.insertedobjects.InsertedObjectType.model_from_data">
-    
-  </a>
-  <a name="model_from_data">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">model_from_data</span>(self, notebook, page, attrib, data):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L87">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.insertedobjects.UnknownInsertedImageObject.html">zim.gui.insertedobjects.UnknownInsertedImageObject</a></code>, <code><a href="zim.gui.insertedobjects.UnknownInsertedObject.html">zim.gui.insertedobjects.UnknownInsertedObject</a></code>, <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.html">zim.plugins.base.imagegenerator.ImageGeneratorObjectType</a></code>, <code><a href="zim.plugins.sourceview.SourceViewObjectType.html">zim.plugins.sourceview.SourceViewObjectType</a></code>, <code><a href="zim.plugins.tableeditor.TableViewObjectType.html">zim.plugins.tableeditor.TableViewObjectType</a></code></div>
-    
-    <div><p>Returns a model for the object</p><p>The main purpose for the model is that it is shared between widgets that show the same object. See e.g. <code>Gtk.TextBuffer</code> or <code>Gtk.TreeModel</code> for examples.</p><p>No API is expected of the model object other than that it can be used as argument for <code><a href="#create_widget">create_widget()</a></code> and <code><a href="#data_from_model">data_from_model()</a></code> and a "changed" signal that should be emitted when the content has changed, so the pageview knows that the page has changed and should be saved before closing.</p><p>Since the model is specific for the page where the object occurs, any user of the object type should serialize back to data before e.g. copying the object to a different page.</p><p>This method should always be robust for missing attributes and body contents. The <code>attrib</code> will automatically be checked by <code><a href="#parse_attrib">parse_attrib</a></code> before being given to this method.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">notebook</td><td>a <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object</td></tr><tr><td></td><td class="fieldArg">page</td><td>a <code><a href="zim.notebook.page.Page.html">Page</a></code> object for the page where this object occurs</td></tr><tr><td></td><td class="fieldArg">attrib</td><td>dict with object attributes</td></tr><tr><td></td><td class="fieldArg">data</td><td>string with object content</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a model object</td></tr></table></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.insertedobjects.InsertedObjectType._data_from_model_wrapper">
-    
-  </a>
-  <a name="_data_from_model_wrapper">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_data_from_model_wrapper</span>(self, model):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L116">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.insertedobjects.InsertedObjectType.data_from_model">
-    
-  </a>
-  <a name="data_from_model">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">data_from_model</span>(self, model):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L120">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.insertedobjects.UnknownInsertedImageObject.html">zim.gui.insertedobjects.UnknownInsertedImageObject</a></code>, <code><a href="zim.gui.insertedobjects.UnknownInsertedObject.html">zim.gui.insertedobjects.UnknownInsertedObject</a></code>, <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.html">zim.plugins.base.imagegenerator.ImageGeneratorObjectType</a></code>, <code><a href="zim.plugins.sourceview.SourceViewObjectType.html">zim.plugins.sourceview.SourceViewObjectType</a></code></div>
-    
-    <div><p>Returns the object data for a model object This method is used to serialize the model object back into a form that can be handled when parsing wiki content.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">model</td><td>an object created with <code><a href="#model_from_data">model_from_data()</a></code></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a 2-tuple <code>(attrib, data)</code></td></tr></table></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.insertedobjects.InsertedObjectType.create_widget">
     
@@ -392,7 +203,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">create_widget</span>(self, model):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L129">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L127">
       
       (source)
     </a>
@@ -400,30 +211,32 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="zim.gui.insertedobjects.UnknownInsertedImageObject.html">zim.gui.insertedobjects.UnknownInsertedImageObject</a></code>, <code><a href="zim.gui.insertedobjects.UnknownInsertedObject.html">zim.gui.insertedobjects.UnknownInsertedObject</a></code>, <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.html">zim.plugins.base.imagegenerator.ImageGeneratorObjectType</a></code>, <code><a href="zim.plugins.sourceview.SourceViewObjectType.html">zim.plugins.sourceview.SourceViewObjectType</a></code>, <code><a href="zim.plugins.tableeditor.TableViewObjectType.html">zim.plugins.tableeditor.TableViewObjectType</a></code></div>
     
-    <div><p>Return a Gtk widget for the given model</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">model</td><td>an object created with <code><a href="#model_from_data">model_from_data()</a></code></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a Gtk widget object derived from <code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html">InsertedObjectWidget</a></code></td></tr></table></div>
+    <div>Return a Gtk widget for the given model<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">model</span></td><td class="fieldArgDesc">an object created with <code><a href="#model_from_data">model_from_data()</a></code></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a Gtk widget object derived from <code><a href="zim.gui.insertedobjects.InsertedObjectWidget.html">InsertedObjectWidget</a></code></td></tr></table></div>
   </div>
-</div><div class="basemethod private">
+</div><div class="basemethod">
   
-  <a name="zim.insertedobjects.InsertedObjectType._format_wrapper">
+  
+  <a name="zim.insertedobjects.InsertedObjectType.data_from_model">
     
   </a>
-  <a name="_format_wrapper">
+  <a name="data_from_model">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_format_wrapper</span>(self, format, dumper, attrib, data):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L136">
+    <span class="py-keyword">def</span> <span class="py-defname">data_from_model</span>(self, model):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L118">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.insertedobjects.UnknownInsertedImageObject.html">zim.gui.insertedobjects.UnknownInsertedImageObject</a></code>, <code><a href="zim.gui.insertedobjects.UnknownInsertedObject.html">zim.gui.insertedobjects.UnknownInsertedObject</a></code>, <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.html">zim.plugins.base.imagegenerator.ImageGeneratorObjectType</a></code>, <code><a href="zim.plugins.sourceview.SourceViewObjectType.html">zim.plugins.sourceview.SourceViewObjectType</a></code></div>
     
-    
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Returns the object data for a model object This method is used to serialize the model object back into a form that can be handled when parsing wiki content.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">model</span></td><td class="fieldArgDesc">an object created with <code><a href="#model_from_data">model_from_data()</a></code></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a 2-tuple <tt class="rst-docutils literal">(attrib, data)</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.insertedobjects.InsertedObjectType.format">
     
@@ -434,7 +247,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">format</span>(self, format, dumper, attrib, data):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L140">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L138">
       
       (source)
     </a>
@@ -442,16 +255,298 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType.html">zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType</a></code></div>
     
-    <div><p>Format the object using a specific output format Intended to improve rendering of the object on exporting.</p><p>This method should always be robust for missing attributes and body contents. The <code>attrib</code> will automatically be checked by <code><a href="#parse_attrib">parse_attrib</a></code> before being given to this method.</p><p>Implementing this method is optional, default checks for a specific method per format (e.g. <code>format_html()</code> for the "html" format) and raises <code>ValueError</code> if no such method is defined.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">format</td><td>name of the output format</td></tr><tr><td></td><td class="fieldArg">dumper</td><td><code>Dumper</code> object</td></tr><tr><td></td><td class="fieldArg">attrib</td><td>dict with object attributes</td></tr><tr><td></td><td class="fieldArg">data</td><td>string with object content</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a list of strings</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></td><td>if no specific formatting for "format" is available</td></tr></table></div>
+    <div><p>Format the object using a specific output format Intended to improve rendering of the object on exporting.</p>
+<p>This method should always be robust for missing attributes and body contents. The <tt class="rst-docutils literal">attrib</tt> will automatically be checked by <code><a href="#parse_attrib">parse_attrib</a></code> before being given to this method.</p>
+<p>Implementing this method is optional, default checks for a specific method per format (e.g. <tt class="rst-docutils literal">format_html()</tt> for the "html" format) and raises <tt class="rst-docutils literal">ValueError</tt> if no such method is defined.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">format</span></td><td class="fieldArgDesc">name of the output format</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dumper</span></td><td class="fieldArgDesc"><code>Dumper</code> object</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">attrib</span></td><td class="fieldArgDesc">dict with object attributes</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">data</span></td><td class="fieldArgDesc">string with object content</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of strings</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></code></td><td>if no specific formatting for "format" is available</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.insertedobjects.InsertedObjectType.model_from_data">
+    
+  </a>
+  <a name="model_from_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">model_from_data</span>(self, notebook, page, attrib, data):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L85">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.insertedobjects.UnknownInsertedImageObject.html">zim.gui.insertedobjects.UnknownInsertedImageObject</a></code>, <code><a href="zim.gui.insertedobjects.UnknownInsertedObject.html">zim.gui.insertedobjects.UnknownInsertedObject</a></code>, <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.html">zim.plugins.base.imagegenerator.ImageGeneratorObjectType</a></code>, <code><a href="zim.plugins.sourceview.SourceViewObjectType.html">zim.plugins.sourceview.SourceViewObjectType</a></code>, <code><a href="zim.plugins.tableeditor.TableViewObjectType.html">zim.plugins.tableeditor.TableViewObjectType</a></code></div>
+    
+    <div><p>Returns a model for the object</p>
+<p>The main purpose for the model is that it is shared between widgets that show the same object. See e.g. <tt class="rst-docutils literal">Gtk.TextBuffer</tt> or <tt class="rst-docutils literal">Gtk.TreeModel</tt> for examples.</p>
+<p>No API is expected of the model object other than that it can be used as argument for <code><a href="#create_widget">create_widget()</a></code> and <code><a href="#data_from_model">data_from_model()</a></code> and a "changed" signal that should be emitted when the content has changed, so the pageview knows that the page has changed and should be saved before closing.</p>
+<p>Since the model is specific for the page where the object occurs, any user of the object type should serialize back to data before e.g. copying the object to a different page.</p>
+<p>This method should always be robust for missing attributes and body contents. The <tt class="rst-docutils literal">attrib</tt> will automatically be checked by <code><a href="#parse_attrib">parse_attrib</a></code> before being given to this method.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">notebook</span></td><td class="fieldArgDesc">a <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">page</span></td><td class="fieldArgDesc">a <code><a href="zim.notebook.page.Page.html">Page</a></code> object for the page where this object occurs</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">attrib</span></td><td class="fieldArgDesc">dict with object attributes</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">data</span></td><td class="fieldArgDesc">string with object content</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a model object</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.insertedobjects.InsertedObjectType.new_model_interactive">
+    
+  </a>
+  <a name="new_model_interactive">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">new_model_interactive</span>(self, parent, notebook, page):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L67">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.html">zim.plugins.base.imagegenerator.ImageGeneratorObjectType</a></code>, <code><a href="zim.plugins.sourceview.SourceViewObjectType.html">zim.plugins.sourceview.SourceViewObjectType</a></code>, <code><a href="zim.plugins.tableeditor.TableViewObjectType.html">zim.plugins.tableeditor.TableViewObjectType</a></code></div>
+    
+    <div>Create a new object model interactively Interactive means that we can use e.g. a dialog to prompt for input. The default behavior is to use <code><a href="#new_object">new_object()</a></code>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">parent</span></td><td class="fieldArgDesc">Gtk widget to use as parent widget for dialogs</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">notebook</span></td><td class="fieldArgDesc">a <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">page</span></td><td class="fieldArgDesc">a <code><a href="zim.notebook.page.Page.html">Page</a></code> object for the page where this object occurs</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a model object (see <code><a href="#model_from_data">model_from_data()</a></code>)</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><span class="undocumented">Unknown exception</span></code></td><td>ValueError: if user cancelled the action</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.insertedobjects.InsertedObjectType.new_object">
+    
+  </a>
+  <a name="new_object">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">new_object</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L60">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Create a new empty object<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a 2-tuple <tt class="rst-docutils literal">(attrib, data)</tt></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.insertedobjects.InsertedObjectType.parse_attrib">
+    
+  </a>
+  <a name="parse_attrib">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse_attrib</span>(self, attrib):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L50">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.insertedobjects.UnknownInsertedImageObject.html">zim.gui.insertedobjects.UnknownInsertedImageObject</a></code>, <code><a href="zim.gui.insertedobjects.UnknownInsertedObject.html">zim.gui.insertedobjects.UnknownInsertedObject</a></code></div>
+    
+    <div>Convenience method to enforce the supported attributes and their types.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code> using the <tt class="rst-docutils literal">object_attr</tt> dict as definition</td></tr></table></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="zim.insertedobjects.InsertedObjectType.is_inline">
+    
+  </a>
+  <a name="is_inline">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">is_inline</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L30">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.insertedobjects.UnknownInsertedImageObject.html">zim.gui.insertedobjects.UnknownInsertedImageObject</a></code>, <code><a href="zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType.html">zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="zim.insertedobjects.InsertedObjectType.label">
+    
+  </a>
+  <a name="label">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">label</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L27">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.insertedobjects.UnknownInsertedImageObject.html">zim.gui.insertedobjects.UnknownInsertedImageObject</a></code>, <code><a href="zim.gui.insertedobjects.UnknownInsertedObject.html">zim.gui.insertedobjects.UnknownInsertedObject</a></code>, <code><a href="zim.plugins.diagrameditor.BackwardDiagramImageObjectType.html">zim.plugins.diagrameditor.BackwardDiagramImageObjectType</a></code>, <code><a href="zim.plugins.ditaaeditor.BackwardDitaaImageObjectType.html">zim.plugins.ditaaeditor.BackwardDitaaImageObjectType</a></code>, <code><a href="zim.plugins.equationeditor.BackwardEquationImageObjectType.html">zim.plugins.equationeditor.BackwardEquationImageObjectType</a></code>, <code><a href="zim.plugins.gnu_r_ploteditor.BackwardGnuRPlotImageObjectType.html">zim.plugins.gnu_r_ploteditor.BackwardGnuRPlotImageObjectType</a></code>, <code><a href="zim.plugins.gnuplot_ploteditor.BackwardGnuplotImageObjectType.html">zim.plugins.gnuplot_ploteditor.BackwardGnuplotImageObjectType</a></code>, <code><a href="zim.plugins.scoreeditor.BackwardScoreImageObjectType.html">zim.plugins.scoreeditor.BackwardScoreImageObjectType</a></code>, <code><a href="zim.plugins.sequencediagrameditor.BackwardSequenceDiagramImageObjectType.html">zim.plugins.sequencediagrameditor.BackwardSequenceDiagramImageObjectType</a></code>, <code><a href="zim.plugins.sourceview.SourceViewObjectType.html">zim.plugins.sourceview.SourceViewObjectType</a></code>, <code><a href="zim.plugins.tableeditor.TableViewObjectType.html">zim.plugins.tableeditor.TableViewObjectType</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="zim.insertedobjects.InsertedObjectType.name">
+    
+  </a>
+  <a name="name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">name</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L25">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.insertedobjects.UnknownInsertedImageObject.html">zim.gui.insertedobjects.UnknownInsertedImageObject</a></code>, <code><a href="zim.gui.insertedobjects.UnknownInsertedObject.html">zim.gui.insertedobjects.UnknownInsertedObject</a></code>, <code><a href="zim.plugins.diagrameditor.BackwardDiagramImageObjectType.html">zim.plugins.diagrameditor.BackwardDiagramImageObjectType</a></code>, <code><a href="zim.plugins.ditaaeditor.BackwardDitaaImageObjectType.html">zim.plugins.ditaaeditor.BackwardDitaaImageObjectType</a></code>, <code><a href="zim.plugins.equationeditor.BackwardEquationImageObjectType.html">zim.plugins.equationeditor.BackwardEquationImageObjectType</a></code>, <code><a href="zim.plugins.gnu_r_ploteditor.BackwardGnuRPlotImageObjectType.html">zim.plugins.gnu_r_ploteditor.BackwardGnuRPlotImageObjectType</a></code>, <code><a href="zim.plugins.gnuplot_ploteditor.BackwardGnuplotImageObjectType.html">zim.plugins.gnuplot_ploteditor.BackwardGnuplotImageObjectType</a></code>, <code><a href="zim.plugins.scoreeditor.BackwardScoreImageObjectType.html">zim.plugins.scoreeditor.BackwardScoreImageObjectType</a></code>, <code><a href="zim.plugins.sequencediagrameditor.BackwardSequenceDiagramImageObjectType.html">zim.plugins.sequencediagrameditor.BackwardSequenceDiagramImageObjectType</a></code>, <code><a href="zim.plugins.sourceview.SourceViewObjectType.html">zim.plugins.sourceview.SourceViewObjectType</a></code>, <code><a href="zim.plugins.tableeditor.TableViewObjectType.html">zim.plugins.tableeditor.TableViewObjectType</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="zim.insertedobjects.InsertedObjectType.verb_icon">
+    
+  </a>
+  <a name="verb_icon">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">verb_icon</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L28">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.plugins.tableeditor.TableViewObjectType.html">zim.plugins.tableeditor.TableViewObjectType</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.insertedobjects.InsertedObjectType.object_attr">
+    
+  </a>
+  <a name="object_attr">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">object_attr</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L32">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType.html">zim.plugins.base.imagegenerator.BackwardImageGeneratorObjectType</a></code>, <code><a href="zim.plugins.sourceview.SourceViewObjectType.html">zim.plugins.sourceview.SourceViewObjectType</a></code>, <code><a href="zim.plugins.tableeditor.TableViewObjectType.html">zim.plugins.tableeditor.TableViewObjectType</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.insertedobjects.InsertedObjectType._data_from_model_wrapper">
+    
+  </a>
+  <a name="_data_from_model_wrapper">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_data_from_model_wrapper</span>(self, model):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L114">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.insertedobjects.InsertedObjectType._format_wrapper">
+    
+  </a>
+  <a name="_format_wrapper">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_format_wrapper</span>(self, format, dumper, attrib, data):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L134">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.insertedobjects.InsertedObjectType._model_from_data_wrapper">
+    
+  </a>
+  <a name="_model_from_data_wrapper">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_model_from_data_wrapper</span>(self, notebook, page, attrib, data):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/insertedobjects.py#L81">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

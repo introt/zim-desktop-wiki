@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.config.manager.DefaultFileIter : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.config.manager.DefaultFileIter</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.config.html">config</a></code>.<code><a href="zim.config.manager.html">manager</a></code>.<code><a href="zim.config.manager.DefaultFileIter.html">DefaultFileIter</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.config.html">config</a></code><wbr></wbr>.<code><a href="zim.config.manager.html">manager</a></code><wbr></wbr>.<code><a href="zim.config.manager.DefaultFileIter.html">DefaultFileIter</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,26 +65,27 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">DefaultFileIter</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L113">(source)</a></code></p><p>Known subclasses: <code><a href="zim.config.manager.XDGConfigFileIter.html">zim.config.manager.XDGConfigFileIter</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">DefaultFileIter</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L111" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="zim.config.manager.XDGConfigFileIter.html">zim.config.manager.XDGConfigFileIter</a></code></p>
         <p><a href="classIndex.html#zim.config.manager.DefaultFileIter">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Generator for iterating default files Will yield first the files in <code>extra</code> followed by files that are based on <code>path</code> and <code>dirs</code>. Yields only existing files.</p></div>
+        <div>Generator for iterating default files Will yield first the files in <tt class="rst-docutils literal">extra</tt> followed by files that are based on <tt class="rst-docutils literal">path</tt> and <tt class="rst-docutils literal">dirs</tt>. Yields only existing files.</div>
       </div>
 
       <div id="splitTables">
         <table class="children sortable" id="id72">
+  
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#path">path</a></code></td>
+    <td>Method</td>
+    <td><code><a href="#__iter__">__iter__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
@@ -65,10 +97,10 @@
     <td>Instance Variable</td>
     <td><code><a href="#extra">extra</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
+  </tr><tr class="instancevariable">
     
-    <td>Method</td>
-    <td><code><a href="#__iter__">__iter__</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="#path">path</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -81,6 +113,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.config.manager.DefaultFileIter.__init__">
     
   </a>
@@ -89,8 +122,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, dirs, path, extra=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L119">
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, dirs, path, extra=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L117">
       
       (source)
     </a>
@@ -100,70 +133,8 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.config.manager.DefaultFileIter.path">
-    
-  </a>
-  <a name="path">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">path</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L120">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.config.manager.XDGConfigFileIter.html">zim.config.manager.XDGConfigFileIter</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.config.manager.DefaultFileIter.dirs">
-    
-  </a>
-  <a name="dirs">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">dirs</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L121">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.config.manager.XDGConfigFileIter.html">zim.config.manager.XDGConfigFileIter</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.config.manager.DefaultFileIter.extra">
-    
-  </a>
-  <a name="extra">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">extra</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L122">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.config.manager.XDGConfigFileIter.html">zim.config.manager.XDGConfigFileIter</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.config.manager.DefaultFileIter.__iter__">
     
@@ -174,7 +145,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__iter__</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L124">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L122">
       
       (source)
     </a>
@@ -184,14 +155,88 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.config.manager.DefaultFileIter.dirs">
+    
+  </a>
+  <a name="dirs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">dirs</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L119">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.config.manager.XDGConfigFileIter.html">zim.config.manager.XDGConfigFileIter</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.config.manager.DefaultFileIter.extra">
+    
+  </a>
+  <a name="extra">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">extra</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L120">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.config.manager.XDGConfigFileIter.html">zim.config.manager.XDGConfigFileIter</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.config.manager.DefaultFileIter.path">
+    
+  </a>
+  <a name="path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">path</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/config/manager.py#L118">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.config.manager.XDGConfigFileIter.html">zim.config.manager.XDGConfigFileIter</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

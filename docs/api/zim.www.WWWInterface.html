@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.www.WWWInterface : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.www.WWWInterface</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.www.html">www</a></code>.<code><a href="zim.www.WWWInterface.html">WWWInterface</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.www.html">www</a></code><wbr></wbr>.<code><a href="zim.www.WWWInterface.html">WWWInterface</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,31 +65,60 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">WWWInterface</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L100">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">WWWInterface</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L102" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.www.WWWInterface">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Class to handle the WWW interface for zim notebooks.</p><p>Objects of this class are callable, so they can be used as application objects within a WSGI compatible framework. See PEP 333 for details (<a href="http://www.python.org/dev/peps/pep-0333/" target="_top">http://www.python.org/dev/peps/pep-0333/</a>).</p><p>For basic handlers to run this interface see the "wsgiref" package in the standard library for python.</p></div>
+        <div><p>Class to handle the WWW interface for zim notebooks.</p>
+<p>Objects of this class are callable, so they can be used as application objects within a WSGI compatible framework. See PEP 333 for details (<a class="rst-reference external" href="http://www.python.org/dev/peps/pep-0333/" target="_top">http://www.python.org/dev/peps/pep-0333/</a>).</p>
+<p>For basic handlers to run this interface see the "wsgiref" package in the standard library for python.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1556">
+        <table class="children sortable" id="id1579">
+  
   
   <tr class="method">
     
     <td>Method</td>
+    <td><code><a href="#__call__">__call__</a></code></td>
+    <td>Main function for handling a single request. Follows the WSGI API.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="instancevariable">
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#notebook">notebook</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Method</td>
+    <td><code><a href="#render_index">render_index</a></code></td>
+    <td>Render an index page @param namespace: the namespace <code><a href="zim.notebook.page.Path.html">Path</a></code> @returns: html as a list of lines</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#render_page">render_page</a></code></td>
+    <td>Render a single page from the notebook @param page: a <code><a href="zim.notebook.page.Page.html">Page</a></code> object @returns: html as a list of lines</td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
     <td><code><a href="#auth_creds">auth_creds</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#dumper_factory">dumper_factory</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#linker_factory">linker_factory</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#notebook">notebook</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
@@ -70,31 +130,6 @@
     <td>Instance Variable</td>
     <td><code><a href="#template">template</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#linker_factory">linker_factory</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#dumper_factory">dumper_factory</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#__call__">__call__</a></code></td>
-    <td><span>Main function for handling a single request. Follows the WSGI API.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#render_index">render_index</a></code></td>
-    <td><span>Render an index page @param namespace: the namespace <code><a href="zim.notebook.page.Path.html">Path</a></code> @returns: html as a list of lines</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#render_page">render_page</a></code></td>
-    <td><span>Render a single page from the notebook @param page: a <code><a href="zim.notebook.page.Page.html">Page</a></code> object @returns: html as a list of lines</span></td>
   </tr>
 </table>
         
@@ -106,152 +141,6 @@
 
         <div class="basemethod">
   
-  <a name="zim.www.WWWInterface.__init__">
-    
-  </a>
-  <a name="__init__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, notebook, template='Default', auth_creds=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L111">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">notebook</td><td>a <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object</td></tr><tr><td></td><td class="fieldArg">template</td><td>html template for zim pages</td></tr><tr><td></td><td class="fieldArg">auth_creds</td><td>credentials for HTTP-authentication</td></tr></table></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.www.WWWInterface.notebook">
-    
-  </a>
-  <a name="notebook">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">notebook</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L118">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.www.WWWInterface.auth_creds">
-    
-  </a>
-  <a name="auth_creds">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">auth_creds</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L119">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.www.WWWInterface.output">
-    
-  </a>
-  <a name="output">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">output</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L121">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.www.WWWInterface.template">
-    
-  </a>
-  <a name="template">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">template</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L128">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.www.WWWInterface.linker_factory">
-    
-  </a>
-  <a name="linker_factory">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">linker_factory</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L134">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.www.WWWInterface.dumper_factory">
-    
-  </a>
-  <a name="dumper_factory">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">dumper_factory</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L135">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.www.WWWInterface.__call__">
     
@@ -262,7 +151,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__call__</span>(self, environ, start_response):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L139">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L134">
       
       (source)
     </a>
@@ -270,11 +159,36 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Main function for handling a single request. Follows the WSGI API.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">environ</td><td>dictionary with environment variables for the request and some special variables. See the PEP for expected variables.</td></tr><tr><td></td><td class="fieldArg">start_response</td><td>a function that can be called to set the http response and headers. For example:<pre class="literalblock">
+    <div>Main function for handling a single request. Follows the WSGI API.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">environ</span></td><td class="fieldArgDesc">dictionary with environment variables for the request and some special variables. See the PEP for expected variables.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">start_response</span></td><td class="fieldArgDesc"><p>a function that can be called to set the http response and headers. For example:</p>
+<pre class="rst-literal-block">
         start_response(200, [('Content-Type', 'text/plain')])
-</pre></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">the html page content as a list of lines</td></tr></table></div>
+</pre>
+</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the html page content as a list of lines</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.www.WWWInterface.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, notebook, template=<span class="rst-variable-quote">'</span><span class="rst-variable-string">Default</span><span class="rst-variable-quote">'</span>, auth_creds=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L113">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Constructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">notebook</span></td><td class="fieldArgDesc">a <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">template</span></td><td class="fieldArgDesc">html template for zim pages</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">auth_creds</span></td><td class="fieldArgDesc">credentials for HTTP-authentication</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.www.WWWInterface.render_index">
     
@@ -284,8 +198,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">render_index</span>(self, namespace=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L297">
+    <span class="py-keyword">def</span> <span class="py-defname">render_index</span>(self, namespace=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L295">
       
       (source)
     </a>
@@ -293,9 +207,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Render an index page</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">namespace</td><td>the namespace <code><a href="zim.notebook.page.Path.html">Path</a></code></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">html as a list of lines</td></tr></table></div>
+    <div>Render an index page<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">namespace</span></td><td class="fieldArgDesc">the namespace <code><a href="zim.notebook.page.Path.html">Path</a></code></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">html as a list of lines</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.www.WWWInterface.render_page">
     
@@ -306,7 +221,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">render_page</span>(self, page):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L306">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L304">
       
       (source)
     </a>
@@ -314,16 +229,159 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Render a single page from the notebook</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">page</td><td>a <code><a href="zim.notebook.page.Page.html">Page</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">html as a list of lines</td></tr></table></div>
+    <div>Render a single page from the notebook<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">page</span></td><td class="fieldArgDesc">a <code><a href="zim.notebook.page.Page.html">Page</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">html as a list of lines</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.www.WWWInterface.auth_creds">
+    
+  </a>
+  <a name="auth_creds">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">auth_creds</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L121">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.www.WWWInterface.dumper_factory">
+    
+  </a>
+  <a name="dumper_factory">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">dumper_factory</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L130">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.www.WWWInterface.linker_factory">
+    
+  </a>
+  <a name="linker_factory">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">linker_factory</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L129">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.www.WWWInterface.notebook">
+    
+  </a>
+  <a name="notebook">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">notebook</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L120">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.www.WWWInterface.output">
+    
+  </a>
+  <a name="output">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">output</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L123">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.www.WWWInterface.template">
+    
+  </a>
+  <a name="template">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">template</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L128">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

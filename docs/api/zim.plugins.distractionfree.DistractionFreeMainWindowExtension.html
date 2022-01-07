@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.plugins.distractionfree.DistractionFreeMainWindowExtension : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.plugins.distractionfree.DistractionFreeMainWindowExtension</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code>.<code><a href="zim.plugins.distractionfree.html">distractionfree</a></code>.<code><a href="zim.plugins.distractionfree.DistractionFreeMainWindowExtension.html">DistractionFreeMainWindowExtension</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.plugins.html">plugins</a></code><wbr></wbr>.<code><a href="zim.plugins.distractionfree.html">distractionfree</a></code><wbr></wbr>.<code><a href="zim.plugins.distractionfree.DistractionFreeMainWindowExtension.html">DistractionFreeMainWindowExtension</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">DistractionFreeMainWindowExtension</span>(<a href="zim.gui.mainwindow.MainWindowExtension.html" title="zim.gui.mainwindow.MainWindowExtension">MainWindowExtension</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L46">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">DistractionFreeMainWindowExtension</span>(<a href="zim.gui.mainwindow.MainWindowExtension.html" title="zim.gui.mainwindow.MainWindowExtension">MainWindowExtension</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L46" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.plugins.distractionfree.DistractionFreeMainWindowExtension">View In Hierarchy</a></p>
       </div>
 
@@ -43,17 +74,23 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id959">
+        <table class="children sortable" id="id946">
+  
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Constructor @param plugin: the plugin object to which this extension belongs @param window: the <code>Gtk.Window</code> being extended</span></td>
-  </tr><tr class="instancevariable">
+    <td>Constructor @param plugin: the plugin object to which this extension belongs @param window: the <tt class="rst-docutils literal">Gtk.Window</tt> being extended</td>
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#preferences">preferences</a></code></td>
+    <td>Method</td>
+    <td><code><a href="#insert_maxwidth">insert_maxwidth</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_fullscreen_changed">on_fullscreen_changed</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
@@ -68,37 +105,17 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#on_fullscreen_changed">on_fullscreen_changed</a></code></td>
+    <td><code><a href="#remove_maxwidth">remove_maxwidth</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#set_bar_state_fullscreen">set_bar_state_fullscreen</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#insert_maxwidth">insert_maxwidth</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#remove_maxwidth">remove_maxwidth</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_show_panes">_show_panes</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_maxwidth">_maxwidth</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_css_provider">_css_provider</a></code></td>
+    <td><code><a href="#preferences">preferences</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
@@ -110,28 +127,44 @@
     <td>Method</td>
     <td><code><a href="#_pathbar_widgets">_pathbar_widgets</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_css_provider">_css_provider</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_maxwidth">_maxwidth</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_show_panes">_show_panes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
         
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.gui.mainwindow.MainWindowExtension.html">MainWindowExtension</a></code>:
           </p>
-          <table class="children sortable" id="id960">
+          <table class="children sortable" id="id947">
   
-  <tr class="baseinstancevariable">
+  
+  <tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.gui.mainwindow.MainWindowExtension.html#window">window</a></code></td>
+    <td>Method</td>
+    <td><code><a href="zim.gui.mainwindow.MainWindowExtension.html#on_destroy">on_destroy</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="baseinstancevariable">
     
     <td>Instance Variable</td>
     <td><code><a href="zim.gui.mainwindow.MainWindowExtension.html#uistate">uistate</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
+  </tr><tr class="baseinstancevariable">
     
-    <td>Method</td>
-    <td><code><a href="zim.gui.mainwindow.MainWindowExtension.html#on_destroy">on_destroy</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.mainwindow.MainWindowExtension.html#window">window</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -139,19 +172,10 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.gui.actionextension.ActionExtensionBase.html">ActionExtensionBase</a></code> (via <code><a href="zim.gui.mainwindow.MainWindowExtension.html">MainWindowExtension</a></code>):
           </p>
-          <table class="children sortable" id="id961">
+          <table class="children sortable" id="id948">
+  
   
   <tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#teardown">teardown</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#actiongroup">actiongroup</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#add_to_headerbar">add_to_headerbar</a></code></td>
@@ -165,6 +189,21 @@
     
     <td>Method</td>
     <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#set_action_in_headerbar">set_action_in_headerbar</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#teardown">teardown</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#actiongroup">actiongroup</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basestaticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#_uimanager_xml">_uimanager_xml</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod private">
     
@@ -181,46 +220,43 @@
     <td>Instance Variable</td>
     <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#_uimanager_ids">_uimanager_ids</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basestaticmethod private">
-    
-    <td>Static Method</td>
-    <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#_uimanager_xml">_uimanager_xml</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
           
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.plugins.ExtensionBase.html">ExtensionBase</a></code> (via <code><a href="zim.gui.mainwindow.MainWindowExtension.html">MainWindowExtension</a></code>, <code><a href="zim.gui.actionextension.ActionExtensionBase.html">ActionExtensionBase</a></code>):
           </p>
-          <table class="children sortable" id="id962">
+          <table class="children sortable" id="id949">
   
-  <tr class="baseinstancevariable">
+  
+  <tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.plugins.ExtensionBase.html#plugin">plugin</a></code></td>
-    <td><span>the plugin object to which this extension belongs</span></td>
-  </tr><tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.plugins.ExtensionBase.html#obj">obj</a></code></td>
-    <td><span>the extendable object</span></td>
+    <td>Method</td>
+    <td><code><a href="zim.plugins.ExtensionBase.html#destroy">destroy</a></code></td>
+    <td>Called when the plugin is being destroyed Calls <code><a href="#teardown">teardown()</a></code> followed by the <tt class="rst-docutils literal">teardown()</tt> methods of parent base classes.</td>
   </tr><tr class="baseclassvariable">
     
     <td>Class Variable</td>
     <td><code><a href="zim.plugins.ExtensionBase.html#__signals__">__signals__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
+  </tr><tr class="baseinstancevariable">
     
-    <td>Method</td>
-    <td><code><a href="zim.plugins.ExtensionBase.html#destroy">destroy</a></code></td>
-    <td><span>Called when the plugin is being destroyed Calls <code><a href="#teardown">teardown()</a></code> followed by the <code>teardown()</code> methods of parent base classes.</span></td>
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.ExtensionBase.html#obj">obj</a></code></td>
+    <td>the extendable object</td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.ExtensionBase.html#plugin">plugin</a></code></td>
+    <td>the plugin object to which this extension belongs</td>
   </tr>
 </table>
           
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.signals.SignalEmitter.html">SignalEmitter</a></code> (via <code><a href="zim.gui.mainwindow.MainWindowExtension.html">MainWindowExtension</a></code>, <code><a href="zim.gui.actionextension.ActionExtensionBase.html">ActionExtensionBase</a></code>, <code><a href="zim.plugins.ExtensionBase.html">ExtensionBase</a></code>):
           </p>
-          <table class="children sortable" id="id963">
+          <table class="children sortable" id="id950">
+  
   
   <tr class="basemethod">
     
@@ -230,13 +266,18 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#block_signals">block_signals</a></code></td>
+    <td>Returns a context manager for blocking one or more signals</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#connect">connect</a></code></td>
-    <td><span>Register a handler for a specific object.</span></td>
+    <td>Register a handler for a specific object.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#connect_after">connect_after</a></code></td>
-    <td><span>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</span></td>
+    <td>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -251,17 +292,12 @@
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#emit_return_first">emit_return_first</a></code></td>
-    <td><span>Emits a signal and stops emission on the first handler that returns a not-None value.</span></td>
+    <td>Emits a signal and stops emission on the first handler that returns a not-None value.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#emit_return_iter">emit_return_iter</a></code></td>
-    <td><span>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.signals.SignalEmitter.html#block_signals">block_signals</a></code></td>
-    <td><span>Returns a context manager for blocking one or more signals</span></td>
+    <td>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -283,37 +319,38 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code> (via <code><a href="zim.gui.mainwindow.MainWindowExtension.html">MainWindowExtension</a></code>, <code><a href="zim.gui.actionextension.ActionExtensionBase.html">ActionExtensionBase</a></code>, <code><a href="zim.plugins.ExtensionBase.html">ExtensionBase</a></code>):
           </p>
-          <table class="children sortable" id="id964">
+          <table class="children sortable" id="id951">
+  
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto">connectto</a></code></td>
-    <td><span>Connect to signals of another object E.g.:</span></td>
+    <td>Connect to signals of another object E.g.:</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto_all">connectto_all</a></code></td>
-    <td><span>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
-    <td><span>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</span></td>
+    <td>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_all">disconnect_all</a></code></td>
-    <td><span>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</span></td>
-  </tr><tr class="baseinstancevariable private">
+    <td>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</td>
+  </tr><tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
+    <td>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#_disconnect_from">_disconnect_from</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -326,6 +363,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension.__init__">
     
   </a>
@@ -335,7 +373,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, plugin, window):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L48">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L48">
       
       (source)
     </a>
@@ -343,198 +381,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.gui.mainwindow.MainWindowExtension.html#__init__">zim.gui.mainwindow.MainWindowExtension.__init__</a></code></div>
     
-    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">plugin</td><td>the plugin object to which this extension belongs</td></tr><tr><td></td><td class="fieldArg">window</td><td>the <code>Gtk.Window</code> being extended</td></tr></table></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension.preferences">
-    
-  </a>
-  <a name="preferences">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">preferences</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L50">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension._show_panes">
-    
-  </a>
-  <a name="_show_panes">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_show_panes</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L51">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension._maxwidth">
-    
-  </a>
-  <a name="_maxwidth">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_maxwidth</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L52">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension._css_provider">
-    
-  </a>
-  <a name="_css_provider">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_css_provider</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L53">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension._new_css_provider">
-    
-  </a>
-  <a name="_new_css_provider">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_new_css_provider</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L61">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Constructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">plugin</span></td><td class="fieldArgDesc">the plugin object to which this extension belongs</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">window</span></td><td class="fieldArgDesc">the <tt class="rst-docutils literal">Gtk.Window</tt> being extended</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension.on_preferences_changed">
-    
-  </a>
-  <a name="on_preferences_changed">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">on_preferences_changed</span>(self, preferences):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L85">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension.on_window_state_event">
-    
-  </a>
-  <a name="on_window_state_event">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">on_window_state_event</span>(self, window, event):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L89">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension.on_fullscreen_changed">
-    
-  </a>
-  <a name="on_fullscreen_changed">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">on_fullscreen_changed</span>(self, window):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L93">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension.set_bar_state_fullscreen">
-    
-  </a>
-  <a name="set_bar_state_fullscreen">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">set_bar_state_fullscreen</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L114">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension.insert_maxwidth">
     
@@ -545,7 +395,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">insert_maxwidth</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L117">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L117">
       
       (source)
     </a>
@@ -557,6 +407,73 @@
   </div>
 </div><div class="basemethod">
   
+  
+  <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension.on_fullscreen_changed">
+    
+  </a>
+  <a name="on_fullscreen_changed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_fullscreen_changed</span>(self, window):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L93">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension.on_preferences_changed">
+    
+  </a>
+  <a name="on_preferences_changed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_preferences_changed</span>(self, preferences):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L85">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension.on_window_state_event">
+    
+  </a>
+  <a name="on_window_state_event">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_window_state_event</span>(self, window, event):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L89">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
   <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension.remove_maxwidth">
     
   </a>
@@ -566,7 +483,74 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">remove_maxwidth</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L128">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L128">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension.set_bar_state_fullscreen">
+    
+  </a>
+  <a name="set_bar_state_fullscreen">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_bar_state_fullscreen</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L114">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension.preferences">
+    
+  </a>
+  <a name="preferences">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">preferences</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L50">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension._new_css_provider">
+    
+  </a>
+  <a name="_new_css_provider">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_new_css_provider</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L61">
       
       (source)
     </a>
@@ -578,6 +562,7 @@
   </div>
 </div><div class="basemethod private">
   
+  
   <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension._pathbar_widgets">
     
   </a>
@@ -587,7 +572,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_pathbar_widgets</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L136">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L136">
       
       (source)
     </a>
@@ -597,14 +582,88 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension._css_provider">
+    
+  </a>
+  <a name="_css_provider">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_css_provider</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L53">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension._maxwidth">
+    
+  </a>
+  <a name="_maxwidth">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_maxwidth</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L52">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.plugins.distractionfree.DistractionFreeMainWindowExtension._show_panes">
+    
+  </a>
+  <a name="_show_panes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_show_panes</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/distractionfree.py#L51">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

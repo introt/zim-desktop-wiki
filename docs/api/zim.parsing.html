@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.parsing : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.parsing</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.parsing.html">parsing</a></code></code></h1>
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.parsing.html">parsing</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,91 +65,102 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py">(source)</a>
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>This module contains utilities for parsing strings and text</p></div>
+        <div>This module contains utilities for parsing strings and text</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id812">
+        <table class="children sortable" id="id819">
   
-  <tr class="function">
+  
+  <tr class="class">
     
-    <td>Function</td>
-    <td><code><a href="#split_quoted_strings">split_quoted_strings</a></code></td>
-    <td><span>Split a word list respecting quotes</span></td>
-  </tr><tr class="function">
+    <td>Class</td>
+    <td><code><a href="zim.parsing.Re.html">Re</a></code></td>
+    <td>Wrapper around regex pattern objects which memorizes the last match object and gives list access to it's capturing groups. See module re for regex docs.</td>
+  </tr><tr class="class">
     
-    <td>Function</td>
-    <td><code><a href="#unescape_quoted_string">unescape_quoted_string</a></code></td>
-    <td><span>Removes quotes from a string and unescapes embedded quotes @returns: string</span></td>
+    <td>Class</td>
+    <td><code><a href="zim.parsing.TextBuffer.html">TextBuffer</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#escape_string">escape_string</a></code></td>
-    <td><span>Escape special characters with a backslash Escapes newline, tab, backslash itself and any characters in <code>chars</code></span></td>
+    <td>Escape special characters with a backslash Escapes newline, tab, backslash itself and any characters in <tt class="rst-docutils literal">chars</tt></td>
   </tr><tr class="function">
     
     <td>Function</td>
-    <td><code><a href="#unescape_string">unescape_string</a></code></td>
-    <td><span>Unescape backslash escapes in string Recognizes <code>\n</code> and <code>\t</code> for newline and tab respectively, otherwise keeps the literal character</span></td>
+    <td><code><a href="#link_type">link_type</a></code></td>
+    <td>Function that returns a link type for urls and page links</td>
   </tr><tr class="function">
     
     <td>Function</td>
-    <td><code><a href="#split_escaped_string">split_escaped_string</a></code></td>
-    <td><span>Split string on <code>char</code> while respecting backslash escapes</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#URL_ENCODE_DATA">URL_ENCODE_DATA</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#URL_ENCODE_PATH">URL_ENCODE_PATH</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#URL_ENCODE_READABLE">URL_ENCODE_READABLE</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#url_encode">url_encode</a></code></td>
-    <td><span>Replaces non-standard characters in urls with hex codes.</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#url_decode">url_decode</a></code></td>
-    <td><span>Replace url-encoding hex sequences with their proper characters.</span></td>
+    <td><code><a href="#normalize_win32_share">normalize_win32_share</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#parse_date">parse_date</a></code></td>
-    <td><span>Returns a tuple of (year, month, day) for a date string or None if failed to parse the string. Current supported formats:</span></td>
-  </tr><tr class="class">
+    <td>Returns a tuple of (year, month, day) for a date string or None if failed to parse the string. Current supported formats:</td>
+  </tr><tr class="function">
     
-    <td>Class</td>
-    <td><code><a href="zim.parsing.Re.html">Re</a></code></td>
-    <td><span>Wrapper around regex pattern objects which memorizes the last match object and gives list access to it's capturing groups. See module re for regex docs.</span></td>
-  </tr><tr class="variable">
+    <td>Function</td>
+    <td><code><a href="#split_escaped_string">split_escaped_string</a></code></td>
+    <td>Split string on <tt class="rst-docutils literal">char</tt> while respecting backslash escapes</td>
+  </tr><tr class="function">
     
-    <td>Variable</td>
-    <td><code><a href="#is_uri_re">is_uri_re</a></code></td>
+    <td>Function</td>
+    <td><code><a href="#split_quoted_strings">split_quoted_strings</a></code></td>
+    <td>Split a word list respecting quotes</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#unescape_quoted_string">unescape_quoted_string</a></code></td>
+    <td>Removes quotes from a string and unescapes embedded quotes @returns: string</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#unescape_string">unescape_string</a></code></td>
+    <td>Unescape backslash escapes in string Recognizes <tt class="rst-docutils literal">\n</tt> and <tt class="rst-docutils literal">\t</tt> for newline and tab respectively, otherwise keeps the literal character</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#uri_scheme">uri_scheme</a></code></td>
+    <td>Function that returns a scheme for URIs, URLs and email addresses</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#url_decode">url_decode</a></code></td>
+    <td>Replace url-encoding hex sequences with their proper characters.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#url_encode">url_encode</a></code></td>
+    <td>Replaces non-standard characters in urls with hex codes.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#valid_interwiki_key">valid_interwiki_key</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
+  </tr><tr class="constant">
     
-    <td>Variable</td>
-    <td><code><a href="#is_url_re">is_url_re</a></code></td>
+    <td>Constant</td>
+    <td><code><a href="#URL_ENCODE_DATA">URL_ENCODE_DATA</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
+  </tr><tr class="constant">
     
-    <td>Variable</td>
-    <td><code><a href="#is_www_link_re">is_www_link_re</a></code></td>
+    <td>Constant</td>
+    <td><code><a href="#URL_ENCODE_PATH">URL_ENCODE_PATH</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#URL_ENCODE_READABLE">URL_ENCODE_READABLE</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
@@ -128,7 +170,27 @@
   </tr><tr class="variable">
     
     <td>Variable</td>
+    <td><code><a href="#is_interwiki_keyword_re">is_interwiki_keyword_re</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#is_interwiki_re">is_interwiki_re</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
     <td><code><a href="#is_path_re">is_path_re</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#is_uri_re">is_uri_re</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#is_url_re">is_url_re</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
@@ -143,38 +205,13 @@
   </tr><tr class="variable">
     
     <td>Variable</td>
-    <td><code><a href="#is_interwiki_re">is_interwiki_re</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#is_interwiki_keyword_re">is_interwiki_keyword_re</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#valid_interwiki_key">valid_interwiki_key</a></code></td>
+    <td><code><a href="#is_www_link_re">is_www_link_re</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
     <td>Variable</td>
     <td><code><a href="#url_re">url_re</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#uri_scheme">uri_scheme</a></code></td>
-    <td><span>Function that returns a scheme for URIs, URLs and email addresses</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#link_type">link_type</a></code></td>
-    <td><span>Function that returns a link type for urls and page links</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.parsing.TextBuffer.html">TextBuffer</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="function private">
     
     <td>Function</td>
@@ -185,20 +222,15 @@
     <td>Function</td>
     <td><code><a href="#_unescape">_unescape</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable private">
+  </tr><tr class="function private">
     
-    <td>Variable</td>
-    <td><code><a href="#_url_encode_re">_url_encode_re</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable private">
-    
-    <td>Variable</td>
-    <td><code><a href="#_url_encode_path_re">_url_encode_path_re</a></code></td>
+    <td>Function</td>
+    <td><code><a href="#_url_decode">_url_decode</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="function private">
     
     <td>Function</td>
-    <td><code><a href="#_url_encode_on_error">_url_encode_on_error</a></code></td>
+    <td><code><a href="#_url_decode_bytes">_url_decode_bytes</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="function private">
     
@@ -208,7 +240,22 @@
   </tr><tr class="function private">
     
     <td>Function</td>
+    <td><code><a href="#_url_encode_on_error">_url_encode_on_error</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
     <td><code><a href="#_url_encode_readable">_url_encode_readable</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_classes">_classes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_parse_date_re">_parse_date_re</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable private">
     
@@ -225,25 +272,15 @@
     <td>Variable</td>
     <td><code><a href="#_url_decode_unicode_bytes_re">_url_decode_unicode_bytes_re</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function private">
+  </tr><tr class="variable private">
     
-    <td>Function</td>
-    <td><code><a href="#_url_decode">_url_decode</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function private">
-    
-    <td>Function</td>
-    <td><code><a href="#_url_decode_bytes">_url_decode_bytes</a></code></td>
+    <td>Variable</td>
+    <td><code><a href="#_url_encode_path_re">_url_encode_path_re</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable private">
     
     <td>Variable</td>
-    <td><code><a href="#_parse_date_re">_parse_date_re</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable private">
-    
-    <td>Variable</td>
-    <td><code><a href="#_classes">_classes</a></code></td>
+    <td><code><a href="#_url_encode_re">_url_encode_re</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -256,68 +293,6 @@
 
         <div class="basefunction">
   
-  <a name="zim.parsing.split_quoted_strings">
-    
-  </a>
-  <a name="split_quoted_strings">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">split_quoted_strings</span>(string, unescape=True, strict=True):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L9">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Split a word list respecting quotes</p><p>This function always expect full words to be quoted, even if quotes appear in the middle of a word, they are considered word boundries.</p><p>( XDG Desktop Entry spec says full words must be quoted and quotes in a word escaped, but doesn't specifify what to do with loose quotes in a string. )</p><p>Also a comma "," is handled specially and is always considered a word on it's own.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">string</td><td>string to split in words</td></tr><tr><td></td><td class="fieldArg">unescape</td><td>if <code>True</code> quotes are removed, else they are left in place</td></tr><tr><td></td><td class="fieldArg">strict</td><td>if <code>True</code> unmatched quotes will cause a <code>ValueError</code> to be raised, if <code>False</code> unmatched quotes are ignored.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">list of strings</td></tr></table></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.parsing.unescape_quoted_string">
-    
-  </a>
-  <a name="unescape_quoted_string">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">unescape_quoted_string</span>(string):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L53">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Removes quotes from a string and unescapes embedded quotes</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">string</td></tr></table></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.parsing._escape">
-    
-  </a>
-  <a name="_escape">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_escape</span>(match):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L66">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
   
   <a name="zim.parsing.escape_string">
     
@@ -327,8 +302,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">escape_string</span>(string, chars=''):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L76">
+    <span class="py-keyword">def</span> <span class="py-defname">escape_string</span>(string, chars=<span class="rst-variable-quote">'</span><span class="rst-variable-string"></span><span class="rst-variable-quote">'</span>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L76">
       
       (source)
     </a>
@@ -336,702 +311,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Escape special characters with a backslash Escapes newline, tab, backslash itself and any characters in <code>chars</code></p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.parsing._unescape">
-    
-  </a>
-  <a name="_unescape">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_unescape</span>(match):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L83">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Escape special characters with a backslash Escapes newline, tab, backslash itself and any characters in <tt class="rst-docutils literal">chars</tt></div>
   </div>
 </div><div class="basefunction">
   
-  <a name="zim.parsing.unescape_string">
-    
-  </a>
-  <a name="unescape_string">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">unescape_string</span>(string):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L93">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Unescape backslash escapes in string Recognizes <code>\n</code> and <code>\t</code> for newline and tab respectively, otherwise keeps the literal character</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.parsing.split_escaped_string">
-    
-  </a>
-  <a name="split_escaped_string">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">split_escaped_string</span>(string, char):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L101">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Split string on <code>char</code> while respecting backslash escapes</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.parsing.URL_ENCODE_DATA">
-    
-  </a>
-  <a name="URL_ENCODE_DATA">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">URL_ENCODE_DATA</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L165">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.parsing.URL_ENCODE_PATH">
-    
-  </a>
-  <a name="URL_ENCODE_PATH">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">URL_ENCODE_PATH</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L166">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.parsing.URL_ENCODE_READABLE">
-    
-  </a>
-  <a name="URL_ENCODE_READABLE">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">URL_ENCODE_READABLE</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L167">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="basevariable private">
-  
-  <a name="zim.parsing._url_encode_re">
-    
-  </a>
-  <a name="_url_encode_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_url_encode_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L169">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable private">
-  
-  <a name="zim.parsing._url_encode_path_re">
-    
-  </a>
-  <a name="_url_encode_path_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_url_encode_path_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L170">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.parsing._url_encode_on_error">
-    
-  </a>
-  <a name="_url_encode_on_error">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_url_encode_on_error</span>(error):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L173">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.parsing._url_encode">
-    
-  </a>
-  <a name="_url_encode">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_url_encode</span>(match):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L183">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.parsing._url_encode_readable">
-    
-  </a>
-  <a name="_url_encode_readable">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_url_encode_readable</span>(match):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L187">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.parsing.url_encode">
-    
-  </a>
-  <a name="url_encode">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">url_encode</span>(url, mode=URL_ENCODE_PATH):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L194">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Replaces non-standard characters in urls with hex codes.</p><p>Mode can be:</p><ul><li><code>URL_ENCODE_DATA</code>: encode all un-safe chars</li><li><code>URL_ENCODE_PATH</code>: encode all un-safe chars except '/'</li><li><code>URL_ENCODE_READABLE</code>: encode whitespace and all unicode characters</li></ul><p>The mode URL_ENCODE_READABLE can be applied to urls that are already encoded because it does not touch the "%" character. The modes URL_ENCODE_DATA and URL_ENCODE_PATH can only be applied to strings that are known not to be encoded.</p><p>The encoded URL is a string containing only ASCII characters</p></div>
-  </div>
-</div><div class="basevariable private">
-  
-  <a name="zim.parsing._url_bytes_decode_re">
-    
-  </a>
-  <a name="_url_bytes_decode_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_url_bytes_decode_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L221">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable private">
-  
-  <a name="zim.parsing._url_decode_ascii_re">
-    
-  </a>
-  <a name="_url_decode_ascii_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_url_decode_ascii_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L222">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable private">
-  
-  <a name="zim.parsing._url_decode_unicode_bytes_re">
-    
-  </a>
-  <a name="_url_decode_unicode_bytes_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_url_decode_unicode_bytes_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L223">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.parsing._url_decode">
-    
-  </a>
-  <a name="_url_decode">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_url_decode</span>(match):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L225">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.parsing._url_decode_bytes">
-    
-  </a>
-  <a name="_url_decode_bytes">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_url_decode_bytes</span>(match):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L230">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.parsing.url_decode">
-    
-  </a>
-  <a name="url_decode">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">url_decode</span>(url, mode=URL_ENCODE_PATH):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L235">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Replace url-encoding hex sequences with their proper characters.</p><p>Mode can be:</p><ul><li><code>URL_ENCODE_DATA</code>: decode all chars</li><li><code>URL_ENCODE_PATH</code>: same as URL_ENCODE_DATA</li><li><code>URL_ENCODE_READABLE</code>: decode only whitespace and unicode characters</li></ul><p>The mode <code>URL_ENCODE_READABLE</code> will not decode any other characters, so urls decoded with these modes can still contain escape sequences. They are safe to use within zim, but should be re-encoded with <code>URL_ENCODE_READABLE</code> before handing them to an external program.</p><p>This method will only decode non-ascii byte codes when the _whole_ byte equivalent of the URL is in valid UTF-8 decoding. Else it is assumed the encoding was done in another format and the decoding fails silently for these byte sequences.</p></div>
-  </div>
-</div><div class="basevariable private">
-  
-  <a name="zim.parsing._parse_date_re">
-    
-  </a>
-  <a name="_parse_date_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_parse_date_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L270">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.parsing.parse_date">
-    
-  </a>
-  <a name="parse_date">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">parse_date</span>(string):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L272">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Returns a tuple of (year, month, day) for a date string or None if failed to parse the string. Current supported formats:</p><ul><li><code>dd?-mm?</code></li><li><code>dd?-mm?-yy</code></li><li><code>dd?-mm?-yyyy</code></li><li><code>yyyy-mm?-dd?</code></li></ul><p>Where '-' can be replaced by any separator. Any preceding or trailing text will be ignored (so we can parse journal page names correctly).</p><p>TODO: Some setting to prefer US dates with mm-dd instead of dd-mm TODO: More date formats ?</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.parsing.is_uri_re">
-    
-  </a>
-  <a name="is_uri_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">is_uri_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L415">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.parsing.is_url_re">
-    
-  </a>
-  <a name="is_url_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">is_url_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L417">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.parsing.is_www_link_re">
-    
-  </a>
-  <a name="is_www_link_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">is_www_link_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L419">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.parsing.is_email_re">
-    
-  </a>
-  <a name="is_email_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">is_email_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L422">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.parsing.is_path_re">
-    
-  </a>
-  <a name="is_path_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">is_path_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L426">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.parsing.is_win32_path_re">
-    
-  </a>
-  <a name="is_win32_path_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">is_win32_path_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L429">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.parsing.is_win32_share_re">
-    
-  </a>
-  <a name="is_win32_share_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">is_win32_share_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L431">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.parsing.is_interwiki_re">
-    
-  </a>
-  <a name="is_interwiki_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">is_interwiki_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L434">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.parsing.is_interwiki_keyword_re">
-    
-  </a>
-  <a name="is_interwiki_keyword_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">is_interwiki_keyword_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L436">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.parsing.valid_interwiki_key">
-    
-  </a>
-  <a name="valid_interwiki_key">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">valid_interwiki_key</span>(name):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L439">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable private">
-  
-  <a name="zim.parsing._classes">
-    
-  </a>
-  <a name="_classes">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_classes</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L446">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>)
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.parsing.url_re">
-    
-  </a>
-  <a name="url_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">url_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L447">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.parsing.uri_scheme">
-    
-  </a>
-  <a name="uri_scheme">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">uri_scheme</span>(link):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L460">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Function that returns a scheme for URIs, URLs and email addresses</p></div>
-  </div>
-</div><div class="basefunction">
   
   <a name="zim.parsing.link_type">
     
@@ -1042,7 +325,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">link_type</span>(link):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L471">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L493">
       
       (source)
     </a>
@@ -1050,16 +333,886 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Function that returns a link type for urls and page links</p></div>
+    <div>Function that returns a link type for urls and page links</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.parsing.normalize_win32_share">
+    
+  </a>
+  <a name="normalize_win32_share">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">normalize_win32_share</span>(path):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L471">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Translates paths for windows shares in the platform specific form. So on windows it translates <tt class="rst-docutils literal"><span class="pre">smb://</span></tt> URLs to <tt class="rst-docutils literal">\host\share</tt> form, and vice versa on all other platforms. Just returns the original path if it was already in the right form, or when it is not a path for a share drive.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">a filesystem path or URL</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the platform specific path or the original input path</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.parsing.parse_date">
+    
+  </a>
+  <a name="parse_date">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse_date</span>(string):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L272">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a tuple of (year, month, day) for a date string or None if failed to parse the string. Current supported formats:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal"><span class="pre">dd?-mm?</span></tt></li>
+<li><tt class="rst-docutils literal"><span class="pre">dd?-mm?-yy</span></tt></li>
+<li><tt class="rst-docutils literal"><span class="pre">dd?-mm?-yyyy</span></tt></li>
+<li><tt class="rst-docutils literal"><span class="pre">yyyy-mm?-dd?</span></tt></li>
+</ul>
+<p>Where '-' can be replaced by any separator. Any preceding or trailing text will be ignored (so we can parse journal page names correctly).</p>
+<p>TODO: Some setting to prefer US dates with mm-dd instead of dd-mm TODO: More date formats ?</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.parsing.split_escaped_string">
+    
+  </a>
+  <a name="split_escaped_string">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">split_escaped_string</span>(string, char):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L101">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Split string on <tt class="rst-docutils literal">char</tt> while respecting backslash escapes</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.parsing.split_quoted_strings">
+    
+  </a>
+  <a name="split_quoted_strings">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">split_quoted_strings</span>(string, unescape=<a href="https://docs.python.org/3/library/constants.html#True">True</a>, strict=<a href="https://docs.python.org/3/library/constants.html#True">True</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L9">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Split a word list respecting quotes</p>
+<p>This function always expect full words to be quoted, even if quotes appear in the middle of a word, they are considered word boundries.</p>
+<p>( XDG Desktop Entry spec says full words must be quoted and quotes in a word escaped, but doesn't specifify what to do with loose quotes in a string. )</p>
+<p>Also a comma "," is handled specially and is always considered a word on it's own.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string</span></td><td class="fieldArgDesc">string to split in words</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">unescape</span></td><td class="fieldArgDesc">if <tt class="rst-docutils literal">True</tt> quotes are removed, else they are left in place</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">strict</span></td><td class="fieldArgDesc">if <tt class="rst-docutils literal">True</tt> unmatched quotes will cause a <tt class="rst-docutils literal">ValueError</tt> to be raised, if <tt class="rst-docutils literal">False</tt> unmatched quotes are ignored.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">list of strings</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.parsing.unescape_quoted_string">
+    
+  </a>
+  <a name="unescape_quoted_string">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">unescape_quoted_string</span>(string):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L53">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Removes quotes from a string and unescapes embedded quotes<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">string</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.parsing.unescape_string">
+    
+  </a>
+  <a name="unescape_string">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">unescape_string</span>(string):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L93">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Unescape backslash escapes in string Recognizes <tt class="rst-docutils literal">\n</tt> and <tt class="rst-docutils literal">\t</tt> for newline and tab respectively, otherwise keeps the literal character</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.parsing.uri_scheme">
+    
+  </a>
+  <a name="uri_scheme">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">uri_scheme</span>(link):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L460">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Function that returns a scheme for URIs, URLs and email addresses</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.parsing.url_decode">
+    
+  </a>
+  <a name="url_decode">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">url_decode</span>(url, mode=<a href="#URL_ENCODE_PATH">URL_ENCODE_PATH</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L235">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Replace url-encoding hex sequences with their proper characters.</p>
+<p>Mode can be:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">URL_ENCODE_DATA</tt>: decode all chars</li>
+<li><tt class="rst-docutils literal">URL_ENCODE_PATH</tt>: same as URL_ENCODE_DATA</li>
+<li><tt class="rst-docutils literal">URL_ENCODE_READABLE</tt>: decode only whitespace and unicode characters</li>
+</ul>
+<p>The mode <tt class="rst-docutils literal">URL_ENCODE_READABLE</tt> will not decode any other characters, so urls decoded with these modes can still contain escape sequences. They are safe to use within zim, but should be re-encoded with <tt class="rst-docutils literal">URL_ENCODE_READABLE</tt> before handing them to an external program.</p>
+<p>This method will only decode non-ascii byte codes when the _whole_ byte equivalent of the URL is in valid UTF-8 decoding. Else it is assumed the encoding was done in another format and the decoding fails silently for these byte sequences.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.parsing.url_encode">
+    
+  </a>
+  <a name="url_encode">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">url_encode</span>(url, mode=<a href="#URL_ENCODE_PATH">URL_ENCODE_PATH</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L194">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Replaces non-standard characters in urls with hex codes.</p>
+<p>Mode can be:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">URL_ENCODE_DATA</tt>: encode all un-safe chars</li>
+<li><tt class="rst-docutils literal">URL_ENCODE_PATH</tt>: encode all un-safe chars except '/'</li>
+<li><tt class="rst-docutils literal">URL_ENCODE_READABLE</tt>: encode whitespace and all unicode characters</li>
+</ul>
+<p>The mode URL_ENCODE_READABLE can be applied to urls that are already encoded because it does not touch the "%" character. The modes URL_ENCODE_DATA and URL_ENCODE_PATH can only be applied to strings that are known not to be encoded.</p>
+<p>The encoded URL is a string containing only ASCII characters</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.parsing.valid_interwiki_key">
+    
+  </a>
+  <a name="valid_interwiki_key">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">valid_interwiki_key</span>(name):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L439">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.parsing.URL_ENCODE_DATA">
+    
+  </a>
+  <a name="URL_ENCODE_DATA">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">URL_ENCODE_DATA</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L165">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>0</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.parsing.URL_ENCODE_PATH">
+    
+  </a>
+  <a name="URL_ENCODE_PATH">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">URL_ENCODE_PATH</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L166">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>1</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.parsing.URL_ENCODE_READABLE">
+    
+  </a>
+  <a name="URL_ENCODE_READABLE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">URL_ENCODE_READABLE</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L167">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>2</code></pre></td></tr></table>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.parsing.is_email_re">
+    
+  </a>
+  <a name="is_email_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">is_email_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L422">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.parsing.is_interwiki_keyword_re">
+    
+  </a>
+  <a name="is_interwiki_keyword_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">is_interwiki_keyword_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L436">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.parsing.is_interwiki_re">
+    
+  </a>
+  <a name="is_interwiki_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">is_interwiki_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L434">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.parsing.is_path_re">
+    
+  </a>
+  <a name="is_path_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">is_path_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L426">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.parsing.is_uri_re">
+    
+  </a>
+  <a name="is_uri_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">is_uri_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L415">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.parsing.is_url_re">
+    
+  </a>
+  <a name="is_url_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">is_url_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L417">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.parsing.is_win32_path_re">
+    
+  </a>
+  <a name="is_win32_path_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">is_win32_path_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L429">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.parsing.is_win32_share_re">
+    
+  </a>
+  <a name="is_win32_share_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">is_win32_share_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L431">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.parsing.is_www_link_re">
+    
+  </a>
+  <a name="is_www_link_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">is_www_link_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L419">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.parsing.url_re">
+    
+  </a>
+  <a name="url_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">url_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L447">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.parsing._escape">
+    
+  </a>
+  <a name="_escape">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_escape</span>(match):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L66">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.parsing._unescape">
+    
+  </a>
+  <a name="_unescape">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_unescape</span>(match):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L83">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.parsing._url_decode">
+    
+  </a>
+  <a name="_url_decode">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_url_decode</span>(match):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L225">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.parsing._url_decode_bytes">
+    
+  </a>
+  <a name="_url_decode_bytes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_url_decode_bytes</span>(match):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L230">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.parsing._url_encode">
+    
+  </a>
+  <a name="_url_encode">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_url_encode</span>(match):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L183">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.parsing._url_encode_on_error">
+    
+  </a>
+  <a name="_url_encode_on_error">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_url_encode_on_error</span>(error):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L173">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.parsing._url_encode_readable">
+    
+  </a>
+  <a name="_url_encode_readable">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_url_encode_readable</span>(match):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L187">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="zim.parsing._classes">
+    
+  </a>
+  <a name="_classes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_classes</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L446">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="zim.parsing._parse_date_re">
+    
+  </a>
+  <a name="_parse_date_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_parse_date_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L270">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="zim.parsing._url_bytes_decode_re">
+    
+  </a>
+  <a name="_url_bytes_decode_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_url_bytes_decode_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L221">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="zim.parsing._url_decode_ascii_re">
+    
+  </a>
+  <a name="_url_decode_ascii_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_url_decode_ascii_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L222">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="zim.parsing._url_decode_unicode_bytes_re">
+    
+  </a>
+  <a name="_url_decode_unicode_bytes_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_url_decode_unicode_bytes_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L223">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="zim.parsing._url_encode_path_re">
+    
+  </a>
+  <a name="_url_encode_path_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_url_encode_path_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L170">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="zim.parsing._url_encode_re">
+    
+  </a>
+  <a name="_url_encode_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_url_encode_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parsing.py#L169">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

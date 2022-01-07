@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.formats : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.formats</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="package"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.formats.html">formats</a></code></code></h1>
+        <h1 class="package"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.formats.html">formats</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,47 +65,114 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py">(source)</a>
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Package with source formats for pages.</p><p>Each module in zim.formats should contains exactly one subclass of DumperClass and exactly one subclass of ParserClass (optional for export formats). These can be loaded by <code><a href="#get_parser">get_parser()</a></code> and <code><a href="#get_dumper">get_dumper()</a></code> respectively. The requirement to have exactly one subclass per module means you can not import other classes that derive from these base classes directly into the module.</p><p>For format modules it is safe to import '*' from this module.</p><h1>Parse tree structure</h1><p>Parse trees are build using the (c)ElementTree module (included in python 2.5 as xml.etree.ElementTree). It is basically a xml structure supporting a subset of "html like" tags.</p><p>Supported tags:</p><ul><li>page root element for grouping paragraphs</li><li>p for paragraphs</li><li>h for heading, level attribute can be 1..6</li><li>pre for verbatim paragraphs (no further parsing in these blocks)</li><li>em for emphasis, rendered italic by default</li><li>strong for strong emphasis, rendered bold by default</li><li>mark for highlighted text, rendered with background color or underlined</li><li>strike for text that is removed, usually rendered as strike through</li><li>code for inline verbatim text</li><li>ul for bullet and checkbox lists</li><li>ol for numbered lists</li><li>li for list items</li><li>link for links, attribute href gives the target</li><li>img for images, attributes src, width, height an optionally href and alt<ul><li>type can be used to control plugin functionality, e.g. type=equation</li></ul></li><li>table for tables, attributes * aligns - comma separated values: right,left,center * wraps - 0 for not wrapped, 1 for auto-wrapped line display</li><li>thead for table header row<ul><li>th for table header cell</li></ul><ul><li>trow for table row<ul><li>td for table data cell</li></ul></li></ul></li></ul><p>Nesting rules:</p><ul><li>paragraphs, list items, table cells &amp; headings can contain all inline elements</li><li>inline formats can contain other inline formats as well as links and tags</li><li>code and pre cannot contain any other elements</li></ul><p>Unlike html we respect line breaks and other whitespace as is. When rendering as html use the "white-space: pre" CSS definition to get the same effect.</p><p>If a page starts with a h1 this heading is considered the page title, else we can fall back to the page name as title.</p><p>NOTE: To avoid confusion: "headers" refers to meta data, usually in the form of rfc822 headers at the top of a page. But "heading" refers to a title or subtitle in the document.</p></div>
+        <div><p>Package with source formats for pages.</p>
+<p>Each module in zim.formats should contains exactly one subclass of DumperClass and exactly one subclass of ParserClass (optional for export formats). These can be loaded by <code><a href="#get_parser">get_parser()</a></code> and <code><a href="#get_dumper">get_dumper()</a></code> respectively. The requirement to have exactly one subclass per module means you can not import other classes that derive from these base classes directly into the module.</p>
+<p>For format modules it is safe to import '*' from this module.</p>
+<div class="rst-section">
+<h2 class="heading">Parse tree structure</h2>
+<p>Parse trees are build using the (c)ElementTree module (included in python 2.5 as xml.etree.ElementTree). It is basically a xml structure supporting a subset of "html like" tags.</p>
+<p>Supported tags:</p>
+<ul>
+<li><p class="rst-first">page root element for grouping paragraphs</p>
+</li>
+<li><p class="rst-first">p for paragraphs</p>
+</li>
+<li><p class="rst-first">h for heading, level attribute can be 1..6</p>
+</li>
+<li><p class="rst-first">pre for verbatim paragraphs (no further parsing in these blocks)</p>
+</li>
+<li><p class="rst-first">em for emphasis, rendered italic by default</p>
+</li>
+<li><p class="rst-first">strong for strong emphasis, rendered bold by default</p>
+</li>
+<li><p class="rst-first">mark for highlighted text, rendered with background color or underlined</p>
+</li>
+<li><p class="rst-first">strike for text that is removed, usually rendered as strike through</p>
+</li>
+<li><p class="rst-first">code for inline verbatim text</p>
+</li>
+<li><p class="rst-first">ul for bullet and checkbox lists</p>
+</li>
+<li><p class="rst-first">ol for numbered lists</p>
+</li>
+<li><p class="rst-first">li for list items</p>
+</li>
+<li><p class="rst-first">link for links, attribute href gives the target</p>
+</li>
+<li><p class="rst-first">img for images, attributes src, width, height an optionally href and alt</p>
+<ul class="rst-simple">
+<li>type can be used to control plugin functionality, e.g. type=equation</li>
+</ul>
+</li>
+<li><p class="rst-first">table for tables, attributes * aligns - comma separated values: right,left,center * wraps - 0 for not wrapped, 1 for auto-wrapped line display</p>
+</li>
+<li><p class="rst-first">thead for table header row</p>
+<ul class="rst-simple">
+<li>th for table header cell</li>
+</ul>
+<ul class="rst-simple">
+<li>trow for table row<ul>
+<li>td for table data cell</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Nesting rules:</p>
+<ul class="rst-simple">
+<li>paragraphs, list items, table cells &amp; headings can contain all inline elements</li>
+<li>inline formats can contain other inline formats as well as links and tags</li>
+<li>code and pre cannot contain any other elements</li>
+</ul>
+<p>Unlike html we respect line breaks and other whitespace as is. When rendering as html use the "white-space: pre" CSS definition to get the same effect.</p>
+<p>Text blocks (paragraphs, listitems, headings, vertabim blocks) must end with a newline. Only the last block of the sequence can omit the newline. This case will be interpreted as a text snippet and affect copy-paste behavior.</p>
+<p>Tables and other objects that are not inline are implicitly handled as ending in a newline.</p>
+<p>As a result the newlines outsides blocks represent the number of empty lines between the blocks and newline ending the block is contained in the block.</p>
+<p>If a page starts with a h1 this heading is considered the page title, else we can fall back to the page name as title.</p>
+<p>NOTE: To avoid confusion: "headers" refers to meta data, usually in the form of rfc822 headers at the top of a page. But "heading" refers to a title or subtitle in the document.</p>
+</div>
+</div>
       </div>
 
       <div id="splitTables">
         <table class="children sortable" id="id146">
   
+  
   <tr class="module">
     
     <td>Module</td>
     <td><code><a href="zim.formats.html.html">html</a></code></td>
-    <td><span>This module supports dumping to HTML</span></td>
+    <td>This module supports dumping to HTML</td>
   </tr><tr class="module">
     
     <td>Module</td>
     <td><code><a href="zim.formats.latex.html">latex</a></code></td>
-    <td><span>This modules handles export of LaTeX Code</span></td>
+    <td>This modules handles export of LaTeX Code</td>
   </tr><tr class="module">
     
     <td>Module</td>
     <td><code><a href="zim.formats.markdown.html">markdown</a></code></td>
-    <td><span>This module handles dumping markdown text with pandoc extensions</span></td>
+    <td>This module handles dumping markdown text with pandoc extensions</td>
   </tr><tr class="module">
     
     <td>Module</td>
     <td><code><a href="zim.formats.plain.html">plain</a></code></td>
-    <td><span>This module handles parsing and dumping input in plain text</span></td>
+    <td>This module handles parsing and dumping input in plain text</td>
   </tr><tr class="module">
     
     <td>Module</td>
     <td><code><a href="zim.formats.rst.html">rst</a></code></td>
-    <td><span>This module handles dumping reStructuredText with sphinx extensions</span></td>
+    <td>This module handles dumping reStructuredText with sphinx extensions</td>
   </tr><tr class="module">
     
     <td>Module</td>
     <td><code><a href="zim.formats.wiki.html">wiki</a></code></td>
-    <td><span>This module handles parsing and dumping wiki text</span></td>
+    <td>This module handles parsing and dumping wiki text</td>
   </tr><tr class="module private">
     
     <td>Module</td>
@@ -84,372 +182,373 @@
 </table>
         
 
-          <p class="fromInitPy">From the <code>__init__.py</code> module:</p><table class="children sortable" id="id147">
+          <p class="fromInitPy">From <code>__init__.py</code>:</p><table class="children sortable" id="id147">
   
-  <tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#ANCHOR">ANCHOR</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#BLOCK">BLOCK</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#BLOCK_LEVEL">BLOCK_LEVEL</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#BULLET">BULLET</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#BULLETLIST">BULLETLIST</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="class">
+  
+  <tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.formats.BaseLinker.html">BaseLinker</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#CHECKED_BOX">CHECKED_BOX</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.formats.DocumentFragment.html">DocumentFragment</a></code></td>
-    <td><span>Document fragment class for DOM-like access</span></td>
+    <td>Document fragment class for DOM-like access</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.formats.DumperClass.html">DumperClass</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#DumperContextElement">DumperContextElement</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#EMPHASIS">EMPHASIS</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#EXPORT_FORMAT">EXPORT_FORMAT</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.formats.Element.html">Element</a></code></td>
-    <td><span>Element class for DOM-like access</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#FORMATTEDTEXT">FORMATTEDTEXT</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#FRAGMENT">FRAGMENT</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#HEADDATA">HEADDATA</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#HEADING">HEADING</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#HEADROW">HEADROW</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#IMAGE">IMAGE</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#IMPORT_FORMAT">IMPORT_FORMAT</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#LINE">LINE</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#LINK">LINK</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#LISTITEM">LISTITEM</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#MARK">MARK</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#MIGRATED_BOX">MIGRATED_BOX</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#NATIVE_FORMAT">NATIVE_FORMAT</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#NUMBEREDLIST">NUMBEREDLIST</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Element class for DOM-like access</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.formats.Node.html">Node</a></code></td>
-    <td><span>Base class for DOM-like access to the document structure. @note: This class is not optimized for keeping large structures in memory.</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#OBJECT">OBJECT</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Base class for DOM-like access to the document structure. @note: This class is not optimized for keeping large structures in memory.</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.formats.OldParseTreeBuilder.html">OldParseTreeBuilder</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#PARAGRAPH">PARAGRAPH</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#Pango">Pango</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.formats.ParseTree.html">ParseTree</a></code></td>
-    <td><span>Wrapper for zim parse trees.</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.formats.ParseTreeBuilder.html">ParseTreeBuilder</a></code></td>
-    <td><span>Builder object that builds a <code><a href="zim.formats.ParseTree.html">ParseTree</a></code></span></td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.formats.ParserClass.html">ParserClass</a></code></td>
-    <td><span>Base class for parsers</span></td>
-  </tr><tr class="variable">
+    <td>Base class for parsers</td>
+  </tr><tr class="class">
     
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#STRIKE">STRIKE</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
+    <td>Class</td>
+    <td><code><a href="zim.formats.ParseTree.html">ParseTree</a></code></td>
+    <td>Wrapper for zim parse trees.</td>
+  </tr><tr class="class">
     
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#STRONG">STRONG</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#SUBSCRIPT">SUBSCRIPT</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#SUPERSCRIPT">SUPERSCRIPT</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Class</td>
+    <td><code><a href="zim.formats.ParseTreeBuilder.html">ParseTreeBuilder</a></code></td>
+    <td>Builder object that builds a <code><a href="zim.formats.ParseTree.html">ParseTree</a></code></td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.formats.StubLinker.html">StubLinker</a></code></td>
-    <td><span>Linker used for testing - just gives back the link as it was parsed. DO NOT USE outside of testing.</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#TABLE">TABLE</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#TABLEDATA">TABLEDATA</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#TABLEROW">TABLEROW</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#TAG">TAG</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#TEXT_FORMAT">TEXT_FORMAT</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#TRANSMIGRATED_BOX">TRANSMIGRATED_BOX</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Linker used for testing - just gives back the link as it was parsed. DO NOT USE outside of testing.</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.formats.TableParser.html">TableParser</a></code></td>
-    <td><span>Common functions for converting a table from its' xml structure to another format</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#UNCHECKED_BOX">UNCHECKED_BOX</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#VERBATIM">VERBATIM</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#VERBATIM_BLOCK">VERBATIM_BLOCK</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Common functions for converting a table from its' xml structure to another format</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.formats.Visitor.html">Visitor</a></code></td>
-    <td><span>Conceptual opposite of a builder, but with same API. Used to walk nodes in a parsetree and call callbacks for each node. See e.g. <code><a href="zim.formats.ParseTree.html#visit">ParseTree.visit()</a></code>.</span></td>
+    <td>Conceptual opposite of a builder, but with same API. Used to walk nodes in a parsetree and call callbacks for each node. See e.g. <code><a href="zim.formats.ParseTree.html#visit">ParseTree.visit()</a></code>.</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.formats.VisitorSkip.html">VisitorSkip</a></code></td>
-    <td><span>Exception to be raised when the visitor should skip a leaf node and not decent into it.</span></td>
+    <td>Exception to be raised when the visitor should skip a leaf node and not decent into it.</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.formats.VisitorStop.html">VisitorStop</a></code></td>
-    <td><span>Exception to be raised to cancel a visitor action</span></td>
-  </tr><tr class="variable">
+    <td>Exception to be raised to cancel a visitor action</td>
+  </tr><tr class="function">
     
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#XCHECKED_BOX">XCHECKED_BOX</a></code></td>
+    <td>Function</td>
+    <td><code><a href="#canonical_name">canonical_name</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
-    <td><code><a href="zim.formats.html#canonical_name">canonical_name</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="zim.formats.html#convert_list_iter_letter_to_number">convert_list_iter_letter_to_number</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#count_eol_re">count_eol_re</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="zim.formats.html#dump_header_lines">dump_header_lines</a></code></td>
-    <td><span>Return text representation of header dict</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="zim.formats.html#encode_xml">encode_xml</a></code></td>
-    <td><span>Encode text such that it can be used in xml @param text: label text as string @returns: encoded text</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="zim.formats.html#get_dumper">get_dumper</a></code></td>
-    <td><span>Returns a dumper object instance for a specific format</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="zim.formats.html#get_format">get_format</a></code></td>
-    <td><span>Returns the module object for a specific format.</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="zim.formats.html#get_format_module">get_format_module</a></code></td>
-    <td><span>Returns the module object for a specific format</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="zim.formats.html#get_parser">get_parser</a></code></td>
-    <td><span>Returns a parser object instance for a specific format</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="zim.formats.html#heading_to_anchor">heading_to_anchor</a></code></td>
-    <td><span>Derive an anchor name from a heading</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="zim.formats.html#increase_list_iter">increase_list_iter</a></code></td>
+    <td><code><a href="#convert_list_iter_letter_to_number">convert_list_iter_letter_to_number</a></code></td>
     <td><span class="undocumented">No summary</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
-    <td><code><a href="zim.formats.html#list_formats">list_formats</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
+    <td><code><a href="#dump_header_lines">dump_header_lines</a></code></td>
+    <td>Return text representation of header dict</td>
+  </tr><tr class="function">
     
-    <td>Variable</td>
-    <td><code><a href="zim.formats.html#logger">logger</a></code></td>
+    <td>Function</td>
+    <td><code><a href="#encode_xml">encode_xml</a></code></td>
+    <td>Encode text such that it can be used in xml @param text: label text as string @returns: encoded text</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_dumper">get_dumper</a></code></td>
+    <td>Returns a dumper object instance for a specific format</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_format">get_format</a></code></td>
+    <td>Returns the module object for a specific format.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_format_module">get_format_module</a></code></td>
+    <td>Returns the module object for a specific format</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_parser">get_parser</a></code></td>
+    <td>Returns a parser object instance for a specific format</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#heading_to_anchor">heading_to_anchor</a></code></td>
+    <td>Derive an anchor name from a heading</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#increase_list_iter">increase_list_iter</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#list_formats">list_formats</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
-    <td><code><a href="zim.formats.html#parse_header_lines">parse_header_lines</a></code></td>
-    <td><span>Read header lines in the rfc822 format. Can e.g. look like:</span></td>
+    <td><code><a href="#parse_header_lines">parse_header_lines</a></code></td>
+    <td>Read header lines in the rfc822 format. Can e.g. look like:</td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#ANCHOR">ANCHOR</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#BLOCK">BLOCK</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#BLOCK_LEVEL">BLOCK_LEVEL</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#BULLET">BULLET</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#BULLETLIST">BULLETLIST</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#CHECKED_BOX">CHECKED_BOX</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#EMPHASIS">EMPHASIS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#EXPORT_FORMAT">EXPORT_FORMAT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#FORMATTEDTEXT">FORMATTEDTEXT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#FRAGMENT">FRAGMENT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#HEADDATA">HEADDATA</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#HEADING">HEADING</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#HEADROW">HEADROW</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#IMAGE">IMAGE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#IMPORT_FORMAT">IMPORT_FORMAT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#LINE">LINE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#LINK">LINK</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#LISTITEM">LISTITEM</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#MARK">MARK</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#MIGRATED_BOX">MIGRATED_BOX</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#NATIVE_FORMAT">NATIVE_FORMAT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#NUMBEREDLIST">NUMBEREDLIST</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#OBJECT">OBJECT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#PARAGRAPH">PARAGRAPH</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#STRIKE">STRIKE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#STRONG">STRONG</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#SUBSCRIPT">SUBSCRIPT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#SUPERSCRIPT">SUPERSCRIPT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#TABLE">TABLE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#TABLEDATA">TABLEDATA</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#TABLEROW">TABLEROW</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#TAG">TAG</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#TEXT_FORMAT">TEXT_FORMAT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#TRANSMIGRATED_BOX">TRANSMIGRATED_BOX</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#UNCHECKED_BOX">UNCHECKED_BOX</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#VERBATIM">VERBATIM</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#VERBATIM_BLOCK">VERBATIM_BLOCK</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#XCHECKED_BOX">XCHECKED_BOX</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
     <td>Variable</td>
-    <td><code><a href="zim.formats.html#split_para_re">split_para_re</a></code></td>
+    <td><code><a href="#count_eol_re">count_eol_re</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#DumperContextElement">DumperContextElement</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#Pango">Pango</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#split_para_re">split_para_re</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable private">
     
     <td>Variable</td>
-    <td><code><a href="zim.formats.html#_aliases">_aliases</a></code></td>
+    <td><code><a href="#_aliases">_aliases</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable private">
     
     <td>Variable</td>
-    <td><code><a href="zim.formats.html#_is_continue_re">_is_continue_re</a></code></td>
+    <td><code><a href="#_is_continue_re">_is_continue_re</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable private">
     
     <td>Variable</td>
-    <td><code><a href="zim.formats.html#_is_header_re">_is_header_re</a></code></td>
+    <td><code><a href="#_is_header_re">_is_header_re</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable private">
     
     <td>Variable</td>
-    <td><code><a href="zim.formats.html#_letters">_letters</a></code></td>
+    <td><code><a href="#_letters">_letters</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -458,6 +557,7 @@
       <div id="childList">
 
         <div class="basevariable">
+  
   
   <a name="zim.formats.logger">
     
@@ -468,7 +568,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">logger</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L84">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L94">
       
       (source)
     </a>
@@ -477,8 +577,10 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basevariable">
+  
   
   <a name="zim.formats.Pango">
     
@@ -489,7 +591,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">Pango</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L91">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L101">
       
       (source)
     </a>
@@ -498,8 +600,10 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.EXPORT_FORMAT">
     
@@ -509,8 +613,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">EXPORT_FORMAT</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L101">
+    <span class="py-defname">EXPORT_FORMAT</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L111">
       
       (source)
     </a>
@@ -518,9 +622,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>1</code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.IMPORT_FORMAT">
     
@@ -530,8 +636,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">IMPORT_FORMAT</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L102">
+    <span class="py-defname">IMPORT_FORMAT</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L112">
       
       (source)
     </a>
@@ -539,9 +645,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>2</code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.NATIVE_FORMAT">
     
@@ -551,8 +659,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">NATIVE_FORMAT</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L103">
+    <span class="py-defname">NATIVE_FORMAT</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L113">
       
       (source)
     </a>
@@ -560,9 +668,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>4</code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.TEXT_FORMAT">
     
@@ -572,8 +682,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">TEXT_FORMAT</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L104">
+    <span class="py-defname">TEXT_FORMAT</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L114">
       
       (source)
     </a>
@@ -581,9 +691,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>8</code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.UNCHECKED_BOX">
     
@@ -593,8 +705,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">UNCHECKED_BOX</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L106">
+    <span class="py-defname">UNCHECKED_BOX</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L116">
       
       (source)
     </a>
@@ -602,9 +714,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">unchecked-box</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.CHECKED_BOX">
     
@@ -614,8 +728,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">CHECKED_BOX</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L107">
+    <span class="py-defname">CHECKED_BOX</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L117">
       
       (source)
     </a>
@@ -623,9 +737,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">checked-box</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.XCHECKED_BOX">
     
@@ -635,8 +751,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">XCHECKED_BOX</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L108">
+    <span class="py-defname">XCHECKED_BOX</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L118">
       
       (source)
     </a>
@@ -644,9 +760,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">xchecked-box</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.MIGRATED_BOX">
     
@@ -656,8 +774,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">MIGRATED_BOX</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L109">
+    <span class="py-defname">MIGRATED_BOX</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L119">
       
       (source)
     </a>
@@ -665,9 +783,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">migrated-box</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.TRANSMIGRATED_BOX">
     
@@ -677,8 +797,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">TRANSMIGRATED_BOX</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L110">
+    <span class="py-defname">TRANSMIGRATED_BOX</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L120">
       
       (source)
     </a>
@@ -686,9 +806,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">transmigrated-box</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.BULLET">
     
@@ -698,8 +820,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">BULLET</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L111">
+    <span class="py-defname">BULLET</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L121">
       
       (source)
     </a>
@@ -707,9 +829,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">*</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.FORMATTEDTEXT">
     
@@ -719,8 +843,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">FORMATTEDTEXT</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L113">
+    <span class="py-defname">FORMATTEDTEXT</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L123">
       
       (source)
     </a>
@@ -728,9 +852,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">zim-tree</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.FRAGMENT">
     
@@ -740,8 +866,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">FRAGMENT</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L114">
+    <span class="py-defname">FRAGMENT</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L124">
       
       (source)
     </a>
@@ -749,9 +875,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">zim-tree</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.HEADING">
     
@@ -761,8 +889,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">HEADING</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L116">
+    <span class="py-defname">HEADING</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L126">
       
       (source)
     </a>
@@ -770,9 +898,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">h</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.PARAGRAPH">
     
@@ -782,8 +912,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">PARAGRAPH</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L117">
+    <span class="py-defname">PARAGRAPH</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L127">
       
       (source)
     </a>
@@ -791,9 +921,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">p</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.VERBATIM_BLOCK">
     
@@ -803,8 +935,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">VERBATIM_BLOCK</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L118">
+    <span class="py-defname">VERBATIM_BLOCK</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L128">
       
       (source)
     </a>
@@ -812,9 +944,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">pre</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.BLOCK">
     
@@ -824,8 +958,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">BLOCK</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L119">
+    <span class="py-defname">BLOCK</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L129">
       
       (source)
     </a>
@@ -833,9 +967,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">div</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.IMAGE">
     
@@ -845,8 +981,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">IMAGE</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L121">
+    <span class="py-defname">IMAGE</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L131">
       
       (source)
     </a>
@@ -854,9 +990,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">img</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.OBJECT">
     
@@ -866,8 +1004,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">OBJECT</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L122">
+    <span class="py-defname">OBJECT</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L132">
       
       (source)
     </a>
@@ -875,9 +1013,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">object</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.BULLETLIST">
     
@@ -887,8 +1027,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">BULLETLIST</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L124">
+    <span class="py-defname">BULLETLIST</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L134">
       
       (source)
     </a>
@@ -896,9 +1036,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">ul</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.NUMBEREDLIST">
     
@@ -908,8 +1050,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">NUMBEREDLIST</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L125">
+    <span class="py-defname">NUMBEREDLIST</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L135">
       
       (source)
     </a>
@@ -917,9 +1059,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">ol</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.LISTITEM">
     
@@ -929,8 +1073,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">LISTITEM</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L126">
+    <span class="py-defname">LISTITEM</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L136">
       
       (source)
     </a>
@@ -938,9 +1082,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">li</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.EMPHASIS">
     
@@ -950,8 +1096,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">EMPHASIS</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L128">
+    <span class="py-defname">EMPHASIS</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L138">
       
       (source)
     </a>
@@ -959,9 +1105,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">emphasis</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.STRONG">
     
@@ -971,8 +1119,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">STRONG</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L129">
+    <span class="py-defname">STRONG</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L139">
       
       (source)
     </a>
@@ -980,9 +1128,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">strong</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.MARK">
     
@@ -992,8 +1142,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">MARK</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L130">
+    <span class="py-defname">MARK</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L140">
       
       (source)
     </a>
@@ -1001,9 +1151,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">mark</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.VERBATIM">
     
@@ -1013,8 +1165,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">VERBATIM</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L131">
+    <span class="py-defname">VERBATIM</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L141">
       
       (source)
     </a>
@@ -1022,9 +1174,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">code</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.STRIKE">
     
@@ -1034,8 +1188,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">STRIKE</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L132">
+    <span class="py-defname">STRIKE</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L142">
       
       (source)
     </a>
@@ -1043,9 +1197,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">strike</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.SUBSCRIPT">
     
@@ -1055,8 +1211,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">SUBSCRIPT</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L133">
+    <span class="py-defname">SUBSCRIPT</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L143">
       
       (source)
     </a>
@@ -1064,9 +1220,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">sub</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.SUPERSCRIPT">
     
@@ -1076,8 +1234,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">SUPERSCRIPT</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L134">
+    <span class="py-defname">SUPERSCRIPT</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L144">
       
       (source)
     </a>
@@ -1085,9 +1243,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">sup</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.LINK">
     
@@ -1097,8 +1257,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">LINK</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L136">
+    <span class="py-defname">LINK</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L146">
       
       (source)
     </a>
@@ -1106,9 +1266,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">link</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.TAG">
     
@@ -1118,8 +1280,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">TAG</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L137">
+    <span class="py-defname">TAG</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L147">
       
       (source)
     </a>
@@ -1127,9 +1289,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">tag</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.ANCHOR">
     
@@ -1139,8 +1303,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">ANCHOR</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L138">
+    <span class="py-defname">ANCHOR</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L148">
       
       (source)
     </a>
@@ -1148,9 +1312,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">anchor</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.TABLE">
     
@@ -1160,8 +1326,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">TABLE</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L140">
+    <span class="py-defname">TABLE</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L150">
       
       (source)
     </a>
@@ -1169,9 +1335,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">table</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.HEADROW">
     
@@ -1181,8 +1349,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">HEADROW</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L141">
+    <span class="py-defname">HEADROW</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L151">
       
       (source)
     </a>
@@ -1190,9 +1358,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">thead</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.HEADDATA">
     
@@ -1202,8 +1372,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">HEADDATA</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L142">
+    <span class="py-defname">HEADDATA</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L152">
       
       (source)
     </a>
@@ -1211,9 +1381,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">th</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.TABLEROW">
     
@@ -1223,8 +1395,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">TABLEROW</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L143">
+    <span class="py-defname">TABLEROW</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L153">
       
       (source)
     </a>
@@ -1232,9 +1404,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">trow</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.TABLEDATA">
     
@@ -1244,8 +1418,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">TABLEDATA</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L144">
+    <span class="py-defname">TABLEDATA</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L154">
       
       (source)
     </a>
@@ -1253,9 +1427,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">td</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.LINE">
     
@@ -1265,8 +1441,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">LINE</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L146">
+    <span class="py-defname">LINE</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L156">
       
       (source)
     </a>
@@ -1274,9 +1450,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">line</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.formats.BLOCK_LEVEL">
     
@@ -1287,7 +1465,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">BLOCK_LEVEL</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L148">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L158">
       
       (source)
     </a>
@@ -1296,8 +1474,10 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>(<wbr></wbr><a href="#PARAGRAPH">PARAGRAPH</a>, <wbr></wbr><a href="#HEADING">HEADING</a>, <wbr></wbr><a href="#VERBATIM_BLOCK">VERBATIM_BLOCK</a>, <wbr></wbr><a href="#BLOCK">BLOCK</a>, <wbr></wbr><a href="#LISTITEM">LISTITEM</a>)</code></pre></td></tr></table>
   </div>
 </div><div class="basevariable private">
+  
   
   <a name="zim.formats._letters">
     
@@ -1307,8 +1487,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_letters</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L152">
+    <span class="py-defname">_letters</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L161">
       
       (source)
     </a>
@@ -1316,9 +1496,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.formats.increase_list_iter">
     
@@ -1329,7 +1511,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">increase_list_iter</span>(listiter):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L154">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L163">
       
       (source)
     </a>
@@ -1337,9 +1519,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Get the next item in a list for a numbered list E.g if <code>listiter</code> is <code>"1"</code> this function returns <code>"2"</code>, if it is <code>"a"</code> it returns <code>"b"</code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">listiter</td><td>the current item, either an integer number or single letter</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">the next item, or <code>None</code></td></tr></table></div>
+    <div>Get the next item in a list for a numbered list E.g if <tt class="rst-docutils literal">listiter</tt> is <tt class="rst-docutils literal">"1"</tt> this function returns <tt class="rst-docutils literal">"2"</tt>, if it is <tt class="rst-docutils literal">"a"</tt> it returns <tt class="rst-docutils literal">"b"</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">listiter</span></td><td class="fieldArgDesc">the current item, either an integer number or single letter</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the next item, or <tt class="rst-docutils literal">None</tt></td></tr></table></div>
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.formats.convert_list_iter_letter_to_number">
     
@@ -1350,7 +1533,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">convert_list_iter_letter_to_number</span>(listiter):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L175">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L184">
       
       (source)
     </a>
@@ -1358,9 +1541,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Convert a "letter" numbered list to a digit numbered list Usefull for export to formats that do not support letter lists. Both "A." and "a." convert to "1." assumption is that this function is used for start iter only, not whole list</p></div>
+    <div>Convert a "letter" numbered list to a digit numbered list Usefull for export to formats that do not support letter lists. Both "A." and "a." convert to "1." assumption is that this function is used for start iter only, not whole list</div>
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.formats.encode_xml">
     
@@ -1371,7 +1555,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">encode_xml</span>(text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L193">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L202">
       
       (source)
     </a>
@@ -1379,9 +1563,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Encode text such that it can be used in xml</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">text</td><td>label text as string</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">encoded text</td></tr></table></div>
+    <div>Encode text such that it can be used in xml<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">text</span></td><td class="fieldArgDesc">label text as string</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">encoded text</td></tr></table></div>
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.formats.list_formats">
     
@@ -1392,7 +1577,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">list_formats</span>(type):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L201">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L210">
       
       (source)
     </a>
@@ -1403,6 +1588,7 @@
     <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.formats.canonical_name">
     
@@ -1413,7 +1599,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">canonical_name</span>(name):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L210">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L219">
       
       (source)
     </a>
@@ -1425,6 +1611,7 @@
   </div>
 </div><div class="basevariable private">
   
+  
   <a name="zim.formats._aliases">
     
   </a>
@@ -1433,8 +1620,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_aliases</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L223">
+    <span class="py-defname">_aliases</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L232">
       
       (source)
     </a>
@@ -1442,9 +1629,11 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.formats.get_format">
     
@@ -1455,7 +1644,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">get_format</span>(name):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L227">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L236">
       
       (source)
     </a>
@@ -1463,9 +1652,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Returns the module object for a specific format.</p></div>
+    <div>Returns the module object for a specific format.</div>
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.formats.get_format_module">
     
@@ -1476,7 +1666,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">get_format_module</span>(name):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L234">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L243">
       
       (source)
     </a>
@@ -1484,9 +1674,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Returns the module object for a specific format</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">name</td><td>the format name</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a module object</td></tr></table></div>
+    <div>Returns the module object for a specific format<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name</span></td><td class="fieldArgDesc">the format name</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a module object</td></tr></table></div>
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.formats.get_parser">
     
@@ -1497,7 +1688,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">get_parser</span>(name, *arg, **kwarg):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L244">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L253">
       
       (source)
     </a>
@@ -1505,9 +1696,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Returns a parser object instance for a specific format</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">name</td><td>format name</td></tr><tr><td></td><td class="fieldArg">arg</td><td>arguments to pass to the parser object</td></tr><tr><td></td><td class="fieldArg">kwarg</td><td>keyword arguments to pass to the parser object</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">parser object instance (subclass of <code><a href="zim.formats.ParserClass.html">ParserClass</a></code>)</td></tr></table></div>
+    <div>Returns a parser object instance for a specific format<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name</span></td><td class="fieldArgDesc">format name</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">*arg</span></td><td class="fieldArgDesc">arguments to pass to the parser object</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**kwarg</span></td><td class="fieldArgDesc">keyword arguments to pass to the parser object</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">parser object instance (subclass of <code><a href="zim.formats.ParserClass.html">ParserClass</a></code>)</td></tr></table></div>
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.formats.get_dumper">
     
@@ -1518,7 +1710,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">get_dumper</span>(name, *arg, **kwarg):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L258">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L267">
       
       (source)
     </a>
@@ -1526,9 +1718,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Returns a dumper object instance for a specific format</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">name</td><td>format name</td></tr><tr><td></td><td class="fieldArg">arg</td><td>arguments to pass to the dumper object</td></tr><tr><td></td><td class="fieldArg">kwarg</td><td>keyword arguments to pass to the dumper object</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">dumper object instance (subclass of <code><a href="zim.formats.DumperClass.html">DumperClass</a></code>)</td></tr></table></div>
+    <div>Returns a dumper object instance for a specific format<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name</span></td><td class="fieldArgDesc">format name</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">*arg</span></td><td class="fieldArgDesc">arguments to pass to the dumper object</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**kwarg</span></td><td class="fieldArgDesc">keyword arguments to pass to the dumper object</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">dumper object instance (subclass of <code><a href="zim.formats.DumperClass.html">DumperClass</a></code>)</td></tr></table></div>
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.formats.heading_to_anchor">
     
@@ -1539,7 +1732,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">heading_to_anchor</span>(name):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L272">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L281">
       
       (source)
     </a>
@@ -1547,9 +1740,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Derive an anchor name from a heading</p></div>
+    <div>Derive an anchor name from a heading</div>
   </div>
 </div><div class="basevariable">
+  
   
   <a name="zim.formats.count_eol_re">
     
@@ -1560,7 +1754,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">count_eol_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L902">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L856">
       
       (source)
     </a>
@@ -1569,8 +1763,10 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basevariable">
+  
   
   <a name="zim.formats.split_para_re">
     
@@ -1581,7 +1777,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">split_para_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L903">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L857">
       
       (source)
     </a>
@@ -1590,8 +1786,10 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basevariable">
+  
   
   <a name="zim.formats.DumperContextElement">
     
@@ -1602,7 +1800,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">DumperContextElement</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1138">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1073">
       
       (source)
     </a>
@@ -1611,8 +1809,10 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basevariable private">
+  
   
   <a name="zim.formats._is_header_re">
     
@@ -1623,7 +1823,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">_is_header_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1725">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1660">
       
       (source)
     </a>
@@ -1632,8 +1832,10 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basevariable private">
+  
   
   <a name="zim.formats._is_continue_re">
     
@@ -1644,7 +1846,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">_is_continue_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1726">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1661">
       
       (source)
     </a>
@@ -1653,8 +1855,10 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.formats.parse_header_lines">
     
@@ -1665,7 +1869,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parse_header_lines</span>(text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1728">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1663">
       
       (source)
     </a>
@@ -1673,13 +1877,16 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Read header lines in the rfc822 format. Can e.g. look like:</p><pre class="literalblock">
+    <div><p>Read header lines in the rfc822 format. Can e.g. look like:</p>
+<pre class="rst-literal-block">
         Content-Type: text/x-zim-wiki
         Wiki-Format: zim 0.4
         Creation-Date: 2010-12-14T14:15:09.134955
-</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">the text minus the headers and a dict with the headers</td></tr></table></div>
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the text minus the headers and a dict with the headers</td></tr></table></div>
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.formats.dump_header_lines">
     
@@ -1690,7 +1897,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">dump_header_lines</span>(*headers):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1768">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L1703">
       
       (source)
     </a>
@@ -1698,16 +1905,21 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Return text representation of header dict</p></div>
+    <div>Return text representation of header dict</div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

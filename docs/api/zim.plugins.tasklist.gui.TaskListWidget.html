@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.plugins.tasklist.gui.TaskListWidget : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.plugins.tasklist.gui.TaskListWidget</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code>.<code><a href="zim.plugins.tasklist.html">tasklist</a></code>.<code><a href="zim.plugins.tasklist.gui.html">gui</a></code>.<code><a href="zim.plugins.tasklist.gui.TaskListWidget.html">TaskListWidget</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.plugins.html">plugins</a></code><wbr></wbr>.<code><a href="zim.plugins.tasklist.html">tasklist</a></code><wbr></wbr>.<code><a href="zim.plugins.tasklist.gui.html">gui</a></code><wbr></wbr>.<code><a href="zim.plugins.tasklist.gui.TaskListWidget.html">TaskListWidget</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TaskListWidget</span>(<span title="gi.repository.Gtk.VBox">Gtk.VBox</span>, <a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html" title="zim.plugins.tasklist.gui.TaskListWidgetMixin">TaskListWidgetMixin</a>, <a href="zim.gui.widgets.WindowSidePaneWidget.html" title="zim.gui.widgets.WindowSidePaneWidget">WindowSidePaneWidget</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L61">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TaskListWidget</span>(<span title="gi.repository.Gtk.VBox">Gtk.VBox</span>, <a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html" title="zim.plugins.tasklist.gui.TaskListWidgetMixin">TaskListWidgetMixin</a>, <a href="zim.gui.widgets.WindowSidePaneWidget.html" title="zim.gui.widgets.WindowSidePaneWidget">WindowSidePaneWidget</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L239" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.plugins.tasklist.gui.TaskListWidget">View In Hierarchy</a></p>
       </div>
 
@@ -43,37 +74,38 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1368">
+        <table class="children sortable" id="id1345">
   
-  <tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#title">title</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
+  
+  <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#uistate">uistate</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#task_list">task_list</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#filter_entry">filter_entry</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#on_properties_changed">on_properties_changed</a></code></td>
+    <td><code><a href="#set_embeded_closebutton">set_embeded_closebutton</a></code></td>
+    <td>Embed a button in the widget to close the side pane @param button: a button widget or <tt class="rst-docutils literal">None</tt> to unset @returns: <tt class="rst-docutils literal">True</tt> if supported and successfull</td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#title">title</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_close_button">_close_button</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_header_hbox">_header_hbox</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_show_dialog_action">_show_dialog_action</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -81,22 +113,133 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html">TaskListWidgetMixin</a></code>:
           </p>
-          <table class="children sortable" id="id1369">
+          <table class="children sortable" id="id1346">
+  
   
   <tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#on_populate_popup">on_populate_popup</a></code></td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#on_filter_changed">on_filter_changed</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#on_show_active_toggle">on_show_active_toggle</a></code></td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#on_properties_changed">on_properties_changed</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#on_show_flatlist_toggle">on_show_flatlist_toggle</a></code></td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#on_selection_activated">on_selection_activated</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#reload_view">reload_view</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#set_label_tag_filter">set_label_tag_filter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#set_selection">set_selection</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseconstant">
+    
+    <td>Constant</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#SELECTION_MAP">SELECTION_MAP</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#index">index</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#label_tag_filter">label_tag_filter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#selection_list">selection_list</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#status">status</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#tag_list">tag_list</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#tasklisttreeview">tasklisttreeview</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#taskselection">taskselection</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#taskselection_type">taskselection_type</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#uistate">uistate</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#_create_clear_tags_button">_create_clear_tags_button</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#_create_filter_entry">_create_filter_entry</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#_create_selection_menubutton">_create_selection_menubutton</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#_create_selection_pane">_create_selection_pane</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#_create_tasklisttreeview">_create_tasklisttreeview</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#_get_selection_state">_get_selection_state</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#_set_mbutton_label">_set_mbutton_label</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#_set_selection_state">_set_selection_state</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#_mbutton">_mbutton</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -104,7 +247,8 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.gui.widgets.WindowSidePaneWidget.html">WindowSidePaneWidget</a></code>:
           </p>
-          <table class="children sortable" id="id1370">
+          <table class="children sortable" id="id1347">
+  
   
   <tr class="basemethod">
     
@@ -116,20 +260,15 @@
     <td>Method</td>
     <td><code><a href="zim.gui.widgets.WindowSidePaneWidget.html#set_title">set_title</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.gui.widgets.WindowSidePaneWidget.html#set_embeded_closebutton">set_embeded_closebutton</a></code></td>
-    <td><span>Embed a button in the widget to close the side pane @param button: a button widget or <code>None</code> to unset @returns: <code>True</code> if supported and successfull</span></td>
-  </tr><tr class="baseinstancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.gui.widgets.WindowSidePaneWidget.html#_title_labels">_title_labels</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
     <td><code><a href="zim.gui.widgets.WindowSidePaneWidget.html#_drop_label">_drop_label</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.WindowSidePaneWidget.html#_title_labels">_title_labels</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -137,37 +276,38 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code> (via <code><a href="zim.gui.widgets.WindowSidePaneWidget.html">WindowSidePaneWidget</a></code>):
           </p>
-          <table class="children sortable" id="id1371">
+          <table class="children sortable" id="id1348">
+  
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto">connectto</a></code></td>
-    <td><span>Connect to signals of another object E.g.:</span></td>
+    <td>Connect to signals of another object E.g.:</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto_all">connectto_all</a></code></td>
-    <td><span>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
-    <td><span>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</span></td>
+    <td>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_all">disconnect_all</a></code></td>
-    <td><span>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</span></td>
-  </tr><tr class="baseinstancevariable private">
+    <td>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</td>
+  </tr><tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
+    <td>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#_disconnect_from">_disconnect_from</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -178,7 +318,52 @@
 
       <div id="childList">
 
-        <div class="baseclassvariable">
+        <div class="basemethod">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidget.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, index, opener, properties, show_inbox_next, uistate, show_dialog_action):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L243">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html#__init__">zim.plugins.tasklist.gui.TaskListWidgetMixin.__init__</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidget.set_embeded_closebutton">
+    
+  </a>
+  <a name="set_embeded_closebutton">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_embeded_closebutton</span>(self, button):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L260">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.gui.widgets.WindowSidePaneWidget.html#set_embeded_closebutton">zim.gui.widgets.WindowSidePaneWidget.set_embeded_closebutton</a></code></div>
+    
+    <div>Embed a button in the widget to close the side pane<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">button</span></td><td class="fieldArgDesc">a button widget or <tt class="rst-docutils literal">None</tt> to unset</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> if supported and successfull</td></tr></table></div>
+  </div>
+</div><div class="baseclassvariable">
+  
   
   <a name="zim.plugins.tasklist.gui.TaskListWidget.title">
     
@@ -189,7 +374,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">title</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L63">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L241">
       
       (source)
     </a>
@@ -198,40 +383,21 @@
     <div class="interfaceinfo">overrides <code><a href="zim.gui.widgets.WindowSidePaneWidget.html#title">zim.gui.widgets.WindowSidePaneWidget.title</a></code></div>
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
-</div><div class="basemethod">
+</div><div class="baseinstancevariable private">
   
-  <a name="zim.plugins.tasklist.gui.TaskListWidget.__init__">
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidget._close_button">
     
   </a>
-  <a name="__init__">
+  <a name="_close_button">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, tasksview, opener, properties, with_due, uistate):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L65">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.plugins.tasklist.gui.TaskListWidget.uistate">
-    
-  </a>
-  <a name="uistate">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">uistate</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L67">
+    <span class="py-defname">_close_button</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L246">
       
       (source)
     </a>
@@ -240,19 +406,21 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
-</div><div class="baseinstancevariable">
+</div><div class="baseinstancevariable private">
   
-  <a name="zim.plugins.tasklist.gui.TaskListWidget.task_list">
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidget._header_hbox">
     
   </a>
-  <a name="task_list">
+  <a name="_header_hbox">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">task_list</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L73">
+    <span class="py-defname">_header_hbox</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L250">
       
       (source)
     </a>
@@ -261,19 +429,21 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
-</div><div class="baseinstancevariable">
+</div><div class="baseinstancevariable private">
   
-  <a name="zim.plugins.tasklist.gui.TaskListWidget.filter_entry">
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidget._show_dialog_action">
     
   </a>
-  <a name="filter_entry">
+  <a name="_show_dialog_action">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">filter_entry</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L88">
+    <span class="py-defname">_show_dialog_action</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L247">
       
       (source)
     </a>
@@ -282,36 +452,21 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.tasklist.gui.TaskListWidget.on_properties_changed">
     
-  </a>
-  <a name="on_properties_changed">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">on_properties_changed</span>(self, properties):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L97">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

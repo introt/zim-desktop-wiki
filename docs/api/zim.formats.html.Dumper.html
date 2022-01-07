@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.formats.html.Dumper : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.formats.html.Dumper</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.formats.html">formats</a></code>.<code><a href="zim.formats.html.html">html</a></code>.<code><a href="zim.formats.html.Dumper.html">Dumper</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.formats.html">formats</a></code><wbr></wbr>.<code><a href="zim.formats.html.html">html</a></code><wbr></wbr>.<code><a href="zim.formats.html.Dumper.html">Dumper</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Dumper</span>(<a href="zim.formats.DumperClass.html" title="zim.formats.DumperClass">DumperClass</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L39">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Dumper</span>(<a href="zim.formats.DumperClass.html" title="zim.formats.DumperClass">DumperClass</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L54" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.formats.html.Dumper">View In Hierarchy</a></p>
       </div>
 
@@ -43,37 +74,18 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id163">
+        <table class="children sortable" id="id150">
   
-  <tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#TAGS">TAGS</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#TEMPLATE_OPTIONS">TEMPLATE_OPTIONS</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
+  
+  <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#dump">dump</a></code></td>
-    <td><span>Format a parsetree to text @param tree: a parse tree object that supports a <code>visit()</code> method @returns: a list of lines</span></td>
+    <td>Format a parsetree to text @param tree: a parse tree object that supports a <tt class="rst-docutils literal">visit()</tt> method @returns: a list of lines</td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#encode_text">encode_text</a></code></td>
-    <td><span>Optional method to encode text elements in the output</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#text">text</a></code></td>
-    <td><span>Append text @param text: text to be appended as string @implementation: optional for subclasses</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#dump_h">dump_h</a></code></td>
+    <td><code><a href="#dump_anchor">dump_anchor</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
@@ -83,22 +95,7 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#dump_ol">dump_ol</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#dump_li">dump_li</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#dump_anchor">dump_anchor</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#dump_link">dump_link</a></code></td>
+    <td><code><a href="#dump_h">dump_h</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
@@ -108,32 +105,37 @@
   </tr><tr class="method">
     
     <td>Method</td>
+    <td><code><a href="#dump_li">dump_li</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dump_line">dump_line</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dump_link">dump_link</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
     <td><code><a href="#dump_object">dump_object</a></code></td>
-    <td><span>Dumps objects defined by <code><a href="zim.insertedobjects.InsertedObjectType.html">InsertedObjectType</a></code></span></td>
+    <td>Dumps objects defined by <code><a href="zim.insertedobjects.InsertedObjectType.html">InsertedObjectType</a></code></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#dump_object_fallback">dump_object_fallback</a></code></td>
-    <td><span>Method to serialize objects that do not have their own handler for this format. @implementation: must be implemented in sub-classes</span></td>
+    <td>Method to serialize objects that do not have their own handler for this format. @implementation: must be implemented in sub-classes</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dump_ol">dump_ol</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#dump_table">dump_table</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#dump_thead">dump_thead</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#dump_th">dump_th</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#dump_trow">dump_trow</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
@@ -143,7 +145,42 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#dump_line">dump_line</a></code></td>
+    <td><code><a href="#dump_th">dump_th</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dump_thead">dump_thead</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dump_trow">dump_trow</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#encode_text">encode_text</a></code></td>
+    <td>Optional method to encode text elements in the output</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#text">text</a></code></td>
+    <td>Append text @param text: text to be appended as string @implementation: optional for subclasses</td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#TAGS">TAGS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#TEMPLATE_OPTIONS">TEMPLATE_OPTIONS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_strip_newline">_strip_newline</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable private">
     
@@ -156,24 +193,10 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.formats.DumperClass.html">DumperClass</a></code>:
           </p>
-          <table class="children sortable" id="id164">
+          <table class="children sortable" id="id151">
   
-  <tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.formats.DumperClass.html#linker">linker</a></code></td>
-    <td><span>the (optional) <code>Linker</code> object, used to resolve links</span></td>
-  </tr><tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.formats.DumperClass.html#template_options">template_options</a></code></td>
-    <td><span>a <code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code> with options that may be set in a template (so inherently not safe !) to control the output style. Formats using this need to define the supported keys in the dict <code>TEMPLATE_OPTIONS</code>.</span></td>
-  </tr><tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.formats.DumperClass.html#context">context</a></code></td>
-    <td><span>the stack of open tags maintained by this class. Can be used in <code>dump_</code> methods to inspect the parent scope of the format. Elements on this stack have "tag", "attrib" and "text" attributes. Keep in mind that the parent scope is not yet complete when a tag is serialized.</span></td>
-  </tr><tr class="basemethod">
+  
+  <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.formats.DumperClass.html#__init__">__init__</a></code></td>
@@ -181,13 +204,8 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.formats.DumperClass.html#get_lines">get_lines</a></code></td>
-    <td><span>Return the dumped content as a list of lines Should only be called after closing the top level element</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.formats.DumperClass.html#start">start</a></code></td>
-    <td><span>Start formatted region</span></td>
+    <td><code><a href="zim.formats.DumperClass.html#append">append</a></code></td>
+    <td>Convenience function to open a tag, append text and close it immediatly.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -196,8 +214,13 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.formats.DumperClass.html#append">append</a></code></td>
-    <td><span>Convenience function to open a tag, append text and close it immediatly.</span></td>
+    <td><code><a href="zim.formats.DumperClass.html#get_lines">get_lines</a></code></td>
+    <td>Return the dumped content as a list of lines Should only be called after closing the top level element</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.formats.DumperClass.html#isrtl">isrtl</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -206,8 +229,23 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.formats.DumperClass.html#isrtl">isrtl</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
+    <td><code><a href="zim.formats.DumperClass.html#start">start</a></code></td>
+    <td>Start formatted region</td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.formats.DumperClass.html#context">context</a></code></td>
+    <td>the stack of open tags maintained by this class. Can be used in <tt class="rst-docutils literal">dump_</tt> methods to inspect the parent scope of the format. Elements on this stack have "tag", "attrib" and "text" attributes. Keep in mind that the parent scope is not yet complete when a tag is serialized.</td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.formats.DumperClass.html#linker">linker</a></code></td>
+    <td>the (optional) <code>Linker</code> object, used to resolve links</td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.formats.DumperClass.html#template_options">template_options</a></code></td>
+    <td>a <code><a href="zim.config.dicts.ConfigDict.html">ConfigDict</a></code> with options that may be set in a template (so inherently not safe !) to control the output style. Formats using this need to define the supported keys in the dict <tt class="rst-docutils literal">TEMPLATE_OPTIONS</tt>.</td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -222,49 +260,8 @@
 
       <div id="childList">
 
-        <div class="baseclassvariable">
+        <div class="basemethod">
   
-  <a name="zim.formats.html.Dumper.TAGS">
-    
-  </a>
-  <a name="TAGS">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">TAGS</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L41">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.formats.DumperClass.html#TAGS">zim.formats.DumperClass.TAGS</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseclassvariable">
-  
-  <a name="zim.formats.html.Dumper.TEMPLATE_OPTIONS">
-    
-  </a>
-  <a name="TEMPLATE_OPTIONS">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">TEMPLATE_OPTIONS</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L53">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.formats.DumperClass.html#TEMPLATE_OPTIONS">zim.formats.DumperClass.TEMPLATE_OPTIONS</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.formats.html.Dumper.dump">
     
@@ -275,7 +272,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">dump</span>(self, tree):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L58">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L73">
       
       (source)
     </a>
@@ -283,72 +280,54 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.formats.DumperClass.html#dump">zim.formats.DumperClass.dump</a></code></div>
     
-    <div><p>Format a parsetree to text</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">tree</td><td>a parse tree object that supports a <code>visit()</code> method</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a list of lines</td></tr></table></div>
+    <div>Format a parsetree to text<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tree</span></td><td class="fieldArgDesc">a parse tree object that supports a <tt class="rst-docutils literal">visit()</tt> method</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of lines</td></tr></table></div>
   </div>
-</div><div class="baseinstancevariable private">
+</div><div class="basemethod">
   
-  <a name="zim.formats.html.Dumper._isrtl">
+  
+  <a name="zim.formats.html.Dumper.dump_anchor">
     
   </a>
-  <a name="_isrtl">
+  <a name="dump_anchor">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_isrtl</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L60">
+    <span class="py-keyword">def</span> <span class="py-defname">dump_anchor</span>(self, tag, attrib, strings=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L205">
       
       (source)
     </a>
   </div>
-  <div class="functionBody">
+  <div class="docstring functionBody">
     
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.formats.html.Dumper.encode_text">
+  
+  <a name="zim.formats.html.Dumper.dump_block">
     
   </a>
-  <a name="encode_text">
+  <a name="dump_block">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">encode_text</span>(self, tag, text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L63">
+    <span class="py-keyword">def</span> <span class="py-defname">dump_block</span>(self, tag, attrib, strings, _extra=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L127">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.formats.DumperClass.html#encode_text">zim.formats.DumperClass.encode_text</a></code></div>
     
-    <div><p>Optional method to encode text elements in the output</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">tag</td><td>formatting tag</td></tr><tr><td></td><td class="fieldArg">text</td><td>text to be encoded</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">encoded text</td></tr><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">Do not apply text encoding in the <code>dump_</code> methods, the list of strings given there may contain prefix and postfix formatting of nested tags.</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">optional, default just returns unmodified input</td></tr></table></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.formats.html.Dumper.text">
-    
-  </a>
-  <a name="text">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">text</span>(self, text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L76">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.formats.DumperClass.html#text">zim.formats.DumperClass.text</a></code></div>
-    
-    <div><p>Append text</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">text</td><td>text to be appended as string</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">optional for subclasses</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.formats.html.Dumper.dump_h">
     
@@ -359,7 +338,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">dump_h</span>(self, tag, attrib, strings):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L91">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L112">
       
       (source)
     </a>
@@ -371,16 +350,17 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.formats.html.Dumper.dump_block">
+  
+  <a name="zim.formats.html.Dumper.dump_img">
     
   </a>
-  <a name="dump_block">
+  <a name="dump_img">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">dump_block</span>(self, tag, attrib, strings, _extra=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L103">
+    <span class="py-keyword">def</span> <span class="py-defname">dump_img</span>(self, tag, attrib, strings=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L222">
       
       (source)
     </a>
@@ -392,26 +372,6 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.formats.html.Dumper.dump_ol">
-    
-  </a>
-  <a name="dump_ol">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">dump_ol</span>(self, tag, attrib, strings):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L144">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.formats.html.Dumper.dump_li">
     
@@ -422,7 +382,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">dump_li</span>(self, tag, attrib, strings):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L161">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L182">
       
       (source)
     </a>
@@ -434,16 +394,17 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.formats.html.Dumper.dump_anchor">
+  
+  <a name="zim.formats.html.Dumper.dump_line">
     
   </a>
-  <a name="dump_anchor">
+  <a name="dump_line">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">dump_anchor</span>(self, tag, attrib, strings=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L182">
+    <span class="py-keyword">def</span> <span class="py-defname">dump_line</span>(self, tag, attrib, strings=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L292">
       
       (source)
     </a>
@@ -454,6 +415,7 @@
     <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.formats.html.Dumper.dump_link">
     
@@ -463,8 +425,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">dump_link</span>(self, tag, attrib, strings=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L186">
+    <span class="py-keyword">def</span> <span class="py-defname">dump_link</span>(self, tag, attrib, strings=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L209">
       
       (source)
     </a>
@@ -476,26 +438,6 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.formats.html.Dumper.dump_img">
-    
-  </a>
-  <a name="dump_img">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">dump_img</span>(self, tag, attrib, strings=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L199">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.formats.html.Dumper.dump_object">
     
@@ -506,7 +448,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">dump_object</span>(self, tag, attrib, strings=[]):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L213">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L236">
       
       (source)
     </a>
@@ -514,9 +456,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.formats.DumperClass.html#dump_object">zim.formats.DumperClass.dump_object</a></code></div>
     
-    <div><p>Dumps objects defined by <code><a href="zim.insertedobjects.InsertedObjectType.html">InsertedObjectType</a></code></p></div>
+    <div>Dumps objects defined by <code><a href="zim.insertedobjects.InsertedObjectType.html">InsertedObjectType</a></code></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.formats.html.Dumper.dump_object_fallback">
     
@@ -526,8 +469,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">dump_object_fallback</span>(self, tag, attrib, strings=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L220">
+    <span class="py-keyword">def</span> <span class="py-defname">dump_object_fallback</span>(self, tag, attrib, strings=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L243">
       
       (source)
     </a>
@@ -535,9 +478,32 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.formats.DumperClass.html#dump_object_fallback">zim.formats.DumperClass.dump_object_fallback</a></code></div>
     
-    <div><p>Method to serialize objects that do not have their own handler for this format.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">must be implemented in sub-classes</td></tr></table></div>
+    <div>Method to serialize objects that do not have their own handler for this format.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: implementation</td></tr><tr><td colspan="2">must be implemented in sub-classes</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.formats.html.Dumper.dump_ol">
+    
+  </a>
+  <a name="dump_ol">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dump_ol</span>(self, tag, attrib, strings):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L165">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.formats.html.Dumper.dump_table">
     
@@ -548,7 +514,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">dump_table</span>(self, tag, attrib, strings):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L224">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L247">
       
       (source)
     </a>
@@ -560,68 +526,6 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.formats.html.Dumper.dump_thead">
-    
-  </a>
-  <a name="dump_thead">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">dump_thead</span>(self, tag, attrib, strings):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L247">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.formats.html.Dumper.dump_th">
-    
-  </a>
-  <a name="dump_th">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">dump_th</span>(self, tag, attrib, strings):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L252">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.formats.html.Dumper.dump_trow">
-    
-  </a>
-  <a name="dump_trow">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">dump_trow</span>(self, tag, attrib, strings):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L257">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.formats.html.Dumper.dump_td">
     
@@ -632,7 +536,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">dump_td</span>(self, tag, attrib, strings):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L262">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L285">
       
       (source)
     </a>
@@ -644,16 +548,17 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.formats.html.Dumper.dump_line">
+  
+  <a name="zim.formats.html.Dumper.dump_th">
     
   </a>
-  <a name="dump_line">
+  <a name="dump_th">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">dump_line</span>(self, tag, attrib, strings=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L269">
+    <span class="py-keyword">def</span> <span class="py-defname">dump_th</span>(self, tag, attrib, strings):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L275">
       
       (source)
     </a>
@@ -663,14 +568,206 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.formats.html.Dumper.dump_thead">
+    
+  </a>
+  <a name="dump_thead">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dump_thead</span>(self, tag, attrib, strings):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L270">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.formats.html.Dumper.dump_trow">
+    
+  </a>
+  <a name="dump_trow">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dump_trow</span>(self, tag, attrib, strings):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L280">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.formats.html.Dumper.encode_text">
+    
+  </a>
+  <a name="encode_text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">encode_text</span>(self, tag, text):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L78">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.formats.DumperClass.html#encode_text">zim.formats.DumperClass.encode_text</a></code></div>
+    
+    <div>Optional method to encode text elements in the output<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tag</span></td><td class="fieldArgDesc">formatting tag</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">text</span></td><td class="fieldArgDesc">text to be encoded</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">encoded text</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Note</td></tr><tr><td colspan="2">Do not apply text encoding in the <tt class="rst-docutils literal">dump_</tt> methods, the list of strings given there may contain prefix and postfix formatting of nested tags.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: implementation</td></tr><tr><td colspan="2">optional, default just returns unmodified input</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.formats.html.Dumper.text">
+    
+  </a>
+  <a name="text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">text</span>(self, text):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L97">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.formats.DumperClass.html#text">zim.formats.DumperClass.text</a></code></div>
+    
+    <div>Append text<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">text</span></td><td class="fieldArgDesc">text to be appended as string</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: implementation</td></tr><tr><td colspan="2">optional for subclasses</td></tr></table></div>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.formats.html.Dumper.TAGS">
+    
+  </a>
+  <a name="TAGS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TAGS</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L56">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.formats.DumperClass.html#TAGS">zim.formats.DumperClass.TAGS</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>{<wbr></wbr><a href="zim.formats.html#EMPHASIS">EMPHASIS</a>: (<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;i&gt;</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;/i&gt;</span><span class="rst-variable-quote">'</span>),
+ <wbr></wbr><a href="zim.formats.html#STRONG">STRONG</a>: (<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;b&gt;</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;/b&gt;</span><span class="rst-variable-quote">'</span>),
+ <wbr></wbr><a href="zim.formats.html#MARK">MARK</a>: (<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;u&gt;</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;/u&gt;</span><span class="rst-variable-quote">'</span>),
+ <wbr></wbr><a href="zim.formats.html#STRIKE">STRIKE</a>: (<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;s&gt;</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;/s&gt;</span><span class="rst-variable-quote">'</span>),
+ <wbr></wbr><a href="zim.formats.html#VERBATIM">VERBATIM</a>: (<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;tt&gt;</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;/tt&gt;</span><span class="rst-variable-quote">'</span>),
+ <wbr></wbr><a href="zim.formats.html#TAG">TAG</a>: (<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;span class="zim-tag"&gt;</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;/span&gt;</span><span class="rst-variable-quote">'</span>),
+ <wbr></wbr><a href="zim.formats.html#SUBSCRIPT">SUBSCRIPT</a>: (<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;sub&gt;</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;/sub&gt;</span><span class="rst-variable-quote">'</span>),
+<span class="rst-variable-ellipsis">...</span></code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.formats.html.Dumper.TEMPLATE_OPTIONS">
+    
+  </a>
+  <a name="TEMPLATE_OPTIONS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TEMPLATE_OPTIONS</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L68">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.formats.DumperClass.html#TEMPLATE_OPTIONS">zim.formats.DumperClass.TEMPLATE_OPTIONS</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>{<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">empty_lines</span><span class="rst-variable-quote">'</span>: <a href="zim.config.dicts.Choice.html">Choice</a>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">default</span><span class="rst-variable-quote">'</span>, <wbr></wbr>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">default</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">remove</span><span class="rst-variable-quote">'</span>)),
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">line_breaks</span><span class="rst-variable-quote">'</span>: <a href="zim.config.dicts.Choice.html">Choice</a>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">default</span><span class="rst-variable-quote">'</span>, <wbr></wbr>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">default</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">remove</span><span class="rst-variable-quote">'</span>))}</code></pre></td></tr></table>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.formats.html.Dumper._strip_newline">
+    
+  </a>
+  <a name="_strip_newline">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_strip_newline</span>(self, strings):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L91">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.formats.html.Dumper._isrtl">
+    
+  </a>
+  <a name="_isrtl">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_isrtl</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/html.py#L75">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

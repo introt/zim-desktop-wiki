@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.formats.ParseTree : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.formats.ParseTree</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.formats.html">formats</a></code>.<code><a href="zim.formats.ParseTree.html">ParseTree</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.formats.html">formats</a></code><wbr></wbr>.<code><a href="zim.formats.ParseTree.html">ParseTree</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,57 +65,28 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ParseTree</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L278">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ParseTree</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L287" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.formats.ParseTree">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Wrapper for zim parse trees.</p></div>
+        <div>Wrapper for zim parse trees.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id148">
+        <table class="children sortable" id="id176">
+  
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#meta">meta</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="property">
-    
-    <td>Property</td>
-    <td><code><a href="#hascontent">hascontent</a></code></td>
-    <td><span>Returns True if the tree contains any content at all.</span></td>
-  </tr><tr class="property">
-    
-    <td>Property</td>
-    <td><code><a href="#ispartial">ispartial</a></code></td>
-    <td><span>Returns True when this tree is a segment of a page (like a copy-paste buffer).</span></td>
-  </tr><tr class="property">
-    
-    <td>Property</td>
-    <td><code><a href="#israw">israw</a></code></td>
-    <td><span>Returns True when this is a raw tree (which is representation of TextBuffer, but not really valid).</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#extend">extend</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#fromstring">fromstring</a></code></td>
-    <td><span>Set the contents of this tree from XML representation.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#tostring">tostring</a></code></td>
-    <td><span>Serialize the tree to a XML representation</span></td>
+    <td><code><a href="#cleanup_headings">cleanup_headings</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -93,18 +95,48 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#iter_tokens">iter_tokens</a></code></td>
+    <td><code><a href="#count">count</a></code></td>
+    <td>Returns the number of occurences of 'text' in this tree.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#countre">countre</a></code></td>
+    <td>Returns the number of matches for a regular expression in this tree.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#decode_urls">decode_urls</a></code></td>
+    <td>Calls decode_url() on all links that contain urls. See zim.parsing for details. Modifies the parse tree.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#encode_urls">encode_urls</a></code></td>
+    <td>Calls encode_url() on all links that contain urls. See zim.parsing for details. Modifies the parse tree.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#extend">extend</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#iter_href">iter_href</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
+    <td><code><a href="#find">find</a></code></td>
+    <td>Find first occurence of <tt class="rst-docutils literal">tag</tt> in the tree @returns: a <code><a href="zim.formats.Node.html">Node</a></code> object or <tt class="rst-docutils literal">None</tt></td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#iter_tag_names">iter_tag_names</a></code></td>
-    <td><span>Generator for tags in the page content @returns: yields an unordered list of tag names</span></td>
+    <td><code><a href="#findall">findall</a></code></td>
+    <td>Find all occurences of <tt class="rst-docutils literal">tag</tt> in the tree @param tag: tag name @returns: yields <code><a href="zim.formats.Node.html">Node</a></code> objects</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#fromstring">fromstring</a></code></td>
+    <td>Set the contents of this tree from XML representation.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_ends_with_newline">get_ends_with_newline</a></code></td>
+    <td>Checks whether this tree ends in a newline or not</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -118,8 +150,18 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#set_heading_text">set_heading_text</a></code></td>
-    <td><span>Set the first heading of the parse tree to 'text'. If the tree already has a heading of the specified level or higher it will be replaced. Otherwise the new heading will be prepended.</span></td>
+    <td><code><a href="#iter_href">iter_href</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#iter_tag_names">iter_tag_names</a></code></td>
+    <td>Generator for tags in the page content @returns: yields an unordered list of tag names</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#iter_tokens">iter_tokens</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -128,92 +170,47 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#cleanup_headings">cleanup_headings</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
+    <td><code><a href="#replace">replace</a></code></td>
+    <td>Modify the tree by replacing all occurences of <tt class="rst-docutils literal">tag</tt> by the return value of <tt class="rst-docutils literal">func</tt>.</td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#resolve_images">resolve_images</a></code></td>
-    <td><span>Resolves the source files for all images relative to a page path        and adds a '_src_file' attribute to the elements with the full file path.</span></td>
+    <td><code><a href="#set_heading_text">set_heading_text</a></code></td>
+    <td>Set the first heading of the parse tree to 'text'. If the tree already has a heading of the specified level or higher it will be replaced. Otherwise the new heading will be prepended.</td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#unresolve_images">unresolve_images</a></code></td>
-    <td><span>Undo effect of <code><a href="#resolve_images">resolve_images()</a></code>, mainly intended for testing.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#encode_urls">encode_urls</a></code></td>
-    <td><span>Calls encode_url() on all links that contain urls. See zim.parsing for details. Modifies the parse tree.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#decode_urls">decode_urls</a></code></td>
-    <td><span>Calls decode_url() on all links that contain urls. See zim.parsing for details. Modifies the parse tree.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#count">count</a></code></td>
-    <td><span>Returns the number of occurences of 'text' in this tree.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#countre">countre</a></code></td>
-    <td><span>Returns the number of matches for a regular expression in this tree.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#get_ends_with_newline">get_ends_with_newline</a></code></td>
-    <td><span>Checks whether this tree ends in a newline or not</span></td>
+    <td><code><a href="#tostring">tostring</a></code></td>
+    <td>Serialize the tree to a XML representation</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#visit">visit</a></code></td>
-    <td><span>Visit all nodes of this tree</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#find">find</a></code></td>
-    <td><span>Find first occurence of <code>tag</code> in the tree @returns: a <code><a href="zim.formats.Node.html">Node</a></code> object or <code>None</code></span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#findall">findall</a></code></td>
-    <td><span>Find all occurences of <code>tag</code> in the tree @param tag: tag name @returns: yields <code><a href="zim.formats.Node.html">Node</a></code> objects</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#replace">replace</a></code></td>
-    <td><span>Modify the tree by replacing all occurences of <code>tag</code> by the return value of <code>func</code>.</span></td>
-  </tr><tr class="instancevariable private">
+    <td>Visit all nodes of this tree</td>
+  </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_etree">_etree</a></code></td>
+    <td><code><a href="#meta">meta</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="property">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#_object_cache">_object_cache</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
+    <td>Property</td>
+    <td><code><a href="#hascontent">hascontent</a></code></td>
+    <td>Returns True if the tree contains any content at all.</td>
+  </tr><tr class="property">
     
-    <td>Method</td>
-    <td><code><a href="#_set_root_attrib">_set_root_attrib</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
+    <td>Property</td>
+    <td><code><a href="#israw">israw</a></code></td>
+    <td>Returns True when this is a raw tree (which is representation of TextBuffer, but not really valid).</td>
+  </tr><tr class="staticmethod private">
     
-    <td>Method</td>
-    <td><code><a href="#_get_root_attrib">_get_root_attrib</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
-    <td><code><a href="#_pop_root_attrib">_pop_root_attrib</a></code></td>
+    <td>Static Method</td>
+    <td><code><a href="#_node_to_etree">_node_to_etree</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_get_heading_element">_get_heading_element</a></code></td>
+    <td><code><a href="#_do_replace">_do_replace</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
@@ -228,7 +225,22 @@
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_visit">_visit</a></code></td>
+    <td><code><a href="#_get_heading_element">_get_heading_element</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_root_attrib">_get_root_attrib</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_insert_text">_insert_text</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_pop_root_attrib">_pop_root_attrib</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
@@ -238,17 +250,22 @@
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_do_replace">_do_replace</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="staticmethod private">
-    
-    <td>Static Method</td>
-    <td><code><a href="#_node_to_etree">_node_to_etree</a></code></td>
+    <td><code><a href="#_set_root_attrib">_set_root_attrib</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_insert_text">_insert_text</a></code></td>
+    <td><code><a href="#_visit">_visit</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_etree">_etree</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_object_cache">_object_cache</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -261,6 +278,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.formats.ParseTree.__init__">
     
   </a>
@@ -270,196 +288,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, *arg, **kwarg):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L286">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.formats.ParseTree._etree">
-    
-  </a>
-  <a name="_etree">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_etree</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L287">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.formats.ParseTree._object_cache">
-    
-  </a>
-  <a name="_object_cache">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_object_cache</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L288">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.formats.ParseTree.meta">
-    
-  </a>
-  <a name="meta">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">meta</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L289">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseproperty">
-  
-  <a name="zim.formats.ParseTree.hascontent">
-    
-  </a>
-  <a name="hascontent">
-    
-  </a>
-  <div class="functionHeader">
-    @property<br />
-    <span class="py-defname">hascontent</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L291">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p>Returns True if the tree contains any content at all.</p></div>
-  </div>
-</div><div class="baseproperty">
-  
-  <a name="zim.formats.ParseTree.ispartial">
-    
-  </a>
-  <a name="ispartial">
-    
-  </a>
-  <div class="functionHeader">
-    @property<br />
-    <span class="py-defname">ispartial</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L299">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p>Returns True when this tree is a segment of a page (like a copy-paste buffer).</p></div>
-  </div>
-</div><div class="baseproperty">
-  
-  <a name="zim.formats.ParseTree.israw">
-    
-  </a>
-  <a name="israw">
-    
-  </a>
-  <div class="functionHeader">
-    @property<br />
-    <span class="py-defname">israw</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L306">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p>Returns True when this is a raw tree (which is representation of TextBuffer, but not really valid).</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.formats.ParseTree._set_root_attrib">
-    
-  </a>
-  <a name="_set_root_attrib">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_set_root_attrib</span>(self, key, value):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L313">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.formats.ParseTree._get_root_attrib">
-    
-  </a>
-  <a name="_get_root_attrib">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_get_root_attrib</span>(self, key, default=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L316">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.formats.ParseTree._pop_root_attrib">
-    
-  </a>
-  <a name="_pop_root_attrib">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_pop_root_attrib</span>(self, key, default=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L319">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L295">
       
       (source)
     </a>
@@ -471,278 +300,6 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.formats.ParseTree.extend">
-    
-  </a>
-  <a name="extend">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">extend</span>(self, tree):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L322">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.formats.ParseTree.fromstring">
-    
-  </a>
-  <a name="fromstring">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">fromstring</span>(self, string):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L341">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Set the contents of this tree from XML representation.</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.formats.ParseTree.tostring">
-    
-  </a>
-  <a name="tostring">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">tostring</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L349">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Serialize the tree to a XML representation</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.formats.ParseTree.copy">
-    
-  </a>
-  <a name="copy">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">copy</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L366">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.formats.ParseTree.iter_tokens">
-    
-  </a>
-  <a name="iter_tokens">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">iter_tokens</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L371">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.formats.ParseTree.iter_href">
-    
-  </a>
-  <a name="iter_href">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">iter_href</span>(self, include_page_local_links=False, include_anchors=False):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L378">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Generator for links in the text</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">include_page_local_links</td><td><span class="undocumented">Undocumented</span></td></tr><tr><td></td><td class="fieldArg">include_anchors</td><td>if <code>False</code> remove the target location from the link and only yield unique links to pages</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">yields a list of unique <code><a href="zim.notebook.page.HRef.html">HRef</a></code> objects</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.formats.ParseTree.iter_tag_names">
-    
-  </a>
-  <a name="iter_tag_names">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">iter_tag_names</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L412">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Generator for tags in the page content</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">yields an unordered list of tag names</td></tr></table></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.formats.ParseTree._get_heading_element">
-    
-  </a>
-  <a name="_get_heading_element">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_get_heading_element</span>(self, level=1):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L423">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.formats.ParseTree.get_heading_level">
-    
-  </a>
-  <a name="get_heading_level">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_heading_level</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L435">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.formats.ParseTree._elt_to_text">
-    
-  </a>
-  <a name="_elt_to_text">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_elt_to_text</span>(self, elt):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L442">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.formats.ParseTree.get_heading_text">
-    
-  </a>
-  <a name="get_heading_text">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_heading_text</span>(self, level=1):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L449">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.formats.ParseTree.set_heading_text">
-    
-  </a>
-  <a name="set_heading_text">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">set_heading_text</span>(self, text, level=1):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L456">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Set the first heading of the parse tree to 'text'. If the tree already has a heading of the specified level or higher it will be replaced. Otherwise the new heading will be prepended.</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.formats.ParseTree.remove_heading">
-    
-  </a>
-  <a name="remove_heading">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">remove_heading</span>(self, level=-1):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L474">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>If the tree starts with a heading, remove it and any trailing whitespace. Will modify the tree.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a 2-tuple of text and heading level or <code>(None, None)</code></td></tr></table></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.formats.ParseTree.cleanup_headings">
     
@@ -753,7 +310,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">cleanup_headings</span>(self, offset=0, max=6):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L493">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L496">
       
       (source)
     </a>
@@ -761,20 +318,21 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Change the heading levels throughout the tree. This makes sure that al headings are nested directly under their parent (no gaps in the levels of the headings). Also you can set an offset for the top level and a max depth.</p></div>
+    <div>Change the heading levels throughout the tree. This makes sure that al headings are nested directly under their parent (no gaps in the levels of the headings). Also you can set an offset for the top level and a max depth.</div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.formats.ParseTree.resolve_images">
+  
+  <a name="zim.formats.ParseTree.copy">
     
   </a>
-  <a name="resolve_images">
+  <a name="copy">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">resolve_images</span>(self, notebook=None, path=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L514">
+    <span class="py-keyword">def</span> <span class="py-defname">copy</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L368">
       
       (source)
     </a>
@@ -782,72 +340,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Resolves the source files for all images relative to a page path        and adds a '_src_file' attribute to the elements with the full file path.</p></div>
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.formats.ParseTree.unresolve_images">
-    
-  </a>
-  <a name="unresolve_images">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">unresolve_images</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L527">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Undo effect of <code><a href="#resolve_images">resolve_images()</a></code>, mainly intended for testing.</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.formats.ParseTree.encode_urls">
-    
-  </a>
-  <a name="encode_urls">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">encode_urls</span>(self, mode=URL_ENCODE_READABLE):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L535">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Calls encode_url() on all links that contain urls. See zim.parsing for details. Modifies the parse tree.</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.formats.ParseTree.decode_urls">
-    
-  </a>
-  <a name="decode_urls">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">decode_urls</span>(self, mode=URL_ENCODE_READABLE):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L546">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Calls decode_url() on all links that contain urls. See zim.parsing for details. Modifies the parse tree.</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.formats.ParseTree.count">
     
@@ -858,7 +354,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">count</span>(self, text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L557">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L539">
       
       (source)
     </a>
@@ -866,9 +362,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Returns the number of occurences of 'text' in this tree.</p></div>
+    <div>Returns the number of occurences of 'text' in this tree.</div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.formats.ParseTree.countre">
     
@@ -879,7 +376,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">countre</span>(self, regex):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L568">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L550">
       
       (source)
     </a>
@@ -887,20 +384,21 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Returns the number of matches for a regular expression in this tree.</p></div>
+    <div>Returns the number of matches for a regular expression in this tree.</div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.formats.ParseTree.get_ends_with_newline">
+  
+  <a name="zim.formats.ParseTree.decode_urls">
     
   </a>
-  <a name="get_ends_with_newline">
+  <a name="decode_urls">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">get_ends_with_newline</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L583">
+    <span class="py-keyword">def</span> <span class="py-defname">decode_urls</span>(self, mode=<a href="zim.parsing.html#URL_ENCODE_READABLE">URL_ENCODE_READABLE</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L528">
       
       (source)
     </a>
@@ -908,20 +406,43 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Checks whether this tree ends in a newline or not</p></div>
+    <div>Calls decode_url() on all links that contain urls. See zim.parsing for details. Modifies the parse tree.</div>
   </div>
-</div><div class="basemethod private">
+</div><div class="basemethod">
   
-  <a name="zim.formats.ParseTree._get_element_ends_with_newline">
+  
+  <a name="zim.formats.ParseTree.encode_urls">
     
   </a>
-  <a name="_get_element_ends_with_newline">
+  <a name="encode_urls">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_get_element_ends_with_newline</span>(self, element):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L587">
+    <span class="py-keyword">def</span> <span class="py-defname">encode_urls</span>(self, mode=<a href="zim.parsing.html#URL_ENCODE_READABLE">URL_ENCODE_READABLE</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L517">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Calls encode_url() on all links that contain urls. See zim.parsing for details. Modifies the parse tree.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.formats.ParseTree.extend">
+    
+  </a>
+  <a name="extend">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">extend</span>(self, tree):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L324">
       
       (source)
     </a>
@@ -933,47 +454,6 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.formats.ParseTree.visit">
-    
-  </a>
-  <a name="visit">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">visit</span>(self, visitor):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L601">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Visit all nodes of this tree</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">visitor</td><td>a <code><a href="zim.formats.Visitor.html">Visitor</a></code> or <code><a href="zim.parser.Builder.html">Builder</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">If the visitor modifies the attrib dict on nodes, this will modify the tree.</td></tr></table></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.formats.ParseTree._visit">
-    
-  </a>
-  <a name="_visit">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_visit</span>(self, visitor, node):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L614">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.formats.ParseTree.find">
     
@@ -984,7 +464,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">find</span>(self, tag):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L630">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L612">
       
       (source)
     </a>
@@ -992,9 +472,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Find first occurence of <code>tag</code> in the tree</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.formats.Node.html">Node</a></code> object or <code>None</code></td></tr></table></div>
+    <div>Find first occurence of <tt class="rst-docutils literal">tag</tt> in the tree<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="zim.formats.Node.html">Node</a></code> object or <tt class="rst-docutils literal">None</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.formats.ParseTree.findall">
     
@@ -1005,7 +486,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">findall</span>(self, tag):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L639">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L621">
       
       (source)
     </a>
@@ -1013,9 +494,186 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Find all occurences of <code>tag</code> in the tree</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">tag</td><td>tag name</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">yields <code><a href="zim.formats.Node.html">Node</a></code> objects</td></tr></table></div>
+    <div>Find all occurences of <tt class="rst-docutils literal">tag</tt> in the tree<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tag</span></td><td class="fieldArgDesc">tag name</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">yields <code><a href="zim.formats.Node.html">Node</a></code> objects</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.formats.ParseTree.fromstring">
+    
+  </a>
+  <a name="fromstring">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">fromstring</span>(self, string):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L343">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Set the contents of this tree from XML representation.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.formats.ParseTree.get_ends_with_newline">
+    
+  </a>
+  <a name="get_ends_with_newline">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_ends_with_newline</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L565">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Checks whether this tree ends in a newline or not</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.formats.ParseTree.get_heading_level">
+    
+  </a>
+  <a name="get_heading_level">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_heading_level</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L437">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.formats.ParseTree.get_heading_text">
+    
+  </a>
+  <a name="get_heading_text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_heading_text</span>(self, level=1):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L451">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.formats.ParseTree.iter_href">
+    
+  </a>
+  <a name="iter_href">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">iter_href</span>(self, include_page_local_links=<a href="https://docs.python.org/3/library/constants.html#False">False</a>, include_anchors=<a href="https://docs.python.org/3/library/constants.html#False">False</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L380">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Generator for links in the text<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">include_page_local_links</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">include_anchors</span></td><td class="fieldArgDesc">if <tt class="rst-docutils literal">False</tt> remove the target location from the link and only yield unique links to pages</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">yields a list of unique <code><a href="zim.notebook.page.HRef.html">HRef</a></code> objects</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.formats.ParseTree.iter_tag_names">
+    
+  </a>
+  <a name="iter_tag_names">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">iter_tag_names</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L414">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Generator for tags in the page content<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">yields an unordered list of tag names</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.formats.ParseTree.iter_tokens">
+    
+  </a>
+  <a name="iter_tokens">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">iter_tokens</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L373">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.formats.ParseTree.remove_heading">
+    
+  </a>
+  <a name="remove_heading">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">remove_heading</span>(self, level=-1):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L477">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>If the tree starts with a heading, remove it and any trailing whitespace. Will modify the tree.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a 2-tuple of text and heading level or <tt class="rst-docutils literal">(None, None)</tt></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.formats.ParseTree.replace">
     
@@ -1026,7 +684,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">replace</span>(self, tags, func):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L647">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L629">
       
       (source)
     </a>
@@ -1034,22 +692,161 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Modify the tree by replacing all occurences of <code>tag</code> by the return value of <code>func</code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">tags</td><td>tag name, or list of tag names</td></tr><tr><td></td><td class="fieldArg">func</td><td>function to generate replacement values. Function will be called as:<pre class="literalblock">
+    <div>Modify the tree by replacing all occurences of <tt class="rst-docutils literal">tag</tt> by the return value of <tt class="rst-docutils literal">func</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tags</span></td><td class="fieldArgDesc">tag name, or list of tag names</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">func</span></td><td class="fieldArgDesc"><p>function to generate replacement values. Function will be called as:</p>
+<pre class="rst-literal-block">
         func(node)
-</pre><p>Where <code>node</code> is a <code><a href="zim.formats.Node.html">Node</a></code> object representing the subtree. If the function returns another <code><a href="zim.formats.Node.html">Node</a></code> object or modifies <code>node</code> and returns it, the subtree will be replaced by this new node. If the function raises <code><a href="zim.formats.VisitorSkip.html">VisitorSkip</a></code> the replace is skipped. If the function raises <code><a href="zim.formats.VisitorStop.html">VisitorStop</a></code> the replacement of all nodes will stop.</p></td></tr></table></div>
+</pre>
+<p>Where <tt class="rst-docutils literal">node</tt> is a <code><a href="zim.formats.Node.html">Node</a></code> object representing the subtree. If the function returns another <code><a href="zim.formats.Node.html">Node</a></code> object or modifies <tt class="rst-docutils literal">node</tt> and returns it, the subtree will be replaced by this new node. If the function raises <code><a href="zim.formats.VisitorSkip.html">VisitorSkip</a></code> the replace is skipped. If the function raises <code><a href="zim.formats.VisitorStop.html">VisitorStop</a></code> the replacement of all nodes will stop.</p>
+</td></tr></table></div>
   </div>
-</div><div class="basemethod private">
+</div><div class="basemethod">
   
-  <a name="zim.formats.ParseTree._replace">
+  
+  <a name="zim.formats.ParseTree.set_heading_text">
     
   </a>
-  <a name="_replace">
+  <a name="set_heading_text">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_replace</span>(self, elt, tags, func):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L672">
+    <span class="py-keyword">def</span> <span class="py-defname">set_heading_text</span>(self, text, level=1):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L458">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Set the first heading of the parse tree to 'text'. If the tree already has a heading of the specified level or higher it will be replaced. Otherwise the new heading will be prepended.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.formats.ParseTree.tostring">
+    
+  </a>
+  <a name="tostring">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tostring</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L351">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Serialize the tree to a XML representation</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.formats.ParseTree.visit">
+    
+  </a>
+  <a name="visit">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">visit</span>(self, visitor):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L583">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Visit all nodes of this tree<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">visitor</span></td><td class="fieldArgDesc">a <code><a href="zim.formats.Visitor.html">Visitor</a></code> or <code><a href="zim.parser.Builder.html">Builder</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Note</td></tr><tr><td colspan="2">If the visitor modifies the attrib dict on nodes, this will modify the tree.</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.formats.ParseTree.meta">
+    
+  </a>
+  <a name="meta">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">meta</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L298">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="zim.formats.ParseTree.hascontent">
+    
+  </a>
+  <a name="hascontent">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property">property</a><br />
+    <span class="py-defname">hascontent</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L300">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Returns True if the tree contains any content at all.</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="zim.formats.ParseTree.israw">
+    
+  </a>
+  <a name="israw">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property">property</a><br />
+    <span class="py-defname">israw</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L308">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Returns True when this is a raw tree (which is representation of TextBuffer, but not really valid).</div>
+    
+  </div>
+</div><div class="basestaticmethod private">
+  
+  
+  <a name="zim.formats.ParseTree._node_to_etree">
+    
+  </a>
+  <a name="_node_to_etree">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#staticmethod">staticmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_node_to_etree</span>(node):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L708">
       
       (source)
     </a>
@@ -1060,6 +857,7 @@
     <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod private">
+  
   
   <a name="zim.formats.ParseTree._do_replace">
     
@@ -1070,28 +868,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_do_replace</span>(self, elt, replacements):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L692">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basestaticmethod private">
-  
-  <a name="zim.formats.ParseTree._node_to_etree">
-    
-  </a>
-  <a name="_node_to_etree">
-    
-  </a>
-  <div class="functionHeader">
-    @staticmethod<br />
-    <span class="py-keyword">def</span> <span class="py-defname">_node_to_etree</span>(node):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L726">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L674">
       
       (source)
     </a>
@@ -1103,16 +880,17 @@
   </div>
 </div><div class="basemethod private">
   
-  <a name="zim.formats.ParseTree._insert_text">
+  
+  <a name="zim.formats.ParseTree._elt_to_text">
     
   </a>
-  <a name="_insert_text">
+  <a name="_elt_to_text">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_insert_text</span>(self, elt, i, text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L732">
+    <span class="py-keyword">def</span> <span class="py-defname">_elt_to_text</span>(self, elt):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L444">
       
       (source)
     </a>
@@ -1122,14 +900,241 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.formats.ParseTree._get_element_ends_with_newline">
+    
+  </a>
+  <a name="_get_element_ends_with_newline">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_element_ends_with_newline</span>(self, element):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L569">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.formats.ParseTree._get_heading_element">
+    
+  </a>
+  <a name="_get_heading_element">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_heading_element</span>(self, level=1):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L425">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.formats.ParseTree._get_root_attrib">
+    
+  </a>
+  <a name="_get_root_attrib">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_root_attrib</span>(self, key, default=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L318">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.formats.ParseTree._insert_text">
+    
+  </a>
+  <a name="_insert_text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_insert_text</span>(self, elt, i, text):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L714">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.formats.ParseTree._pop_root_attrib">
+    
+  </a>
+  <a name="_pop_root_attrib">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_pop_root_attrib</span>(self, key, default=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L321">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.formats.ParseTree._replace">
+    
+  </a>
+  <a name="_replace">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_replace</span>(self, elt, tags, func):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L654">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.formats.ParseTree._set_root_attrib">
+    
+  </a>
+  <a name="_set_root_attrib">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_set_root_attrib</span>(self, key, value):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L315">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.formats.ParseTree._visit">
+    
+  </a>
+  <a name="_visit">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_visit</span>(self, visitor, node):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L596">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.formats.ParseTree._etree">
+    
+  </a>
+  <a name="_etree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_etree</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L296">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.formats.ParseTree._object_cache">
+    
+  </a>
+  <a name="_object_cache">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_object_cache</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__init__.py#L297">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

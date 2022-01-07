@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.plugins.tasklist.gui.TaskListWidgetMixin : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.plugins.tasklist.gui.TaskListWidgetMixin</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code>.<code><a href="zim.plugins.tasklist.html">tasklist</a></code>.<code><a href="zim.plugins.tasklist.gui.html">gui</a></code>.<code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html">TaskListWidgetMixin</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.plugins.html">plugins</a></code><wbr></wbr>.<code><a href="zim.plugins.tasklist.html">tasklist</a></code><wbr></wbr>.<code><a href="zim.plugins.tasklist.gui.html">gui</a></code><wbr></wbr>.<code><a href="zim.plugins.tasklist.gui.TaskListWidgetMixin.html">TaskListWidgetMixin</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,31 +65,147 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TaskListWidgetMixin</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L30">(source)</a></code></p><p>Known subclasses: <code><a href="zim.plugins.tasklist.gui.TaskListDialog.html">zim.plugins.tasklist.gui.TaskListDialog</a></code>, <code><a href="zim.plugins.tasklist.gui.TaskListWidget.html">zim.plugins.tasklist.gui.TaskListWidget</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TaskListWidgetMixin</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L57" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="zim.plugins.tasklist.gui.TaskListWidget.html">zim.plugins.tasklist.gui.TaskListWidget</a></code>, <code><a href="zim.plugins.tasklist.gui.TaskListWindow.html">zim.plugins.tasklist.gui.TaskListWindow</a></code></p>
         <p><a href="classIndex.html#zim.plugins.tasklist.gui.TaskListWidgetMixin">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="undocumented">Undocumented</p></div>
+        <div>Common functions between side-pane widget and dialog</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1367">
+        <table class="children sortable" id="id1344">
+  
   
   <tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#on_populate_popup">on_populate_popup</a></code></td>
+    <td><code><a href="#__init__">__init__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#on_show_active_toggle">on_show_active_toggle</a></code></td>
+    <td><code><a href="#on_filter_changed">on_filter_changed</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#on_show_flatlist_toggle">on_show_flatlist_toggle</a></code></td>
+    <td><code><a href="#on_properties_changed">on_properties_changed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_selection_activated">on_selection_activated</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#reload_view">reload_view</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_label_tag_filter">set_label_tag_filter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_selection">set_selection</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#SELECTION_MAP">SELECTION_MAP</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#index">index</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#label_tag_filter">label_tag_filter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#selection_list">selection_list</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#status">status</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#tag_list">tag_list</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#tasklisttreeview">tasklisttreeview</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#taskselection">taskselection</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#taskselection_type">taskselection_type</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#uistate">uistate</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_create_clear_tags_button">_create_clear_tags_button</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_create_filter_entry">_create_filter_entry</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_create_selection_menubutton">_create_selection_menubutton</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_create_selection_pane">_create_selection_pane</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_create_tasklisttreeview">_create_tasklisttreeview</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_selection_state">_get_selection_state</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_set_mbutton_label">_set_mbutton_label</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_set_selection_state">_set_selection_state</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_mbutton">_mbutton</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -71,16 +218,39 @@
 
         <div class="basemethod">
   
-  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin.on_populate_popup">
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin.__init__">
     
   </a>
-  <a name="on_populate_popup">
+  <a name="__init__">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">on_populate_popup</span>(self, o, menu):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L32">
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, index, uistate, properties):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L69">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.plugins.tasklist.gui.TaskListWidget.html">zim.plugins.tasklist.gui.TaskListWidget</a></code>, <code><a href="zim.plugins.tasklist.gui.TaskListWindow.html">zim.plugins.tasklist.gui.TaskListWindow</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin.on_filter_changed">
+    
+  </a>
+  <a name="on_filter_changed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_filter_changed</span>(self, text):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L185">
       
       (source)
     </a>
@@ -92,16 +262,17 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin.on_show_active_toggle">
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin.on_properties_changed">
     
   </a>
-  <a name="on_show_active_toggle">
+  <a name="on_properties_changed">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">on_show_active_toggle</span>(self, *a):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L50">
+    <span class="py-keyword">def</span> <span class="py-defname">on_properties_changed</span>(self, properties):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L188">
       
       (source)
     </a>
@@ -113,16 +284,17 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin.on_show_flatlist_toggle">
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin.on_selection_activated">
     
   </a>
-  <a name="on_show_flatlist_toggle">
+  <a name="on_selection_activated">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">on_show_flatlist_toggle</span>(self, *a):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L55">
+    <span class="py-keyword">def</span> <span class="py-defname">on_selection_activated</span>(self, listbox, boxrow):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L206">
       
       (source)
     </a>
@@ -131,15 +303,520 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin.reload_view">
+    
+  </a>
+  <a name="reload_view">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">reload_view</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L201">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin.set_label_tag_filter">
+    
+  </a>
+  <a name="set_label_tag_filter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_label_tag_filter</span>(self, labels, tags, pages):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L234">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin.set_selection">
+    
+  </a>
+  <a name="set_selection">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_selection</span>(self, key):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L210">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin.SELECTION_MAP">
+    
+  </a>
+  <a name="SELECTION_MAP">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">SELECTION_MAP</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L60">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>{<wbr></wbr><a href="zim.plugins.tasklist.gui.html#SELECTION_ALL">SELECTION_ALL</a>: (<wbr></wbr>_(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">All Tasks</span><span class="rst-variable-quote">'</span>), <wbr></wbr><a href="zim.plugins.tasklist.indexer.AllTasks.html">AllTasks</a>),
+ <wbr></wbr><a href="zim.plugins.tasklist.gui.html#SELECTION_ACTIVE">SELECTION_ACTIVE</a>: (<wbr></wbr>_(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">Active</span><span class="rst-variable-quote">'</span>), <wbr></wbr><a href="zim.plugins.tasklist.indexer.ActiveTasks.html">ActiveTasks</a>),
+ <wbr></wbr><a href="zim.plugins.tasklist.gui.html#SELECTION_INBOX">SELECTION_INBOX</a>: (<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string"> ‒ </span><span class="rst-variable-quote">'</span>+_(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">Inbox</span><span class="rst-variable-quote">'</span>), <wbr></wbr><a href="zim.plugins.tasklist.indexer.InboxTasks.html">InboxTasks</a>),
+ <wbr></wbr><a href="zim.plugins.tasklist.gui.html#SELECTION_NEXT">SELECTION_NEXT</a>: (<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string"> ‒ </span><span class="rst-variable-quote">'</span>+_(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">Next Actions</span><span class="rst-variable-quote">'</span>), <wbr></wbr><a href="zim.plugins.tasklist.indexer.NextActionTasks.html">NextActionTasks</a>),
+ <wbr></wbr><a href="zim.plugins.tasklist.gui.html#SELECTION_PROJECTS">SELECTION_PROJECTS</a>: (<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string"> ‒ </span><span class="rst-variable-quote">'</span>+_(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">Projects</span><span class="rst-variable-quote">'</span>), <wbr></wbr><a href="zim.plugins.tasklist.indexer.OpenProjectsTasks.html">OpenProjectsTasks</a>),
+ <wbr></wbr><a href="zim.plugins.tasklist.gui.html#SELECTION_WAITING">SELECTION_WAITING</a>: (<wbr></wbr>_(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">Waiting</span><span class="rst-variable-quote">'</span>), <wbr></wbr><a href="zim.plugins.tasklist.indexer.WaitingTasks.html">WaitingTasks</a>)}</code></pre></td></tr></table>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin.index">
+    
+  </a>
+  <a name="index">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">index</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L70">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin.label_tag_filter">
+    
+  </a>
+  <a name="label_tag_filter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">label_tag_filter</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L74">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin.selection_list">
+    
+  </a>
+  <a name="selection_list">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">selection_list</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L77">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin.status">
+    
+  </a>
+  <a name="status">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">status</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L73">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.plugins.tasklist.gui.TaskListWindow.html">zim.plugins.tasklist.gui.TaskListWindow</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin.tag_list">
+    
+  </a>
+  <a name="tag_list">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">tag_list</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L78">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin.tasklisttreeview">
+    
+  </a>
+  <a name="tasklisttreeview">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">tasklisttreeview</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L76">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin.taskselection">
+    
+  </a>
+  <a name="taskselection">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">taskselection</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L72">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin.taskselection_type">
+    
+  </a>
+  <a name="taskselection_type">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">taskselection_type</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L71">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin.uistate">
+    
+  </a>
+  <a name="uistate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">uistate</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L81">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.plugins.tasklist.gui.TaskListWindow.html">zim.plugins.tasklist.gui.TaskListWindow</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin._create_clear_tags_button">
+    
+  </a>
+  <a name="_create_clear_tags_button">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_create_clear_tags_button</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L165">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin._create_filter_entry">
+    
+  </a>
+  <a name="_create_filter_entry">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_create_filter_entry</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L177">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin._create_selection_menubutton">
+    
+  </a>
+  <a name="_create_selection_menubutton">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_create_selection_menubutton</span>(self, opener, properties, show_inbox_next):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L123">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin._create_selection_pane">
+    
+  </a>
+  <a name="_create_selection_pane">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_create_selection_pane</span>(self, properties, show_inbox_next, width=300):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L146">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin._create_tasklisttreeview">
+    
+  </a>
+  <a name="_create_tasklisttreeview">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_create_tasklisttreeview</span>(self, opener, properties):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L95">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin._get_selection_state">
+    
+  </a>
+  <a name="_get_selection_state">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_selection_state</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L87">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin._set_mbutton_label">
+    
+  </a>
+  <a name="_set_mbutton_label">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_set_mbutton_label</span>(self, text):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L219">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin._set_selection_state">
+    
+  </a>
+  <a name="_set_selection_state">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_set_selection_state</span>(self, state):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L90">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.plugins.tasklist.gui.TaskListWidgetMixin._mbutton">
+    
+  </a>
+  <a name="_mbutton">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_mbutton</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tasklist/gui.py#L79">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

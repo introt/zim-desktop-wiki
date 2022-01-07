@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.fs.FileUnicodeError : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.fs.FileUnicodeError</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.fs.html">fs</a></code>.<code><a href="zim.fs.FileUnicodeError.html">FileUnicodeError</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.fs.html">fs</a></code><wbr></wbr>.<code><a href="zim.fs.FileUnicodeError.html">FileUnicodeError</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,16 +65,17 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">FileUnicodeError</span>(<a href="zim.errors.Error.html" title="zim.errors.Error">Error</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L268">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">FileUnicodeError</span>(<a href="zim.errors.Error.html" title="zim.errors.Error">Error</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L267" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.fs.FileUnicodeError">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Error raised when there is an issue decoding the file contents. Typically due to different encoding where UTF-8 is expected.</p></div>
+        <div>Error raised when there is an issue decoding the file contents. Typically due to different encoding where UTF-8 is expected.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id194">
+        <table class="children sortable" id="id192">
+  
   
   <tr class="method">
     
@@ -53,7 +85,7 @@
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#file">file</a></code></td>
+    <td><code><a href="#description">description</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
@@ -63,12 +95,12 @@
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#msg">msg</a></code></td>
+    <td><code><a href="#file">file</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#description">description</a></code></td>
+    <td><code><a href="#msg">msg</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -76,17 +108,18 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.errors.Error.html">Error</a></code>:
           </p>
-          <table class="children sortable" id="id195">
+          <table class="children sortable" id="id193">
+  
   
   <tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.errors.Error.html#__str__">__str__</a></code></td>
+    <td><code><a href="zim.errors.Error.html#__repr__">__repr__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.errors.Error.html#__repr__">__repr__</a></code></td>
+    <td><code><a href="zim.errors.Error.html#__str__">__str__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -99,6 +132,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.fs.FileUnicodeError.__init__">
     
   </a>
@@ -108,7 +142,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, file, error):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L273">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L272">
       
       (source)
     </a>
@@ -120,68 +154,6 @@
   </div>
 </div><div class="baseinstancevariable">
   
-  <a name="zim.fs.FileUnicodeError.file">
-    
-  </a>
-  <a name="file">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">file</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L274">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.fs.FileUnicodeError.error">
-    
-  </a>
-  <a name="error">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">error</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L275">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.fs.FileUnicodeError.msg">
-    
-  </a>
-  <a name="msg">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">msg</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L276">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.errors.Error.html#msg">zim.errors.Error.msg</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
   
   <a name="zim.fs.FileUnicodeError.description">
     
@@ -192,7 +164,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">description</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L278">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L277">
       
       (source)
     </a>
@@ -201,15 +173,90 @@
     <div class="interfaceinfo">overrides <code><a href="zim.errors.Error.html#description">zim.errors.Error.description</a></code></div>
     
     <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.fs.FileUnicodeError.error">
+    
+  </a>
+  <a name="error">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">error</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L274">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.fs.FileUnicodeError.file">
+    
+  </a>
+  <a name="file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">file</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L273">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.fs.FileUnicodeError.msg">
+    
+  </a>
+  <a name="msg">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">msg</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L275">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.errors.Error.html#msg">zim.errors.Error.msg</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

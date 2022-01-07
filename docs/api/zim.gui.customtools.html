@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.gui.customtools : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.gui.customtools</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.customtools.html">customtools</a></code></code></h1>
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.gui.html">gui</a></code><wbr></wbr>.<code><a href="zim.gui.customtools.html">customtools</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,52 +65,28 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py">(source)</a>
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>This module contains code for defining and managing custom commands.</p></div>
+        <div>This module contains code for defining and managing custom commands.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id251">
+        <table class="children sortable" id="id249">
   
-  <tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#logger">logger</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="class">
+  
+  <tr class="class">
     
     <td>Class</td>
-    <td><code><a href="zim.gui.customtools.CustomToolManager.html">CustomToolManager</a></code></td>
-    <td><span>Manager for dealing with the desktop files which are used to store custom tools.</span></td>
+    <td><code><a href="zim.gui.customtools.CustomTool.html">CustomTool</a></code></td>
+    <td>Class representing a file defining a custom tool, see <code><a href="zim.gui.customtools.CustomToolDict.html">CustomToolDict</a></code> for the API documentation.</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.gui.customtools.CustomToolDict.html">CustomToolDict</a></code></td>
-    <td><span>This is a specialized desktop entry type that is used for custom tools for the "Tools" menu in zim. It uses a non-standard Exec spec with zim specific escapes for "X-Zim-ExecTool".</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.gui.customtools.CustomTool.html">CustomTool</a></code></td>
-    <td><span>Class representing a file defining a custom tool, see <code><a href="zim.gui.customtools.CustomToolDict.html">CustomToolDict</a></code> for the API documentation.</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.gui.customtools.StubPageView.html">StubPageView</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.gui.customtools.CustomToolManagerUI.html">CustomToolManagerUI</a></code></td>
-    <td><span class="undocumented">No class docstring; 0/6 instance variables, 1/6 methods documented</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.gui.customtools.CustomToolManagerDialog.html">CustomToolManagerDialog</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>This is a specialized desktop entry type that is used for custom tools for the "Tools" menu in zim. It uses a non-standard Exec spec with zim specific escapes for "X-Zim-ExecTool".</td>
   </tr><tr class="class">
     
     <td>Class</td>
@@ -88,7 +95,32 @@
   </tr><tr class="class">
     
     <td>Class</td>
+    <td><code><a href="zim.gui.customtools.CustomToolManager.html">CustomToolManager</a></code></td>
+    <td>Manager for dealing with the desktop files which are used to store custom tools.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.customtools.CustomToolManagerDialog.html">CustomToolManagerDialog</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.customtools.CustomToolManagerUI.html">CustomToolManagerUI</a></code></td>
+    <td><span class="undocumented">No class docstring; 0/6 instance variable, 1/6 method documented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
     <td><code><a href="zim.gui.customtools.EditCustomToolDialog.html">EditCustomToolDialog</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.gui.customtools.StubPageView.html">StubPageView</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger">logger</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="function private">
     
@@ -106,6 +138,7 @@
 
         <div class="basevariable">
   
+  
   <a name="zim.gui.customtools.logger">
     
   </a>
@@ -115,7 +148,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">logger</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py#L31">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py#L31">
       
       (source)
     </a>
@@ -124,8 +157,10 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basefunction private">
+  
   
   <a name="zim.gui.customtools._create_application">
     
@@ -135,8 +170,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_create_application</span>(dir, basename, Name, Exec, NoDisplay=True, **param):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py#L34">
+    <span class="py-keyword">def</span> <span class="py-defname">_create_application</span>(dir, basename, Name, Exec, NoDisplay=<a href="https://docs.python.org/3/library/constants.html#True">True</a>, **param):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/customtools.py#L34">
       
       (source)
     </a>
@@ -149,11 +184,16 @@
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

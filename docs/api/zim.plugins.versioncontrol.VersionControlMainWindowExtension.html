@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.plugins.versioncontrol.VersionControlMainWindowExtension : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.plugins.versioncontrol.VersionControlMainWindowExtension</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code>.<code><a href="zim.plugins.versioncontrol.html">versioncontrol</a></code>.<code><a href="zim.plugins.versioncontrol.VersionControlMainWindowExtension.html">VersionControlMainWindowExtension</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.plugins.html">plugins</a></code><wbr></wbr>.<code><a href="zim.plugins.versioncontrol.html">versioncontrol</a></code><wbr></wbr>.<code><a href="zim.plugins.versioncontrol.VersionControlMainWindowExtension.html">VersionControlMainWindowExtension</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">VersionControlMainWindowExtension</span>(<a href="zim.gui.mainwindow.MainWindowExtension.html" title="zim.gui.mainwindow.MainWindowExtension">MainWindowExtension</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L116">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">VersionControlMainWindowExtension</span>(<a href="zim.gui.mainwindow.MainWindowExtension.html" title="zim.gui.mainwindow.MainWindowExtension">MainWindowExtension</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L115" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.plugins.versioncontrol.VersionControlMainWindowExtension">View In Hierarchy</a></p>
       </div>
 
@@ -43,33 +74,19 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1427">
+        <table class="children sortable" id="id1446">
+  
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Constructor @param plugin: the plugin object to which this extension belongs @param window: the <code>Gtk.Window</code> being extended</span></td>
-  </tr><tr class="instancevariable">
+    <td>Constructor @param plugin: the plugin object to which this extension belongs @param window: the <tt class="rst-docutils literal">Gtk.Window</tt> being extended</td>
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#notebook_ext">notebook_ext</a></code></td>
+    <td>Method</td>
+    <td><code><a href="#do_save_version">do_save_version</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#on_preferences_changed">on_preferences_changed</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#destroy">destroy</a></code></td>
-    <td><span>Called when the plugin is being destroyed Calls <code><a href="#teardown">teardown()</a></code> followed by the <code>teardown()</code> methods of parent base classes.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#teardown">teardown</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -78,7 +95,7 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#do_save_version">do_save_version</a></code></td>
+    <td><code><a href="#on_preferences_changed">on_preferences_changed</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
@@ -90,25 +107,15 @@
     <td>Method</td>
     <td><code><a href="#show_versions">show_versions</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_autosave_thread">_autosave_thread</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_autosave_timer">_autosave_timer</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
+  </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#_start_timer">_start_timer</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
+    <td><code><a href="#teardown">teardown</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable">
     
-    <td>Method</td>
-    <td><code><a href="#_stop_timer">_stop_timer</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="#notebook_ext">notebook_ext</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
@@ -120,28 +127,49 @@
     <td>Method</td>
     <td><code><a href="#_save_version">_save_version</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_start_timer">_start_timer</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_stop_timer">_stop_timer</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_autosave_thread">_autosave_thread</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_autosave_timer">_autosave_timer</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
         
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.gui.mainwindow.MainWindowExtension.html">MainWindowExtension</a></code>:
           </p>
-          <table class="children sortable" id="id1428">
+          <table class="children sortable" id="id1447">
   
-  <tr class="baseinstancevariable">
+  
+  <tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.gui.mainwindow.MainWindowExtension.html#window">window</a></code></td>
+    <td>Method</td>
+    <td><code><a href="zim.gui.mainwindow.MainWindowExtension.html#on_destroy">on_destroy</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="baseinstancevariable">
     
     <td>Instance Variable</td>
     <td><code><a href="zim.gui.mainwindow.MainWindowExtension.html#uistate">uistate</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
+  </tr><tr class="baseinstancevariable">
     
-    <td>Method</td>
-    <td><code><a href="zim.gui.mainwindow.MainWindowExtension.html#on_destroy">on_destroy</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.mainwindow.MainWindowExtension.html#window">window</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -149,14 +177,10 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.gui.actionextension.ActionExtensionBase.html">ActionExtensionBase</a></code> (via <code><a href="zim.gui.mainwindow.MainWindowExtension.html">MainWindowExtension</a></code>):
           </p>
-          <table class="children sortable" id="id1429">
+          <table class="children sortable" id="id1448">
   
-  <tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#actiongroup">actiongroup</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
+  
+  <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#add_to_headerbar">add_to_headerbar</a></code></td>
@@ -170,6 +194,16 @@
     
     <td>Method</td>
     <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#set_action_in_headerbar">set_action_in_headerbar</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#actiongroup">actiongroup</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basestaticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#_uimanager_xml">_uimanager_xml</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod private">
     
@@ -186,41 +220,43 @@
     <td>Instance Variable</td>
     <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#_uimanager_ids">_uimanager_ids</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basestaticmethod private">
-    
-    <td>Static Method</td>
-    <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#_uimanager_xml">_uimanager_xml</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
           
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.plugins.ExtensionBase.html">ExtensionBase</a></code> (via <code><a href="zim.gui.mainwindow.MainWindowExtension.html">MainWindowExtension</a></code>, <code><a href="zim.gui.actionextension.ActionExtensionBase.html">ActionExtensionBase</a></code>):
           </p>
-          <table class="children sortable" id="id1430">
+          <table class="children sortable" id="id1449">
   
-  <tr class="baseinstancevariable">
+  
+  <tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.plugins.ExtensionBase.html#plugin">plugin</a></code></td>
-    <td><span>the plugin object to which this extension belongs</span></td>
-  </tr><tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.plugins.ExtensionBase.html#obj">obj</a></code></td>
-    <td><span>the extendable object</span></td>
+    <td>Method</td>
+    <td><code><a href="zim.plugins.ExtensionBase.html#destroy">destroy</a></code></td>
+    <td>Called when the plugin is being destroyed Calls <code><a href="#teardown">teardown()</a></code> followed by the <tt class="rst-docutils literal">teardown()</tt> methods of parent base classes.</td>
   </tr><tr class="baseclassvariable">
     
     <td>Class Variable</td>
     <td><code><a href="zim.plugins.ExtensionBase.html#__signals__">__signals__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.ExtensionBase.html#obj">obj</a></code></td>
+    <td>the extendable object</td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.ExtensionBase.html#plugin">plugin</a></code></td>
+    <td>the plugin object to which this extension belongs</td>
   </tr>
 </table>
           
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.signals.SignalEmitter.html">SignalEmitter</a></code> (via <code><a href="zim.gui.mainwindow.MainWindowExtension.html">MainWindowExtension</a></code>, <code><a href="zim.gui.actionextension.ActionExtensionBase.html">ActionExtensionBase</a></code>, <code><a href="zim.plugins.ExtensionBase.html">ExtensionBase</a></code>):
           </p>
-          <table class="children sortable" id="id1431">
+          <table class="children sortable" id="id1450">
+  
   
   <tr class="basemethod">
     
@@ -230,13 +266,18 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#block_signals">block_signals</a></code></td>
+    <td>Returns a context manager for blocking one or more signals</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#connect">connect</a></code></td>
-    <td><span>Register a handler for a specific object.</span></td>
+    <td>Register a handler for a specific object.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#connect_after">connect_after</a></code></td>
-    <td><span>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</span></td>
+    <td>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -251,17 +292,12 @@
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#emit_return_first">emit_return_first</a></code></td>
-    <td><span>Emits a signal and stops emission on the first handler that returns a not-None value.</span></td>
+    <td>Emits a signal and stops emission on the first handler that returns a not-None value.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#emit_return_iter">emit_return_iter</a></code></td>
-    <td><span>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.signals.SignalEmitter.html#block_signals">block_signals</a></code></td>
-    <td><span>Returns a context manager for blocking one or more signals</span></td>
+    <td>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -283,37 +319,38 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code> (via <code><a href="zim.gui.mainwindow.MainWindowExtension.html">MainWindowExtension</a></code>, <code><a href="zim.gui.actionextension.ActionExtensionBase.html">ActionExtensionBase</a></code>, <code><a href="zim.plugins.ExtensionBase.html">ExtensionBase</a></code>):
           </p>
-          <table class="children sortable" id="id1432">
+          <table class="children sortable" id="id1451">
+  
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto">connectto</a></code></td>
-    <td><span>Connect to signals of another object E.g.:</span></td>
+    <td>Connect to signals of another object E.g.:</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto_all">connectto_all</a></code></td>
-    <td><span>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
-    <td><span>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</span></td>
+    <td>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_all">disconnect_all</a></code></td>
-    <td><span>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</span></td>
-  </tr><tr class="baseinstancevariable private">
+    <td>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</td>
+  </tr><tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
+    <td>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#_disconnect_from">_disconnect_from</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -326,6 +363,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension.__init__">
     
   </a>
@@ -335,7 +373,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, plugin, window):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L118">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L117">
       
       (source)
     </a>
@@ -343,72 +381,54 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.gui.mainwindow.MainWindowExtension.html#__init__">zim.gui.mainwindow.MainWindowExtension.__init__</a></code></div>
     
-    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">plugin</td><td>the plugin object to which this extension belongs</td></tr><tr><td></td><td class="fieldArg">window</td><td>the <code>Gtk.Window</code> being extended</td></tr></table></div>
+    <div>Constructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">plugin</span></td><td class="fieldArgDesc">the plugin object to which this extension belongs</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">window</span></td><td class="fieldArgDesc">the <tt class="rst-docutils literal">Gtk.Window</tt> being extended</td></tr></table></div>
   </div>
-</div><div class="baseinstancevariable">
+</div><div class="basemethod">
   
-  <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension.notebook_ext">
+  
+  <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension.do_save_version">
     
   </a>
-  <a name="notebook_ext">
+  <a name="do_save_version">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">notebook_ext</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L121">
+    <span class="py-keyword">def</span> <span class="py-defname">do_save_version</span>(self, msg=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L189">
       
       (source)
     </a>
   </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension._autosave_thread">
-    
-  </a>
-  <a name="_autosave_thread">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_autosave_thread</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L123">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension._autosave_timer">
-    
-  </a>
-  <a name="_autosave_timer">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_autosave_timer</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L124">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
+  <div class="docstring functionBody">
     
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension.do_save_version_async">
+    
+  </a>
+  <a name="do_save_version_async">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">do_save_version_async</span>(self, msg=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L164">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension.on_preferences_changed">
     
@@ -418,8 +438,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">on_preferences_changed</span>(self, o, start=False):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L142">
+    <span class="py-keyword">def</span> <span class="py-defname">on_preferences_changed</span>(self, o, start=<a href="https://docs.python.org/3/library/constants.html#False">False</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L141">
       
       (source)
     </a>
@@ -431,58 +451,17 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension.destroy">
-    
-  </a>
-  <a name="destroy">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">destroy</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L152">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.plugins.ExtensionBase.html#destroy">zim.plugins.ExtensionBase.destroy</a></code></div>
-    
-    <div><p>Called when the plugin is being destroyed Calls <code><a href="#teardown">teardown()</a></code> followed by the <code>teardown()</code> methods of parent base classes.</p></div>
-  </div>
-</div><div class="basemethod private">
   
-  <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension._start_timer">
+  <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension.save_version">
     
   </a>
-  <a name="_start_timer">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_start_timer</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L155">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension._stop_timer">
-    
-  </a>
-  <a name="_stop_timer">
+  <a name="save_version">
     
   </a>
   <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_stop_timer</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L160">
+    @<a href="zim.actions.html#action">action</a>(<wbr></wbr>_(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">S_ave Version...</span><span class="rst-variable-quote">'</span>), <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;Primary&gt;&lt;shift&gt;S</span><span class="rst-variable-quote">'</span>, <wbr></wbr>menuhints=<span class="rst-variable-quote">'</span><span class="rst-variable-string">notebook:edit</span><span class="rst-variable-quote">'</span>)<br />
+    <span class="py-keyword">def</span> <span class="py-defname">save_version</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L209">
       
       (source)
     </a>
@@ -493,6 +472,29 @@
     <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension.show_versions">
+    
+  </a>
+  <a name="show_versions">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="zim.actions.html#action">action</a>(<wbr></wbr>_(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">_Versions...</span><span class="rst-variable-quote">'</span>), <wbr></wbr>menuhints=<span class="rst-variable-quote">'</span><span class="rst-variable-string">notebook</span><span class="rst-variable-quote">'</span>)<br />
+    <span class="py-keyword">def</span> <span class="py-defname">show_versions</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L226">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension.teardown">
     
@@ -503,7 +505,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">teardown</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L165">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L161">
       
       (source)
     </a>
@@ -511,30 +513,33 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.gui.actionextension.ActionExtensionBase.html#teardown">zim.gui.actionextension.ActionExtensionBase.teardown</a></code></div>
     
-    <div><p>Remove changes made by <b>this</b> class from the extended object To be overloaded by child classes</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">do not call parent class <code>teardown()</code> here, that is already taken care of by <code>destroy()</code></td></tr></table></div>
+    <div>Remove changes made by <strong>this</strong> class from the extended object To be overloaded by child classes<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Note</td></tr><tr><td colspan="2">do not call parent class <tt class="rst-docutils literal">teardown()</tt> here, that is already taken care of by <tt class="rst-docutils literal">destroy()</tt></td></tr></table></div>
   </div>
-</div><div class="basemethod">
+</div><div class="baseinstancevariable">
   
-  <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension.do_save_version_async">
+  
+  <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension.notebook_ext">
     
   </a>
-  <a name="do_save_version_async">
+  <a name="notebook_ext">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">do_save_version_async</span>(self, msg=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L168">
+    <span class="py-defname">notebook_ext</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L120">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basemethod private">
+  
   
   <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension._commit_op">
     
@@ -545,28 +550,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_commit_op</span>(self, msg):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L182">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension.do_save_version">
-    
-  </a>
-  <a name="do_save_version">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">do_save_version</span>(self, msg=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L193">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L178">
       
       (source)
     </a>
@@ -578,6 +562,7 @@
   </div>
 </div><div class="basemethod private">
   
+  
   <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension._save_version">
     
   </a>
@@ -586,8 +571,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_save_version</span>(self, msg=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L203">
+    <span class="py-keyword">def</span> <span class="py-defname">_save_version</span>(self, msg=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L199">
       
       (source)
     </a>
@@ -597,18 +582,19 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="basemethod">
+</div><div class="basemethod private">
   
-  <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension.save_version">
+  
+  <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension._start_timer">
     
   </a>
-  <a name="save_version">
+  <a name="_start_timer">
     
   </a>
   <div class="functionHeader">
-    @action(_('S_ave Version...'), '&lt;Primary&gt;&lt;shift&gt;S', menuhints='notebook:edit')<br />
-    <span class="py-keyword">def</span> <span class="py-defname">save_version</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L213">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_start_timer</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L151">
       
       (source)
     </a>
@@ -618,18 +604,19 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="basemethod">
+</div><div class="basemethod private">
   
-  <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension.show_versions">
+  
+  <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension._stop_timer">
     
   </a>
-  <a name="show_versions">
+  <a name="_stop_timer">
     
   </a>
   <div class="functionHeader">
-    @action(_('_Versions...'), menuhints='notebook')<br />
-    <span class="py-keyword">def</span> <span class="py-defname">show_versions</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L230">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_stop_timer</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L156">
       
       (source)
     </a>
@@ -638,15 +625,66 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension._autosave_thread">
+    
+  </a>
+  <a name="_autosave_thread">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_autosave_thread</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L122">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.plugins.versioncontrol.VersionControlMainWindowExtension._autosave_timer">
+    
+  </a>
+  <a name="_autosave_timer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_autosave_timer</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/versioncontrol/__init__.py#L123">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.plugins.pageindex.PageTreeStoreBase : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.plugins.pageindex.PageTreeStoreBase</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code>.<code><a href="zim.plugins.pageindex.html">pageindex</a></code>.<code><a href="zim.plugins.pageindex.PageTreeStoreBase.html">PageTreeStoreBase</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.plugins.html">plugins</a></code><wbr></wbr>.<code><a href="zim.plugins.pageindex.html">pageindex</a></code><wbr></wbr>.<code><a href="zim.plugins.pageindex.PageTreeStoreBase.html">PageTreeStoreBase</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,32 +65,27 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">PageTreeStoreBase</span>(<a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html" title="zim.plugins.pageindex.generictreemodel.GenericTreeModel">GenericTreeModel</a>, <span title="gi.repository.Gtk.TreeDragSource">Gtk.TreeDragSource</span>, <span title="gi.repository.Gtk.TreeDragDest">Gtk.TreeDragDest</span>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L139">(source)</a></code></p><p>Known subclasses: <code><a href="zim.plugins.pageindex.PageTreeStore.html">zim.plugins.pageindex.PageTreeStore</a></code>, <code><a href="zim.plugins.tags.DuplicatePageTreeStore.html">zim.plugins.tags.DuplicatePageTreeStore</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">PageTreeStoreBase</span>(<a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html" title="zim.plugins.pageindex.generictreemodel.GenericTreeModel">GenericTreeModel</a>, <span title="gi.repository.Gtk.TreeDragSource">Gtk.TreeDragSource</span>, <span title="gi.repository.Gtk.TreeDragDest">Gtk.TreeDragDest</span>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L139" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="zim.plugins.pageindex.PageTreeStore.html">zim.plugins.pageindex.PageTreeStore</a></code>, <code><a href="zim.plugins.tags.DuplicatePageTreeStore.html">zim.plugins.tags.DuplicatePageTreeStore</a></code></p>
         <p><a href="classIndex.html#zim.plugins.pageindex.PageTreeStoreBase">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Custom gtk TreeModel that is integrated closely with the <code><a href="zim.notebook.index.Index.html">Index</a></code> object of the notebook. This model is mostly an API layer translating between the <code>Gtk.TreeView</code> and the zim <code><a href="zim.notebook.index.Index.html">Index</a></code> interfaces. It fetches data on the fly when requested and only keeps a very limited cache in memory. This allows scaling to very large notebooks.</p><p>This custom model is based on <code>GenericTreeModel</code> which takes care of the C library wrapper. See the documentation there to get the fine details of the API.</p><p>Be aware that in this interface there are two classes both referred to as "paths". The first is the gtk TreePath (which is in fact just a tuple of integers, without a propr class) and the second is <code><a href="zim.notebook.page.Path.html">zim.notebook.Path</a></code>. When a gtk TreePath is intended the argument is explicitly called "treepath", while arguments called "path" refer to a zim Path.</p><p>For all the methods with a name starting with <code>on_</code> the "iter" argument is a <code><a href="zim.notebook.index.base.MyTreeIter.html">MyTreeIter</a></code>. The GenericTreeModel in turn wraps these in <code>Gtk.TreeIter</code> object. So e.g. the implementation of <code>get_iter()</code> calls <code>on_get_iter()</code> and wraps the <code><a href="zim.notebook.index.base.MyTreeIter.html">MyTreeIter</a></code> object into a <code>Gtk.TreeIter</code>.</p></div>
+        <div><p>Custom gtk TreeModel that is integrated closely with the <code><a href="zim.notebook.index.Index.html">Index</a></code> object of the notebook. This model is mostly an API layer translating between the <tt class="rst-docutils literal">Gtk.TreeView</tt> and the zim <code><a href="zim.notebook.index.Index.html">Index</a></code> interfaces. It fetches data on the fly when requested and only keeps a very limited cache in memory. This allows scaling to very large notebooks.</p>
+<p>This custom model is based on <tt class="rst-docutils literal">GenericTreeModel</tt> which takes care of the C library wrapper. See the documentation there to get the fine details of the API.</p>
+<p>Be aware that in this interface there are two classes both referred to as "paths". The first is the gtk TreePath (which is in fact just a tuple of integers, without a propr class) and the second is <code><a href="zim.notebook.page.Path.html">zim.notebook.Path</a></code>. When a gtk TreePath is intended the argument is explicitly called "treepath", while arguments called "path" refer to a zim Path.</p>
+<p>For all the methods with a name starting with <tt class="rst-docutils literal">on_</tt> the "iter" argument is a <code><a href="zim.notebook.index.base.MyTreeIter.html">MyTreeIter</a></code>. The GenericTreeModel in turn wraps these in <tt class="rst-docutils literal">Gtk.TreeIter</tt> object. So e.g. the implementation of <tt class="rst-docutils literal">get_iter()</tt> calls <tt class="rst-docutils literal">on_get_iter()</tt> and wraps the <code><a href="zim.notebook.index.base.MyTreeIter.html">MyTreeIter</a></code> object into a <tt class="rst-docutils literal">Gtk.TreeIter</tt>.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1115">
+        <table class="children sortable" id="id1105">
   
-  <tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#COLUMN_TYPES">COLUMN_TYPES</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
+  
+  <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Initialize. Make sure to call this from derived classes if overridden.</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#current_page">current_page</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Initialize. Make sure to call this from derived classes if overridden.</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -68,82 +94,92 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#set_current_page">set_current_page</a></code></td>
-    <td><span>Set the current open page to highlight it in the index. @param path: the <code><a href="zim.notebook.page.Path.html">Path</a></code> that is currently open, or <code>None</code> to unset</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
     <td><code><a href="#get_indexpath">get_indexpath</a></code></td>
-    <td><span>Get an <code><a href="zim.notebook.index.pages.PageIndexRecord.html">PageIndexRecord</a></code> for a <code>Gtk.TreeIter</code></span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#on_get_flags">on_get_flags</a></code></td>
-    <td><span>Overridable.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#on_get_n_columns">on_get_n_columns</a></code></td>
-    <td><span>Overridable.</span></td>
+    <td>Get an <code><a href="zim.notebook.index.pages.PageIndexRecord.html">PageIndexRecord</a></code> for a <tt class="rst-docutils literal">Gtk.TreeIter</tt></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#on_get_column_type">on_get_column_type</a></code></td>
-    <td><span>Overridable.</span></td>
+    <td>Overridable.</td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#on_get_value">on_get_value</a></code></td>
-    <td><span>Overridable.</span></td>
+    <td><code><a href="#on_get_flags">on_get_flags</a></code></td>
+    <td>Overridable.</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#on_get_iter">on_get_iter</a></code></td>
-    <td><span>Returns an MyTreeIter for a gtk TreePath or None</span></td>
+    <td>Returns an MyTreeIter for a gtk TreePath or None</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_get_n_columns">on_get_n_columns</a></code></td>
+    <td>Overridable.</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#on_get_path">on_get_path</a></code></td>
-    <td><span>Returns a gtk TreePath for an indexpath</span></td>
+    <td>Returns a gtk TreePath for an indexpath</td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#on_iter_next">on_iter_next</a></code></td>
-    <td><span>Returns the PageIndexRecord for the next row on the same level or None</span></td>
+    <td><code><a href="#on_get_value">on_get_value</a></code></td>
+    <td>Overridable.</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#on_iter_children">on_iter_children</a></code></td>
-    <td><span>Returns an PageIndexRecord for the first child below path or None. If path is None returns the PageIndexRecord for first top level item.</span></td>
+    <td>Returns an PageIndexRecord for the first child below path or None. If path is None returns the PageIndexRecord for first top level item.</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#on_iter_has_child">on_iter_has_child</a></code></td>
-    <td><span>Returns True if PageIndexRecord for iter has children</span></td>
+    <td>Returns True if PageIndexRecord for iter has children</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#on_iter_n_children">on_iter_n_children</a></code></td>
-    <td><span>Returns the number of children in a namespace. When iter is None the number of pages in the root namespace is given.</span></td>
+    <td>Returns the number of children in a namespace. When iter is None the number of pages in the root namespace is given.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_iter_next">on_iter_next</a></code></td>
+    <td>Returns the PageIndexRecord for the next row on the same level or None</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#on_iter_nth_child">on_iter_nth_child</a></code></td>
-    <td><span>Returns the nth child or None. If iter is <code>None</code> the nth item in the root namespace is returned.</span></td>
+    <td>Returns the nth child or None. If iter is <tt class="rst-docutils literal">None</tt> the nth item in the root namespace is returned.</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#on_iter_parent">on_iter_parent</a></code></td>
-    <td><span>Returns an indexpath for parent node or None</span></td>
-  </tr><tr class="instancevariable private">
+    <td>Returns an indexpath for parent node or None</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_current_page">set_current_page</a></code></td>
+    <td>Set the current open page to highlight it in the index. @param path: the <code><a href="zim.notebook.page.Path.html">Path</a></code> that is currently open, or <tt class="rst-docutils literal">None</tt> to unset</td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#COLUMN_TYPES">COLUMN_TYPES</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_flush_scheduled">_flush_scheduled</a></code></td>
+    <td><code><a href="#current_page">current_page</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
     <td><code><a href="#_emit_page_changes">_emit_page_changes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_flush_scheduled">_flush_scheduled</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -151,118 +187,74 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html">GenericTreeModel</a></code>:
           </p>
-          <table class="children sortable" id="id1116">
+          <table class="children sortable" id="id1106">
   
-  <tr class="baseclassvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#leak_references">leak_references</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#stamp">stamp</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#iter_depth_first">iter_depth_first</a></code></td>
-    <td><span>Depth-first iteration of the entire TreeModel yielding the python nodes.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#invalidate_iter">invalidate_iter</a></code></td>
-    <td><span>Clear user data and its reference from the iter and this model.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#invalidate_iters">invalidate_iters</a></code></td>
-    <td><span>This method invalidates all TreeIter objects associated with this custom tree model and frees their locally pooled references.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#iter_is_valid">iter_is_valid</a></code></td>
-    <td><span>:Returns: True if the gtk.TreeIter specified by iter is valid for the custom tree model.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#get_user_data">get_user_data</a></code></td>
-    <td><span>Get the user_data associated with the given TreeIter.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#set_user_data">set_user_data</a></code></td>
-    <td><span>Applies user_data and stamp to the given iter.</span></td>
-  </tr><tr class="basemethod">
+  
+  <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#create_tree_iter">create_tree_iter</a></code></td>
-    <td><span>Create a Gtk.TreeIter instance with the given user_data specific for this model.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#row_deleted">row_deleted</a></code></td>
-    <td><span>Notify the model a row has been deleted.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_get_flags">do_get_flags</a></code></td>
-    <td><span>Internal method.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_get_n_columns">do_get_n_columns</a></code></td>
-    <td><span>Internal method.</span></td>
+    <td>Create a Gtk.TreeIter instance with the given user_data specific for this model.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_get_column_type">do_get_column_type</a></code></td>
-    <td><span>Internal method.</span></td>
+    <td>Internal method.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_get_flags">do_get_flags</a></code></td>
+    <td>Internal method.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_get_iter">do_get_iter</a></code></td>
-    <td><span>Internal method.</span></td>
+    <td>Internal method.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_iter_next">do_iter_next</a></code></td>
-    <td><span>Internal method.</span></td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_get_n_columns">do_get_n_columns</a></code></td>
+    <td>Internal method.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_get_path">do_get_path</a></code></td>
-    <td><span>Internal method.</span></td>
+    <td>Internal method.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_get_value">do_get_value</a></code></td>
-    <td><span>Internal method.</span></td>
+    <td>Internal method.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_iter_children">do_iter_children</a></code></td>
-    <td><span>Internal method.</span></td>
+    <td>Internal method.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_iter_has_child">do_iter_has_child</a></code></td>
-    <td><span>Internal method.</span></td>
+    <td>Internal method.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_iter_n_children">do_iter_n_children</a></code></td>
-    <td><span>Internal method.</span></td>
+    <td>Internal method.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_iter_next">do_iter_next</a></code></td>
+    <td>Internal method.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_iter_nth_child">do_iter_nth_child</a></code></td>
-    <td><span>Internal method.</span></td>
+    <td>Internal method.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#do_iter_parent">do_iter_parent</a></code></td>
-    <td><span>Internal method.</span></td>
+    <td>Internal method.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -276,6 +268,31 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#get_user_data">get_user_data</a></code></td>
+    <td>Get the user_data associated with the given TreeIter.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#invalidate_iter">invalidate_iter</a></code></td>
+    <td>Clear user data and its reference from the iter and this model.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#invalidate_iters">invalidate_iters</a></code></td>
+    <td>This method invalidates all TreeIter objects associated with this custom tree model and frees their locally pooled references.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#iter_depth_first">iter_depth_first</a></code></td>
+    <td>Depth-first iteration of the entire TreeModel yielding the python nodes.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#iter_is_valid">iter_is_valid</a></code></td>
+    <td>:Returns: True if the gtk.TreeIter specified by iter is valid for the custom tree model.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
     <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#on_ref_node">on_ref_node</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
@@ -283,16 +300,36 @@
     <td>Method</td>
     <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#on_unref_node">on_unref_node</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseinstancevariable private">
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#row_deleted">row_deleted</a></code></td>
+    <td>Notify the model a row has been deleted.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#set_user_data">set_user_data</a></code></td>
+    <td>Applies user_data and stamp to the given iter.</td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#leak_references">leak_references</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#_held_refs">_held_refs</a></code></td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#stamp">stamp</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
     <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#_create_tree_iter">_create_tree_iter</a></code></td>
-    <td><span>Internal creation of a (bool, TreeIter) pair for returning directly back to the view interfacing with this model.</span></td>
+    <td>Internal creation of a (bool, TreeIter) pair for returning directly back to the view interfacing with this model.</td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#_held_refs">_held_refs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
           
@@ -302,28 +339,8 @@
 
       <div id="childList">
 
-        <div class="baseclassvariable">
+        <div class="basemethod">
   
-  <a name="zim.plugins.pageindex.PageTreeStoreBase.COLUMN_TYPES">
-    
-  </a>
-  <a name="COLUMN_TYPES">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">COLUMN_TYPES</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L183">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.plugins.pageindex.PageTreeStoreBase.__init__">
     
@@ -334,7 +351,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L193">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L193">
       
       (source)
     </a>
@@ -342,51 +359,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#__init__">zim.plugins.pageindex.generictreemodel.GenericTreeModel.__init__</a></code></div><div class="interfaceinfo">overridden in <code><a href="zim.plugins.pageindex.PageTreeStore.html">zim.plugins.pageindex.PageTreeStore</a></code>, <code><a href="zim.plugins.tags.TaggedPageTreeStore.html">zim.plugins.tags.TaggedPageTreeStore</a></code>, <code><a href="zim.plugins.tags.TagsPageTreeStore.html">zim.plugins.tags.TagsPageTreeStore</a></code></div>
     
-    <div><p>Initialize. Make sure to call this from derived classes if overridden.</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.plugins.pageindex.PageTreeStoreBase.current_page">
-    
-  </a>
-  <a name="current_page">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">current_page</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L195">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.plugins.tags.DuplicatePageTreeStore.html">zim.plugins.tags.DuplicatePageTreeStore</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.plugins.pageindex.PageTreeStoreBase._flush_scheduled">
-    
-  </a>
-  <a name="_flush_scheduled">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_flush_scheduled</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L198">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
+    <div>Initialize. Make sure to call this from derived classes if overridden.</div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.plugins.pageindex.PageTreeStoreBase.flush_cache">
     
@@ -397,28 +373,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">flush_cache</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L200">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.plugins.pageindex.PageTreeStoreBase._emit_page_changes">
-    
-  </a>
-  <a name="_emit_page_changes">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_emit_page_changes</span>(self, path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L209">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L200">
       
       (source)
     </a>
@@ -430,26 +385,6 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.plugins.pageindex.PageTreeStoreBase.set_current_page">
-    
-  </a>
-  <a name="set_current_page">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">set_current_page</span>(self, path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L220">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.plugins.tags.DuplicatePageTreeStore.html">zim.plugins.tags.DuplicatePageTreeStore</a></code></div>
-    
-    <div><p>Set the current open page to highlight it in the index.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>the <code><a href="zim.notebook.page.Path.html">Path</a></code> that is currently open, or <code>None</code> to unset</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.plugins.pageindex.PageTreeStoreBase.get_indexpath">
     
@@ -460,7 +395,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">get_indexpath</span>(self, treeiter):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L234">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L234">
       
       (source)
     </a>
@@ -468,51 +403,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="zim.plugins.tags.DuplicatePageTreeStore.html">zim.plugins.tags.DuplicatePageTreeStore</a></code></div>
     
-    <div><p>Get an <code><a href="zim.notebook.index.pages.PageIndexRecord.html">PageIndexRecord</a></code> for a <code>Gtk.TreeIter</code></p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">treeiter</td><td>a <code>Gtk.TreeIter</code></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">an <code><a href="zim.notebook.index.pages.PageIndexRecord.html">PageIndexRecord</a></code> object</td></tr></table></div>
+    <div>Get an <code><a href="zim.notebook.index.pages.PageIndexRecord.html">PageIndexRecord</a></code> for a <tt class="rst-docutils literal">Gtk.TreeIter</tt><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">treeiter</span></td><td class="fieldArgDesc">a <tt class="rst-docutils literal">Gtk.TreeIter</tt></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">an <code><a href="zim.notebook.index.pages.PageIndexRecord.html">PageIndexRecord</a></code> object</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.plugins.pageindex.PageTreeStoreBase.on_get_flags">
-    
-  </a>
-  <a name="on_get_flags">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">on_get_flags</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L243">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#on_get_flags">zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_get_flags</a></code></div>
-    
-    <div></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.pageindex.PageTreeStoreBase.on_get_n_columns">
-    
-  </a>
-  <a name="on_get_n_columns">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">on_get_n_columns</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L246">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#on_get_n_columns">zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_get_n_columns</a></code></div>
-    
-    <div></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.plugins.pageindex.PageTreeStoreBase.on_get_column_type">
     
@@ -523,7 +417,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">on_get_column_type</span>(self, i):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L249">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L249">
       
       (source)
     </a>
@@ -535,6 +429,95 @@
   </div>
 </div><div class="basemethod">
   
+  
+  <a name="zim.plugins.pageindex.PageTreeStoreBase.on_get_flags">
+    
+  </a>
+  <a name="on_get_flags">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_get_flags</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L243">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#on_get_flags">zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_get_flags</a></code></div>
+    
+    <div></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.pageindex.PageTreeStoreBase.on_get_iter">
+    
+  </a>
+  <a name="on_get_iter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_get_iter</span>(self, treepath):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L277">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#on_get_iter">zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_get_iter</a></code></div>
+    
+    <div>Returns an MyTreeIter for a gtk TreePath or None</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.pageindex.PageTreeStoreBase.on_get_n_columns">
+    
+  </a>
+  <a name="on_get_n_columns">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_get_n_columns</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L246">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#on_get_n_columns">zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_get_n_columns</a></code></div>
+    
+    <div></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.pageindex.PageTreeStoreBase.on_get_path">
+    
+  </a>
+  <a name="on_get_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_get_path</span>(self, iter):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L292">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#on_get_path">zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_get_path</a></code></div>
+    
+    <div>Returns a gtk TreePath for an indexpath</div>
+  </div>
+</div><div class="basemethod">
+  
+  
   <a name="zim.plugins.pageindex.PageTreeStoreBase.on_get_value">
     
   </a>
@@ -544,7 +527,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">on_get_value</span>(self, iter, column):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L253">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L253">
       
       (source)
     </a>
@@ -556,68 +539,6 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.plugins.pageindex.PageTreeStoreBase.on_get_iter">
-    
-  </a>
-  <a name="on_get_iter">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">on_get_iter</span>(self, treepath):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L277">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#on_get_iter">zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_get_iter</a></code></div>
-    
-    <div><p>Returns an MyTreeIter for a gtk TreePath or None</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.pageindex.PageTreeStoreBase.on_get_path">
-    
-  </a>
-  <a name="on_get_path">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">on_get_path</span>(self, iter):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L292">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#on_get_path">zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_get_path</a></code></div>
-    
-    <div><p>Returns a gtk TreePath for an indexpath</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.pageindex.PageTreeStoreBase.on_iter_next">
-    
-  </a>
-  <a name="on_iter_next">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">on_iter_next</span>(self, iter):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L297">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#on_iter_next">zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_iter_next</a></code></div>
-    
-    <div><p>Returns the PageIndexRecord for the next row on the same level or None</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.plugins.pageindex.PageTreeStoreBase.on_iter_children">
     
@@ -628,7 +549,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">on_iter_children</span>(self, iter):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L306">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L306">
       
       (source)
     </a>
@@ -636,9 +557,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#on_iter_children">zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_iter_children</a></code></div>
     
-    <div><p>Returns an PageIndexRecord for the first child below path or None. If path is None returns the PageIndexRecord for first top level item.</p></div>
+    <div>Returns an PageIndexRecord for the first child below path or None. If path is None returns the PageIndexRecord for first top level item.</div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.plugins.pageindex.PageTreeStoreBase.on_iter_has_child">
     
@@ -649,7 +571,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">on_iter_has_child</span>(self, iter):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L317">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L317">
       
       (source)
     </a>
@@ -657,9 +579,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#on_iter_has_child">zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_iter_has_child</a></code></div>
     
-    <div><p>Returns True if PageIndexRecord for iter has children</p></div>
+    <div>Returns True if PageIndexRecord for iter has children</div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.plugins.pageindex.PageTreeStoreBase.on_iter_n_children">
     
@@ -670,7 +593,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">on_iter_n_children</span>(self, iter):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L321">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L321">
       
       (source)
     </a>
@@ -678,9 +601,32 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#on_iter_n_children">zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_iter_n_children</a></code></div>
     
-    <div><p>Returns the number of children in a namespace. When iter is None the number of pages in the root namespace is given.</p></div>
+    <div>Returns the number of children in a namespace. When iter is None the number of pages in the root namespace is given.</div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.pageindex.PageTreeStoreBase.on_iter_next">
+    
+  </a>
+  <a name="on_iter_next">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_iter_next</span>(self, iter):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L297">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#on_iter_next">zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_iter_next</a></code></div>
+    
+    <div>Returns the PageIndexRecord for the next row on the same level or None</div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.plugins.pageindex.PageTreeStoreBase.on_iter_nth_child">
     
@@ -691,7 +637,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">on_iter_nth_child</span>(self, iter, n):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L331">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L331">
       
       (source)
     </a>
@@ -699,9 +645,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#on_iter_nth_child">zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_iter_nth_child</a></code></div>
     
-    <div><p>Returns the nth child or None. If iter is <code>None</code> the nth item in the root namespace is returned.</p></div>
+    <div>Returns the nth child or None. If iter is <tt class="rst-docutils literal">None</tt> the nth item in the root namespace is returned.</div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.plugins.pageindex.PageTreeStoreBase.on_iter_parent">
     
@@ -712,7 +659,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">on_iter_parent</span>(self, iter):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L342">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L342">
       
       (source)
     </a>
@@ -720,16 +667,140 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.plugins.pageindex.generictreemodel.GenericTreeModel.html#on_iter_parent">zim.plugins.pageindex.generictreemodel.GenericTreeModel.on_iter_parent</a></code></div>
     
-    <div><p>Returns an indexpath for parent node or None</p></div>
+    <div>Returns an indexpath for parent node or None</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.pageindex.PageTreeStoreBase.set_current_page">
+    
+  </a>
+  <a name="set_current_page">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_current_page</span>(self, path):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L220">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.plugins.tags.DuplicatePageTreeStore.html">zim.plugins.tags.DuplicatePageTreeStore</a></code></div>
+    
+    <div>Set the current open page to highlight it in the index.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the <code><a href="zim.notebook.page.Path.html">Path</a></code> that is currently open, or <tt class="rst-docutils literal">None</tt> to unset</td></tr></table></div>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.plugins.pageindex.PageTreeStoreBase.COLUMN_TYPES">
+    
+  </a>
+  <a name="COLUMN_TYPES">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">COLUMN_TYPES</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L183">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>(<wbr></wbr>GObject.TYPE_STRING,
+ <wbr></wbr>GObject.TYPE_PYOBJECT,
+ <wbr></wbr>GObject.TYPE_BOOLEAN,
+ <wbr></wbr>Pango.Style,
+ <wbr></wbr>GObject.TYPE_INT,
+ <wbr></wbr>GObject.TYPE_STRING,
+ <wbr></wbr>GObject.TYPE_STRING)</code></pre></td></tr></table>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.pageindex.PageTreeStoreBase.current_page">
+    
+  </a>
+  <a name="current_page">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">current_page</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L195">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.plugins.tags.DuplicatePageTreeStore.html">zim.plugins.tags.DuplicatePageTreeStore</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.plugins.pageindex.PageTreeStoreBase._emit_page_changes">
+    
+  </a>
+  <a name="_emit_page_changes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_emit_page_changes</span>(self, path):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L209">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.plugins.pageindex.PageTreeStoreBase._flush_scheduled">
+    
+  </a>
+  <a name="_flush_scheduled">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_flush_scheduled</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/pageindex/__init__.py#L198">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

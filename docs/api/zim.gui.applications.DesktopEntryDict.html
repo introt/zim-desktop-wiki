@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.gui.applications.DesktopEntryDict : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.gui.applications.DesktopEntryDict</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.applications.html">applications</a></code>.<code><a href="zim.gui.applications.DesktopEntryDict.html">DesktopEntryDict</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.gui.html">gui</a></code><wbr></wbr>.<code><a href="zim.gui.applications.html">applications</a></code><wbr></wbr>.<code><a href="zim.gui.applications.DesktopEntryDict.html">DesktopEntryDict</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,18 +65,66 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">DesktopEntryDict</span>(<span title="zim.config.SectionedConfigDict">SectionedConfigDict</span>, <a href="zim.applications.Application.html" title="zim.applications.Application">Application</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L791">(source)</a></code></p><p>Known subclasses: <code><a href="zim.gui.applications.DesktopEntryFile.html">zim.gui.applications.DesktopEntryFile</a></code>, <code><a href="zim.gui.customtools.CustomToolDict.html">zim.gui.customtools.CustomToolDict</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">DesktopEntryDict</span>(<span title="zim.config.SectionedConfigDict">SectionedConfigDict</span>, <a href="zim.applications.Application.html" title="zim.applications.Application">Application</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L786" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="zim.gui.applications.DesktopEntryFile.html">zim.gui.applications.DesktopEntryFile</a></code>, <code><a href="zim.gui.customtools.CustomToolDict.html">zim.gui.customtools.CustomToolDict</a></code></p>
         <p><a href="classIndex.html#zim.gui.applications.DesktopEntryDict">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Base class for <code><a href="zim.gui.applications.DesktopEntryFile.html">DesktopEntryFile</a></code>, defines most of the logic.</p><p>The following keys are supported:</p><ul><li><code>%f</code>: a single file path</li><li><code>%F</code>: a list of file paths</li><li><code>%u</code>: a single URL</li><li><code>%U</code>: a list of URLs</li><li><code>%i</code>: the icon as defined in the desktop entry, if any, prefixed with <code>--icon</code></li><li><code>%c</code>: the name from the desktop entry</li><li><code>%k</code>: the file path for the desktop entry file</li></ul><p>See <code><a href="#parse_exec">parse_exec()</a></code> for interpolating these keys. If the command does not contain any keys, the file paths or URLs to open are just appended to the command.</p></div>
+        <div><p>Base class for <code><a href="zim.gui.applications.DesktopEntryFile.html">DesktopEntryFile</a></code>, defines most of the logic.</p>
+<p>The following keys are supported:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">%f</tt>: a single file path</li>
+<li><tt class="rst-docutils literal">%F</tt>: a list of file paths</li>
+<li><tt class="rst-docutils literal">%u</tt>: a single URL</li>
+<li><tt class="rst-docutils literal">%U</tt>: a list of URLs</li>
+<li><tt class="rst-docutils literal">%i</tt>: the icon as defined in the desktop entry, if any, prefixed with <tt class="rst-docutils literal"><span class="pre">--icon</span></tt></li>
+<li><tt class="rst-docutils literal">%c</tt>: the name from the desktop entry</li>
+<li><tt class="rst-docutils literal">%k</tt>: the file path for the desktop entry file</li>
+</ul>
+<p>See <code><a href="#parse_exec">parse_exec()</a></code> for interpolating these keys. If the command does not contain any keys, the file paths or URLs to open are just appended to the command.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id226">
+        <table class="children sortable" id="id224">
   
-  <tr class="property">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td>Constructor</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_pixbuf">get_pixbuf</a></code></td>
+    <td>Get the application icon as a <tt class="rst-docutils literal">GdkPixbuf.Pixbuf</tt>. @param size: the icon size as gtk constant @returns: a pixbuf object or <tt class="rst-docutils literal">None</tt></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#isvalid">isvalid</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parse_exec">parse_exec</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#update">update</a></code></td>
+    <td>Same as <tt class="rst-docutils literal">dict.update()</tt></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#cmd">cmd</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#comment">comment</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
     
     <td>Property</td>
     <td><code><a href="#key">key</a></code></td>
@@ -58,48 +137,13 @@
   </tr><tr class="property">
     
     <td>Property</td>
-    <td><code><a href="#comment">comment</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="property">
-    
-    <td>Property</td>
-    <td><code><a href="#cmd">cmd</a></code></td>
+    <td><code><a href="#nodisplay">nodisplay</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="property">
     
     <td>Property</td>
     <td><code><a href="#tryexeccmd">tryexeccmd</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Constructor</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#isvalid">isvalid</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="property">
-    
-    <td>Property</td>
-    <td><code><a href="#nodisplay">nodisplay</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#get_pixbuf">get_pixbuf</a></code></td>
-    <td><span>Get the application icon as a <code>GdkPixbuf.Pixbuf</code>. @param size: the icon size as gtk constant @returns: a pixbuf object or <code>None</code></span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#parse_exec">parse_exec</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#update">update</a></code></td>
-    <td><span>Same as <code>dict.update()</code></span></td>
   </tr><tr class="classvariable private">
     
     <td>Class Variable</td>
@@ -111,14 +155,10 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.applications.Application.html">Application</a></code>:
           </p>
-          <table class="children sortable" id="id227">
+          <table class="children sortable" id="id225">
   
-  <tr class="baseclassvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="zim.applications.Application.html#STATUS_OK">STATUS_OK</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
+  
+  <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.applications.Application.html#__eq__">__eq__</a></code></td>
@@ -131,8 +171,8 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.applications.Application.html#tryexec">tryexec</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
+    <td><code><a href="zim.applications.Application.html#pipe">pipe</a></code></td>
+    <td>Run the application in a sub-process and capture the output. Like <code><a href="#run">run()</a></code>, but connects to stdin and stdout for the sub-process.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -141,27 +181,32 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.applications.Application.html#pipe">pipe</a></code></td>
-    <td><span>Run the application in a sub-process and capture the output. Like <code><a href="#run">run()</a></code>, but connects to stdin and stdout for the sub-process.</span></td>
+    <td><code><a href="zim.applications.Application.html#spawn">spawn</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.applications.Application.html#spawn">spawn</a></code></td>
+    <td><code><a href="zim.applications.Application.html#tryexec">tryexec</a></code></td>
     <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="baseconstant">
+    
+    <td>Constant</td>
+    <td><code><a href="zim.applications.Application.html#STATUS_OK">STATUS_OK</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basestaticmethod private">
     
     <td>Static Method</td>
     <td><code><a href="zim.applications.Application.html#_lookup">_lookup</a></code></td>
-    <td><span>Lookup cmd in PATH</span></td>
-  </tr><tr class="basemethod private">
-    
-    <td>Method</td>
-    <td><code><a href="zim.applications.Application.html#_cmd">_cmd</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Lookup cmd in PATH</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
     <td><code><a href="zim.applications.Application.html#_checkargs">_checkargs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.applications.Application.html#_cmd">_cmd</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -172,133 +217,8 @@
 
       <div id="childList">
 
-        <div class="baseproperty">
+        <div class="basemethod">
   
-  <a name="zim.gui.applications.DesktopEntryDict.key">
-    
-  </a>
-  <a name="key">
-    
-  </a>
-  <div class="functionHeader">
-    @property<br />
-    <span class="py-defname">key</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L841">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.applications.DesktopEntryFile.html">zim.gui.applications.DesktopEntryFile</a></code>, <code><a href="zim.gui.customtools.CustomTool.html">zim.gui.customtools.CustomTool</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseproperty">
-  
-  <a name="zim.gui.applications.DesktopEntryDict.name">
-    
-  </a>
-  <a name="name">
-    
-  </a>
-  <div class="functionHeader">
-    @property<br />
-    <span class="py-defname">name</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L862">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.applications.Application.html#name">zim.applications.Application.name</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseproperty">
-  
-  <a name="zim.gui.applications.DesktopEntryDict.comment">
-    
-  </a>
-  <a name="comment">
-    
-  </a>
-  <div class="functionHeader">
-    @property<br />
-    <span class="py-defname">comment</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L867">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseproperty">
-  
-  <a name="zim.gui.applications.DesktopEntryDict.cmd">
-    
-  </a>
-  <a name="cmd">
-    
-  </a>
-  <div class="functionHeader">
-    @property<br />
-    <span class="py-defname">cmd</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L880">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.applications.Application.html#cmd">zim.applications.Application.cmd</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseproperty">
-  
-  <a name="zim.gui.applications.DesktopEntryDict.tryexeccmd">
-    
-  </a>
-  <a name="tryexeccmd">
-    
-  </a>
-  <div class="functionHeader">
-    @property<br />
-    <span class="py-defname">tryexeccmd</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L876">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.applications.Application.html#tryexeccmd">zim.applications.Application.tryexeccmd</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseclassvariable private">
-  
-  <a name="zim.gui.applications.DesktopEntryDict._definitions">
-    
-  </a>
-  <a name="_definitions">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_definitions</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L821">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.customtools.CustomToolDict.html">zim.gui.customtools.CustomToolDict</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.applications.DesktopEntryDict.__init__">
     
@@ -309,7 +229,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L837">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L832">
       
       (source)
     </a>
@@ -317,51 +237,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.applications.Application.html#__init__">zim.applications.Application.__init__</a></code></div><div class="interfaceinfo">overridden in <code><a href="zim.gui.applications.DesktopEntryFile.html">zim.gui.applications.DesktopEntryFile</a></code>, <code><a href="zim.gui.customtools.CustomTool.html">zim.gui.customtools.CustomTool</a></code></div>
     
-    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">cmd</td><td>the command for the external application, either a string for the command, or a tuple or list with the command and arguments</td></tr><tr><td></td><td class="fieldArg">tryexeccmd</td><td>command to check in <code><a href="#tryexec">tryexec()</a></code> as string. If <code>None</code> will default to <code>cmd</code> or the first item of <code>cmd</code>.</td></tr></table></div>
+    <div>Constructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cmd</span></td><td class="fieldArgDesc">the command for the external application, either a string for the command, or a tuple or list with the command and arguments</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tryexeccmd</span></td><td class="fieldArgDesc">command to check in <code><a href="#tryexec">tryexec()</a></code> as string. If <tt class="rst-docutils literal">None</tt> will default to <tt class="rst-docutils literal">cmd</tt> or the first item of <tt class="rst-docutils literal">cmd</tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.applications.DesktopEntryDict.isvalid">
-    
-  </a>
-  <a name="isvalid">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">isvalid</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L845">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.customtools.CustomToolDict.html">zim.gui.customtools.CustomToolDict</a></code></div>
-    
-    <div><p>Check if all the fields that are required according to the specification are set. Assumes we only use desktop files to describe applications (and not links or dirs, which are also covered by the spec).</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> if all required fields are set</td></tr></table></div>
-  </div>
-</div><div class="baseproperty">
-  
-  <a name="zim.gui.applications.DesktopEntryDict.nodisplay">
-    
-  </a>
-  <a name="nodisplay">
-    
-  </a>
-  <div class="functionHeader">
-    @property<br />
-    <span class="py-defname">nodisplay</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L872">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.applications.DesktopEntryDict.get_pixbuf">
     
@@ -372,7 +251,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">get_pixbuf</span>(self, size):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L884">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L879">
       
       (source)
     </a>
@@ -380,9 +259,32 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="zim.gui.customtools.CustomToolDict.html">zim.gui.customtools.CustomToolDict</a></code></div>
     
-    <div><p>Get the application icon as a <code>GdkPixbuf.Pixbuf</code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">size</td><td>the icon size as gtk constant</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a pixbuf object or <code>None</code></td></tr></table></div>
+    <div>Get the application icon as a <tt class="rst-docutils literal">GdkPixbuf.Pixbuf</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">size</span></td><td class="fieldArgDesc">the icon size as gtk constant</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a pixbuf object or <tt class="rst-docutils literal">None</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.gui.applications.DesktopEntryDict.isvalid">
+    
+  </a>
+  <a name="isvalid">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">isvalid</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L840">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.customtools.CustomToolDict.html">zim.gui.customtools.CustomToolDict</a></code></div>
+    
+    <div>Check if all the fields that are required according to the specification are set. Assumes we only use desktop files to describe applications (and not links or dirs, which are also covered by the spec).<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> if all required fields are set</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.gui.applications.DesktopEntryDict.parse_exec">
     
@@ -392,8 +294,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">parse_exec</span>(self, args=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L912">
+    <span class="py-keyword">def</span> <span class="py-defname">parse_exec</span>(self, args=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L906">
       
       (source)
     </a>
@@ -401,9 +303,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="zim.gui.customtools.CustomToolDict.html">zim.gui.customtools.CustomToolDict</a></code></div>
     
-    <div><p>Parse the 'Exec' string and interpolate the arguments according to the keys of the desktop spec.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">args</td><td>list of either URLs or <code><a href="zim.fs.File.html">File</a></code> objects</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">the full command to execute as a tuple</td></tr></table></div>
+    <div>Parse the 'Exec' string and interpolate the arguments according to the keys of the desktop spec.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">args</span></td><td class="fieldArgDesc">list of either URLs or <code><a href="zim.fs.File.html">File</a></code> objects</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the full command to execute as a tuple</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.gui.applications.DesktopEntryDict.update">
     
@@ -414,7 +317,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">update</span>(self, E=(), **F):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L984">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L978">
       
       (source)
     </a>
@@ -422,16 +325,182 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="zim.gui.customtools.CustomToolDict.html">zim.gui.customtools.CustomToolDict</a></code></div>
     
-    <div><p>Same as <code>dict.update()</code></p></div>
+    <div>Same as <tt class="rst-docutils literal">dict.update()</tt></div>
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="zim.gui.applications.DesktopEntryDict.cmd">
+    
+  </a>
+  <a name="cmd">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property">property</a><br />
+    <span class="py-defname">cmd</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L875">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.applications.Application.html#cmd">zim.applications.Application.cmd</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="zim.gui.applications.DesktopEntryDict.comment">
+    
+  </a>
+  <a name="comment">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property">property</a><br />
+    <span class="py-defname">comment</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L862">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="zim.gui.applications.DesktopEntryDict.key">
+    
+  </a>
+  <a name="key">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property">property</a><br />
+    <span class="py-defname">key</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L836">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.applications.DesktopEntryFile.html">zim.gui.applications.DesktopEntryFile</a></code>, <code><a href="zim.gui.customtools.CustomTool.html">zim.gui.customtools.CustomTool</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="zim.gui.applications.DesktopEntryDict.name">
+    
+  </a>
+  <a name="name">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property">property</a><br />
+    <span class="py-defname">name</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L857">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.applications.Application.html#name">zim.applications.Application.name</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="zim.gui.applications.DesktopEntryDict.nodisplay">
+    
+  </a>
+  <a name="nodisplay">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property">property</a><br />
+    <span class="py-defname">nodisplay</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L867">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="zim.gui.applications.DesktopEntryDict.tryexeccmd">
+    
+  </a>
+  <a name="tryexeccmd">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property">property</a><br />
+    <span class="py-defname">tryexeccmd</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L871">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.applications.Application.html#tryexeccmd">zim.applications.Application.tryexeccmd</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable private">
+  
+  
+  <a name="zim.gui.applications.DesktopEntryDict._definitions">
+    
+  </a>
+  <a name="_definitions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_definitions</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/applications.py#L816">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.customtools.CustomToolDict.html">zim.gui.customtools.CustomToolDict</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.gui.pageview.TextFinder : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.gui.pageview.TextFinder</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.pageview.html">pageview</a></code>.<code><a href="zim.gui.pageview.TextFinder.html">TextFinder</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.gui.html">gui</a></code><wbr></wbr>.<code><a href="zim.gui.pageview.html">pageview</a></code><wbr></wbr>.<code><a href="zim.gui.pageview.TextFinder.html">TextFinder</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,36 +65,84 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TextFinder</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3687">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TextFinder</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3710" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.gui.pageview.TextFinder">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>This class handles finding text in the <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code></p><p>Typically you should get an instance of this class from the <code><a href="zim.gui.pageview.TextBuffer.html#finder">TextBuffer.finder</a></code> attribute.</p></div>
+        <div><p>This class handles finding text in the <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code></p>
+<p>Typically you should get an instance of this class from the <code><a href="zim.gui.pageview.TextBuffer.html#finder">TextBuffer.finder</a></code> attribute.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id352">
+        <table class="children sortable" id="id354">
+  
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>constructor</span></td>
+    <td>constructor</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#find">find</a></code></td>
+    <td>Find and select the next occurrence of a given string</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#find_next">find_next</a></code></td>
+    <td>Skip to the next match and select it</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#find_previous">find_previous</a></code></td>
+    <td>Go back to the previous match and select it</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_state">get_state</a></code></td>
+    <td>Get the query and any options. Used to copy the current state of find, can be restored later using <code><a href="#set_state">set_state()</a></code>.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#replace">replace</a></code></td>
+    <td>Replace current match</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#replace_all">replace_all</a></code></td>
+    <td>Replace all matched</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#select_match">select_match</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_highlight">set_highlight</a></code></td>
+    <td>Toggle highlighting of matches in the <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_match">set_match</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_state">set_state</a></code></td>
+    <td>Set the query and any options. Can be used to restore the state of a find action without triggering a find immediatly.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#unset_match">unset_match</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
     <td><code><a href="#buffer">buffer</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#regex">regex</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#string">string</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
@@ -85,75 +164,30 @@
     <td>Instance Variable</td>
     <td><code><a href="#match_tag">match_tag</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#get_state">get_state</a></code></td>
-    <td><span>Get the query and any options. Used to copy the current state of find, can be restored later using <code><a href="#set_state">set_state()</a></code>.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#set_state">set_state</a></code></td>
-    <td><span>Set the query and any options. Can be used to restore the state of a find action without triggering a find immediatly.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#find">find</a></code></td>
-    <td><span>Find and select the next occurrence of a given string</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#find_next">find_next</a></code></td>
-    <td><span>Skip to the next match and select it</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#find_previous">find_previous</a></code></td>
-    <td><span>Go back to the previous match and select it</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#set_match">set_match</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#unset_match">unset_match</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#select_match">select_match</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#set_highlight">set_highlight</a></code></td>
-    <td><span>Toggle highlighting of matches in the <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code></span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#replace">replace</a></code></td>
-    <td><span>Replace current match</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#replace_all">replace_all</a></code></td>
-    <td><span>Replace all matched</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_signals">_signals</a></code></td>
+    <td><code><a href="#regex">regex</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#string">string</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_parse_query">_parse_query</a></code></td>
+    <td><code><a href="#_check_range">_check_range</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
     <td><code><a href="#_find_next">_find_next</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_parse_query">_parse_query</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
@@ -165,10 +199,10 @@
     <td>Method</td>
     <td><code><a href="#_update_highlight">_update_highlight</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
+  </tr><tr class="instancevariable private">
     
-    <td>Method</td>
-    <td><code><a href="#_check_range">_check_range</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="#_signals">_signals</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -181,6 +215,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.gui.pageview.TextFinder.__init__">
     
   </a>
@@ -190,7 +225,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, textbuffer):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3694">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3717">
       
       (source)
     </a>
@@ -198,219 +233,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">textbuffer</td><td>a <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code> object</td></tr></table></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.TextFinder.buffer">
-    
-  </a>
-  <a name="buffer">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">buffer</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3699">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.pageview.TextFinder._signals">
-    
-  </a>
-  <a name="_signals">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_signals</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3700">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a></code>)
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.TextFinder.regex">
-    
-  </a>
-  <a name="regex">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">regex</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3701">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.TextFinder.string">
-    
-  </a>
-  <a name="string">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">string</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3702">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.TextFinder.flags">
-    
-  </a>
-  <a name="flags">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">flags</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3703">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.TextFinder.highlight">
-    
-  </a>
-  <a name="highlight">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">highlight</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3704">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.TextFinder.highlight_tag">
-    
-  </a>
-  <a name="highlight_tag">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">highlight_tag</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3706">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.TextFinder.match_tag">
-    
-  </a>
-  <a name="match_tag">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">match_tag</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3708">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>constructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">textbuffer</span></td><td class="fieldArgDesc">a <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code> object</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.pageview.TextFinder.get_state">
-    
-  </a>
-  <a name="get_state">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_state</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3711">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Get the query and any options. Used to copy the current state of find, can be restored later using <code><a href="#set_state">set_state()</a></code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a 3-tuple of the search string, the option flags, and the highlight state</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.pageview.TextFinder.set_state">
-    
-  </a>
-  <a name="set_state">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">set_state</span>(self, string, flags, highlight):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3720">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Set the query and any options. Can be used to restore the state of a find action without triggering a find immediatly.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">string</td><td>the text (or regex) to find</td></tr><tr><td></td><td class="fieldArg">flags</td><td>a combination of <code>FIND_CASE_SENSITIVE</code>, <code>FIND_WHOLE_WORD</code> &amp; <code>FIND_REGEX</code></td></tr><tr><td></td><td class="fieldArg">highlight</td><td>highlight state <code>True</code> or <code>False</code></td></tr></table></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.pageview.TextFinder.find">
     
@@ -421,7 +247,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">find</span>(self, string, flags=0):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3733">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3756">
       
       (source)
     </a>
@@ -429,30 +255,16 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Find and select the next occurrence of a given string</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">string</td><td>the text (or regex) to find</td></tr><tr><td></td><td class="fieldArg">flags</td><td>options, a combination of:<ul><li><code>FIND_CASE_SENSITIVE</code>: check case of matches</li><li><code>FIND_WHOLE_WORD</code>: only match whole words</li><li><code>FIND_REGEX</code>: input is a regular expression</li></ul></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> if a match was found</td></tr></table></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.gui.pageview.TextFinder._parse_query">
-    
-  </a>
-  <a name="_parse_query">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_parse_query</span>(self, string, flags):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3752">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Find and select the next occurrence of a given string<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string</span></td><td class="fieldArgDesc">the text (or regex) to find</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">flags</span></td><td class="fieldArgDesc"><p>options, a combination of:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">FIND_CASE_SENSITIVE</tt>: check case of matches</li>
+<li><tt class="rst-docutils literal">FIND_WHOLE_WORD</tt>: only match whole words</li>
+<li><tt class="rst-docutils literal">FIND_REGEX</tt>: input is a regular expression</li>
+</ul>
+</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> if a match was found</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.gui.pageview.TextFinder.find_next">
     
@@ -463,7 +275,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">find_next</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3768">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3791">
       
       (source)
     </a>
@@ -471,30 +283,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Skip to the next match and select it</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> if a match was found</td></tr></table></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.gui.pageview.TextFinder._find_next">
-    
-  </a>
-  <a name="_find_next">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_find_next</span>(self, iter):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3777">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Skip to the next match and select it<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> if a match was found</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.gui.pageview.TextFinder.find_previous">
     
@@ -505,7 +297,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">find_previous</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3800">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3823">
       
       (source)
     </a>
@@ -513,20 +305,21 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Go back to the previous match and select it</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> if a match was found</td></tr></table></div>
+    <div>Go back to the previous match and select it<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> if a match was found</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.pageview.TextFinder.set_match">
+  
+  <a name="zim.gui.pageview.TextFinder.get_state">
     
   </a>
-  <a name="set_match">
+  <a name="get_state">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">set_match</span>(self, start, end):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3825">
+    <span class="py-keyword">def</span> <span class="py-defname">get_state</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3734">
       
       (source)
     </a>
@@ -534,135 +327,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Get the query and any options. Used to copy the current state of find, can be restored later using <code><a href="#set_state">set_state()</a></code>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a 3-tuple of the search string, the option flags, and the highlight state</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.pageview.TextFinder.unset_match">
-    
-  </a>
-  <a name="unset_match">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">unset_match</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3835">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.gui.pageview.TextFinder._remove_tag">
-    
-  </a>
-  <a name="_remove_tag">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_remove_tag</span>(self, *a):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3839">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.pageview.TextFinder.select_match">
-    
-  </a>
-  <a name="select_match">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">select_match</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3850">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.pageview.TextFinder.set_highlight">
-    
-  </a>
-  <a name="set_highlight">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">set_highlight</span>(self, highlight):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3856">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Toggle highlighting of matches in the <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code></p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">highlight</td><td><code>True</code> to enable highlighting, <code>False</code> to disable</td></tr></table></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.gui.pageview.TextFinder._update_highlight">
-    
-  </a>
-  <a name="_update_highlight">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_update_highlight</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3867">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.gui.pageview.TextFinder._check_range">
-    
-  </a>
-  <a name="_check_range">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_check_range</span>(self, firstline, lastline, step):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3879">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.pageview.TextFinder.replace">
     
@@ -673,7 +341,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">replace</span>(self, string):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3905">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3928">
       
       (source)
     </a>
@@ -681,9 +349,12 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Replace current match</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">string</td><td>the replacement string<p>In case of a regex find and replace the string will be expanded with terms from the regex.</p></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> is successful</td></tr></table></div>
+    <div>Replace current match<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string</span></td><td class="fieldArgDesc"><p>the replacement string</p>
+<p>In case of a regex find and replace the string will be expanded with terms from the regex.</p>
+</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> is successful</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.gui.pageview.TextFinder.replace_all">
     
@@ -694,7 +365,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">replace_all</span>(self, string):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3943">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3966">
       
       (source)
     </a>
@@ -702,16 +373,427 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Replace all matched</p><p>Like <code><a href="#replace">replace()</a></code> but replaces all matches in the buffer</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">string</td><td>the replacement string</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> is successful</td></tr></table></div>
+    <div><p>Replace all matched</p>
+<p>Like <code><a href="#replace">replace()</a></code> but replaces all matches in the buffer</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string</span></td><td class="fieldArgDesc">the replacement string</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> is successful</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.pageview.TextFinder.select_match">
+    
+  </a>
+  <a name="select_match">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">select_match</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3873">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.pageview.TextFinder.set_highlight">
+    
+  </a>
+  <a name="set_highlight">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_highlight</span>(self, highlight):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3879">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Toggle highlighting of matches in the <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">highlight</span></td><td class="fieldArgDesc"><tt class="rst-docutils literal">True</tt> to enable highlighting, <tt class="rst-docutils literal">False</tt> to disable</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.pageview.TextFinder.set_match">
+    
+  </a>
+  <a name="set_match">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_match</span>(self, start, end):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3848">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.pageview.TextFinder.set_state">
+    
+  </a>
+  <a name="set_state">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_state</span>(self, string, flags, highlight):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3743">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Set the query and any options. Can be used to restore the state of a find action without triggering a find immediatly.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string</span></td><td class="fieldArgDesc">the text (or regex) to find</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">flags</span></td><td class="fieldArgDesc">a combination of <tt class="rst-docutils literal">FIND_CASE_SENSITIVE</tt>, <tt class="rst-docutils literal">FIND_WHOLE_WORD</tt> &amp; <tt class="rst-docutils literal">FIND_REGEX</tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">highlight</span></td><td class="fieldArgDesc">highlight state <tt class="rst-docutils literal">True</tt> or <tt class="rst-docutils literal">False</tt></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.pageview.TextFinder.unset_match">
+    
+  </a>
+  <a name="unset_match">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">unset_match</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3858">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.TextFinder.buffer">
+    
+  </a>
+  <a name="buffer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">buffer</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3722">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.TextFinder.flags">
+    
+  </a>
+  <a name="flags">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">flags</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3726">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.TextFinder.highlight">
+    
+  </a>
+  <a name="highlight">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">highlight</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3727">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.TextFinder.highlight_tag">
+    
+  </a>
+  <a name="highlight_tag">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">highlight_tag</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3729">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.TextFinder.match_tag">
+    
+  </a>
+  <a name="match_tag">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">match_tag</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3731">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.TextFinder.regex">
+    
+  </a>
+  <a name="regex">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">regex</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3724">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.TextFinder.string">
+    
+  </a>
+  <a name="string">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">string</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3725">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.gui.pageview.TextFinder._check_range">
+    
+  </a>
+  <a name="_check_range">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_check_range</span>(self, firstline, lastline, step):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3902">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.gui.pageview.TextFinder._find_next">
+    
+  </a>
+  <a name="_find_next">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_find_next</span>(self, iter):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3800">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.gui.pageview.TextFinder._parse_query">
+    
+  </a>
+  <a name="_parse_query">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_query</span>(self, string, flags):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3775">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.gui.pageview.TextFinder._remove_tag">
+    
+  </a>
+  <a name="_remove_tag">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_remove_tag</span>(self, *a):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3862">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.gui.pageview.TextFinder._update_highlight">
+    
+  </a>
+  <a name="_update_highlight">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_highlight</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3890">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.pageview.TextFinder._signals">
+    
+  </a>
+  <a name="_signals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_signals</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L3723">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

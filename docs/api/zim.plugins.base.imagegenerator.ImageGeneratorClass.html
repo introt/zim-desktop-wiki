@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.plugins.base.imagegenerator.ImageGeneratorClass : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.plugins.base.imagegenerator.ImageGeneratorClass</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code>.<code><a href="zim.plugins.base.html">base</a></code>.<code><a href="zim.plugins.base.imagegenerator.html">imagegenerator</a></code>.<code><a href="zim.plugins.base.imagegenerator.ImageGeneratorClass.html">ImageGeneratorClass</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.plugins.html">plugins</a></code><wbr></wbr>.<code><a href="zim.plugins.base.html">base</a></code><wbr></wbr>.<code><a href="zim.plugins.base.imagegenerator.html">imagegenerator</a></code><wbr></wbr>.<code><a href="zim.plugins.base.imagegenerator.ImageGeneratorClass.html">ImageGeneratorClass</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,27 +65,51 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ImageGeneratorClass</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L188">(source)</a></code></p><p>Known subclasses: <code><a href="zim.plugins.diagrameditor.DiagramGenerator.html">zim.plugins.diagrameditor.DiagramGenerator</a></code>, <code><a href="zim.plugins.ditaaeditor.DitaaGenerator.html">zim.plugins.ditaaeditor.DitaaGenerator</a></code>, <code><a href="zim.plugins.equationeditor.EquationGenerator.html">zim.plugins.equationeditor.EquationGenerator</a></code>, <code><a href="zim.plugins.gnu_r_ploteditor.GNURPlotGenerator.html">zim.plugins.gnu_r_ploteditor.GNURPlotGenerator</a></code>, <code><a href="zim.plugins.gnuplot_ploteditor.GnuplotGenerator.html">zim.plugins.gnuplot_ploteditor.GnuplotGenerator</a></code>, <code><a href="zim.plugins.scoreeditor.ScoreGenerator.html">zim.plugins.scoreeditor.ScoreGenerator</a></code>, <code><a href="zim.plugins.sequencediagrameditor.SequenceDiagramGenerator.html">zim.plugins.sequencediagrameditor.SequenceDiagramGenerator</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ImageGeneratorClass</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L198" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="zim.plugins.diagrameditor.DiagramGenerator.html">zim.plugins.diagrameditor.DiagramGenerator</a></code>, <code><a href="zim.plugins.ditaaeditor.DitaaGenerator.html">zim.plugins.ditaaeditor.DitaaGenerator</a></code>, <code><a href="zim.plugins.equationeditor.EquationGenerator.html">zim.plugins.equationeditor.EquationGenerator</a></code>, <code><a href="zim.plugins.gnu_r_ploteditor.GNURPlotGenerator.html">zim.plugins.gnu_r_ploteditor.GNURPlotGenerator</a></code>, <code><a href="zim.plugins.gnuplot_ploteditor.GnuplotGenerator.html">zim.plugins.gnuplot_ploteditor.GnuplotGenerator</a></code>, <code><a href="zim.plugins.scoreeditor.ScoreGenerator.html">zim.plugins.scoreeditor.ScoreGenerator</a></code>, <code><a href="zim.plugins.sequencediagrameditor.SequenceDiagramGenerator.html">zim.plugins.sequencediagrameditor.SequenceDiagramGenerator</a></code></p>
         <p><a href="classIndex.html#zim.plugins.base.imagegenerator.ImageGeneratorClass">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Base class for image generators. A plugin defining an <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.html">ImageGeneratorObjectType</a></code> should also define a sub-class of this class to do the actual work.</p><p>The generator does the actual work to generate an image from text. It does this in a temporary folder and must not try to directly modify the page or store anything in the attachements folder. The reason is that the user can still press "cancel" after the generator has run. The model takes care of storing the image and the text in the right place.</p><p>Since the content of the image can depent on the notebook location, a generator object is specific for a notebook page.</p></div>
+        <div><p>Base class for image generators. A plugin defining an <code><a href="zim.plugins.base.imagegenerator.ImageGeneratorObjectType.html">ImageGeneratorObjectType</a></code> should also define a sub-class of this class to do the actual work.</p>
+<p>The generator does the actual work to generate an image from text. It does this in a temporary folder and must not try to directly modify the page or store anything in the attachements folder. The reason is that the user can still press "cancel" after the generator has run. The model takes care of storing the image and the text in the right place.</p>
+<p>Since the content of the image can depent on the notebook location, a generator object is specific for a notebook page.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id907">
+        <table class="children sortable" id="id894">
+  
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#plugin">plugin</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Method</td>
+    <td><code><a href="#check_user_input">check_user_input</a></code></td>
+    <td>Check user input before generating image</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#cleanup">cleanup</a></code></td>
+    <td>Cleanup any temporary files that were created by this generator. Including log files and image files.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#filter_source">filter_source</a></code></td>
+    <td>Filter contents of script file before displaying in textarea</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#generate_image">generate_image</a></code></td>
+    <td>Generate an image for a user input</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_default_text">get_default_text</a></code></td>
+    <td>Provides a template or starting point for the user to begin editing.</td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -65,31 +120,11 @@
     <td>Instance Variable</td>
     <td><code><a href="#page">page</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
+  </tr><tr class="instancevariable">
     
-    <td>Method</td>
-    <td><code><a href="#generate_image">generate_image</a></code></td>
-    <td><span>Generate an image for a user input</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#check_user_input">check_user_input</a></code></td>
-    <td><span>Check user input before generating image</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#get_default_text">get_default_text</a></code></td>
-    <td><span>Provides a template or starting point for the user to begin editing.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#filter_source">filter_source</a></code></td>
-    <td><span>Filter contents of script file before displaying in textarea</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#cleanup">cleanup</a></code></td>
-    <td><span>Cleanup any temporary files that were created by this generator. Including log files and image files.</span></td>
+    <td>Instance Variable</td>
+    <td><code><a href="#plugin">plugin</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
         
@@ -101,6 +136,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.plugins.base.imagegenerator.ImageGeneratorClass.__init__">
     
   </a>
@@ -110,7 +146,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, plugin, notebook, page):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L203">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L213">
       
       (source)
     </a>
@@ -120,91 +156,8 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.plugins.base.imagegenerator.ImageGeneratorClass.plugin">
-    
-  </a>
-  <a name="plugin">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">plugin</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L204">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.plugins.base.imagegenerator.ImageGeneratorClass.notebook">
-    
-  </a>
-  <a name="notebook">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">notebook</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L205">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.plugins.base.imagegenerator.ImageGeneratorClass.page">
-    
-  </a>
-  <a name="page">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">page</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L206">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
 </div><div class="basemethod">
   
-  <a name="zim.plugins.base.imagegenerator.ImageGeneratorClass.generate_image">
-    
-  </a>
-  <a name="generate_image">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">generate_image</span>(self, text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L208">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.plugins.diagrameditor.DiagramGenerator.html">zim.plugins.diagrameditor.DiagramGenerator</a></code>, <code><a href="zim.plugins.ditaaeditor.DitaaGenerator.html">zim.plugins.ditaaeditor.DitaaGenerator</a></code>, <code><a href="zim.plugins.equationeditor.EquationGenerator.html">zim.plugins.equationeditor.EquationGenerator</a></code>, <code><a href="zim.plugins.gnu_r_ploteditor.GNURPlotGenerator.html">zim.plugins.gnu_r_ploteditor.GNURPlotGenerator</a></code>, <code><a href="zim.plugins.gnuplot_ploteditor.GnuplotGenerator.html">zim.plugins.gnuplot_ploteditor.GnuplotGenerator</a></code>, <code><a href="zim.plugins.scoreeditor.ScoreGenerator.html">zim.plugins.scoreeditor.ScoreGenerator</a></code>, <code><a href="zim.plugins.sequencediagrameditor.SequenceDiagramGenerator.html">zim.plugins.sequencediagrameditor.SequenceDiagramGenerator</a></code></div>
-    
-    <div><p>Generate an image for a user input</p><p>This is the method that does the actual work to generate an image out of input text. Typically it will write the text to a temporary file using a template and then call an external program (e.g. latex) to create an image out of that source file. The result should be an image file and optionally a log file.</p><p>When the external program failed preferably this method should still return a log file, so the user can check the details of why the creation failed.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">text</td><td>the source text as string - raw user input</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a 2-tuple of the image file and the log file as <code><a href="zim.fs.File.html">File</a></code> objects. If no image file was created the first element should be <code>None</code>, if no log file is created second element should be <code>None</code>.</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="zim.errors.Error.html">Error</a></td><td>this method is allowed to raise errors like <code><a href="zim.applications.ApplicationError.html">ApplicationError</a></code> when running a command failed.</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">must be implemented by subclasses</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.plugins.base.imagegenerator.ImageGeneratorClass.check_user_input">
     
@@ -215,7 +168,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">check_user_input</span>(self, text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L234">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L244">
       
       (source)
     </a>
@@ -223,51 +176,12 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="zim.plugins.scoreeditor.ScoreGenerator.html">zim.plugins.scoreeditor.ScoreGenerator</a></code></div>
     
-    <div><p>Check user input before generating image</p><p>This method is used to post-process user input before generating image and writing the user input into the script file.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">text</td><td>the source text as string - raw user input</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">string used for generate_image, also the string written to script file.</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">Not mandatory to be implemented by a subclass. It defaults to user input.</td></tr></table></div>
+    <div><p>Check user input before generating image</p>
+<p>This method is used to post-process user input before generating image and writing the user input into the script file.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">text</span></td><td class="fieldArgDesc">the source text as string - raw user input</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">string used for generate_image, also the string written to script file.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: implementation</td></tr><tr><td colspan="2">Not mandatory to be implemented by a subclass. It defaults to user input.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.plugins.base.imagegenerator.ImageGeneratorClass.get_default_text">
-    
-  </a>
-  <a name="get_default_text">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_default_text</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L250">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Provides a template or starting point for the user to begin editing.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">Not mandatory to be implemented by a subclass. It defaults to the empty string.</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.base.imagegenerator.ImageGeneratorClass.filter_source">
-    
-  </a>
-  <a name="filter_source">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">filter_source</span>(self, text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L258">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Filter contents of script file before displaying in textarea</p><p>This method is used to pre-process contents of script file before displaying in textarea.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">text</td><td>the contents of script file</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">string used to display for user input.</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">Not mandatory to be implemented by a subclass. It defaults to script file contents.</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.plugins.base.imagegenerator.ImageGeneratorClass.cleanup">
     
@@ -278,7 +192,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">cleanup</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L272">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L282">
       
       (source)
     </a>
@@ -286,16 +200,161 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="zim.plugins.diagrameditor.DiagramGenerator.html">zim.plugins.diagrameditor.DiagramGenerator</a></code>, <code><a href="zim.plugins.ditaaeditor.DitaaGenerator.html">zim.plugins.ditaaeditor.DitaaGenerator</a></code>, <code><a href="zim.plugins.equationeditor.EquationGenerator.html">zim.plugins.equationeditor.EquationGenerator</a></code>, <code><a href="zim.plugins.gnu_r_ploteditor.GNURPlotGenerator.html">zim.plugins.gnu_r_ploteditor.GNURPlotGenerator</a></code>, <code><a href="zim.plugins.gnuplot_ploteditor.GnuplotGenerator.html">zim.plugins.gnuplot_ploteditor.GnuplotGenerator</a></code>, <code><a href="zim.plugins.scoreeditor.ScoreGenerator.html">zim.plugins.scoreeditor.ScoreGenerator</a></code>, <code><a href="zim.plugins.sequencediagrameditor.SequenceDiagramGenerator.html">zim.plugins.sequencediagrameditor.SequenceDiagramGenerator</a></code></div>
     
-    <div><p>Cleanup any temporary files that were created by this generator. Including log files and image files.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">should be implemented by subclasses</td></tr></table></div>
+    <div>Cleanup any temporary files that were created by this generator. Including log files and image files.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: implementation</td></tr><tr><td colspan="2">should be implemented by subclasses</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.base.imagegenerator.ImageGeneratorClass.filter_source">
+    
+  </a>
+  <a name="filter_source">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">filter_source</span>(self, text):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L268">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Filter contents of script file before displaying in textarea</p>
+<p>This method is used to pre-process contents of script file before displaying in textarea.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">text</span></td><td class="fieldArgDesc">the contents of script file</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">string used to display for user input.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: implementation</td></tr><tr><td colspan="2">Not mandatory to be implemented by a subclass. It defaults to script file contents.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.base.imagegenerator.ImageGeneratorClass.generate_image">
+    
+  </a>
+  <a name="generate_image">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">generate_image</span>(self, text):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L218">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.plugins.diagrameditor.DiagramGenerator.html">zim.plugins.diagrameditor.DiagramGenerator</a></code>, <code><a href="zim.plugins.ditaaeditor.DitaaGenerator.html">zim.plugins.ditaaeditor.DitaaGenerator</a></code>, <code><a href="zim.plugins.equationeditor.EquationGenerator.html">zim.plugins.equationeditor.EquationGenerator</a></code>, <code><a href="zim.plugins.gnu_r_ploteditor.GNURPlotGenerator.html">zim.plugins.gnu_r_ploteditor.GNURPlotGenerator</a></code>, <code><a href="zim.plugins.gnuplot_ploteditor.GnuplotGenerator.html">zim.plugins.gnuplot_ploteditor.GnuplotGenerator</a></code>, <code><a href="zim.plugins.scoreeditor.ScoreGenerator.html">zim.plugins.scoreeditor.ScoreGenerator</a></code>, <code><a href="zim.plugins.sequencediagrameditor.SequenceDiagramGenerator.html">zim.plugins.sequencediagrameditor.SequenceDiagramGenerator</a></code></div>
+    
+    <div><p>Generate an image for a user input</p>
+<p>This is the method that does the actual work to generate an image out of input text. Typically it will write the text to a temporary file using a template and then call an external program (e.g. latex) to create an image out of that source file. The result should be an image file and optionally a log file.</p>
+<p>When the external program failed preferably this method should still return a log file, so the user can check the details of why the creation failed.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">text</span></td><td class="fieldArgDesc">the source text as string - raw user input</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a 2-tuple of the image file and the log file as <code><a href="zim.fs.File.html">File</a></code> objects. If no image file was created the first element should be <tt class="rst-docutils literal">None</tt>, if no log file is created second element should be <tt class="rst-docutils literal">None</tt>.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="zim.errors.Error.html">Error</a></code></td><td>this method is allowed to raise errors like <code><a href="zim.applications.ApplicationError.html">ApplicationError</a></code> when running a command failed.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: implementation</td></tr><tr><td colspan="2">must be implemented by subclasses</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.base.imagegenerator.ImageGeneratorClass.get_default_text">
+    
+  </a>
+  <a name="get_default_text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_default_text</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L260">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Provides a template or starting point for the user to begin editing.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: implementation</td></tr><tr><td colspan="2">Not mandatory to be implemented by a subclass. It defaults to the empty string.</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.base.imagegenerator.ImageGeneratorClass.notebook">
+    
+  </a>
+  <a name="notebook">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">notebook</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L215">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.base.imagegenerator.ImageGeneratorClass.page">
+    
+  </a>
+  <a name="page">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">page</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L216">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.base.imagegenerator.ImageGeneratorClass.plugin">
+    
+  </a>
+  <a name="plugin">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">plugin</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/base/imagegenerator.py#L214">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

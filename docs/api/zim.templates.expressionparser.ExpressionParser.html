@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.templates.expressionparser.ExpressionParser : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.templates.expressionparser.ExpressionParser</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.templates.html">templates</a></code>.<code><a href="zim.templates.expressionparser.html">expressionparser</a></code>.<code><a href="zim.templates.expressionparser.ExpressionParser.html">ExpressionParser</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.templates.html">templates</a></code><wbr></wbr>.<code><a href="zim.templates.expressionparser.html">expressionparser</a></code><wbr></wbr>.<code><a href="zim.templates.expressionparser.ExpressionParser.html">ExpressionParser</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,28 +65,19 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ExpressionParser</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L27">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ExpressionParser</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L27" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.templates.expressionparser.ExpressionParser">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Parser for expressions</p></div>
+        <div>Parser for expressions</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1525">
+        <table class="children sortable" id="id1546">
   
-  <tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#operators">operators</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#tokens">tokens</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
+  
+  <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
@@ -64,21 +86,16 @@
     
     <td>Method</td>
     <td><code><a href="#parse">parse</a></code></td>
-    <td><span>Parse an expression @param string: the expression text @returns: an <code><a href="zim.templates.expression.Expression.html">Expression</a></code> object</span></td>
-  </tr><tr class="classvariable private">
+    <td>Parse an expression @param string: the expression text @returns: an <code><a href="zim.templates.expression.Expression.html">Expression</a></code> object</td>
+  </tr><tr class="classvariable">
     
     <td>Class Variable</td>
-    <td><code><a href="#_param_re">_param_re</a></code></td>
+    <td><code><a href="#operators">operators</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="classvariable">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#_word_re">_word_re</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
-    <td><code><a href="#_tokenize">_tokenize</a></code></td>
+    <td>Class Variable</td>
+    <td><code><a href="#tokens">tokens</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
@@ -93,12 +110,17 @@
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_parse_not">_parse_not</a></code></td>
+    <td><code><a href="#_parse_comparison">_parse_comparison</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_parse_comparison">_parse_comparison</a></code></td>
+    <td><code><a href="#_parse_list">_parse_list</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_parse_not">_parse_not</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
@@ -108,7 +130,17 @@
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_parse_list">_parse_list</a></code></td>
+    <td><code><a href="#_tokenize">_tokenize</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_param_re">_param_re</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_word_re">_word_re</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -119,70 +151,8 @@
 
       <div id="childList">
 
-        <div class="baseclassvariable">
+        <div class="basemethod">
   
-  <a name="zim.templates.expressionparser.ExpressionParser.operators">
-    
-  </a>
-  <a name="operators">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">operators</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L40">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseclassvariable">
-  
-  <a name="zim.templates.expressionparser.ExpressionParser.tokens">
-    
-  </a>
-  <a name="tokens">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">tokens</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L52">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseclassvariable private">
-  
-  <a name="zim.templates.expressionparser.ExpressionParser._param_re">
-    
-  </a>
-  <a name="_param_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_param_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L56">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.templates.expressionparser.ExpressionParser.__init__">
     
@@ -193,7 +163,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L61">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L61">
       
       (source)
     </a>
@@ -203,28 +173,8 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.templates.expressionparser.ExpressionParser._word_re">
-    
-  </a>
-  <a name="_word_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_word_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L63">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.templates.expressionparser.ExpressionParser.parse">
     
@@ -235,7 +185,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parse</span>(self, string):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L72">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L72">
       
       (source)
     </a>
@@ -243,30 +193,56 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Parse an expression</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">string</td><td>the expression text</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">an <code><a href="zim.templates.expression.Expression.html">Expression</a></code> object</td></tr></table></div>
+    <div>Parse an expression<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string</span></td><td class="fieldArgDesc">the expression text</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">an <code><a href="zim.templates.expression.Expression.html">Expression</a></code> object</td></tr></table></div>
   </div>
-</div><div class="basemethod private">
+</div><div class="baseclassvariable">
   
-  <a name="zim.templates.expressionparser.ExpressionParser._tokenize">
+  
+  <a name="zim.templates.expressionparser.ExpressionParser.operators">
     
   </a>
-  <a name="_tokenize">
+  <a name="operators">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_tokenize</span>(self, string):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L83">
+    <span class="py-defname">operators</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L40">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="zim.templates.expressionparser.ExpressionParser.tokens">
+    
+  </a>
+  <a name="tokens">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">tokens</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L52">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basemethod private">
+  
   
   <a name="zim.templates.expressionparser.ExpressionParser._parse">
     
@@ -277,7 +253,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_parse</span>(self, tokens):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L97">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L97">
       
       (source)
     </a>
@@ -288,6 +264,7 @@
     <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod private">
+  
   
   <a name="zim.templates.expressionparser.ExpressionParser._parse_and">
     
@@ -298,7 +275,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_parse_and</span>(self, tokens):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L108">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L108">
       
       (source)
     </a>
@@ -310,26 +287,6 @@
   </div>
 </div><div class="basemethod private">
   
-  <a name="zim.templates.expressionparser.ExpressionParser._parse_not">
-    
-  </a>
-  <a name="_parse_not">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_parse_not</span>(self, tokens):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L118">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
   
   <a name="zim.templates.expressionparser.ExpressionParser._parse_comparison">
     
@@ -340,7 +297,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_parse_comparison</span>(self, tokens):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L129">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L129">
       
       (source)
     </a>
@@ -352,26 +309,6 @@
   </div>
 </div><div class="basemethod private">
   
-  <a name="zim.templates.expressionparser.ExpressionParser._parse_statement">
-    
-  </a>
-  <a name="_parse_statement">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_parse_statement</span>(self, tokens):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L140">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
   
   <a name="zim.templates.expressionparser.ExpressionParser._parse_list">
     
@@ -382,7 +319,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_parse_list</span>(self, tokens):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L166">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L166">
       
       (source)
     </a>
@@ -392,14 +329,131 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.templates.expressionparser.ExpressionParser._parse_not">
+    
+  </a>
+  <a name="_parse_not">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_not</span>(self, tokens):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L118">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.templates.expressionparser.ExpressionParser._parse_statement">
+    
+  </a>
+  <a name="_parse_statement">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_statement</span>(self, tokens):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L140">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.templates.expressionparser.ExpressionParser._tokenize">
+    
+  </a>
+  <a name="_tokenize">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_tokenize</span>(self, string):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L83">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  
+  <a name="zim.templates.expressionparser.ExpressionParser._param_re">
+    
+  </a>
+  <a name="_param_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_param_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L56">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.templates.expressionparser.ExpressionParser._word_re">
+    
+  </a>
+  <a name="_word_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_word_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/templates/expressionparser.py#L63">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

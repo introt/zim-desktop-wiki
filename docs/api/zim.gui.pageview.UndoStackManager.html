@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.gui.pageview.UndoStackManager : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.gui.pageview.UndoStackManager</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.pageview.html">pageview</a></code>.<code><a href="zim.gui.pageview.UndoStackManager.html">UndoStackManager</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.gui.html">gui</a></code><wbr></wbr>.<code><a href="zim.gui.pageview.html">pageview</a></code><wbr></wbr>.<code><a href="zim.gui.pageview.UndoStackManager.html">UndoStackManager</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,93 +65,50 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">UndoStackManager</span>: <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L4977">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">UndoStackManager</span>: <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5022" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.gui.pageview.UndoStackManager">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Undo stack implementation for <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code>. It records any changes to the buffer and allows undoing and redoing edits.</p><p>The stack undostack will be folded when you undo a few steps and then start editing again. This means that even the 'undo' action is recorded in the undo stakc and can always be undone itself; so no data is discarded.</p><p>Say you start with a certain buffer state "A", then make two edits ("B" and "C") and then undo the last one, so you get back in state "B":</p><pre class="literalblock">
+        <div><p>Undo stack implementation for <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code>. It records any changes to the buffer and allows undoing and redoing edits.</p>
+<p>The stack undostack will be folded when you undo a few steps and then start editing again. This means that even the 'undo' action is recorded in the undo stakc and can always be undone itself; so no data is discarded.</p>
+<p>Say you start with a certain buffer state "A", then make two edits ("B" and "C") and then undo the last one, so you get back in state "B":</p>
+<pre class="rst-literal-block">
   State A --&gt; State B --&gt; State C
                       &lt;--
                       undo
-</pre><p>when you now make a new edit ("D"), state "C" is not discarded, instead it is "folded" as follows:</p><pre class="literalblock">
+</pre>
+<p>when you now make a new edit ("D"), state "C" is not discarded, instead it is "folded" as follows:</p>
+<pre class="rst-literal-block">
   State A --&gt; State B --&gt; State C --&gt; State B --&gt; State D
-</pre><p>so you can still go back to state "C" using Undo.</p><h1>Undo actions</h1><p>Each action is recorded as a 4-tuple of:</p><ul><li><code>action_type</code>: one of <code>ACTION_INSERT</code>, <code>ACTION_DELETE</code>, <code>ACTION_APPLY_TAG</code>, <code>ACTION_REMOVE_TAG</code></li><li><code>start_iter</code>: a <code>Gtk.TextIter</code></li><li><code>end_iter</code>: a <code>Gtk.TextIter</code></li><li><code>data</code>: either a (raw) <code><a href="zim.formats.ParseTree.html">ParseTree</a></code> or a <code>Gtk.TextTag</code></li></ul><p>These actions are low level operations, so they are</p><p>Actions are collected as <code><a href="zim.gui.pageview.UndoActionGroup.html">UndoActionGroup</a></code>s. When the user selects Undo or Redo we actually undo or redo a whole UndoActionGroup as a single step. E.g. inserting a link will consist of inserting the text and than applying the TextTag with the link data. These are technically two separate modifications of the TextBuffer, however when selecting Undo both are undone at once because they are combined in a single group.</p><p>Typically when recording modifications the action groups are delimited by the begin-user-action and end-user-action signals of the <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code>. (This is why we use the <code><a href="zim.gui.pageview.TextBuffer.html#user_action">TextBuffer.user_action</a></code> attribute context manager in the TextBuffer code.)</p><p>Also we try to group single-character inserts and deletes into words. This makes the stack more compact and makes the undo action more meaningful.</p></div>
+</pre>
+<p>so you can still go back to state "C" using Undo.</p>
+<div class="rst-section">
+<h2 class="heading">Undo actions</h2>
+<p>Each action is recorded as a 4-tuple of:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">action_type</tt>: one of <tt class="rst-docutils literal">ACTION_INSERT</tt>, <tt class="rst-docutils literal">ACTION_DELETE</tt>, <tt class="rst-docutils literal">ACTION_APPLY_TAG</tt>, <tt class="rst-docutils literal">ACTION_REMOVE_TAG</tt></li>
+<li><tt class="rst-docutils literal">start_iter</tt>: a <tt class="rst-docutils literal">Gtk.TextIter</tt></li>
+<li><tt class="rst-docutils literal">end_iter</tt>: a <tt class="rst-docutils literal">Gtk.TextIter</tt></li>
+<li><tt class="rst-docutils literal">data</tt>: either a (raw) <code><a href="zim.formats.ParseTree.html">ParseTree</a></code> or a <tt class="rst-docutils literal">Gtk.TextTag</tt></li>
+</ul>
+<p>These actions are low level operations, so they are</p>
+<p>Actions are collected as <code><a href="zim.gui.pageview.UndoActionGroup.html">UndoActionGroup</a></code>s. When the user selects Undo or Redo we actually undo or redo a whole UndoActionGroup as a single step. E.g. inserting a link will consist of inserting the text and than applying the TextTag with the link data. These are technically two separate modifications of the TextBuffer, however when selecting Undo both are undone at once because they are combined in a single group.</p>
+<p>Typically when recording modifications the action groups are delimited by the begin-user-action and end-user-action signals of the <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code>. (This is why we use the <code><a href="zim.gui.pageview.TextBuffer.html#user_action">TextBuffer.user_action</a></code> attribute context manager in the TextBuffer code.)</p>
+<p>Also we try to group single-character inserts and deletes into words. This makes the stack more compact and makes the undo action more meaningful.</p>
+</div>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id355">
+        <table class="children sortable" id="id357">
   
-  <tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#MAX_UNDO">MAX_UNDO</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#ACTION_INSERT">ACTION_INSERT</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#ACTION_DELETE">ACTION_DELETE</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#ACTION_APPLY_TAG">ACTION_APPLY_TAG</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#ACTION_REMOVE_TAG">ACTION_REMOVE_TAG</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
+  
+  <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Constructor</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#buffer">buffer</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#stack">stack</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#group">group</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#interactive">interactive</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#insert_pending">insert_pending</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#undo_count">undo_count</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#block_count">block_count</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#recording_handlers">recording_handlers</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Constructor</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -129,12 +117,7 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#unblock">unblock</a></code></td>
-    <td><span>Start listening to events from the <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code> again</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#do_save_cursor">do_save_cursor</a></code></td>
+    <td><code><a href="#do_begin_insert_tree">do_begin_insert_tree</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
@@ -144,12 +127,12 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#do_end_user_action">do_end_user_action</a></code></td>
+    <td><code><a href="#do_change_tag">do_change_tag</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#do_begin_insert_tree">do_begin_insert_tree</a></code></td>
+    <td><code><a href="#do_delete_range">do_delete_range</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
@@ -159,7 +142,7 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#do_insert_text">do_insert_text</a></code></td>
+    <td><code><a href="#do_end_user_action">do_end_user_action</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
@@ -169,42 +152,112 @@
   </tr><tr class="method">
     
     <td>Method</td>
+    <td><code><a href="#do_insert_text">do_insert_text</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#do_save_cursor">do_save_cursor</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
     <td><code><a href="#flush_insert">flush_insert</a></code></td>
-    <td><span>Flush all pending actions and store them on the stack</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#do_delete_range">do_delete_range</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#do_change_tag">do_change_tag</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#undo">undo</a></code></td>
-    <td><span>Undo one user action</span></td>
+    <td>Flush all pending actions and store them on the stack</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#flush_redo_stack">flush_redo_stack</a></code></td>
-    <td><span>Fold the "redo" part of the stack, called before new actions are appended after some step was undone.</span></td>
+    <td>Fold the "redo" part of the stack, called before new actions are appended after some step was undone.</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#redo">redo</a></code></td>
-    <td><span>Redo one user action</span></td>
-  </tr><tr class="instancevariable private">
+    <td>Redo one user action</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#unblock">unblock</a></code></td>
+    <td>Start listening to events from the <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code> again</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#undo">undo</a></code></td>
+    <td>Undo one user action</td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#ACTION_APPLY_TAG">ACTION_APPLY_TAG</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#ACTION_DELETE">ACTION_DELETE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#ACTION_INSERT">ACTION_INSERT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#ACTION_REMOVE_TAG">ACTION_REMOVE_TAG</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#MAX_UNDO">MAX_UNDO</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_insert_tree_start">_insert_tree_start</a></code></td>
+    <td><code><a href="#block_count">block_count</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#buffer">buffer</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#group">group</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#insert_pending">insert_pending</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#interactive">interactive</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#recording_handlers">recording_handlers</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#stack">stack</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#undo_count">undo_count</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
     <td><code><a href="#_replay">_replay</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_insert_tree_start">_insert_tree_start</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -215,112 +268,8 @@
 
       <div id="childList">
 
-        <div class="baseclassvariable">
+        <div class="basemethod">
   
-  <a name="zim.gui.pageview.UndoStackManager.MAX_UNDO">
-    
-  </a>
-  <a name="MAX_UNDO">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">MAX_UNDO</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5038">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="baseclassvariable">
-  
-  <a name="zim.gui.pageview.UndoStackManager.ACTION_INSERT">
-    
-  </a>
-  <a name="ACTION_INSERT">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">ACTION_INSERT</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5041">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="baseclassvariable">
-  
-  <a name="zim.gui.pageview.UndoStackManager.ACTION_DELETE">
-    
-  </a>
-  <a name="ACTION_DELETE">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">ACTION_DELETE</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5042">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="baseclassvariable">
-  
-  <a name="zim.gui.pageview.UndoStackManager.ACTION_APPLY_TAG">
-    
-  </a>
-  <a name="ACTION_APPLY_TAG">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">ACTION_APPLY_TAG</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5043">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="baseclassvariable">
-  
-  <a name="zim.gui.pageview.UndoStackManager.ACTION_REMOVE_TAG">
-    
-  </a>
-  <a name="ACTION_REMOVE_TAG">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">ACTION_REMOVE_TAG</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5044">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.pageview.UndoStackManager.__init__">
     
@@ -331,7 +280,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, textbuffer):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5046">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5091">
       
       (source)
     </a>
@@ -339,198 +288,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">textbuffer</td><td>a <code>Gtk.TextBuffer</code></td></tr></table></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.UndoStackManager.buffer">
-    
-  </a>
-  <a name="buffer">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">buffer</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5051">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.UndoStackManager.stack">
-    
-  </a>
-  <a name="stack">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">stack</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5052">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code>)
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.UndoStackManager.group">
-    
-  </a>
-  <a name="group">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">group</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5053">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.UndoStackManager.interactive">
-    
-  </a>
-  <a name="interactive">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">interactive</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5054">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.UndoStackManager.insert_pending">
-    
-  </a>
-  <a name="insert_pending">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">insert_pending</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5055">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.UndoStackManager.undo_count">
-    
-  </a>
-  <a name="undo_count">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">undo_count</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5056">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.UndoStackManager.block_count">
-    
-  </a>
-  <a name="block_count">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">block_count</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5057">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.pageview.UndoStackManager._insert_tree_start">
-    
-  </a>
-  <a name="_insert_tree_start">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_insert_tree_start</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5058">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.pageview.UndoStackManager.recording_handlers">
-    
-  </a>
-  <a name="recording_handlers">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">recording_handlers</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5060">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code>)
+    <div>Constructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">textbuffer</span></td><td class="fieldArgDesc">a <tt class="rst-docutils literal">Gtk.TextBuffer</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.gui.pageview.UndoStackManager.block">
     
@@ -541,7 +302,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">block</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5097">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5142">
       
       (source)
     </a>
@@ -549,93 +310,12 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Stop listening to events from the <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code> until the next call to <code><a href="#unblock">unblock()</a></code>. Any change in between will not be undo-able (and mess up the undo stack) unless it is recorded explicitly.</p><p>The number of calls <code>block()</code> and <code>unblock()</code> is counted, so they can be called recursively.</p></div>
+    <div><p>Stop listening to events from the <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code> until the next call to <code><a href="#unblock">unblock()</a></code>. Any change in between will not be undo-able (and mess up the undo stack) unless it is recorded explicitly.</p>
+<p>The number of calls <tt class="rst-docutils literal">block()</tt> and <tt class="rst-docutils literal">unblock()</tt> is counted, so they can be called recursively.</p>
+</div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.pageview.UndoStackManager.unblock">
-    
-  </a>
-  <a name="unblock">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">unblock</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5111">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Start listening to events from the <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code> again</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.pageview.UndoStackManager.do_save_cursor">
-    
-  </a>
-  <a name="do_save_cursor">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">do_save_cursor</span>(self, buffer, iter):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5120">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.pageview.UndoStackManager.do_begin_user_action">
-    
-  </a>
-  <a name="do_begin_user_action">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">do_begin_user_action</span>(self, buffer):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5124">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.pageview.UndoStackManager.do_end_user_action">
-    
-  </a>
-  <a name="do_end_user_action">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">do_end_user_action</span>(self, buffer):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5137">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.pageview.UndoStackManager.do_begin_insert_tree">
     
@@ -646,7 +326,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">do_begin_insert_tree</span>(self, buffer, interactive):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5147">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5192">
       
       (source)
     </a>
@@ -658,16 +338,17 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.pageview.UndoStackManager.do_end_insert_tree">
+  
+  <a name="zim.gui.pageview.UndoStackManager.do_begin_user_action">
     
   </a>
-  <a name="do_end_insert_tree">
+  <a name="do_begin_user_action">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">do_end_insert_tree</span>(self, buffer):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5158">
+    <span class="py-keyword">def</span> <span class="py-defname">do_begin_user_action</span>(self, buffer):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5169">
       
       (source)
     </a>
@@ -679,89 +360,6 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.pageview.UndoStackManager.do_insert_text">
-    
-  </a>
-  <a name="do_insert_text">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">do_insert_text</span>(self, buffer, iter, text, length):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5168">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.pageview.UndoStackManager.do_insert_pixbuf">
-    
-  </a>
-  <a name="do_insert_pixbuf">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">do_insert_pixbuf</span>(self, buffer, iter, pixbuf):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5197">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.pageview.UndoStackManager.flush_insert">
-    
-  </a>
-  <a name="flush_insert">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">flush_insert</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5211">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Flush all pending actions and store them on the stack</p><p>The reason for this method is that because of the possibility of merging actions we do not immediatly request the parse tree for each single character insert. Instead we first group inserts based on cursor positions and then request the parse tree for the group at once. This method proceses all such delayed requests.</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.pageview.UndoStackManager.do_delete_range">
-    
-  </a>
-  <a name="do_delete_range">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">do_delete_range</span>(self, buffer, start, end):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5241">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.pageview.UndoStackManager.do_change_tag">
     
@@ -772,7 +370,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">do_change_tag</span>(self, buffer, tag, start, end, action):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5255">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5300">
       
       (source)
     </a>
@@ -784,16 +382,17 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.pageview.UndoStackManager.undo">
+  
+  <a name="zim.gui.pageview.UndoStackManager.do_delete_range">
     
   </a>
-  <a name="undo">
+  <a name="do_delete_range">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">undo</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5277">
+    <span class="py-keyword">def</span> <span class="py-defname">do_delete_range</span>(self, buffer, start, end):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5286">
       
       (source)
     </a>
@@ -801,9 +400,144 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Undo one user action</p></div>
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.do_end_insert_tree">
+    
+  </a>
+  <a name="do_end_insert_tree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">do_end_insert_tree</span>(self, buffer):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5203">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.do_end_user_action">
+    
+  </a>
+  <a name="do_end_user_action">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">do_end_user_action</span>(self, buffer):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5182">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.do_insert_pixbuf">
+    
+  </a>
+  <a name="do_insert_pixbuf">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">do_insert_pixbuf</span>(self, buffer, iter, pixbuf):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5242">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.do_insert_text">
+    
+  </a>
+  <a name="do_insert_text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">do_insert_text</span>(self, buffer, iter, text, length):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5213">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.do_save_cursor">
+    
+  </a>
+  <a name="do_save_cursor">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">do_save_cursor</span>(self, buffer, iter):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5165">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.flush_insert">
+    
+  </a>
+  <a name="flush_insert">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">flush_insert</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5256">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Flush all pending actions and store them on the stack</p>
+<p>The reason for this method is that because of the possibility of merging actions we do not immediatly request the parse tree for each single character insert. Instead we first group inserts based on cursor positions and then request the parse tree for the group at once. This method proceses all such delayed requests.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.gui.pageview.UndoStackManager.flush_redo_stack">
     
@@ -814,7 +548,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">flush_redo_stack</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5297">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5342">
       
       (source)
     </a>
@@ -822,9 +556,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Fold the "redo" part of the stack, called before new actions are appended after some step was undone.</p></div>
+    <div>Fold the "redo" part of the stack, called before new actions are appended after some step was undone.</div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.gui.pageview.UndoStackManager.redo">
     
@@ -835,7 +570,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">redo</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5308">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5353">
       
       (source)
     </a>
@@ -843,9 +578,353 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Redo one user action</p></div>
+    <div>Redo one user action</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.unblock">
+    
+  </a>
+  <a name="unblock">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">unblock</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5156">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Start listening to events from the <code><a href="zim.gui.pageview.TextBuffer.html">TextBuffer</a></code> again</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.undo">
+    
+  </a>
+  <a name="undo">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">undo</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5322">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Undo one user action</div>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.ACTION_APPLY_TAG">
+    
+  </a>
+  <a name="ACTION_APPLY_TAG">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ACTION_APPLY_TAG</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5088">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>2</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.ACTION_DELETE">
+    
+  </a>
+  <a name="ACTION_DELETE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ACTION_DELETE</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5087">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>-1</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.ACTION_INSERT">
+    
+  </a>
+  <a name="ACTION_INSERT">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ACTION_INSERT</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5086">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>1</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.ACTION_REMOVE_TAG">
+    
+  </a>
+  <a name="ACTION_REMOVE_TAG">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ACTION_REMOVE_TAG</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5089">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>-2</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.MAX_UNDO">
+    
+  </a>
+  <a name="MAX_UNDO">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">MAX_UNDO</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5083">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>100</code></pre></td></tr></table>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.block_count">
+    
+  </a>
+  <a name="block_count">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">block_count</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5102">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.buffer">
+    
+  </a>
+  <a name="buffer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">buffer</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5096">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.group">
+    
+  </a>
+  <a name="group">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">group</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5098">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.insert_pending">
+    
+  </a>
+  <a name="insert_pending">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">insert_pending</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5100">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.interactive">
+    
+  </a>
+  <a name="interactive">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">interactive</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5099">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.recording_handlers">
+    
+  </a>
+  <a name="recording_handlers">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">recording_handlers</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5105">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.stack">
+    
+  </a>
+  <a name="stack">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">stack</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5097">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager.undo_count">
+    
+  </a>
+  <a name="undo_count">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">undo_count</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5101">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basemethod private">
+  
   
   <a name="zim.gui.pageview.UndoStackManager._replay">
     
@@ -856,7 +935,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_replay</span>(self, actiongroup):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5319">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5364">
       
       (source)
     </a>
@@ -866,14 +945,42 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.pageview.UndoStackManager._insert_tree_start">
+    
+  </a>
+  <a name="_insert_tree_start">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_insert_tree_start</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/pageview/__init__.py#L5103">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

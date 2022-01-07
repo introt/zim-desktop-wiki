@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.main.ZimApplication : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.main.ZimApplication</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.main.html">main</a></code>.<code><a href="zim.main.ZimApplication.html">ZimApplication</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.main.html">main</a></code><wbr></wbr>.<code><a href="zim.main.ZimApplication.html">ZimApplication</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,47 +65,40 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ZimApplication</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L607">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ZimApplication</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L645" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.main.ZimApplication">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>This object is repsonsible for managing the life cycle of the application process.</p><p>To do so, it decides whether to dispatch a command to an already running zim process or to handle it in the current process. For gtk based commands it keeps track of the toplevel objects for re-use and to be able to end the process when no toplevel objects are left.</p></div>
+        <div><p>This object is repsonsible for managing the life cycle of the application process.</p>
+<p>To do so, it decides whether to dispatch a command to an already running zim process or to handle it in the current process. For gtk based commands it keeps track of the toplevel objects for re-use and to be able to end the process when no toplevel objects are left.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id602">
+        <table class="children sortable" id="id617">
+  
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="property">
-    
-    <td>Property</td>
-    <td><code><a href="#toplevels">toplevels</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="property">
-    
-    <td>Property</td>
-    <td><code><a href="#notebooks">notebooks</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#get_mainwindow">get_mainwindow</a></code></td>
-    <td><span>Returns an existing <code><a href="zim.gui.mainwindow.MainWindow.html">MainWindow</a></code> for <code>notebook</code> or <code>None</code></span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#present">present</a></code></td>
-    <td><span>Present notebook and page in a mainwindow, may not return for standalone processes.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#add_window">add_window</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_mainwindow">get_mainwindow</a></code></td>
+    <td>Returns an existing <code><a href="zim.gui.mainwindow.MainWindow.html">MainWindow</a></code> for <tt class="rst-docutils literal">notebook</tt> or <tt class="rst-docutils literal">None</tt></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#present">present</a></code></td>
+    <td>Present notebook and page in a mainwindow, may not return for standalone processes.</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -85,25 +109,30 @@
     <td>Method</td>
     <td><code><a href="#run">run</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="property">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#_running">_running</a></code></td>
+    <td>Property</td>
+    <td><code><a href="#notebooks">notebooks</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="property">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#_log_started">_log_started</a></code></td>
+    <td>Property</td>
+    <td><code><a href="#toplevels">toplevels</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="method private">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#_standalone">_standalone</a></code></td>
+    <td>Method</td>
+    <td><code><a href="#_daemonize">_daemonize</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="method private">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#_windows">_windows</a></code></td>
+    <td>Method</td>
+    <td><code><a href="#_handle_incoming">_handle_incoming</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_log_start">_log_start</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
@@ -123,11 +152,6 @@
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_log_start">_log_start</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
     <td><code><a href="#_setup_signal_handling">_setup_signal_handling</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
@@ -140,15 +164,25 @@
     <td>Method</td>
     <td><code><a href="#_try_dispatch">_try_dispatch</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
+  </tr><tr class="instancevariable private">
     
-    <td>Method</td>
-    <td><code><a href="#_handle_incoming">_handle_incoming</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="#_log_started">_log_started</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
+  </tr><tr class="instancevariable private">
     
-    <td>Method</td>
-    <td><code><a href="#_daemonize">_daemonize</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="#_running">_running</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_standalone">_standalone</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_windows">_windows</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -161,6 +195,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.main.ZimApplication.__init__">
     
   </a>
@@ -170,7 +205,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L618">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L656">
       
       (source)
     </a>
@@ -180,175 +215,8 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.main.ZimApplication._running">
-    
-  </a>
-  <a name="_running">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_running</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L619">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.main.ZimApplication._log_started">
-    
-  </a>
-  <a name="_log_started">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_log_started</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L620">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.main.ZimApplication._standalone">
-    
-  </a>
-  <a name="_standalone">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_standalone</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L621">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.main.ZimApplication._windows">
-    
-  </a>
-  <a name="_windows">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_windows</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L622">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseproperty">
-  
-  <a name="zim.main.ZimApplication.toplevels">
-    
-  </a>
-  <a name="toplevels">
-    
-  </a>
-  <div class="functionHeader">
-    @property<br />
-    <span class="py-defname">toplevels</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L624">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseproperty">
-  
-  <a name="zim.main.ZimApplication.notebooks">
-    
-  </a>
-  <a name="notebooks">
-    
-  </a>
-  <div class="functionHeader">
-    @property<br />
-    <span class="py-defname">notebooks</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L628">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
 </div><div class="basemethod">
   
-  <a name="zim.main.ZimApplication.get_mainwindow">
-    
-  </a>
-  <a name="get_mainwindow">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_mainwindow</span>(self, notebook, _class=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L635">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Returns an existing <code><a href="zim.gui.mainwindow.MainWindow.html">MainWindow</a></code> for <code>notebook</code> or <code>None</code></p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.main.ZimApplication.present">
-    
-  </a>
-  <a name="present">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">present</span>(self, notebook, page=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L645">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Present notebook and page in a mainwindow, may not return for standalone processes.</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.main.ZimApplication.add_window">
     
@@ -359,7 +227,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">add_window</span>(self, window):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L653">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L691">
       
       (source)
     </a>
@@ -370,6 +238,51 @@
     <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.main.ZimApplication.get_mainwindow">
+    
+  </a>
+  <a name="get_mainwindow">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_mainwindow</span>(self, notebook, _class=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L673">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns an existing <code><a href="zim.gui.mainwindow.MainWindow.html">MainWindow</a></code> for <tt class="rst-docutils literal">notebook</tt> or <tt class="rst-docutils literal">None</tt></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.main.ZimApplication.present">
+    
+  </a>
+  <a name="present">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">present</span>(self, notebook, page=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L683">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Present notebook and page in a mainwindow, may not return for standalone processes.</div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.main.ZimApplication.remove_window">
     
@@ -380,28 +293,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">remove_window</span>(self, window):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L661">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.main.ZimApplication._on_destroy_window">
-    
-  </a>
-  <a name="_on_destroy_window">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_on_destroy_window</span>(self, window):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L668">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L699">
       
       (source)
     </a>
@@ -413,6 +305,7 @@
   </div>
 </div><div class="basemethod">
   
+  
   <a name="zim.main.ZimApplication.run">
     
   </a>
@@ -422,7 +315,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">run</span>(self, *args, **kwargs):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L677">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L715">
       
       (source)
     </a>
@@ -430,156 +323,56 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Run a commandline command, either in this process, an existing process, or a new process.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">args</td><td>commandline arguments</td></tr><tr><td></td><td class="fieldArg">kwargs</td><td>optional arguments for <code><a href="zim.main.html#build_command">build_command</a></code></td></tr></table></div>
+    <div>Run a commandline command, either in this process, an existing process, or a new process.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">*args</span></td><td class="fieldArgDesc">commandline arguments</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**kwargs</span></td><td class="fieldArgDesc">optional arguments for <code><a href="zim.main.html#build_command">build_command</a></code></td></tr></table></div>
   </div>
-</div><div class="basemethod private">
+</div><div class="baseproperty">
   
-  <a name="zim.main.ZimApplication._run_cmd">
+  
+  <a name="zim.main.ZimApplication.notebooks">
     
   </a>
-  <a name="_run_cmd">
+  <a name="notebooks">
     
   </a>
   <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_run_cmd</span>(self, cmd, args):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L689">
+    @<a href="https://docs.python.org/3/library/functions.html#property">property</a><br />
+    <span class="py-defname">notebooks</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L666">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
-</div><div class="basemethod private">
+</div><div class="baseproperty">
   
-  <a name="zim.main.ZimApplication._run_main_loop">
+  
+  <a name="zim.main.ZimApplication.toplevels">
     
   </a>
-  <a name="_run_main_loop">
+  <a name="toplevels">
     
   </a>
   <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_run_main_loop</span>(self, cmd):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L722">
+    @<a href="https://docs.python.org/3/library/functions.html#property">property</a><br />
+    <span class="py-defname">toplevels</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L662">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basemethod private">
   
-  <a name="zim.main.ZimApplication._log_start">
-    
-  </a>
-  <a name="_log_start">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_log_start</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L778">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.main.ZimApplication._setup_signal_handling">
-    
-  </a>
-  <a name="_setup_signal_handling">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_setup_signal_handling</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L792">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.main.ZimApplication._spawn_standalone">
-    
-  </a>
-  <a name="_spawn_standalone">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_spawn_standalone</span>(self, args):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L802">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.main.ZimApplication._try_dispatch">
-    
-  </a>
-  <a name="_try_dispatch">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_try_dispatch</span>(self, args, pwd):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L819">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.main.ZimApplication._handle_incoming">
-    
-  </a>
-  <a name="_handle_incoming">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_handle_incoming</span>(self, pwd, *args):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L832">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
   
   <a name="zim.main.ZimApplication._daemonize">
     
@@ -590,7 +383,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_daemonize</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L835">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L873">
       
       (source)
     </a>
@@ -600,14 +393,287 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.main.ZimApplication._handle_incoming">
+    
+  </a>
+  <a name="_handle_incoming">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_handle_incoming</span>(self, pwd, *args):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L870">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.main.ZimApplication._log_start">
+    
+  </a>
+  <a name="_log_start">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_log_start</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L816">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.main.ZimApplication._on_destroy_window">
+    
+  </a>
+  <a name="_on_destroy_window">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_on_destroy_window</span>(self, window):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L706">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.main.ZimApplication._run_cmd">
+    
+  </a>
+  <a name="_run_cmd">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_run_cmd</span>(self, cmd, args):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L727">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.main.ZimApplication._run_main_loop">
+    
+  </a>
+  <a name="_run_main_loop">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_run_main_loop</span>(self, cmd):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L760">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.main.ZimApplication._setup_signal_handling">
+    
+  </a>
+  <a name="_setup_signal_handling">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_setup_signal_handling</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L830">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.main.ZimApplication._spawn_standalone">
+    
+  </a>
+  <a name="_spawn_standalone">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_spawn_standalone</span>(self, args):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L840">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.main.ZimApplication._try_dispatch">
+    
+  </a>
+  <a name="_try_dispatch">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_try_dispatch</span>(self, args, pwd):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L857">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.main.ZimApplication._log_started">
+    
+  </a>
+  <a name="_log_started">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_log_started</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L658">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.main.ZimApplication._running">
+    
+  </a>
+  <a name="_running">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_running</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L657">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.main.ZimApplication._standalone">
+    
+  </a>
+  <a name="_standalone">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_standalone</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L659">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.main.ZimApplication._windows">
+    
+  </a>
+  <a name="_windows">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_windows</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#set">set</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/main/__init__.py#L660">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

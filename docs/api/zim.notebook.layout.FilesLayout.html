@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.notebook.layout.FilesLayout : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.notebook.layout.FilesLayout</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.notebook.html">notebook</a></code>.<code><a href="zim.notebook.layout.html">layout</a></code>.<code><a href="zim.notebook.layout.FilesLayout.html">FilesLayout</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.notebook.html">notebook</a></code><wbr></wbr>.<code><a href="zim.notebook.layout.html">layout</a></code><wbr></wbr>.<code><a href="zim.notebook.layout.FilesLayout.html">FilesLayout</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,56 +65,42 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">FilesLayout</span>(<a href="zim.notebook.layout.NotebookLayout.html" title="zim.notebook.layout.NotebookLayout">NotebookLayout</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L67">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">FilesLayout</span>(<a href="zim.notebook.layout.NotebookLayout.html" title="zim.notebook.layout.NotebookLayout">NotebookLayout</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L67" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.notebook.layout.FilesLayout">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Layout is responsible for mapping between pages and files. This is the most basic version, where each page maps to the like-named file.</p></div>
+        <div>Layout is responsible for mapping between pages and files. This is the most basic version, where each page maps to the like-named file.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id759">
+        <table class="children sortable" id="id768">
+  
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Constructor @param folder: a <code><a href="zim.newfs.base.Folder.html">Folder</a></code> object @param endofline: either "dos" or "unix", default per OS</span></td>
-  </tr><tr class="instancevariable">
+    <td>Constructor @param folder: a <code><a href="zim.newfs.base.Folder.html">Folder</a></code> object @param endofline: either "dos" or "unix", default per OS</td>
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#root">root</a></code></td>
+    <td>Method</td>
+    <td><code><a href="#get_attachments_folder">get_attachments_folder</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#endofline">endofline</a></code></td>
+    <td>Method</td>
+    <td><code><a href="#get_format">get_format</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#default_extension">default_extension</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#default_format">default_format</a></code></td>
+    <td>Method</td>
+    <td><code><a href="#index_list_children">index_list_children</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#is_source_file">is_source_file</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#map_page">map_page</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#get_attachments_folder">get_attachments_folder</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
@@ -94,21 +111,36 @@
     
     <td>Method</td>
     <td><code><a href="#map_filepath">map_filepath</a></code></td>
-    <td><span>Like <code><a href="#map_file">map_file</a></code> but takes a string with relative path</span></td>
+    <td>Like <code><a href="#map_file">map_file</a></code> but takes a string with relative path</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#map_page">map_page</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#resolve_conflict">resolve_conflict</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
+  </tr><tr class="instancevariable">
     
-    <td>Method</td>
-    <td><code><a href="#get_format">get_format</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="#default_extension">default_extension</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
+  </tr><tr class="instancevariable">
     
-    <td>Method</td>
-    <td><code><a href="#index_list_children">index_list_children</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="#default_format">default_format</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#endofline">endofline</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#root">root</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -121,6 +153,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.notebook.layout.FilesLayout.__init__">
     
   </a>
@@ -129,8 +162,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, folder, endofline=_EOL, default_format='wiki', default_extension='.txt'):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L73">
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, folder, endofline=_EOL, default_format=<span class="rst-variable-quote">'</span><span class="rst-variable-string">wiki</span><span class="rst-variable-quote">'</span>, default_extension=<span class="rst-variable-quote">'</span><span class="rst-variable-string">.txt</span><span class="rst-variable-quote">'</span>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L73">
       
       (source)
     </a>
@@ -138,135 +171,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">folder</td><td>a <code><a href="zim.newfs.base.Folder.html">Folder</a></code> object</td></tr><tr><td></td><td class="fieldArg">endofline</td><td>either "dos" or "unix", default per OS</td></tr><tr><td></td><td class="fieldArg">default_format</td><td><span class="undocumented">Undocumented</span></td></tr><tr><td></td><td class="fieldArg">default_extension</td><td><span class="undocumented">Undocumented</span></td></tr></table></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.notebook.layout.FilesLayout.root">
-    
-  </a>
-  <a name="root">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">root</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L79">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.notebook.layout.FilesLayout.endofline">
-    
-  </a>
-  <a name="endofline">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">endofline</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L80">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.notebook.layout.FilesLayout.default_extension">
-    
-  </a>
-  <a name="default_extension">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">default_extension</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L85">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.notebook.layout.FilesLayout.default_format">
-    
-  </a>
-  <a name="default_format">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">default_format</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L86">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Constructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">folder</span></td><td class="fieldArgDesc">a <code><a href="zim.newfs.base.Folder.html">Folder</a></code> object</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">endofline</span></td><td class="fieldArgDesc">either "dos" or "unix", default per OS</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">default_format</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">default_extension</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.notebook.layout.FilesLayout.is_source_file">
-    
-  </a>
-  <a name="is_source_file">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">is_source_file</span>(self, file):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L88">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.notebook.layout.FilesLayout.map_page">
-    
-  </a>
-  <a name="map_page">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">map_page</span>(self, pagename):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L101">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Map a pagename to a (default) file</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">pagename</td><td>a <code><a href="zim.notebook.page.Path.html">Path</a></code></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a 2-tuple of a <code><a href="zim.fs.File.html">File</a></code> for the source and a <code><a href="zim.newfs.base.Folder.html">Folder</a></code> for the attachments. Neither of these needs to exist.</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.notebook.layout.FilesLayout.get_attachments_folder">
     
@@ -277,7 +185,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">get_attachments_folder</span>(self, pagename):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L113">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L113">
       
       (source)
     </a>
@@ -289,6 +197,73 @@
   </div>
 </div><div class="basemethod">
   
+  
+  <a name="zim.notebook.layout.FilesLayout.get_format">
+    
+  </a>
+  <a name="get_format">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_format</span>(self, file):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L156">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.layout.FilesLayout.index_list_children">
+    
+  </a>
+  <a name="index_list_children">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">index_list_children</span>(self, pagename):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L162">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.layout.FilesLayout.is_source_file">
+    
+  </a>
+  <a name="is_source_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">is_source_file</span>(self, file):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L88">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
   <a name="zim.notebook.layout.FilesLayout.map_file">
     
   </a>
@@ -298,7 +273,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">map_file</span>(self, file):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L117">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L117">
       
       (source)
     </a>
@@ -310,6 +285,7 @@
   </div>
 </div><div class="basemethod">
   
+  
   <a name="zim.notebook.layout.FilesLayout.map_filepath">
     
   </a>
@@ -319,7 +295,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">map_filepath</span>(self, path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L142">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L142">
       
       (source)
     </a>
@@ -327,9 +303,32 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Like <code><a href="#map_file">map_file</a></code> but takes a string with relative path</p></div>
+    <div>Like <code><a href="#map_file">map_file</a></code> but takes a string with relative path</div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.layout.FilesLayout.map_page">
+    
+  </a>
+  <a name="map_page">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">map_page</span>(self, pagename):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L101">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Map a pagename to a (default) file<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pagename</span></td><td class="fieldArgDesc">a <code><a href="zim.notebook.page.Path.html">Path</a></code></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a 2-tuple of a <code><a href="zim.fs.File.html">File</a></code> for the source and a <code><a href="zim.newfs.base.Folder.html">Folder</a></code> for the attachments. Neither of these needs to exist.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.notebook.layout.FilesLayout.resolve_conflict">
     
@@ -340,7 +339,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">resolve_conflict</span>(self, *filepaths):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L146">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L146">
       
       (source)
     </a>
@@ -348,58 +347,113 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Decide which is the real page file when multiple files map to the same page.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">filepaths</td><td>2 or more <code><a href="zim.newfs.base.FilePath.html">FilePath</a></code> objects</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code><a href="zim.newfs.base.FilePath.html">FilePath</a></code> that should take precedent as te page source</td></tr></table></div>
+    <div>Decide which is the real page file when multiple files map to the same page.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">*filepaths</span></td><td class="fieldArgDesc">2 or more <code><a href="zim.newfs.base.FilePath.html">FilePath</a></code> objects</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><code><a href="zim.newfs.base.FilePath.html">FilePath</a></code> that should take precedent as te page source</td></tr></table></div>
   </div>
-</div><div class="basemethod">
+</div><div class="baseinstancevariable">
   
-  <a name="zim.notebook.layout.FilesLayout.get_format">
+  
+  <a name="zim.notebook.layout.FilesLayout.default_extension">
     
   </a>
-  <a name="get_format">
+  <a name="default_extension">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">get_format</span>(self, file):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L156">
+    <span class="py-defname">default_extension</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L85">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
-</div><div class="basemethod">
+</div><div class="baseinstancevariable">
   
-  <a name="zim.notebook.layout.FilesLayout.index_list_children">
+  
+  <a name="zim.notebook.layout.FilesLayout.default_format">
     
   </a>
-  <a name="index_list_children">
+  <a name="default_format">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">index_list_children</span>(self, pagename):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L162">
+    <span class="py-defname">default_format</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L86">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.notebook.layout.FilesLayout.endofline">
+    
+  </a>
+  <a name="endofline">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">endofline</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L80">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.notebook.layout.FilesLayout.root">
+    
+  </a>
+  <a name="root">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">root</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/layout.py#L79">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

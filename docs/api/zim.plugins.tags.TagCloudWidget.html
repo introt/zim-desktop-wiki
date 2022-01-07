@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.plugins.tags.TagCloudWidget : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.plugins.tags.TagCloudWidget</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code>.<code><a href="zim.plugins.tags.html">tags</a></code>.<code><a href="zim.plugins.tags.TagCloudWidget.html">TagCloudWidget</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.plugins.html">plugins</a></code><wbr></wbr>.<code><a href="zim.plugins.tags.html">tags</a></code><wbr></wbr>.<code><a href="zim.plugins.tags.TagCloudWidget.html">TagCloudWidget</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,47 +65,38 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TagCloudWidget</span>(<a href="zim.signals.ConnectorMixin.html" title="zim.signals.ConnectorMixin">ConnectorMixin</a>, <span title="gi.repository.Gtk.TextView">Gtk.TextView</span>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L325">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TagCloudWidget</span>(<a href="zim.signals.ConnectorMixin.html" title="zim.signals.ConnectorMixin">ConnectorMixin</a>, <span title="gi.repository.Gtk.TextView">Gtk.TextView</span>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L342" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.plugins.tags.TagCloudWidget">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Text-view based list of tags, where each tag is represented by a button inserted as a child in the textview.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Unknown Field: signal</td><td colspan="2"><code>selection-changed ()</code>: emitted when tag selection changes</td></tr><tr><td></td><td colspan="2"><code>sorting-changed ()</code>: emitted when tag sorting changes</td></tr></table></div>
+        <div>Text-view based list of tags, where each tag is represented by a button inserted as a child in the textview.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: signal</td></tr><tr><td colspan="2"><tt class="rst-docutils literal"><span class="pre">selection-changed</span> ()</tt>: emitted when tag selection changes</td></tr><tr><td colspan="2"><tt class="rst-docutils literal"><span class="pre">sorting-changed</span> ()</tt>: emitted when tag sorting changes</td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1344">
+        <table class="children sortable" id="id1331">
   
-  <tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#__gsignals__">__gsignals__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
+  
+  <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#index">index</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#set_sorting">set_sorting</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#connect_index">connect_index</a></code></td>
-    <td><span>Connect to an Index object</span></td>
+    <td>Connect to an Index object</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#disconnect_index">disconnect_index</a></code></td>
-    <td><span>Stop the model from listening to the index. Used to unhook the model before reloading the index.</span></td>
+    <td>Stop the model from listening to the index. Used to unhook the model before reloading the index.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#do_populate_popup">do_populate_popup</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -83,27 +105,37 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#do_populate_popup">do_populate_popup</a></code></td>
+    <td><code><a href="#set_sorting">set_sorting</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#__gsignals__">__gsignals__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_alphabetically">_alphabetically</a></code></td>
+    <td><code><a href="#index">index</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
     <td><code><a href="#_clear">_clear</a></code></td>
-    <td><span>Clears the cloud</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
-    <td><code><a href="#_update">_update</a></code></td>
-    <td><span>Update the cloud to show only tags that share a set of pages with the selected tags.</span></td>
+    <td>Clears the cloud</td>
   </tr><tr class="method private">
     
     <td>Method</td>
     <td><code><a href="#_switch_sorting">_switch_sorting</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_update">_update</a></code></td>
+    <td>Update the cloud to show only tags that share a set of pages with the selected tags.</td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_alphabetically">_alphabetically</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -111,37 +143,38 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code>:
           </p>
-          <table class="children sortable" id="id1345">
+          <table class="children sortable" id="id1332">
+  
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto">connectto</a></code></td>
-    <td><span>Connect to signals of another object E.g.:</span></td>
+    <td>Connect to signals of another object E.g.:</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto_all">connectto_all</a></code></td>
-    <td><span>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
-    <td><span>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</span></td>
+    <td>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_all">disconnect_all</a></code></td>
-    <td><span>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</span></td>
-  </tr><tr class="baseinstancevariable private">
+    <td>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</td>
+  </tr><tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
+    <td>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#_disconnect_from">_disconnect_from</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -152,28 +185,8 @@
 
       <div id="childList">
 
-        <div class="baseclassvariable">
+        <div class="basemethod">
   
-  <a name="zim.plugins.tags.TagCloudWidget.__gsignals__">
-    
-  </a>
-  <a name="__gsignals__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">__gsignals__</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L334">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.plugins.tags.TagCloudWidget.__init__">
     
@@ -183,8 +196,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, index, sorting='score'):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L339">
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, index, sorting=<span class="rst-variable-quote">'</span><span class="rst-variable-string">score</span><span class="rst-variable-quote">'</span>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L356">
       
       (source)
     </a>
@@ -194,70 +207,8 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.plugins.tags.TagCloudWidget.index">
-    
-  </a>
-  <a name="index">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">index</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L342">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
 </div><div class="basemethod">
   
-  <a name="zim.plugins.tags.TagCloudWidget.set_sorting">
-    
-  </a>
-  <a name="set_sorting">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">set_sorting</span>(self, sorting):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L351">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.plugins.tags.TagCloudWidget._alphabetically">
-    
-  </a>
-  <a name="_alphabetically">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_alphabetically</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L352">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.plugins.tags.TagCloudWidget.connect_index">
     
@@ -268,7 +219,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">connect_index</span>(self, index):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L354">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L371">
       
       (source)
     </a>
@@ -276,9 +227,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Connect to an Index object</p></div>
+    <div>Connect to an Index object</div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.plugins.tags.TagCloudWidget.disconnect_index">
     
@@ -289,7 +241,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">disconnect_index</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L364">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L381">
       
       (source)
     </a>
@@ -297,72 +249,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Stop the model from listening to the index. Used to unhook the model before reloading the index.</p></div>
+    <div>Stop the model from listening to the index. Used to unhook the model before reloading the index.</div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.plugins.tags.TagCloudWidget.get_tag_filter">
-    
-  </a>
-  <a name="get_tag_filter">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_tag_filter</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L372">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Returns a tuple with two lists of tags; the first gives all tags that are selected, the second gives all tags shown in the cloud. By definition the first list is a subset of the second. If no tags are selected returns None instead.</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.plugins.tags.TagCloudWidget._clear">
-    
-  </a>
-  <a name="_clear">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_clear</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L382">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Clears the cloud</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.plugins.tags.TagCloudWidget._update">
-    
-  </a>
-  <a name="_update">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_update</span>(self, *a):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L388">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Update the cloud to show only tags that share a set of pages with the selected tags.</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.plugins.tags.TagCloudWidget.do_populate_popup">
     
@@ -373,7 +263,141 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">do_populate_popup</span>(self, menu):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L424">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L441">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.tags.TagCloudWidget.get_tag_filter">
+    
+  </a>
+  <a name="get_tag_filter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_tag_filter</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L389">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns a tuple with two lists of tags; the first gives all tags that are selected, the second gives all tags shown in the cloud. By definition the first list is a subset of the second. If no tags are selected returns None instead.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.tags.TagCloudWidget.set_sorting">
+    
+  </a>
+  <a name="set_sorting">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_sorting</span>(self, sorting):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L368">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="zim.plugins.tags.TagCloudWidget.__gsignals__">
+    
+  </a>
+  <a name="__gsignals__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__gsignals__</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L351">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.tags.TagCloudWidget.index">
+    
+  </a>
+  <a name="index">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">index</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L359">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.plugins.tags.TagCloudWidget._clear">
+    
+  </a>
+  <a name="_clear">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_clear</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L399">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Clears the cloud</div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.plugins.tags.TagCloudWidget._switch_sorting">
+    
+  </a>
+  <a name="_switch_sorting">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_switch_sorting</span>(self, widget, *a):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L450">
       
       (source)
     </a>
@@ -385,16 +409,17 @@
   </div>
 </div><div class="basemethod private">
   
-  <a name="zim.plugins.tags.TagCloudWidget._switch_sorting">
+  
+  <a name="zim.plugins.tags.TagCloudWidget._update">
     
   </a>
-  <a name="_switch_sorting">
+  <a name="_update">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_switch_sorting</span>(self, widget, *a):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L433">
+    <span class="py-keyword">def</span> <span class="py-defname">_update</span>(self, *a):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L405">
       
       (source)
     </a>
@@ -402,16 +427,44 @@
   <div class="docstring functionBody">
     
     
+    <div>Update the cloud to show only tags that share a set of pages with the selected tags.</div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.plugins.tags.TagCloudWidget._alphabetically">
+    
+  </a>
+  <a name="_alphabetically">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_alphabetically</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/tags.py#L369">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

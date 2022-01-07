@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.newfs.base.Folder : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.newfs.base.Folder</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.newfs.html">newfs</a></code>.<code><a href="zim.newfs.base.html">base</a></code>.<code><a href="zim.newfs.base.Folder.html">Folder</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.newfs.html">newfs</a></code><wbr></wbr>.<code><a href="zim.newfs.base.html">base</a></code><wbr></wbr>.<code><a href="zim.newfs.base.Folder.html">Folder</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,16 +65,17 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Folder</span>(<a href="zim.newfs.base.FSObjectBase.html" title="zim.newfs.base.FSObjectBase">FSObjectBase</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L420">(source)</a></code></p><p>Known subclasses: <code><a href="zim.newfs.mock.MockFolder.html">zim.newfs.mock.MockFolder</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Folder</span>(<a href="zim.newfs.base.FSObjectBase.html" title="zim.newfs.base.FSObjectBase">FSObjectBase</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L446" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="zim.newfs.mock.MockFolder.html">zim.newfs.mock.MockFolder</a></code></p>
         <p><a href="classIndex.html#zim.newfs.base.Folder">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Base class for folder implementations. Cannot be intatiated directly; use one of the subclasses instead. Main use outside of this module is to check <code>isinstance(object, Folder)</code>.</p></div>
+        <div>Base class for folder implementations. Cannot be intatiated directly; use one of the subclasses instead. Main use outside of this module is to check <tt class="rst-docutils literal">isinstance(object, Folder)</tt>.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id628">
+        <table class="children sortable" id="id637">
+  
   
   <tr class="method">
     
@@ -54,6 +86,21 @@
     
     <td>Method</td>
     <td><code><a href="#__iter__">__iter__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#child">child</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#file">file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#folder">folder</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
@@ -73,26 +120,6 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#walk">walk</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#file">file</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#folder">folder</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#child">child</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
     <td><code><a href="#new_file">new_file</a></code></td>
     <td><span class="undocumented">No summary</span></td>
   </tr><tr class="method">
@@ -104,11 +131,16 @@
     
     <td>Method</td>
     <td><code><a href="#remove_children">remove_children</a></code></td>
-    <td><span>Recursively remove everything below this folder .</span></td>
+    <td>Recursively remove everything below this folder .</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#walk">walk</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_object_iter">_object_iter</a></code></td>
+    <td><code><a href="#_copyto">_copyto</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
@@ -118,7 +150,7 @@
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_copyto">_copyto</a></code></td>
+    <td><code><a href="#_object_iter">_object_iter</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -126,22 +158,13 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.newfs.base.FSObjectBase.html">FSObjectBase</a></code>:
           </p>
-          <table class="children sortable" id="id629">
+          <table class="children sortable" id="id638">
   
-  <tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.newfs.base.FSObjectBase.html#watcher">watcher</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
+  
+  <tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.newfs.base.FSObjectBase.html#isequal">isequal</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.newfs.base.FSObjectBase.html#parent">parent</a></code></td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#copyto">copyto</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
     
@@ -151,22 +174,17 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.newfs.base.FSObjectBase.html#mtime">mtime</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
     <td><code><a href="zim.newfs.base.FSObjectBase.html#exists">exists</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.newfs.base.FSObjectBase.html#iswritable">iswritable</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#isequal">isequal</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.newfs.base.FSObjectBase.html#touch">touch</a></code></td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#iswritable">iswritable</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
     
@@ -176,17 +194,32 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.newfs.base.FSObjectBase.html#copyto">copyto</a></code></td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#mtime">mtime</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#parent">parent</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.newfs.base.FSObjectBase.html#remove">remove</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#touch">touch</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#watcher">watcher</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
-    <td><code><a href="zim.newfs.base.FSObjectBase.html#_set_mtime">_set_mtime</a></code></td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#_cleanup">_cleanup</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod private">
     
@@ -196,7 +229,7 @@
   </tr><tr class="basemethod private">
     
     <td>Method</td>
-    <td><code><a href="zim.newfs.base.FSObjectBase.html#_cleanup">_cleanup</a></code></td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html#_set_mtime">_set_mtime</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -204,27 +237,18 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.newfs.base.FilePath.html">FilePath</a></code> (via <code><a href="zim.newfs.base.FSObjectBase.html">FSObjectBase</a></code>):
           </p>
-          <table class="children sortable" id="id630">
+          <table class="children sortable" id="id639">
   
-  <tr class="baseclassvariable">
+  
+  <tr class="baseclassmethod">
     
-    <td>Class Variable</td>
-    <td><code><a href="zim.newfs.base.FilePath.html#__slots__">__slots__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseinstancevariable">
+    <td>Class Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#new_from_zim_config">new_from_zim_config</a></code></td>
+    <td>Returns a new object based on the string representation for that path</td>
+  </tr><tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.newfs.base.FilePath.html#pathnames">pathnames</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.newfs.base.FilePath.html#path">path</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.newfs.base.FilePath.html#islocal">islocal</a></code></td>
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#__eq__">__eq__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
     
@@ -239,22 +263,57 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.newfs.base.FilePath.html#__eq__">__eq__</a></code></td>
+    <td><code><a href="zim.newfs.base.FilePath.html#commonparent">commonparent</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#get_abspath">get_abspath</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#get_childpath">get_childpath</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#ischild">ischild</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#parents">parents</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#relpath">relpath</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.newfs.base.FilePath.html#serialize_zim_config">serialize_zim_config</a></code></td>
-    <td><span>Returns the file path as string for serializing the object</span></td>
-  </tr><tr class="baseclassmethod">
+    <td>Returns the file path as string for serializing the object</td>
+  </tr><tr class="baseclassvariable">
     
-    <td>Class Method</td>
-    <td><code><a href="zim.newfs.base.FilePath.html#new_from_zim_config">new_from_zim_config</a></code></td>
-    <td><span>Returns a new object based on the string representation for that path</span></td>
-  </tr><tr class="baseproperty">
+    <td>Class Variable</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#__slots__">__slots__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
     
-    <td>Property</td>
-    <td><code><a href="zim.newfs.base.FilePath.html#uri">uri</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#islocal">islocal</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#path">path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#pathnames">pathnames</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="baseproperty">
     
@@ -269,32 +328,12 @@
   </tr><tr class="baseproperty">
     
     <td>Property</td>
+    <td><code><a href="zim.newfs.base.FilePath.html#uri">uri</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
     <td><code><a href="zim.newfs.base.FilePath.html#userpath">userpath</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.newfs.base.FilePath.html#get_childpath">get_childpath</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.newfs.base.FilePath.html#get_abspath">get_abspath</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.newfs.base.FilePath.html#ischild">ischild</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.newfs.base.FilePath.html#relpath">relpath</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.newfs.base.FilePath.html#commonparent">commonparent</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -307,6 +346,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.newfs.base.Folder.__init__">
     
   </a>
@@ -316,7 +356,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L426">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L452">
       
       (source)
     </a>
@@ -328,6 +368,7 @@
   </div>
 </div><div class="basemethod">
   
+  
   <a name="zim.newfs.base.Folder.__iter__">
     
   </a>
@@ -337,7 +378,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__iter__</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L429">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L455">
       
       (source)
     </a>
@@ -349,152 +390,6 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.newfs.base.Folder.list_files">
-    
-  </a>
-  <a name="list_files">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">list_files</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L433">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.newfs.base.Folder.list_folders">
-    
-  </a>
-  <a name="list_folders">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">list_folders</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L437">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.newfs.base.Folder._object_iter">
-    
-  </a>
-  <a name="_object_iter">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_object_iter</span>(self, names, showfile, showdir):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L441">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.newfs.mock.MockFolder.html">zim.newfs.mock.MockFolder</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.newfs.base.Folder.list_names">
-    
-  </a>
-  <a name="list_names">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">list_names</span>(self, include_hidden=False):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L444">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.newfs.mock.MockFolder.html">zim.newfs.mock.MockFolder</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.newfs.base.Folder.walk">
-    
-  </a>
-  <a name="walk">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">walk</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L447">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.newfs.base.Folder.file">
-    
-  </a>
-  <a name="file">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">file</span>(self, path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L454">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.newfs.mock.MockFolder.html">zim.newfs.mock.MockFolder</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.newfs.base.Folder.folder">
-    
-  </a>
-  <a name="folder">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">folder</span>(self, path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L457">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.newfs.mock.MockFolder.html">zim.newfs.mock.MockFolder</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.newfs.base.Folder.child">
     
@@ -505,7 +400,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">child</span>(self, path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L460">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L486">
       
       (source)
     </a>
@@ -517,58 +412,61 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.newfs.base.Folder.new_file">
+  
+  <a name="zim.newfs.base.Folder.file">
     
   </a>
-  <a name="new_file">
+  <a name="file">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">new_file</span>(self, path, check=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L463">
+    <span class="py-keyword">def</span> <span class="py-defname">file</span>(self, path):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L480">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.newfs.mock.MockFolder.html">zim.newfs.mock.MockFolder</a></code></div>
     
-    
-    <div><p>Get a <code><a href="zim.newfs.base.File.html">File</a></code> object for a new file below this folder. Like <code><a href="#file">file()</a></code> but guarantees the file does not yet exist by adding sequential numbers if needed. So the resulting file may have a modified name.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>the relative file path</td></tr><tr><td></td><td class="fieldArg">check</td><td>a function that can check and reject the choice before it is given back</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.newfs.base.File.html">File</a></code> object</td></tr></table></div>
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.newfs.base.Folder.new_folder">
+  
+  <a name="zim.newfs.base.Folder.folder">
     
   </a>
-  <a name="new_folder">
+  <a name="folder">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">new_folder</span>(self, path, check=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L476">
+    <span class="py-keyword">def</span> <span class="py-defname">folder</span>(self, path):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L483">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.newfs.mock.MockFolder.html">zim.newfs.mock.MockFolder</a></code></div>
     
-    
-    <div><p>Get a <code><a href="zim.newfs.base.Folder.html">Folder</a></code> object for a new folder below this folder. Like <code><a href="#folder">folder()</a></code> but guarantees the file does not yet exist by adding sequential numbers if needed. So the resulting file may have a modified name.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>the relative file path</td></tr><tr><td></td><td class="fieldArg">check</td><td>a function that can check and reject the choice before it is given back</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.newfs.base.Folder.html">Folder</a></code> object</td></tr></table></div>
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="basemethod private">
+</div><div class="basemethod">
   
-  <a name="zim.newfs.base.Folder._new_child">
+  
+  <a name="zim.newfs.base.Folder.list_files">
     
   </a>
-  <a name="_new_child">
+  <a name="list_files">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_new_child</span>(self, path, factory, check=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L489">
+    <span class="py-keyword">def</span> <span class="py-defname">list_files</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L459">
       
       (source)
     </a>
@@ -579,6 +477,95 @@
     <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.newfs.base.Folder.list_folders">
+    
+  </a>
+  <a name="list_folders">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">list_folders</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L463">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.newfs.base.Folder.list_names">
+    
+  </a>
+  <a name="list_names">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">list_names</span>(self, include_hidden=<a href="https://docs.python.org/3/library/constants.html#False">False</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L470">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.newfs.mock.MockFolder.html">zim.newfs.mock.MockFolder</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.newfs.base.Folder.new_file">
+    
+  </a>
+  <a name="new_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">new_file</span>(self, path, check=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L489">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Get a <code><a href="zim.newfs.base.File.html">File</a></code> object for a new file below this folder. Like <code><a href="#file">file()</a></code> but guarantees the file does not yet exist by adding sequential numbers if needed. So the resulting file may have a modified name.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the relative file path</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">check</span></td><td class="fieldArgDesc">a function that can check and reject the choice before it is given back</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="zim.newfs.base.File.html">File</a></code> object</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.newfs.base.Folder.new_folder">
+    
+  </a>
+  <a name="new_folder">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">new_folder</span>(self, path, check=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L502">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Get a <code><a href="zim.newfs.base.Folder.html">Folder</a></code> object for a new folder below this folder. Like <code><a href="#folder">folder()</a></code> but guarantees the file does not yet exist by adding sequential numbers if needed. So the resulting file may have a modified name.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the relative file path</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">check</span></td><td class="fieldArgDesc">a function that can check and reject the choice before it is given back</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="zim.newfs.base.Folder.html">Folder</a></code> object</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.newfs.base.Folder.remove_children">
     
@@ -589,7 +576,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">remove_children</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L516">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L542">
       
       (source)
     </a>
@@ -597,9 +584,34 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Recursively remove everything below this folder .</p><p><b>WARNING:</b> This is quite powerful and can do a lot of damage when executed for the wrong folder, so please make sure to double check the dir is actually what you think it is before calling this.</p></div>
+    <div><p>Recursively remove everything below this folder .</p>
+<p><strong>WARNING:</strong> This is quite powerful and can do a lot of damage when executed for the wrong folder, so please make sure to double check the dir is actually what you think it is before calling this.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.newfs.base.Folder.walk">
+    
+  </a>
+  <a name="walk">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">walk</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L473">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod private">
+  
   
   <a name="zim.newfs.base.Folder._copyto">
     
@@ -610,7 +622,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_copyto</span>(self, other):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L530">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L556">
       
       (source)
     </a>
@@ -620,14 +632,63 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.newfs.base.Folder._new_child">
+    
+  </a>
+  <a name="_new_child">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_new_child</span>(self, path, factory, check=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L515">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.newfs.base.Folder._object_iter">
+    
+  </a>
+  <a name="_object_iter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_object_iter</span>(self, names, showfile, showdir):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L467">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.newfs.mock.MockFolder.html">zim.newfs.mock.MockFolder</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

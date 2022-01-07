@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.notebook.index.tags.TagsView : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.notebook.index.tags.TagsView</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.notebook.html">notebook</a></code>.<code><a href="zim.notebook.index.html">index</a></code>.<code><a href="zim.notebook.index.tags.html">tags</a></code>.<code><a href="zim.notebook.index.tags.TagsView.html">TagsView</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.notebook.html">notebook</a></code><wbr></wbr>.<code><a href="zim.notebook.index.html">index</a></code><wbr></wbr>.<code><a href="zim.notebook.index.tags.html">tags</a></code><wbr></wbr>.<code><a href="zim.notebook.index.tags.TagsView.html">TagsView</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TagsView</span>(<a href="zim.notebook.index.base.IndexView.html" title="zim.notebook.index.base.IndexView">IndexView</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L169">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TagsView</span>(<a href="zim.notebook.index.base.IndexView.html" title="zim.notebook.index.base.IndexView">IndexView</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L169" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.notebook.index.tags.TagsView">View In Hierarchy</a></p>
       </div>
 
@@ -43,7 +74,8 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id738">
+        <table class="children sortable" id="id735">
+  
   
   <tr class="method">
     
@@ -53,28 +85,23 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#lookup_by_tagname">lookup_by_tagname</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
     <td><code><a href="#list_all_tags">list_all_tags</a></code></td>
-    <td><span>Returns all tags in the index as <code><a href="zim.notebook.index.tags.IndexTag.html">IndexTag</a></code> objects</span></td>
+    <td>Returns all tags in the index as <code><a href="zim.notebook.index.tags.IndexTag.html">IndexTag</a></code> objects</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#list_all_tags_by_n_pages">list_all_tags_by_n_pages</a></code></td>
-    <td><span>Returns all tags in the index as <code><a href="zim.notebook.index.tags.IndexTag.html">IndexTag</a></code> objects</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#n_list_all_tags">n_list_all_tags</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Returns all tags in the index as <code><a href="zim.notebook.index.tags.IndexTag.html">IndexTag</a></code> objects</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#list_intersecting_tags">list_intersecting_tags</a></code></td>
-    <td><span>List tags that have pages in common with a given set of tags</span></td>
+    <td>List tags that have pages in common with a given set of tags</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#list_pages">list_pages</a></code></td>
+    <td>List all pages tagged with a given tag. @param tag: a tag name as string or an <tt class="rst-docutils literal">IndexTag</tt> object @returns: yields <code><a href="zim.notebook.index.pages.PageIndexRecord.html">PageIndexRecord</a></code> objects</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -83,32 +110,37 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#n_list_tags">n_list_tags</a></code></td>
+    <td><code><a href="#lookup_by_tagname">lookup_by_tagname</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#list_pages">list_pages</a></code></td>
-    <td><span>List all pages tagged with a given tag. @param tag: a tag name as string or an <code>IndexTag</code> object @returns: yields <code><a href="zim.notebook.index.pages.PageIndexRecord.html">PageIndexRecord</a></code> objects</span></td>
+    <td><code><a href="#n_list_all_tags">n_list_all_tags</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#n_list_pages">n_list_pages</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#_pages">_pages</a></code></td>
+    <td>Method</td>
+    <td><code><a href="#n_list_tags">n_list_tags</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_list_pages">_list_pages</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
     <td><code><a href="#_list_tags">_list_tags</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
+  </tr><tr class="instancevariable private">
     
-    <td>Method</td>
-    <td><code><a href="#_list_pages">_list_pages</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="#_pages">_pages</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -116,7 +148,8 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.notebook.index.base.IndexView.html">IndexView</a></code>:
           </p>
-          <table class="children sortable" id="id739">
+          <table class="children sortable" id="id736">
+  
   
   <tr class="baseclassmethod">
     
@@ -139,6 +172,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.notebook.index.tags.TagsView.__init__">
     
   </a>
@@ -148,7 +182,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, db):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L171">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L171">
       
       (source)
     </a>
@@ -158,49 +192,8 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.notebook.index.tags.TagsView._pages">
-    
-  </a>
-  <a name="_pages">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_pages</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L173">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
 </div><div class="basemethod">
   
-  <a name="zim.notebook.index.tags.TagsView.lookup_by_tagname">
-    
-  </a>
-  <a name="lookup_by_tagname">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">lookup_by_tagname</span>(self, tag):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L175">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.notebook.index.tags.TagsView.list_all_tags">
     
@@ -211,7 +204,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">list_all_tags</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L185">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L185">
       
       (source)
     </a>
@@ -219,9 +212,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Returns all tags in the index as <code><a href="zim.notebook.index.tags.IndexTag.html">IndexTag</a></code> objects</p></div>
+    <div>Returns all tags in the index as <code><a href="zim.notebook.index.tags.IndexTag.html">IndexTag</a></code> objects</div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.notebook.index.tags.TagsView.list_all_tags_by_n_pages">
     
@@ -232,7 +226,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">list_all_tags_by_n_pages</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L194">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L194">
       
       (source)
     </a>
@@ -240,30 +234,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Returns all tags in the index as <code><a href="zim.notebook.index.tags.IndexTag.html">IndexTag</a></code> objects</p></div>
+    <div>Returns all tags in the index as <code><a href="zim.notebook.index.tags.IndexTag.html">IndexTag</a></code> objects</div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.notebook.index.tags.TagsView.n_list_all_tags">
-    
-  </a>
-  <a name="n_list_all_tags">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">n_list_all_tags</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L205">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.notebook.index.tags.TagsView.list_intersecting_tags">
     
@@ -274,7 +248,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">list_intersecting_tags</span>(self, tags):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L212">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L212">
       
       (source)
     </a>
@@ -282,72 +256,12 @@
   <div class="docstring functionBody">
     
     
-    <div><p>List tags that have pages in common with a given set of tags</p><p>Generator function that lists all tags that occur on pages that match the given tag set. This is used to narrow down possible tag sets that are not empty. (This method is used e.g. in the <code><a href="zim.plugins.tags.TagCloudWidget.html">zim.plugins.tags.TagCloudWidget</a></code> widget to decide which tags to show once some tags are selected.)</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">tags</td><td>an iterable of <code><a href="zim.notebook.index.tags.IndexTag.html">IndexTag</a></code> objects</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">yields <code><a href="zim.notebook.index.tags.IndexTag.html">IndexTag</a></code> objects</td></tr></table></div>
+    <div><p>List tags that have pages in common with a given set of tags</p>
+<p>Generator function that lists all tags that occur on pages that match the given tag set. This is used to narrow down possible tag sets that are not empty. (This method is used e.g. in the <code><a href="zim.plugins.tags.TagCloudWidget.html">zim.plugins.tags.TagCloudWidget</a></code> widget to decide which tags to show once some tags are selected.)</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tags</span></td><td class="fieldArgDesc">an iterable of <code><a href="zim.notebook.index.tags.IndexTag.html">IndexTag</a></code> objects</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">yields <code><a href="zim.notebook.index.tags.IndexTag.html">IndexTag</a></code> objects</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.notebook.index.tags.TagsView.list_tags">
-    
-  </a>
-  <a name="list_tags">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">list_tags</span>(self, path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L243">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Returns all tags for a given page</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a <code><a href="zim.notebook.page.Path.html">Path</a></code> object for the page</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">yields <code><a href="zim.notebook.index.tags.IndexTag.html">IndexTag</a></code> objects</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="zim.notebook.index.base.IndexNotFoundError.html">IndexNotFoundError</a></td><td>if <code>path</code> is not found in the index</td></tr></table></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.notebook.index.tags.TagsView._list_tags">
-    
-  </a>
-  <a name="_list_tags">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_list_tags</span>(self, page_id):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L252">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.notebook.index.tags.TagsView.n_list_tags">
-    
-  </a>
-  <a name="n_list_tags">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">n_list_tags</span>(self, path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L263">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.notebook.index.tags.TagsView.list_pages">
     
@@ -358,7 +272,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">list_pages</span>(self, tag):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L274">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L274">
       
       (source)
     </a>
@@ -366,20 +280,43 @@
   <div class="docstring functionBody">
     
     
-    <div><p>List all pages tagged with a given tag.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">tag</td><td>a tag name as string or an <code>IndexTag</code> object</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">yields <code><a href="zim.notebook.index.pages.PageIndexRecord.html">PageIndexRecord</a></code> objects</td></tr></table></div>
+    <div>List all pages tagged with a given tag.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tag</span></td><td class="fieldArgDesc">a tag name as string or an <tt class="rst-docutils literal">IndexTag</tt> object</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">yields <code><a href="zim.notebook.index.pages.PageIndexRecord.html">PageIndexRecord</a></code> objects</td></tr></table></div>
   </div>
-</div><div class="basemethod private">
+</div><div class="basemethod">
   
-  <a name="zim.notebook.index.tags.TagsView._list_pages">
+  
+  <a name="zim.notebook.index.tags.TagsView.list_tags">
     
   </a>
-  <a name="_list_pages">
+  <a name="list_tags">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_list_pages</span>(self, tag):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L282">
+    <span class="py-keyword">def</span> <span class="py-defname">list_tags</span>(self, path):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L243">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns all tags for a given page<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">a <code><a href="zim.notebook.page.Path.html">Path</a></code> object for the page</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">yields <code><a href="zim.notebook.index.tags.IndexTag.html">IndexTag</a></code> objects</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="zim.notebook.index.base.IndexNotFoundError.html">IndexNotFoundError</a></code></td><td>if <tt class="rst-docutils literal">path</tt> is not found in the index</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.index.tags.TagsView.lookup_by_tagname">
+    
+  </a>
+  <a name="lookup_by_tagname">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">lookup_by_tagname</span>(self, tag):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L175">
       
       (source)
     </a>
@@ -391,16 +328,17 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.notebook.index.tags.TagsView.n_list_pages">
+  
+  <a name="zim.notebook.index.tags.TagsView.n_list_all_tags">
     
   </a>
-  <a name="n_list_pages">
+  <a name="n_list_all_tags">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">n_list_pages</span>(self, tag):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L292">
+    <span class="py-keyword">def</span> <span class="py-defname">n_list_all_tags</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L205">
       
       (source)
     </a>
@@ -410,14 +348,130 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.index.tags.TagsView.n_list_pages">
+    
+  </a>
+  <a name="n_list_pages">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">n_list_pages</span>(self, tag):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L292">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.index.tags.TagsView.n_list_tags">
+    
+  </a>
+  <a name="n_list_tags">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">n_list_tags</span>(self, path):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L263">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.notebook.index.tags.TagsView._list_pages">
+    
+  </a>
+  <a name="_list_pages">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_list_pages</span>(self, tag):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L282">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.notebook.index.tags.TagsView._list_tags">
+    
+  </a>
+  <a name="_list_tags">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_list_tags</span>(self, page_id):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L252">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.notebook.index.tags.TagsView._pages">
+    
+  </a>
+  <a name="_pages">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_pages</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/tags.py#L173">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

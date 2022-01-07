@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.plugins.bookmarksbar.BookmarkBar : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.plugins.bookmarksbar.BookmarkBar</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code>.<code><a href="zim.plugins.bookmarksbar.html">bookmarksbar</a></code>.<code><a href="zim.plugins.bookmarksbar.BookmarkBar.html">BookmarkBar</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.plugins.html">plugins</a></code><wbr></wbr>.<code><a href="zim.plugins.bookmarksbar.html">bookmarksbar</a></code><wbr></wbr>.<code><a href="zim.plugins.bookmarksbar.BookmarkBar.html">BookmarkBar</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">BookmarkBar</span>(<span title="gi.repository.Gtk.HBox">Gtk.HBox</span>, <a href="zim.signals.ConnectorMixin.html" title="zim.signals.ConnectorMixin">ConnectorMixin</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L169">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">BookmarkBar</span>(<span title="gi.repository.Gtk.HBox">Gtk.HBox</span>, <a href="zim.signals.ConnectorMixin.html" title="zim.signals.ConnectorMixin">ConnectorMixin</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L169" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.plugins.bookmarksbar.BookmarkBar">View In Hierarchy</a></p>
       </div>
 
@@ -43,33 +74,74 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id924">
+        <table class="children sortable" id="id911">
+  
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#notebook">notebook</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
+    <td>Method</td>
+    <td><code><a href="#add_new_page">add_new_page</a></code></td>
+    <td>Add new page as bookmark to the bar. :param page: <code><a href="zim.notebook.page.Page.html">Page</a></code>, if None takes currently opened page,</td>
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#navigation">navigation</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
+    <td>Method</td>
+    <td><code><a href="#change_bookmark">change_bookmark</a></code></td>
+    <td>Change path in bookmark from 'old_path' to 'new_path'. :param new_path, old_path: strings corresponding to Path.name. If 'new_path' == None takes currently opened page.</td>
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#uistate">uistate</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
+    <td>Method</td>
+    <td><code><a href="#delete">delete</a></code></td>
+    <td>Remove one button from the bar. :param path: string corresponding to Path.name.</td>
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#save_flag">save_flag</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Method</td>
+    <td><code><a href="#delete_all">delete_all</a></code></td>
+    <td>Remove all bookmarks. :param ask_confirmation: to confirm deleting.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#do_bookmarks_popup_menu">do_bookmarks_popup_menu</a></code></td>
+    <td>Handler for button-release-event, triggers popup menu for bookmarks.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#do_plus_button_popup_menu">do_plus_button_popup_menu</a></code></td>
+    <td>Handler for button-release-event, triggers popup menu for plus button.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#move_bookmark">move_bookmark</a></code></td>
+    <td>Move bookmark 'first' to the place near the bookmark 'second'. :param first, second: strings corresponding to Path.name. :param direction: move 'first' bookmark to the 'left' or 'right' of the 'second'.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_bookmark_clicked">on_bookmark_clicked</a></code></td>
+    <td>Open page if a bookmark is clicked.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#on_preferences_changed">on_preferences_changed</a></code></td>
+    <td>Plugin preferences were changed.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#rename_bookmark">rename_bookmark</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_page">set_page</a></code></td>
+    <td>If a page is present as a bookmark than select it.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#toggle_show_full_page_name">toggle_show_full_page_name</a></code></td>
+    <td>Change page name from short to full and vice versa.</td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -83,12 +155,12 @@
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#plus_button">plus_button</a></code></td>
+    <td><code><a href="#navigation">navigation</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#scrolledbox">scrolledbox</a></code></td>
+    <td><code><a href="#notebook">notebook</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
@@ -100,80 +172,25 @@
     <td>Instance Variable</td>
     <td><code><a href="#paths_names">paths_names</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#set_page">set_page</a></code></td>
-    <td><span>If a page is present as a bookmark than select it.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#add_new_page">add_new_page</a></code></td>
-    <td><span>Add new page as bookmark to the bar. :param page: <code><a href="zim.notebook.page.Page.html">Page</a></code>, if None takes currently opened page,</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#delete">delete</a></code></td>
-    <td><span>Remove one button from the bar. :param path: string corresponding to Path.name.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#delete_all">delete_all</a></code></td>
-    <td><span>Remove all bookmarks. :param ask_confirmation: to confirm deleting.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#change_bookmark">change_bookmark</a></code></td>
-    <td><span>Change path in bookmark from 'old_path' to 'new_path'. :param new_path, old_path: strings corresponding to Path.name. If 'new_path' == None takes currently opened page.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#move_bookmark">move_bookmark</a></code></td>
-    <td><span>Move bookmark 'first' to the place near the bookmark 'second'. :param first, second: strings corresponding to Path.name. :param direction: move 'first' bookmark to the 'left' or 'right' of the 'second'.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#rename_bookmark">rename_bookmark</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#do_plus_button_popup_menu">do_plus_button_popup_menu</a></code></td>
-    <td><span>Handler for button-release-event, triggers popup menu for plus button.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#do_bookmarks_popup_menu">do_bookmarks_popup_menu</a></code></td>
-    <td><span>Handler for button-release-event, triggers popup menu for bookmarks.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#on_bookmark_clicked">on_bookmark_clicked</a></code></td>
-    <td><span>Open page if a bookmark is clicked.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#on_preferences_changed">on_preferences_changed</a></code></td>
-    <td><span>Plugin preferences were changed.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#toggle_show_full_page_name">toggle_show_full_page_name</a></code></td>
-    <td><span>Change page name from short to full and vice versa.</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_get_page">_get_page</a></code></td>
+    <td><code><a href="#plus_button">plus_button</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_saved_bookmark">_saved_bookmark</a></code></td>
+    <td><code><a href="#save_flag">save_flag</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_convert_path_name">_convert_path_name</a></code></td>
+    <td><code><a href="#scrolledbox">scrolledbox</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#uistate">uistate</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
@@ -184,49 +201,65 @@
     
     <td>Method</td>
     <td><code><a href="#_get_short_page_name">_get_short_page_name</a></code></td>
-    <td><span>Function to return short name for the page. Is used to set short names to bookmarks.</span></td>
+    <td>Function to return short name for the page. Is used to set short names to bookmarks.</td>
   </tr><tr class="method private">
     
     <td>Method</td>
     <td><code><a href="#_reload_bar">_reload_bar</a></code></td>
-    <td><span>Reload bar with bookmarks.</span></td>
+    <td>Reload bar with bookmarks.</td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_convert_path_name">_convert_path_name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_get_page">_get_page</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_saved_bookmark">_saved_bookmark</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
         
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code>:
           </p>
-          <table class="children sortable" id="id925">
+          <table class="children sortable" id="id912">
+  
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto">connectto</a></code></td>
-    <td><span>Connect to signals of another object E.g.:</span></td>
+    <td>Connect to signals of another object E.g.:</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto_all">connectto_all</a></code></td>
-    <td><span>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
-    <td><span>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</span></td>
+    <td>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_all">disconnect_all</a></code></td>
-    <td><span>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</span></td>
-  </tr><tr class="baseinstancevariable private">
+    <td>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</td>
+  </tr><tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
+    <td>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#_disconnect_from">_disconnect_from</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -239,6 +272,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.plugins.bookmarksbar.BookmarkBar.__init__">
     
   </a>
@@ -248,7 +282,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, notebook, navigation, uistate, get_page_func):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L171">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L171">
       
       (source)
     </a>
@@ -258,301 +292,8 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarkBar.notebook">
-    
-  </a>
-  <a name="notebook">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">notebook</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L174">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarkBar.navigation">
-    
-  </a>
-  <a name="navigation">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">navigation</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L175">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarkBar.uistate">
-    
-  </a>
-  <a name="uistate">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">uistate</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L176">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarkBar.save_flag">
-    
-  </a>
-  <a name="save_flag">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">save_flag</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L177">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarkBar.add_bookmarks_to_beginning">
-    
-  </a>
-  <a name="add_bookmarks_to_beginning">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">add_bookmarks_to_beginning</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L178">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarkBar.max_bookmarks">
-    
-  </a>
-  <a name="max_bookmarks">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">max_bookmarks</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L179">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarkBar._get_page">
-    
-  </a>
-  <a name="_get_page">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_get_page</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L180">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarkBar.plus_button">
-    
-  </a>
-  <a name="plus_button">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">plus_button</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L183">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarkBar.scrolledbox">
-    
-  </a>
-  <a name="scrolledbox">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">scrolledbox</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L190">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarkBar._saved_bookmark">
-    
-  </a>
-  <a name="_saved_bookmark">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_saved_bookmark</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L197">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarkBar.paths">
-    
-  </a>
-  <a name="paths">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">paths</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L199">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code>)
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarkBar.paths_names">
-    
-  </a>
-  <a name="paths_names">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">paths_names</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L208">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarkBar._convert_path_name">
-    
-  </a>
-  <a name="_convert_path_name">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_convert_path_name</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L211">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
 </div><div class="basemethod">
   
-  <a name="zim.plugins.bookmarksbar.BookmarkBar.set_page">
-    
-  </a>
-  <a name="set_page">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">set_page</span>(self, page):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L226">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>If a page is present as a bookmark than select it.</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.plugins.bookmarksbar.BookmarkBar.add_new_page">
     
@@ -562,8 +303,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">add_new_page</span>(self, page=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L236">
+    <span class="py-keyword">def</span> <span class="py-defname">add_new_page</span>(self, page=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L236">
       
       (source)
     </a>
@@ -571,20 +312,21 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Add new page as bookmark to the bar. :param page: <code><a href="zim.notebook.page.Page.html">Page</a></code>, if None takes currently opened page,</p></div>
+    <div>Add new page as bookmark to the bar. :param page: <code><a href="zim.notebook.page.Page.html">Page</a></code>, if None takes currently opened page,</div>
   </div>
-</div><div class="basemethod private">
+</div><div class="basemethod">
   
-  <a name="zim.plugins.bookmarksbar.BookmarkBar._add_new">
+  
+  <a name="zim.plugins.bookmarksbar.BookmarkBar.change_bookmark">
     
   </a>
-  <a name="_add_new">
+  <a name="change_bookmark">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_add_new</span>(self, path, add_bookmarks_to_beginning=False):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L247">
+    <span class="py-keyword">def</span> <span class="py-defname">change_bookmark</span>(self, old_path, new_path=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L302">
       
       (source)
     </a>
@@ -592,9 +334,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Add bookmark to the bar. :param path: path as a string object :param add_bookmarks_to_beginning: bool, add new bookmarks to the beginning of the bar,</p></div>
+    <div>Change path in bookmark from 'old_path' to 'new_path'. :param new_path, old_path: strings corresponding to Path.name. If 'new_path' == None takes currently opened page.</div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.plugins.bookmarksbar.BookmarkBar.delete">
     
@@ -605,7 +348,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">delete</span>(self, path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L271">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L271">
       
       (source)
     </a>
@@ -613,9 +356,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Remove one button from the bar. :param path: string corresponding to Path.name.</p></div>
+    <div>Remove one button from the bar. :param path: string corresponding to Path.name.</div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.plugins.bookmarksbar.BookmarkBar.delete_all">
     
@@ -625,8 +369,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">delete_all</span>(self, ask_confirmation=False):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L281">
+    <span class="py-keyword">def</span> <span class="py-defname">delete_all</span>(self, ask_confirmation=<a href="https://docs.python.org/3/library/constants.html#False">False</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L281">
       
       (source)
     </a>
@@ -634,93 +378,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Remove all bookmarks. :param ask_confirmation: to confirm deleting.</p></div>
+    <div>Remove all bookmarks. :param ask_confirmation: to confirm deleting.</div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.plugins.bookmarksbar.BookmarkBar.change_bookmark">
-    
-  </a>
-  <a name="change_bookmark">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">change_bookmark</span>(self, old_path, new_path=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L302">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Change path in bookmark from 'old_path' to 'new_path'. :param new_path, old_path: strings corresponding to Path.name. If 'new_path' == None takes currently opened page.</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarkBar.move_bookmark">
-    
-  </a>
-  <a name="move_bookmark">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">move_bookmark</span>(self, first, second, direction):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L323">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Move bookmark 'first' to the place near the bookmark 'second'. :param first, second: strings corresponding to Path.name. :param direction: move 'first' bookmark to the 'left' or 'right' of the 'second'.</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarkBar.rename_bookmark">
-    
-  </a>
-  <a name="rename_bookmark">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">rename_bookmark</span>(self, button):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L342">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Change label of the button. New name is taken from the clipboard. If button's name has been changed before, change it back to its initial state.</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarkBar.do_plus_button_popup_menu">
-    
-  </a>
-  <a name="do_plus_button_popup_menu">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">do_plus_button_popup_menu</span>(self, button, event):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L371">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Handler for button-release-event, triggers popup menu for plus button.</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.plugins.bookmarksbar.BookmarkBar.do_bookmarks_popup_menu">
     
@@ -731,7 +392,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">do_bookmarks_popup_menu</span>(self, button, event):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L383">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L383">
       
       (source)
     </a>
@@ -739,9 +400,54 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Handler for button-release-event, triggers popup menu for bookmarks.</p></div>
+    <div>Handler for button-release-event, triggers popup menu for bookmarks.</div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarkBar.do_plus_button_popup_menu">
+    
+  </a>
+  <a name="do_plus_button_popup_menu">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">do_plus_button_popup_menu</span>(self, button, event):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L371">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Handler for button-release-event, triggers popup menu for plus button.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarkBar.move_bookmark">
+    
+  </a>
+  <a name="move_bookmark">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">move_bookmark</span>(self, first, second, direction):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L323">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Move bookmark 'first' to the place near the bookmark 'second'. :param first, second: strings corresponding to Path.name. :param direction: move 'first' bookmark to the 'left' or 'right' of the 'second'.</div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.plugins.bookmarksbar.BookmarkBar.on_bookmark_clicked">
     
@@ -750,9 +456,9 @@
     
   </a>
   <div class="functionHeader">
-    @SignalHandler<br />
+    @<a href="zim.signals.SignalHandler.html">SignalHandler</a><br />
     <span class="py-keyword">def</span> <span class="py-defname">on_bookmark_clicked</span>(self, button):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L427">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L427">
       
       (source)
     </a>
@@ -760,9 +466,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Open page if a bookmark is clicked.</p></div>
+    <div>Open page if a bookmark is clicked.</div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.plugins.bookmarksbar.BookmarkBar.on_preferences_changed">
     
@@ -773,7 +480,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">on_preferences_changed</span>(self, preferences):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L432">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L432">
       
       (source)
     </a>
@@ -781,20 +488,21 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Plugin preferences were changed.</p></div>
+    <div>Plugin preferences were changed.</div>
   </div>
-</div><div class="basemethod private">
+</div><div class="basemethod">
   
-  <a name="zim.plugins.bookmarksbar.BookmarkBar._get_short_page_name">
+  
+  <a name="zim.plugins.bookmarksbar.BookmarkBar.rename_bookmark">
     
   </a>
-  <a name="_get_short_page_name">
+  <a name="rename_bookmark">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_get_short_page_name</span>(self, name):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L449">
+    <span class="py-keyword">def</span> <span class="py-defname">rename_bookmark</span>(self, button):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L342">
       
       (source)
     </a>
@@ -802,9 +510,32 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Function to return short name for the page. Is used to set short names to bookmarks.</p></div>
+    <div>Change label of the button. New name is taken from the clipboard. If button's name has been changed before, change it back to its initial state.</div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarkBar.set_page">
+    
+  </a>
+  <a name="set_page">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_page</span>(self, page):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L226">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>If a page is present as a bookmark than select it.</div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.plugins.bookmarksbar.BookmarkBar.toggle_show_full_page_name">
     
@@ -815,7 +546,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">toggle_show_full_page_name</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L457">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L457">
       
       (source)
     </a>
@@ -823,9 +554,284 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Change page name from short to full and vice versa.</p></div>
+    <div>Change page name from short to full and vice versa.</div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarkBar.add_bookmarks_to_beginning">
+    
+  </a>
+  <a name="add_bookmarks_to_beginning">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">add_bookmarks_to_beginning</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L178">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarkBar.max_bookmarks">
+    
+  </a>
+  <a name="max_bookmarks">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">max_bookmarks</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L179">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarkBar.navigation">
+    
+  </a>
+  <a name="navigation">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">navigation</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L175">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarkBar.notebook">
+    
+  </a>
+  <a name="notebook">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">notebook</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L174">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarkBar.paths">
+    
+  </a>
+  <a name="paths">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">paths</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L199">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarkBar.paths_names">
+    
+  </a>
+  <a name="paths_names">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">paths_names</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L208">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarkBar.plus_button">
+    
+  </a>
+  <a name="plus_button">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">plus_button</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L183">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarkBar.save_flag">
+    
+  </a>
+  <a name="save_flag">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">save_flag</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L177">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarkBar.scrolledbox">
+    
+  </a>
+  <a name="scrolledbox">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">scrolledbox</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L190">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarkBar.uistate">
+    
+  </a>
+  <a name="uistate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">uistate</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L176">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basemethod private">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarkBar._add_new">
+    
+  </a>
+  <a name="_add_new">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_add_new</span>(self, path, add_bookmarks_to_beginning=<a href="https://docs.python.org/3/library/constants.html#False">False</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L247">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Add bookmark to the bar. :param path: path as a string object :param add_bookmarks_to_beginning: bool, add new bookmarks to the beginning of the bar,</div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarkBar._get_short_page_name">
+    
+  </a>
+  <a name="_get_short_page_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_short_page_name</span>(self, name):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L449">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Function to return short name for the page. Is used to set short names to bookmarks.</div>
+  </div>
+</div><div class="basemethod private">
+  
   
   <a name="zim.plugins.bookmarksbar.BookmarkBar._reload_bar">
     
@@ -836,7 +842,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_reload_bar</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L462">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L462">
       
       (source)
     </a>
@@ -844,16 +850,90 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Reload bar with bookmarks.</p></div>
+    <div>Reload bar with bookmarks.</div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarkBar._convert_path_name">
+    
+  </a>
+  <a name="_convert_path_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_convert_path_name</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L211">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarkBar._get_page">
+    
+  </a>
+  <a name="_get_page">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_get_page</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L180">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarkBar._saved_bookmark">
+    
+  </a>
+  <a name="_saved_bookmark">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_saved_bookmark</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L197">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

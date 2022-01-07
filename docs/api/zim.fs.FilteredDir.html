@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.fs.FilteredDir : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.fs.FilteredDir</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.fs.html">fs</a></code>.<code><a href="zim.fs.FilteredDir.html">FilteredDir</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.fs.html">fs</a></code><wbr></wbr>.<code><a href="zim.fs.FilteredDir.html">FilteredDir</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,27 +65,23 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">FilteredDir</span>(<a href="zim.fs.Dir.html" title="zim.fs.Dir">Dir</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L953">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">FilteredDir</span>(<a href="zim.fs.Dir.html" title="zim.fs.Dir">Dir</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L954" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.fs.FilteredDir">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Class implementing a folder with a filtered listing. Can be used to e.g. filter all objects that are also ignored by version control.</p></div>
+        <div>Class implementing a folder with a filtered listing. Can be used to e.g. filter all objects that are also ignored by version control.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id203">
+        <table class="children sortable" id="id201">
+  
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Constructor</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#ignore">ignore</a></code></td>
-    <td><span>Add a file pattern to ignore @param glob: a file path pattern (e.g. "*.txt")</span></td>
+    <td>Constructor</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -63,8 +90,13 @@
   </tr><tr class="method">
     
     <td>Method</td>
+    <td><code><a href="#ignore">ignore</a></code></td>
+    <td>Add a file pattern to ignore @param glob: a file path pattern (e.g. "*.txt")</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
     <td><code><a href="#list">list</a></code></td>
-    <td><span>List the file contents</span></td>
+    <td>List the file contents</td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -76,7 +108,8 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.fs.Dir.html">Dir</a></code>:
           </p>
-          <table class="children sortable" id="id204">
+          <table class="children sortable" id="id202">
+  
   
   <tr class="basemethod">
     
@@ -86,38 +119,8 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.fs.Dir.html#exists">exists</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.Dir.html#walk">walk</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.Dir.html#get_file_tree_as_text">get_file_tree_as_text</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.Dir.html#touch">touch</a></code></td>
-    <td><span>Create this folder and any parent folders that do not yet exist. @param mode: creation mode (e.g. 0700)</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.Dir.html#remove">remove</a></code></td>
-    <td><span>Remove this folder, fails if it is not empty.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
     <td><code><a href="zim.fs.Dir.html#cleanup">cleanup</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.Dir.html#remove_children">remove_children</a></code></td>
-    <td><span>Recursively remove everything below this folder .</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -126,13 +129,18 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.fs.Dir.html#file">file</a></code></td>
-    <td><span>Get a <code><a href="zim.fs.File.html">File</a></code> object for a path below this folder</span></td>
+    <td><code><a href="zim.fs.Dir.html#exists">exists</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.fs.Dir.html#resolve_file">resolve_file</a></code></td>
-    <td><span>Get a <code><a href="zim.fs.File.html">File</a></code> object for a path relative to this folder</span></td>
+    <td><code><a href="zim.fs.Dir.html#file">file</a></code></td>
+    <td>Get a <code><a href="zim.fs.File.html">File</a></code> object for a path below this folder</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.Dir.html#get_file_tree_as_text">get_file_tree_as_text</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -141,17 +149,42 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.fs.Dir.html#subdir">subdir</a></code></td>
-    <td><span>Get a <code><a href="zim.fs.Dir.html">Dir</a></code> object for a path below this folder</span></td>
+    <td><code><a href="zim.fs.Dir.html#new_subdir">new_subdir</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.Dir.html#remove">remove</a></code></td>
+    <td>Remove this folder, fails if it is not empty.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.Dir.html#remove_children">remove_children</a></code></td>
+    <td>Recursively remove everything below this folder .</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.fs.Dir.html#resolve_dir">resolve_dir</a></code></td>
-    <td><span>Get a <code><a href="zim.fs.Dir.html">Dir</a></code> object for a path relative to this folder</span></td>
+    <td>Get a <code><a href="zim.fs.Dir.html">Dir</a></code> object for a path relative to this folder</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.fs.Dir.html#new_subdir">new_subdir</a></code></td>
+    <td><code><a href="zim.fs.Dir.html#resolve_file">resolve_file</a></code></td>
+    <td>Get a <code><a href="zim.fs.File.html">File</a></code> object for a path relative to this folder</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.Dir.html#subdir">subdir</a></code></td>
+    <td>Get a <code><a href="zim.fs.Dir.html">Dir</a></code> object for a path below this folder</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.Dir.html#touch">touch</a></code></td>
+    <td>Create this folder and any parent folders that do not yet exist. @param mode: creation mode (e.g. 0700)</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.Dir.html#walk">walk</a></code></td>
     <td><span class="undocumented">No summary</span></td>
   </tr><tr class="basemethod private">
     
@@ -164,48 +197,19 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.fs.UnixPath.html">UnixPath</a></code> (via <code><a href="zim.fs.Dir.html">Dir</a></code>):
           </p>
-          <table class="children sortable" id="id205">
+          <table class="children sortable" id="id203">
   
-  <tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.fs.UnixPath.html#path">path</a></code></td>
-    <td><span>the absolute file path as string file system encoding (should only be used by low-level functions)</span></td>
-  </tr><tr class="baseproperty">
-    
-    <td>Property</td>
-    <td><code><a href="zim.fs.UnixPath.html#user_path">user_path</a></code></td>
-    <td><span>User_path property</span></td>
-  </tr><tr class="baseproperty">
-    
-    <td>Property</td>
-    <td><code><a href="zim.fs.UnixPath.html#uri">uri</a></code></td>
-    <td><span>File uri property</span></td>
-  </tr><tr class="baseproperty">
-    
-    <td>Property</td>
-    <td><code><a href="zim.fs.UnixPath.html#basename">basename</a></code></td>
-    <td><span>Basename property</span></td>
-  </tr><tr class="baseproperty">
-    
-    <td>Property</td>
-    <td><code><a href="zim.fs.UnixPath.html#dirname">dirname</a></code></td>
-    <td><span>Dirname property</span></td>
-  </tr><tr class="baseproperty">
-    
-    <td>Property</td>
-    <td><code><a href="zim.fs.UnixPath.html#dir">dir</a></code></td>
-    <td><span>Returns a <code><a href="zim.fs.Dir.html">Dir</a></code> object for the parent dir</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#serialize_zim_config">serialize_zim_config</a></code></td>
-    <td><span>Returns the file path as string for serializing the object</span></td>
-  </tr><tr class="baseclassmethod">
+  
+  <tr class="baseclassmethod">
     
     <td>Class Method</td>
     <td><code><a href="zim.fs.UnixPath.html#new_from_zim_config">new_from_zim_config</a></code></td>
-    <td><span>Returns a new object based on the string representation for that path</span></td>
+    <td>Returns a new object based on the string representation for that path</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#__add__">__add__</a></code></td>
+    <td>Concatenates paths, only creates objects of the same class. See <code><a href="zim.fs.Dir.html#file">Dir.file()</a></code> and <code><a href="zim.fs.Dir.html#subdir">Dir.subdir()</a></code> instead to create other objects.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -214,7 +218,7 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#__str__">__str__</a></code></td>
+    <td><code><a href="zim.fs.UnixPath.html#__ne__">__ne__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
     
@@ -224,53 +228,8 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#__add__">__add__</a></code></td>
-    <td><span>Concatenates paths, only creates objects of the same class. See <code><a href="zim.fs.Dir.html#file">Dir.file()</a></code> and <code><a href="zim.fs.Dir.html#subdir">Dir.subdir()</a></code> instead to create other objects.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#__ne__">__ne__</a></code></td>
+    <td><code><a href="zim.fs.UnixPath.html#__str__">__str__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#monitor">monitor</a></code></td>
-    <td><span>Creates a <code><a href="zim.fs.FSObjectMonitor.html">FSObjectMonitor</a></code> for this path</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#iswritable">iswritable</a></code></td>
-    <td><span>Check if a file or folder is writable. Uses permissions of parent folder if the file or folder does not (yet) exist. @returns: <code>True</code> if the file or folder is writable</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#mtime">mtime</a></code></td>
-    <td><span>Get the modification time of the file path. @returns: the mtime timestamp</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#ctime">ctime</a></code></td>
-    <td><span>Get the creation time of the file path. @returns: the mtime timestamp</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#size">size</a></code></td>
-    <td><span>Get file size in bytes See <code><a href="zim.fs.html#format_file_size">format_file_size()</a></code> to get a human readable label @returns: file size in bytes</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#isequal">isequal</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#split">split</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#relpath">relpath</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -279,23 +238,93 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#ctime">ctime</a></code></td>
+    <td>Get the creation time of the file path. @returns: the mtime timestamp</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
     <td><code><a href="zim.fs.UnixPath.html#ischild">ischild</a></code></td>
-    <td><span>Check if this path is a child path of a folder @returns: <code>True</code> if this path is a child path of <code>parent</code></span></td>
+    <td>Check if this path is a child path of a folder @returns: <tt class="rst-docutils literal">True</tt> if this path is a child path of <tt class="rst-docutils literal">parent</tt></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.fs.UnixPath.html#isdir">isdir</a></code></td>
-    <td><span>Check if this path is a folder or not. Used to detect if e.g. a <code><a href="zim.fs.File.html">File</a></code> object should have really been a <code><a href="zim.fs.Dir.html">Dir</a></code> object. @returns: <code>True</code> when this path is a folder</span></td>
+    <td>Check if this path is a folder or not. Used to detect if e.g. a <code><a href="zim.fs.File.html">File</a></code> object should have really been a <code><a href="zim.fs.Dir.html">Dir</a></code> object. @returns: <tt class="rst-docutils literal">True</tt> when this path is a folder</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#isequal">isequal</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#iswritable">iswritable</a></code></td>
+    <td>Check if a file or folder is writable. Uses permissions of parent folder if the file or folder does not (yet) exist. @returns: <tt class="rst-docutils literal">True</tt> if the file or folder is writable</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#monitor">monitor</a></code></td>
+    <td>Creates a <code><a href="zim.fs.FSObjectMonitor.html">FSObjectMonitor</a></code> for this path</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#mtime">mtime</a></code></td>
+    <td>Get the modification time of the file path. @returns: the mtime timestamp</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#relpath">relpath</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.fs.UnixPath.html#rename">rename</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="baseinstancevariable private">
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#serialize_zim_config">serialize_zim_config</a></code></td>
+    <td>Returns the file path as string for serializing the object</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#size">size</a></code></td>
+    <td>Get file size in bytes See <code><a href="zim.fs.html#format_file_size">format_file_size()</a></code> to get a human readable label @returns: file size in bytes</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#split">split</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="baseinstancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="zim.fs.UnixPath.html#_serialized">_serialized</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><code><a href="zim.fs.UnixPath.html#path">path</a></code></td>
+    <td>the absolute file path as string file system encoding (should only be used by low-level functions)</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.fs.UnixPath.html#basename">basename</a></code></td>
+    <td>Basename property</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.fs.UnixPath.html#dir">dir</a></code></td>
+    <td>Returns a <code><a href="zim.fs.Dir.html">Dir</a></code> object for the parent dir</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.fs.UnixPath.html#dirname">dirname</a></code></td>
+    <td>Dirname property</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.fs.UnixPath.html#uri">uri</a></code></td>
+    <td>File uri property</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.fs.UnixPath.html#user_path">user_path</a></code></td>
+    <td>User_path property</td>
   </tr><tr class="basestaticmethod private">
     
     <td>Static Method</td>
@@ -305,6 +334,11 @@
     
     <td>Method</td>
     <td><code><a href="zim.fs.UnixPath.html#_set_path">_set_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.fs.UnixPath.html#_serialized">_serialized</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -317,6 +351,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.fs.FilteredDir.__init__">
     
   </a>
@@ -326,7 +361,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L959">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L960">
       
       (source)
     </a>
@@ -334,51 +369,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.fs.UnixPath.html#__init__">zim.fs.UnixPath.__init__</a></code></div>
     
-    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>an absolute file path, file URL, <code><a href="zim.fs.UnixPath.html">FilePath</a></code> object or a list of path elements. When a list is given, the first element is allowed to be an absolute path, URL or <code><a href="zim.fs.UnixPath.html">FilePath</a></code> object as well.</td></tr></table></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.fs.FilteredDir._ignore">
-    
-  </a>
-  <a name="_ignore">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_ignore</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L968">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="#list">list</a></code>)
+    <div>Constructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">an absolute file path, file URL, <code><a href="zim.fs.UnixPath.html">FilePath</a></code> object or a list of path elements. When a list is given, the first element is allowed to be an absolute path, URL or <code><a href="zim.fs.UnixPath.html">FilePath</a></code> object as well.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.fs.FilteredDir.ignore">
-    
-  </a>
-  <a name="ignore">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">ignore</span>(self, glob):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L970">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Add a file pattern to ignore</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">glob</td><td>a file path pattern (e.g. "*.txt")</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.fs.FilteredDir.filter">
     
@@ -389,7 +383,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">filter</span>(self, name):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L977">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L978">
       
       (source)
     </a>
@@ -401,6 +395,29 @@
   </div>
 </div><div class="basemethod">
   
+  
+  <a name="zim.fs.FilteredDir.ignore">
+    
+  </a>
+  <a name="ignore">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ignore</span>(self, glob):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L971">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Add a file pattern to ignore<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">glob</span></td><td class="fieldArgDesc">a file path pattern (e.g. "*.txt")</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
   <a name="zim.fs.FilteredDir.list">
     
   </a>
@@ -409,8 +426,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">list</span>(self, includehidden=False, includetmp=False, raw=False):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L984">
+    <span class="py-keyword">def</span> <span class="py-defname">list</span>(self, includehidden=<a href="https://docs.python.org/3/library/constants.html#False">False</a>, includetmp=<a href="https://docs.python.org/3/library/constants.html#False">False</a>, raw=<a href="https://docs.python.org/3/library/constants.html#False">False</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L985">
       
       (source)
     </a>
@@ -418,16 +435,44 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.fs.Dir.html#list">zim.fs.Dir.list</a></code></div>
     
-    <div><p>List the file contents</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">includehidden</td><td>if <code>True</code> include hidden files (e.g. names starting with "."), ignore otherwise</td></tr><tr><td></td><td class="fieldArg">includetmp</td><td>if <code>True</code> include temporary files (e.g. names ending in "~"), ignore otherwise</td></tr><tr><td></td><td class="fieldArg">raw</td><td>for filtered folders (<code>FilteredDir</code> instances) setting <code>raw</code> to <code>True</code> will disable filtering</td></tr><tr><td></td><td class="fieldArg">glob</td><td>a file name glob to filter the listed files, e.g <code>"*.png"</code></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a sorted list of names for files and subdirectories. Will not return names that could not be decoded properly and will throw warnings if those are encountered. Hidden files are silently ignored.</td></tr></table></div>
+    <div>List the file contents<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">includehidden</span></td><td class="fieldArgDesc">if <tt class="rst-docutils literal">True</tt> include hidden files (e.g. names starting with "."), ignore otherwise</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">includetmp</span></td><td class="fieldArgDesc">if <tt class="rst-docutils literal">True</tt> include temporary files (e.g. names ending in "~"), ignore otherwise</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">raw</span></td><td class="fieldArgDesc">for filtered folders (<tt class="rst-docutils literal">FilteredDir</tt> instances) setting <tt class="rst-docutils literal">raw</tt> to <tt class="rst-docutils literal">True</tt> will disable filtering</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">glob</span></td><td class="fieldArgDesc">a file name glob to filter the listed files, e.g <tt class="rst-docutils literal"><span class="pre">"*.png"</span></tt></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a sorted list of names for files and subdirectories. Will not return names that could not be decoded properly and will throw warnings if those are encountered. Hidden files are silently ignored.</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.fs.FilteredDir._ignore">
+    
+  </a>
+  <a name="_ignore">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_ignore</span>: <code><a href="#list">list</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L969">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

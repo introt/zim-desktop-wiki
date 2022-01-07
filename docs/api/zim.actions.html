@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.actions : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.actions</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.actions.html">actions</a></code></code></h1>
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.actions.html">actions</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py">(source)</a>
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
@@ -45,15 +76,101 @@
       <div id="splitTables">
         <table class="children sortable" id="id3">
   
-  <tr class="variable">
+  
+  <tr class="class">
     
-    <td>Variable</td>
-    <td><code><a href="#logger">logger</a></code></td>
+    <td>Class</td>
+    <td><code><a href="zim.actions.ActionClassMethod.html">ActionClassMethod</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
+  </tr><tr class="class">
     
-    <td>Variable</td>
-    <td><code><a href="#Gtk">Gtk</a></code></td>
+    <td>Class</td>
+    <td><code><a href="zim.actions.ActionDescriptor.html">ActionDescriptor</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.actions.ActionMethod.html">ActionMethod</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.actions.BoundActionMethod.html">BoundActionMethod</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.actions.RadioActionClassMethod.html">RadioActionClassMethod</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.actions.RadioActionMethod.html">RadioActionMethod</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.actions.ToggleActionClassMethod.html">ToggleActionClassMethod</a></code></td>
+    <td>Toggle action, used by the <code><a href="zim.actions.html#toggle_action">toggle_action</a></code> decorator</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.actions.ToggleActionMethod.html">ToggleActionMethod</a></code></td>
+    <td><span class="undocumented">No class docstring; 0/2 instance variable, 0/2 class variable, 3/9 methods documented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#action">action</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_actions">get_actions</a></code></td>
+    <td>Returns bound actions for object</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_gtk_actiongroup">get_gtk_actiongroup</a></code></td>
+    <td>Return a <tt class="rst-docutils literal">Gtk.ActionGroup</tt> for an object using <code>Action</code> objects as attributes.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#gtk_radioaction_set_current">gtk_radioaction_set_current</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#hasaction">hasaction</a></code></td>
+    <td>Like <tt class="rst-docutils literal">hasattr</tt> but for attributes that define an action</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#initialize_actiongroup">initialize_actiongroup</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#radio_action">radio_action</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#radio_option">radio_option</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#toggle_action">toggle_action</a></code></td>
+    <td>Decorator to turn a method into an <code><a href="zim.actions.ToggleActionMethod.html">ToggleActionMethod</a></code> object</td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#PRIMARY_MODIFIER_MASK">PRIMARY_MODIFIER_MASK</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#PRIMARY_MODIFIER_STRING">PRIMARY_MODIFIER_STRING</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
@@ -68,97 +185,12 @@
   </tr><tr class="variable">
     
     <td>Variable</td>
-    <td><code><a href="#PRIMARY_MODIFIER_STRING">PRIMARY_MODIFIER_STRING</a></code></td>
+    <td><code><a href="#Gtk">Gtk</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
     <td>Variable</td>
-    <td><code><a href="#PRIMARY_MODIFIER_MASK">PRIMARY_MODIFIER_MASK</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#hasaction">hasaction</a></code></td>
-    <td><span>Like <code>hasattr</code> but for attributes that define an action</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.actions.ActionDescriptor.html">ActionDescriptor</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#action">action</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.actions.BoundActionMethod.html">BoundActionMethod</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.actions.ActionMethod.html">ActionMethod</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.actions.ActionClassMethod.html">ActionClassMethod</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#toggle_action">toggle_action</a></code></td>
-    <td><span>Decorator to turn a method into an <code><a href="zim.actions.ToggleActionMethod.html">ToggleActionMethod</a></code> object</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.actions.ToggleActionMethod.html">ToggleActionMethod</a></code></td>
-    <td><span class="undocumented">No class docstring; 0/2 class variables, 0/2 instance variables, 3/9 methods documented</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.actions.ToggleActionClassMethod.html">ToggleActionClassMethod</a></code></td>
-    <td><span>Toggle action, used by the <code><a href="zim.actions.html#toggle_action">toggle_action</a></code> decorator</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#radio_action">radio_action</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#radio_option">radio_option</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#gtk_radioaction_set_current">gtk_radioaction_set_current</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.actions.RadioActionMethod.html">RadioActionMethod</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.actions.RadioActionClassMethod.html">RadioActionClassMethod</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#get_actions">get_actions</a></code></td>
-    <td><span>Returns bound actions for object</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#get_gtk_actiongroup">get_gtk_actiongroup</a></code></td>
-    <td><span>Return a <code>Gtk.ActionGroup</code> for an object using <code>Action</code> objects as attributes.</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#initialize_actiongroup">initialize_actiongroup</a></code></td>
+    <td><code><a href="#logger">logger</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="function private">
     
@@ -179,175 +211,8 @@
 
       <div id="childList">
 
-        <div class="basevariable">
+        <div class="basefunction">
   
-  <a name="zim.actions.logger">
-    
-  </a>
-  <a name="logger">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">logger</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L54">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.actions.Gtk">
-    
-  </a>
-  <a name="Gtk">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">Gtk</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L63">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.actions.Gio">
-    
-  </a>
-  <a name="Gio">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">Gio</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L64">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.actions.GLib">
-    
-  </a>
-  <a name="GLib">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">GLib</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L65">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.actions._get_modifier_mask">
-    
-  </a>
-  <a name="_get_modifier_mask">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_get_modifier_mask</span>():
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L67">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.actions.PRIMARY_MODIFIER_STRING">
-    
-  </a>
-  <a name="PRIMARY_MODIFIER_STRING">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">PRIMARY_MODIFIER_STRING</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L72">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.actions.PRIMARY_MODIFIER_MASK">
-    
-  </a>
-  <a name="PRIMARY_MODIFIER_MASK">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">PRIMARY_MODIFIER_MASK</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L73">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.actions.hasaction">
-    
-  </a>
-  <a name="hasaction">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">hasaction</span>(obj, actionname):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L76">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Like <code>hasattr</code> but for attributes that define an action</p></div>
-  </div>
-</div><div class="basefunction">
   
   <a name="zim.actions.action">
     
@@ -357,8 +222,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">action</span>(label, accelerator='', icon=None, verb_icon=None, menuhints='', alt_accelerator=None, tooltip=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L96">
+    <span class="py-keyword">def</span> <span class="py-defname">action</span>(label, accelerator=<span class="rst-variable-quote">'</span><span class="rst-variable-string"></span><span class="rst-variable-quote">'</span>, icon=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, verb_icon=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, menuhints=<span class="rst-variable-quote">'</span><span class="rst-variable-string"></span><span class="rst-variable-quote">'</span>, alt_accelerator=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, tooltip=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L96">
       
       (source)
     </a>
@@ -366,93 +231,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Decorator to turn a method into an <code><a href="zim.actions.ActionMethod.html">ActionMethod</a></code> object Methods decorated with this decorator can have keyword arguments but no positional arguments.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">label</td><td>the label used e.g for the menu item (can use "_" for mnemonics)</td></tr><tr><td></td><td class="fieldArg">accelerator</td><td>accelerator key description</td></tr><tr><td></td><td class="fieldArg">icon</td><td>name of a "noun" icon - used together with the label. Only use this for "things and places", not for actions or commands, and only if the icon makes the item easier to recognize.</td></tr><tr><td></td><td class="fieldArg">verb_icon</td><td>name of a "verb" icon - only used for compact menu views</td></tr><tr><td></td><td class="fieldArg">menuhints</td><td>string with hints for menu placement and sensitivity</td></tr><tr><td></td><td class="fieldArg">alt_accelerator</td><td>alternative accelerator key binding</td></tr><tr><td></td><td class="fieldArg">tooltip</td><td>tooltip label, defaults to <code>label</code></td></tr></table></div>
+    <div>Decorator to turn a method into an <code><a href="zim.actions.ActionMethod.html">ActionMethod</a></code> object Methods decorated with this decorator can have keyword arguments but no positional arguments.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">label</span></td><td class="fieldArgDesc">the label used e.g for the menu item (can use "_" for mnemonics)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">accelerator</span></td><td class="fieldArgDesc">accelerator key description</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">icon</span></td><td class="fieldArgDesc">name of a "noun" icon - used together with the label. Only use this for "things and places", not for actions or commands, and only if the icon makes the item easier to recognize.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verb_icon</span></td><td class="fieldArgDesc">name of a "verb" icon - only used for compact menu views</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">menuhints</span></td><td class="fieldArgDesc">string with hints for menu placement and sensitivity</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">alt_accelerator</span></td><td class="fieldArgDesc">alternative accelerator key binding</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tooltip</span></td><td class="fieldArgDesc">tooltip label, defaults to <tt class="rst-docutils literal">label</tt></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
-  <a name="zim.actions.toggle_action">
-    
-  </a>
-  <a name="toggle_action">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">toggle_action</span>(label, accelerator='', icon=None, verb_icon=None, init=False, menuhints='', tooltip=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L251">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Decorator to turn a method into an <code><a href="zim.actions.ToggleActionMethod.html">ToggleActionMethod</a></code> object</p><p>The decorated method should be defined as: <code>my_toggle_method(self, active)</code>. The '<code>active</code>' parameter is a boolean that reflects the new state of the toggle.</p><p>Users can also call the method without setting the <code>active</code> parameter. In this case the wrapper determines how to toggle the state and calls the inner function with the new state.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">label</td><td>the label used e.g for the menu item (can use "_" for mnemonics)</td></tr><tr><td></td><td class="fieldArg">accelerator</td><td>accelerator key description</td></tr><tr><td></td><td class="fieldArg">icon</td><td>name of a "noun" icon - used together with the label. Only use this for "things and places", not for actions or commands, and only if the icon makes the item easier to recognize.</td></tr><tr><td></td><td class="fieldArg">verb_icon</td><td>name of a "verb" icon - only used for compact menu views</td></tr><tr><td></td><td class="fieldArg">init</td><td>initial state of the toggle</td></tr><tr><td></td><td class="fieldArg">menuhints</td><td>string with hints for menu placement and sensitivity</td></tr><tr><td></td><td class="fieldArg">tooltip</td><td>tooltip label, defaults to <code>label</code></td></tr></table></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.actions.radio_action">
-    
-  </a>
-  <a name="radio_action">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">radio_action</span>(menulabel, *radio_options, menuhints=''):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L374">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.actions.radio_option">
-    
-  </a>
-  <a name="radio_option">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">radio_option</span>(key, label, accelerator=''):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L381">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.actions.gtk_radioaction_set_current">
-    
-  </a>
-  <a name="gtk_radioaction_set_current">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">gtk_radioaction_set_current</span>(g_radio_action, key):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L387">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
   
   <a name="zim.actions.get_actions">
     
@@ -463,7 +245,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">get_actions</span>(obj):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L457">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L457">
       
       (source)
     </a>
@@ -471,9 +253,12 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Returns bound actions for object</p><p>NOTE: See also <code><a href="zim.plugins.html#list_actions">zim.plugins.list_actions()</a></code> if you want to include actions of plugin extensions</p></div>
+    <div><p>Returns bound actions for object</p>
+<p>NOTE: See also <code><a href="zim.plugins.html#list_actions">zim.plugins.list_actions()</a></code> if you want to include actions of plugin extensions</p>
+</div>
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.actions.get_gtk_actiongroup">
     
@@ -484,7 +269,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">get_gtk_actiongroup</span>(obj):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L469">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L469">
       
       (source)
     </a>
@@ -492,20 +277,24 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Return a <code>Gtk.ActionGroup</code> for an object using <code>Action</code> objects as attributes.</p><p>Defines the attribute <code>obj.actiongroup</code> if it does not yet exist.</p><p>This method can only be used when gtk is available</p></div>
+    <div><p>Return a <tt class="rst-docutils literal">Gtk.ActionGroup</tt> for an object using <code>Action</code> objects as attributes.</p>
+<p>Defines the attribute <tt class="rst-docutils literal">obj.actiongroup</tt> if it does not yet exist.</p>
+<p>This method can only be used when gtk is available</p>
+</div>
   </div>
-</div><div class="basefunction private">
+</div><div class="basefunction">
   
-  <a name="zim.actions._gtk_add_action_with_accel">
+  
+  <a name="zim.actions.gtk_radioaction_set_current">
     
   </a>
-  <a name="_gtk_add_action_with_accel">
+  <a name="gtk_radioaction_set_current">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_gtk_add_action_with_accel</span>(obj, actiongroup, action, attr, accel):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L498">
+    <span class="py-keyword">def</span> <span class="py-defname">gtk_radioaction_set_current</span>(g_radio_action, key):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L387">
       
       (source)
     </a>
@@ -517,6 +306,29 @@
   </div>
 </div><div class="basefunction">
   
+  
+  <a name="zim.actions.hasaction">
+    
+  </a>
+  <a name="hasaction">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">hasaction</span>(obj, actionname):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L76">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Like <tt class="rst-docutils literal">hasattr</tt> but for attributes that define an action</div>
+  </div>
+</div><div class="basefunction">
+  
+  
   <a name="zim.actions.initialize_actiongroup">
     
   </a>
@@ -526,7 +338,258 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">initialize_actiongroup</span>(obj, prefix):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L513">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L513">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.actions.radio_action">
+    
+  </a>
+  <a name="radio_action">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">radio_action</span>(menulabel, *radio_options, menuhints=<span class="rst-variable-quote">'</span><span class="rst-variable-string"></span><span class="rst-variable-quote">'</span>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L374">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.actions.radio_option">
+    
+  </a>
+  <a name="radio_option">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">radio_option</span>(key, label, accelerator=<span class="rst-variable-quote">'</span><span class="rst-variable-string"></span><span class="rst-variable-quote">'</span>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L381">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.actions.toggle_action">
+    
+  </a>
+  <a name="toggle_action">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">toggle_action</span>(label, accelerator=<span class="rst-variable-quote">'</span><span class="rst-variable-string"></span><span class="rst-variable-quote">'</span>, icon=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, verb_icon=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, init=<a href="https://docs.python.org/3/library/constants.html#False">False</a>, menuhints=<span class="rst-variable-quote">'</span><span class="rst-variable-string"></span><span class="rst-variable-quote">'</span>, tooltip=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L251">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Decorator to turn a method into an <code><a href="zim.actions.ToggleActionMethod.html">ToggleActionMethod</a></code> object</p>
+<p>The decorated method should be defined as: <tt class="rst-docutils literal">my_toggle_method(self, active)</tt>. The '<tt class="rst-docutils literal">active</tt>' parameter is a boolean that reflects the new state of the toggle.</p>
+<p>Users can also call the method without setting the <tt class="rst-docutils literal">active</tt> parameter. In this case the wrapper determines how to toggle the state and calls the inner function with the new state.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">label</span></td><td class="fieldArgDesc">the label used e.g for the menu item (can use "_" for mnemonics)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">accelerator</span></td><td class="fieldArgDesc">accelerator key description</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">icon</span></td><td class="fieldArgDesc">name of a "noun" icon - used together with the label. Only use this for "things and places", not for actions or commands, and only if the icon makes the item easier to recognize.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verb_icon</span></td><td class="fieldArgDesc">name of a "verb" icon - only used for compact menu views</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">init</span></td><td class="fieldArgDesc">initial state of the toggle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">menuhints</span></td><td class="fieldArgDesc">string with hints for menu placement and sensitivity</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tooltip</span></td><td class="fieldArgDesc">tooltip label, defaults to <tt class="rst-docutils literal">label</tt></td></tr></table></div>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.actions.PRIMARY_MODIFIER_MASK">
+    
+  </a>
+  <a name="PRIMARY_MODIFIER_MASK">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PRIMARY_MODIFIER_MASK</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L73">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><a href="#_get_modifier_mask">_get_modifier_mask</a>()</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.actions.PRIMARY_MODIFIER_STRING">
+    
+  </a>
+  <a name="PRIMARY_MODIFIER_STRING">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PRIMARY_MODIFIER_STRING</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L72">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;Primary&gt;</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.actions.Gio">
+    
+  </a>
+  <a name="Gio">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">Gio</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L64">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.actions.GLib">
+    
+  </a>
+  <a name="GLib">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">GLib</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L65">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.actions.Gtk">
+    
+  </a>
+  <a name="Gtk">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">Gtk</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L63">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.actions.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L54">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.actions._get_modifier_mask">
+    
+  </a>
+  <a name="_get_modifier_mask">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_modifier_mask</span>():
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L67">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.actions._gtk_add_action_with_accel">
+    
+  </a>
+  <a name="_gtk_add_action_with_accel">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_gtk_add_action_with_accel</span>(obj, actiongroup, action, attr, accel):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/actions.py#L498">
       
       (source)
     </a>
@@ -539,11 +602,16 @@
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

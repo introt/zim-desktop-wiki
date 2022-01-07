@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.newfs.mock : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.newfs.mock</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.newfs.html">newfs</a></code>.<code><a href="zim.newfs.mock.html">mock</a></code></code></h1>
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.newfs.html">newfs</a></code><wbr></wbr>.<code><a href="zim.newfs.mock.html">mock</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,41 +65,24 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/mock.py">(source)</a>
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/mock.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Mock objects for file system classes</p><p>Since the file system is an external resource that assumes an underlying reality, it is a hard thing to mock in test cases. However it is also relatively slow, so having a good mock makes good test cases much more usable. Therefore we go to great lenght here to have a full set of mock classes for all file system related objects.</p></div>
+        <div><p>Mock objects for file system classes</p>
+<p>Since the file system is an external resource that assumes an underlying reality, it is a hard thing to mock in test cases. However it is also relatively slow, so having a good mock makes good test cases much more usable. Therefore we go to great lenght here to have a full set of mock classes for all file system related objects.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id659">
+        <table class="children sortable" id="id668">
   
-  <tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#clone_mock_object">clone_mock_object</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#os_native_path">os_native_path</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="class">
+  
+  <tr class="class">
     
     <td>Class</td>
-    <td><code><a href="zim.newfs.mock.MockFSNode.html">MockFSNode</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.newfs.mock.MockFS.html">MockFS</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.newfs.mock.MockFSObjectBase.html">MockFSObjectBase</a></code></td>
+    <td><code><a href="zim.newfs.mock.MockFile.html">MockFile</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="class">
     
@@ -78,8 +92,28 @@
   </tr><tr class="class">
     
     <td>Class</td>
-    <td><code><a href="zim.newfs.mock.MockFile.html">MockFile</a></code></td>
+    <td><code><a href="zim.newfs.mock.MockFS.html">MockFS</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.newfs.mock.MockFSNode.html">MockFSNode</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.newfs.mock.MockFSObjectBase.html">MockFSObjectBase</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#clone_mock_object">clone_mock_object</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#os_native_path">os_native_path</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr>
 </table>
         
@@ -91,6 +125,7 @@
 
         <div class="basefunction">
   
+  
   <a name="zim.newfs.mock.clone_mock_object">
     
   </a>
@@ -100,7 +135,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">clone_mock_object</span>(source, target):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/mock.py#L26">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/mock.py#L26">
       
       (source)
     </a>
@@ -108,9 +143,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Similar to <code>copyto</code>, but used to copy to a mock object that belongs to another mock filesystem hierarchy.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">source</td><td>a <code><a href="zim.newfs.mock.MockFile.html">MockFile</a></code> or <code><a href="zim.newfs.mock.MockFolder.html">MockFolder</a></code></td></tr><tr><td></td><td class="fieldArg">target</td><td>another <code><a href="zim.newfs.mock.MockFile.html">MockFile</a></code> or <code><a href="zim.newfs.mock.MockFolder.html">MockFolder</a></code></td></tr></table></div>
+    <div>Similar to <tt class="rst-docutils literal">copyto</tt>, but used to copy to a mock object that belongs to another mock filesystem hierarchy.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">source</span></td><td class="fieldArgDesc">a <code><a href="zim.newfs.mock.MockFile.html">MockFile</a></code> or <code><a href="zim.newfs.mock.MockFolder.html">MockFolder</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">target</span></td><td class="fieldArgDesc">another <code><a href="zim.newfs.mock.MockFile.html">MockFile</a></code> or <code><a href="zim.newfs.mock.MockFolder.html">MockFolder</a></code></td></tr></table></div>
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.newfs.mock.os_native_path">
     
@@ -120,8 +156,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">os_native_path</span>(unixpath):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/mock.py#L39">
+    <span class="py-keyword">def</span> <span class="py-defname">os_native_path</span>(unixpath, drive=<span class="rst-variable-quote">'</span><span class="rst-variable-string">M:</span><span class="rst-variable-quote">'</span>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/mock.py#L39">
       
       (source)
     </a>
@@ -129,16 +165,21 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Adapts unix style paths for windows if needed Used for convenience to of writing cross-platform test cases Called automatically when constructing a <code><a href="zim.newfs.mock.MockFile.html">MockFile</a></code> or <code><a href="zim.newfs.mock.MockFolder.html">MockFolder</a></code> object Does not modify URLs</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">unixpath</td><td>the (mock) unix path as a string</td></tr></table></div>
+    <div>Adapts unix style paths for windows if needed For file paths starting with "/" and "file:///" URIs a drive letter is added and path seperators are converted if needed. Used for convenience to of writing cross-platform test cases Called automatically when constructing a <code><a href="zim.newfs.mock.MockFile.html">MockFile</a></code> or <code><a href="zim.newfs.mock.MockFolder.html">MockFolder</a></code> object<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">unixpath</span></td><td class="fieldArgDesc">the (mock) unix path as a string</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">drive</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

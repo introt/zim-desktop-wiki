@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.notebook.index.pages.PagesView : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.notebook.index.pages.PagesView</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.notebook.html">notebook</a></code>.<code><a href="zim.notebook.index.html">index</a></code>.<code><a href="zim.notebook.index.pages.html">pages</a></code>.<code><a href="zim.notebook.index.pages.PagesView.html">PagesView</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.notebook.html">notebook</a></code><wbr></wbr>.<code><a href="zim.notebook.index.html">index</a></code><wbr></wbr>.<code><a href="zim.notebook.index.pages.html">pages</a></code><wbr></wbr>.<code><a href="zim.notebook.index.pages.PagesView.html">PagesView</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,16 +65,17 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">PagesView</span>(<a href="zim.notebook.index.base.IndexView.html" title="zim.notebook.index.base.IndexView">IndexView</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L516">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">PagesView</span>(<a href="zim.notebook.index.base.IndexView.html" title="zim.notebook.index.base.IndexView">IndexView</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L517" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.notebook.index.pages.PagesView">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Index view that exposes the "pages" table in the index</p></div>
+        <div>Index view that exposes the "pages" table in the index</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id726">
+        <table class="children sortable" id="id723">
+  
   
   <tr class="method">
     
@@ -53,43 +85,8 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#lookup_by_pagename">lookup_by_pagename</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#list_pages">list_pages</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#n_list_pages">n_list_pages</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#match_pages">match_pages</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#match_all_pages">match_all_pages</a></code></td>
-    <td><span>Like <code>match_pages()</code> except not limited a specific namespace</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#walk">walk</a></code></td>
-    <td><span>Generator function to yield all pages in the index, depth first</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#walk_bottomup">walk_bottomup</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#n_all_pages">n_all_pages</a></code></td>
-    <td><span>Returns to total number of pages in the index</span></td>
+    <td><code><a href="#create_link">create_link</a></code></td>
+    <td>Determine best way to represent a link between two pages</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -98,13 +95,28 @@
   </tr><tr class="method">
     
     <td>Method</td>
+    <td><code><a href="#get_next">get_next</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
     <td><code><a href="#get_previous">get_previous</a></code></td>
     <td><span class="undocumented">No summary</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#get_next">get_next</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
+    <td><code><a href="#list_pages">list_pages</a></code></td>
+    <td>Generator for child pages of <tt class="rst-docutils literal">path</tt> @returns: yields <code><a href="zim.notebook.page.Path.html">Path</a></code> objects for children of <tt class="rst-docutils literal">path</tt> @raises IndexNotFoundError: if <tt class="rst-docutils literal">path</tt> is not found in the index</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#list_recent_changes">list_recent_changes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#lookup_by_pagename">lookup_by_pagename</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -113,22 +125,42 @@
   </tr><tr class="method">
     
     <td>Method</td>
+    <td><code><a href="#match_all_pages">match_all_pages</a></code></td>
+    <td>Like <tt class="rst-docutils literal">match_pages()</tt> except not limited a specific namespace</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#match_pages">match_pages</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#n_all_pages">n_all_pages</a></code></td>
+    <td></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#n_list_pages">n_list_pages</a></code></td>
+    <td></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
     <td><code><a href="#resolve_link">resolve_link</a></code></td>
     <td><span class="undocumented">No summary</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#create_link">create_link</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
+    <td><code><a href="#walk">walk</a></code></td>
+    <td>Generator function to yield all pages in the index, depth first</td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#list_recent_changes">list_recent_changes</a></code></td>
+    <td><code><a href="#walk_bottomup">walk_bottomup</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="method private">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#_pages">_pages</a></code></td>
+    <td>Method</td>
+    <td><code><a href="#_find_floating_link">_find_floating_link</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
@@ -140,10 +172,10 @@
     <td>Method</td>
     <td><code><a href="#_match_pages">_match_pages</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
+  </tr><tr class="instancevariable private">
     
-    <td>Method</td>
-    <td><code><a href="#_find_floating_link">_find_floating_link</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="#_pages">_pages</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -151,7 +183,8 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.notebook.index.base.IndexView.html">IndexView</a></code>:
           </p>
-          <table class="children sortable" id="id727">
+          <table class="children sortable" id="id724">
+  
   
   <tr class="baseclassmethod">
     
@@ -174,6 +207,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.notebook.index.pages.PagesView.__init__">
     
   </a>
@@ -183,7 +217,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, db):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L519">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L520">
       
       (source)
     </a>
@@ -191,345 +225,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.notebook.index.base.IndexView.html#__init__">zim.notebook.index.base.IndexView.__init__</a></code></div>
     
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.notebook.index.pages.PagesView._pages">
-    
-  </a>
-  <a name="_pages">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_pages</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L521">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
+    <div><p class="undocumented">Undocumented</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">db:</span><code><a href="https://docs.python.org/3/library/sqlite3.html#sqlite3.Connection">sqlite3.Connection</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.notebook.index.pages.PagesView.lookup_by_pagename">
-    
-  </a>
-  <a name="lookup_by_pagename">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">lookup_by_pagename</span>(self, pagename):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L523">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.notebook.index.pages.PagesView.list_pages">
-    
-  </a>
-  <a name="list_pages">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">list_pages</span>(self, path=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L532">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Generator for child pages of <code>path</code></p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a <code><a href="zim.notebook.page.Path.html">Path</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">yields <code><a href="zim.notebook.page.Path.html">Path</a></code> objects for children of <code>path</code></td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="zim.notebook.index.base.IndexNotFoundError.html">IndexNotFoundError</a></td><td>if <code>path</code> is not found in the index</td></tr></table></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.notebook.index.pages.PagesView._list_pages">
-    
-  </a>
-  <a name="_list_pages">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_list_pages</span>(self, page_id):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L544">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.notebook.index.pages.PagesView.n_list_pages">
-    
-  </a>
-  <a name="n_list_pages">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">n_list_pages</span>(self, path=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L551">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.notebook.index.pages.PagesView.match_pages">
-    
-  </a>
-  <a name="match_pages">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">match_pages</span>(self, path, text, limit=10):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L558">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Generator for child pages of <code>path</code> that match <code>text</code> in their name</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a <code><a href="zim.notebook.page.Path.html">Path</a></code> object</td></tr><tr><td></td><td class="fieldArg">text</td><td>a string</td></tr><tr><td></td><td class="fieldArg">limit</td><td>max number of results</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">yields <code><a href="zim.notebook.page.Path.html">Path</a></code> objects for children of <code>path</code></td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="zim.notebook.index.base.IndexNotFoundError.html">IndexNotFoundError</a></td><td>if <code>path</code> is not found in the index</td></tr></table></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.notebook.index.pages.PagesView._match_pages">
-    
-  </a>
-  <a name="_match_pages">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_match_pages</span>(self, page_id, text, limit):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L572">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.notebook.index.pages.PagesView.match_all_pages">
-    
-  </a>
-  <a name="match_all_pages">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">match_all_pages</span>(self, text, limit=10):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L581">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Like <code>match_pages()</code> except not limited a specific namespace</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.notebook.index.pages.PagesView.walk">
-    
-  </a>
-  <a name="walk">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">walk</span>(self, path=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L589">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Generator function to yield all pages in the index, depth first</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a <code><a href="zim.notebook.page.Path.html">Path</a></code> object for the starting point, can be used to only iterate a sub-tree. When this is <code>None</code> the whole notebook is iterated over</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">an iterator that yields <code><a href="zim.notebook.page.Path.html">Path</a></code> objects</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="zim.notebook.index.base.IndexNotFoundError.html">IndexNotFoundError</a></td><td>if <code>path</code> does not exist in the index</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.notebook.index.pages.PagesView.walk_bottomup">
-    
-  </a>
-  <a name="walk_bottomup">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">walk_bottomup</span>(self, path=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L604">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.notebook.index.pages.PagesView.n_all_pages">
-    
-  </a>
-  <a name="n_all_pages">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">n_all_pages</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L608">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Returns to total number of pages in the index</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.notebook.index.pages.PagesView.get_has_previous_has_next">
-    
-  </a>
-  <a name="get_has_previous_has_next">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_has_previous_has_next</span>(self, path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L613">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.notebook.index.pages.PagesView.get_previous">
-    
-  </a>
-  <a name="get_previous">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_previous</span>(self, path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L633">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Get the previous path in the index, in the same order that <code><a href="#walk">walk()</a></code> will yield them</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a <code><a href="zim.notebook.page.Path.html">Path</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.notebook.page.Path.html">Path</a></code> object or <code>None</code> if {path} is the first page in the index</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.notebook.index.pages.PagesView.get_next">
-    
-  </a>
-  <a name="get_next">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_next</span>(self, path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L675">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Get the next path in the index, in the same order that <code><a href="#walk">walk()</a></code> will yield them</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>a <code><a href="zim.notebook.page.Path.html">Path</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.notebook.page.Path.html">Path</a></code> object or <code>None</code> if <code>path</code> is the last page in the index</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.notebook.index.pages.PagesView.lookup_from_user_input">
-    
-  </a>
-  <a name="lookup_from_user_input">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">lookup_from_user_input</span>(self, name, reference=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L723">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Lookup a pagename based on user input</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">name</td><td>the user input as string</td></tr><tr><td></td><td class="fieldArg">reference</td><td>a <code><a href="zim.notebook.page.Path.html">Path</a></code> in case relative links are supported as customer input</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.notebook.page.Path.html">Path</a></code> object for <code>name</code></td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></td><td>when <code>name</code> would reduce to empty string after removing all invalid characters, or if <code>name</code> is a relative link while no <code>reference</code> page is given.</td></tr><tr><td></td><td class="fieldArg"><a href="zim.notebook.index.base.IndexNotFoundError.html">IndexNotFoundError</a></td><td>when <code>reference</code> is not indexed</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.notebook.index.pages.PagesView.resolve_link">
-    
-  </a>
-  <a name="resolve_link">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">resolve_link</span>(self, source, href):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L746">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Find the end point of a link Depending on the link type (absolute, relative, or floating), this method first determines the starting point of the link path. Then it goes downward doing a case insensitive match against the index.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">source</td><td>a <code><a href="zim.notebook.page.Path.html">Path</a></code> for the starting point of the link</td></tr><tr><td></td><td class="fieldArg">href</td><td>a <code><a href="zim.notebook.page.HRef.html">HRef</a></code> object for the link</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.notebook.page.Path.html">Path</a></code> object for the target of the link.</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.notebook.index.pages.PagesView.create_link">
     
@@ -540,7 +239,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">create_link</span>(self, source, target):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L761">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L760">
       
       (source)
     </a>
@@ -548,9 +247,318 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Determine best way to represent a link between two pages</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">source</td><td>a <code><a href="zim.notebook.page.Path.html">Path</a></code> object</td></tr><tr><td></td><td class="fieldArg">target</td><td>a <code><a href="zim.notebook.page.Path.html">Path</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.notebook.page.HRef.html">HRef</a></code> object</td></tr></table></div>
+    <div>Determine best way to represent a link between two pages<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">source:</span><code><a href="zim.notebook.page.Path.html">Path</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">target:</span><code><a href="zim.notebook.page.Path.html">Path</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="zim.notebook.page.HRef.html">HRef</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.index.pages.PagesView.get_has_previous_has_next">
+    
+  </a>
+  <a name="get_has_previous_has_next">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_has_previous_has_next</span>(self, path):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L614">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path:</span><code><a href="zim.notebook.page.Path.html">Path</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.index.pages.PagesView.get_next">
+    
+  </a>
+  <a name="get_next">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_next</span>(self, path):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L675">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Get the next path in the index, in the same order that <code><a href="#walk">walk()</a></code> will yield them<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path:</span><code><a href="zim.notebook.page.Path.html">Path</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional">Optional</a>[<wbr></wbr><a href="zim.notebook.page.Path.html">Path</a>]</code></td><td class="fieldArgDesc">a <code><a href="zim.notebook.page.Path.html">Path</a></code> object or <tt class="rst-docutils literal">None</tt> if <tt class="rst-docutils literal">path</tt> is the last page in the index</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.index.pages.PagesView.get_previous">
+    
+  </a>
+  <a name="get_previous">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_previous</span>(self, path):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L634">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Get the previous path in the index, in the same order that <code><a href="#walk">walk()</a></code> will yield them<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path:</span><code><a href="zim.notebook.page.Path.html">Path</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional">Optional</a>[<wbr></wbr><a href="zim.notebook.page.Path.html">Path</a>]</code></td><td class="fieldArgDesc">a <code><a href="zim.notebook.page.Path.html">Path</a></code> object or <tt class="rst-docutils literal">None</tt> if {path} is the first page in the index</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.index.pages.PagesView.list_pages">
+    
+  </a>
+  <a name="list_pages">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">list_pages</span>(self, path=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L533">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Generator for child pages of <tt class="rst-docutils literal">path</tt><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional">Optional</a>[<wbr></wbr><a href="zim.notebook.page.Path.html">Path</a>]</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/typing.html#typing.Generator">Generator</a>[<wbr></wbr><a href="zim.notebook.index.pages.PageIndexRecord.html">PageIndexRecord</a>, <wbr></wbr><a href="https://docs.python.org/3/library/constants.html#None">None</a>, <wbr></wbr><a href="https://docs.python.org/3/library/constants.html#None">None</a>]</code></td><td class="fieldArgDesc">yields <code><a href="zim.notebook.page.Path.html">Path</a></code> objects for children of <tt class="rst-docutils literal">path</tt></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="zim.notebook.index.base.IndexNotFoundError.html">IndexNotFoundError</a></code></td><td>if <tt class="rst-docutils literal">path</tt> is not found in the index</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.index.pages.PagesView.list_recent_changes">
+    
+  </a>
+  <a name="list_recent_changes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">list_recent_changes</span>(self, limit=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, offset=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L806">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">limit:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/functions.html#int">int</a>]</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">offset:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/functions.html#int">int</a>]</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/typing.html#typing.Generator">Generator</a>[<wbr></wbr><a href="zim.notebook.index.pages.PageIndexRecord.html">PageIndexRecord</a>, <wbr></wbr><a href="https://docs.python.org/3/library/constants.html#None">None</a>, <wbr></wbr><a href="https://docs.python.org/3/library/constants.html#None">None</a>]</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.index.pages.PagesView.lookup_by_pagename">
+    
+  </a>
+  <a name="lookup_by_pagename">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">lookup_by_pagename</span>(self, pagename):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L524">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pagename:</span><code><a href="zim.notebook.page.Path.html">Path</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="zim.notebook.index.pages.PageIndexRecord.html">PageIndexRecord</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.index.pages.PagesView.lookup_from_user_input">
+    
+  </a>
+  <a name="lookup_from_user_input">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">lookup_from_user_input</span>(self, name, reference=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L722">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Lookup a pagename based on user input<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code></td><td class="fieldArgDesc">the user input as string</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">reference:</span><code><a href="zim.notebook.page.Path.html">Path</a></code></td><td class="fieldArgDesc">a <code><a href="zim.notebook.page.Path.html">Path</a></code> in case relative links are supported as customer input</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="zim.notebook.page.Path.html">Path</a></code></td><td class="fieldArgDesc">a <code><a href="zim.notebook.page.Path.html">Path</a></code> object for <tt class="rst-docutils literal">name</tt></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></code></td><td>when <tt class="rst-docutils literal">name</tt> would reduce to empty string after removing all invalid characters, or if <tt class="rst-docutils literal">name</tt> is a relative link while no <tt class="rst-docutils literal">reference</tt> page is given.</td></tr><tr><td class="fieldArgContainer"><code><a href="zim.notebook.index.base.IndexNotFoundError.html">IndexNotFoundError</a></code></td><td>when <tt class="rst-docutils literal">reference</tt> is not indexed</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.index.pages.PagesView.match_all_pages">
+    
+  </a>
+  <a name="match_all_pages">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">match_all_pages</span>(self, text, limit=10):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L582">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Like <tt class="rst-docutils literal">match_pages()</tt> except not limited a specific namespace<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">text:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">limit:</span><code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/typing.html#typing.Generator">Generator</a>[<wbr></wbr><a href="zim.notebook.index.pages.PageIndexRecord.html">PageIndexRecord</a>, <wbr></wbr><a href="https://docs.python.org/3/library/constants.html#None">None</a>, <wbr></wbr><a href="https://docs.python.org/3/library/constants.html#None">None</a>]</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.index.pages.PagesView.match_pages">
+    
+  </a>
+  <a name="match_pages">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">match_pages</span>(self, path, text, limit=10):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L561">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Generator for child pages of <tt class="rst-docutils literal">path</tt> that match <tt class="rst-docutils literal">text</tt> in their name<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path:</span><code><a href="zim.notebook.page.Path.html">Path</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">text:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">limit:</span><code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code></td><td class="fieldArgDesc">max number of results</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/typing.html#typing.Generator">Generator</a>[<wbr></wbr><a href="zim.notebook.index.pages.PageIndexRecord.html">PageIndexRecord</a>, <wbr></wbr><a href="https://docs.python.org/3/library/constants.html#None">None</a>, <wbr></wbr><a href="https://docs.python.org/3/library/constants.html#None">None</a>]</code></td><td class="fieldArgDesc">yields <code><a href="zim.notebook.page.Path.html">Path</a></code> objects for children of <tt class="rst-docutils literal">path</tt></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="zim.notebook.index.base.IndexNotFoundError.html">IndexNotFoundError</a></code></td><td>if <tt class="rst-docutils literal">path</tt> is not found in the index</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.index.pages.PagesView.n_all_pages">
+    
+  </a>
+  <a name="n_all_pages">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">n_all_pages</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L609">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code></td><td class="fieldArgDesc">total number of pages in the index</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.index.pages.PagesView.n_list_pages">
+    
+  </a>
+  <a name="n_list_pages">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">n_list_pages</span>(self, path=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L551">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional">Optional</a>[<wbr></wbr><a href="zim.notebook.page.Path.html">Path</a>]</code></td><td class="fieldArgDesc">optional, defaults to root path</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code></td><td class="fieldArgDesc">number of child pages of <tt class="rst-docutils literal">path</tt>.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.index.pages.PagesView.resolve_link">
+    
+  </a>
+  <a name="resolve_link">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">resolve_link</span>(self, source, href):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L745">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Find the end point of a link Depending on the link type (absolute, relative, or floating), this method first determines the starting point of the link path. Then it goes downward doing a case insensitive match against the index.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">source:</span><code><a href="zim.notebook.page.Path.html">Path</a></code></td><td class="fieldArgDesc">a <code><a href="zim.notebook.page.Path.html">Path</a></code> for the starting point of the link</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">href:</span><code><a href="zim.notebook.page.HRef.html">HRef</a></code></td><td class="fieldArgDesc">a <code><a href="zim.notebook.page.HRef.html">HRef</a></code> object for the link</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="zim.notebook.page.Path.html">Path</a></code></td><td class="fieldArgDesc">a <code><a href="zim.notebook.page.Path.html">Path</a></code> object for the target of the link.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.index.pages.PagesView.walk">
+    
+  </a>
+  <a name="walk">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">walk</span>(self, path=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L590">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Generator function to yield all pages in the index, depth first<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional">Optional</a>[<wbr></wbr><a href="zim.notebook.page.Path.html">Path</a>]</code></td><td class="fieldArgDesc">a <code><a href="zim.notebook.page.Path.html">Path</a></code> object for the starting point, can be used to only iterate a sub-tree. When this is <tt class="rst-docutils literal">None</tt> the whole notebook is iterated over</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/typing.html#typing.Generator">Generator</a>[<wbr></wbr><a href="zim.notebook.index.pages.PageIndexRecord.html">PageIndexRecord</a>, <wbr></wbr><a href="https://docs.python.org/3/library/constants.html#None">None</a>, <wbr></wbr><a href="https://docs.python.org/3/library/constants.html#None">None</a>]</code></td><td class="fieldArgDesc">an iterator that yields <code><a href="zim.notebook.page.Path.html">Path</a></code> objects</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="zim.notebook.index.base.IndexNotFoundError.html">IndexNotFoundError</a></code></td><td>if <tt class="rst-docutils literal">path</tt> does not exist in the index</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.notebook.index.pages.PagesView.walk_bottomup">
+    
+  </a>
+  <a name="walk_bottomup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">walk_bottomup</span>(self, path=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L605">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional">Optional</a>[<wbr></wbr><a href="zim.notebook.page.Path.html">Path</a>]</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/typing.html#typing.Generator">Generator</a>[<wbr></wbr><a href="zim.notebook.index.pages.PageIndexRecord.html">PageIndexRecord</a>, <wbr></wbr><a href="https://docs.python.org/3/library/constants.html#None">None</a>, <wbr></wbr><a href="https://docs.python.org/3/library/constants.html#None">None</a>]</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod private">
+  
   
   <a name="zim.notebook.index.pages.PagesView._find_floating_link">
     
@@ -561,7 +569,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_find_floating_link</span>(self, source, target):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L775">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L771">
       
       (source)
     </a>
@@ -569,20 +577,21 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div><p class="undocumented">Undocumented</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">source:</span><code><a href="zim.notebook.page.Path.html">Path</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">target:</span><code><a href="zim.notebook.page.Path.html">Path</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional">Optional</a>[<wbr></wbr><a href="zim.notebook.page.Path.html">Path</a>]</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
-</div><div class="basemethod">
+</div><div class="basemethod private">
   
-  <a name="zim.notebook.index.pages.PagesView.list_recent_changes">
+  
+  <a name="zim.notebook.index.pages.PagesView._list_pages">
     
   </a>
-  <a name="list_recent_changes">
+  <a name="_list_pages">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">list_recent_changes</span>(self, limit=None, offset=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L810">
+    <span class="py-keyword">def</span> <span class="py-defname">_list_pages</span>(self, page_id):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L544">
       
       (source)
     </a>
@@ -590,16 +599,66 @@
   <div class="docstring functionBody">
     
     
+    <div><p class="undocumented">Undocumented</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">page_id:</span><code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.notebook.index.pages.PagesView._match_pages">
+    
+  </a>
+  <a name="_match_pages">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_match_pages</span>(self, page_id, text, limit):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L573">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">page_id:</span><code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">text:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">limit:</span><code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.notebook.index.pages.PagesView._pages">
+    
+  </a>
+  <a name="_pages">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_pages</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/notebook/index/pages.py#L522">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

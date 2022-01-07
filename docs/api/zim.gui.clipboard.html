@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.gui.clipboard : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.gui.clipboard</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.clipboard.html">clipboard</a></code></code></h1>
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.gui.html">gui</a></code><wbr></wbr>.<code><a href="zim.gui.clipboard.html">clipboard</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,146 +65,64 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py">(source)</a>
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Utilities to work with the clipboard for copy-pasting</p><p>Some functions defined here are also re-used for drag-and-drop functionality, which works similar to the clipboard, but has a less straight forward API.</p></div>
+        <div><p>Utilities to work with the clipboard for copy-pasting</p>
+<p>Some functions defined here are also re-used for drag-and-drop functionality, which works similar to the clipboard, but has a less straight forward API.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id241">
+        <table class="children sortable" id="id239">
   
-  <tr class="variable">
+  
+  <tr class="class">
     
-    <td>Variable</td>
-    <td><code><a href="#logger">logger</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
+    <td>Class</td>
+    <td><code><a href="zim.gui.clipboard.ClipboardData.html">ClipboardData</a></code></td>
+    <td>Wrapper for data that can be set on the clipboard and pasted multiple formats</td>
+  </tr><tr class="class">
     
-    <td>Variable</td>
-    <td><code><a href="#PARSETREE_TARGET_ID">PARSETREE_TARGET_ID</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
+    <td>Class</td>
+    <td><code><a href="zim.gui.clipboard.ClipboardManager.html">ClipboardManager</a></code></td>
+    <td>Wrapper for <tt class="rst-docutils literal">Gtk.Clipboard</tt>, supporting specific data formats</td>
+  </tr><tr class="class">
     
-    <td>Variable</td>
-    <td><code><a href="#PARSETREE_TARGET_NAME">PARSETREE_TARGET_NAME</a></code></td>
+    <td>Class</td>
+    <td><code><a href="zim.gui.clipboard.InterWikiLinkData.html">InterWikiLinkData</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
+  </tr><tr class="class">
     
-    <td>Variable</td>
-    <td><code><a href="#PARSETREE_TARGET">PARSETREE_TARGET</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
+    <td>Class</td>
+    <td><code><a href="zim.gui.clipboard.MockSelectionData.html">MockSelectionData</a></code></td>
+    <td>Adapter to allow usage of <tt class="rst-docutils literal">ClipboardData</tt> as input for <tt class="rst-docutils literal">parsetree_from_selectiondata()</tt></td>
+  </tr><tr class="class">
     
-    <td>Variable</td>
-    <td><code><a href="#PAGELIST_TARGET_ID">PAGELIST_TARGET_ID</a></code></td>
+    <td>Class</td>
+    <td><code><a href="zim.gui.clipboard.PageLinkData.html">PageLinkData</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
+  </tr><tr class="class">
     
-    <td>Variable</td>
-    <td><code><a href="#PAGELIST_TARGET_NAME">PAGELIST_TARGET_NAME</a></code></td>
+    <td>Class</td>
+    <td><code><a href="zim.gui.clipboard.ParseTreeData.html">ParseTreeData</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
+  </tr><tr class="class">
     
-    <td>Variable</td>
-    <td><code><a href="#PAGELIST_TARGET">PAGELIST_TARGET</a></code></td>
+    <td>Class</td>
+    <td><code><a href="zim.gui.clipboard.UriData.html">UriData</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
+  </tr><tr class="class">
     
-    <td>Variable</td>
-    <td><code><a href="#IMAGE_TARGET_ID">IMAGE_TARGET_ID</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#IMAGE_TARGETS">IMAGE_TARGETS</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#IMAGE_TARGET_NAMES">IMAGE_TARGET_NAMES</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#name">name</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#URI_TARGET_ID">URI_TARGET_ID</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#URI_TARGETS">URI_TARGETS</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#URI_TARGET_NAMES">URI_TARGET_NAMES</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#HTML_TARGET_ID">HTML_TARGET_ID</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#HTML_TARGET_NAMES">HTML_TARGET_NAMES</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#HTML_TARGETS">HTML_TARGETS</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#TEXT_TARGET_ID">TEXT_TARGET_ID</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#TEXT_TARGETS">TEXT_TARGETS</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#TEXT_TARGET_NAMES">TEXT_TARGET_NAMES</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#PARSETREE_ACCEPT_TARGETS">PARSETREE_ACCEPT_TARGETS</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#PARSETREE_ACCEPT_TARGET_NAMES">PARSETREE_ACCEPT_TARGET_NAMES</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Class</td>
+    <td><code><a href="zim.gui.clipboard.Win32HtmlFormat.html">Win32HtmlFormat</a></code></td>
+    <td>This class adds support for Windows "HTML Format" clipboard content type</td>
   </tr><tr class="function">
     
     <td>Function</td>
-    <td><code><a href="#pack_urilist">pack_urilist</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#unpack_urilist">unpack_urilist</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#textbuffer_register_serialize_formats">textbuffer_register_serialize_formats</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#serialize_parse_tree">serialize_parse_tree</a></code></td>
+    <td><code><a href="#deserialize_image">deserialize_image</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="function">
     
@@ -188,48 +137,138 @@
   </tr><tr class="function">
     
     <td>Function</td>
-    <td><code><a href="#deserialize_image">deserialize_image</a></code></td>
+    <td><code><a href="#pack_urilist">pack_urilist</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#parsetree_from_selectiondata">parsetree_from_selectiondata</a></code></td>
-    <td><span>Function to get a parsetree based on the selectiondata contents if at all possible. Used by both copy-paste and drag-and-drop methods.</span></td>
-  </tr><tr class="class">
+    <td>Function to get a parsetree based on the selectiondata contents if at all possible. Used by both copy-paste and drag-and-drop methods.</td>
+  </tr><tr class="function">
     
-    <td>Class</td>
-    <td><code><a href="zim.gui.clipboard.MockSelectionData.html">MockSelectionData</a></code></td>
-    <td><span>Adapter to allow usage of <code>ClipboardData</code> as input for <code>parsetree_from_selectiondata()</code></span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.gui.clipboard.ClipboardData.html">ClipboardData</a></code></td>
-    <td><span>Wrapper for data that can be set on the clipboard and pasted multiple formats</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.gui.clipboard.UriData.html">UriData</a></code></td>
+    <td>Function</td>
+    <td><code><a href="#serialize_parse_tree">serialize_parse_tree</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="class">
+  </tr><tr class="function">
     
-    <td>Class</td>
-    <td><code><a href="zim.gui.clipboard.InterWikiLinkData.html">InterWikiLinkData</a></code></td>
+    <td>Function</td>
+    <td><code><a href="#textbuffer_register_serialize_formats">textbuffer_register_serialize_formats</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="class">
+  </tr><tr class="function">
     
-    <td>Class</td>
-    <td><code><a href="zim.gui.clipboard.ParseTreeData.html">ParseTreeData</a></code></td>
+    <td>Function</td>
+    <td><code><a href="#unpack_urilist">unpack_urilist</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="class">
+  </tr><tr class="function">
     
-    <td>Class</td>
-    <td><code><a href="zim.gui.clipboard.PageLinkData.html">PageLinkData</a></code></td>
+    <td>Function</td>
+    <td><code><a href="#wrap_html">wrap_html</a></code></td>
+    <td>Function to wrap html with appropriate headers based on target type</td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#HTML_HEAD">HTML_HEAD</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="class">
+  </tr><tr class="constant">
     
-    <td>Class</td>
-    <td><code><a href="zim.gui.clipboard.ClipboardManager.html">ClipboardManager</a></code></td>
-    <td><span>Wrapper for <code>Gtk.Clipboard</code>, supporting specific data formats</span></td>
+    <td>Constant</td>
+    <td><code><a href="#HTML_TARGET_ID">HTML_TARGET_ID</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#HTML_TARGET_NAMES">HTML_TARGET_NAMES</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#HTML_TARGETS">HTML_TARGETS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#IMAGE_TARGET_ID">IMAGE_TARGET_ID</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#IMAGE_TARGET_NAMES">IMAGE_TARGET_NAMES</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#IMAGE_TARGETS">IMAGE_TARGETS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#PAGELIST_TARGET">PAGELIST_TARGET</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#PAGELIST_TARGET_ID">PAGELIST_TARGET_ID</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#PAGELIST_TARGET_NAME">PAGELIST_TARGET_NAME</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#PARSETREE_ACCEPT_TARGET_NAMES">PARSETREE_ACCEPT_TARGET_NAMES</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#PARSETREE_ACCEPT_TARGETS">PARSETREE_ACCEPT_TARGETS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#PARSETREE_TARGET">PARSETREE_TARGET</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#PARSETREE_TARGET_ID">PARSETREE_TARGET_ID</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#PARSETREE_TARGET_NAME">PARSETREE_TARGET_NAME</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#TEXT_TARGET_ID">TEXT_TARGET_ID</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#TEXT_TARGET_NAMES">TEXT_TARGET_NAMES</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#TEXT_TARGETS">TEXT_TARGETS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#URI_TARGET_ID">URI_TARGET_ID</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#URI_TARGET_NAMES">URI_TARGET_NAMES</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#URI_TARGETS">URI_TARGETS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
     <td>Variable</td>
@@ -238,62 +277,17 @@
   </tr><tr class="variable">
     
     <td>Variable</td>
-    <td><code><a href="#SelectionClipboard">SelectionClipboard</a></code></td>
+    <td><code><a href="#logger">logger</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
     <td>Variable</td>
-    <td><code><a href="#HTML_HEAD">HTML_HEAD</a></code></td>
+    <td><code><a href="#name">name</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#wrap_html">wrap_html</a></code></td>
-    <td><span>Function to wrap html with appropriate headers based on target type</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.gui.clipboard.Win32HtmlFormat.html">Win32HtmlFormat</a></code></td>
-    <td><span>This class adds support for Windows "HTML Format" clipboard content type</span></td>
-  </tr><tr class="variable private">
+  </tr><tr class="variable">
     
     <td>Variable</td>
-    <td><code><a href="#_internal_selection_data">_internal_selection_data</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function private">
-    
-    <td>Function</td>
-    <td><code><a href="#_link_tree">_link_tree</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function private">
-    
-    <td>Function</td>
-    <td><code><a href="#_strip_link_and_image_attribs">_strip_link_and_image_attribs</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function private">
-    
-    <td>Function</td>
-    <td><code><a href="#_replace_links_to_interwiki_and_copy_images">_replace_links_to_interwiki_and_copy_images</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function private">
-    
-    <td>Function</td>
-    <td><code><a href="#_replace_links_to_page_and_copy_images">_replace_links_to_page_and_copy_images</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function private">
-    
-    <td>Function</td>
-    <td><code><a href="#_update_image">_update_image</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function private">
-    
-    <td>Function</td>
-    <td><code><a href="#_copy_image">_copy_image</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function private">
-    
-    <td>Function</td>
-    <td><code><a href="#_copy_image_object">_copy_image_object</a></code></td>
+    <td><code><a href="#SelectionClipboard">SelectionClipboard</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="function private">
     
@@ -303,12 +297,12 @@
   </tr><tr class="function private">
     
     <td>Function</td>
-    <td><code><a href="#_set_attributes_to_resolve_links">_set_attributes_to_resolve_links</a></code></td>
+    <td><code><a href="#_link_tree">_link_tree</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function private">
+  </tr><tr class="variable private">
     
-    <td>Function</td>
-    <td><code><a href="#_resolve_links_and_images">_resolve_links_and_images</a></code></td>
+    <td>Variable</td>
+    <td><code><a href="#_internal_selection_data">_internal_selection_data</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -319,616 +313,8 @@
 
       <div id="childList">
 
-        <div class="basevariable">
+        <div class="basefunction">
   
-  <a name="zim.gui.clipboard.logger">
-    
-  </a>
-  <a name="logger">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">logger</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L29">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.PARSETREE_TARGET_ID">
-    
-  </a>
-  <a name="PARSETREE_TARGET_ID">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">PARSETREE_TARGET_ID</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L34">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.PARSETREE_TARGET_NAME">
-    
-  </a>
-  <a name="PARSETREE_TARGET_NAME">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">PARSETREE_TARGET_NAME</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L35">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.PARSETREE_TARGET">
-    
-  </a>
-  <a name="PARSETREE_TARGET">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">PARSETREE_TARGET</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L36">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.PAGELIST_TARGET_ID">
-    
-  </a>
-  <a name="PAGELIST_TARGET_ID">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">PAGELIST_TARGET_ID</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L38">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.PAGELIST_TARGET_NAME">
-    
-  </a>
-  <a name="PAGELIST_TARGET_NAME">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">PAGELIST_TARGET_NAME</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L39">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.PAGELIST_TARGET">
-    
-  </a>
-  <a name="PAGELIST_TARGET">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">PAGELIST_TARGET</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L40">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.IMAGE_TARGET_ID">
-    
-  </a>
-  <a name="IMAGE_TARGET_ID">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">IMAGE_TARGET_ID</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L42">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.IMAGE_TARGETS">
-    
-  </a>
-  <a name="IMAGE_TARGETS">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">IMAGE_TARGETS</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L43">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.IMAGE_TARGET_NAMES">
-    
-  </a>
-  <a name="IMAGE_TARGET_NAMES">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">IMAGE_TARGET_NAMES</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L58">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.name">
-    
-  </a>
-  <a name="name">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">name</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L63">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.URI_TARGET_ID">
-    
-  </a>
-  <a name="URI_TARGET_ID">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">URI_TARGET_ID</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L71">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.URI_TARGETS">
-    
-  </a>
-  <a name="URI_TARGETS">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">URI_TARGETS</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L72">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.URI_TARGET_NAMES">
-    
-  </a>
-  <a name="URI_TARGET_NAMES">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">URI_TARGET_NAMES</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L76">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.HTML_TARGET_ID">
-    
-  </a>
-  <a name="HTML_TARGET_ID">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">HTML_TARGET_ID</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L78">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.HTML_TARGET_NAMES">
-    
-  </a>
-  <a name="HTML_TARGET_NAMES">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">HTML_TARGET_NAMES</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L79">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, ...]</code>)
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.HTML_TARGETS">
-    
-  </a>
-  <a name="HTML_TARGETS">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">HTML_TARGETS</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L81">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.TEXT_TARGET_ID">
-    
-  </a>
-  <a name="TEXT_TARGET_ID">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">TEXT_TARGET_ID</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L83">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.TEXT_TARGETS">
-    
-  </a>
-  <a name="TEXT_TARGETS">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">TEXT_TARGETS</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L84">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.TEXT_TARGET_NAMES">
-    
-  </a>
-  <a name="TEXT_TARGET_NAMES">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">TEXT_TARGET_NAMES</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L93">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.PARSETREE_ACCEPT_TARGETS">
-    
-  </a>
-  <a name="PARSETREE_ACCEPT_TARGETS">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">PARSETREE_ACCEPT_TARGETS</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L96">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.PARSETREE_ACCEPT_TARGET_NAMES">
-    
-  </a>
-  <a name="PARSETREE_ACCEPT_TARGET_NAMES">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">PARSETREE_ACCEPT_TARGET_NAMES</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L98">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable private">
-  
-  <a name="zim.gui.clipboard._internal_selection_data">
-    
-  </a>
-  <a name="_internal_selection_data">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_internal_selection_data</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L102">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.gui.clipboard.pack_urilist">
-    
-  </a>
-  <a name="pack_urilist">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">pack_urilist</span>(links):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L114">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.gui.clipboard.unpack_urilist">
-    
-  </a>
-  <a name="unpack_urilist">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">unpack_urilist</span>(text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L123">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.gui.clipboard.textbuffer_register_serialize_formats">
-    
-  </a>
-  <a name="textbuffer_register_serialize_formats">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">textbuffer_register_serialize_formats</span>(buffer, notebook, page):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L134">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.gui.clipboard.serialize_parse_tree">
-    
-  </a>
-  <a name="serialize_parse_tree">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">serialize_parse_tree</span>(register_buf, content_buf, start, end, user_data):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L142">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.gui.clipboard.deserialize_parse_tree">
-    
-  </a>
-  <a name="deserialize_parse_tree">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">deserialize_parse_tree</span>(register_buf, content_buf, iter, data, length, create_tags, user_data):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L147">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.gui.clipboard.deserialize_urilist">
-    
-  </a>
-  <a name="deserialize_urilist">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">deserialize_urilist</span>(register_buf, content_buf, iter, data, length, create_tags, user_data):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L154">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
   
   <a name="zim.gui.clipboard.deserialize_image">
     
@@ -939,7 +325,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">deserialize_image</span>(register_buf, content_buf, iter, data, length, create_tags, user_data):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L161">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L159">
       
       (source)
     </a>
@@ -950,6 +336,73 @@
     <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basefunction">
+  
+  
+  <a name="zim.gui.clipboard.deserialize_parse_tree">
+    
+  </a>
+  <a name="deserialize_parse_tree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">deserialize_parse_tree</span>(register_buf, content_buf, iter, data, length, create_tags, user_data):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L146">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.gui.clipboard.deserialize_urilist">
+    
+  </a>
+  <a name="deserialize_urilist">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">deserialize_urilist</span>(register_buf, content_buf, iter, data, length, create_tags, user_data):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L152">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.gui.clipboard.pack_urilist">
+    
+  </a>
+  <a name="pack_urilist">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">pack_urilist</span>(links):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L113">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
   
   <a name="zim.gui.clipboard.parsetree_from_selectiondata">
     
@@ -959,8 +412,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">parsetree_from_selectiondata</span>(selectiondata, notebook, path=None, text_format='plain'):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L199">
+    <span class="py-keyword">def</span> <span class="py-defname">parsetree_from_selectiondata</span>(selectiondata, notebook, path=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, text_format=<span class="rst-variable-quote">'</span><span class="rst-variable-string">plain</span><span class="rst-variable-quote">'</span>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L197">
       
       (source)
     </a>
@@ -968,282 +421,89 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Function to get a parsetree based on the selectiondata contents if at all possible. Used by both copy-paste and drag-and-drop methods.</p><p>The 'notebook' and optional 'path' arguments are used to format links relative to the page which is the target for the pasting or drop operation.</p><p>NOTE: this method can have a side affect where files are placed in the attachment folder of the page.</p><ul><li>For image data, a new image file is created</li><li>For parsetree data containing inline images, the image files are copied to the attachment folder</li></ul><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">selectiondata</td><td>a <code>Gtk.SelectionData</code> object</td></tr><tr><td></td><td class="fieldArg">notebook</td><td>a <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object</td></tr><tr><td></td><td class="fieldArg">path</td><td>a <code><a href="zim.notebook.page.Path.html">Path</a></code> object</td></tr><tr><td></td><td class="fieldArg">text_format</td><td>format to parse pasted text, as a special case<ul><li>"verbatim" will wrap content in VERBARIM_BLOCK or VERBATIM element based on the content</li><li>"verbatim-pre" will wrap the content in a VERBATIM_BLOCK element and</li><li>"verbatim-code" will wrap the content in a VERBATIM element</li></ul></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.formats.ParseTree.html">ParseTree</a></code> or <code>None</code></td></tr></table></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.gui.clipboard._link_tree">
-    
-  </a>
-  <a name="_link_tree">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_link_tree</span>(links, notebook, path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L307">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.gui.clipboard._strip_link_and_image_attribs">
-    
-  </a>
-  <a name="_strip_link_and_image_attribs">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_strip_link_and_image_attribs</span>(node):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L367">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.gui.clipboard._replace_links_to_interwiki_and_copy_images">
-    
-  </a>
-  <a name="_replace_links_to_interwiki_and_copy_images">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_replace_links_to_interwiki_and_copy_images</span>(src_interwiki, notebook, new_path, node):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L379">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.gui.clipboard._replace_links_to_page_and_copy_images">
-    
-  </a>
-  <a name="_replace_links_to_page_and_copy_images">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_replace_links_to_page_and_copy_images</span>(notebook, new_path, node):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L419">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.gui.clipboard._update_image">
-    
-  </a>
-  <a name="_update_image">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_update_image</span>(notebook, new_path, abs_src, node):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L463">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.gui.clipboard._copy_image">
-    
-  </a>
-  <a name="_copy_image">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_copy_image</span>(notebook, new_path, abs_src, node):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L469">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.gui.clipboard._copy_image_object">
-    
-  </a>
-  <a name="_copy_image_object">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_copy_image_object</span>(notebook, new_path, abs_src, node):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L478">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.gui.clipboard._get_image_info">
-    
-  </a>
-  <a name="_get_image_info">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_get_image_info</span>(targetname):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L486">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.gui.clipboard._set_attributes_to_resolve_links">
-    
-  </a>
-  <a name="_set_attributes_to_resolve_links">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_set_attributes_to_resolve_links</span>(parsetree, notebook, path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L619">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.gui.clipboard._resolve_links_and_images">
-    
-  </a>
-  <a name="_resolve_links_and_images">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_resolve_links_and_images</span>(notebook, src_path, node):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L628">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.Clipboard">
-    
-  </a>
-  <a name="Clipboard">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">Clipboard</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L859">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.SelectionClipboard">
-    
-  </a>
-  <a name="SelectionClipboard">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">SelectionClipboard</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L862">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.gui.clipboard.HTML_HEAD">
-    
-  </a>
-  <a name="HTML_HEAD">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">HTML_HEAD</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L869">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+    <div><p>Function to get a parsetree based on the selectiondata contents if at all possible. Used by both copy-paste and drag-and-drop methods.</p>
+<p>The 'notebook' and optional 'path' arguments are used to format links relative to the page which is the target for the pasting or drop operation.</p>
+<p>NOTE: this method can have a side affect where files are placed in the attachment folder of the page.</p>
+<ul class="rst-simple">
+<li>For image data, a new image file is created</li>
+<li>For parsetree data containing inline images, the image files are copied to the attachment folder</li>
+</ul>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">selectiondata</span></td><td class="fieldArgDesc">a <tt class="rst-docutils literal">Gtk.SelectionData</tt> object</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">notebook</span></td><td class="fieldArgDesc">a <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">a <code><a href="zim.notebook.page.Path.html">Path</a></code> object</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">text_format</span></td><td class="fieldArgDesc"><p>format to parse pasted text, as a special case</p>
+<ul class="rst-simple">
+<li>"verbatim" will wrap content in VERBARIM_BLOCK or VERBATIM element based on the content</li>
+<li>"verbatim-pre" will wrap the content in a VERBATIM_BLOCK element and</li>
+<li>"verbatim-code" will wrap the content in a VERBATIM element</li>
+</ul>
+</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="zim.formats.ParseTree.html">ParseTree</a></code> or <tt class="rst-docutils literal">None</tt></td></tr></table></div>
   </div>
 </div><div class="basefunction">
+  
+  
+  <a name="zim.gui.clipboard.serialize_parse_tree">
+    
+  </a>
+  <a name="serialize_parse_tree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">serialize_parse_tree</span>(register_buf, content_buf, start, end, user_data):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L141">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.gui.clipboard.textbuffer_register_serialize_formats">
+    
+  </a>
+  <a name="textbuffer_register_serialize_formats">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">textbuffer_register_serialize_formats</span>(buffer, notebook, page):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L133">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.gui.clipboard.unpack_urilist">
+    
+  </a>
+  <a name="unpack_urilist">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">unpack_urilist</span>(text):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L122">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
   
   <a name="zim.gui.clipboard.wrap_html">
     
@@ -1254,7 +514,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">wrap_html</span>(html, target):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L874">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L704">
       
       (source)
     </a>
@@ -1262,16 +522,673 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Function to wrap html with appropriate headers based on target type</p></div>
+    <div>Function to wrap html with appropriate headers based on target type</div>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.HTML_HEAD">
+    
+  </a>
+  <a name="HTML_HEAD">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">HTML_HEAD</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L699">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'''</span><span class="rst-variable-string">&lt;meta http-equiv="Content-Type" content="text/html;charset=utf-8"&gt;</span>
+<span class="rst-variable-string">&lt;meta name="Description" content="Copy-Paste Buffer"&gt;</span>
+<span class="rst-variable-string">&lt;meta name="Generator" content="Zim"&gt;</span><span class="rst-variable-quote">'''</span></code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.HTML_TARGET_ID">
+    
+  </a>
+  <a name="HTML_TARGET_ID">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">HTML_TARGET_ID</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L77">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>8</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.HTML_TARGET_NAMES">
+    
+  </a>
+  <a name="HTML_TARGET_NAMES">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">HTML_TARGET_NAMES</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <wbr></wbr><span class="rst-variable-ellipsis">...</span>]</code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L78">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">text/html</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">HTML Format</span><span class="rst-variable-quote">'</span>)</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.HTML_TARGETS">
+    
+  </a>
+  <a name="HTML_TARGETS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">HTML_TARGETS</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L80">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>(<wbr></wbr>[(name, 0, HTML_TARGET_ID) for name in HTML_TARGET_NAMES])</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.IMAGE_TARGET_ID">
+    
+  </a>
+  <a name="IMAGE_TARGET_ID">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">IMAGE_TARGET_ID</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L41">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>6</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.IMAGE_TARGET_NAMES">
+    
+  </a>
+  <a name="IMAGE_TARGET_NAMES">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">IMAGE_TARGET_NAMES</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L57">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>(<wbr></wbr>[target[0] for target in IMAGE_TARGETS])</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.IMAGE_TARGETS">
+    
+  </a>
+  <a name="IMAGE_TARGETS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">IMAGE_TARGETS</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L42">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>(<wbr></wbr>((name, 0, IMAGE_TARGET_ID) for name in ['image/png', 'image/x-wmf',
+    'application/x-navi-animation', 'image/bmp', 'image/x-bmp',
+    'image/x-MS-bmp', 'image/gif', 'image/x-icns', 'image/x-icon',
+    'image/x-ico', 'image/x-win-bitmap', 'image/vnd.microsoft.icon',
+    'application/ico', 'image/ico', 'image/icon', 'text/ico', 'image/jpeg',
+    'image/x-portable-anymap', 'image/x-portable-bitmap',
+    'image/x-portable-graymap', 'image/x-portable-pixmap',
+<span class="rst-variable-ellipsis">...</span></code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.PAGELIST_TARGET">
+    
+  </a>
+  <a name="PAGELIST_TARGET">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PAGELIST_TARGET</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L39">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>(<wbr></wbr><a href="#PAGELIST_TARGET_NAME">PAGELIST_TARGET_NAME</a>, <wbr></wbr>0, <wbr></wbr><a href="#PAGELIST_TARGET_ID">PAGELIST_TARGET_ID</a>)</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.PAGELIST_TARGET_ID">
+    
+  </a>
+  <a name="PAGELIST_TARGET_ID">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PAGELIST_TARGET_ID</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L37">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>3</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.PAGELIST_TARGET_NAME">
+    
+  </a>
+  <a name="PAGELIST_TARGET_NAME">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PAGELIST_TARGET_NAME</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L38">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">text/x-zim-page-list</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.PARSETREE_ACCEPT_TARGET_NAMES">
+    
+  </a>
+  <a name="PARSETREE_ACCEPT_TARGET_NAMES">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PARSETREE_ACCEPT_TARGET_NAMES</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L97">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>(<wbr></wbr>[target[0] for target in PARSETREE_ACCEPT_TARGETS])</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.PARSETREE_ACCEPT_TARGETS">
+    
+  </a>
+  <a name="PARSETREE_ACCEPT_TARGETS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PARSETREE_ACCEPT_TARGETS</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L95">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>(((<wbr></wbr><a href="#PARSETREE_TARGET">PARSETREE_TARGET</a>, <wbr></wbr><a href="#PAGELIST_TARGET">PAGELIST_TARGET</a>)+<a href="#IMAGE_TARGETS">IMAGE_TARGETS</a>)+<a href="#URI_TARGETS">URI_TARGETS</a>)+<a href="#TEXT_TARGETS">TEXT_TARGETS</a></code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.PARSETREE_TARGET">
+    
+  </a>
+  <a name="PARSETREE_TARGET">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PARSETREE_TARGET</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L35">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>(<wbr></wbr><a href="#PARSETREE_TARGET_NAME">PARSETREE_TARGET_NAME</a>, <wbr></wbr>0, <wbr></wbr><a href="#PARSETREE_TARGET_ID">PARSETREE_TARGET_ID</a>)</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.PARSETREE_TARGET_ID">
+    
+  </a>
+  <a name="PARSETREE_TARGET_ID">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PARSETREE_TARGET_ID</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L33">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>1</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.PARSETREE_TARGET_NAME">
+    
+  </a>
+  <a name="PARSETREE_TARGET_NAME">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PARSETREE_TARGET_NAME</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L34">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">text/x-zim-parsetree</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.TEXT_TARGET_ID">
+    
+  </a>
+  <a name="TEXT_TARGET_ID">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TEXT_TARGET_ID</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L82">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>9</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.TEXT_TARGET_NAMES">
+    
+  </a>
+  <a name="TEXT_TARGET_NAMES">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TEXT_TARGET_NAMES</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L92">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>(<wbr></wbr>[target[0] for target in TEXT_TARGETS])</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.TEXT_TARGETS">
+    
+  </a>
+  <a name="TEXT_TARGETS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TEXT_TARGETS</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L83">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>(<wbr></wbr>((name, 0, TEXT_TARGET_ID) for name in ['UTF8_STRING', 'COMPOUND_TEXT',
+    'TEXT', 'STRING', 'text/plain;charset=utf-8', 'text/plain']))</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.URI_TARGET_ID">
+    
+  </a>
+  <a name="URI_TARGET_ID">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">URI_TARGET_ID</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L70">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>7</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.URI_TARGET_NAMES">
+    
+  </a>
+  <a name="URI_TARGET_NAMES">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">URI_TARGET_NAMES</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L75">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>(<wbr></wbr>[target[0] for target in URI_TARGETS])</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.clipboard.URI_TARGETS">
+    
+  </a>
+  <a name="URI_TARGETS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">URI_TARGETS</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L71">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>(<wbr></wbr>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">text/uri-list</span><span class="rst-variable-quote">'</span>, <wbr></wbr>0, <wbr></wbr><a href="#URI_TARGET_ID">URI_TARGET_ID</a>))</code></pre></td></tr></table>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.gui.clipboard.Clipboard">
+    
+  </a>
+  <a name="Clipboard">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">Clipboard</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L689">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.gui.clipboard.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L28">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.gui.clipboard.name">
+    
+  </a>
+  <a name="name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">name</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L62">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.gui.clipboard.SelectionClipboard">
+    
+  </a>
+  <a name="SelectionClipboard">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">SelectionClipboard</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L692">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.gui.clipboard._get_image_info">
+    
+  </a>
+  <a name="_get_image_info">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_image_info</span>(targetname):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L348">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.gui.clipboard._link_tree">
+    
+  </a>
+  <a name="_link_tree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_link_tree</span>(links, notebook, path):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L285">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="zim.gui.clipboard._internal_selection_data">
+    
+  </a>
+  <a name="_internal_selection_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_internal_selection_data</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/clipboard.py#L101">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

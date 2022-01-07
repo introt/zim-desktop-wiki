@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.gui.widgets.PageEntry : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.gui.widgets.PageEntry</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.widgets.html">widgets</a></code>.<code><a href="zim.gui.widgets.PageEntry.html">PageEntry</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.gui.html">gui</a></code><wbr></wbr>.<code><a href="zim.gui.widgets.html">widgets</a></code><wbr></wbr>.<code><a href="zim.gui.widgets.PageEntry.html">PageEntry</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,22 +65,56 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">PageEntry</span>(<a href="zim.gui.widgets.InputEntry.html" title="zim.gui.widgets.InputEntry">InputEntry</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1719">(source)</a></code></p><p>Known subclasses: <code><a href="zim.gui.widgets.LinkEntry.html">zim.gui.widgets.LinkEntry</a></code>, <code><a href="zim.gui.widgets.NamespaceEntry.html">zim.gui.widgets.NamespaceEntry</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">PageEntry</span>(<a href="zim.gui.widgets.InputEntry.html" title="zim.gui.widgets.InputEntry">InputEntry</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1708" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="zim.gui.widgets.LinkEntry.html">zim.gui.widgets.LinkEntry</a></code>, <code><a href="zim.gui.widgets.NamespaceEntry.html">zim.gui.widgets.NamespaceEntry</a></code></p>
         <p><a href="classIndex.html#zim.gui.widgets.PageEntry">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Widget to select a zim page path</p><p>This widget features completion for existing page names and shows whether the entered text is not a valid page name.</p><p>The page paths can be shown eitehr absolute or relative. If a reference path is given paths will be shown relative to this reference.</p></div>
+        <div><p>Widget to select a zim page path</p>
+<p>This widget features completion for existing page names and shows whether the entered text is not a valid page name.</p>
+<p>The page paths can be shown eitehr absolute or relative. If a reference path is given paths will be shown relative to this reference.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id507">
+        <table class="children sortable" id="id515">
+  
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Constructor</span></td>
+    <td>Constructor</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_path">get_path</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_path">set_path</a></code></td>
+    <td>Set the path to be shown in the entry. If you have the link as a string, use <code>set_text()</code> instead</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_use_relative_paths">set_use_relative_paths</a></code></td>
+    <td>Set the notebook and path to be used for relative paths.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#update_completion">update_completion</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#update_input_valid">update_input_valid</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#existing_only">existing_only</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -65,50 +130,20 @@
     <td>Instance Variable</td>
     <td><code><a href="#subpaths_only">subpaths_only</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#existing_only">existing_only</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
+  </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#set_use_relative_paths">set_use_relative_paths</a></code></td>
-    <td><span>Set the notebook and path to be used for relative paths.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#set_path">set_path</a></code></td>
-    <td><span>Set the path to be shown in the entry. If you have the link as a string, use <code>set_text()</code> instead</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#get_path">get_path</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#update_input_valid">update_input_valid</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#update_completion">update_completion</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="classvariable private">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#_allow_select_root">_allow_select_root</a></code></td>
+    <td><code><a href="#_fill_completion_any">_fill_completion_any</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
     <td><code><a href="#_fill_completion_for_anchor">_fill_completion_for_anchor</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
+  </tr><tr class="classvariable private">
     
-    <td>Method</td>
-    <td><code><a href="#_fill_completion_any">_fill_completion_any</a></code></td>
+    <td>Class Variable</td>
+    <td><code><a href="#_allow_select_root">_allow_select_root</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -116,27 +151,63 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.gui.widgets.InputEntry.html">InputEntry</a></code>:
           </p>
-          <table class="children sortable" id="id508">
+          <table class="children sortable" id="id516">
   
-  <tr class="baseclassvariable">
+  
+  <tr class="basemethod">
     
-    <td>Class Variable</td>
-    <td><code><a href="zim.gui.widgets.InputEntry.html#__gsignals__">__gsignals__</a></code></td>
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#clear">clear</a></code></td>
+    <td>Clear the text in the entry</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#do_input_valid_changed">do_input_valid_changed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#get_input_valid">get_input_valid</a></code></td>
+    <td>Get the valid state. @returns: <tt class="rst-docutils literal">True</tt> if the input is valid</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#get_text">get_text</a></code></td>
+    <td>Get the text from the widget. Like <tt class="rst-docutils literal">Gtk.Entry.get_text()</tt> but with UTF-8 decoding and whitespace stripped. @returns: string</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#set_check_func">set_check_func</a></code></td>
+    <td>Set a function to check whether input is valid or not @param check_func: the function</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#set_icon">set_icon</a></code></td>
+    <td>Add an icon in the entry widget behind the text</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#set_icon_to_clear">set_icon_to_clear</a></code></td>
+    <td>Adds a "clear" icon in the entry widget</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#set_input_valid">set_input_valid</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="baseconstant">
+    
+    <td>Constant</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#ERROR_COLOR">ERROR_COLOR</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="baseclassvariable">
     
     <td>Class Variable</td>
-    <td><code><a href="zim.gui.widgets.InputEntry.html#ERROR_COLOR">ERROR_COLOR</a></code></td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#__gsignals__">__gsignals__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="baseinstancevariable">
     
     <td>Instance Variable</td>
     <td><code><a href="zim.gui.widgets.InputEntry.html#allow_empty">allow_empty</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.gui.widgets.InputEntry.html#show_empty_invalid">show_empty_invalid</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="baseinstancevariable">
     
@@ -148,55 +219,20 @@
     <td>Instance Variable</td>
     <td><code><a href="zim.gui.widgets.InputEntry.html#check_func">check_func</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.gui.widgets.InputEntry.html#set_check_func">set_check_func</a></code></td>
-    <td><span>Set a function to check whether input is valid or not @param check_func: the function</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.gui.widgets.InputEntry.html#set_icon">set_icon</a></code></td>
-    <td><span>Add an icon in the entry widget behind the text</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.gui.widgets.InputEntry.html#set_icon_to_clear">set_icon_to_clear</a></code></td>
-    <td><span>Adds a "clear" icon in the entry widget</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.gui.widgets.InputEntry.html#get_text">get_text</a></code></td>
-    <td><span>Get the text from the widget. Like <code>Gtk.Entry.get_text()</code> but with UTF-8 decoding and whitespace stripped. @returns: string</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.gui.widgets.InputEntry.html#get_input_valid">get_input_valid</a></code></td>
-    <td><span>Get the valid state. @returns: <code>True</code> if the input is valid</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.gui.widgets.InputEntry.html#set_input_valid">set_input_valid</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.gui.widgets.InputEntry.html#clear">clear</a></code></td>
-    <td><span>Clear the text in the entry</span></td>
-  </tr><tr class="baseinstancevariable private">
+  </tr><tr class="baseinstancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="zim.gui.widgets.InputEntry.html#_normal_color">_normal_color</a></code></td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#show_empty_invalid">show_empty_invalid</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="zim.gui.widgets.InputEntry.html#_input_valid">_input_valid</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod private">
+  </tr><tr class="baseinstancevariable private">
     
-    <td>Method</td>
-    <td><code><a href="zim.gui.widgets.InputEntry.html#_set_base_color">_set_base_color</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.widgets.InputEntry.html#_normal_color">_normal_color</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -207,28 +243,8 @@
 
       <div id="childList">
 
-        <div class="baseclassvariable private">
+        <div class="basemethod">
   
-  <a name="zim.gui.widgets.PageEntry._allow_select_root">
-    
-  </a>
-  <a name="_allow_select_root">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_allow_select_root</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1729">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.widgets.NamespaceEntry.html">zim.gui.widgets.NamespaceEntry</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.widgets.PageEntry.__init__">
     
@@ -238,8 +254,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, notebook, path=None, subpaths_only=False, existing_only=False):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1732">
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, notebook, path=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, subpaths_only=<a href="https://docs.python.org/3/library/constants.html#False">False</a>, existing_only=<a href="https://docs.python.org/3/library/constants.html#False">False</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1721">
       
       (source)
     </a>
@@ -247,135 +263,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.gui.widgets.InputEntry.html#__init__">zim.gui.widgets.InputEntry.__init__</a></code></div><div class="interfaceinfo">overridden in <code><a href="zim.gui.widgets.LinkEntry.html">zim.gui.widgets.LinkEntry</a></code></div>
     
-    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">notebook</td><td>the <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object for resolving paths and completing existing pages, but allowed to be <code>None</code> e.g. for testing</td></tr><tr><td></td><td class="fieldArg">path</td><td>a <code><a href="zim.notebook.page.Path.html">Path</a></code> object used for resolving relative links</td></tr><tr><td></td><td class="fieldArg">subpaths_only</td><td>if <code>True</code> the input will always be considered a child '<code>path</code>'</td></tr><tr><td></td><td class="fieldArg">existing_only</td><td>if <code>True</code> only allow to select existing pages</td></tr><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">'<code>subpaths_only</code>' and '<code>existing_only</code>' can also be set using the like named attributes</td></tr></table></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.widgets.PageEntry.notebook">
-    
-  </a>
-  <a name="notebook">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">notebook</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1745">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.widgets.PageEntry.notebookpath">
-    
-  </a>
-  <a name="notebookpath">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">notebookpath</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1746">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.widgets.PageEntry.subpaths_only">
-    
-  </a>
-  <a name="subpaths_only">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">subpaths_only</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1747">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.widgets.PageEntry.existing_only">
-    
-  </a>
-  <a name="existing_only">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">existing_only</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1748">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Constructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">notebook</span></td><td class="fieldArgDesc">the <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object for resolving paths and completing existing pages, but allowed to be <tt class="rst-docutils literal">None</tt> e.g. for testing</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">a <code><a href="zim.notebook.page.Path.html">Path</a></code> object used for resolving relative links</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">subpaths_only</span></td><td class="fieldArgDesc">if <tt class="rst-docutils literal">True</tt> the input will always be considered a child '<tt class="rst-docutils literal">path</tt>'</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">existing_only</span></td><td class="fieldArgDesc">if <tt class="rst-docutils literal">True</tt> only allow to select existing pages</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Note</td></tr><tr><td colspan="2">'<tt class="rst-docutils literal">subpaths_only</tt>' and '<tt class="rst-docutils literal">existing_only</tt>' can also be set using the like named attributes</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.PageEntry.set_use_relative_paths">
-    
-  </a>
-  <a name="set_use_relative_paths">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">set_use_relative_paths</span>(self, notebook, path=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1765">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Set the notebook and path to be used for relative paths.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">notebook</td><td>the <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object for resolving paths and completing existing pages, or <code>None</code> to disable relative paths.</td></tr><tr><td></td><td class="fieldArg">path</td><td>a <code><a href="zim.notebook.page.Path.html">Path</a></code> object used for resolving relative links</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.PageEntry.set_path">
-    
-  </a>
-  <a name="set_path">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">set_path</span>(self, path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1775">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Set the path to be shown in the entry. If you have the link as a string, use <code>set_text()</code> instead</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td><code><a href="zim.notebook.page.Path.html">Path</a></code> object</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.widgets.PageEntry.get_path">
     
@@ -386,7 +277,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">get_path</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1789">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1778">
       
       (source)
     </a>
@@ -394,30 +285,54 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="zim.gui.widgets.LinkEntry.html">zim.gui.widgets.LinkEntry</a></code></div>
     
-    <div><p>Get the path shown in the widget. If <code>None</code> is returned the widget is flagged as invalid. So e.g. in a dialog you can get a path and refuse to close a dialog if the path is None and the user will automatically be alerted to the missing input.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code><a href="zim.notebook.page.Path.html">Path</a></code> object or <code>None</code> is no valid path was entered</td></tr></table></div>
+    <div>Get the path shown in the widget. If <tt class="rst-docutils literal">None</tt> is returned the widget is flagged as invalid. So e.g. in a dialog you can get a path and refuse to close a dialog if the path is None and the user will automatically be alerted to the missing input.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="zim.notebook.page.Path.html">Path</a></code> object or <tt class="rst-docutils literal">None</tt> is no valid path was entered</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.PageEntry.update_input_valid">
+  
+  <a name="zim.gui.widgets.PageEntry.set_path">
     
   </a>
-  <a name="update_input_valid">
+  <a name="set_path">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">update_input_valid</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1834">
+    <span class="py-keyword">def</span> <span class="py-defname">set_path</span>(self, path):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1764">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.gui.widgets.InputEntry.html#update_input_valid">zim.gui.widgets.InputEntry.update_input_valid</a></code></div><div class="interfaceinfo">overridden in <code><a href="zim.gui.widgets.LinkEntry.html">zim.gui.widgets.LinkEntry</a></code></div>
     
-    <div><p class="undocumented">Undocumented</p></div>
+    
+    <div>Set the path to be shown in the entry. If you have the link as a string, use <code>set_text()</code> instead<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc"><code><a href="zim.notebook.page.Path.html">Path</a></code> object</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.PageEntry.set_use_relative_paths">
+    
+  </a>
+  <a name="set_use_relative_paths">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_use_relative_paths</span>(self, notebook, path=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1754">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Set the notebook and path to be used for relative paths.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">notebook</span></td><td class="fieldArgDesc">the <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object for resolving paths and completing existing pages, or <tt class="rst-docutils literal">None</tt> to disable relative paths.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">a <code><a href="zim.notebook.page.Path.html">Path</a></code> object used for resolving relative links</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.gui.widgets.PageEntry.update_completion">
     
@@ -428,7 +343,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">update_completion</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1860">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1849">
       
       (source)
     </a>
@@ -438,28 +353,122 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="basemethod private">
+</div><div class="basemethod">
   
-  <a name="zim.gui.widgets.PageEntry._fill_completion_for_anchor">
+  
+  <a name="zim.gui.widgets.PageEntry.update_input_valid">
     
   </a>
-  <a name="_fill_completion_for_anchor">
+  <a name="update_input_valid">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_fill_completion_for_anchor</span>(self, path, prefix, text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1915">
+    <span class="py-keyword">def</span> <span class="py-defname">update_input_valid</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1823">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
-    
+    <div class="interfaceinfo">overrides <code><a href="zim.gui.widgets.InputEntry.html#update_input_valid">zim.gui.widgets.InputEntry.update_input_valid</a></code></div><div class="interfaceinfo">overridden in <code><a href="zim.gui.widgets.LinkEntry.html">zim.gui.widgets.LinkEntry</a></code></div>
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.widgets.PageEntry.existing_only">
+    
+  </a>
+  <a name="existing_only">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">existing_only</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1737">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.widgets.PageEntry.notebook">
+    
+  </a>
+  <a name="notebook">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">notebook</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1734">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.widgets.PageEntry.notebookpath">
+    
+  </a>
+  <a name="notebookpath">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">notebookpath</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1735">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.widgets.PageEntry.subpaths_only">
+    
+  </a>
+  <a name="subpaths_only">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">subpaths_only</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1736">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div><div class="basemethod private">
+  
   
   <a name="zim.gui.widgets.PageEntry._fill_completion_any">
     
@@ -470,7 +479,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_fill_completion_any</span>(self, path, text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1931">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1920">
       
       (source)
     </a>
@@ -480,14 +489,64 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.gui.widgets.PageEntry._fill_completion_for_anchor">
+    
+  </a>
+  <a name="_fill_completion_for_anchor">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_fill_completion_for_anchor</span>(self, path, prefix, text):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1904">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  
+  <a name="zim.gui.widgets.PageEntry._allow_select_root">
+    
+  </a>
+  <a name="_allow_select_root">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_allow_select_root</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1718">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.widgets.NamespaceEntry.html">zim.gui.widgets.NamespaceEntry</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

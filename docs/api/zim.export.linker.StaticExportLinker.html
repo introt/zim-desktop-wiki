@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.export.linker.StaticExportLinker : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.export.linker.StaticExportLinker</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.export.html">export</a></code>.<code><a href="zim.export.linker.html">linker</a></code>.<code><a href="zim.export.linker.StaticExportLinker.html">StaticExportLinker</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.export.html">export</a></code><wbr></wbr>.<code><a href="zim.export.linker.html">linker</a></code><wbr></wbr>.<code><a href="zim.export.linker.StaticExportLinker.html">StaticExportLinker</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,16 +65,17 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">StaticExportLinker</span>(<a href="zim.export.linker.ExportLinker.html" title="zim.export.linker.ExportLinker">ExportLinker</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/export/linker.py#L260">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">StaticExportLinker</span>(<a href="zim.export.linker.ExportLinker.html" title="zim.export.linker.ExportLinker">ExportLinker</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/export/linker.py#L251" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.export.linker.StaticExportLinker">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>This linker can be used when exporting a page to e.g. html without a file to write the html to. All links are resolved statically to the source files.</p></div>
+        <div>This linker can be used when exporting a page to e.g. html without a file to write the html to. All links are resolved statically to the source files.</div>
       </div>
 
       <div id="splitTables">
         <table class="children sortable" id="id122">
+  
   
   <tr class="method">
     
@@ -58,10 +90,51 @@
           </p>
           <table class="children sortable" id="id123">
   
-  <tr class="baseinstancevariable">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.export.linker.ExportLinker.html#file_object">file_object</a></code></td>
+    <td>Turn a <code><a href="zim.fs.File.html">File</a></code> object in a relative link or URI</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.export.linker.ExportLinker.html#img">img</a></code></td>
+    <td>Returns an url for image file 'src'</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.export.linker.ExportLinker.html#link">link</a></code></td>
+    <td>Returns an url for a link in a zim page This method is used to translate links of any type.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.export.linker.ExportLinker.html#page_object">page_object</a></code></td>
+    <td>Turn a <code><a href="zim.notebook.page.Path.html">Path</a></code> object in a relative link or URI</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.export.linker.ExportLinker.html#resolve_dest_file">resolve_dest_file</a></code></td>
+    <td>Find the destination file for an attachment @returns: a <code><a href="zim.fs.File.html">File</a></code> object</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.export.linker.ExportLinker.html#resolve_source_file">resolve_source_file</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.export.linker.ExportLinker.html#resource">resource</a></code></td>
+    <td>Return an url for template resources</td>
+  </tr><tr class="baseinstancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="zim.export.linker.ExportLinker.html#notebook">notebook</a></code></td>
+    <td><code><a href="zim.export.linker.ExportLinker.html#base">base</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.export.linker.ExportLinker.html#document_root_url">document_root_url</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="baseinstancevariable">
     
@@ -71,7 +144,7 @@
   </tr><tr class="baseinstancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="zim.export.linker.ExportLinker.html#source">source</a></code></td>
+    <td><code><a href="zim.export.linker.ExportLinker.html#notebook">notebook</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="baseinstancevariable">
     
@@ -81,57 +154,12 @@
   </tr><tr class="baseinstancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="zim.export.linker.ExportLinker.html#base">base</a></code></td>
+    <td><code><a href="zim.export.linker.ExportLinker.html#source">source</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="baseinstancevariable">
     
     <td>Instance Variable</td>
     <td><code><a href="zim.export.linker.ExportLinker.html#usebase">usebase</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.export.linker.ExportLinker.html#document_root_url">document_root_url</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.export.linker.ExportLinker.html#link">link</a></code></td>
-    <td><span>Returns an url for a link in a zim page This method is used to translate links of any type.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.export.linker.ExportLinker.html#img">img</a></code></td>
-    <td><span>Returns an url for image file 'src'</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.export.linker.ExportLinker.html#resource">resource</a></code></td>
-    <td><span>Return an url for template resources</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.export.linker.ExportLinker.html#resolve_source_file">resolve_source_file</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.export.linker.ExportLinker.html#resolve_dest_file">resolve_dest_file</a></code></td>
-    <td><span>Find the destination file for an attachment @returns: a <code><a href="zim.fs.File.html">File</a></code> object</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.export.linker.ExportLinker.html#page_object">page_object</a></code></td>
-    <td><span>Turn a <code><a href="zim.notebook.page.Path.html">Path</a></code> object in a relative link or URI</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.export.linker.ExportLinker.html#file_object">file_object</a></code></td>
-    <td><span>Turn a <code><a href="zim.fs.File.html">File</a></code> object in a relative link or URI</span></td>
-  </tr><tr class="basemethod private">
-    
-    <td>Method</td>
-    <td><code><a href="zim.export.linker.ExportLinker.html#_link_page">_link_page</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod private">
     
@@ -141,7 +169,7 @@
   </tr><tr class="basemethod private">
     
     <td>Method</td>
-    <td><code><a href="zim.export.linker.ExportLinker.html#_resolve_file">_resolve_file</a></code></td>
+    <td><code><a href="zim.export.linker.ExportLinker.html#_link_interwiki">_link_interwiki</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod private">
     
@@ -151,12 +179,17 @@
   </tr><tr class="basemethod private">
     
     <td>Method</td>
-    <td><code><a href="zim.export.linker.ExportLinker.html#_link_interwiki">_link_interwiki</a></code></td>
+    <td><code><a href="zim.export.linker.ExportLinker.html#_link_notebook">_link_notebook</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
-    <td><code><a href="zim.export.linker.ExportLinker.html#_link_notebook">_link_notebook</a></code></td>
+    <td><code><a href="zim.export.linker.ExportLinker.html#_link_page">_link_page</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="zim.export.linker.ExportLinker.html#_resolve_file">_resolve_file</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -169,6 +202,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.export.linker.StaticExportLinker.__init__">
     
   </a>
@@ -177,8 +211,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, notebook, resources_dir=None, source=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/export/linker.py#L266">
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, notebook, resources_dir=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, source=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/export/linker.py#L257">
       
       (source)
     </a>
@@ -186,16 +220,21 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.export.linker.ExportLinker.html#__init__">zim.export.linker.ExportLinker.__init__</a></code></div>
     
-    <div><p>Contructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">notebook</td><td>the source <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> for resolving links</td></tr><tr><td></td><td class="fieldArg">resources_dir</td><td><span class="undocumented">Undocumented</span></td></tr><tr><td></td><td class="fieldArg">source</td><td>is the <code><a href="zim.notebook.page.Path.html">Path</a></code> of the source page being exported</td></tr><tr><td></td><td class="fieldArg">layout</td><td>the <code><a href="zim.export.layouts.ExportLayout.html">ExportLayout</a></code> for resolving target files</td></tr><tr><td></td><td class="fieldArg">output</td><td>is a <code><a href="zim.fs.File.html">File</a></code> object for the destination file</td></tr><tr><td></td><td class="fieldArg">usebase</td><td>if <code>True</code> the format allows returning relative paths</td></tr><tr><td></td><td class="fieldArg">document_root_url</td><td>optional URL for the document root</td></tr></table></div>
+    <div>Contructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">notebook</span></td><td class="fieldArgDesc">the source <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> for resolving links</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">resources_dir</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">source</span></td><td class="fieldArgDesc">is the <code><a href="zim.notebook.page.Path.html">Path</a></code> of the source page being exported</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">layout</span></td><td class="fieldArgDesc">the <code><a href="zim.export.layouts.ExportLayout.html">ExportLayout</a></code> for resolving target files</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">output</span></td><td class="fieldArgDesc">is a <code><a href="zim.fs.File.html">File</a></code> object for the destination file</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">usebase</span></td><td class="fieldArgDesc">if <tt class="rst-docutils literal">True</tt> the format allows returning relative paths</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">document_root_url</span></td><td class="fieldArgDesc">optional URL for the document root</td></tr></table></div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

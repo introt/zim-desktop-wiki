@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.applications.Application : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.applications.Application</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.applications.html">applications</a></code>.<code><a href="zim.applications.Application.html">Application</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.applications.html">applications</a></code><wbr></wbr>.<code><a href="zim.applications.Application.html">Application</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,47 +65,28 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Application</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L97">(source)</a></code></p><p>Known subclasses: <code><a href="zim.applications.StartFile.html">zim.applications.StartFile</a></code>, <code><a href="zim.applications.WebBrowser.html">zim.applications.WebBrowser</a></code>, <code><a href="zim.gui.applications.DesktopEntryDict.html">zim.gui.applications.DesktopEntryDict</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Application</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L97" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="zim.applications.StartFile.html">zim.applications.StartFile</a></code>, <code><a href="zim.applications.WebBrowser.html">zim.applications.WebBrowser</a></code>, <code><a href="zim.gui.applications.DesktopEntryDict.html">zim.gui.applications.DesktopEntryDict</a></code></p>
         <p><a href="classIndex.html#zim.applications.Application">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Base class for objects representing an external application or command.</p></div>
+        <div>Base class for objects representing an external application or command.</div>
       </div>
 
       <div id="splitTables">
         <table class="children sortable" id="id23">
   
-  <tr class="property">
+  
+  <tr class="method">
     
-    <td>Property</td>
-    <td><code><a href="#name">name</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#cmd">cmd</a></code></td>
-    <td><span>the command and arguments as a tuple or a string (when given as a string it will be parsed for quoted arguments)</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#tryexeccmd">tryexeccmd</a></code></td>
-    <td><span>the command to check in <code><a href="#tryexec">tryexec()</a></code>, if <code>None</code> fall back to first item of <code>cmd</code></span></td>
-  </tr><tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#STATUS_OK">STATUS_OK</a></code></td>
+    <td>Method</td>
+    <td><code><a href="#__eq__">__eq__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Constructor</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#__eq__">__eq__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Constructor</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -83,8 +95,8 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#tryexec">tryexec</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
+    <td><code><a href="#pipe">pipe</a></code></td>
+    <td>Run the application in a sub-process and capture the output. Like <code><a href="#run">run()</a></code>, but connects to stdin and stdout for the sub-process.</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -93,27 +105,47 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#pipe">pipe</a></code></td>
-    <td><span>Run the application in a sub-process and capture the output. Like <code><a href="#run">run()</a></code>, but connects to stdin and stdout for the sub-process.</span></td>
+    <td><code><a href="#spawn">spawn</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#spawn">spawn</a></code></td>
+    <td><code><a href="#tryexec">tryexec</a></code></td>
     <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#STATUS_OK">STATUS_OK</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#cmd">cmd</a></code></td>
+    <td>the command and arguments as a tuple or a string (when given as a string it will be parsed for quoted arguments)</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#tryexeccmd">tryexeccmd</a></code></td>
+    <td>the command to check in <code><a href="#tryexec">tryexec()</a></code>, if <tt class="rst-docutils literal">None</tt> fall back to first item of <tt class="rst-docutils literal">cmd</tt></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#name">name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="staticmethod private">
     
     <td>Static Method</td>
     <td><code><a href="#_lookup">_lookup</a></code></td>
-    <td><span>Lookup cmd in PATH</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
-    <td><code><a href="#_cmd">_cmd</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Lookup cmd in PATH</td>
   </tr><tr class="method private">
     
     <td>Method</td>
     <td><code><a href="#_checkargs">_checkargs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_cmd">_cmd</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -124,112 +156,8 @@
 
       <div id="childList">
 
-        <div class="baseproperty">
+        <div class="basemethod">
   
-  <a name="zim.applications.Application.name">
-    
-  </a>
-  <a name="name">
-    
-  </a>
-  <div class="functionHeader">
-    @property<br />
-    <span class="py-defname">name</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L141">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.applications.StartFile.html">zim.applications.StartFile</a></code>, <code><a href="zim.applications.WebBrowser.html">zim.applications.WebBrowser</a></code>, <code><a href="zim.gui.applications.DesktopEntryDict.html">zim.gui.applications.DesktopEntryDict</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.applications.Application.cmd">
-    
-  </a>
-  <a name="cmd">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">cmd</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L102">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.applications.DesktopEntryDict.html">zim.gui.applications.DesktopEntryDict</a></code></div>
-    
-    <div>the command and arguments as a tuple or a string (when given as a string it will be parsed for quoted arguments)</div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.applications.Application.tryexeccmd">
-    
-  </a>
-  <a name="tryexeccmd">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">tryexeccmd</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L104">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.applications.DesktopEntryDict.html">zim.gui.applications.DesktopEntryDict</a></code></div>
-    
-    <div>the command to check in <code><a href="#tryexec">tryexec()</a></code>, if <code>None</code> fall back to first item of <code>cmd</code></div>
-  </div>
-</div><div class="baseclassvariable">
-  
-  <a name="zim.applications.Application.STATUS_OK">
-    
-  </a>
-  <a name="STATUS_OK">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">STATUS_OK</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L108">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.applications.Application.__init__">
-    
-  </a>
-  <a name="__init__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, cmd, tryexeccmd=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L110">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.applications.StartFile.html">zim.applications.StartFile</a></code>, <code><a href="zim.applications.WebBrowser.html">zim.applications.WebBrowser</a></code>, <code><a href="zim.gui.applications.DesktopEntryDict.html">zim.gui.applications.DesktopEntryDict</a></code></div>
-    
-    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">cmd</td><td>the command for the external application, either a string for the command, or a tuple or list with the command and arguments</td></tr><tr><td></td><td class="fieldArg">tryexeccmd</td><td>command to check in <code><a href="#tryexec">tryexec()</a></code> as string. If <code>None</code> will default to <code>cmd</code> or the first item of <code>cmd</code>.</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.applications.Application.__eq__">
     
@@ -240,7 +168,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L127">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L127">
       
       (source)
     </a>
@@ -251,6 +179,29 @@
     <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.applications.Application.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, cmd, tryexeccmd=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L110">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.applications.StartFile.html">zim.applications.StartFile</a></code>, <code><a href="zim.applications.WebBrowser.html">zim.applications.WebBrowser</a></code>, <code><a href="zim.gui.applications.DesktopEntryDict.html">zim.gui.applications.DesktopEntryDict</a></code></div>
+    
+    <div>Constructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cmd</span></td><td class="fieldArgDesc">the command for the external application, either a string for the command, or a tuple or list with the command and arguments</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tryexeccmd</span></td><td class="fieldArgDesc">command to check in <code><a href="#tryexec">tryexec()</a></code> as string. If <tt class="rst-docutils literal">None</tt> will default to <tt class="rst-docutils literal">cmd</tt> or the first item of <tt class="rst-docutils literal">cmd</tt>.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.applications.Application.__repr__">
     
@@ -261,49 +212,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L133">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basestaticmethod private">
-  
-  <a name="zim.applications.Application._lookup">
-    
-  </a>
-  <a name="_lookup">
-    
-  </a>
-  <div class="functionHeader">
-    @staticmethod<br />
-    <span class="py-keyword">def</span> <span class="py-defname">_lookup</span>(cmd):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L145">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Lookup cmd in PATH</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.applications.Application._cmd">
-    
-  </a>
-  <a name="_cmd">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_cmd</span>(self, args):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L178">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L133">
       
       (source)
     </a>
@@ -314,6 +223,78 @@
     <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.applications.Application.pipe">
+    
+  </a>
+  <a name="pipe">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">pipe</span>(self, args=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, cwd=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, input=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L273">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Run the application in a sub-process and capture the output. Like <code><a href="#run">run()</a></code>, but connects to stdin and stdout for the sub-process.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">args</span></td><td class="fieldArgDesc">additional arguments to give to the command as tuple or list</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cwd</span></td><td class="fieldArgDesc">the folder to set as working directory for the command</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">input</span></td><td class="fieldArgDesc">input for the command as string</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">output as a list of lines</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="zim.applications.ApplicationError.html">ApplicationError</a></code></td><td>if the sub-process returned an error.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Note</td></tr><tr><td colspan="2">The data read is buffered in memory, so do not use this method if the data size is large or unlimited.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.applications.Application.run">
+    
+  </a>
+  <a name="run">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">run</span>(self, args=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, cwd=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L216">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.applications.StartFile.html">zim.applications.StartFile</a></code>, <code><a href="zim.applications.WebBrowser.html">zim.applications.WebBrowser</a></code>, <code><a href="zim.gui.customtools.CustomToolDict.html">zim.gui.customtools.CustomToolDict</a></code></div>
+    
+    <div>Run the application in a sub-process and wait for it to finish. Even when the application runs successfully, any message to stderr is logged as a warning by zim.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">args</span></td><td class="fieldArgDesc">additional arguments to give to the command as tuple or list</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cwd</span></td><td class="fieldArgDesc">the folder to set as working directory for the command</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="zim.applications.ApplicationError.html">ApplicationError</a></code></td><td>if the sub-process returned an error.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.applications.Application.spawn">
+    
+  </a>
+  <a name="spawn">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">spawn</span>(self, args=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, callback=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, data=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, cwd=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L316">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.applications.StartFile.html">zim.applications.StartFile</a></code>, <code><a href="zim.applications.WebBrowser.html">zim.applications.WebBrowser</a></code></div>
+    
+    <div>Start the application in the background and return immediately. This is used to start an external in parallel with zim that is not expected to exit immediatly, so we do not want to wait for it - e.g. a webbrowser to show an URL that was clicked.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">args</span></td><td class="fieldArgDesc">additional arguments to give to the command as tuple or list</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">callback</span></td><td class="fieldArgDesc"><p>optional callback can be used to trigger when the application exits. The signature is:</p>
+<pre class="rst-literal-block">
+        callback(status, data)
+</pre>
+<p>where '<tt class="rst-docutils literal">status</tt>' is the exit status of the process. The application object provides a constant '<tt class="rst-docutils literal">STATUS_OK</tt>' which can be used to test if the application was successful or not.</p>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">data</span></td><td class="fieldArgDesc">additional data for the callback</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cwd</span></td><td class="fieldArgDesc">the folder to set as working directory for the command</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the PID for the new process</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.applications.Application.tryexec">
     
@@ -324,7 +305,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tryexec</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L185">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L185">
       
       (source)
     </a>
@@ -332,9 +313,124 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="zim.applications.StartFile.html">zim.applications.StartFile</a></code>, <code><a href="zim.applications.WebBrowser.html">zim.applications.WebBrowser</a></code></div>
     
-    <div><p>Check if the executable exists without calling it. This method is used e.g. to decide what applications to show in the gui. Uses the <code>tryexeccmd</code>, or the first item of <code>cmd</code> as the executable name.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> when the executable was found</td></tr></table></div>
+    <div>Check if the executable exists without calling it. This method is used e.g. to decide what applications to show in the gui. Uses the <tt class="rst-docutils literal">tryexeccmd</tt>, or the first item of <tt class="rst-docutils literal">cmd</tt> as the executable name.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> when the executable was found</td></tr></table></div>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.applications.Application.STATUS_OK">
+    
+  </a>
+  <a name="STATUS_OK">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">STATUS_OK</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L108">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>0</code></pre></td></tr></table>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.applications.Application.cmd">
+    
+  </a>
+  <a name="cmd">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">cmd</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L102">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.applications.DesktopEntryDict.html">zim.gui.applications.DesktopEntryDict</a></code></div>
+    
+    <div>the command and arguments as a tuple or a string (when given as a string it will be parsed for quoted arguments)</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.applications.Application.tryexeccmd">
+    
+  </a>
+  <a name="tryexeccmd">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">tryexeccmd</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L104">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.applications.DesktopEntryDict.html">zim.gui.applications.DesktopEntryDict</a></code></div>
+    
+    <div>the command to check in <code><a href="#tryexec">tryexec()</a></code>, if <tt class="rst-docutils literal">None</tt> fall back to first item of <tt class="rst-docutils literal">cmd</tt></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="zim.applications.Application.name">
+    
+  </a>
+  <a name="name">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property">property</a><br />
+    <span class="py-defname">name</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L141">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.applications.StartFile.html">zim.applications.StartFile</a></code>, <code><a href="zim.applications.WebBrowser.html">zim.applications.WebBrowser</a></code>, <code><a href="zim.gui.applications.DesktopEntryDict.html">zim.gui.applications.DesktopEntryDict</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basestaticmethod private">
+  
+  
+  <a name="zim.applications.Application._lookup">
+    
+  </a>
+  <a name="_lookup">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#staticmethod">staticmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_lookup</span>(cmd):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L145">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Lookup cmd in PATH</div>
   </div>
 </div><div class="basemethod private">
+  
   
   <a name="zim.applications.Application._checkargs">
     
@@ -345,7 +441,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_checkargs</span>(self, cwd, args):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L195">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L195">
       
       (source)
     </a>
@@ -355,39 +451,19 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="basemethod">
+</div><div class="basemethod private">
   
-  <a name="zim.applications.Application.run">
+  
+  <a name="zim.applications.Application._cmd">
     
   </a>
-  <a name="run">
+  <a name="_cmd">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">run</span>(self, args=None, cwd=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L216">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.applications.StartFile.html">zim.applications.StartFile</a></code>, <code><a href="zim.applications.WebBrowser.html">zim.applications.WebBrowser</a></code>, <code><a href="zim.gui.customtools.CustomToolDict.html">zim.gui.customtools.CustomToolDict</a></code></div>
-    
-    <div><p>Run the application in a sub-process and wait for it to finish. Even when the application runs successfully, any message to stderr is logged as a warning by zim.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">args</td><td>additional arguments to give to the command as tuple or list</td></tr><tr><td></td><td class="fieldArg">cwd</td><td>the folder to set as working directory for the command</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="zim.applications.ApplicationError.html">ApplicationError</a></td><td>if the sub-process returned an error.</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.applications.Application.pipe">
-    
-  </a>
-  <a name="pipe">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">pipe</span>(self, args=None, cwd=None, input=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L273">
+    <span class="py-keyword">def</span> <span class="py-defname">_cmd</span>(self, args):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L178">
       
       (source)
     </a>
@@ -395,39 +471,21 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Run the application in a sub-process and capture the output. Like <code><a href="#run">run()</a></code>, but connects to stdin and stdout for the sub-process.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">args</td><td>additional arguments to give to the command as tuple or list</td></tr><tr><td></td><td class="fieldArg">cwd</td><td>the folder to set as working directory for the command</td></tr><tr><td></td><td class="fieldArg">input</td><td>input for the command as string</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">output as a list of lines</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="zim.applications.ApplicationError.html">ApplicationError</a></td><td>if the sub-process returned an error.</td></tr><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">The data read is buffered in memory, so do not use this method if the data size is large or unlimited.</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.applications.Application.spawn">
-    
-  </a>
-  <a name="spawn">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">spawn</span>(self, args=None, callback=None, data=None, cwd=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/applications.py#L316">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.applications.StartFile.html">zim.applications.StartFile</a></code>, <code><a href="zim.applications.WebBrowser.html">zim.applications.WebBrowser</a></code></div>
-    
-    <div><p>Start the application in the background and return immediately. This is used to start an external in parallel with zim that is not expected to exit immediatly, so we do not want to wait for it - e.g. a webbrowser to show an URL that was clicked.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">args</td><td>additional arguments to give to the command as tuple or list</td></tr><tr><td></td><td class="fieldArg">callback</td><td>optional callback can be used to trigger when the application exits. The signature is:<pre class="literalblock">
-        callback(status, data)
-</pre><p>where '<code>status</code>' is the exit status of the process. The application object provides a constant '<code>STATUS_OK</code>' which can be used to test if the application was successful or not.</p></td></tr><tr><td></td><td class="fieldArg">data</td><td>additional data for the callback</td></tr><tr><td></td><td class="fieldArg">cwd</td><td>the folder to set as working directory for the command</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">the PID for the new process</td></tr></table></div>
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

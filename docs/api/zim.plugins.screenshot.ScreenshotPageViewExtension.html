@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.plugins.screenshot.ScreenshotPageViewExtension : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.plugins.screenshot.ScreenshotPageViewExtension</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code>.<code><a href="zim.plugins.screenshot.html">screenshot</a></code>.<code><a href="zim.plugins.screenshot.ScreenshotPageViewExtension.html">ScreenshotPageViewExtension</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.plugins.html">plugins</a></code><wbr></wbr>.<code><a href="zim.plugins.screenshot.html">screenshot</a></code><wbr></wbr>.<code><a href="zim.plugins.screenshot.ScreenshotPageViewExtension.html">ScreenshotPageViewExtension</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ScreenshotPageViewExtension</span>(<a href="zim.gui.pageview.PageViewExtension.html" title="zim.gui.pageview.PageViewExtension">PageViewExtension</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/screenshot.py#L146">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ScreenshotPageViewExtension</span>(<a href="zim.gui.pageview.PageViewExtension.html" title="zim.gui.pageview.PageViewExtension">PageViewExtension</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/screenshot.py#L146" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.plugins.screenshot.ScreenshotPageViewExtension">View In Hierarchy</a></p>
       </div>
 
@@ -43,18 +74,19 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1208">
+        <table class="children sortable" id="id1195">
   
-  <tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#plugin">plugin</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
+  
+  <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Constructor @param plugin: the plugin object to which this extension belongs @param obj: the object being extended</span></td>
+    <td>Constructor @param plugin: the plugin object to which this extension belongs @param obj: the object being extended</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#insert_screenshot">insert_screenshot</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -63,12 +95,12 @@
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#screenshot_command">screenshot_command</a></code></td>
+    <td><code><a href="#plugin">plugin</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
+  </tr><tr class="instancevariable">
     
-    <td>Method</td>
-    <td><code><a href="#insert_screenshot">insert_screenshot</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="#screenshot_command">screenshot_command</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -76,24 +108,10 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.gui.pageview.PageViewExtensionBase.html">PageViewExtensionBase</a></code> (via <code><a href="zim.gui.pageview.PageViewExtension.html">PageViewExtension</a></code>):
           </p>
-          <table class="children sortable" id="id1209">
+          <table class="children sortable" id="id1196">
   
-  <tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.gui.pageview.PageViewExtensionBase.html#pageview">pageview</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.gui.pageview.PageViewExtensionBase.html#navigation">navigation</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.gui.pageview.PageViewExtensionBase.html#uistate">uistate</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
+  
+  <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.gui.pageview.PageViewExtensionBase.html#add_sidepane_widget">add_sidepane_widget</a></code></td>
@@ -108,15 +126,30 @@
     <td>Method</td>
     <td><code><a href="zim.gui.pageview.PageViewExtensionBase.html#teardown">teardown</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="baseinstancevariable private">
+  </tr><tr class="baseinstancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="zim.gui.pageview.PageViewExtensionBase.html#_window">_window</a></code></td>
+    <td><code><a href="zim.gui.pageview.PageViewExtensionBase.html#navigation">navigation</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.pageview.PageViewExtensionBase.html#pageview">pageview</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.pageview.PageViewExtensionBase.html#uistate">uistate</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="zim.gui.pageview.PageViewExtensionBase.html#_sidepane_widgets">_sidepane_widgets</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.pageview.PageViewExtensionBase.html#_window">_window</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -124,14 +157,10 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.gui.actionextension.ActionExtensionBase.html">ActionExtensionBase</a></code> (via <code><a href="zim.gui.pageview.PageViewExtension.html">PageViewExtension</a></code>, <code><a href="zim.gui.pageview.PageViewExtensionBase.html">PageViewExtensionBase</a></code>):
           </p>
-          <table class="children sortable" id="id1210">
+          <table class="children sortable" id="id1197">
   
-  <tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#actiongroup">actiongroup</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
+  
+  <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#add_to_headerbar">add_to_headerbar</a></code></td>
@@ -145,6 +174,16 @@
     
     <td>Method</td>
     <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#set_action_in_headerbar">set_action_in_headerbar</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#actiongroup">actiongroup</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basestaticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#_uimanager_xml">_uimanager_xml</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod private">
     
@@ -161,41 +200,38 @@
     <td>Instance Variable</td>
     <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#_uimanager_ids">_uimanager_ids</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basestaticmethod private">
-    
-    <td>Static Method</td>
-    <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#_uimanager_xml">_uimanager_xml</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
           
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.plugins.ExtensionBase.html">ExtensionBase</a></code> (via <code><a href="zim.gui.pageview.PageViewExtension.html">PageViewExtension</a></code>, <code><a href="zim.gui.pageview.PageViewExtensionBase.html">PageViewExtensionBase</a></code>, <code><a href="zim.gui.actionextension.ActionExtensionBase.html">ActionExtensionBase</a></code>):
           </p>
-          <table class="children sortable" id="id1211">
+          <table class="children sortable" id="id1198">
   
-  <tr class="baseinstancevariable">
+  
+  <tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.plugins.ExtensionBase.html#obj">obj</a></code></td>
-    <td><span>the extendable object</span></td>
+    <td>Method</td>
+    <td><code><a href="zim.plugins.ExtensionBase.html#destroy">destroy</a></code></td>
+    <td>Called when the plugin is being destroyed Calls <code><a href="#teardown">teardown()</a></code> followed by the <tt class="rst-docutils literal">teardown()</tt> methods of parent base classes.</td>
   </tr><tr class="baseclassvariable">
     
     <td>Class Variable</td>
     <td><code><a href="zim.plugins.ExtensionBase.html#__signals__">__signals__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
+  </tr><tr class="baseinstancevariable">
     
-    <td>Method</td>
-    <td><code><a href="zim.plugins.ExtensionBase.html#destroy">destroy</a></code></td>
-    <td><span>Called when the plugin is being destroyed Calls <code><a href="#teardown">teardown()</a></code> followed by the <code>teardown()</code> methods of parent base classes.</span></td>
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.ExtensionBase.html#obj">obj</a></code></td>
+    <td>the extendable object</td>
   </tr>
 </table>
           
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.signals.SignalEmitter.html">SignalEmitter</a></code> (via <code><a href="zim.gui.pageview.PageViewExtension.html">PageViewExtension</a></code>, <code><a href="zim.gui.pageview.PageViewExtensionBase.html">PageViewExtensionBase</a></code>, <code><a href="zim.gui.actionextension.ActionExtensionBase.html">ActionExtensionBase</a></code>, <code><a href="zim.plugins.ExtensionBase.html">ExtensionBase</a></code>):
           </p>
-          <table class="children sortable" id="id1212">
+          <table class="children sortable" id="id1199">
+  
   
   <tr class="basemethod">
     
@@ -205,13 +241,18 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#block_signals">block_signals</a></code></td>
+    <td>Returns a context manager for blocking one or more signals</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#connect">connect</a></code></td>
-    <td><span>Register a handler for a specific object.</span></td>
+    <td>Register a handler for a specific object.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#connect_after">connect_after</a></code></td>
-    <td><span>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</span></td>
+    <td>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -226,17 +267,12 @@
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#emit_return_first">emit_return_first</a></code></td>
-    <td><span>Emits a signal and stops emission on the first handler that returns a not-None value.</span></td>
+    <td>Emits a signal and stops emission on the first handler that returns a not-None value.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#emit_return_iter">emit_return_iter</a></code></td>
-    <td><span>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.signals.SignalEmitter.html#block_signals">block_signals</a></code></td>
-    <td><span>Returns a context manager for blocking one or more signals</span></td>
+    <td>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -258,37 +294,38 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code> (via <code><a href="zim.gui.pageview.PageViewExtension.html">PageViewExtension</a></code>, <code><a href="zim.gui.pageview.PageViewExtensionBase.html">PageViewExtensionBase</a></code>, <code><a href="zim.gui.actionextension.ActionExtensionBase.html">ActionExtensionBase</a></code>, <code><a href="zim.plugins.ExtensionBase.html">ExtensionBase</a></code>):
           </p>
-          <table class="children sortable" id="id1213">
+          <table class="children sortable" id="id1200">
+  
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto">connectto</a></code></td>
-    <td><span>Connect to signals of another object E.g.:</span></td>
+    <td>Connect to signals of another object E.g.:</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto_all">connectto_all</a></code></td>
-    <td><span>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
-    <td><span>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</span></td>
+    <td>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_all">disconnect_all</a></code></td>
-    <td><span>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</span></td>
-  </tr><tr class="baseinstancevariable private">
+    <td>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</td>
+  </tr><tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
+    <td>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#_disconnect_from">_disconnect_from</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -299,28 +336,8 @@
 
       <div id="childList">
 
-        <div class="baseinstancevariable">
+        <div class="basemethod">
   
-  <a name="zim.plugins.screenshot.ScreenshotPageViewExtension.plugin">
-    
-  </a>
-  <a name="plugin">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">plugin</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/screenshot.py#L149">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.plugins.ExtensionBase.html#plugin">zim.plugins.ExtensionBase.plugin</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.plugins.screenshot.ScreenshotPageViewExtension.__init__">
     
@@ -331,7 +348,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, plugin, pageview):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/screenshot.py#L151">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/screenshot.py#L151">
       
       (source)
     </a>
@@ -339,9 +356,32 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.gui.pageview.PageViewExtensionBase.html#__init__">zim.gui.pageview.PageViewExtensionBase.__init__</a></code></div>
     
-    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">plugin</td><td>the plugin object to which this extension belongs</td></tr><tr><td></td><td class="fieldArg">pageview</td><td><span class="undocumented">Undocumented</span></td></tr><tr><td></td><td class="fieldArg">obj</td><td>the object being extended</td></tr></table></div>
+    <div>Constructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">plugin</span></td><td class="fieldArgDesc">the plugin object to which this extension belongs</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pageview</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">obj</span></td><td class="fieldArgDesc">the object being extended</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.screenshot.ScreenshotPageViewExtension.insert_screenshot">
+    
+  </a>
+  <a name="insert_screenshot">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="zim.actions.html#action">action</a>(<wbr></wbr>_(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">_Screenshot...</span><span class="rst-variable-quote">'</span>), <wbr></wbr>menuhints=<span class="rst-variable-quote">'</span><span class="rst-variable-string">insert</span><span class="rst-variable-quote">'</span>)<br />
+    <span class="py-keyword">def</span> <span class="py-defname">insert_screenshot</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/screenshot.py#L161">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.plugins.screenshot.ScreenshotPageViewExtension.on_preferences_changed">
     
@@ -352,7 +392,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">on_preferences_changed</span>(self, preferences):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/screenshot.py#L157">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/screenshot.py#L157">
       
       (source)
     </a>
@@ -364,6 +404,30 @@
   </div>
 </div><div class="baseinstancevariable">
   
+  
+  <a name="zim.plugins.screenshot.ScreenshotPageViewExtension.plugin">
+    
+  </a>
+  <a name="plugin">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">plugin</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/screenshot.py#L149">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.plugins.ExtensionBase.html#plugin">zim.plugins.ExtensionBase.plugin</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
   <a name="zim.plugins.screenshot.ScreenshotPageViewExtension.screenshot_command">
     
   </a>
@@ -373,7 +437,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">screenshot_command</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/screenshot.py#L159">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/screenshot.py#L159">
       
       (source)
     </a>
@@ -382,36 +446,21 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.screenshot.ScreenshotPageViewExtension.insert_screenshot">
     
-  </a>
-  <a name="insert_screenshot">
-    
-  </a>
-  <div class="functionHeader">
-    @action(_('_Screenshot...'), menuhints='insert')<br />
-    <span class="py-keyword">def</span> <span class="py-defname">insert_screenshot</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/screenshot.py#L161">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

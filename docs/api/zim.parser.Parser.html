@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.parser.Parser : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.parser.Parser</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.parser.html">parser</a></code>.<code><a href="zim.parser.Parser.html">Parser</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.parser.html">parser</a></code><wbr></wbr>.<code><a href="zim.parser.Parser.html">Parser</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,27 +65,23 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Parser</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L349">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Parser</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L347" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.parser.Parser">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Parser class that matches multiple rules at once. It will compile the patterns of various rules into a single regex and based on the match call the correct rules for processing.</p></div>
+        <div>Parser class that matches multiple rules at once. It will compile the patterns of various rules into a single regex and based on the match call the correct rules for processing.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id811">
+        <table class="children sortable" id="id818">
   
-  <tr class="instancevariable">
+  
+  <tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#rules">rules</a></code></td>
-    <td><span>list with <code><a href="zim.parser.Rule.html">Rule</a></code> objects, can be modified until the parser is used for the first time for parsing (the attribute becomes a tuple afterwards)</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#process_unmatched">process_unmatched</a></code></td>
-    <td><span>function (or object) to process un-matched text, or <code>None</code>. The function should take a <code><a href="zim.parser.Builder.html">Builder</a></code> object as first argument, followed by one or more parameters for matched groups in the regular expression.</span></td>
+    <td>Method</td>
+    <td><code><a href="#__call__">__call__</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -64,21 +91,26 @@
     
     <td>Method</td>
     <td><code><a href="#__or__">__or__</a></code></td>
-    <td><span>Allow new parsers to be constructed by combining parser objects with the "|" operator.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#__call__">__call__</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
+    <td>Allow new parsers to be constructed by combining parser objects with the "|" operator.</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#backup_parser_offset">backup_parser_offset</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_re">_re</a></code></td>
+    <td><code><a href="#process_unmatched">process_unmatched</a></code></td>
+    <td>function (or object) to process un-matched text, or <tt class="rst-docutils literal">None</tt>. The function should take a <code><a href="zim.parser.Builder.html">Builder</a></code> object as first argument, followed by one or more parameters for matched groups in the regular expression.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#rules">rules</a></code></td>
+    <td>list with <code><a href="zim.parser.Rule.html">Rule</a></code> objects, can be modified until the parser is used for the first time for parsing (the attribute becomes a tuple afterwards)</td>
+  </tr><tr class="staticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="#_raise_exception">_raise_exception</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
@@ -90,10 +122,10 @@
     <td>Instance Variable</td>
     <td><code><a href="#_backup_iter">_backup_iter</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="staticmethod private">
+  </tr><tr class="instancevariable private">
     
-    <td>Static Method</td>
-    <td><code><a href="#_raise_exception">_raise_exception</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="#_re">_re</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -104,133 +136,8 @@
 
       <div id="childList">
 
-        <div class="baseinstancevariable">
+        <div class="basemethod">
   
-  <a name="zim.parser.Parser.rules">
-    
-  </a>
-  <a name="rules">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">rules</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L354">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div>list with <code><a href="zim.parser.Rule.html">Rule</a></code> objects, can be modified until the parser is used for the first time for parsing (the attribute becomes a tuple afterwards)</div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.parser.Parser.process_unmatched">
-    
-  </a>
-  <a name="process_unmatched">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">process_unmatched</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L357">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div>function (or object) to process un-matched text, or <code>None</code>. The function should take a <code><a href="zim.parser.Builder.html">Builder</a></code> object as first argument, followed by one or more parameters for matched groups in the regular expression.</div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.parser.Parser.__init__">
-    
-  </a>
-  <a name="__init__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, *rules):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L364">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">rules</td><td>list of rules to match (each should derive from <code>SimpleReParser</code>, so be either a single rule, or a compound rule.)</td></tr></table></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.parser.Parser._re">
-    
-  </a>
-  <a name="_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L372">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.parser.Parser._process_unmatched">
-    
-  </a>
-  <a name="_process_unmatched">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_process_unmatched</span>(self, builder, text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L383">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.parser.Parser.__or__">
-    
-  </a>
-  <a name="__or__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">__or__</span>(self, other):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L387">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Allow new parsers to be constructed by combining parser objects with the "|" operator.</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.parser.Parser.__call__">
     
@@ -241,7 +148,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__call__</span>(self, builder, text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L395">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L393">
       
       (source)
     </a>
@@ -249,30 +156,54 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Each parser object is callable so it can be used as a processing function in any other parser object. This method parses the given text and calls the appropriate methods of the <code><a href="zim.parser.Builder.html">Builder</a></code> object to construct the parse results.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">builder</td><td>a <code><a href="zim.parser.Builder.html">Builder</a></code> object</td></tr><tr><td></td><td class="fieldArg">text</td><td>to be parsed text as string</td></tr></table></div>
+    <div>Each parser object is callable so it can be used as a processing function in any other parser object. This method parses the given text and calls the appropriate methods of the <code><a href="zim.parser.Builder.html">Builder</a></code> object to construct the parse results.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">builder</span></td><td class="fieldArgDesc">a <code><a href="zim.parser.Builder.html">Builder</a></code> object</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">text</span></td><td class="fieldArgDesc">to be parsed text as string</td></tr></table></div>
   </div>
-</div><div class="baseinstancevariable private">
+</div><div class="basemethod">
   
-  <a name="zim.parser.Parser._backup_iter">
+  
+  <a name="zim.parser.Parser.__init__">
     
   </a>
-  <a name="_backup_iter">
+  <a name="__init__">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_backup_iter</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L433">
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, *rules):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L362">
       
       (source)
     </a>
   </div>
-  <div class="functionBody">
+  <div class="docstring functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+    <div>Constructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">*rules</span></td><td class="fieldArgDesc">list of rules to match (each should derive from <code>SimpleReParser</code>, so be either a single rule, or a compound rule.)</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.parser.Parser.__or__">
+    
+  </a>
+  <a name="__or__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__or__</span>(self, other):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L385">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Allow new parsers to be constructed by combining parser objects with the "|" operator.</div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.parser.Parser.backup_parser_offset">
     
@@ -283,7 +214,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">backup_parser_offset</span>(self, i):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L451">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L451">
       
       (source)
     </a>
@@ -293,7 +224,54 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.parser.Parser.process_unmatched">
+    
+  </a>
+  <a name="process_unmatched">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">process_unmatched</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L355">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>function (or object) to process un-matched text, or <tt class="rst-docutils literal">None</tt>. The function should take a <code><a href="zim.parser.Builder.html">Builder</a></code> object as first argument, followed by one or more parameters for matched groups in the regular expression.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.parser.Parser.rules">
+    
+  </a>
+  <a name="rules">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">rules</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L352">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>list with <code><a href="zim.parser.Rule.html">Rule</a></code> objects, can be modified until the parser is used for the first time for parsing (the attribute becomes a tuple afterwards)</div>
+    
+  </div>
 </div><div class="basestaticmethod private">
+  
   
   <a name="zim.parser.Parser._raise_exception">
     
@@ -302,9 +280,9 @@
     
   </a>
   <div class="functionHeader">
-    @staticmethod<br />
-    <span class="py-keyword">def</span> <span class="py-defname">_raise_exception</span>(error, text, start, end, builder, rule=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L454">
+    @<a href="https://docs.python.org/3/library/functions.html#staticmethod">staticmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_raise_exception</span>(error, text, start, end, builder, rule=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L454">
       
       (source)
     </a>
@@ -314,14 +292,87 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.parser.Parser._process_unmatched">
+    
+  </a>
+  <a name="_process_unmatched">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_process_unmatched</span>(self, builder, text):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L381">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.parser.Parser._backup_iter">
+    
+  </a>
+  <a name="_backup_iter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_backup_iter</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L433">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.parser.Parser._re">
+    
+  </a>
+  <a name="_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/parser.py#L370">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

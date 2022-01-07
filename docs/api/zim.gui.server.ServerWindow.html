@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.gui.server.ServerWindow : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.gui.server.ServerWindow</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.server.html">server</a></code>.<code><a href="zim.gui.server.ServerWindow.html">ServerWindow</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.gui.html">gui</a></code><wbr></wbr>.<code><a href="zim.gui.server.html">server</a></code><wbr></wbr>.<code><a href="zim.gui.server.ServerWindow.html">ServerWindow</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ServerWindow</span>(<span title="gi.repository.Gtk.Window">Gtk.Window</span>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L35">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ServerWindow</span>(<span title="gi.repository.Gtk.Window">Gtk.Window</span>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L35" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.gui.server.ServerWindow">View In Hierarchy</a></p>
       </div>
 
@@ -45,15 +76,41 @@
       <div id="splitTables">
         <table class="children sortable" id="id456">
   
+  
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
     <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#do_serve_on_io">do_serve_on_io</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#do_serve_on_poll">do_serve_on_poll</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#open_notebook">open_notebook</a></code></td>
+    <td>Sets the notebook in the combobox</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#start">start</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#stop">stop</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#interface_opts">interface_opts</a></code></td>
+    <td><code><a href="#auth_checkbox">auth_checkbox</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
@@ -63,17 +120,7 @@
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#status_label">status_label</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#start_button">start_button</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#stop_button">stop_button</a></code></td>
+    <td><code><a href="#interface_opts">interface_opts</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
@@ -93,6 +140,11 @@
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
+    <td><code><a href="#password_input">password_input</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
     <td><code><a href="#portentry">portentry</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
@@ -103,47 +155,27 @@
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
+    <td><code><a href="#start_button">start_button</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#status_label">status_label</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#stop_button">stop_button</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
     <td><code><a href="#templatecombobox">templatecombobox</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#auth_checkbox">auth_checkbox</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
     <td><code><a href="#username_input">username_input</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#password_input">password_input</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#open_notebook">open_notebook</a></code></td>
-    <td><span>Sets the notebook in the combobox</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#start">start</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#do_serve_on_io">do_serve_on_io</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#do_serve_on_poll">do_serve_on_poll</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#stop">stop</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable private">
     
@@ -161,6 +193,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.gui.server.ServerWindow.__init__">
     
   </a>
@@ -169,8 +202,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, notebookinfo=None, port=8080, public=True, **opts):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L37">
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, notebookinfo=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, port=8080, public=<a href="https://docs.python.org/3/library/constants.html#True">True</a>, **opts):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L37">
       
       (source)
     </a>
@@ -178,366 +211,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">notebookinfo</td><td>the notebook location</td></tr><tr><td></td><td class="fieldArg">port</td><td>the http port to serve on</td></tr><tr><td></td><td class="fieldArg">public</td><td>allow connections to the server from other computers - if <code>False</code> can only connect from localhost</td></tr><tr><td></td><td class="fieldArg">opts</td><td>options for <code><a href="zim.www.WWWInterface.html#__init__">WWWInterface.__init__()</a></code></td></tr></table></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.server.ServerWindow.interface_opts">
-    
-  </a>
-  <a name="interface_opts">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">interface_opts</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L48">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.server.ServerWindow.httpd">
-    
-  </a>
-  <a name="httpd">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">httpd</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L49">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.server.ServerWindow._source_id">
-    
-  </a>
-  <a name="_source_id">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_source_id</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L50">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.server.ServerWindow.status_label">
-    
-  </a>
-  <a name="status_label">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">status_label</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L53">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.server.ServerWindow.start_button">
-    
-  </a>
-  <a name="start_button">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">start_button</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L56">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.server.ServerWindow.stop_button">
-    
-  </a>
-  <a name="stop_button">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">stop_button</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L58">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.server.ServerWindow.link_button">
-    
-  </a>
-  <a name="link_button">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">link_button</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L62">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.server.ServerWindow.notebookcombobox">
-    
-  </a>
-  <a name="notebookcombobox">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">notebookcombobox</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L65">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.server.ServerWindow.open_button">
-    
-  </a>
-  <a name="open_button">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">open_button</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L66">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.server.ServerWindow.portentry">
-    
-  </a>
-  <a name="portentry">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">portentry</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L69">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.server.ServerWindow.public_checkbox">
-    
-  </a>
-  <a name="public_checkbox">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">public_checkbox</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L75">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.server.ServerWindow.templatecombobox">
-    
-  </a>
-  <a name="templatecombobox">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">templatecombobox</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L79">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.server.ServerWindow.auth_checkbox">
-    
-  </a>
-  <a name="auth_checkbox">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">auth_checkbox</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L85">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.server.ServerWindow.username_input">
-    
-  </a>
-  <a name="username_input">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">username_input</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L87">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.server.ServerWindow.password_input">
-    
-  </a>
-  <a name="password_input">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">password_input</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L88">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Constructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">notebookinfo</span></td><td class="fieldArgDesc">the notebook location</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">port</span></td><td class="fieldArgDesc">the http port to serve on</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">public</span></td><td class="fieldArgDesc">allow connections to the server from other computers - if <tt class="rst-docutils literal">False</tt> can only connect from localhost</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**opts</span></td><td class="fieldArgDesc">options for <code><a href="zim.www.WWWInterface.html#__init__">WWWInterface.__init__()</a></code></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.server.ServerWindow.open_notebook">
-    
-  </a>
-  <a name="open_notebook">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">open_notebook</span>(self, notebook):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L123">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Sets the notebook in the combobox</p><p>This method is called by the NotebookDialog when a notebook is opened.</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.server.ServerWindow.start">
-    
-  </a>
-  <a name="start">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">start</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L130">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.server.ServerWindow.do_serve_on_io">
     
@@ -548,7 +225,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">do_serve_on_io</span>(self, fd, event):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L199">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L199">
       
       (source)
     </a>
@@ -559,6 +236,7 @@
     <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.gui.server.ServerWindow.do_serve_on_poll">
     
@@ -569,7 +247,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">do_serve_on_poll</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L211">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L211">
       
       (source)
     </a>
@@ -581,16 +259,41 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.server.ServerWindow.stop">
+  
+  <a name="zim.gui.server.ServerWindow.open_notebook">
     
   </a>
-  <a name="stop">
+  <a name="open_notebook">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">stop</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L215">
+    <span class="py-keyword">def</span> <span class="py-defname">open_notebook</span>(self, notebook):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L123">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Sets the notebook in the combobox</p>
+<p>This method is called by the NotebookDialog when a notebook is opened.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.server.ServerWindow.start">
+    
+  </a>
+  <a name="start">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">start</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L130">
       
       (source)
     </a>
@@ -600,14 +303,386 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.server.ServerWindow.stop">
+    
+  </a>
+  <a name="stop">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">stop</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L215">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.server.ServerWindow.auth_checkbox">
+    
+  </a>
+  <a name="auth_checkbox">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">auth_checkbox</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L85">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.server.ServerWindow.httpd">
+    
+  </a>
+  <a name="httpd">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">httpd</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L49">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.server.ServerWindow.interface_opts">
+    
+  </a>
+  <a name="interface_opts">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">interface_opts</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L48">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.server.ServerWindow.link_button">
+    
+  </a>
+  <a name="link_button">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">link_button</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L62">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.server.ServerWindow.notebookcombobox">
+    
+  </a>
+  <a name="notebookcombobox">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">notebookcombobox</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L65">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.server.ServerWindow.open_button">
+    
+  </a>
+  <a name="open_button">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">open_button</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L66">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.server.ServerWindow.password_input">
+    
+  </a>
+  <a name="password_input">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">password_input</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L88">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.server.ServerWindow.portentry">
+    
+  </a>
+  <a name="portentry">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">portentry</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L69">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.server.ServerWindow.public_checkbox">
+    
+  </a>
+  <a name="public_checkbox">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">public_checkbox</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L75">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.server.ServerWindow.start_button">
+    
+  </a>
+  <a name="start_button">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">start_button</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L56">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.server.ServerWindow.status_label">
+    
+  </a>
+  <a name="status_label">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">status_label</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L53">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.server.ServerWindow.stop_button">
+    
+  </a>
+  <a name="stop_button">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">stop_button</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L58">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.server.ServerWindow.templatecombobox">
+    
+  </a>
+  <a name="templatecombobox">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">templatecombobox</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L79">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.server.ServerWindow.username_input">
+    
+  </a>
+  <a name="username_input">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">username_input</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L87">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.server.ServerWindow._source_id">
+    
+  </a>
+  <a name="_source_id">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_source_id</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/server.py#L50">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

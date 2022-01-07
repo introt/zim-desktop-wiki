@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.formats.__main__ : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.formats.__main__</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="module private"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.formats.html">formats</a></code>.<code><a href="zim.formats.__main__.html">__main__</a></code></code></h1>
+        <h1 class="module private"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.formats.html">formats</a></code><wbr></wbr>.<code><a href="zim.formats.__main__.html">__main__</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,35 +65,31 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__main__.py">(source)</a>
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__main__.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>When this module is run as a script it allows conversion from one format to another Given two format names it will read the first format from stdin and write the second format to stdout:</p><pre class="literalblock">
+        <div><p>When this module is run as a script it allows conversion from one format to another Given two format names it will read the first format from stdin and write the second format to stdout:</p>
+<pre class="rst-literal-block">
         cat foo.txt | python -m zim.formats wiki html &gt; foo.html
-</pre><p>Given only one format name it will output the parsetree XML:</p><pre class="literalblock">
+</pre>
+<p>Given only one format name it will output the parsetree XML:</p>
+<pre class="rst-literal-block">
         cat foo.txt | python -m zim.formats wiki &gt; foo.xml
-</pre><p>Note that this can not replace "zim --export" because no effort is done here to resolve links. Main purpose is testing.</p></div>
+</pre>
+<p>Note that this can not replace "zim --export" because no effort is done here to resolve links. Main purpose is testing.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id161">
+        <table class="children sortable" id="id148">
+  
   
   <tr class="variable">
     
     <td>Variable</td>
-    <td><code><a href="#inputformat">inputformat</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#outputformat">outputformat</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#source_dir">source_dir</a></code></td>
+    <td><code><a href="#dumper">dumper</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
@@ -72,12 +99,12 @@
   </tr><tr class="variable">
     
     <td>Variable</td>
-    <td><code><a href="#parser">parser</a></code></td>
+    <td><code><a href="#inputformat">inputformat</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
     <td>Variable</td>
-    <td><code><a href="#tree">tree</a></code></td>
+    <td><code><a href="#lines">lines</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
@@ -87,12 +114,22 @@
   </tr><tr class="variable">
     
     <td>Variable</td>
-    <td><code><a href="#dumper">dumper</a></code></td>
+    <td><code><a href="#outputformat">outputformat</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
     <td>Variable</td>
-    <td><code><a href="#lines">lines</a></code></td>
+    <td><code><a href="#parser">parser</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#source_dir">source_dir</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#tree">tree</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -105,152 +142,6 @@
 
         <div class="basevariable">
   
-  <a name="zim.formats.__main__.inputformat">
-    
-  </a>
-  <a name="inputformat">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">inputformat</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__main__.py#L35">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.formats.__main__.outputformat">
-    
-  </a>
-  <a name="outputformat">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">outputformat</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__main__.py#L37">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.formats.__main__.source_dir">
-    
-  </a>
-  <a name="source_dir">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">source_dir</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__main__.py#L38">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.formats.__main__.input">
-    
-  </a>
-  <a name="input">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">input</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__main__.py#L46">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.formats.__main__.parser">
-    
-  </a>
-  <a name="parser">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">parser</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__main__.py#L48">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.formats.__main__.tree">
-    
-  </a>
-  <a name="tree">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">tree</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__main__.py#L49">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.formats.__main__.linker">
-    
-  </a>
-  <a name="linker">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">linker</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__main__.py#L54">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
   
   <a name="zim.formats.__main__.dumper">
     
@@ -261,7 +152,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">dumper</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__main__.py#L55">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__main__.py#L56">
       
       (source)
     </a>
@@ -270,8 +161,56 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basevariable">
+  
+  
+  <a name="zim.formats.__main__.input">
+    
+  </a>
+  <a name="input">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">input</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__main__.py#L47">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.formats.__main__.inputformat">
+    
+  </a>
+  <a name="inputformat">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">inputformat</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__main__.py#L36">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
   
   <a name="zim.formats.__main__.lines">
     
@@ -282,7 +221,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">lines</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__main__.py#L56">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__main__.py#L57">
       
       (source)
     </a>
@@ -291,15 +230,136 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.formats.__main__.linker">
+    
+  </a>
+  <a name="linker">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">linker</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__main__.py#L55">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.formats.__main__.outputformat">
+    
+  </a>
+  <a name="outputformat">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">outputformat</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__main__.py#L38">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.formats.__main__.parser">
+    
+  </a>
+  <a name="parser">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">parser</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__main__.py#L49">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.formats.__main__.source_dir">
+    
+  </a>
+  <a name="source_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">source_dir</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__main__.py#L39">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.formats.__main__.tree">
+    
+  </a>
+  <a name="tree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">tree</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/__main__.py#L50">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

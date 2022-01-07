@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.newfs.base : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.newfs.base</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.newfs.html">newfs</a></code>.<code><a href="zim.newfs.base.html">base</a></code></code></h1>
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.newfs.html">newfs</a></code><wbr></wbr>.<code><a href="zim.newfs.base.html">base</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,41 +65,27 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py">(source)</a>
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Base classes for filesystem and storage implementation</p></div>
+        <div>Base classes for filesystem and storage implementation</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id611">
+        <table class="children sortable" id="id620">
   
-  <tr class="variable">
+  
+  <tr class="class">
     
-    <td>Variable</td>
-    <td><code><a href="#logger">logger</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#is_url_re">is_url_re</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#is_share_re">is_share_re</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#SEP">SEP</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Class</td>
+    <td><code><a href="zim.newfs.base.File.html">File</a></code></td>
+    <td>Base class for folder implementations. Cannot be intatiated directly; use one of the subclasses instead. Main use outside of this module is to check <tt class="rst-docutils literal">isinstance(object, Folder)</tt>.</td>
   </tr><tr class="class">
     
     <td>Class</td>
-    <td><code><a href="zim.newfs.base.FileNotFoundError.html">FileNotFoundError</a></code></td>
+    <td><code><a href="zim.newfs.base.FileChangedError.html">FileChangedError</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="class">
     
@@ -78,12 +95,7 @@
   </tr><tr class="class">
     
     <td>Class</td>
-    <td><code><a href="zim.newfs.base.FileUnicodeError.html">FileUnicodeError</a></code></td>
-    <td><span>Error raised when there is an issue decoding the file contents. Typically due to different encoding where UTF-8 is expected.</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.newfs.base.FileChangedError.html">FileChangedError</a></code></td>
+    <td><code><a href="zim.newfs.base.FileNotFoundError.html">FileNotFoundError</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="class">
     
@@ -93,32 +105,67 @@
   </tr><tr class="class">
     
     <td>Class</td>
+    <td><code><a href="zim.newfs.base.FilePath.html">FilePath</a></code></td>
+    <td>Class to represent filesystem paths and the base class for all file and folder objects. Contains methods for file path manipulation.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.newfs.base.FileUnicodeError.html">FileUnicodeError</a></code></td>
+    <td>Error raised when there is an issue decoding the file contents. Typically due to different encoding where UTF-8 is expected.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.newfs.base.Folder.html">Folder</a></code></td>
+    <td>Base class for folder implementations. Cannot be intatiated directly; use one of the subclasses instead. Main use outside of this module is to check <tt class="rst-docutils literal">isinstance(object, Folder)</tt>.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
     <td><code><a href="zim.newfs.base.FolderNotEmptyError.html">FolderNotEmptyError</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="class">
     
     <td>Class</td>
-    <td><code><a href="zim.newfs.base.FilePath.html">FilePath</a></code></td>
-    <td><span>Class to represent filesystem paths and the base class for all file and folder objects. Contains methods for file path manipulation.</span></td>
+    <td><code><a href="zim.newfs.base.FSObjectBase.html">FSObjectBase</a></code></td>
+    <td>Base class for <code><a href="zim.newfs.base.File.html">File</a></code> and <code><a href="zim.newfs.base.Folder.html">Folder</a></code></td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.newfs.base.FSObjectMeta.html">FSObjectMeta</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="class">
+  </tr><tr class="function">
     
-    <td>Class</td>
-    <td><code><a href="zim.newfs.base.FSObjectBase.html">FSObjectBase</a></code></td>
-    <td><span>Base class for <code><a href="zim.newfs.base.File.html">File</a></code> and <code><a href="zim.newfs.base.Folder.html">Folder</a></code></span></td>
-  </tr><tr class="class">
+    <td>Function</td>
+    <td><code><a href="#get_mimetype_from_path">get_mimetype_from_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
     
-    <td>Class</td>
-    <td><code><a href="zim.newfs.base.Folder.html">Folder</a></code></td>
-    <td><span>Base class for folder implementations. Cannot be intatiated directly; use one of the subclasses instead. Main use outside of this module is to check <code>isinstance(object, Folder)</code>.</span></td>
+    <td>Function</td>
+    <td><code><a href="#is_abs_filepath">is_abs_filepath</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#IMAGE_EXTENSIONS">IMAGE_EXTENSIONS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#SEP">SEP</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
     <td>Variable</td>
-    <td><code><a href="#xdgmime">xdgmime</a></code></td>
+    <td><code><a href="#is_share_re">is_share_re</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#is_url_re">is_url_re</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger">logger</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
@@ -128,27 +175,12 @@
   </tr><tr class="variable">
     
     <td>Variable</td>
-    <td><code><a href="#IMAGE_EXTENSIONS">IMAGE_EXTENSIONS</a></code></td>
+    <td><code><a href="#mytype">mytype</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.newfs.base.File.html">File</a></code></td>
-    <td><span>Base class for folder implementations. Cannot be intatiated directly; use one of the subclasses instead. Main use outside of this module is to check <code>isinstance(object, Folder)</code>.</span></td>
-  </tr><tr class="variable private">
+  </tr><tr class="variable">
     
     <td>Variable</td>
-    <td><code><a href="#_EOL">_EOL</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function private">
-    
-    <td>Function</td>
-    <td><code><a href="#_split_file_url">_split_file_url</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function private">
-    
-    <td>Function</td>
-    <td><code><a href="#_splitnormpath">_splitnormpath</a></code></td>
+    <td><code><a href="#xdgmime">xdgmime</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="function private">
     
@@ -163,17 +195,32 @@
   </tr><tr class="function private">
     
     <td>Function</td>
-    <td><code><a href="#_os_expanduser">_os_expanduser</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable private">
-    
-    <td>Variable</td>
-    <td><code><a href="#_HOME">_HOME</a></code></td>
+    <td><code><a href="#_md5">_md5</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="function private">
     
     <td>Function</td>
-    <td><code><a href="#_md5">_md5</a></code></td>
+    <td><code><a href="#_os_expanduser">_os_expanduser</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_split_file_url">_split_file_url</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_splitnormpath">_splitnormpath</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_EOL">_EOL</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_HOME">_HOME</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -184,18 +231,63 @@
 
       <div id="childList">
 
-        <div class="basevariable">
+        <div class="basefunction">
   
-  <a name="zim.newfs.base.logger">
+  
+  <a name="zim.newfs.base.get_mimetype_from_path">
     
   </a>
-  <a name="logger">
+  <a name="get_mimetype_from_path">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">logger</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L13">
+    <span class="py-keyword">def</span> <span class="py-defname">get_mimetype_from_path</span>(path):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L622">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.newfs.base.is_abs_filepath">
+    
+  </a>
+  <a name="is_abs_filepath">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">is_abs_filepath</span>(string):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L221">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.newfs.base.IMAGE_EXTENSIONS">
+    
+  </a>
+  <a name="IMAGE_EXTENSIONS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">IMAGE_EXTENSIONS</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L583">
       
       (source)
     </a>
@@ -204,50 +296,17 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>{<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">bmp</span><span class="rst-variable-quote">'</span>: <span class="rst-variable-quote">'</span><span class="rst-variable-string">image/bmp</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">gif</span><span class="rst-variable-quote">'</span>: <span class="rst-variable-quote">'</span><span class="rst-variable-string">image/gif</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">icns</span><span class="rst-variable-quote">'</span>: <span class="rst-variable-quote">'</span><span class="rst-variable-string">image/x-icns</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">ico</span><span class="rst-variable-quote">'</span>: <span class="rst-variable-quote">'</span><span class="rst-variable-string">image/x-icon</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">cur</span><span class="rst-variable-quote">'</span>: <span class="rst-variable-quote">'</span><span class="rst-variable-string">image/x-icon</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">jp2</span><span class="rst-variable-quote">'</span>: <span class="rst-variable-quote">'</span><span class="rst-variable-string">image/jp2</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">jpc</span><span class="rst-variable-quote">'</span>: <span class="rst-variable-quote">'</span><span class="rst-variable-string">image/jp2</span><span class="rst-variable-quote">'</span>,
+<span class="rst-variable-ellipsis">...</span></code></pre></td></tr></table>
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
   
-  <a name="zim.newfs.base.is_url_re">
-    
-  </a>
-  <a name="is_url_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">is_url_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L22">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.newfs.base.is_share_re">
-    
-  </a>
-  <a name="is_share_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">is_share_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L23">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
   
   <a name="zim.newfs.base.SEP">
     
@@ -258,7 +317,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">SEP</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L27">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L27">
       
       (source)
     </a>
@@ -267,166 +326,21 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable private">
-  
-  <a name="zim.newfs.base._EOL">
-    
-  </a>
-  <a name="_EOL">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_EOL</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L28">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.newfs.base._split_file_url">
-    
-  </a>
-  <a name="_split_file_url">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_split_file_url</span>(url):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L102">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.newfs.base._splitnormpath">
-    
-  </a>
-  <a name="_splitnormpath">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_splitnormpath</span>(path, force_rel=False):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L118">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.newfs.base._joinabspath">
-    
-  </a>
-  <a name="_joinabspath">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_joinabspath</span>(names):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L182">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.newfs.base._joinuri">
-    
-  </a>
-  <a name="_joinuri">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_joinuri</span>(names):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L190">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.newfs.base._os_expanduser">
-    
-  </a>
-  <a name="_os_expanduser">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_os_expanduser</span>(path):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L197">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable private">
-  
-  <a name="zim.newfs.base._HOME">
-    
-  </a>
-  <a name="_HOME">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_HOME</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L339">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>os.path.sep</code></pre></td></tr></table>
   </div>
 </div><div class="basevariable">
   
-  <a name="zim.newfs.base.xdgmime">
+  
+  <a name="zim.newfs.base.is_share_re">
     
   </a>
-  <a name="xdgmime">
+  <a name="is_share_re">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">xdgmime</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L542">
+    <span class="py-defname">is_share_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L23">
       
       (source)
     </a>
@@ -435,8 +349,56 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basevariable">
+  
+  
+  <a name="zim.newfs.base.is_url_re">
+    
+  </a>
+  <a name="is_url_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">is_url_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L22">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.newfs.base.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L13">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
   
   <a name="zim.newfs.base.mimetypes">
     
@@ -447,7 +409,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">mimetypes</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L543">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L569">
       
       (source)
     </a>
@@ -456,19 +418,21 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basevariable">
   
-  <a name="zim.newfs.base.IMAGE_EXTENSIONS">
+  
+  <a name="zim.newfs.base.mytype">
     
   </a>
-  <a name="IMAGE_EXTENSIONS">
+  <a name="mytype">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">IMAGE_EXTENSIONS</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L556">
+    <span class="py-defname">mytype</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L572">
       
       (source)
     </a>
@@ -476,9 +440,78 @@
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, ...]</code>)
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.newfs.base.xdgmime">
+    
+  </a>
+  <a name="xdgmime">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">xdgmime</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L568">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basefunction private">
+  
+  
+  <a name="zim.newfs.base._joinabspath">
+    
+  </a>
+  <a name="_joinabspath">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_joinabspath</span>(names, origpath=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L186">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.newfs.base._joinuri">
+    
+  </a>
+  <a name="_joinuri">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_joinuri</span>(names):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L195">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
   
   <a name="zim.newfs.base._md5">
     
@@ -489,7 +522,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_md5</span>(content):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L593">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L643">
       
       (source)
     </a>
@@ -499,14 +532,131 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.newfs.base._os_expanduser">
+    
+  </a>
+  <a name="_os_expanduser">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_os_expanduser</span>(path):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L202">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.newfs.base._split_file_url">
+    
+  </a>
+  <a name="_split_file_url">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_split_file_url</span>(url):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L102">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.newfs.base._splitnormpath">
+    
+  </a>
+  <a name="_splitnormpath">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_splitnormpath</span>(path, force_rel=<a href="https://docs.python.org/3/library/constants.html#False">False</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L118">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="zim.newfs.base._EOL">
+    
+  </a>
+  <a name="_EOL">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_EOL</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L28">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">unix</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="zim.newfs.base._HOME">
+    
+  </a>
+  <a name="_HOME">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_HOME</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/newfs/base.py#L363">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><a href="zim.newfs.base.FilePath.html">FilePath</a>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">~</span><span class="rst-variable-quote">'</span>)</code></pre></td></tr></table>
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.fs.File : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.fs.File</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.fs.html">fs</a></code>.<code><a href="zim.fs.File.html">File</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.fs.html">fs</a></code><wbr></wbr>.<code><a href="zim.fs.File.html">File</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,37 +65,51 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">File</span>(<a href="zim.fs.UnixPath.html" title="zim.fs.UnixPath">FilePath</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L991">(source)</a></code></p><p>Known subclasses: <code><a href="zim.fs.TmpFile.html">zim.fs.TmpFile</a></code>, <code><a href="zim.notebook.page.SourceFile.html">zim.notebook.page.SourceFile</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">File</span>(<a href="zim.fs.UnixPath.html" title="zim.fs.UnixPath">FilePath</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L992" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="zim.fs.TmpFile.html">zim.fs.TmpFile</a></code></p>
         <p><a href="classIndex.html#zim.fs.File">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Class representing a single file.</p><p>This class implements much more complex logic than the default python file objects. E.g. on writing we first write to a temporary files, then flush and sync and finally replace the file we intended to write with the temporary file. This makes it much more difficult to loose file contents when something goes wrong during the writing.</p><p>Also it implements logic to check the modification time before writing to prevent overwriting a file that was changed on disk in between read and write operations. If this mtime check fails MD5 sums are used to verify before raising an exception (because some share drives do not maintain mtime very precisely). This logic is not atomic, so your mileage may vary.</p></div>
+        <div><p>Class representing a single file.</p>
+<p>This class implements much more complex logic than the default python file objects. E.g. on writing we first write to a temporary files, then flush and sync and finally replace the file we intended to write with the temporary file. This makes it much more difficult to loose file contents when something goes wrong during the writing.</p>
+<p>Also it implements logic to check the modification time before writing to prevent overwriting a file that was changed on disk in between read and write operations. If this mtime check fails MD5 sums are used to verify before raising an exception (because some share drives do not maintain mtime very precisely). This logic is not atomic, so your mileage may vary.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id206">
+        <table class="children sortable" id="id204">
+  
   
   <tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Constructor</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#checkoverwrite">checkoverwrite</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#endofline">endofline</a></code></td>
+    <td><code><a href="#__eq__">__eq__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#__eq__">__eq__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td>Constructor</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#check_has_changed_on_disk">check_has_changed_on_disk</a></code></td>
+    <td>Returns <tt class="rst-docutils literal">True</tt> when this file has changed on disk</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#cleanup">cleanup</a></code></td>
+    <td>Remove this file and cleanup any empty parent folder. Convenience method calling <code><a href="#remove">File.remove()</a></code> and <code><a href="zim.fs.Dir.html#cleanup">Dir.cleanup()</a></code>.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#compare">compare</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#copyto">copyto</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -73,8 +118,8 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#isimage">isimage</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
+    <td><code><a href="#get_endofline">get_endofline</a></code></td>
+    <td>Get the end-of-line character(s) used for writing this file. @returns: the end-of-line character(s)</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -83,8 +128,8 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#get_endofline">get_endofline</a></code></td>
-    <td><span>Get the end-of-line character(s) used for writing this file. @returns: the end-of-line character(s)</span></td>
+    <td><code><a href="#isimage">isimage</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -99,7 +144,17 @@
     
     <td>Method</td>
     <td><code><a href="#readlines">readlines</a></code></td>
-    <td><span>Get the file contents as a list of lines. Takes case of decoding UTF-8 and fixes line endings.</span></td>
+    <td>Get the file contents as a list of lines. Takes case of decoding UTF-8 and fixes line endings.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#remove">remove</a></code></td>
+    <td>Remove (delete) this file and cleanup any related temporary files we created. This action can not be un-done. Ignores silently if the file did not exist in the first place.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#touch">touch</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -110,45 +165,25 @@
     <td>Method</td>
     <td><code><a href="#writelines">writelines</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#check_has_changed_on_disk">check_has_changed_on_disk</a></code></td>
-    <td><span>Returns <code>True</code> when this file has changed on disk</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#touch">touch</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#remove">remove</a></code></td>
-    <td><span>Remove (delete) this file and cleanup any related temporary files we created. This action can not be un-done. Ignores silently if the file did not exist in the first place.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#cleanup">cleanup</a></code></td>
-    <td><span>Remove this file and cleanup any empty parent folder. Convenience method calling <code><a href="#remove">File.remove()</a></code> and <code><a href="zim.fs.Dir.html#cleanup">Dir.cleanup()</a></code>.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#copyto">copyto</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#compare">compare</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_mtime">_mtime</a></code></td>
+    <td><code><a href="#checkoverwrite">checkoverwrite</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_md5">_md5</a></code></td>
+    <td><code><a href="#endofline">endofline</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_assertoverwrite">_assertoverwrite</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_checkoverwrite">_checkoverwrite</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
@@ -160,15 +195,15 @@
     <td>Method</td>
     <td><code><a href="#_write_check">_write_check</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
+  </tr><tr class="instancevariable private">
     
-    <td>Method</td>
-    <td><code><a href="#_checkoverwrite">_checkoverwrite</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="#_md5">_md5</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
+  </tr><tr class="instancevariable private">
     
-    <td>Method</td>
-    <td><code><a href="#_assertoverwrite">_assertoverwrite</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="#_mtime">_mtime</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -176,48 +211,19 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.fs.UnixPath.html">UnixPath</a></code>:
           </p>
-          <table class="children sortable" id="id207">
+          <table class="children sortable" id="id205">
   
-  <tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.fs.UnixPath.html#path">path</a></code></td>
-    <td><span>the absolute file path as string file system encoding (should only be used by low-level functions)</span></td>
-  </tr><tr class="baseproperty">
-    
-    <td>Property</td>
-    <td><code><a href="zim.fs.UnixPath.html#user_path">user_path</a></code></td>
-    <td><span>User_path property</span></td>
-  </tr><tr class="baseproperty">
-    
-    <td>Property</td>
-    <td><code><a href="zim.fs.UnixPath.html#uri">uri</a></code></td>
-    <td><span>File uri property</span></td>
-  </tr><tr class="baseproperty">
-    
-    <td>Property</td>
-    <td><code><a href="zim.fs.UnixPath.html#basename">basename</a></code></td>
-    <td><span>Basename property</span></td>
-  </tr><tr class="baseproperty">
-    
-    <td>Property</td>
-    <td><code><a href="zim.fs.UnixPath.html#dirname">dirname</a></code></td>
-    <td><span>Dirname property</span></td>
-  </tr><tr class="baseproperty">
-    
-    <td>Property</td>
-    <td><code><a href="zim.fs.UnixPath.html#dir">dir</a></code></td>
-    <td><span>Returns a <code><a href="zim.fs.Dir.html">Dir</a></code> object for the parent dir</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#serialize_zim_config">serialize_zim_config</a></code></td>
-    <td><span>Returns the file path as string for serializing the object</span></td>
-  </tr><tr class="baseclassmethod">
+  
+  <tr class="baseclassmethod">
     
     <td>Class Method</td>
     <td><code><a href="zim.fs.UnixPath.html#new_from_zim_config">new_from_zim_config</a></code></td>
-    <td><span>Returns a new object based on the string representation for that path</span></td>
+    <td>Returns a new object based on the string representation for that path</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#__add__">__add__</a></code></td>
+    <td>Concatenates paths, only creates objects of the same class. See <code><a href="zim.fs.Dir.html#file">Dir.file()</a></code> and <code><a href="zim.fs.Dir.html#subdir">Dir.subdir()</a></code> instead to create other objects.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -226,7 +232,7 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#__str__">__str__</a></code></td>
+    <td><code><a href="zim.fs.UnixPath.html#__ne__">__ne__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
     
@@ -236,53 +242,8 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#__add__">__add__</a></code></td>
-    <td><span>Concatenates paths, only creates objects of the same class. See <code><a href="zim.fs.Dir.html#file">Dir.file()</a></code> and <code><a href="zim.fs.Dir.html#subdir">Dir.subdir()</a></code> instead to create other objects.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#__ne__">__ne__</a></code></td>
+    <td><code><a href="zim.fs.UnixPath.html#__str__">__str__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#monitor">monitor</a></code></td>
-    <td><span>Creates a <code><a href="zim.fs.FSObjectMonitor.html">FSObjectMonitor</a></code> for this path</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#iswritable">iswritable</a></code></td>
-    <td><span>Check if a file or folder is writable. Uses permissions of parent folder if the file or folder does not (yet) exist. @returns: <code>True</code> if the file or folder is writable</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#mtime">mtime</a></code></td>
-    <td><span>Get the modification time of the file path. @returns: the mtime timestamp</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#ctime">ctime</a></code></td>
-    <td><span>Get the creation time of the file path. @returns: the mtime timestamp</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#size">size</a></code></td>
-    <td><span>Get file size in bytes See <code><a href="zim.fs.html#format_file_size">format_file_size()</a></code> to get a human readable label @returns: file size in bytes</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#isequal">isequal</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#split">split</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.fs.UnixPath.html#relpath">relpath</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -291,23 +252,93 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#ctime">ctime</a></code></td>
+    <td>Get the creation time of the file path. @returns: the mtime timestamp</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
     <td><code><a href="zim.fs.UnixPath.html#ischild">ischild</a></code></td>
-    <td><span>Check if this path is a child path of a folder @returns: <code>True</code> if this path is a child path of <code>parent</code></span></td>
+    <td>Check if this path is a child path of a folder @returns: <tt class="rst-docutils literal">True</tt> if this path is a child path of <tt class="rst-docutils literal">parent</tt></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.fs.UnixPath.html#isdir">isdir</a></code></td>
-    <td><span>Check if this path is a folder or not. Used to detect if e.g. a <code><a href="zim.fs.File.html">File</a></code> object should have really been a <code><a href="zim.fs.Dir.html">Dir</a></code> object. @returns: <code>True</code> when this path is a folder</span></td>
+    <td>Check if this path is a folder or not. Used to detect if e.g. a <code><a href="zim.fs.File.html">File</a></code> object should have really been a <code><a href="zim.fs.Dir.html">Dir</a></code> object. @returns: <tt class="rst-docutils literal">True</tt> when this path is a folder</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#isequal">isequal</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#iswritable">iswritable</a></code></td>
+    <td>Check if a file or folder is writable. Uses permissions of parent folder if the file or folder does not (yet) exist. @returns: <tt class="rst-docutils literal">True</tt> if the file or folder is writable</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#monitor">monitor</a></code></td>
+    <td>Creates a <code><a href="zim.fs.FSObjectMonitor.html">FSObjectMonitor</a></code> for this path</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#mtime">mtime</a></code></td>
+    <td>Get the modification time of the file path. @returns: the mtime timestamp</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#relpath">relpath</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.fs.UnixPath.html#rename">rename</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="baseinstancevariable private">
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#serialize_zim_config">serialize_zim_config</a></code></td>
+    <td>Returns the file path as string for serializing the object</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#size">size</a></code></td>
+    <td>Get file size in bytes See <code><a href="zim.fs.html#format_file_size">format_file_size()</a></code> to get a human readable label @returns: file size in bytes</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="zim.fs.UnixPath.html#split">split</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="baseinstancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="zim.fs.UnixPath.html#_serialized">_serialized</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><code><a href="zim.fs.UnixPath.html#path">path</a></code></td>
+    <td>the absolute file path as string file system encoding (should only be used by low-level functions)</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.fs.UnixPath.html#basename">basename</a></code></td>
+    <td>Basename property</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.fs.UnixPath.html#dir">dir</a></code></td>
+    <td>Returns a <code><a href="zim.fs.Dir.html">Dir</a></code> object for the parent dir</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.fs.UnixPath.html#dirname">dirname</a></code></td>
+    <td>Dirname property</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.fs.UnixPath.html#uri">uri</a></code></td>
+    <td>File uri property</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="zim.fs.UnixPath.html#user_path">user_path</a></code></td>
+    <td>User_path property</td>
   </tr><tr class="basestaticmethod private">
     
     <td>Static Method</td>
@@ -317,6 +348,11 @@
     
     <td>Method</td>
     <td><code><a href="zim.fs.UnixPath.html#_set_path">_set_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.fs.UnixPath.html#_serialized">_serialized</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -329,110 +365,6 @@
 
         <div class="basemethod">
   
-  <a name="zim.fs.File.__init__">
-    
-  </a>
-  <a name="__init__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, path, checkoverwrite=False, endofline=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1025">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.fs.UnixPath.html#__init__">zim.fs.UnixPath.__init__</a></code></div><div class="interfaceinfo">overridden in <code><a href="zim.fs.TmpFile.html">zim.fs.TmpFile</a></code></div>
-    
-    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">path</td><td>an absolute file path, file URL, <code><a href="zim.fs.UnixPath.html">FilePath</a></code> object or a list of path elements. When a list is given, the first element is allowed to be an absolute path, URL or <code><a href="zim.fs.UnixPath.html">FilePath</a></code> object as well.</td></tr><tr><td></td><td class="fieldArg">checkoverwrite</td><td>when <code>True</code> this object checks the modification time before writing to prevent overwriting a file that was changed on disk in between read and write operations.</td></tr><tr><td></td><td class="fieldArg">endofline</td><td>the line end style used when writing, can be one of "unix" ('\n') or "dos" ('\r\n'). Whan <code>None</code> the local default is used.</td></tr></table></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.fs.File.checkoverwrite">
-    
-  </a>
-  <a name="checkoverwrite">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">checkoverwrite</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1042">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.fs.File.endofline">
-    
-  </a>
-  <a name="endofline">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">endofline</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1043">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.fs.File._mtime">
-    
-  </a>
-  <a name="_mtime">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_mtime</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1044">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.fs.File._md5">
-    
-  </a>
-  <a name="_md5">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_md5</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1045">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.fs.File.__eq__">
     
@@ -443,7 +375,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1047">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1048">
       
       (source)
     </a>
@@ -455,278 +387,28 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.fs.File.exists">
+  
+  <a name="zim.fs.File.__init__">
     
   </a>
-  <a name="exists">
+  <a name="__init__">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">exists</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1053">
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, path, checkoverwrite=<a href="https://docs.python.org/3/library/constants.html#False">False</a>, endofline=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1026">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.fs.UnixPath.html#exists">zim.fs.UnixPath.exists</a></code></div>
+    <div class="interfaceinfo">overrides <code><a href="zim.fs.UnixPath.html#__init__">zim.fs.UnixPath.__init__</a></code></div><div class="interfaceinfo">overridden in <code><a href="zim.fs.TmpFile.html">zim.fs.TmpFile</a></code></div>
     
-    <div><p>Check if a file or folder exists.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> if the file or folder exists</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: implementation</td><td colspan="2">must be implemented by sub classes in order that they enforce the type of the resource as well</td></tr></table></div>
+    <div>Constructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">an absolute file path, file URL, <code><a href="zim.fs.UnixPath.html">FilePath</a></code> object or a list of path elements. When a list is given, the first element is allowed to be an absolute path, URL or <code><a href="zim.fs.UnixPath.html">FilePath</a></code> object as well.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">checkoverwrite</span></td><td class="fieldArgDesc">when <tt class="rst-docutils literal">True</tt> this object checks the modification time before writing to prevent overwriting a file that was changed on disk in between read and write operations.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">endofline</span></td><td class="fieldArgDesc">the line end style used when writing, can be one of "unix" ('\n') or "dos" ('\r\n'). Whan <tt class="rst-docutils literal">None</tt> the local default is used.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.fs.File.isimage">
-    
-  </a>
-  <a name="isimage">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">isimage</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1056">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Check if this is an image file. Convenience method that works even when no real mime-type suport is available. If this method returns <code>True</code> it is no guarantee this image type is actually supported by Gtk.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> when this is an image file</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.fs.File.get_mimetype">
-    
-  </a>
-  <a name="get_mimetype">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_mimetype</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1073">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Get the mime-type for this file. Will use the XDG mimetype system if available, otherwise fallsback to the standard library <code>mimetypes</code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">the mimetype as a string, e.g. "text/plain"</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.fs.File.get_endofline">
-    
-  </a>
-  <a name="get_endofline">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_endofline</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1093">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Get the end-of-line character(s) used for writing this file.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">the end-of-line character(s)</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.fs.File.raw">
-    
-  </a>
-  <a name="raw">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">raw</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1109">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Get the raw content without UTF-8 decoding, newline logic, etc. Used to read binary data, e.g. when serving files over www. Note that this function also does not integrates with checking mtime, so intended for read only usage.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">file content as string</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.fs.File.read">
-    
-  </a>
-  <a name="read">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">read</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1124">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Get the file contents as a string. Takes case of decoding UTF-8 and fixes line endings.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">the content as (unicode) string.</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="zim.fs.FileNotFoundError.html">FileNotFoundError</a></td><td>when the file does not exist.</td></tr></table></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.fs.File._read">
-    
-  </a>
-  <a name="_read">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_read</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1143">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.fs.File.readlines">
-    
-  </a>
-  <a name="readlines">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">readlines</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1147">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Get the file contents as a list of lines. Takes case of decoding UTF-8 and fixes line endings.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">the content as a list of lines.</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="zim.fs.FileNotFoundError.html">FileNotFoundError</a></td><td>when the file does not exist.</td></tr></table></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.fs.File._write_check">
-    
-  </a>
-  <a name="_write_check">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_write_check</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1168">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.fs.File.write">
-    
-  </a>
-  <a name="write">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">write</span>(self, text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1176">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.notebook.page.SourceFile.html">zim.notebook.page.SourceFile</a></code></div>
-    
-    <div><p>Write file contents from string. This overwrites the current content. Will automatically create all parent folders. If writing fails the file will either have the new content or the old content, but it should not be possible to have the content truncated.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">text</td><td>new content as (unicode) string</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: emits</td><td colspan="2">path-created if the file did not yet exist</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.fs.File.writelines">
-    
-  </a>
-  <a name="writelines">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">writelines</span>(self, lines):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1196">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.notebook.page.SourceFile.html">zim.notebook.page.SourceFile</a></code></div>
-    
-    <div><p>Write file contents from a list of lines. Like <code><a href="#write">write()</a></code> but input is a list instead of a string.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">lines</td><td>new content as list of lines</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: emits</td><td colspan="2">path-created if the file did not yet exist</td></tr></table></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.fs.File._checkoverwrite">
-    
-  </a>
-  <a name="_checkoverwrite">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_checkoverwrite</span>(self, content):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1213">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.fs.File._assertoverwrite">
-    
-  </a>
-  <a name="_assertoverwrite">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_assertoverwrite</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1219">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.fs.File.check_has_changed_on_disk">
     
@@ -737,7 +419,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">check_has_changed_on_disk</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1246">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1247">
       
       (source)
     </a>
@@ -745,51 +427,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Returns <code>True</code> when this file has changed on disk</p></div>
+    <div>Returns <tt class="rst-docutils literal">True</tt> when this file has changed on disk</div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.fs.File.touch">
-    
-  </a>
-  <a name="touch">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">touch</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1263">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Create this file and any parent folders if it does not yet exist. (Parent folders are also created when writing to a file, so you only need to call this method in special cases - e.g. when an external program requires the file to exist.)</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.fs.File.remove">
-    
-  </a>
-  <a name="remove">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">remove</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1274">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Remove (delete) this file and cleanup any related temporary files we created. This action can not be un-done. Ignores silently if the file did not exist in the first place.</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.fs.File.cleanup">
     
@@ -800,7 +441,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">cleanup</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1289">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1290">
       
       (source)
     </a>
@@ -808,30 +449,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Remove this file and cleanup any empty parent folder. Convenience method calling <code><a href="#remove">File.remove()</a></code> and <code><a href="zim.fs.Dir.html#cleanup">Dir.cleanup()</a></code>.</p></div>
+    <div>Remove this file and cleanup any empty parent folder. Convenience method calling <code><a href="#remove">File.remove()</a></code> and <code><a href="zim.fs.Dir.html#cleanup">Dir.cleanup()</a></code>.</div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.fs.File.copyto">
-    
-  </a>
-  <a name="copyto">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">copyto</span>(self, dest):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1296">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Copy this file to another location. Preserves all file attributes (by using <code>shutil.copy2()</code>)</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">dest</td><td>a <code><a href="zim.fs.File.html">File</a></code> or <code><a href="zim.fs.Dir.html">Dir</a></code> object for the destination. If the destination is a folder, we will copy to a file below that folder of the same name</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.fs.File.compare">
     
@@ -842,7 +463,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">compare</span>(self, other):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1317">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1318">
       
       (source)
     </a>
@@ -850,16 +471,465 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Check if file contents are the same. This differs from <code><a href="zim.fs.UnixPath.html#isequal">isequal()</a></code> because files can be different physical locations.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">other</td><td>another <code><a href="zim.fs.File.html">File</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> when the files have the same content</td></tr></table></div>
+    <div>Check if file contents are the same. This differs from <code><a href="zim.fs.UnixPath.html#isequal">isequal()</a></code> because files can be different physical locations.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">other</span></td><td class="fieldArgDesc">another <code><a href="zim.fs.File.html">File</a></code> object</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> when the files have the same content</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.fs.File.copyto">
+    
+  </a>
+  <a name="copyto">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">copyto</span>(self, dest):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1297">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Copy this file to another location. Preserves all file attributes (by using <tt class="rst-docutils literal">shutil.copy2()</tt>)<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dest</span></td><td class="fieldArgDesc">a <code><a href="zim.fs.File.html">File</a></code> or <code><a href="zim.fs.Dir.html">Dir</a></code> object for the destination. If the destination is a folder, we will copy to a file below that folder of the same name</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.fs.File.exists">
+    
+  </a>
+  <a name="exists">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">exists</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1054">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.fs.UnixPath.html#exists">zim.fs.UnixPath.exists</a></code></div>
+    
+    <div>Check if a file or folder exists.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> if the file or folder exists</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: implementation</td></tr><tr><td colspan="2">must be implemented by sub classes in order that they enforce the type of the resource as well</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.fs.File.get_endofline">
+    
+  </a>
+  <a name="get_endofline">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_endofline</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1094">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Get the end-of-line character(s) used for writing this file.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the end-of-line character(s)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.fs.File.get_mimetype">
+    
+  </a>
+  <a name="get_mimetype">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_mimetype</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1074">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Get the mime-type for this file. Will use the XDG mimetype system if available, otherwise fallsback to the standard library <tt class="rst-docutils literal">mimetypes</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the mimetype as a string, e.g. "text/plain"</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.fs.File.isimage">
+    
+  </a>
+  <a name="isimage">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">isimage</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1057">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Check if this is an image file. Convenience method that works even when no real mime-type suport is available. If this method returns <tt class="rst-docutils literal">True</tt> it is no guarantee this image type is actually supported by Gtk.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> when this is an image file</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.fs.File.raw">
+    
+  </a>
+  <a name="raw">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">raw</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1110">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Get the raw content without UTF-8 decoding, newline logic, etc. Used to read binary data, e.g. when serving files over www. Note that this function also does not integrates with checking mtime, so intended for read only usage.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">file content as string</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.fs.File.read">
+    
+  </a>
+  <a name="read">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">read</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1125">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Get the file contents as a string. Takes case of decoding UTF-8 and fixes line endings.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the content as (unicode) string.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="zim.newfs.base.FileNotFoundError.html">FileNotFoundError</a></code></td><td>when the file does not exist.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.fs.File.readlines">
+    
+  </a>
+  <a name="readlines">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">readlines</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1148">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Get the file contents as a list of lines. Takes case of decoding UTF-8 and fixes line endings.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the content as a list of lines.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="zim.newfs.base.FileNotFoundError.html">FileNotFoundError</a></code></td><td>when the file does not exist.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.fs.File.remove">
+    
+  </a>
+  <a name="remove">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">remove</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1275">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Remove (delete) this file and cleanup any related temporary files we created. This action can not be un-done. Ignores silently if the file did not exist in the first place.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.fs.File.touch">
+    
+  </a>
+  <a name="touch">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">touch</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1264">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Create this file and any parent folders if it does not yet exist. (Parent folders are also created when writing to a file, so you only need to call this method in special cases - e.g. when an external program requires the file to exist.)</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.fs.File.write">
+    
+  </a>
+  <a name="write">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">write</span>(self, text):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1177">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Write file contents from string. This overwrites the current content. Will automatically create all parent folders. If writing fails the file will either have the new content or the old content, but it should not be possible to have the content truncated.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">text</span></td><td class="fieldArgDesc">new content as (unicode) string</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: emits</td></tr><tr><td colspan="2">path-created if the file did not yet exist</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.fs.File.writelines">
+    
+  </a>
+  <a name="writelines">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">writelines</span>(self, lines):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1197">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Write file contents from a list of lines. Like <code><a href="#write">write()</a></code> but input is a list instead of a string.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">lines</span></td><td class="fieldArgDesc">new content as list of lines</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: emits</td></tr><tr><td colspan="2">path-created if the file did not yet exist</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.fs.File.checkoverwrite">
+    
+  </a>
+  <a name="checkoverwrite">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">checkoverwrite</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1043">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.fs.File.endofline">
+    
+  </a>
+  <a name="endofline">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">endofline</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1044">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.fs.File._assertoverwrite">
+    
+  </a>
+  <a name="_assertoverwrite">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_assertoverwrite</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1220">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.fs.File._checkoverwrite">
+    
+  </a>
+  <a name="_checkoverwrite">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_checkoverwrite</span>(self, content):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1214">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.fs.File._read">
+    
+  </a>
+  <a name="_read">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_read</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1144">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.fs.File._write_check">
+    
+  </a>
+  <a name="_write_check">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_write_check</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1169">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.fs.File._md5">
+    
+  </a>
+  <a name="_md5">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_md5</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1046">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.fs.File._mtime">
+    
+  </a>
+  <a name="_mtime">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_mtime</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/fs.py#L1045">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

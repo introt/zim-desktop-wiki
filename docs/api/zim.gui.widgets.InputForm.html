@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.gui.widgets.InputForm : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.gui.widgets.InputForm</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.widgets.html">widgets</a></code>.<code><a href="zim.gui.widgets.InputForm.html">InputForm</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.gui.html">gui</a></code><wbr></wbr>.<code><a href="zim.gui.widgets.html">widgets</a></code><wbr></wbr>.<code><a href="zim.gui.widgets.InputForm.html">InputForm</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,76 +65,39 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">InputForm</span>(<span title="gi.repository.Gtk.Table">Gtk.Table</span>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L878">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">InputForm</span>(<span title="gi.repository.Gtk.Table">Gtk.Table</span>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L878" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.gui.widgets.InputForm">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>This class implements a table with input widgets. It takes care of constructing the widgets and lay them out as a well formatted input form.</p><p>This class can be accessed as a dict to get and set the values of the various input widgets by name. This makes it more or less transparent when getting and setting values from the form into the config or preferences.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Unknown Field: signal</td><td colspan="2"><code>last-activated ()</code>: this signal is emitted when the last widget in the form is activated, can be used to trigger a default response in a dialog.</td></tr><tr><td></td><td colspan="2"><code>input-valid-changes ()</code>: valid state the form changed</td></tr></table></div>
+        <div><p>This class implements a table with input widgets. It takes care of constructing the widgets and lay them out as a well formatted input form.</p>
+<p>This class can be accessed as a dict to get and set the values of the various input widgets by name. This makes it more or less transparent when getting and setting values from the form into the config or preferences.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: signal</td></tr><tr><td colspan="2"><tt class="rst-docutils literal"><span class="pre">last-activated</span> ()</tt>: this signal is emitted when the last widget in the form is activated, can be used to trigger a default response in a dialog.</td></tr><tr><td colspan="2"><tt class="rst-docutils literal"><span class="pre">input-valid-changes</span> ()</tt>: valid state the form changed</td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id497">
+        <table class="children sortable" id="id505">
   
-  <tr class="instancevariable">
+  
+  <tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#notebook">notebook</a></code></td>
-    <td><span>the <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object, used e.g. for completion in <code><a href="zim.gui.widgets.PageEntry.html">PageEntry</a></code> inputs</span></td>
-  </tr><tr class="instancevariable">
+    <td>Method</td>
+    <td><code><a href="#__contains__">__contains__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#widgets">widgets</a></code></td>
-    <td><span>a dict with the input widgets by name. Use this to access the widgets directly (e.g. to wire more signals).</span></td>
-  </tr><tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#__gsignals__">__gsignals__</a></code></td>
+    <td>Method</td>
+    <td><code><a href="#__getitem__">__getitem__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Constructor.</span></td>
+    <td>Constructor.</td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#set_default_activate">set_default_activate</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#add_inputs">add_inputs</a></code></td>
-    <td><span>Add input widgets to the form.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#depends">depends</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#get_input_valid">get_input_valid</a></code></td>
-    <td><span>Get combined state of all sensitive widgets in the form @returns: <code>True</code> if all sensitive widgets have a valid input</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#on_activate_widget">on_activate_widget</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#focus_first">focus_first</a></code></td>
-    <td><span>Focus the first widget in the form</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#focus_next">focus_next</a></code></td>
-    <td><span>Focus the next input in the form</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#__getitem__">__getitem__</a></code></td>
+    <td><code><a href="#__iter__">__iter__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
@@ -113,12 +107,37 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#__iter__">__iter__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><code><a href="#add_inputs">add_inputs</a></code></td>
+    <td>Add input widgets to the form.</td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#__contains__">__contains__</a></code></td>
+    <td><code><a href="#copy">copy</a></code></td>
+    <td>Copy the values of all widgets in the form into a normal dict @returns: a dict with widget values</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#depends">depends</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#focus_first">focus_first</a></code></td>
+    <td>Focus the first widget in the form</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#focus_next">focus_next</a></code></td>
+    <td>Focus the next input in the form</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_input_valid">get_input_valid</a></code></td>
+    <td>Get combined state of all sensitive widgets in the form @returns: <tt class="rst-docutils literal">True</tt> if all sensitive widgets have a valid input</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#items">items</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
@@ -128,18 +147,53 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#items">items</a></code></td>
+    <td><code><a href="#on_activate_widget">on_activate_widget</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_default_activate">set_default_activate</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#update">update</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#__gsignals__">__gsignals__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#notebook">notebook</a></code></td>
+    <td>the <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object, used e.g. for completion in <code><a href="zim.gui.widgets.PageEntry.html">PageEntry</a></code> inputs</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#widgets">widgets</a></code></td>
+    <td>a dict with the input widgets by name. Use this to access the widgets directly (e.g. to wire more signals).</td>
+  </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#copy">copy</a></code></td>
-    <td><span>Copy the values of all widgets in the form into a normal dict @returns: a dict with widget values</span></td>
+    <td><code><a href="#_check_input_valid">_check_input_valid</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_focus_next">_focus_next</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_radiogroup">_get_radiogroup</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_default_activate">_default_activate</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -155,26 +209,6 @@
     <td>Instance Variable</td>
     <td><code><a href="#_widgets">_widgets</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_default_activate">_default_activate</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
-    <td><code><a href="#_check_input_valid">_check_input_valid</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
-    <td><code><a href="#_get_radiogroup">_get_radiogroup</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
-    <td><code><a href="#_focus_next">_focus_next</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
         
@@ -184,448 +218,8 @@
 
       <div id="childList">
 
-        <div class="baseinstancevariable">
+        <div class="basemethod">
   
-  <a name="zim.gui.widgets.InputForm.notebook">
-    
-  </a>
-  <a name="notebook">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">notebook</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L888">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div>the <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object, used e.g. for completion in <code><a href="zim.gui.widgets.PageEntry.html">PageEntry</a></code> inputs</div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.widgets.InputForm.widgets">
-    
-  </a>
-  <a name="widgets">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">widgets</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L890">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div>a dict with the input widgets by name. Use this to access the widgets directly (e.g. to wire more signals).</div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
-  </div>
-</div><div class="baseclassvariable">
-  
-  <a name="zim.gui.widgets.InputForm.__gsignals__">
-    
-  </a>
-  <a name="__gsignals__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">__gsignals__</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L900">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.InputForm.__init__">
-    
-  </a>
-  <a name="__init__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, inputs=None, values=None, depends=None, notebook=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L917">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Constructor.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">inputs</td><td>list with input definitions, see <code><a href="#add_inputs">add_inputs()</a></code> for details</td></tr><tr><td></td><td class="fieldArg">values</td><td>initial values for the inputs</td></tr><tr><td></td><td class="fieldArg">depends</td><td>dict with dependencies between widgets, see <code><a href="#depends">depends()</a></code> for details</td></tr><tr><td></td><td class="fieldArg">notebook</td><td>a <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object, e.g. for completion in <code><a href="zim.gui.widgets.PageEntry.html">PageEntry</a></code> inputs</td></tr></table></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.InputForm._input_valid">
-    
-  </a>
-  <a name="_input_valid">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_input_valid</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L934">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.InputForm._keys">
-    
-  </a>
-  <a name="_keys">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_keys</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L935">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code>)
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.InputForm._widgets">
-    
-  </a>
-  <a name="_widgets">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_widgets</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L937">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code>)
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.InputForm._default_activate">
-    
-  </a>
-  <a name="_default_activate">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_default_activate</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L939">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.InputForm.set_default_activate">
-    
-  </a>
-  <a name="set_default_activate">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">set_default_activate</span>(self, name):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L951">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Mark a widget as the default activation widget. This will cause the "last-activated" signal to be triggered for this widget even if it is not the last widget in the form.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">name</td><td>the name or <code>None</code></td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.InputForm.add_inputs">
-    
-  </a>
-  <a name="add_inputs">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">add_inputs</span>(self, inputs):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L964">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Add input widgets to the form.</p><p>Inputs are defined by 3-tuples or 4-tuples of:</p><ul><li>The input name</li><li>The input type</li><li>The label to put in front of the input field</li><li>optional extra argument</li></ul><p>The following input types are supported:</p><ul><li>"<code>bool</code>" - <code>True</code> or <code>False</code> (checkbox)</li><li>"<code>int</code>" - integer (spin button)</li><li>"<code>string</code>" - text entry (<code><a href="zim.gui.widgets.InputEntry.html">InputEntry</a></code>)</li><li>"<code>password</code>" - text entry with chars hidden (<code><a href="zim.gui.widgets.InputEntry.html">InputEntry</a></code>)</li><li>"<code>page</code>" - a page <code><a href="zim.notebook.page.Path.html">Path</a></code> (<code><a href="zim.gui.widgets.PageEntry.html">PageEntry</a></code>)</li><li>"<code>namespace</code>" - a namespace <code><a href="zim.notebook.page.Path.html">Path</a></code> (<code><a href="zim.gui.widgets.NamespaceEntry.html">NamespaceEntry</a></code>)</li><li>"<code>link</code>" - a link as string (<code><a href="zim.gui.widgets.LinkEntry.html">LinkEntry</a></code>)</li><li>"<code>dir</code>" - a <code><a href="zim.fs.Dir.html">Dir</a></code> object (<code><a href="zim.gui.widgets.FolderEntry.html">FolderEntry</a></code>)</li><li>"<code>file</code>" - a <code><a href="zim.fs.File.html">File</a></code> object for an existing file (<code><a href="zim.gui.widgets.FileEntry.html">FileEntry</a></code>)</li><li>"<code>image</code>" - like 'file' but specific for images</li><li>"<code>output-file</code>" - like 'file' but for new or existing file</li><li>"<code>option</code>" - single option in a group (radio checkboxes)</li><li>"<code>choice</code>" - list with choices (combo box)</li><li>"<code>color</code>" - color string</li></ul><p>The "<code>int</code>" and "<code>choice</code>" options need an extra argument to specify the allowed inputs. For "<code>int</code>" this should be a 2-tuple with the minimum and maximum values. For 'choice' it should be a tuple or list with the items to choose from. If the items in the list are 2-tuples they are considered pairs of a key and a user readable label.</p><p>The input type "<code>option</code>"' can be used to have groups of checkboxes. In this case the name should exist of two parts separated by a ':', first part is the group name and the second part the key for this option. This way multiple options of the same group can be specified as separate widgets. Only the group name will show up as a key in the form, and the value will be the option name of the selected radio button. So you can have names like "select:all" and "select:page" which will result in two radiobuttons. The form will have a key "select" which has either a value "all" or a value "page".</p><p>The "<code>page</code>", "<code>namespace</code>" and "<code>link</code>" types support an optional extra argument which gives the reference <code><a href="zim.notebook.page.Path.html">Path</a></code> for resolving relative paths. This also requires the notebook to be set.</p><p>A string in the input list will result in a label in the form, using markup.</p><p>A <code>None</code> or <code>''</code> value in the input list will result in additional row spacing in the form.</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.InputForm.depends">
-    
-  </a>
-  <a name="depends">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">depends</span>(self, subject, object):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1151">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Make one of the inputs depend on another widget. This means that e.g. the "subject" widget will become insensitive when the "object" widget is made insensitive. Also hiding the "object" will result in the "subject" being hidden as well.</p><p>If the "object" has an active state (e.g. if it is an checkbox or a radio option) the "subject" will only be sensitive when the "object" is active. This is useful e.g. when you want a text input that is only sensitive when a specific radio box is selected.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">subject</td><td>the name of the subject widget</td></tr><tr><td></td><td class="fieldArg">object</td><td>the name of the object widget</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.InputForm.get_input_valid">
-    
-  </a>
-  <a name="get_input_valid">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_input_valid</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1170">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Get combined state of all sensitive widgets in the form</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> if all sensitive widgets have a valid input</td></tr></table></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.gui.widgets.InputForm._check_input_valid">
-    
-  </a>
-  <a name="_check_input_valid">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_check_input_valid</span>(self, *a):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1176">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.gui.widgets.InputForm._get_radiogroup">
-    
-  </a>
-  <a name="_get_radiogroup">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_get_radiogroup</span>(self, name):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1194">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.InputForm.on_activate_widget">
-    
-  </a>
-  <a name="on_activate_widget">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">on_activate_widget</span>(self, widget):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1199">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.InputForm.focus_first">
-    
-  </a>
-  <a name="focus_first">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">focus_first</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1204">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Focus the first widget in the form</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.InputForm.focus_next">
-    
-  </a>
-  <a name="focus_next">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">focus_next</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1208">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Focus the next input in the form</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.gui.widgets.InputForm._focus_next">
-    
-  </a>
-  <a name="_focus_next">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_focus_next</span>(self, widget, activatable=False):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1216">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.InputForm.__getitem__">
-    
-  </a>
-  <a name="__getitem__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">__getitem__</span>(self, key):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1247">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.InputForm.__setitem__">
-    
-  </a>
-  <a name="__setitem__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">__setitem__</span>(self, key, value):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1283">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.InputForm.__iter__">
-    
-  </a>
-  <a name="__iter__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">__iter__</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1329">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.widgets.InputForm.__contains__">
     
@@ -636,7 +230,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__contains__</span>(self, key):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1332">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1332">
       
       (source)
     </a>
@@ -648,16 +242,17 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.InputForm.keys">
+  
+  <a name="zim.gui.widgets.InputForm.__getitem__">
     
   </a>
-  <a name="keys">
+  <a name="__getitem__">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">keys</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1335">
+    <span class="py-keyword">def</span> <span class="py-defname">__getitem__</span>(self, key):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1247">
       
       (source)
     </a>
@@ -669,16 +264,39 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.InputForm.items">
+  
+  <a name="zim.gui.widgets.InputForm.__init__">
     
   </a>
-  <a name="items">
+  <a name="__init__">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">items</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1338">
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, inputs=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, values=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, depends=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, notebook=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L917">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Constructor.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">inputs</span></td><td class="fieldArgDesc">list with input definitions, see <code><a href="#add_inputs">add_inputs()</a></code> for details</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">values</span></td><td class="fieldArgDesc">initial values for the inputs</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">depends</span></td><td class="fieldArgDesc">dict with dependencies between widgets, see <code><a href="#depends">depends()</a></code> for details</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">notebook</span></td><td class="fieldArgDesc">a <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object, e.g. for completion in <code><a href="zim.gui.widgets.PageEntry.html">PageEntry</a></code> inputs</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.InputForm.__iter__">
+    
+  </a>
+  <a name="__iter__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__iter__</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1329">
       
       (source)
     </a>
@@ -690,16 +308,17 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.InputForm.update">
+  
+  <a name="zim.gui.widgets.InputForm.__setitem__">
     
   </a>
-  <a name="update">
+  <a name="__setitem__">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">update</span>(self, map):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1341">
+    <span class="py-keyword">def</span> <span class="py-defname">__setitem__</span>(self, key, value):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1283">
       
       (source)
     </a>
@@ -707,9 +326,62 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Update the value for any existing widget to the value given in <code>map</code>. Unkown keys in <code>map</code> are ignored and widgets that do not have a value in <code>map</code> keep their original value.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">map</td><td>a dict with new values for the widgets</td></tr></table></div>
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.InputForm.add_inputs">
+    
+  </a>
+  <a name="add_inputs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_inputs</span>(self, inputs):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L964">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Add input widgets to the form.</p>
+<p>Inputs are defined by 3-tuples or 4-tuples of:</p>
+<ul class="rst-simple">
+<li>The input name</li>
+<li>The input type</li>
+<li>The label to put in front of the input field</li>
+<li>optional extra argument</li>
+</ul>
+<p>The following input types are supported:</p>
+<ul class="rst-simple">
+<li>"<tt class="rst-docutils literal">bool</tt>" - <tt class="rst-docutils literal">True</tt> or <tt class="rst-docutils literal">False</tt> (checkbox)</li>
+<li>"<tt class="rst-docutils literal">int</tt>" - integer (spin button)</li>
+<li>"<tt class="rst-docutils literal">string</tt>" - text entry (<code><a href="zim.gui.widgets.InputEntry.html">InputEntry</a></code>)</li>
+<li>"<tt class="rst-docutils literal">password</tt>" - text entry with chars hidden (<code><a href="zim.gui.widgets.InputEntry.html">InputEntry</a></code>)</li>
+<li>"<tt class="rst-docutils literal">page</tt>" - a page <code><a href="zim.notebook.page.Path.html">Path</a></code> (<code><a href="zim.gui.widgets.PageEntry.html">PageEntry</a></code>)</li>
+<li>"<tt class="rst-docutils literal">namespace</tt>" - a namespace <code><a href="zim.notebook.page.Path.html">Path</a></code> (<code><a href="zim.gui.widgets.NamespaceEntry.html">NamespaceEntry</a></code>)</li>
+<li>"<tt class="rst-docutils literal">link</tt>" - a link as string (<code><a href="zim.gui.widgets.LinkEntry.html">LinkEntry</a></code>)</li>
+<li>"<tt class="rst-docutils literal">dir</tt>" - a <code><a href="zim.newfs.base.Folder.html">Folder</a></code> object (<code><a href="zim.gui.widgets.FolderEntry.html">FolderEntry</a></code>)</li>
+<li>"<tt class="rst-docutils literal">file</tt>" - a <code><a href="zim.fs.File.html">File</a></code> object for an existing file (<code><a href="zim.gui.widgets.FileEntry.html">FileEntry</a></code>)</li>
+<li>"<tt class="rst-docutils literal">image</tt>" - like 'file' but specific for images</li>
+<li>"<tt class="rst-docutils literal"><span class="pre">output-file</span></tt>" - like 'file' but for new or existing file</li>
+<li>"<tt class="rst-docutils literal">option</tt>" - single option in a group (radio checkboxes)</li>
+<li>"<tt class="rst-docutils literal">choice</tt>" - list with choices (combo box)</li>
+<li>"<tt class="rst-docutils literal">color</tt>" - color string</li>
+</ul>
+<p>The "<tt class="rst-docutils literal">int</tt>" and "<tt class="rst-docutils literal">choice</tt>" options need an extra argument to specify the allowed inputs. For "<tt class="rst-docutils literal">int</tt>" this should be a 2-tuple with the minimum and maximum values. For 'choice' it should be a tuple or list with the items to choose from. If the items in the list are 2-tuples they are considered pairs of a key and a user readable label.</p>
+<p>The input type "<tt class="rst-docutils literal">option</tt>"' can be used to have groups of checkboxes. In this case the name should exist of two parts separated by a ':', first part is the group name and the second part the key for this option. This way multiple options of the same group can be specified as separate widgets. Only the group name will show up as a key in the form, and the value will be the option name of the selected radio button. So you can have names like "select:all" and "select:page" which will result in two radiobuttons. The form will have a key "select" which has either a value "all" or a value "page".</p>
+<p>The "<tt class="rst-docutils literal">page</tt>", "<tt class="rst-docutils literal">namespace</tt>" and "<tt class="rst-docutils literal">link</tt>" types support an optional extra argument which gives the reference <code><a href="zim.notebook.page.Path.html">Path</a></code> for resolving relative paths. This also requires the notebook to be set.</p>
+<p>A string in the input list will result in a label in the form, using markup.</p>
+<p>A <tt class="rst-docutils literal">None</tt> or <tt class="rst-docutils literal">''</tt> value in the input list will result in additional row spacing in the form.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.gui.widgets.InputForm.copy">
     
@@ -720,7 +392,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">copy</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1352">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1352">
       
       (source)
     </a>
@@ -728,16 +400,448 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Copy the values of all widgets in the form into a normal dict</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a dict with widget values</td></tr></table></div>
+    <div>Copy the values of all widgets in the form into a normal dict<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a dict with widget values</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.InputForm.depends">
+    
+  </a>
+  <a name="depends">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">depends</span>(self, subject, object):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1151">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Make one of the inputs depend on another widget. This means that e.g. the "subject" widget will become insensitive when the "object" widget is made insensitive. Also hiding the "object" will result in the "subject" being hidden as well.</p>
+<p>If the "object" has an active state (e.g. if it is an checkbox or a radio option) the "subject" will only be sensitive when the "object" is active. This is useful e.g. when you want a text input that is only sensitive when a specific radio box is selected.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">subject</span></td><td class="fieldArgDesc">the name of the subject widget</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">object</span></td><td class="fieldArgDesc">the name of the object widget</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.InputForm.focus_first">
+    
+  </a>
+  <a name="focus_first">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">focus_first</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1204">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Focus the first widget in the form</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.InputForm.focus_next">
+    
+  </a>
+  <a name="focus_next">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">focus_next</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1208">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Focus the next input in the form</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.InputForm.get_input_valid">
+    
+  </a>
+  <a name="get_input_valid">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_input_valid</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1170">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Get combined state of all sensitive widgets in the form<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> if all sensitive widgets have a valid input</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.InputForm.items">
+    
+  </a>
+  <a name="items">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">items</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1338">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.InputForm.keys">
+    
+  </a>
+  <a name="keys">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">keys</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1335">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.InputForm.on_activate_widget">
+    
+  </a>
+  <a name="on_activate_widget">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">on_activate_widget</span>(self, widget):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1199">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.InputForm.set_default_activate">
+    
+  </a>
+  <a name="set_default_activate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_default_activate</span>(self, name):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L951">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Mark a widget as the default activation widget. This will cause the "last-activated" signal to be triggered for this widget even if it is not the last widget in the form.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name</span></td><td class="fieldArgDesc">the name or <tt class="rst-docutils literal">None</tt></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.InputForm.update">
+    
+  </a>
+  <a name="update">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">update</span>(self, map):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1341">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Update the value for any existing widget to the value given in <tt class="rst-docutils literal">map</tt>. Unkown keys in <tt class="rst-docutils literal">map</tt> are ignored and widgets that do not have a value in <tt class="rst-docutils literal">map</tt> keep their original value.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">map</span></td><td class="fieldArgDesc">a dict with new values for the widgets</td></tr></table></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="zim.gui.widgets.InputForm.__gsignals__">
+    
+  </a>
+  <a name="__gsignals__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__gsignals__</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L900">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.widgets.InputForm.notebook">
+    
+  </a>
+  <a name="notebook">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">notebook</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L888">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>the <code><a href="zim.notebook.notebook.Notebook.html">Notebook</a></code> object, used e.g. for completion in <code><a href="zim.gui.widgets.PageEntry.html">PageEntry</a></code> inputs</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.widgets.InputForm.widgets">
+    
+  </a>
+  <a name="widgets">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">widgets</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L890">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>a dict with the input widgets by name. Use this to access the widgets directly (e.g. to wire more signals).</div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.gui.widgets.InputForm._check_input_valid">
+    
+  </a>
+  <a name="_check_input_valid">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_check_input_valid</span>(self, *a):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1176">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.gui.widgets.InputForm._focus_next">
+    
+  </a>
+  <a name="_focus_next">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_focus_next</span>(self, widget, activatable=<a href="https://docs.python.org/3/library/constants.html#False">False</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1216">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.gui.widgets.InputForm._get_radiogroup">
+    
+  </a>
+  <a name="_get_radiogroup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_radiogroup</span>(self, name):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1194">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.InputForm._default_activate">
+    
+  </a>
+  <a name="_default_activate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_default_activate</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L939">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.InputForm._input_valid">
+    
+  </a>
+  <a name="_input_valid">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_input_valid</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L934">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.InputForm._keys">
+    
+  </a>
+  <a name="_keys">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_keys</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L935">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.InputForm._widgets">
+    
+  </a>
+  <a name="_widgets">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_widgets</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L937">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.export.linker : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.export.linker</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.export.html">export</a></code>.<code><a href="zim.export.linker.html">linker</a></code></code></h1>
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.export.html">export</a></code><wbr></wbr>.<code><a href="zim.export.linker.html">linker</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,23 +65,19 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/export/linker.py">(source)</a>
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/export/linker.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>The ExportLinker object translates links in zim pages to URLS for the export content</p></div>
+        <div>The ExportLinker object translates links in zim pages to URLS for the export content</div>
       </div>
 
       <div id="splitTables">
         <table class="children sortable" id="id118">
   
-  <tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#logger">logger</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="class">
+  
+  <tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.export.linker.ExportLinker.html">ExportLinker</a></code></td>
@@ -58,13 +85,18 @@
   </tr><tr class="class">
     
     <td>Class</td>
-    <td><code><a href="zim.export.linker.StubLayout.html">StubLayout</a></code></td>
-    <td><span>Stub implementation of <code><a href="zim.export.layouts.ExportLayout.html">ExportLayout</a></code> that is used by <code><a href="zim.export.linker.StaticExportLinker.html">StaticExportLinker</a></code></span></td>
+    <td><code><a href="zim.export.linker.StaticExportLinker.html">StaticExportLinker</a></code></td>
+    <td>This linker can be used when exporting a page to e.g. html without a file to write the html to. All links are resolved statically to the source files.</td>
   </tr><tr class="class">
     
     <td>Class</td>
-    <td><code><a href="zim.export.linker.StaticExportLinker.html">StaticExportLinker</a></code></td>
-    <td><span>This linker can be used when exporting a page to e.g. html without a file to write the html to. All links are resolved statically to the source files.</span></td>
+    <td><code><a href="zim.export.linker.StubLayout.html">StubLayout</a></code></td>
+    <td>Stub implementation of <code><a href="zim.export.layouts.ExportLayout.html">ExportLayout</a></code> that is used by <code><a href="zim.export.linker.StaticExportLinker.html">StaticExportLinker</a></code></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
         
@@ -76,6 +108,7 @@
 
         <div class="basevariable">
   
+  
   <a name="zim.export.linker.logger">
     
   </a>
@@ -85,7 +118,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">logger</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/export/linker.py#L11">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/export/linker.py#L11">
       
       (source)
     </a>
@@ -94,15 +127,21 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

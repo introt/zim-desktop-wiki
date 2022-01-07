@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code>.<code><a href="zim.plugins.bookmarksbar.html">bookmarksbar</a></code>.<code><a href="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.html">BookmarksBarMainWindowExtension</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.plugins.html">plugins</a></code><wbr></wbr>.<code><a href="zim.plugins.bookmarksbar.html">bookmarksbar</a></code><wbr></wbr>.<code><a href="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.html">BookmarksBarMainWindowExtension</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">BookmarksBarMainWindowExtension</span>(<a href="zim.gui.mainwindow.MainWindowExtension.html" title="zim.gui.mainwindow.MainWindowExtension">MainWindowExtension</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L50">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">BookmarksBarMainWindowExtension</span>(<a href="zim.gui.mainwindow.MainWindowExtension.html" title="zim.gui.mainwindow.MainWindowExtension">MainWindowExtension</a>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L50" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension">View In Hierarchy</a></p>
       </div>
 
@@ -43,38 +74,19 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id918">
+        <table class="children sortable" id="id905">
+  
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Constructor @param plugin: the plugin object to which this extension belongs @param window: the <code>Gtk.Window</code> being extended</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#widget">widget</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Constructor @param plugin: the plugin object to which this extension belongs @param window: the <tt class="rst-docutils literal">Gtk.Window</tt> being extended</td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#teardown">teardown</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#hide_widget">hide_widget</a></code></td>
-    <td><span>Hide Bar.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#show_widget">show_widget</a></code></td>
-    <td><span>Show Bar.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#on_populate_popup">on_populate_popup</a></code></td>
-    <td><span>Add 'Add Bookmark' option to the Index popup menu.</span></td>
+    <td><code><a href="#add_bookmark">add_bookmark</a></code></td>
+    <td>Function to add new bookmarks to the bar. Introduced to be used via keyboard shortcut.</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -123,13 +135,33 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#toggle_show_bookmarks">toggle_show_bookmarks</a></code></td>
-    <td><span>Show/hide the bar with bookmarks.</span></td>
+    <td><code><a href="#hide_widget">hide_widget</a></code></td>
+    <td>Hide Bar.</td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#add_bookmark">add_bookmark</a></code></td>
-    <td><span>Function to add new bookmarks to the bar. Introduced to be used via keyboard shortcut.</span></td>
+    <td><code><a href="#on_populate_popup">on_populate_popup</a></code></td>
+    <td>Add 'Add Bookmark' option to the Index popup menu.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#show_widget">show_widget</a></code></td>
+    <td>Show Bar.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#teardown">teardown</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#toggle_show_bookmarks">toggle_show_bookmarks</a></code></td>
+    <td>Show/hide the bar with bookmarks.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#widget">widget</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -141,22 +173,23 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.gui.mainwindow.MainWindowExtension.html">MainWindowExtension</a></code>:
           </p>
-          <table class="children sortable" id="id919">
+          <table class="children sortable" id="id906">
   
-  <tr class="baseinstancevariable">
+  
+  <tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.gui.mainwindow.MainWindowExtension.html#window">window</a></code></td>
+    <td>Method</td>
+    <td><code><a href="zim.gui.mainwindow.MainWindowExtension.html#on_destroy">on_destroy</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="baseinstancevariable">
     
     <td>Instance Variable</td>
     <td><code><a href="zim.gui.mainwindow.MainWindowExtension.html#uistate">uistate</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
+  </tr><tr class="baseinstancevariable">
     
-    <td>Method</td>
-    <td><code><a href="zim.gui.mainwindow.MainWindowExtension.html#on_destroy">on_destroy</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.mainwindow.MainWindowExtension.html#window">window</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -164,14 +197,10 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.gui.actionextension.ActionExtensionBase.html">ActionExtensionBase</a></code> (via <code><a href="zim.gui.mainwindow.MainWindowExtension.html">MainWindowExtension</a></code>):
           </p>
-          <table class="children sortable" id="id920">
+          <table class="children sortable" id="id907">
   
-  <tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#actiongroup">actiongroup</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
+  
+  <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#add_to_headerbar">add_to_headerbar</a></code></td>
@@ -185,6 +214,16 @@
     
     <td>Method</td>
     <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#set_action_in_headerbar">set_action_in_headerbar</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#actiongroup">actiongroup</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basestaticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#_uimanager_xml">_uimanager_xml</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod private">
     
@@ -201,46 +240,43 @@
     <td>Instance Variable</td>
     <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#_uimanager_ids">_uimanager_ids</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basestaticmethod private">
-    
-    <td>Static Method</td>
-    <td><code><a href="zim.gui.actionextension.ActionExtensionBase.html#_uimanager_xml">_uimanager_xml</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
           
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.plugins.ExtensionBase.html">ExtensionBase</a></code> (via <code><a href="zim.gui.mainwindow.MainWindowExtension.html">MainWindowExtension</a></code>, <code><a href="zim.gui.actionextension.ActionExtensionBase.html">ActionExtensionBase</a></code>):
           </p>
-          <table class="children sortable" id="id921">
+          <table class="children sortable" id="id908">
   
-  <tr class="baseinstancevariable">
+  
+  <tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.plugins.ExtensionBase.html#plugin">plugin</a></code></td>
-    <td><span>the plugin object to which this extension belongs</span></td>
-  </tr><tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="zim.plugins.ExtensionBase.html#obj">obj</a></code></td>
-    <td><span>the extendable object</span></td>
+    <td>Method</td>
+    <td><code><a href="zim.plugins.ExtensionBase.html#destroy">destroy</a></code></td>
+    <td>Called when the plugin is being destroyed Calls <code><a href="#teardown">teardown()</a></code> followed by the <tt class="rst-docutils literal">teardown()</tt> methods of parent base classes.</td>
   </tr><tr class="baseclassvariable">
     
     <td>Class Variable</td>
     <td><code><a href="zim.plugins.ExtensionBase.html#__signals__">__signals__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
+  </tr><tr class="baseinstancevariable">
     
-    <td>Method</td>
-    <td><code><a href="zim.plugins.ExtensionBase.html#destroy">destroy</a></code></td>
-    <td><span>Called when the plugin is being destroyed Calls <code><a href="#teardown">teardown()</a></code> followed by the <code>teardown()</code> methods of parent base classes.</span></td>
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.ExtensionBase.html#obj">obj</a></code></td>
+    <td>the extendable object</td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.plugins.ExtensionBase.html#plugin">plugin</a></code></td>
+    <td>the plugin object to which this extension belongs</td>
   </tr>
 </table>
           
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.signals.SignalEmitter.html">SignalEmitter</a></code> (via <code><a href="zim.gui.mainwindow.MainWindowExtension.html">MainWindowExtension</a></code>, <code><a href="zim.gui.actionextension.ActionExtensionBase.html">ActionExtensionBase</a></code>, <code><a href="zim.plugins.ExtensionBase.html">ExtensionBase</a></code>):
           </p>
-          <table class="children sortable" id="id922">
+          <table class="children sortable" id="id909">
+  
   
   <tr class="basemethod">
     
@@ -250,13 +286,18 @@
   </tr><tr class="basemethod">
     
     <td>Method</td>
+    <td><code><a href="zim.signals.SignalEmitter.html#block_signals">block_signals</a></code></td>
+    <td>Returns a context manager for blocking one or more signals</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#connect">connect</a></code></td>
-    <td><span>Register a handler for a specific object.</span></td>
+    <td>Register a handler for a specific object.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#connect_after">connect_after</a></code></td>
-    <td><span>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</span></td>
+    <td>Like <code><a href="#connect">connect()</a></code> but handler will be called after default handler</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -271,17 +312,12 @@
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#emit_return_first">emit_return_first</a></code></td>
-    <td><span>Emits a signal and stops emission on the first handler that returns a not-None value.</span></td>
+    <td>Emits a signal and stops emission on the first handler that returns a not-None value.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.SignalEmitter.html#emit_return_iter">emit_return_iter</a></code></td>
-    <td><span>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.signals.SignalEmitter.html#block_signals">block_signals</a></code></td>
-    <td><span>Returns a context manager for blocking one or more signals</span></td>
+    <td>Returns an generator that calls one handler on each iteration and yields the return values. This allows aggregating return values.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -303,37 +339,38 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="zim.signals.ConnectorMixin.html">ConnectorMixin</a></code> (via <code><a href="zim.gui.mainwindow.MainWindowExtension.html">MainWindowExtension</a></code>, <code><a href="zim.gui.actionextension.ActionExtensionBase.html">ActionExtensionBase</a></code>, <code><a href="zim.plugins.ExtensionBase.html">ExtensionBase</a></code>):
           </p>
-          <table class="children sortable" id="id923">
+          <table class="children sortable" id="id910">
+  
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto">connectto</a></code></td>
-    <td><span>Connect to signals of another object E.g.:</span></td>
+    <td>Connect to signals of another object E.g.:</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#connectto_all">connectto_all</a></code></td>
-    <td><span>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
-    <td><span>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</span></td>
+    <td>Convenience method to combine multiple calls to <code><a href="#connectto">connectto()</a></code>.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_all">disconnect_all</a></code></td>
-    <td><span>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</span></td>
-  </tr><tr class="baseinstancevariable private">
+    <td>Disconnect all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends. Typically called when you want to destroy this object.</td>
+  </tr><tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Method</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#disconnect_from">disconnect_from</a></code></td>
+    <td>Disc all signals that have been connected with <code><a href="#connectto">connectto</a></code> and friends to a specific object.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
     <td><code><a href="zim.signals.ConnectorMixin.html#_disconnect_from">_disconnect_from</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="zim.signals.ConnectorMixin.html#_connected_signals">_connected_signals</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -346,6 +383,7 @@
 
         <div class="basemethod">
   
+  
   <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.__init__">
     
   </a>
@@ -355,7 +393,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, plugin, window):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L52">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L52">
       
       (source)
     </a>
@@ -363,51 +401,230 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="zim.gui.mainwindow.MainWindowExtension.html#__init__">zim.gui.mainwindow.MainWindowExtension.__init__</a></code></div>
     
-    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">plugin</td><td>the plugin object to which this extension belongs</td></tr><tr><td></td><td class="fieldArg">window</td><td>the <code>Gtk.Window</code> being extended</td></tr></table></div>
+    <div>Constructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">plugin</span></td><td class="fieldArgDesc">the plugin object to which this extension belongs</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">window</span></td><td class="fieldArgDesc">the <tt class="rst-docutils literal">Gtk.Window</tt> being extended</td></tr></table></div>
   </div>
-</div><div class="baseinstancevariable">
+</div><div class="basemethod">
   
-  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.widget">
+  
+  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.add_bookmark">
     
   </a>
-  <a name="widget">
+  <a name="add_bookmark">
     
   </a>
   <div class="functionHeader">
-    
-    <span class="py-defname">widget</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L54">
+    @<a href="zim.actions.html#action">action</a>(<wbr></wbr>_(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">Add Bookmark</span><span class="rst-variable-quote">'</span>), <wbr></wbr>accelerator=<a href="zim.plugins.bookmarksbar.html#BM_ADD_BOOKMARK_KEY">BM_ADD_BOOKMARK_KEY</a>, <wbr></wbr>menuhints=<span class="rst-variable-quote">'</span><span class="rst-variable-string">page</span><span class="rst-variable-quote">'</span>)<br />
+    <span class="py-keyword">def</span> <span class="py-defname">add_bookmark</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L160">
       
       (source)
     </a>
   </div>
-  <div class="functionBody">
+  <div class="docstring functionBody">
+    
+    
+    <div>Function to add new bookmarks to the bar. Introduced to be used via keyboard shortcut.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.bookmark_1">
+    
+  </a>
+  <a name="bookmark_1">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="zim.actions.html#action">action</a>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string"></span><span class="rst-variable-quote">'</span>, <wbr></wbr>accelerator=<span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;alt&gt;1</span><span class="rst-variable-quote">'</span>, <wbr></wbr>menuhints=<span class="rst-variable-quote">'</span><span class="rst-variable-string">accelonly</span><span class="rst-variable-quote">'</span>)<br />
+    <span class="py-keyword">def</span> <span class="py-defname">bookmark_1</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L106">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
     
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.teardown">
+  
+  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.bookmark_2">
     
   </a>
-  <a name="teardown">
+  <a name="bookmark_2">
     
   </a>
   <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">teardown</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L76">
+    @<a href="zim.actions.html#action">action</a>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string"></span><span class="rst-variable-quote">'</span>, <wbr></wbr>accelerator=<span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;alt&gt;2</span><span class="rst-variable-quote">'</span>, <wbr></wbr>menuhints=<span class="rst-variable-quote">'</span><span class="rst-variable-string">accelonly</span><span class="rst-variable-quote">'</span>)<br />
+    <span class="py-keyword">def</span> <span class="py-defname">bookmark_2</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L110">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="zim.gui.actionextension.ActionExtensionBase.html#teardown">zim.gui.actionextension.ActionExtensionBase.teardown</a></code></div>
     
-    <div><p>Remove changes made by <b>this</b> class from the extended object To be overloaded by child classes</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">do not call parent class <code>teardown()</code> here, that is already taken care of by <code>destroy()</code></td></tr></table></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.bookmark_3">
+    
+  </a>
+  <a name="bookmark_3">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="zim.actions.html#action">action</a>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string"></span><span class="rst-variable-quote">'</span>, <wbr></wbr>accelerator=<span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;alt&gt;3</span><span class="rst-variable-quote">'</span>, <wbr></wbr>menuhints=<span class="rst-variable-quote">'</span><span class="rst-variable-string">accelonly</span><span class="rst-variable-quote">'</span>)<br />
+    <span class="py-keyword">def</span> <span class="py-defname">bookmark_3</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L114">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.bookmark_4">
+    
+  </a>
+  <a name="bookmark_4">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="zim.actions.html#action">action</a>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string"></span><span class="rst-variable-quote">'</span>, <wbr></wbr>accelerator=<span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;alt&gt;4</span><span class="rst-variable-quote">'</span>, <wbr></wbr>menuhints=<span class="rst-variable-quote">'</span><span class="rst-variable-string">accelonly</span><span class="rst-variable-quote">'</span>)<br />
+    <span class="py-keyword">def</span> <span class="py-defname">bookmark_4</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L118">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.bookmark_5">
+    
+  </a>
+  <a name="bookmark_5">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="zim.actions.html#action">action</a>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string"></span><span class="rst-variable-quote">'</span>, <wbr></wbr>accelerator=<span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;alt&gt;5</span><span class="rst-variable-quote">'</span>, <wbr></wbr>menuhints=<span class="rst-variable-quote">'</span><span class="rst-variable-string">accelonly</span><span class="rst-variable-quote">'</span>)<br />
+    <span class="py-keyword">def</span> <span class="py-defname">bookmark_5</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L122">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.bookmark_6">
+    
+  </a>
+  <a name="bookmark_6">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="zim.actions.html#action">action</a>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string"></span><span class="rst-variable-quote">'</span>, <wbr></wbr>accelerator=<span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;alt&gt;6</span><span class="rst-variable-quote">'</span>, <wbr></wbr>menuhints=<span class="rst-variable-quote">'</span><span class="rst-variable-string">accelonly</span><span class="rst-variable-quote">'</span>)<br />
+    <span class="py-keyword">def</span> <span class="py-defname">bookmark_6</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L126">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.bookmark_7">
+    
+  </a>
+  <a name="bookmark_7">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="zim.actions.html#action">action</a>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string"></span><span class="rst-variable-quote">'</span>, <wbr></wbr>accelerator=<span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;alt&gt;7</span><span class="rst-variable-quote">'</span>, <wbr></wbr>menuhints=<span class="rst-variable-quote">'</span><span class="rst-variable-string">accelonly</span><span class="rst-variable-quote">'</span>)<br />
+    <span class="py-keyword">def</span> <span class="py-defname">bookmark_7</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L130">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.bookmark_8">
+    
+  </a>
+  <a name="bookmark_8">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="zim.actions.html#action">action</a>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string"></span><span class="rst-variable-quote">'</span>, <wbr></wbr>accelerator=<span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;alt&gt;8</span><span class="rst-variable-quote">'</span>, <wbr></wbr>menuhints=<span class="rst-variable-quote">'</span><span class="rst-variable-string">accelonly</span><span class="rst-variable-quote">'</span>)<br />
+    <span class="py-keyword">def</span> <span class="py-defname">bookmark_8</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L134">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.bookmark_9">
+    
+  </a>
+  <a name="bookmark_9">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="zim.actions.html#action">action</a>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string"></span><span class="rst-variable-quote">'</span>, <wbr></wbr>accelerator=<span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;alt&gt;9</span><span class="rst-variable-quote">'</span>, <wbr></wbr>menuhints=<span class="rst-variable-quote">'</span><span class="rst-variable-string">accelonly</span><span class="rst-variable-quote">'</span>)<br />
+    <span class="py-keyword">def</span> <span class="py-defname">bookmark_9</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L138">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.hide_widget">
     
@@ -418,7 +635,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">hide_widget</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L85">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L85">
       
       (source)
     </a>
@@ -426,30 +643,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Hide Bar.</p></div>
+    <div>Hide Bar.</div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.show_widget">
-    
-  </a>
-  <a name="show_widget">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">show_widget</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L89">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Show Bar.</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.on_populate_popup">
     
@@ -460,7 +657,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">on_populate_popup</span>(self, treeview, menu):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L93">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L93">
       
       (source)
     </a>
@@ -468,20 +665,21 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Add 'Add Bookmark' option to the Index popup menu.</p></div>
+    <div>Add 'Add Bookmark' option to the Index popup menu.</div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.bookmark_1">
+  
+  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.show_widget">
     
   </a>
-  <a name="bookmark_1">
+  <a name="show_widget">
     
   </a>
   <div class="functionHeader">
-    @action('', accelerator='&lt;alt&gt;1', menuhints='accelonly')<br />
-    <span class="py-keyword">def</span> <span class="py-defname">bookmark_1</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L106">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">show_widget</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L89">
       
       (source)
     </a>
@@ -489,62 +687,43 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Show Bar.</div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.bookmark_2">
+  
+  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.teardown">
     
   </a>
-  <a name="bookmark_2">
+  <a name="teardown">
     
   </a>
   <div class="functionHeader">
-    @action('', accelerator='&lt;alt&gt;2', menuhints='accelonly')<br />
-    <span class="py-keyword">def</span> <span class="py-defname">bookmark_2</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L110">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">teardown</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L76">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="zim.gui.actionextension.ActionExtensionBase.html#teardown">zim.gui.actionextension.ActionExtensionBase.teardown</a></code></div>
     
-    
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Remove changes made by <strong>this</strong> class from the extended object To be overloaded by child classes<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Note</td></tr><tr><td colspan="2">do not call parent class <tt class="rst-docutils literal">teardown()</tt> here, that is already taken care of by <tt class="rst-docutils literal">destroy()</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.bookmark_3">
-    
-  </a>
-  <a name="bookmark_3">
-    
-  </a>
-  <div class="functionHeader">
-    @action('', accelerator='&lt;alt&gt;3', menuhints='accelonly')<br />
-    <span class="py-keyword">def</span> <span class="py-defname">bookmark_3</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L114">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
-  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.bookmark_4">
+  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.toggle_show_bookmarks">
     
   </a>
-  <a name="bookmark_4">
+  <a name="toggle_show_bookmarks">
     
   </a>
   <div class="functionHeader">
-    @action('', accelerator='&lt;alt&gt;4', menuhints='accelonly')<br />
-    <span class="py-keyword">def</span> <span class="py-defname">bookmark_4</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L118">
+    @<a href="zim.actions.html#toggle_action">toggle_action</a>(<wbr></wbr>_(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">Bookmarks</span><span class="rst-variable-quote">'</span>), <wbr></wbr>accelerator=<a href="zim.plugins.bookmarksbar.html#BM_TOGGLE_BAR_KEY">BM_TOGGLE_BAR_KEY</a>, <wbr></wbr>menuhints=<span class="rst-variable-quote">'</span><span class="rst-variable-string">view</span><span class="rst-variable-quote">'</span>)<br />
+    <span class="py-keyword">def</span> <span class="py-defname">toggle_show_bookmarks</span>(self, active):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L149">
       
       (source)
     </a>
@@ -552,114 +731,33 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Show/hide the bar with bookmarks.</div>
   </div>
-</div><div class="basemethod">
+</div><div class="baseinstancevariable">
   
-  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.bookmark_5">
-    
-  </a>
-  <a name="bookmark_5">
-    
-  </a>
-  <div class="functionHeader">
-    @action('', accelerator='&lt;alt&gt;5', menuhints='accelonly')<br />
-    <span class="py-keyword">def</span> <span class="py-defname">bookmark_5</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L122">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
-  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.bookmark_6">
+  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.widget">
     
   </a>
-  <a name="bookmark_6">
+  <a name="widget">
     
   </a>
   <div class="functionHeader">
-    @action('', accelerator='&lt;alt&gt;6', menuhints='accelonly')<br />
-    <span class="py-keyword">def</span> <span class="py-defname">bookmark_6</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L126">
+    
+    <span class="py-defname">widget</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L54">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
     <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.bookmark_7">
     
-  </a>
-  <a name="bookmark_7">
-    
-  </a>
-  <div class="functionHeader">
-    @action('', accelerator='&lt;alt&gt;7', menuhints='accelonly')<br />
-    <span class="py-keyword">def</span> <span class="py-defname">bookmark_7</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L130">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.bookmark_8">
-    
-  </a>
-  <a name="bookmark_8">
-    
-  </a>
-  <div class="functionHeader">
-    @action('', accelerator='&lt;alt&gt;8', menuhints='accelonly')<br />
-    <span class="py-keyword">def</span> <span class="py-defname">bookmark_8</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L134">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.bookmark_9">
-    
-  </a>
-  <a name="bookmark_9">
-    
-  </a>
-  <div class="functionHeader">
-    @action('', accelerator='&lt;alt&gt;9', menuhints='accelonly')<br />
-    <span class="py-keyword">def</span> <span class="py-defname">bookmark_9</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L138">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod private">
+  
   
   <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension._open_bookmark">
     
@@ -670,7 +768,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_open_bookmark</span>(self, number):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L142">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L142">
       
       (source)
     </a>
@@ -680,56 +778,19 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.toggle_show_bookmarks">
-    
-  </a>
-  <a name="toggle_show_bookmarks">
-    
-  </a>
-  <div class="functionHeader">
-    @toggle_action(_('Bookmarks'), accelerator=BM_TOGGLE_BAR_KEY, menuhints='view')<br />
-    <span class="py-keyword">def</span> <span class="py-defname">toggle_show_bookmarks</span>(self, active):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L149">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Show/hide the bar with bookmarks.</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.plugins.bookmarksbar.BookmarksBarMainWindowExtension.add_bookmark">
-    
-  </a>
-  <a name="add_bookmark">
-    
-  </a>
-  <div class="functionHeader">
-    @action(_('Add Bookmark'), accelerator=BM_ADD_BOOKMARK_KEY, menuhints='page')<br />
-    <span class="py-keyword">def</span> <span class="py-defname">add_bookmark</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/bookmarksbar.py#L160">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Function to add new bookmarks to the bar. Introduced to be used via keyboard shortcut.</p></div>
-  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

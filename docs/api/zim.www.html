@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.www : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.www</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.www.html">www</a></code></code></h1>
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.www.html">www</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,47 +65,46 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py">(source)</a>
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>This module contains a web interface for zim. This is an alternative to the GUI application.</p><p>It can be run either as a stand-alone web server or embedded in another server as a cgi-bin script or using  one of the python web frameworks using the "WSGI" API.</p><p>The main classes here are <code><a href="zim.www.WWWInterface.html">WWWInterface</a></code> which implements the interface (and is callable as a "WSGI" application) and <code>Server</code> which implements the standalone server.</p></div>
+        <div><p>This module contains a web interface for zim. This is an alternative to the GUI application.</p>
+<p>It can be run either as a stand-alone web server or embedded in another server as a cgi-bin script or using  one of the python web frameworks using the "WSGI" API.</p>
+<p>The main classes here are <code><a href="zim.www.WWWInterface.html">WWWInterface</a></code> which implements the interface (and is callable as a "WSGI" application) and <code>Server</code> which implements the standalone server.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1547">
+        <table class="children sortable" id="id1570">
   
-  <tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#logger">logger</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.www.WWWError.html">WWWError</a></code></td>
-    <td><span>Error with http error code</span></td>
-  </tr><tr class="class">
+  
+  <tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.www.WebPageNotFoundError.html">WebPageNotFoundError</a></code></td>
-    <td><span>Error whan a page is not found (404)</span></td>
+    <td>Error whan a page is not found (404)</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.www.WebPathNotValidError.html">WebPathNotValidError</a></code></td>
-    <td><span>Error when the url points to an invalid page path</span></td>
+    <td>Error when the url points to an invalid page path</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.www.WWWError.html">WWWError</a></code></td>
+    <td>Error with http error code</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.www.WWWInterface.html">WWWInterface</a></code></td>
-    <td><span>Class to handle the WWW interface for zim notebooks.</span></td>
+    <td>Class to handle the WWW interface for zim notebooks.</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.www.WWWLinker.html">WWWLinker</a></code></td>
-    <td><span>Implements a linker that returns the correct links for the way the server handles URLs.</span></td>
+    <td>Implements a linker that returns the correct links for the way the server handles URLs.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -85,6 +115,11 @@
     <td>Function</td>
     <td><code><a href="#make_server">make_server</a></code></td>
     <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
         
@@ -94,7 +129,52 @@
 
       <div id="childList">
 
-        <div class="basevariable">
+        <div class="basefunction">
+  
+  
+  <a name="zim.www.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">main</span>(notebook, port=8080, public=<a href="https://docs.python.org/3/library/constants.html#True">True</a>, **opts):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L370">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.www.make_server">
+    
+  </a>
+  <a name="make_server">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">make_server</span>(notebook, port=8080, public=<a href="https://docs.python.org/3/library/constants.html#True">True</a>, auth_creds=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, **opts):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L376">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Create a simple http server<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">notebook</span></td><td class="fieldArgDesc">the notebook location</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">port</span></td><td class="fieldArgDesc">the http port to serve on</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">public</span></td><td class="fieldArgDesc">allow connections to the server from other computers - if <tt class="rst-docutils literal">False</tt> can only connect from localhost</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">auth_creds</span></td><td class="fieldArgDesc">credentials for HTTP-authentication</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**opts</span></td><td class="fieldArgDesc">options for <code><a href="zim.www.WWWInterface.html#__init__">WWWInterface.__init__()</a></code></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <tt class="rst-docutils literal">WSGIServer</tt> object</td></tr></table></div>
+  </div>
+</div><div class="basevariable">
+  
   
   <a name="zim.www.logger">
     
@@ -105,7 +185,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">logger</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L45">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L47">
       
       (source)
     </a>
@@ -114,57 +194,21 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.www.main">
     
-  </a>
-  <a name="main">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">main</span>(notebook, port=8080, public=True, **opts):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L372">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.www.make_server">
-    
-  </a>
-  <a name="make_server">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">make_server</span>(notebook, port=8080, public=True, auth_creds=None, **opts):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/www.py#L378">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Create a simple http server</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">notebook</td><td>the notebook location</td></tr><tr><td></td><td class="fieldArg">port</td><td>the http port to serve on</td></tr><tr><td></td><td class="fieldArg">public</td><td>allow connections to the server from other computers - if <code>False</code> can only connect from localhost</td></tr><tr><td></td><td class="fieldArg">auth_creds</td><td>credentials for HTTP-authentication</td></tr><tr><td></td><td class="fieldArg">opts</td><td>options for <code><a href="zim.www.WWWInterface.html#__init__">WWWInterface.__init__()</a></code></td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a <code>WSGIServer</code> object</td></tr></table></div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

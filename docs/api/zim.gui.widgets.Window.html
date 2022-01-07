@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.gui.widgets.Window : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.gui.widgets.Window</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.widgets.html">widgets</a></code>.<code><a href="zim.gui.widgets.Window.html">Window</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.gui.html">gui</a></code><wbr></wbr>.<code><a href="zim.gui.widgets.html">widgets</a></code><wbr></wbr>.<code><a href="zim.gui.widgets.Window.html">Window</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,12 +65,13 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Window</span>(<span title="gi.repository.Gtk.Window">Gtk.Window</span>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2379">(source)</a></code></p><p>Known subclasses: <code><a href="zim.gui.mainwindow.MainWindow.html">zim.gui.mainwindow.MainWindow</a></code>, <code><a href="zim.gui.mainwindow.PageWindow.html">zim.gui.mainwindow.PageWindow</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Window</span>(<span title="gi.repository.Gtk.Window">Gtk.Window</span>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2369" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="zim.gui.mainwindow.MainWindow.html">zim.gui.mainwindow.MainWindow</a></code>, <code><a href="zim.gui.mainwindow.PageWindow.html">zim.gui.mainwindow.PageWindow</a></code></p>
         <p><a href="classIndex.html#zim.gui.widgets.Window">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Sub-class of <code>Gtk.Window</code> that will take care of hooking the window into the application framework and adds entry points so plugins can add side panes etc. It will divide the window horizontally in 3 panes, and the center pane again vertically in 3. The result is something like this:</p><pre class="literalblock">
+        <div><p>Sub-class of <tt class="rst-docutils literal">Gtk.Window</tt> that will take care of hooking the window into the application framework and adds entry points so plugins can add side panes etc. It will divide the window horizontally in 3 panes, and the center pane again vertically in 3. The result is something like this:</p>
+<pre class="rst-literal-block">
         +-----------------------------+
         |menu                         |
         +-----+----------------+------+
@@ -54,18 +86,17 @@
         | r   | bottom pane    |  r   |
         |     |                |      |
         +----------------------+------+
-</pre><p>Any pane that is not used will not been shown. The important thing is to create placeholders where plugins *might* want to add some widget.</p><p>All windows in zim must inherit from this class.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Unknown Field: signal</td><td colspan="2"><code>pane-state-changed (pane, visible, active)</code>: emitted when visibility or active tab changed for a specific pane</td></tr></table></div>
+</pre>
+<p>Any pane that is not used will not been shown. The important thing is to create placeholders where plugins *might* want to add some widget.</p>
+<p>All windows in zim must inherit from this class.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: signal</td></tr><tr><td colspan="2"><tt class="rst-docutils literal"><span class="pre">pane-state-changed</span> (pane, visible, active)</tt>: emitted when visibility or active tab changed for a specific pane</td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id528">
+        <table class="children sortable" id="id536">
   
-  <tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#__gsignals__">__gsignals__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
+  
+  <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
@@ -74,7 +105,7 @@
     
     <td>Method</td>
     <td><code><a href="#add">add</a></code></td>
-    <td><span>Add the main widget. @param widget: gtk widget to add in the window</span></td>
+    <td>Add the main widget. @param widget: gtk widget to add in the window</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -84,12 +115,7 @@
     
     <td>Method</td>
     <td><code><a href="#add_center_bar">add_center_bar</a></code></td>
-    <td><span>Add a widget in the central part of the window above the page. @param widget: the gtk widget to show in the tab</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#move_bottom_minimized_tabs_to_statusbar">move_bottom_minimized_tabs_to_statusbar</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Add a widget in the central part of the window above the page. @param widget: the gtk widget to show in the tab</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -98,57 +124,7 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#remove">remove</a></code></td>
-    <td><span>Remove widget from any pane @param widget: the widget to remove</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#init_uistate">init_uistate</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#save_uistate">save_uistate</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#get_pane_state">get_pane_state</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#set_pane_state">set_pane_state</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#toggle_panes">toggle_panes</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#show_all_panes">show_all_panes</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#get_visible_panes">get_visible_panes</a></code></td>
-    <td><span>Returns a list of panes that are visible</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#get_used_panes">get_used_panes</a></code></td>
-    <td><span>Returns a list of panes that are in use (i.e. not empty)</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
     <td><code><a href="#do_set_focus">do_set_focus</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#focus_sidepane">focus_sidepane</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
@@ -158,8 +134,58 @@
   </tr><tr class="method">
     
     <td>Method</td>
+    <td><code><a href="#focus_sidepane">focus_sidepane</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_pane_state">get_pane_state</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_used_panes">get_used_panes</a></code></td>
+    <td>Returns a list of panes that are in use (i.e. not empty)</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_visible_panes">get_visible_panes</a></code></td>
+    <td>Returns a list of panes that are visible</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#init_uistate">init_uistate</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#move_bottom_minimized_tabs_to_statusbar">move_bottom_minimized_tabs_to_statusbar</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
     <td><code><a href="#pack_start">pack_start</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#present">present</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#remove">remove</a></code></td>
+    <td>Remove widget from any pane @param widget: the widget to remove</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#save_uistate">save_uistate</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_pane_state">set_pane_state</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -173,102 +199,17 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#present">present</a></code></td>
+    <td><code><a href="#show_all_panes">show_all_panes</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#_registered">_registered</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+    <td>Method</td>
+    <td><code><a href="#toggle_panes">toggle_panes</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="classvariable">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#_last_sidepane_focus">_last_sidepane_focus</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_zim_window_overlay">_zim_window_overlay</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_zim_window_main">_zim_window_main</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_zim_window_central_hbox">_zim_window_central_hbox</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_zim_window_left_paned">_zim_window_left_paned</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_zim_window_right_paned">_zim_window_right_paned</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_zim_window_central_vbox">_zim_window_central_vbox</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_zim_window_top_paned">_zim_window_top_paned</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_zim_window_bottom_paned">_zim_window_bottom_paned</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_zim_window_left_pane">_zim_window_left_pane</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_zim_window_right_pane">_zim_window_right_pane</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_zim_window_top_pane">_zim_window_top_pane</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_zim_window_bottom_pane">_zim_window_bottom_pane</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_zim_window_left_minimized">_zim_window_left_minimized</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_zim_window_right_minimized">_zim_window_right_minimized</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_zim_window_top_minimized">_zim_window_top_minimized</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_zim_window_bottom_minimized">_zim_window_bottom_minimized</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_zim_window_sidepanes">_zim_window_sidepanes</a></code></td>
+    <td>Class Variable</td>
+    <td><code><a href="#__gsignals__">__gsignals__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
@@ -278,12 +219,107 @@
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_set_pane_ordering">_set_pane_ordering</a></code></td>
+    <td><code><a href="#_panes">_panes</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_panes">_panes</a></code></td>
+    <td><code><a href="#_set_pane_ordering">_set_pane_ordering</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_last_sidepane_focus">_last_sidepane_focus</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_uistate_initialized">_uistate_initialized</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_zim_window_bottom_minimized">_zim_window_bottom_minimized</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_zim_window_bottom_pane">_zim_window_bottom_pane</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_zim_window_bottom_paned">_zim_window_bottom_paned</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_zim_window_central_hbox">_zim_window_central_hbox</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_zim_window_central_vbox">_zim_window_central_vbox</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_zim_window_left_minimized">_zim_window_left_minimized</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_zim_window_left_pane">_zim_window_left_pane</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_zim_window_left_paned">_zim_window_left_paned</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_zim_window_main">_zim_window_main</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_zim_window_overlay">_zim_window_overlay</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_zim_window_right_minimized">_zim_window_right_minimized</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_zim_window_right_pane">_zim_window_right_pane</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_zim_window_right_paned">_zim_window_right_paned</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_zim_window_sidepanes">_zim_window_sidepanes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_zim_window_top_minimized">_zim_window_top_minimized</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_zim_window_top_pane">_zim_window_top_pane</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_zim_window_top_paned">_zim_window_top_paned</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -294,28 +330,8 @@
 
       <div id="childList">
 
-        <div class="baseclassvariable">
+        <div class="basemethod">
   
-  <a name="zim.gui.widgets.Window.__gsignals__">
-    
-  </a>
-  <a name="__gsignals__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">__gsignals__</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2412">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.mainwindow.MainWindow.html">zim.gui.mainwindow.MainWindow</a></code>, <code><a href="zim.gui.mainwindow.PageWindow.html">zim.gui.mainwindow.PageWindow</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.widgets.Window.__init__">
     
@@ -326,7 +342,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2416">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2406">
       
       (source)
     </a>
@@ -336,406 +352,8 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Window._registered">
-    
-  </a>
-  <a name="_registered">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_registered</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2418">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Window._last_sidepane_focus">
-    
-  </a>
-  <a name="_last_sidepane_focus">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_last_sidepane_focus</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2419">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Window._zim_window_overlay">
-    
-  </a>
-  <a name="_zim_window_overlay">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_zim_window_overlay</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2422">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Window._zim_window_main">
-    
-  </a>
-  <a name="_zim_window_main">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_zim_window_main</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2423">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Window._zim_window_central_hbox">
-    
-  </a>
-  <a name="_zim_window_central_hbox">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_zim_window_central_hbox</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2426">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Window._zim_window_left_paned">
-    
-  </a>
-  <a name="_zim_window_left_paned">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_zim_window_left_paned</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2427">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Window._zim_window_right_paned">
-    
-  </a>
-  <a name="_zim_window_right_paned">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_zim_window_right_paned</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2428">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Window._zim_window_central_vbox">
-    
-  </a>
-  <a name="_zim_window_central_vbox">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_zim_window_central_vbox</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2429">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Window._zim_window_top_paned">
-    
-  </a>
-  <a name="_zim_window_top_paned">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_zim_window_top_paned</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2430">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Window._zim_window_bottom_paned">
-    
-  </a>
-  <a name="_zim_window_bottom_paned">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_zim_window_bottom_paned</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2431">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Window._zim_window_left_pane">
-    
-  </a>
-  <a name="_zim_window_left_pane">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_zim_window_left_pane</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2433">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Window._zim_window_right_pane">
-    
-  </a>
-  <a name="_zim_window_right_pane">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_zim_window_right_pane</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2434">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Window._zim_window_top_pane">
-    
-  </a>
-  <a name="_zim_window_top_pane">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_zim_window_top_pane</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2435">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Window._zim_window_bottom_pane">
-    
-  </a>
-  <a name="_zim_window_bottom_pane">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_zim_window_bottom_pane</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2436">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Window._zim_window_left_minimized">
-    
-  </a>
-  <a name="_zim_window_left_minimized">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_zim_window_left_minimized</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2438">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Window._zim_window_right_minimized">
-    
-  </a>
-  <a name="_zim_window_right_minimized">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_zim_window_right_minimized</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2439">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Window._zim_window_top_minimized">
-    
-  </a>
-  <a name="_zim_window_top_minimized">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_zim_window_top_minimized</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2440">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Window._zim_window_bottom_minimized">
-    
-  </a>
-  <a name="_zim_window_bottom_minimized">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_zim_window_bottom_minimized</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2441">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.Window._zim_window_sidepanes">
-    
-  </a>
-  <a name="_zim_window_sidepanes">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_zim_window_sidepanes</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2461">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.gui.widgets.Window.add">
     
@@ -746,7 +364,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">add</span>(self, widget):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2498">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2488">
       
       (source)
     </a>
@@ -754,9 +372,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Add the main widget.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">widget</td><td>gtk widget to add in the window</td></tr></table></div>
+    <div>Add the main widget.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">widget</span></td><td class="fieldArgDesc">gtk widget to add in the window</td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.gui.widgets.Window.add_bar">
     
@@ -767,7 +386,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">add_bar</span>(self, widget, position):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2504">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2494">
       
       (source)
     </a>
@@ -775,9 +394,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Add a bar to top or bottom of the window. Used e.g. to add menu-, tool- &amp; status-bars.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">widget</td><td>gtk widget for the bar</td></tr><tr><td></td><td class="fieldArg">position</td><td>position of the bar in the window <code>TOP</code>, <code>BOTTOM</code>, <code>LEFT</code> or <code>RIGHT</code></td></tr></table></div>
+    <div>Add a bar to top or bottom of the window. Used e.g. to add menu-, tool- &amp; status-bars.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">widget</span></td><td class="fieldArgDesc">gtk widget for the bar</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">position</span></td><td class="fieldArgDesc">position of the bar in the window <tt class="rst-docutils literal">TOP</tt>, <tt class="rst-docutils literal">BOTTOM</tt>, <tt class="rst-docutils literal">LEFT</tt> or <tt class="rst-docutils literal">RIGHT</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="zim.gui.widgets.Window.add_center_bar">
     
@@ -788,7 +408,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">add_center_bar</span>(self, widget):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2523">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2513">
       
       (source)
     </a>
@@ -796,30 +416,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Add a widget in the central part of the window above the page.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">widget</td><td>the gtk widget to show in the tab</td></tr></table></div>
+    <div>Add a widget in the central part of the window above the page.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">widget</span></td><td class="fieldArgDesc">the gtk widget to show in the tab</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.Window.move_bottom_minimized_tabs_to_statusbar">
-    
-  </a>
-  <a name="move_bottom_minimized_tabs_to_statusbar">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">move_bottom_minimized_tabs_to_statusbar</span>(self, statusbar):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2531">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.widgets.Window.add_tab">
     
@@ -830,7 +430,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">add_tab</span>(self, key, widget, pane):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2539">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2529">
       
       (source)
     </a>
@@ -838,261 +438,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Add a tab in one of the panes.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">key</td><td>string that is used to identify this tab in the window state</td></tr><tr><td></td><td class="fieldArg">widget</td><td>the gtk widget to show in the tab</td></tr><tr><td></td><td class="fieldArg">pane</td><td>can be one of: <code>LEFT_PANE</code>, <code>RIGHT_PANE</code>, <code>TOP_PANE</code> or <code>BOTTOM_PANE</code>.</td></tr></table></div>
+    <div>Add a tab in one of the panes.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key</span></td><td class="fieldArgDesc">string that is used to identify this tab in the window state</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">widget</span></td><td class="fieldArgDesc">the gtk widget to show in the tab</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pane</span></td><td class="fieldArgDesc">can be one of: <tt class="rst-docutils literal">LEFT_PANE</tt>, <tt class="rst-docutils literal">RIGHT_PANE</tt>, <tt class="rst-docutils literal">TOP_PANE</tt> or <tt class="rst-docutils literal">BOTTOM_PANE</tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.Window.remove">
-    
-  </a>
-  <a name="remove">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">remove</span>(self, widget):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2551">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Remove widget from any pane</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">widget</td><td>the widget to remove</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.Window.init_uistate">
-    
-  </a>
-  <a name="init_uistate">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">init_uistate</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2575">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.mainwindow.MainWindow.html">zim.gui.mainwindow.MainWindow</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.Window.save_uistate">
-    
-  </a>
-  <a name="save_uistate">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">save_uistate</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2590">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.mainwindow.MainWindow.html">zim.gui.mainwindow.MainWindow</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.gui.widgets.Window._get_pane_ordering">
-    
-  </a>
-  <a name="_get_pane_ordering">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_get_pane_ordering</span>(self, key):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2598">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.gui.widgets.Window._set_pane_ordering">
-    
-  </a>
-  <a name="_set_pane_ordering">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_set_pane_ordering</span>(self, key, order):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2602">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.Window.get_pane_state">
-    
-  </a>
-  <a name="get_pane_state">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_pane_state</span>(self, pane):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2607">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Returns the state of a side pane.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">pane</td><td>can be one of: <code>LEFT_PANE</code>, <code>RIGHT_PANE</code>, <code>TOP_PANE</code> or <code>BOTTOM_PANE</code>.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a 3-tuple of visibility (boolean), pane size (integer), and active tab (string).</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.Window.set_pane_state">
-    
-  </a>
-  <a name="set_pane_state">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">set_pane_state</span>(self, pane, visible, size=None, activetab=None, grab_focus=False):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2628">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Set the state of a side pane.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">pane</td><td>can be one of: <code>LEFT_PANE</code>, <code>RIGHT_PANE</code>, <code>TOP_PANE</code> or <code>BOTTOM_PANE</code>.</td></tr><tr><td></td><td class="fieldArg">visible</td><td><code>True</code> to show the pane, <code>False</code> to hide</td></tr><tr><td></td><td class="fieldArg">size</td><td>size of the side pane</td></tr><tr><td></td><td class="fieldArg">activetab</td><td>key of the active tab in the notebook or None (fails silently if tab is not found)</td></tr><tr><td></td><td class="fieldArg">grab_focus</td><td>if <code>True</code> active tab will grab focus</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.Window.toggle_panes">
-    
-  </a>
-  <a name="toggle_panes">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">toggle_panes</span>(self, show=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2684">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="zim.gui.mainwindow.MainWindow.html">zim.gui.mainwindow.MainWindow</a></code></div>
-    
-    <div><p>Toggle between showing and not showing panes. Will remember the panes that were shown last time this method was called but defaults to showing all panes.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">show</td><td>if <code>True</code> show panes, if <code>False</code> hide them, if <code>None</code> toggle current state</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.Window.show_all_panes">
-    
-  </a>
-  <a name="show_all_panes">
-    
-  </a>
-  <div class="functionHeader">
-    @action(_('_All Panes'), accelerator='&lt;Primary&gt;F9')<br />
-    <span class="py-keyword">def</span> <span class="py-defname">show_all_panes</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2712">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.Window.get_visible_panes">
-    
-  </a>
-  <a name="get_visible_panes">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_visible_panes</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2717">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Returns a list of panes that are visible</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.Window.get_used_panes">
-    
-  </a>
-  <a name="get_used_panes">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_used_panes</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2721">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Returns a list of panes that are in use (i.e. not empty)</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.gui.widgets.Window._panes">
-    
-  </a>
-  <a name="_panes">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_panes</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2725">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.widgets.Window.do_set_focus">
     
@@ -1103,7 +452,139 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">do_set_focus</span>(self, widget):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2729">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2723">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Window.focus_last_focussed_sidepane">
+    
+  </a>
+  <a name="focus_last_focussed_sidepane">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">focus_last_focussed_sidepane</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2742">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Window.focus_sidepane">
+    
+  </a>
+  <a name="focus_sidepane">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">focus_sidepane</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2735">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Window.get_pane_state">
+    
+  </a>
+  <a name="get_pane_state">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_pane_state</span>(self, pane):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2599">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns the state of a side pane.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pane</span></td><td class="fieldArgDesc">can be one of: <tt class="rst-docutils literal">LEFT_PANE</tt>, <tt class="rst-docutils literal">RIGHT_PANE</tt>, <tt class="rst-docutils literal">TOP_PANE</tt> or <tt class="rst-docutils literal">BOTTOM_PANE</tt>.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a 3-tuple of visibility (boolean), pane size (integer), and active tab (string).</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Window.get_used_panes">
+    
+  </a>
+  <a name="get_used_panes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_used_panes</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2715">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns a list of panes that are in use (i.e. not empty)</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Window.get_visible_panes">
+    
+  </a>
+  <a name="get_visible_panes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_visible_panes</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2711">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns a list of panes that are visible</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Window.init_uistate">
+    
+  </a>
+  <a name="init_uistate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">init_uistate</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2565">
       
       (source)
     </a>
@@ -1115,16 +596,17 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.Window.focus_sidepane">
+  
+  <a name="zim.gui.widgets.Window.move_bottom_minimized_tabs_to_statusbar">
     
   </a>
-  <a name="focus_sidepane">
+  <a name="move_bottom_minimized_tabs_to_statusbar">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">focus_sidepane</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2741">
+    <span class="py-keyword">def</span> <span class="py-defname">move_bottom_minimized_tabs_to_statusbar</span>(self, statusbar):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2521">
       
       (source)
     </a>
@@ -1136,26 +618,6 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.Window.focus_last_focussed_sidepane">
-    
-  </a>
-  <a name="focus_last_focussed_sidepane">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">focus_last_focussed_sidepane</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2748">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.widgets.Window.pack_start">
     
@@ -1166,7 +628,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">pack_start</span>(self, *a):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2756">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2750">
       
       (source)
     </a>
@@ -1178,47 +640,6 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.Window.show">
-    
-  </a>
-  <a name="show">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">show</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2759">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.Window.show_all">
-    
-  </a>
-  <a name="show_all">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">show_all</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2762">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.widgets.Window.present">
     
@@ -1229,7 +650,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">present</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2774">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2761">
       
       (source)
     </a>
@@ -1239,14 +660,699 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Window.remove">
+    
+  </a>
+  <a name="remove">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">remove</span>(self, widget):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2541">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Remove widget from any pane<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">widget</span></td><td class="fieldArgDesc">the widget to remove</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Window.save_uistate">
+    
+  </a>
+  <a name="save_uistate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">save_uistate</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2580">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.mainwindow.MainWindow.html">zim.gui.mainwindow.MainWindow</a></code>, <code><a href="zim.gui.mainwindow.PageWindow.html">zim.gui.mainwindow.PageWindow</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Window.set_pane_state">
+    
+  </a>
+  <a name="set_pane_state">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_pane_state</span>(self, pane, visible, size=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, activetab=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, grab_focus=<a href="https://docs.python.org/3/library/constants.html#False">False</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2622">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Set the state of a side pane.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pane</span></td><td class="fieldArgDesc">can be one of: <tt class="rst-docutils literal">LEFT_PANE</tt>, <tt class="rst-docutils literal">RIGHT_PANE</tt>, <tt class="rst-docutils literal">TOP_PANE</tt> or <tt class="rst-docutils literal">BOTTOM_PANE</tt>.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">visible</span></td><td class="fieldArgDesc"><tt class="rst-docutils literal">True</tt> to show the pane, <tt class="rst-docutils literal">False</tt> to hide</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">size</span></td><td class="fieldArgDesc">size of the side pane</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">activetab</span></td><td class="fieldArgDesc">key of the active tab in the notebook or None (fails silently if tab is not found)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">grab_focus</span></td><td class="fieldArgDesc">if <tt class="rst-docutils literal">True</tt> active tab will grab focus</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Window.show">
+    
+  </a>
+  <a name="show">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">show</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2753">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Window.show_all">
+    
+  </a>
+  <a name="show_all">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">show_all</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2756">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Window.show_all_panes">
+    
+  </a>
+  <a name="show_all_panes">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="zim.actions.html#action">action</a>(<wbr></wbr>_(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">_All Panes</span><span class="rst-variable-quote">'</span>), <wbr></wbr>accelerator=<span class="rst-variable-quote">'</span><span class="rst-variable-string">&lt;Primary&gt;F9</span><span class="rst-variable-quote">'</span>)<br />
+    <span class="py-keyword">def</span> <span class="py-defname">show_all_panes</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2706">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.Window.toggle_panes">
+    
+  </a>
+  <a name="toggle_panes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">toggle_panes</span>(self, show=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2678">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Toggle between showing and not showing panes. Will remember the panes that were shown last time this method was called but defaults to showing all panes.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">show</span></td><td class="fieldArgDesc">if <tt class="rst-docutils literal">True</tt> show panes, if <tt class="rst-docutils literal">False</tt> hide them, if <tt class="rst-docutils literal">None</tt> toggle current state</td></tr></table></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="zim.gui.widgets.Window.__gsignals__">
+    
+  </a>
+  <a name="__gsignals__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__gsignals__</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2402">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="zim.gui.mainwindow.MainWindow.html">zim.gui.mainwindow.MainWindow</a></code>, <code><a href="zim.gui.mainwindow.PageWindow.html">zim.gui.mainwindow.PageWindow</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.gui.widgets.Window._get_pane_ordering">
+    
+  </a>
+  <a name="_get_pane_ordering">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_pane_ordering</span>(self, key):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2590">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.gui.widgets.Window._panes">
+    
+  </a>
+  <a name="_panes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_panes</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2719">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="zim.gui.widgets.Window._set_pane_ordering">
+    
+  </a>
+  <a name="_set_pane_ordering">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_set_pane_ordering</span>(self, key, order):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2594">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Window._last_sidepane_focus">
+    
+  </a>
+  <a name="_last_sidepane_focus">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_last_sidepane_focus</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2409">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Window._uistate_initialized">
+    
+  </a>
+  <a name="_uistate_initialized">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_uistate_initialized</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2408">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Window._zim_window_bottom_minimized">
+    
+  </a>
+  <a name="_zim_window_bottom_minimized">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_zim_window_bottom_minimized</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2431">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Window._zim_window_bottom_pane">
+    
+  </a>
+  <a name="_zim_window_bottom_pane">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_zim_window_bottom_pane</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2426">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Window._zim_window_bottom_paned">
+    
+  </a>
+  <a name="_zim_window_bottom_paned">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_zim_window_bottom_paned</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2421">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Window._zim_window_central_hbox">
+    
+  </a>
+  <a name="_zim_window_central_hbox">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_zim_window_central_hbox</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2416">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Window._zim_window_central_vbox">
+    
+  </a>
+  <a name="_zim_window_central_vbox">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_zim_window_central_vbox</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2419">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Window._zim_window_left_minimized">
+    
+  </a>
+  <a name="_zim_window_left_minimized">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_zim_window_left_minimized</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2428">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Window._zim_window_left_pane">
+    
+  </a>
+  <a name="_zim_window_left_pane">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_zim_window_left_pane</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2423">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Window._zim_window_left_paned">
+    
+  </a>
+  <a name="_zim_window_left_paned">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_zim_window_left_paned</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2417">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Window._zim_window_main">
+    
+  </a>
+  <a name="_zim_window_main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_zim_window_main</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2413">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Window._zim_window_overlay">
+    
+  </a>
+  <a name="_zim_window_overlay">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_zim_window_overlay</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2412">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Window._zim_window_right_minimized">
+    
+  </a>
+  <a name="_zim_window_right_minimized">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_zim_window_right_minimized</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2429">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Window._zim_window_right_pane">
+    
+  </a>
+  <a name="_zim_window_right_pane">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_zim_window_right_pane</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2424">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Window._zim_window_right_paned">
+    
+  </a>
+  <a name="_zim_window_right_paned">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_zim_window_right_paned</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2418">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Window._zim_window_sidepanes">
+    
+  </a>
+  <a name="_zim_window_sidepanes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_zim_window_sidepanes</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2451">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Window._zim_window_top_minimized">
+    
+  </a>
+  <a name="_zim_window_top_minimized">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_zim_window_top_minimized</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2430">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Window._zim_window_top_pane">
+    
+  </a>
+  <a name="_zim_window_top_pane">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_zim_window_top_pane</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2425">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.Window._zim_window_top_paned">
+    
+  </a>
+  <a name="_zim_window_top_paned">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_zim_window_top_paned</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L2420">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

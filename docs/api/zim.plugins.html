@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.plugins : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.plugins</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="package"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.plugins.html">plugins</a></code></code></h1>
+        <h1 class="package"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.plugins.html">plugins</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,47 +65,69 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/__init__.py">(source)</a>
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/__init__.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>API documentation of the zim plugin framework.</p><p>This file contains the base classes used to write plugins for zim. Each plugin is defined as a sub-module in the "zim.plugins" namespace.</p><p>To be recognized as a plugin, a submodule of "zim.plugins" needs to define one (and only one) sub-class of <code><a href="zim.plugins.PluginClass.html">PluginClass</a></code>. This class will define the main plugin object and contains meta data about the plugin and e.g. plugin preferences.</p><p>The plugin object itself doesn't directly interact with the rest of the zim application. To actually add functionality to zim, the plugin module will also need to define one or more "extension" classes. These classes act as decorators for specific objects that appear in the application. They will be instantiated automatically whenever the target object is created. The extension object then has direct access to the API of the object that is being extended.</p><p>Each extension object that is instantiated is linked to the plugin object that it belongs to. So it can access functions of the plugin object and it can use the plugin object to find other extension objects if it needs to cooperate.</p><p>Also defined here is the <code><a href="#_bootstrappluginmanager">PluginManager</a></code> class. This class is the interface towards the rest of the application to load/unload plugins and to let plugins extend specific application objects.</p></div>
+        <div><p>API documentation of the zim plugin framework.</p>
+<p>This file contains the base classes used to write plugins for zim. Each plugin is defined as a sub-module in the "zim.plugins" namespace.</p>
+<p>To be recognized as a plugin, a submodule of "zim.plugins" needs to define one (and only one) sub-class of <code><a href="zim.plugins.PluginClass.html">PluginClass</a></code>. This class will define the main plugin object and contains meta data about the plugin and e.g. plugin preferences.</p>
+<p>The plugin object itself doesn't directly interact with the rest of the zim application. To actually add functionality to zim, the plugin module will also need to define one or more "extension" classes. These classes act as decorators for specific objects that appear in the application. They will be instantiated automatically whenever the target object is created. The extension object then has direct access to the API of the object that is being extended.</p>
+<p>Each extension object that is instantiated is linked to the plugin object that it belongs to. So it can access functions of the plugin object and it can use the plugin object to find other extension objects if it needs to cooperate.</p>
+<p>Also defined here is the <code><a href="#_bootstrappluginmanager">PluginManager</a></code> class. This class is the interface towards the rest of the application to load/unload plugins and to let plugins extend specific application objects.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id815">
+        <table class="children sortable" id="id822">
   
-  <tr class="module">
+  
+  <tr class="package">
+    
+    <td>Package</td>
+    <td><code><a href="zim.plugins.attachmentbrowser.html">attachmentbrowser</a></code></td>
+    <td>Zim plugin to display files in attachments folder.</td>
+  </tr><tr class="package">
+    
+    <td>Package</td>
+    <td><code><a href="zim.plugins.base.html">base</a></code></td>
+    <td><span class="undocumented">No package docstring; 1/1 module documented</span></td>
+  </tr><tr class="package">
+    
+    <td>Package</td>
+    <td><code><a href="zim.plugins.pageindex.html">pageindex</a></code></td>
+    <td><span class="undocumented">No package docstring; 0/1 variable, 0/9 constant, 2/6 classes, 0/1 module documented</span></td>
+  </tr><tr class="package">
+    
+    <td>Package</td>
+    <td><code><a href="zim.plugins.tasklist.html">tasklist</a></code></td>
+    <td><span class="undocumented">No package docstring; 0/3 class, 1/3 module documented</span></td>
+  </tr><tr class="package">
+    
+    <td>Package</td>
+    <td><code><a href="zim.plugins.versioncontrol.html">versioncontrol</a></code></td>
+    <td><span class="undocumented">No package docstring; 0/1 variable, 0/1 constant, 0/1 function, 2/11 classes, 0/4 module documented</span></td>
+  </tr><tr class="module">
     
     <td>Module</td>
     <td><code><a href="zim.plugins.arithmetic.html">arithmetic</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="package">
-    
-    <td>Package</td>
-    <td><code><a href="zim.plugins.attachmentbrowser.html">attachmentbrowser</a></code></td>
-    <td><span>Zim plugin to display files in attachments folder.</span></td>
   </tr><tr class="module">
     
     <td>Module</td>
     <td><code><a href="zim.plugins.backlinkpane.html">backlinkpane</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="package">
-    
-    <td>Package</td>
-    <td><code><a href="zim.plugins.base.html">base</a></code></td>
-    <td><span class="undocumented">No package docstring; 1/1 modules documented</span></td>
   </tr><tr class="module">
     
     <td>Module</td>
     <td><code><a href="zim.plugins.bookmarksbar.html">bookmarksbar</a></code></td>
-    <td><span class="undocumented">No module docstring; 1/4 classes, 0/3 variables documented</span></td>
+    <td><span class="undocumented">No module docstring; 0/1 variable, 0/2 constant, 1/4 class documented</span></td>
   </tr><tr class="module">
     
     <td>Module</td>
     <td><code><a href="zim.plugins.commandpalette.html">commandpalette</a></code></td>
-    <td><span class="undocumented">No module docstring; 3/4 classes, 0/1 variables documented</span></td>
+    <td><span class="undocumented">No module docstring; 0/1 variable, 3/4 classes documented</span></td>
   </tr><tr class="module">
     
     <td>Module</td>
@@ -109,7 +162,7 @@
     
     <td>Module</td>
     <td><code><a href="zim.plugins.inlinecalculator.html">inlinecalculator</a></code></td>
-    <td><span class="undocumented">No module docstring; 0/3 classes, 15/18 functions, 0/3 variables documented</span></td>
+    <td><span class="undocumented">No module docstring; 0/2 variable, 0/1 constant, 15/18 functions, 0/3 class documented</span></td>
   </tr><tr class="module">
     
     <td>Module</td>
@@ -119,7 +172,7 @@
     
     <td>Module</td>
     <td><code><a href="zim.plugins.journal.html">journal</a></code></td>
-    <td><span class="undocumented">No module docstring; 3/6 classes, 2/2 functions, 0/7 variables documented</span></td>
+    <td><span class="undocumented">No module docstring; 0/5 variable, 0/2 constant, 2/2 functions, 3/6 classes documented</span></td>
   </tr><tr class="module">
     
     <td>Module</td>
@@ -129,32 +182,27 @@
     
     <td>Module</td>
     <td><code><a href="zim.plugins.linkmap.html">linkmap</a></code></td>
-    <td><span>Plugin showing a map of links between pages based on GraphViz</span></td>
+    <td>Plugin showing a map of links between pages based on GraphViz</td>
   </tr><tr class="module">
     
     <td>Module</td>
     <td><code><a href="zim.plugins.osx_menubar.html">osx_menubar</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="package">
-    
-    <td>Package</td>
-    <td><code><a href="zim.plugins.pageindex.html">pageindex</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="module">
     
     <td>Module</td>
     <td><code><a href="zim.plugins.pathbar.html">pathbar</a></code></td>
-    <td><span class="undocumented">No module docstring; 3/13 classes, 0/14 variables documented</span></td>
+    <td><span class="undocumented">No module docstring; 0/4 variable, 0/10 constant, 3/13 classes documented</span></td>
   </tr><tr class="module">
     
     <td>Module</td>
     <td><code><a href="zim.plugins.printtobrowser.html">printtobrowser</a></code></td>
-    <td><span>Plugin to serve as work-around for the lack of printing support</span></td>
+    <td>Plugin to serve as work-around for the lack of printing support</td>
   </tr><tr class="module">
     
     <td>Module</td>
     <td><code><a href="zim.plugins.quicknote.html">quicknote</a></code></td>
-    <td><span class="undocumented">No module docstring; 1/4 classes, 0/2 variables documented</span></td>
+    <td><span class="undocumented">No module docstring; 0/2 variable, 1/4 class documented</span></td>
   </tr><tr class="module">
     
     <td>Module</td>
@@ -179,27 +227,22 @@
     
     <td>Module</td>
     <td><code><a href="zim.plugins.spell.html">spell</a></code></td>
-    <td><span>Spell check plugin based on gtkspell</span></td>
+    <td>Spell check plugin based on gtkspell</td>
   </tr><tr class="module">
     
     <td>Module</td>
     <td><code><a href="zim.plugins.tableeditor.html">tableeditor</a></code></td>
-    <td><span class="undocumented">No module docstring; 4/6 classes, 1/1 functions, 0/6 variables documented</span></td>
+    <td><span class="undocumented">No module docstring; 0/1 variable, 0/5 constant, 1/1 function, 4/6 classes documented</span></td>
   </tr><tr class="module">
     
     <td>Module</td>
     <td><code><a href="zim.plugins.tableofcontents.html">tableofcontents</a></code></td>
-    <td><span class="undocumented">No module docstring; 0/8 classes, 2/4 functions, 0/3 variables documented</span></td>
+    <td><span class="undocumented">No module docstring; 0/1 variable, 0/2 constant, 2/4 functions, 0/8 class documented</span></td>
   </tr><tr class="module">
     
     <td>Module</td>
     <td><code><a href="zim.plugins.tags.html">tags</a></code></td>
-    <td><span class="undocumented">No module docstring; 6/9 classes, 0/1 variables documented</span></td>
-  </tr><tr class="package">
-    
-    <td>Package</td>
-    <td><code><a href="zim.plugins.tasklist.html">tasklist</a></code></td>
-    <td><span class="undocumented">No package docstring; 1/3 modules documented</span></td>
+    <td><span class="undocumented">No module docstring; 0/1 variable, 6/9 classes documented</span></td>
   </tr><tr class="module">
     
     <td>Module</td>
@@ -209,33 +252,29 @@
     
     <td>Module</td>
     <td><code><a href="zim.plugins.trayicon.html">trayicon</a></code></td>
-    <td><span class="undocumented">No module docstring; 4/6 classes, 0/1 functions, 0/4 variables documented</span></td>
-  </tr><tr class="package">
-    
-    <td>Package</td>
-    <td><code><a href="zim.plugins.versioncontrol.html">versioncontrol</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span class="undocumented">No module docstring; 0/2 variable, 0/2 constant, 0/1 function, 4/6 classes documented</span></td>
   </tr><tr class="module">
     
     <td>Module</td>
     <td><code><a href="zim.plugins.zeitgeist-logger.html">zeitgeist-logger</a></code></td>
-    <td><span>Push events to the Zeitgeist daemon</span></td>
+    <td>Push events to the Zeitgeist daemon</td>
   </tr>
 </table>
         
 
-          <p class="fromInitPy">From the <code>__init__.py</code> module:</p><table class="children sortable" id="id816">
+          <p class="fromInitPy">From <code>__init__.py</code>:</p><table class="children sortable" id="id823">
+  
   
   <tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.plugins.DialogExtensionBase.html">DialogExtensionBase</a></code></td>
-    <td><span>Base class for extending Gtk dialogs based on <code>Gtk.Dialog</code> @ivar dialog: the <code>Gtk.Dialog</code> object</span></td>
+    <td>Base class for extending Gtk dialogs based on <tt class="rst-docutils literal">Gtk.Dialog</tt> @ivar dialog: the <tt class="rst-docutils literal">Gtk.Dialog</tt> object</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.plugins.ExtensionBase.html">ExtensionBase</a></code></td>
-    <td><span>Base class for all extensions classes @ivar plugin: the plugin object to which this extension belongs @ivar obj: the extendable object</span></td>
+    <td>Base class for all extensions classes @ivar plugin: the plugin object to which this extension belongs @ivar obj: the extendable object</td>
   </tr><tr class="class">
     
     <td>Class</td>
@@ -246,50 +285,50 @@
     <td>Class</td>
     <td><code><a href="zim.plugins.InsertedObjectTypeMap.html">InsertedObjectTypeMap</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="zim.plugins.html#PLUGIN_FOLDER">PLUGIN_FOLDER</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.plugins.PluginClass.html">PluginClass</a></code></td>
-    <td><span>Base class for plugins objects.</span></td>
+    <td>Base class for plugins objects.</td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="zim.plugins.PluginManagerClass.html">PluginManagerClass</a></code></td>
-    <td><span>Manager that maintains a set of active plugins</span></td>
+    <td>Manager that maintains a set of active plugins</td>
   </tr><tr class="function">
     
     <td>Function</td>
-    <td><code><a href="zim.plugins.html#extendable">extendable</a></code></td>
+    <td><code><a href="#extendable">extendable</a></code></td>
     <td><span class="undocumented">No summary</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
-    <td><code><a href="zim.plugins.html#find_action">find_action</a></code></td>
+    <td><code><a href="#find_action">find_action</a></code></td>
     <td><span class="undocumented">No summary</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
-    <td><code><a href="zim.plugins.html#find_extension">find_extension</a></code></td>
+    <td><code><a href="#find_extension">find_extension</a></code></td>
     <td><span class="undocumented">No summary</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
-    <td><code><a href="zim.plugins.html#list_actions">list_actions</a></code></td>
-    <td><span>List actions Returns list of actions of <code>obj</code> followed by all actions of all of it's extensions. Each action is a 2-tuple of the action and it's name.</span></td>
+    <td><code><a href="#list_actions">list_actions</a></code></td>
+    <td>List actions Returns list of actions of <tt class="rst-docutils literal">obj</tt> followed by all actions of all of it's extensions. Each action is a 2-tuple of the action and it's name.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#resetPluginManager">resetPluginManager</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#PLUGIN_FOLDER">PLUGIN_FOLDER</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
     <td>Variable</td>
-    <td><code><a href="zim.plugins.html#logger">logger</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="zim.plugins.html#resetPluginManager">resetPluginManager</a></code></td>
+    <td><code><a href="#logger">logger</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="class private">
     
@@ -304,7 +343,7 @@
   </tr><tr class="variable private">
     
     <td>Variable</td>
-    <td><code><a href="zim.plugins.html#_bootstrappluginmanager">_bootstrappluginmanager</a></code></td>
+    <td><code><a href="#_bootstrappluginmanager">_bootstrappluginmanager</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -313,6 +352,7 @@
       <div id="childList">
 
         <div class="basevariable">
+  
   
   <a name="zim.plugins.logger">
     
@@ -323,7 +363,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">logger</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/__init__.py#L57">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/__init__.py#L53">
       
       (source)
     </a>
@@ -332,8 +372,10 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
-</div><div class="basevariable">
+</div><div class="baseconstant">
+  
   
   <a name="zim.plugins.PLUGIN_FOLDER">
     
@@ -344,7 +386,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">PLUGIN_FOLDER</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/__init__.py#L73">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/__init__.py#L69">
       
       (source)
     </a>
@@ -353,8 +395,10 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>XDG_DATA_HOME.folder(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">zim/plugins</span><span class="rst-variable-quote">'</span>)</code></pre></td></tr></table>
   </div>
 </div><div class="basevariable private">
+  
   
   <a name="zim.plugins._bootstrappluginmanager">
     
@@ -365,7 +409,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">_bootstrappluginmanager</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/__init__.py#L93">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/__init__.py#L89">
       
       (source)
     </a>
@@ -374,8 +418,10 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.plugins.extendable">
     
@@ -385,8 +431,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">extendable</span>(*extension_bases, register_after_init=True):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/__init__.py#L97">
+    <span class="py-keyword">def</span> <span class="py-defname">extendable</span>(*extension_bases, register_after_init=<a href="https://docs.python.org/3/library/constants.html#True">True</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/__init__.py#L93">
       
       (source)
     </a>
@@ -394,9 +440,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Class decorator to mark a class as "extendable"</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">extension_bases</td><td>base classes for extensions</td></tr><tr><td></td><td class="fieldArg">register_after_init</td><td>if <code>True</code> the class is registered with the <code><a href="#_bootstrappluginmanager">PluginManager</a></code> directly after it's <code>__init__()</code> method has run. If <code>False</code> the class can call <code>PluginManager.register_new_extendable(self)</code> explicitly whenever ready.</td></tr></table></div>
+    <div>Class decorator to mark a class as "extendable"<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">*extension_bases</span></td><td class="fieldArgDesc">base classes for extensions</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">register_after_init</span></td><td class="fieldArgDesc">if <tt class="rst-docutils literal">True</tt> the class is registered with the <code><a href="#_bootstrappluginmanager">PluginManager</a></code> directly after it's <tt class="rst-docutils literal">__init__()</tt> method has run. If <tt class="rst-docutils literal">False</tt> the class can call <tt class="rst-docutils literal">PluginManager.register_new_extendable(self)</tt> explicitly whenever ready.</td></tr></table></div>
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.plugins.find_extension">
     
@@ -407,7 +454,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">find_extension</span>(obj, klass):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/__init__.py#L128">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/__init__.py#L125">
       
       (source)
     </a>
@@ -415,9 +462,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Lookup an extension object This function allows finding extension classes defined by any plugin. So it can be used to find an defined by the same plugin, but also allows cooperation by other plugins. The lookup uses <code>isinstance()</code>, so abstract classes can be used to define interfaces between plugins if you don't want to depent on the exact implementation class.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">obj</td><td>the extended object</td></tr><tr><td></td><td class="fieldArg">klass</td><td>the class of the extention object</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">a single extension object, if multiple extensions match, the first is returned</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></td><td>if no extension was found</td></tr></table></div>
+    <div>Lookup an extension object This function allows finding extension classes defined by any plugin. So it can be used to find an defined by the same plugin, but also allows cooperation by other plugins. The lookup uses <tt class="rst-docutils literal">isinstance()</tt>, so abstract classes can be used to define interfaces between plugins if you don't want to depent on the exact implementation class.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">obj</span></td><td class="fieldArgDesc">the extended object</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">klass</span></td><td class="fieldArgDesc">the class of the extention object</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a single extension object, if multiple extensions match, the first is returned</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></code></td><td>if no extension was found</td></tr></table></div>
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.plugins.find_action">
     
@@ -428,7 +476,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">find_action</span>(obj, actionname):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/__init__.py#L150">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/__init__.py#L147">
       
       (source)
     </a>
@@ -436,9 +484,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Lookup an action method Returns an action method (defined with <code>@action</code> or <code>@toggle_action</code>) for either the object itself, or any of it's extensions. This allows cooperation between plugins by calling actions defined by an other plugin action.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">obj</td><td>the extended object</td></tr><tr><td></td><td class="fieldArg">actionname</td><td>the name of the action</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">an action method</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg"><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></td><td>if no action was found</td></tr></table></div>
+    <div>Lookup an action method Returns an action method (defined with <tt class="rst-docutils literal">@action</tt> or <tt class="rst-docutils literal">@toggle_action</tt>) for either the object itself, or any of it's extensions. This allows cooperation between plugins by calling actions defined by an other plugin action.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">obj</span></td><td class="fieldArgDesc">the extended object</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">actionname</span></td><td class="fieldArgDesc">the name of the action</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">an action method</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></code></td><td>if no action was found</td></tr></table></div>
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.plugins.list_actions">
     
@@ -449,7 +498,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">list_actions</span>(obj):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/__init__.py#L172">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/__init__.py#L169">
       
       (source)
     </a>
@@ -457,9 +506,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>List actions Returns list of actions of <code>obj</code> followed by all actions of all of it's extensions. Each action is a 2-tuple of the action and it's name.</p></div>
+    <div>List actions Returns list of actions of <tt class="rst-docutils literal">obj</tt> followed by all actions of all of it's extensions. Each action is a 2-tuple of the action and it's name.</div>
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.plugins.resetPluginManager">
     
@@ -470,7 +520,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">resetPluginManager</span>():
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/__init__.py#L556">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/plugins/__init__.py#L567">
       
       (source)
     </a>
@@ -483,11 +533,16 @@
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.formats.wiki : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.formats.wiki</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.formats.html">formats</a></code>.<code><a href="zim.formats.wiki.html">wiki</a></code></code></h1>
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.formats.html">formats</a></code><wbr></wbr>.<code><a href="zim.formats.wiki.html">wiki</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,36 +65,52 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py">(source)</a>
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>This module handles parsing and dumping wiki text</p></div>
+        <div>This module handles parsing and dumping wiki text</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id182">
+        <table class="children sortable" id="id169">
   
-  <tr class="variable">
+  
+  <tr class="class">
     
-    <td>Variable</td>
-    <td><code><a href="#logger">logger</a></code></td>
+    <td>Class</td>
+    <td><code><a href="zim.formats.wiki.Dumper.html">Dumper</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
+  </tr><tr class="class">
     
-    <td>Variable</td>
+    <td>Class</td>
+    <td><code><a href="zim.formats.wiki.Parser.html">Parser</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="zim.formats.wiki.WikiParser.html">WikiParser</a></code></td>
+    <td><span class="undocumented">No class docstring; 0/6 instance variable, 0/1 constant, 6/16 methods, 1/5 static method documented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#check_number_bullet">check_number_bullet</a></code></td>
+    <td>If bullet is a numbered bullet this returns the number or letter, <tt class="rst-docutils literal">None</tt> otherwise</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#is_url">is_url</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#match_url">match_url</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
     <td><code><a href="#WIKI_FORMAT_VERSION">WIKI_FORMAT_VERSION</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#info">info</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#bullet_pattern">bullet_pattern</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
@@ -73,22 +120,32 @@
   </tr><tr class="variable">
     
     <td>Variable</td>
-    <td><code><a href="#number_bullet_re">number_bullet_re</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#check_number_bullet">check_number_bullet</a></code></td>
-    <td><span>If bullet is a numbered bullet this returns the number or letter, <code>None</code> otherwise</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#param_re">param_re</a></code></td>
+    <td><code><a href="#bullet_pattern">bullet_pattern</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
     <td>Variable</td>
     <td><code><a href="#empty_lines_re">empty_lines_re</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#info">info</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#number_bullet_re">number_bullet_re</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#param_re">param_re</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable">
     
@@ -105,45 +162,15 @@
     <td>Variable</td>
     <td><code><a href="#url_trailing_punctuation">url_trailing_punctuation</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#is_url">is_url</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#match_url">match_url</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.formats.wiki.WikiParser.html">WikiParser</a></code></td>
-    <td><span class="undocumented">No class docstring; 0/1 class variables, 0/6 instance variables, 6/16 methods, 1/5 static methods documented</span></td>
   </tr><tr class="variable">
     
     <td>Variable</td>
     <td><code><a href="#wikiparser">wikiparser</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.formats.wiki.Parser.html">Parser</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="zim.formats.wiki.Dumper.html">Dumper</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="function private">
     
     <td>Function</td>
     <td><code><a href="#_remove_indent">_remove_indent</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable private">
-    
-    <td>Variable</td>
-    <td><code><a href="#_url">_url</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable private">
     
@@ -155,6 +182,11 @@
     <td>Variable</td>
     <td><code><a href="#_file">_file</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_url">_url</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
         
@@ -164,133 +196,8 @@
 
       <div id="childList">
 
-        <div class="basevariable">
+        <div class="basefunction">
   
-  <a name="zim.formats.wiki.logger">
-    
-  </a>
-  <a name="logger">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">logger</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L9">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.formats.wiki.WIKI_FORMAT_VERSION">
-    
-  </a>
-  <a name="WIKI_FORMAT_VERSION">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">WIKI_FORMAT_VERSION</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L22">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.formats.wiki.info">
-    
-  </a>
-  <a name="info">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">info</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L31">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.formats.wiki.bullet_pattern">
-    
-  </a>
-  <a name="bullet_pattern">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">bullet_pattern</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L43">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.formats.wiki.bullet_line_re">
-    
-  </a>
-  <a name="bullet_line_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">bullet_line_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L48">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.formats.wiki.number_bullet_re">
-    
-  </a>
-  <a name="number_bullet_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">number_bullet_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L51">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
   
   <a name="zim.formats.wiki.check_number_bullet">
     
@@ -301,7 +208,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">check_number_bullet</span>(bullet):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L53">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L53">
       
       (source)
     </a>
@@ -309,198 +216,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p>If bullet is a numbered bullet this returns the number or letter, <code>None</code> otherwise</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.formats.wiki.param_re">
-    
-  </a>
-  <a name="param_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">param_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L63">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.formats.wiki.empty_lines_re">
-    
-  </a>
-  <a name="empty_lines_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">empty_lines_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L67">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.formats.wiki.unindented_line_re">
-    
-  </a>
-  <a name="unindented_line_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">unindented_line_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L70">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.formats.wiki._remove_indent">
-    
-  </a>
-  <a name="_remove_indent">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_remove_indent</span>(text, indent):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L74">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable private">
-  
-  <a name="zim.formats.wiki._url">
-    
-  </a>
-  <a name="_url">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_url</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L89">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
-  </div>
-</div><div class="basevariable private">
-  
-  <a name="zim.formats.wiki._email">
-    
-  </a>
-  <a name="_email">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_email</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L94">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
-  </div>
-</div><div class="basevariable private">
-  
-  <a name="zim.formats.wiki._file">
-    
-  </a>
-  <a name="_file">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_file</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L99">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.formats.wiki.url_re">
-    
-  </a>
-  <a name="url_re">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">url_re</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L104">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.formats.wiki.url_trailing_punctuation">
-    
-  </a>
-  <a name="url_trailing_punctuation">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">url_trailing_punctuation</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L113">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, ...]</code>)
+    <div>If bullet is a numbered bullet this returns the number or letter, <tt class="rst-docutils literal">None</tt> otherwise</div>
   </div>
 </div><div class="basefunction">
+  
   
   <a name="zim.formats.wiki.is_url">
     
@@ -511,7 +230,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">is_url</span>(text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L116">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L117">
       
       (source)
     </a>
@@ -523,6 +242,7 @@
   </div>
 </div><div class="basefunction">
   
+  
   <a name="zim.formats.wiki.match_url">
     
   </a>
@@ -532,7 +252,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">match_url</span>(text):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L126">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L127">
       
       (source)
     </a>
@@ -542,7 +262,261 @@
     
     <div></div>
   </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.formats.wiki.WIKI_FORMAT_VERSION">
+    
+  </a>
+  <a name="WIKI_FORMAT_VERSION">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">WIKI_FORMAT_VERSION</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L22">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">zim 0.6</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
+  </div>
 </div><div class="basevariable">
+  
+  
+  <a name="zim.formats.wiki.bullet_line_re">
+    
+  </a>
+  <a name="bullet_line_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">bullet_line_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L48">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.formats.wiki.bullet_pattern">
+    
+  </a>
+  <a name="bullet_pattern">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">bullet_pattern</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L43">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.formats.wiki.empty_lines_re">
+    
+  </a>
+  <a name="empty_lines_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">empty_lines_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L67">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.formats.wiki.info">
+    
+  </a>
+  <a name="info">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">info</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L31">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.formats.wiki.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L9">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.formats.wiki.number_bullet_re">
+    
+  </a>
+  <a name="number_bullet_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">number_bullet_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L51">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.formats.wiki.param_re">
+    
+  </a>
+  <a name="param_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">param_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L63">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.formats.wiki.unindented_line_re">
+    
+  </a>
+  <a name="unindented_line_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">unindented_line_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L70">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.formats.wiki.url_re">
+    
+  </a>
+  <a name="url_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">url_re</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L105">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.formats.wiki.url_trailing_punctuation">
+    
+  </a>
+  <a name="url_trailing_punctuation">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">url_trailing_punctuation</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <wbr></wbr><span class="rst-variable-ellipsis">...</span>]</code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L114">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
   
   <a name="zim.formats.wiki.wikiparser">
     
@@ -553,7 +527,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">wikiparser</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L622">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L624">
       
       (source)
     </a>
@@ -562,15 +536,112 @@
     
     
     <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.formats.wiki._remove_indent">
+    
+  </a>
+  <a name="_remove_indent">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_remove_indent</span>(text, indent):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L74">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="zim.formats.wiki._email">
+    
+  </a>
+  <a name="_email">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_email</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L95">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="zim.formats.wiki._file">
+    
+  </a>
+  <a name="_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_file</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L100">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="zim.formats.wiki._url">
+    
+  </a>
+  <a name="_url">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_url</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/formats/wiki.py#L90">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

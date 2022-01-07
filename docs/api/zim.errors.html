@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.errors : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.errors</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="module"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.errors.html">errors</a></code></code></h1>
+        <h1 class="module"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.errors.html">errors</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,31 +65,27 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/errors.py">(source)</a>
+        <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/errors.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>This module contains the base class for all errors in zim</p></div>
+        <div>This module contains the base class for all errors in zim</div>
       </div>
 
       <div id="splitTables">
         <table class="children sortable" id="id87">
   
-  <tr class="variable">
+  
+  <tr class="class">
     
-    <td>Variable</td>
-    <td><code><a href="#logger">logger</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="variable">
-    
-    <td>Variable</td>
-    <td><code><a href="#use_gtk_errordialog">use_gtk_errordialog</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Class</td>
+    <td><code><a href="zim.errors.Error.html">Error</a></code></td>
+    <td>Base class for all errors in zim.</td>
   </tr><tr class="function">
     
     <td>Function</td>
-    <td><code><a href="#set_use_gtk">set_use_gtk</a></code></td>
+    <td><code><a href="#exception_handler">exception_handler</a></code></td>
     <td><span class="undocumented">No summary</span></td>
   </tr><tr class="function">
     
@@ -69,22 +96,27 @@
     
     <td>Function</td>
     <td><code><a href="#log_error">log_error</a></code></td>
-    <td><span>Log error and traceback @param error: error as understood by <code><a href="#get_error_msg">get_error_msg()</a></code> @param debug: optional debug message, defaults to the error itself</span></td>
+    <td>Log error and traceback @param error: error as understood by <code><a href="#get_error_msg">get_error_msg()</a></code> @param debug: optional debug message, defaults to the error itself</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#set_use_gtk">set_use_gtk</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#show_error">show_error</a></code></td>
-    <td><span>Show an error by calling <code><a href="#log_error">log_error()</a></code> and when running interactive also calling <code><a href="zim.gui.widgets.ErrorDialog.html">ErrorDialog</a></code>. @param error: the error object</span></td>
-  </tr><tr class="function">
+    <td>Show an error by calling <code><a href="#log_error">log_error()</a></code> and when running interactive also calling <code><a href="zim.gui.widgets.ErrorDialog.html">ErrorDialog</a></code>. @param error: the error object</td>
+  </tr><tr class="variable">
     
-    <td>Function</td>
-    <td><code><a href="#exception_handler">exception_handler</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="class">
+    <td>Variable</td>
+    <td><code><a href="#logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
     
-    <td>Class</td>
-    <td><code><a href="zim.errors.Error.html">Error</a></code></td>
-    <td><span>Base class for all errors in zim.</span></td>
+    <td>Variable</td>
+    <td><code><a href="#use_gtk_errordialog">use_gtk_errordialog</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="function private">
     
     <td>Function</td>
@@ -99,154 +131,8 @@
 
       <div id="childList">
 
-        <div class="basevariable">
+        <div class="basefunction">
   
-  <a name="zim.errors.logger">
-    
-  </a>
-  <a name="logger">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">logger</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/errors.py#L12">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basevariable">
-  
-  <a name="zim.errors.use_gtk_errordialog">
-    
-  </a>
-  <a name="use_gtk_errordialog">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">use_gtk_errordialog</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/errors.py#L15">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.errors.set_use_gtk">
-    
-  </a>
-  <a name="set_use_gtk">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">set_use_gtk</span>(use_gtk):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/errors.py#L17">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Set whether or not <code><a href="#show_error">show_error</a></code> and <code><a href="#exception_handler">exception_handler</a></code> shold use the <code><a href="zim.gui.widgets.ErrorDialog.html">ErrorDialog</a></code> or not.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">use_gtk</td><td>set <code>True</code> for interactive gui, <code>False</code> for terminal mode</td></tr></table></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.errors.get_error_msg">
-    
-  </a>
-  <a name="get_error_msg">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_error_msg</span>(error):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/errors.py#L27">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Returns the message to show for an error</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">error</td><td>error object or string</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">2-tuple of: message string and a boolean whether a traceback should be shown or not</td></tr></table></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.errors.log_error">
-    
-  </a>
-  <a name="log_error">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">log_error</span>(error, debug=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/errors.py#L50">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Log error and traceback</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">error</td><td>error as understood by <code><a href="#get_error_msg">get_error_msg()</a></code></td></tr><tr><td></td><td class="fieldArg">debug</td><td>optional debug message, defaults to the error itself</td></tr></table></div>
-  </div>
-</div><div class="basefunction private">
-  
-  <a name="zim.errors._run_error_dialog">
-    
-  </a>
-  <a name="_run_error_dialog">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_run_error_dialog</span>(error):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/errors.py#L68">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="zim.errors.show_error">
-    
-  </a>
-  <a name="show_error">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">show_error</span>(error):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/errors.py#L76">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Show an error by calling <code><a href="#log_error">log_error()</a></code> and when running interactive also calling <code><a href="zim.gui.widgets.ErrorDialog.html">ErrorDialog</a></code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">error</td><td>the error object</td></tr></table></div>
-  </div>
-</div><div class="basefunction">
   
   <a name="zim.errors.exception_handler">
     
@@ -257,7 +143,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">exception_handler</span>(debug):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/errors.py#L86">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/errors.py#L86">
       
       (source)
     </a>
@@ -265,16 +151,177 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Like <code>show_error()</code> but with debug message instead of the actual error. Intended to be used in <code>except</code> blocks as a catch-all for both intended and unintended errors.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">debug</td><td>debug message for logging</td></tr></table></div>
+    <div>Like <tt class="rst-docutils literal">show_error()</tt> but with debug message instead of the actual error. Intended to be used in <tt class="rst-docutils literal">except</tt> blocks as a catch-all for both intended and unintended errors.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">debug</span></td><td class="fieldArgDesc">debug message for logging</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.errors.get_error_msg">
+    
+  </a>
+  <a name="get_error_msg">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_error_msg</span>(error):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/errors.py#L27">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns the message to show for an error<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">error</span></td><td class="fieldArgDesc">error object or string</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">2-tuple of: message string and a boolean whether a traceback should be shown or not</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.errors.log_error">
+    
+  </a>
+  <a name="log_error">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">log_error</span>(error, debug=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/errors.py#L50">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Log error and traceback<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">error</span></td><td class="fieldArgDesc">error as understood by <code><a href="#get_error_msg">get_error_msg()</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">debug</span></td><td class="fieldArgDesc">optional debug message, defaults to the error itself</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.errors.set_use_gtk">
+    
+  </a>
+  <a name="set_use_gtk">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_use_gtk</span>(use_gtk):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/errors.py#L17">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Set whether or not <code><a href="#show_error">show_error</a></code> and <code><a href="#exception_handler">exception_handler</a></code> shold use the <code><a href="zim.gui.widgets.ErrorDialog.html">ErrorDialog</a></code> or not.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">use_gtk</span></td><td class="fieldArgDesc">set <tt class="rst-docutils literal">True</tt> for interactive gui, <tt class="rst-docutils literal">False</tt> for terminal mode</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="zim.errors.show_error">
+    
+  </a>
+  <a name="show_error">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">show_error</span>(error):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/errors.py#L76">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Show an error by calling <code><a href="#log_error">log_error()</a></code> and when running interactive also calling <code><a href="zim.gui.widgets.ErrorDialog.html">ErrorDialog</a></code>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">error</span></td><td class="fieldArgDesc">the error object</td></tr></table></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.errors.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/errors.py#L12">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="zim.errors.use_gtk_errordialog">
+    
+  </a>
+  <a name="use_gtk_errordialog">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">use_gtk_errordialog</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/errors.py#L15">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="zim.errors._run_error_dialog">
+    
+  </a>
+  <a name="_run_error_dialog">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_run_error_dialog</span>(error):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/errors.py#L68">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

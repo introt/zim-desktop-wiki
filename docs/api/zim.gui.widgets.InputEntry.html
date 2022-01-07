@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>zim.gui.widgets.InputEntry : API documentation</title>
+  
 
+  <head>
+    
+    <title>zim.gui.widgets.InputEntry</title>
+    <meta name="generator" content="pydoctor 21.12.0"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://zim-wiki.org/">zim-desktop-wiki</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="zim.html">zim</a></code>.<code><a href="zim.gui.html">gui</a></code>.<code><a href="zim.gui.widgets.html">widgets</a></code>.<code><a href="zim.gui.widgets.InputEntry.html">InputEntry</a></code></code></h1>
+        <h1 class="class"><code><code><a href="zim.html">zim</a></code><wbr></wbr>.<code><a href="zim.gui.html">gui</a></code><wbr></wbr>.<code><a href="zim.gui.widgets.html">widgets</a></code><wbr></wbr>.<code><a href="zim.gui.widgets.InputEntry.html">InputEntry</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,41 +65,85 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">InputEntry</span>(<span title="gi.repository.Gtk.Entry">Gtk.Entry</span>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1364">(source)</a></code></p><p>Known subclasses: <code><a href="zim.gui.widgets.FSPathEntry.html">zim.gui.widgets.FSPathEntry</a></code>, <code><a href="zim.gui.widgets.PageEntry.html">zim.gui.widgets.PageEntry</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">InputEntry</span>(<span title="gi.repository.Gtk.Entry">Gtk.Entry</span>): <a href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1364" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="zim.gui.widgets.FSPathEntry.html">zim.gui.widgets.FSPathEntry</a></code>, <code><a href="zim.gui.widgets.PageEntry.html">zim.gui.widgets.PageEntry</a></code></p>
         <p><a href="classIndex.html#zim.gui.widgets.InputEntry">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p>Sub-class of <code>Gtk.Entry</code> with support for highlighting mal-formatted inputs and handles UTF-8 decoding. This class must be used as a generic replacement for <code>Gtk.Entry</code> to avoid UTF-8 issues. (This is enforced by the zim test suite which will throw an error for any module using <code>Gtk.Entry</code> directly.)</p><p>The widget has a "valid" state which determines if the content is well formed or not. When the state is invalid the widget will have a red background color. This is used e.g. in dialog response handlers to show the user what widget to modify.</p><p>The valid state can be either done manually by calling <code><a href="#set_input_valid">set_input_valid()</a></code>, or it can be done automatically by providing a function to check what content is valid. Using a function is recommended because it gives more immediate feedback to the user.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Unknown Field: signal</td><td colspan="2"><code>input-valid-changes ()</code>: valid state of the widget changed</td></tr></table></div>
+        <div><p>Sub-class of <tt class="rst-docutils literal">Gtk.Entry</tt> with support for highlighting mal-formatted inputs and handles UTF-8 decoding. This class must be used as a generic replacement for <tt class="rst-docutils literal">Gtk.Entry</tt> to avoid UTF-8 issues. (This is enforced by the zim test suite which will throw an error for any module using <tt class="rst-docutils literal">Gtk.Entry</tt> directly.)</p>
+<p>The widget has a "valid" state which determines if the content is well formed or not. When the state is invalid the widget will have a red background color. This is used e.g. in dialog response handlers to show the user what widget to modify.</p>
+<p>The valid state can be either done manually by calling <code><a href="#set_input_valid">set_input_valid()</a></code>, or it can be done automatically by providing a function to check what content is valid. Using a function is recommended because it gives more immediate feedback to the user.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: signal</td></tr><tr><td colspan="2"><tt class="rst-docutils literal"><span class="pre">input-valid-changes</span> ()</tt>: valid state of the widget changed</td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id498">
+        <table class="children sortable" id="id506">
   
-  <tr class="classvariable">
+  
+  <tr class="method">
     
-    <td>Class Variable</td>
-    <td><code><a href="#__gsignals__">__gsignals__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="classvariable">
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td>Constructor</td>
+  </tr><tr class="method">
     
-    <td>Class Variable</td>
-    <td><code><a href="#ERROR_COLOR">ERROR_COLOR</a></code></td>
+    <td>Method</td>
+    <td><code><a href="#clear">clear</a></code></td>
+    <td>Clear the text in the entry</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#do_input_valid_changed">do_input_valid_changed</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Constructor</span></td>
-  </tr><tr class="instancevariable">
+    <td><code><a href="#get_input_valid">get_input_valid</a></code></td>
+    <td>Get the valid state. @returns: <tt class="rst-docutils literal">True</tt> if the input is valid</td>
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#allow_empty">allow_empty</a></code></td>
+    <td>Method</td>
+    <td><code><a href="#get_text">get_text</a></code></td>
+    <td>Get the text from the widget. Like <tt class="rst-docutils literal">Gtk.Entry.get_text()</tt> but with UTF-8 decoding and whitespace stripped. @returns: string</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_check_func">set_check_func</a></code></td>
+    <td>Set a function to check whether input is valid or not @param check_func: the function</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_icon">set_icon</a></code></td>
+    <td>Add an icon in the entry widget behind the text</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_icon_to_clear">set_icon_to_clear</a></code></td>
+    <td>Adds a "clear" icon in the entry widget</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_input_valid">set_input_valid</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#update_input_valid">update_input_valid</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#ERROR_COLOR">ERROR_COLOR</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#__gsignals__">__gsignals__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#show_empty_invalid">show_empty_invalid</a></code></td>
+    <td><code><a href="#allow_empty">allow_empty</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
@@ -80,60 +155,20 @@
     <td>Instance Variable</td>
     <td><code><a href="#check_func">check_func</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#set_check_func">set_check_func</a></code></td>
-    <td><span>Set a function to check whether input is valid or not @param check_func: the function</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#set_icon">set_icon</a></code></td>
-    <td><span>Add an icon in the entry widget behind the text</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#set_icon_to_clear">set_icon_to_clear</a></code></td>
-    <td><span>Adds a "clear" icon in the entry widget</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#get_text">get_text</a></code></td>
-    <td><span>Get the text from the widget. Like <code>Gtk.Entry.get_text()</code> but with UTF-8 decoding and whitespace stripped. @returns: string</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#get_input_valid">get_input_valid</a></code></td>
-    <td><span>Get the valid state. @returns: <code>True</code> if the input is valid</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#set_input_valid">set_input_valid</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#clear">clear</a></code></td>
-    <td><span>Clear the text in the entry</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#update_input_valid">update_input_valid</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_normal_color">_normal_color</a></code></td>
+    <td><code><a href="#show_empty_invalid">show_empty_invalid</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_input_valid">_input_valid</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
+  </tr><tr class="instancevariable private">
     
-    <td>Method</td>
-    <td><code><a href="#_set_base_color">_set_base_color</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="#_normal_color">_normal_color</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -144,49 +179,8 @@
 
       <div id="childList">
 
-        <div class="baseclassvariable">
+        <div class="basemethod">
   
-  <a name="zim.gui.widgets.InputEntry.__gsignals__">
-    
-  </a>
-  <a name="__gsignals__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">__gsignals__</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1385">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseclassvariable">
-  
-  <a name="zim.gui.widgets.InputEntry.ERROR_COLOR">
-    
-  </a>
-  <a name="ERROR_COLOR">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">ERROR_COLOR</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1389">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.widgets.InputEntry.__init__">
     
@@ -196,8 +190,8 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, check_func=None, allow_empty=True, show_empty_invalid=False, placeholder_text=None, allow_whitespace=False):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1391">
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, check_func=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, allow_empty=<a href="https://docs.python.org/3/library/constants.html#True">True</a>, show_empty_invalid=<a href="https://docs.python.org/3/library/constants.html#False">False</a>, placeholder_text=<a href="https://docs.python.org/3/library/constants.html#None">None</a>, allow_whitespace=<a href="https://docs.python.org/3/library/constants.html#False">False</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1391">
       
       (source)
     </a>
@@ -205,282 +199,10 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="zim.gui.widgets.FSPathEntry.html">zim.gui.widgets.FSPathEntry</a></code>, <code><a href="zim.gui.widgets.PageEntry.html">zim.gui.widgets.PageEntry</a></code></div>
     
-    <div><p>Constructor</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">check_func</td><td>a function to check input is valid. This function will be called with the current text as argument and should return <code>True</code> if this text is a valid input.</td></tr><tr><td></td><td class="fieldArg">allow_empty</td><td>if <code>False</code> an empty string is considered invalid input</td></tr><tr><td></td><td class="fieldArg">show_empty_invalid</td><td>if <code>True</code> a red background is also shown when the entry is still empty, if <code>False</code> the background is kept normal even if the empty input is invalid. Without this option a whole input form would start in red color, which looks bad.</td></tr><tr><td></td><td class="fieldArg">placeholder_text</td><td>text to show in the widget when it is empty and does not have focus, text will be shown in a color different from normal text and disappear when the user selects the widget. Used to set hints on the usage of the widget.</td></tr><tr><td></td><td class="fieldArg">allow_whitespace</td><td>if <code>True</code> allow trailing whitespace or even string containing only whitespace. If <code>False</code> all whitespace is stripped.</td></tr></table></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.InputEntry._normal_color">
-    
-  </a>
-  <a name="_normal_color">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_normal_color</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1418">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.widgets.InputEntry.allow_empty">
-    
-  </a>
-  <a name="allow_empty">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">allow_empty</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1419">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.widgets.InputEntry.show_empty_invalid">
-    
-  </a>
-  <a name="show_empty_invalid">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">show_empty_invalid</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1420">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.widgets.InputEntry.allow_whitespace">
-    
-  </a>
-  <a name="allow_whitespace">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">allow_whitespace</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1421">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="zim.gui.widgets.InputEntry.check_func">
-    
-  </a>
-  <a name="check_func">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">check_func</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1423">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="zim.gui.widgets.InputEntry._input_valid">
-    
-  </a>
-  <a name="_input_valid">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_input_valid</span> =
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1424">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Constructor<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">check_func</span></td><td class="fieldArgDesc">a function to check input is valid. This function will be called with the current text as argument and should return <tt class="rst-docutils literal">True</tt> if this text is a valid input.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">allow_empty</span></td><td class="fieldArgDesc">if <tt class="rst-docutils literal">False</tt> an empty string is considered invalid input</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">show_empty_invalid</span></td><td class="fieldArgDesc">if <tt class="rst-docutils literal">True</tt> a red background is also shown when the entry is still empty, if <tt class="rst-docutils literal">False</tt> the background is kept normal even if the empty input is invalid. Without this option a whole input form would start in red color, which looks bad.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">placeholder_text</span></td><td class="fieldArgDesc">text to show in the widget when it is empty and does not have focus, text will be shown in a color different from normal text and disappear when the user selects the widget. Used to set hints on the usage of the widget.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">allow_whitespace</span></td><td class="fieldArgDesc">if <tt class="rst-docutils literal">True</tt> allow trailing whitespace or even string containing only whitespace. If <tt class="rst-docutils literal">False</tt> all whitespace is stripped.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="zim.gui.widgets.InputEntry.set_check_func">
-    
-  </a>
-  <a name="set_check_func">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">set_check_func</span>(self, check_func):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1437">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Set a function to check whether input is valid or not</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">check_func</td><td>the function</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.InputEntry.set_icon">
-    
-  </a>
-  <a name="set_icon">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">set_icon</span>(self, icon, cb_func, tooltip=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1444">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Add an icon in the entry widget behind the text</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">icon</td><td>the icon as stock ID</td></tr><tr><td></td><td class="fieldArg">cb_func</td><td>the callback when the icon is clicked; the callback will be called without any arguments</td></tr><tr><td></td><td class="fieldArg">tooltip</td><td>tooltip text for the icon</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> if successfull, <code>False</code> if not supported by Gtk version</td></tr><tr class="fieldStart"><td class="fieldName">Unknown Field: todo</td><td colspan="2">add argument to set tooltip on the icon</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.InputEntry.set_icon_to_clear">
-    
-  </a>
-  <a name="set_icon_to_clear">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">set_icon_to_clear</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1468">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Adds a "clear" icon in the entry widget</p><p>This method calls <code><a href="#set_icon">set_icon()</a></code> with the right defaults for a stock "Clear" icon. In addition it makes the icon insensitive when there is no text in the entry. Clicking the icon will clear the entry.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> if successfull, <code>False</code> if not supported by Gtk version</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.InputEntry.get_text">
-    
-  </a>
-  <a name="get_text">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_text</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1491">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Get the text from the widget. Like <code>Gtk.Entry.get_text()</code> but with UTF-8 decoding and whitespace stripped.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">string</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.InputEntry.get_input_valid">
-    
-  </a>
-  <a name="get_input_valid">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_input_valid</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1504">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Get the valid state.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> if the input is valid</td></tr></table></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="zim.gui.widgets.InputEntry.set_input_valid">
-    
-  </a>
-  <a name="set_input_valid">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">set_input_valid</span>(self, valid, show_empty_invalid=None):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1510">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p>Set input valid or invalid state</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">valid</td><td><code>True</code> or <code>False</code></td></tr><tr><td></td><td class="fieldArg">show_empty_invalid</td><td>if not <code>None</code> change the <code>show_empty_invalid</code> attribute</td></tr></table></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="zim.gui.widgets.InputEntry._set_base_color">
-    
-  </a>
-  <a name="_set_base_color">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_set_base_color</span>(self, valid):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1529">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="zim.gui.widgets.InputEntry.clear">
     
@@ -491,7 +213,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">clear</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1536">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1524">
       
       (source)
     </a>
@@ -499,9 +221,166 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Clear the text in the entry</p></div>
+    <div>Clear the text in the entry</div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.InputEntry.do_input_valid_changed">
+    
+  </a>
+  <a name="do_input_valid_changed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">do_input_valid_changed</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1514">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.InputEntry.get_input_valid">
+    
+  </a>
+  <a name="get_input_valid">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_input_valid</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1495">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Get the valid state.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> if the input is valid</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.InputEntry.get_text">
+    
+  </a>
+  <a name="get_text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_text</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1482">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Get the text from the widget. Like <tt class="rst-docutils literal">Gtk.Entry.get_text()</tt> but with UTF-8 decoding and whitespace stripped.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">string</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.InputEntry.set_check_func">
+    
+  </a>
+  <a name="set_check_func">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_check_func</span>(self, check_func):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1428">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Set a function to check whether input is valid or not<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">check_func</span></td><td class="fieldArgDesc">the function</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.InputEntry.set_icon">
+    
+  </a>
+  <a name="set_icon">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_icon</span>(self, icon, cb_func, tooltip=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1435">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Add an icon in the entry widget behind the text<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">icon</span></td><td class="fieldArgDesc">the icon as stock ID</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cb_func</span></td><td class="fieldArgDesc">the callback when the icon is clicked; the callback will be called without any arguments</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tooltip</span></td><td class="fieldArgDesc">tooltip text for the icon</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> if successfull, <tt class="rst-docutils literal">False</tt> if not supported by Gtk version</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: todo</td></tr><tr><td colspan="2">add argument to set tooltip on the icon</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.InputEntry.set_icon_to_clear">
+    
+  </a>
+  <a name="set_icon_to_clear">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_icon_to_clear</span>(self):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1459">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Adds a "clear" icon in the entry widget</p>
+<p>This method calls <code><a href="#set_icon">set_icon()</a></code> with the right defaults for a stock "Clear" icon. In addition it makes the icon insensitive when there is no text in the entry. Clicking the icon will clear the entry.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> if successfull, <tt class="rst-docutils literal">False</tt> if not supported by Gtk version</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="zim.gui.widgets.InputEntry.set_input_valid">
+    
+  </a>
+  <a name="set_input_valid">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_input_valid</span>(self, valid, show_empty_invalid=<a href="https://docs.python.org/3/library/constants.html#None">None</a>):
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1501">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Set input valid or invalid state<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">valid</span></td><td class="fieldArgDesc"><tt class="rst-docutils literal">True</tt> or <tt class="rst-docutils literal">False</tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">show_empty_invalid</span></td><td class="fieldArgDesc">if not <tt class="rst-docutils literal">None</tt> change the <tt class="rst-docutils literal">show_empty_invalid</tt> attribute</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="zim.gui.widgets.InputEntry.update_input_valid">
     
@@ -512,7 +391,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">update_input_valid</span>(self):
-    <a class="functionSourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1540">
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1528">
       
       (source)
     </a>
@@ -522,14 +401,203 @@
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="zim.gui.widgets.InputEntry.ERROR_COLOR">
+    
+  </a>
+  <a name="ERROR_COLOR">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ERROR_COLOR</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1389">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">#EF7F7F</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="zim.gui.widgets.InputEntry.__gsignals__">
+    
+  </a>
+  <a name="__gsignals__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__gsignals__</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1385">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.widgets.InputEntry.allow_empty">
+    
+  </a>
+  <a name="allow_empty">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">allow_empty</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1419">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.widgets.InputEntry.allow_whitespace">
+    
+  </a>
+  <a name="allow_whitespace">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">allow_whitespace</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1421">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.widgets.InputEntry.check_func">
+    
+  </a>
+  <a name="check_func">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">check_func</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1423">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="zim.gui.widgets.InputEntry.show_empty_invalid">
+    
+  </a>
+  <a name="show_empty_invalid">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">show_empty_invalid</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1420">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.InputEntry._input_valid">
+    
+  </a>
+  <a name="_input_valid">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_input_valid</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1424">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="zim.gui.widgets.InputEntry._normal_color">
+    
+  </a>
+  <a name="_normal_color">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_normal_color</span> =
+    <a class="sourceLink" href="https://github.com/zim-desktop-wiki/zim-desktop-wiki/tree/develop/zim/gui/widgets.py#L1418">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/">zim-desktop-wiki</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-11 17:13:43.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://zim-wiki.org/" class="projecthome">zim-desktop-wiki</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.0 at 2022-01-07 17:18:19.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 
